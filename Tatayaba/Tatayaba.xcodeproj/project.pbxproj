@@ -8,16 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		053D694C0D5575CB4917A4B5 /* Pods_TatayabaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */; };
+		11F52FB722CA7D92000F0D85 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F52FAA22CA7D92000F0D85 /* SplashViewController.swift */; };
+		11F52FB822CA7D92000F0D85 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F52FAC22CA7D92000F0D85 /* User.storyboard */; };
+		11F52FB922CA7D92000F0D85 /* SignUpViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F52FB122CA7D92000F0D85 /* SignUpViewcontroller.swift */; };
+		11F52FBA22CA7D92000F0D85 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F52FB622CA7D92000F0D85 /* LoginViewController.swift */; };
 		5AB89CC597A882EAAB8E1262 /* Pods_Tatayaba.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8251C3E16050691EBDFB247 /* Pods_Tatayaba.framework */; };
 		847CDE4122C9EE2300E67C8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CDE4022C9EE2300E67C8C /* AppDelegate.swift */; };
-		847CDE4322C9EE2300E67C8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CDE4222C9EE2300E67C8C /* ViewController.swift */; };
 		847CDE4622C9EE2300E67C8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE4422C9EE2300E67C8C /* Main.storyboard */; };
 		847CDE4922C9EE2300E67C8C /* Tatayaba.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 847CDE4722C9EE2300E67C8C /* Tatayaba.xcdatamodeld */; };
 		847CDE4B22C9EE2300E67C8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE4A22C9EE2300E67C8C /* Assets.xcassets */; };
 		847CDE4E22C9EE2300E67C8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE4C22C9EE2300E67C8C /* LaunchScreen.storyboard */; };
 		847CDE5922C9EE2300E67C8C /* TatayabaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CDE5822C9EE2300E67C8C /* TatayabaTests.swift */; };
 		847CDE6422C9EE2300E67C8C /* TatayabaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CDE6322C9EE2300E67C8C /* TatayabaUITests.swift */; };
-		847CDE7722CA096500E67C8C /* SignUpViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CDE7622CA096500E67C8C /* SignUpViewcontroller.swift */; };
 		847CDE7A22CA130F00E67C8C /* ColorDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CDE7922CA130F00E67C8C /* ColorDef.swift */; };
 		847CDE8422CA19EE00E67C8C /* ProximaNova-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE7D22CA19EC00E67C8C /* ProximaNova-Regular.ttf */; };
 		847CDE8522CA19EE00E67C8C /* ProximaNova-Extrabld.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE7E22CA19EC00E67C8C /* ProximaNova-Extrabld.ttf */; };
@@ -49,13 +51,16 @@
 /* Begin PBXFileReference section */
 		02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B399FC35D3B3B996D93EC1 /* Pods-TatayabaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaUITests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		11F52FAA22CA7D92000F0D85 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		11F52FAC22CA7D92000F0D85 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
+		11F52FB122CA7D92000F0D85 /* SignUpViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewcontroller.swift; sourceTree = "<group>"; };
+		11F52FB622CA7D92000F0D85 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		20779A04B1BCECF103C599EE /* Pods-Tatayaba.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tatayaba.release.xcconfig"; path = "Target Support Files/Pods-Tatayaba/Pods-Tatayaba.release.xcconfig"; sourceTree = "<group>"; };
 		22CC9CEE04574A387EDF22EE /* Pods-TatayabaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.release.xcconfig"; sourceTree = "<group>"; };
 		2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3521A060629ED90EC6114BA5 /* Pods-TatayabaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.debug.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		847CDE3D22C9EE2300E67C8C /* Tatayaba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tatayaba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847CDE4022C9EE2300E67C8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		847CDE4222C9EE2300E67C8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		847CDE4522C9EE2300E67C8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		847CDE4822C9EE2300E67C8C /* Tatayaba.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tatayaba.xcdatamodel; sourceTree = "<group>"; };
 		847CDE4A22C9EE2300E67C8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,7 +72,6 @@
 		847CDE5F22C9EE2300E67C8C /* TatayabaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TatayabaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		847CDE6322C9EE2300E67C8C /* TatayabaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TatayabaUITests.swift; sourceTree = "<group>"; };
 		847CDE6522C9EE2300E67C8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		847CDE7622CA096500E67C8C /* SignUpViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewcontroller.swift; sourceTree = "<group>"; };
 		847CDE7922CA130F00E67C8C /* ColorDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorDef.swift; sourceTree = "<group>"; };
 		847CDE7D22CA19EC00E67C8C /* ProximaNova-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.ttf"; sourceTree = "<group>"; };
 		847CDE7E22CA19EC00E67C8C /* ProximaNova-Extrabld.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Extrabld.ttf"; sourceTree = "<group>"; };
@@ -109,6 +113,121 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11F52FA522CA7D92000F0D85 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				11F52FA622CA7D92000F0D85 /* Splash */,
+				11F52FAB22CA7D92000F0D85 /* User */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		11F52FA622CA7D92000F0D85 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				11F52FA722CA7D92000F0D85 /* ViewModels */,
+				11F52FA822CA7D92000F0D85 /* Models */,
+				11F52FA922CA7D92000F0D85 /* Views */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		11F52FA722CA7D92000F0D85 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		11F52FA822CA7D92000F0D85 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		11F52FA922CA7D92000F0D85 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				11F52FAA22CA7D92000F0D85 /* SplashViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		11F52FAB22CA7D92000F0D85 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				11F52FAC22CA7D92000F0D85 /* User.storyboard */,
+				11F52FAD22CA7D92000F0D85 /* SignUp */,
+				11F52FB222CA7D92000F0D85 /* Login */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		11F52FAD22CA7D92000F0D85 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				11F52FAE22CA7D92000F0D85 /* ViewModels */,
+				11F52FAF22CA7D92000F0D85 /* Models */,
+				11F52FB022CA7D92000F0D85 /* Views */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		11F52FAE22CA7D92000F0D85 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		11F52FAF22CA7D92000F0D85 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		11F52FB022CA7D92000F0D85 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				11F52FB122CA7D92000F0D85 /* SignUpViewcontroller.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		11F52FB222CA7D92000F0D85 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				11F52FB322CA7D92000F0D85 /* ViewModels */,
+				11F52FB422CA7D92000F0D85 /* Models */,
+				11F52FB522CA7D92000F0D85 /* Views */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		11F52FB322CA7D92000F0D85 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		11F52FB422CA7D92000F0D85 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		11F52FB522CA7D92000F0D85 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				11F52FB622CA7D92000F0D85 /* LoginViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		847CDE3422C9EE2300E67C8C = {
 			isa = PBXGroup;
 			children = (
@@ -134,10 +253,8 @@
 		847CDE3F22C9EE2300E67C8C /* Tatayaba */ = {
 			isa = PBXGroup;
 			children = (
+				11F52FA522CA7D92000F0D85 /* Modules */,
 				847CDE7822CA12EC00E67C8C /* Utilities */,
-				847CDE7222CA07A400E67C8C /* Models */,
-				847CDE7322CA07B500E67C8C /* View Models */,
-				847CDE7522CA07D700E67C8C /* ViewControllers */,
 				847CDE4022C9EE2300E67C8C /* AppDelegate.swift */,
 				847CDE4422C9EE2300E67C8C /* Main.storyboard */,
 				847CDE4A22C9EE2300E67C8C /* Assets.xcassets */,
@@ -164,29 +281,6 @@
 				847CDE6522C9EE2300E67C8C /* Info.plist */,
 			);
 			path = TatayabaUITests;
-			sourceTree = "<group>";
-		};
-		847CDE7222CA07A400E67C8C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		847CDE7322CA07B500E67C8C /* View Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "View Models";
-			sourceTree = "<group>";
-		};
-		847CDE7522CA07D700E67C8C /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				847CDE4222C9EE2300E67C8C /* ViewController.swift */,
-				847CDE7622CA096500E67C8C /* SignUpViewcontroller.swift */,
-			);
-			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		847CDE7822CA12EC00E67C8C /* Utilities */ = {
@@ -254,6 +348,7 @@
 				847CDE3922C9EE2300E67C8C /* Sources */,
 				847CDE3A22C9EE2300E67C8C /* Frameworks */,
 				847CDE3B22C9EE2300E67C8C /* Resources */,
+				D08D80323791471B0F8F2ED8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -362,6 +457,7 @@
 				847CDE8722CA19EE00E67C8C /* ProximaNova-Semibold.ttf in Resources */,
 				847CDE8522CA19EE00E67C8C /* ProximaNova-Extrabld.ttf in Resources */,
 				847CDE4622C9EE2300E67C8C /* Main.storyboard in Resources */,
+				11F52FB822CA7D92000F0D85 /* User.storyboard in Resources */,
 				847CDE8822CA19EE00E67C8C /* ProximaNova-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +533,36 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D08D80323791471B0F8F2ED8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tatayaba/Pods-Tatayaba-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftValidator/SwiftValidator.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftValidator.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tatayaba/Pods-Tatayaba-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -444,11 +570,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				847CDE4322C9EE2300E67C8C /* ViewController.swift in Sources */,
+				11F52FBA22CA7D92000F0D85 /* LoginViewController.swift in Sources */,
 				847CDE4922C9EE2300E67C8C /* Tatayaba.xcdatamodeld in Sources */,
 				847CDE7A22CA130F00E67C8C /* ColorDef.swift in Sources */,
-				847CDE7722CA096500E67C8C /* SignUpViewcontroller.swift in Sources */,
+				11F52FB922CA7D92000F0D85 /* SignUpViewcontroller.swift in Sources */,
 				847CDE4122C9EE2300E67C8C /* AppDelegate.swift in Sources */,
+				11F52FB722CA7D92000F0D85 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
