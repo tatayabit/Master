@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		847CDE4122C9EE2300E67C8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CDE4022C9EE2300E67C8C /* AppDelegate.swift */; };
+		847CDE4322C9EE2300E67C8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CDE4222C9EE2300E67C8C /* ViewController.swift */; };
+		847CDE4622C9EE2300E67C8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE4422C9EE2300E67C8C /* Main.storyboard */; };
+		847CDE4922C9EE2300E67C8C /* Tatayaba.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 847CDE4722C9EE2300E67C8C /* Tatayaba.xcdatamodeld */; };
+		847CDE4B22C9EE2300E67C8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE4A22C9EE2300E67C8C /* Assets.xcassets */; };
+		847CDE4E22C9EE2300E67C8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE4C22C9EE2300E67C8C /* LaunchScreen.storyboard */; };
+		847CDE5922C9EE2300E67C8C /* TatayabaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CDE5822C9EE2300E67C8C /* TatayabaTests.swift */; };
+		847CDE6422C9EE2300E67C8C /* TatayabaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CDE6322C9EE2300E67C8C /* TatayabaUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		847CDE5522C9EE2300E67C8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 847CDE3522C9EE2300E67C8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 847CDE3C22C9EE2300E67C8C;
+			remoteInfo = Tatayaba;
+		};
+		847CDE6022C9EE2300E67C8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 847CDE3522C9EE2300E67C8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 847CDE3C22C9EE2300E67C8C;
+			remoteInfo = Tatayaba;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		847CDE3D22C9EE2300E67C8C /* Tatayaba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tatayaba.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		847CDE4022C9EE2300E67C8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		847CDE4222C9EE2300E67C8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		847CDE4522C9EE2300E67C8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		847CDE4822C9EE2300E67C8C /* Tatayaba.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tatayaba.xcdatamodel; sourceTree = "<group>"; };
+		847CDE4A22C9EE2300E67C8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		847CDE4D22C9EE2300E67C8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		847CDE4F22C9EE2300E67C8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		847CDE5422C9EE2300E67C8C /* TatayabaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TatayabaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		847CDE5822C9EE2300E67C8C /* TatayabaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TatayabaTests.swift; sourceTree = "<group>"; };
+		847CDE5A22C9EE2300E67C8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		847CDE5F22C9EE2300E67C8C /* TatayabaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TatayabaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		847CDE6322C9EE2300E67C8C /* TatayabaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TatayabaUITests.swift; sourceTree = "<group>"; };
+		847CDE6522C9EE2300E67C8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		847CDE3A22C9EE2300E67C8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847CDE5122C9EE2300E67C8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847CDE5C22C9EE2300E67C8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		847CDE3422C9EE2300E67C8C = {
+			isa = PBXGroup;
+			children = (
+				847CDE3F22C9EE2300E67C8C /* Tatayaba */,
+				847CDE5722C9EE2300E67C8C /* TatayabaTests */,
+				847CDE6222C9EE2300E67C8C /* TatayabaUITests */,
+				847CDE3E22C9EE2300E67C8C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		847CDE3E22C9EE2300E67C8C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				847CDE3D22C9EE2300E67C8C /* Tatayaba.app */,
+				847CDE5422C9EE2300E67C8C /* TatayabaTests.xctest */,
+				847CDE5F22C9EE2300E67C8C /* TatayabaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		847CDE3F22C9EE2300E67C8C /* Tatayaba */ = {
+			isa = PBXGroup;
+			children = (
+				847CDE4022C9EE2300E67C8C /* AppDelegate.swift */,
+				847CDE4222C9EE2300E67C8C /* ViewController.swift */,
+				847CDE4422C9EE2300E67C8C /* Main.storyboard */,
+				847CDE4A22C9EE2300E67C8C /* Assets.xcassets */,
+				847CDE4C22C9EE2300E67C8C /* LaunchScreen.storyboard */,
+				847CDE4F22C9EE2300E67C8C /* Info.plist */,
+				847CDE4722C9EE2300E67C8C /* Tatayaba.xcdatamodeld */,
+			);
+			path = Tatayaba;
+			sourceTree = "<group>";
+		};
+		847CDE5722C9EE2300E67C8C /* TatayabaTests */ = {
+			isa = PBXGroup;
+			children = (
+				847CDE5822C9EE2300E67C8C /* TatayabaTests.swift */,
+				847CDE5A22C9EE2300E67C8C /* Info.plist */,
+			);
+			path = TatayabaTests;
+			sourceTree = "<group>";
+		};
+		847CDE6222C9EE2300E67C8C /* TatayabaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				847CDE6322C9EE2300E67C8C /* TatayabaUITests.swift */,
+				847CDE6522C9EE2300E67C8C /* Info.plist */,
+			);
+			path = TatayabaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		847CDE3C22C9EE2300E67C8C /* Tatayaba */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 847CDE6822C9EE2300E67C8C /* Build configuration list for PBXNativeTarget "Tatayaba" */;
+			buildPhases = (
+				847CDE3922C9EE2300E67C8C /* Sources */,
+				847CDE3A22C9EE2300E67C8C /* Frameworks */,
+				847CDE3B22C9EE2300E67C8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tatayaba;
+			productName = Tatayaba;
+			productReference = 847CDE3D22C9EE2300E67C8C /* Tatayaba.app */;
+			productType = "com.apple.product-type.application";
+		};
+		847CDE5322C9EE2300E67C8C /* TatayabaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 847CDE6B22C9EE2300E67C8C /* Build configuration list for PBXNativeTarget "TatayabaTests" */;
+			buildPhases = (
+				847CDE5022C9EE2300E67C8C /* Sources */,
+				847CDE5122C9EE2300E67C8C /* Frameworks */,
+				847CDE5222C9EE2300E67C8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				847CDE5622C9EE2300E67C8C /* PBXTargetDependency */,
+			);
+			name = TatayabaTests;
+			productName = TatayabaTests;
+			productReference = 847CDE5422C9EE2300E67C8C /* TatayabaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		847CDE5E22C9EE2300E67C8C /* TatayabaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 847CDE6E22C9EE2300E67C8C /* Build configuration list for PBXNativeTarget "TatayabaUITests" */;
+			buildPhases = (
+				847CDE5B22C9EE2300E67C8C /* Sources */,
+				847CDE5C22C9EE2300E67C8C /* Frameworks */,
+				847CDE5D22C9EE2300E67C8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				847CDE6122C9EE2300E67C8C /* PBXTargetDependency */,
+			);
+			name = TatayabaUITests;
+			productName = TatayabaUITests;
+			productReference = 847CDE5F22C9EE2300E67C8C /* TatayabaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		847CDE3522C9EE2300E67C8C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = Shaik;
+				TargetAttributes = {
+					847CDE3C22C9EE2300E67C8C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					847CDE5322C9EE2300E67C8C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 847CDE3C22C9EE2300E67C8C;
+					};
+					847CDE5E22C9EE2300E67C8C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 847CDE3C22C9EE2300E67C8C;
+					};
+				};
+			};
+			buildConfigurationList = 847CDE3822C9EE2300E67C8C /* Build configuration list for PBXProject "Tatayaba" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 847CDE3422C9EE2300E67C8C;
+			productRefGroup = 847CDE3E22C9EE2300E67C8C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				847CDE3C22C9EE2300E67C8C /* Tatayaba */,
+				847CDE5322C9EE2300E67C8C /* TatayabaTests */,
+				847CDE5E22C9EE2300E67C8C /* TatayabaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		847CDE3B22C9EE2300E67C8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847CDE4E22C9EE2300E67C8C /* LaunchScreen.storyboard in Resources */,
+				847CDE4B22C9EE2300E67C8C /* Assets.xcassets in Resources */,
+				847CDE4622C9EE2300E67C8C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847CDE5222C9EE2300E67C8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847CDE5D22C9EE2300E67C8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		847CDE3922C9EE2300E67C8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847CDE4322C9EE2300E67C8C /* ViewController.swift in Sources */,
+				847CDE4922C9EE2300E67C8C /* Tatayaba.xcdatamodeld in Sources */,
+				847CDE4122C9EE2300E67C8C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847CDE5022C9EE2300E67C8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847CDE5922C9EE2300E67C8C /* TatayabaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847CDE5B22C9EE2300E67C8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847CDE6422C9EE2300E67C8C /* TatayabaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		847CDE5622C9EE2300E67C8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 847CDE3C22C9EE2300E67C8C /* Tatayaba */;
+			targetProxy = 847CDE5522C9EE2300E67C8C /* PBXContainerItemProxy */;
+		};
+		847CDE6122C9EE2300E67C8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 847CDE3C22C9EE2300E67C8C /* Tatayaba */;
+			targetProxy = 847CDE6022C9EE2300E67C8C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		847CDE4422C9EE2300E67C8C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				847CDE4522C9EE2300E67C8C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		847CDE4C22C9EE2300E67C8C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				847CDE4D22C9EE2300E67C8C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		847CDE6622C9EE2300E67C8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		847CDE6722C9EE2300E67C8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		847CDE6922C9EE2300E67C8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BVM8GR9MVP;
+				INFOPLIST_FILE = Tatayaba/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Tatayaba.Tatayaba;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		847CDE6A22C9EE2300E67C8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BVM8GR9MVP;
+				INFOPLIST_FILE = Tatayaba/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Tatayaba.Tatayaba;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		847CDE6C22C9EE2300E67C8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BVM8GR9MVP;
+				INFOPLIST_FILE = TatayabaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Tatayaba.TatayabaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tatayaba.app/Tatayaba";
+			};
+			name = Debug;
+		};
+		847CDE6D22C9EE2300E67C8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BVM8GR9MVP;
+				INFOPLIST_FILE = TatayabaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Tatayaba.TatayabaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tatayaba.app/Tatayaba";
+			};
+			name = Release;
+		};
+		847CDE6F22C9EE2300E67C8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BVM8GR9MVP;
+				INFOPLIST_FILE = TatayabaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Tatayaba.TatayabaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Tatayaba;
+			};
+			name = Debug;
+		};
+		847CDE7022C9EE2300E67C8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BVM8GR9MVP;
+				INFOPLIST_FILE = TatayabaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Tatayaba.TatayabaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Tatayaba;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		847CDE3822C9EE2300E67C8C /* Build configuration list for PBXProject "Tatayaba" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847CDE6622C9EE2300E67C8C /* Debug */,
+				847CDE6722C9EE2300E67C8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		847CDE6822C9EE2300E67C8C /* Build configuration list for PBXNativeTarget "Tatayaba" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847CDE6922C9EE2300E67C8C /* Debug */,
+				847CDE6A22C9EE2300E67C8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		847CDE6B22C9EE2300E67C8C /* Build configuration list for PBXNativeTarget "TatayabaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847CDE6C22C9EE2300E67C8C /* Debug */,
+				847CDE6D22C9EE2300E67C8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		847CDE6E22C9EE2300E67C8C /* Build configuration list for PBXNativeTarget "TatayabaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847CDE6F22C9EE2300E67C8C /* Debug */,
+				847CDE7022C9EE2300E67C8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		847CDE4722C9EE2300E67C8C /* Tatayaba.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				847CDE4822C9EE2300E67C8C /* Tatayaba.xcdatamodel */,
+			);
+			currentVersion = 847CDE4822C9EE2300E67C8C /* Tatayaba.xcdatamodel */;
+			path = Tatayaba.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 847CDE3522C9EE2300E67C8C /* Project object */;
+}
