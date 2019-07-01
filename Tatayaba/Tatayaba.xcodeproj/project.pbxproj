@@ -17,6 +17,15 @@
 		847CDE4E22C9EE2300E67C8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE4C22C9EE2300E67C8C /* LaunchScreen.storyboard */; };
 		847CDE5922C9EE2300E67C8C /* TatayabaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CDE5822C9EE2300E67C8C /* TatayabaTests.swift */; };
 		847CDE6422C9EE2300E67C8C /* TatayabaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CDE6322C9EE2300E67C8C /* TatayabaUITests.swift */; };
+		847CDE7722CA096500E67C8C /* SignUpViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CDE7622CA096500E67C8C /* SignUpViewcontroller.swift */; };
+		847CDE7A22CA130F00E67C8C /* ColorDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CDE7922CA130F00E67C8C /* ColorDef.swift */; };
+		847CDE8422CA19EE00E67C8C /* ProximaNova-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE7D22CA19EC00E67C8C /* ProximaNova-Regular.ttf */; };
+		847CDE8522CA19EE00E67C8C /* ProximaNova-Extrabld.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE7E22CA19EC00E67C8C /* ProximaNova-Extrabld.ttf */; };
+		847CDE8622CA19EE00E67C8C /* ProximaNova-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE7F22CA19ED00E67C8C /* ProximaNova-Light.ttf */; };
+		847CDE8722CA19EE00E67C8C /* ProximaNova-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE8022CA19ED00E67C8C /* ProximaNova-Semibold.ttf */; };
+		847CDE8822CA19EE00E67C8C /* ProximaNova-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE8122CA19ED00E67C8C /* ProximaNova-Black.ttf */; };
+		847CDE8922CA19EE00E67C8C /* ProximaNovaT-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE8222CA19EE00E67C8C /* ProximaNovaT-Thin.ttf */; };
+		847CDE8A22CA19EE00E67C8C /* ProximaNova-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE8322CA19EE00E67C8C /* ProximaNova-Bold.ttf */; };
 		9F7E463258DFBE1064395C51 /* Pods_TatayabaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +67,15 @@
 		847CDE5F22C9EE2300E67C8C /* TatayabaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TatayabaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		847CDE6322C9EE2300E67C8C /* TatayabaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TatayabaUITests.swift; sourceTree = "<group>"; };
 		847CDE6522C9EE2300E67C8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		847CDE7622CA096500E67C8C /* SignUpViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewcontroller.swift; sourceTree = "<group>"; };
+		847CDE7922CA130F00E67C8C /* ColorDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorDef.swift; sourceTree = "<group>"; };
+		847CDE7D22CA19EC00E67C8C /* ProximaNova-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.ttf"; sourceTree = "<group>"; };
+		847CDE7E22CA19EC00E67C8C /* ProximaNova-Extrabld.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Extrabld.ttf"; sourceTree = "<group>"; };
+		847CDE7F22CA19ED00E67C8C /* ProximaNova-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.ttf"; sourceTree = "<group>"; };
+		847CDE8022CA19ED00E67C8C /* ProximaNova-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.ttf"; sourceTree = "<group>"; };
+		847CDE8122CA19ED00E67C8C /* ProximaNova-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Black.ttf"; sourceTree = "<group>"; };
+		847CDE8222CA19EE00E67C8C /* ProximaNovaT-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNovaT-Thin.ttf"; sourceTree = "<group>"; };
+		847CDE8322CA19EE00E67C8C /* ProximaNova-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.ttf"; sourceTree = "<group>"; };
 		A8251C3E16050691EBDFB247 /* Pods_Tatayaba.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tatayaba.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55E5C982ED14B5FEE4DCD1D /* Pods-TatayabaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaUITests.debug.xcconfig"; path = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E0F8BF293BFC39D47FD4C2EB /* Pods-Tatayaba.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tatayaba.debug.xcconfig"; path = "Target Support Files/Pods-Tatayaba/Pods-Tatayaba.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,8 +134,11 @@
 		847CDE3F22C9EE2300E67C8C /* Tatayaba */ = {
 			isa = PBXGroup;
 			children = (
+				847CDE7822CA12EC00E67C8C /* Utilities */,
+				847CDE7222CA07A400E67C8C /* Models */,
+				847CDE7322CA07B500E67C8C /* View Models */,
+				847CDE7522CA07D700E67C8C /* ViewControllers */,
 				847CDE4022C9EE2300E67C8C /* AppDelegate.swift */,
-				847CDE4222C9EE2300E67C8C /* ViewController.swift */,
 				847CDE4422C9EE2300E67C8C /* Main.storyboard */,
 				847CDE4A22C9EE2300E67C8C /* Assets.xcassets */,
 				847CDE4C22C9EE2300E67C8C /* LaunchScreen.storyboard */,
@@ -145,6 +166,60 @@
 			path = TatayabaUITests;
 			sourceTree = "<group>";
 		};
+		847CDE7222CA07A400E67C8C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		847CDE7322CA07B500E67C8C /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		847CDE7522CA07D700E67C8C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				847CDE4222C9EE2300E67C8C /* ViewController.swift */,
+				847CDE7622CA096500E67C8C /* SignUpViewcontroller.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		847CDE7822CA12EC00E67C8C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				847CDE7C22CA19CF00E67C8C /* Font */,
+				847CDE7B22CA192300E67C8C /* Color Codes */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		847CDE7B22CA192300E67C8C /* Color Codes */ = {
+			isa = PBXGroup;
+			children = (
+				847CDE7922CA130F00E67C8C /* ColorDef.swift */,
+			);
+			path = "Color Codes";
+			sourceTree = "<group>";
+		};
+		847CDE7C22CA19CF00E67C8C /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				847CDE8122CA19ED00E67C8C /* ProximaNova-Black.ttf */,
+				847CDE8322CA19EE00E67C8C /* ProximaNova-Bold.ttf */,
+				847CDE7E22CA19EC00E67C8C /* ProximaNova-Extrabld.ttf */,
+				847CDE7F22CA19ED00E67C8C /* ProximaNova-Light.ttf */,
+				847CDE7D22CA19EC00E67C8C /* ProximaNova-Regular.ttf */,
+				847CDE8022CA19ED00E67C8C /* ProximaNova-Semibold.ttf */,
+				847CDE8222CA19EE00E67C8C /* ProximaNovaT-Thin.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		9CDE61A50DEA5CDA03008907 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,7 +240,6 @@
 				B55E5C982ED14B5FEE4DCD1D /* Pods-TatayabaUITests.debug.xcconfig */,
 				04B399FC35D3B3B996D93EC1 /* Pods-TatayabaUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -280,8 +354,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				847CDE4E22C9EE2300E67C8C /* LaunchScreen.storyboard in Resources */,
+				847CDE8922CA19EE00E67C8C /* ProximaNovaT-Thin.ttf in Resources */,
 				847CDE4B22C9EE2300E67C8C /* Assets.xcassets in Resources */,
+				847CDE8622CA19EE00E67C8C /* ProximaNova-Light.ttf in Resources */,
+				847CDE8A22CA19EE00E67C8C /* ProximaNova-Bold.ttf in Resources */,
+				847CDE8422CA19EE00E67C8C /* ProximaNova-Regular.ttf in Resources */,
+				847CDE8722CA19EE00E67C8C /* ProximaNova-Semibold.ttf in Resources */,
+				847CDE8522CA19EE00E67C8C /* ProximaNova-Extrabld.ttf in Resources */,
 				847CDE4622C9EE2300E67C8C /* Main.storyboard in Resources */,
+				847CDE8822CA19EE00E67C8C /* ProximaNova-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,15 +388,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-TatayabaTests-checkManifestLockResult.txt",
 			);
@@ -329,15 +406,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-TatayabaUITests-checkManifestLockResult.txt",
 			);
@@ -351,15 +424,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Tatayaba-checkManifestLockResult.txt",
 			);
@@ -377,6 +446,8 @@
 			files = (
 				847CDE4322C9EE2300E67C8C /* ViewController.swift in Sources */,
 				847CDE4922C9EE2300E67C8C /* Tatayaba.xcdatamodeld in Sources */,
+				847CDE7A22CA130F00E67C8C /* ColorDef.swift in Sources */,
+				847CDE7722CA096500E67C8C /* SignUpViewcontroller.swift in Sources */,
 				847CDE4122C9EE2300E67C8C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,11 +618,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BVM8GR9MVP;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tatayaba.Tatayaba;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -563,11 +635,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BVM8GR9MVP;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tatayaba.Tatayaba;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
