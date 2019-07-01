@@ -1,0 +1,6 @@
+framework module Pods_TatayabaUITests {
+  umbrella header "Pods-TatayabaUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

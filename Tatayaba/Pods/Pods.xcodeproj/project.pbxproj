@@ -1,0 +1,752 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		489B3C27AC5E3D02720EE77CADEB6177 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		6A2137FA78F3C6931A1E855C0E108A60 /* Pods-TatayabaTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A5DEC0F44E133B4AF0DABE1CBB877A03 /* Pods-TatayabaTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7546B36115C185EF003CF46B4EB20F41 /* Pods-TatayabaTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5007F1FEADFA0C9C6069B041AC1885E6 /* Pods-TatayabaTests-dummy.m */; };
+		8AA73A6696E8FB22F1CD8ABE2F2E7DEF /* Pods-TatayabaUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 875D13DE4E498A64535598CE0B328C52 /* Pods-TatayabaUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91D41E3AD69F91FABBF4ED7C373640A1 /* Pods-Tatayaba-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A17CB58370865BAF942809F4A08F968E /* Pods-Tatayaba-dummy.m */; };
+		9A0AA90327183A913FB0E2FD5AF4BB11 /* Pods-TatayabaUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D62658D5194E16271B9399B121702F6 /* Pods-TatayabaUITests-dummy.m */; };
+		A30C6E33A3B179F77D05C93FB3C4F9C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		C129B46706ECD011CACD549DF11E23E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		C46AB6AB8F96D30D326406FB508F2AB2 /* Pods-Tatayaba-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 873475DC00D8E3DBF2D93538EB42CDE0 /* Pods-Tatayaba-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A91D6A0298AD0BFA5B5543D9117B13BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BFF5577137E9989BDF04DAE8C15A919;
+			remoteInfo = "Pods-Tatayaba";
+		};
+		FE4BF5FAE163D1018F5BDBDED9A5B60A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BFF5577137E9989BDF04DAE8C15A919;
+			remoteInfo = "Pods-Tatayaba";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		098526F042055BF5306710F02F1DF7E6 /* Pods-Tatayaba.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tatayaba.release.xcconfig"; sourceTree = "<group>"; };
+		0F36AC0712AECBEA7C724EBBDB3053A1 /* Pods-TatayabaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TatayabaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2F830D5002E53B0FEF0EE00ACD97205B /* Pods-TatayabaTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TatayabaTests.modulemap"; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5007F1FEADFA0C9C6069B041AC1885E6 /* Pods-TatayabaTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TatayabaTests-dummy.m"; sourceTree = "<group>"; };
+		52A7ACB187ACD874C386D826C7257721 /* Pods-TatayabaUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TatayabaUITests-Info.plist"; sourceTree = "<group>"; };
+		5D62658D5194E16271B9399B121702F6 /* Pods-TatayabaUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TatayabaUITests-dummy.m"; sourceTree = "<group>"; };
+		60373BEE58F0CCEDC95C874FF0910FAB /* Pods_TatayabaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TatayabaUITests.framework; path = "Pods-TatayabaUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		646DA86DDFB4D91AFF7BC2B764B37050 /* Pods-Tatayaba.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tatayaba.debug.xcconfig"; sourceTree = "<group>"; };
+		701AA72D5F57CE6177534A40234AD5D6 /* Pods-TatayabaTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TatayabaTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		873475DC00D8E3DBF2D93538EB42CDE0 /* Pods-Tatayaba-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tatayaba-umbrella.h"; sourceTree = "<group>"; };
+		875D13DE4E498A64535598CE0B328C52 /* Pods-TatayabaUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TatayabaUITests-umbrella.h"; sourceTree = "<group>"; };
+		8EAE15AE74EAB733C69CED57A30542F3 /* Pods-TatayabaUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TatayabaUITests.modulemap"; sourceTree = "<group>"; };
+		9157EFF5A7C76A9857098A39B3B3EA9D /* Pods-Tatayaba-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tatayaba-acknowledgements.plist"; sourceTree = "<group>"; };
+		922B3089904E5880140969D64BDDCECD /* Pods-TatayabaTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TatayabaTests-Info.plist"; sourceTree = "<group>"; };
+		9854561F073E07E926F3BF2AD5683416 /* Pods-TatayabaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TatayabaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A17CB58370865BAF942809F4A08F968E /* Pods-Tatayaba-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tatayaba-dummy.m"; sourceTree = "<group>"; };
+		A5DEC0F44E133B4AF0DABE1CBB877A03 /* Pods-TatayabaTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TatayabaTests-umbrella.h"; sourceTree = "<group>"; };
+		AD283DFA3DB8361DF4ABDAFFB0FDB928 /* Pods-Tatayaba.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Tatayaba.modulemap"; sourceTree = "<group>"; };
+		AF2A11A2ADDA32EE3992B6C6B12DDD46 /* Pods-TatayabaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TatayabaTests.release.xcconfig"; sourceTree = "<group>"; };
+		B88ADAEDB9FF6046DA0A5ED62D639C70 /* Pods_TatayabaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TatayabaTests.framework; path = "Pods-TatayabaTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB5E9F239F3C68BA95ACB391AE6B29BC /* Pods-TatayabaTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TatayabaTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BF740395BF834ACA78F82FC1EE292D09 /* Pods-TatayabaUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TatayabaUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		C7A78F308812302AFB7CE7A8DD76F39E /* Pods-Tatayaba-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tatayaba-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CEC52A84DB7EB620B84272C66C1AB86B /* Pods-TatayabaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TatayabaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DA2608CADEEB09F31AEA29E47A112B9A /* Pods-TatayabaUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TatayabaUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E3B53A2D78CDA22FCD0478214B962DAA /* Pods-Tatayaba-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tatayaba-Info.plist"; sourceTree = "<group>"; };
+		F23C7DE17ADEC39DA02F982A884364A0 /* Pods_Tatayaba.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Tatayaba.framework; path = "Pods-Tatayaba.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3AE2E50626E1B5439221E8B5FE93DE45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C129B46706ECD011CACD549DF11E23E2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC7BFD37D83B61BDE843495F6DB6DE7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				489B3C27AC5E3D02720EE77CADEB6177 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB45ACEB3E6D0C4D2A7E8BACE95291D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A30C6E33A3B179F77D05C93FB3C4F9C3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10C436E33FF05669C2A8824CC5EAD413 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F23C7DE17ADEC39DA02F982A884364A0 /* Pods_Tatayaba.framework */,
+				B88ADAEDB9FF6046DA0A5ED62D639C70 /* Pods_TatayabaTests.framework */,
+				60373BEE58F0CCEDC95C874FF0910FAB /* Pods_TatayabaUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6B753A71542737C4BFC44E74C86B5578 /* Pods-Tatayaba */ = {
+			isa = PBXGroup;
+			children = (
+				AD283DFA3DB8361DF4ABDAFFB0FDB928 /* Pods-Tatayaba.modulemap */,
+				C7A78F308812302AFB7CE7A8DD76F39E /* Pods-Tatayaba-acknowledgements.markdown */,
+				9157EFF5A7C76A9857098A39B3B3EA9D /* Pods-Tatayaba-acknowledgements.plist */,
+				A17CB58370865BAF942809F4A08F968E /* Pods-Tatayaba-dummy.m */,
+				E3B53A2D78CDA22FCD0478214B962DAA /* Pods-Tatayaba-Info.plist */,
+				873475DC00D8E3DBF2D93538EB42CDE0 /* Pods-Tatayaba-umbrella.h */,
+				646DA86DDFB4D91AFF7BC2B764B37050 /* Pods-Tatayaba.debug.xcconfig */,
+				098526F042055BF5306710F02F1DF7E6 /* Pods-Tatayaba.release.xcconfig */,
+			);
+			name = "Pods-Tatayaba";
+			path = "Target Support Files/Pods-Tatayaba";
+			sourceTree = "<group>";
+		};
+		95D1B4F75D4F25791C77334AED04F40A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6B753A71542737C4BFC44E74C86B5578 /* Pods-Tatayaba */,
+				F460CA8BD73F34EF734A91E9BB936B63 /* Pods-TatayabaTests */,
+				F5FFF139B6C6BEEED7584564C0A3F0F9 /* Pods-TatayabaUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				10C436E33FF05669C2A8824CC5EAD413 /* Products */,
+				95D1B4F75D4F25791C77334AED04F40A /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F460CA8BD73F34EF734A91E9BB936B63 /* Pods-TatayabaTests */ = {
+			isa = PBXGroup;
+			children = (
+				2F830D5002E53B0FEF0EE00ACD97205B /* Pods-TatayabaTests.modulemap */,
+				BB5E9F239F3C68BA95ACB391AE6B29BC /* Pods-TatayabaTests-acknowledgements.markdown */,
+				701AA72D5F57CE6177534A40234AD5D6 /* Pods-TatayabaTests-acknowledgements.plist */,
+				5007F1FEADFA0C9C6069B041AC1885E6 /* Pods-TatayabaTests-dummy.m */,
+				922B3089904E5880140969D64BDDCECD /* Pods-TatayabaTests-Info.plist */,
+				A5DEC0F44E133B4AF0DABE1CBB877A03 /* Pods-TatayabaTests-umbrella.h */,
+				0F36AC0712AECBEA7C724EBBDB3053A1 /* Pods-TatayabaTests.debug.xcconfig */,
+				AF2A11A2ADDA32EE3992B6C6B12DDD46 /* Pods-TatayabaTests.release.xcconfig */,
+			);
+			name = "Pods-TatayabaTests";
+			path = "Target Support Files/Pods-TatayabaTests";
+			sourceTree = "<group>";
+		};
+		F5FFF139B6C6BEEED7584564C0A3F0F9 /* Pods-TatayabaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8EAE15AE74EAB733C69CED57A30542F3 /* Pods-TatayabaUITests.modulemap */,
+				DA2608CADEEB09F31AEA29E47A112B9A /* Pods-TatayabaUITests-acknowledgements.markdown */,
+				BF740395BF834ACA78F82FC1EE292D09 /* Pods-TatayabaUITests-acknowledgements.plist */,
+				5D62658D5194E16271B9399B121702F6 /* Pods-TatayabaUITests-dummy.m */,
+				52A7ACB187ACD874C386D826C7257721 /* Pods-TatayabaUITests-Info.plist */,
+				875D13DE4E498A64535598CE0B328C52 /* Pods-TatayabaUITests-umbrella.h */,
+				CEC52A84DB7EB620B84272C66C1AB86B /* Pods-TatayabaUITests.debug.xcconfig */,
+				9854561F073E07E926F3BF2AD5683416 /* Pods-TatayabaUITests.release.xcconfig */,
+			);
+			name = "Pods-TatayabaUITests";
+			path = "Target Support Files/Pods-TatayabaUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		59A86C5F490A9FCFD8E7C8B54B94BEE9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C46AB6AB8F96D30D326406FB508F2AB2 /* Pods-Tatayaba-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1C9BE6893AA8EA4BC6252B0CF725AE7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AA73A6696E8FB22F1CD8ABE2F2E7DEF /* Pods-TatayabaUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A99DA2A3AD73EE9B5FCCDF0F612A8A44 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A2137FA78F3C6931A1E855C0E108A60 /* Pods-TatayabaTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4BFF5577137E9989BDF04DAE8C15A919 /* Pods-Tatayaba */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A08BF407175CA286023E5764D77DA115 /* Build configuration list for PBXNativeTarget "Pods-Tatayaba" */;
+			buildPhases = (
+				59A86C5F490A9FCFD8E7C8B54B94BEE9 /* Headers */,
+				F68B1958D9BEFAEAF8F96F4B6B41FB11 /* Sources */,
+				AC7BFD37D83B61BDE843495F6DB6DE7B /* Frameworks */,
+				EA0B82AC815D9D0F9E9CF1CA81ADD289 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Tatayaba";
+			productName = "Pods-Tatayaba";
+			productReference = F23C7DE17ADEC39DA02F982A884364A0 /* Pods_Tatayaba.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		637E4DBA7360050410DBC8ECC41DB620 /* Pods-TatayabaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DB9804C1AD6C00C6580F9DC5F3D8E41 /* Build configuration list for PBXNativeTarget "Pods-TatayabaTests" */;
+			buildPhases = (
+				A99DA2A3AD73EE9B5FCCDF0F612A8A44 /* Headers */,
+				6DD2E03B7260644A7B6E07BA155083AF /* Sources */,
+				3AE2E50626E1B5439221E8B5FE93DE45 /* Frameworks */,
+				9231B1988E3BC756D7764885AC024639 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D66B907E7DAF13D60025F737987E4E3D /* PBXTargetDependency */,
+			);
+			name = "Pods-TatayabaTests";
+			productName = "Pods-TatayabaTests";
+			productReference = B88ADAEDB9FF6046DA0A5ED62D639C70 /* Pods_TatayabaTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		77D8A1FEE277D346C6EDC34475234669 /* Pods-TatayabaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11362167112BCFF5147465BEB1379BC8 /* Build configuration list for PBXNativeTarget "Pods-TatayabaUITests" */;
+			buildPhases = (
+				A1C9BE6893AA8EA4BC6252B0CF725AE7 /* Headers */,
+				55725EC126DE867B33334A42FFAF51B0 /* Sources */,
+				CB45ACEB3E6D0C4D2A7E8BACE95291D5 /* Frameworks */,
+				08F18312FFF9A2179EC83E29B812FE31 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7324455722DC1D9BD6F6F7728E1141FE /* PBXTargetDependency */,
+			);
+			name = "Pods-TatayabaUITests";
+			productName = "Pods-TatayabaUITests";
+			productReference = 60373BEE58F0CCEDC95C874FF0910FAB /* Pods_TatayabaUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 10C436E33FF05669C2A8824CC5EAD413 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4BFF5577137E9989BDF04DAE8C15A919 /* Pods-Tatayaba */,
+				637E4DBA7360050410DBC8ECC41DB620 /* Pods-TatayabaTests */,
+				77D8A1FEE277D346C6EDC34475234669 /* Pods-TatayabaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		08F18312FFF9A2179EC83E29B812FE31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9231B1988E3BC756D7764885AC024639 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA0B82AC815D9D0F9E9CF1CA81ADD289 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55725EC126DE867B33334A42FFAF51B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A0AA90327183A913FB0E2FD5AF4BB11 /* Pods-TatayabaUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DD2E03B7260644A7B6E07BA155083AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7546B36115C185EF003CF46B4EB20F41 /* Pods-TatayabaTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F68B1958D9BEFAEAF8F96F4B6B41FB11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91D41E3AD69F91FABBF4ED7C373640A1 /* Pods-Tatayaba-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7324455722DC1D9BD6F6F7728E1141FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Tatayaba";
+			target = 4BFF5577137E9989BDF04DAE8C15A919 /* Pods-Tatayaba */;
+			targetProxy = A91D6A0298AD0BFA5B5543D9117B13BC /* PBXContainerItemProxy */;
+		};
+		D66B907E7DAF13D60025F737987E4E3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Tatayaba";
+			target = 4BFF5577137E9989BDF04DAE8C15A919 /* Pods-Tatayaba */;
+			targetProxy = FE4BF5FAE163D1018F5BDBDED9A5B60A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		12AE518088FEF198B3BF460E7C2FC385 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF2A11A2ADDA32EE3992B6C6B12DDD46 /* Pods-TatayabaTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		146F7B713489394B706E1F663D4E892F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9854561F073E07E926F3BF2AD5683416 /* Pods-TatayabaUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2E88DACE9F9AC7B19EBDC52B35CEABFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEC52A84DB7EB620B84272C66C1AB86B /* Pods-TatayabaUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2F55A3566E4E4FC936EAEAB624C33C12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		43741C947829843956EA1C59733AC2FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 098526F042055BF5306710F02F1DF7E6 /* Pods-Tatayaba.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Tatayaba/Pods-Tatayaba-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tatayaba/Pods-Tatayaba.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5686093263680B5829EB961E2161CF62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F36AC0712AECBEA7C724EBBDB3053A1 /* Pods-TatayabaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		959DAB4EC1BE4ADE4B22644C3E349521 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A7D1343A3EE92B74E70F1C56CFAA34C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 646DA86DDFB4D91AFF7BC2B764B37050 /* Pods-Tatayaba.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Tatayaba/Pods-Tatayaba-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tatayaba/Pods-Tatayaba.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11362167112BCFF5147465BEB1379BC8 /* Build configuration list for PBXNativeTarget "Pods-TatayabaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E88DACE9F9AC7B19EBDC52B35CEABFC /* Debug */,
+				146F7B713489394B706E1F663D4E892F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				959DAB4EC1BE4ADE4B22644C3E349521 /* Debug */,
+				2F55A3566E4E4FC936EAEAB624C33C12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DB9804C1AD6C00C6580F9DC5F3D8E41 /* Build configuration list for PBXNativeTarget "Pods-TatayabaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5686093263680B5829EB961E2161CF62 /* Debug */,
+				12AE518088FEF198B3BF460E7C2FC385 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A08BF407175CA286023E5764D77DA115 /* Build configuration list for PBXNativeTarget "Pods-Tatayaba" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7D1343A3EE92B74E70F1C56CFAA34C6 /* Debug */,
+				43741C947829843956EA1C59733AC2FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
