@@ -157,7 +157,6 @@
 		11F52FAB22CA7D92000F0D85 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				11F52FAC22CA7D92000F0D85 /* User.storyboard */,
 				11F52FAD22CA7D92000F0D85 /* SignUp */,
 				11F52FB222CA7D92000F0D85 /* Login */,
 			);
@@ -167,6 +166,7 @@
 		11F52FAD22CA7D92000F0D85 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				11F52FAC22CA7D92000F0D85 /* User.storyboard */,
 				11F52FAE22CA7D92000F0D85 /* ViewModels */,
 				11F52FAF22CA7D92000F0D85 /* Models */,
 				11F52FB022CA7D92000F0D85 /* Views */,
@@ -538,8 +538,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Tatayaba/Pods-Tatayaba-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
@@ -549,8 +547,6 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftValidator/SwiftValidator.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
