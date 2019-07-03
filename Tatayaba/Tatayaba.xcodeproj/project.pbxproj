@@ -28,6 +28,7 @@
 		847CDE8822CA19EE00E67C8C /* ProximaNova-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE8122CA19ED00E67C8C /* ProximaNova-Black.ttf */; };
 		847CDE8922CA19EE00E67C8C /* ProximaNovaT-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE8222CA19EE00E67C8C /* ProximaNovaT-Thin.ttf */; };
 		847CDE8A22CA19EE00E67C8C /* ProximaNova-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE8322CA19EE00E67C8C /* ProximaNova-Bold.ttf */; };
+		84E871DD22CB9F3200C2F46A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E871DC22CB9F3200C2F46A /* Home.storyboard */; };
 		9F7E463258DFBE1064395C51 /* Pods_TatayabaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		847CDE8122CA19ED00E67C8C /* ProximaNova-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Black.ttf"; sourceTree = "<group>"; };
 		847CDE8222CA19EE00E67C8C /* ProximaNovaT-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNovaT-Thin.ttf"; sourceTree = "<group>"; };
 		847CDE8322CA19EE00E67C8C /* ProximaNova-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.ttf"; sourceTree = "<group>"; };
+		84E871DC22CB9F3200C2F46A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		A8251C3E16050691EBDFB247 /* Pods_Tatayaba.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tatayaba.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55E5C982ED14B5FEE4DCD1D /* Pods-TatayabaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaUITests.debug.xcconfig"; path = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E0F8BF293BFC39D47FD4C2EB /* Pods-Tatayaba.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tatayaba.debug.xcconfig"; path = "Target Support Files/Pods-Tatayaba/Pods-Tatayaba.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		11F52FA522CA7D92000F0D85 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84E871DB22CB9F0100C2F46A /* DashBoard */,
 				11F52FA622CA7D92000F0D85 /* Splash */,
 				11F52FAB22CA7D92000F0D85 /* User */,
 			);
@@ -314,6 +317,30 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		84E871DB22CB9F0100C2F46A /* DashBoard */ = {
+			isa = PBXGroup;
+			children = (
+				84E871DF22CB9F5100C2F46A /* Models */,
+				84E871DE22CB9F4800C2F46A /* ViewModels */,
+				84E871DC22CB9F3200C2F46A /* Home.storyboard */,
+			);
+			path = DashBoard;
+			sourceTree = "<group>";
+		};
+		84E871DE22CB9F4800C2F46A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		84E871DF22CB9F5100C2F46A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		9CDE61A50DEA5CDA03008907 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,6 +478,7 @@
 				847CDE4E22C9EE2300E67C8C /* LaunchScreen.storyboard in Resources */,
 				847CDE8922CA19EE00E67C8C /* ProximaNovaT-Thin.ttf in Resources */,
 				847CDE4B22C9EE2300E67C8C /* Assets.xcassets in Resources */,
+				84E871DD22CB9F3200C2F46A /* Home.storyboard in Resources */,
 				847CDE8622CA19EE00E67C8C /* ProximaNova-Light.ttf in Resources */,
 				847CDE8A22CA19EE00E67C8C /* ProximaNova-Bold.ttf in Resources */,
 				847CDE8422CA19EE00E67C8C /* ProximaNova-Regular.ttf in Resources */,
