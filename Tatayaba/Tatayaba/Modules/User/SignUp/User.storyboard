@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0i5-rk-oXs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fIl-z0-QnY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -128,7 +128,7 @@
                                 <color key="tintColor" red="0.9277241826" green="0.7593771815" blue="0.65223062040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Sign in"/>
                                 <connections>
-                                    <segue destination="fIl-z0-QnY" kind="show" id="1Rn-lk-Ayx"/>
+                                    <segue destination="fIl-z0-QnY" kind="push" id="2OH-HV-ZhN"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FullName" translatesAutoresizingMaskIntoConstraints="NO" id="rso-bC-iRM">
@@ -160,6 +160,7 @@
                         <color key="backgroundColor" red="0.12885868549999999" green="0.1070651487" blue="0.20912024379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="xUz-4K-ukz"/>
                     </view>
+                    <navigationItem key="navigationItem" id="jMm-wC-5gP"/>
                     <connections>
                         <outlet property="btn_Submit" destination="Hsg-cn-izm" id="v5L-ZM-wxQ"/>
                         <outlet property="text_EmailID" destination="p1o-Sb-PdO" id="sNr-ro-oEd"/>
@@ -170,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Op-H1-iNe" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="250" y="134"/>
+            <point key="canvasLocation" x="914" y="145"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="1JW-5u-mAf">
@@ -239,7 +240,7 @@
                                 <color key="tintColor" red="0.9277241826" green="0.7593771815" blue="0.65223062040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
-                                    <action selector="signUpAction:" destination="fIl-z0-QnY" eventType="touchUpInside" id="pbw-Yo-vnu"/>
+                                    <segue destination="0i5-rk-oXs" kind="push" id="JQV-5X-VTL"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Password" translatesAutoresizingMaskIntoConstraints="NO" id="Zip-jV-8n6">
@@ -320,6 +321,7 @@
                         <color key="backgroundColor" red="0.12885868549999999" green="0.1070651487" blue="0.20912024379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="uNw-9o-JPf"/>
                     </view>
+                    <navigationItem key="navigationItem" id="coh-r5-aif"/>
                     <connections>
                         <outlet property="emailTextField" destination="uAj-qN-buH" id="iKr-o8-9fs"/>
                         <outlet property="passwordTextField" destination="wBz-kP-Qjb" id="dsa-Y0-MMd"/>
@@ -327,7 +329,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qb1-g6-zMe" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1088.8" y="133.5832083958021"/>
+            <point key="canvasLocation" x="158" y="145"/>
         </scene>
     </scenes>
     <resources>

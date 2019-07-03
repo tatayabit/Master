@@ -21,7 +21,7 @@ class LoginViewController: UIViewController, ValidationDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+     navigationController?.isNavigationBarHidden = true
         registerValidator()
     }
 
@@ -67,6 +67,11 @@ class LoginViewController: UIViewController, ValidationDelegate {
         emailTextField.updateColors()
         passwordTextField.updateColors()
         validator.validate(self)
+ 
+        self.pushToNextViewController(storyboardName: "Home", segueName: "HomeViewController")
+ 
+        
+        
     }
     
 }
