@@ -42,6 +42,12 @@
 		847CDE8822CA19EE00E67C8C /* ProximaNova-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE8122CA19ED00E67C8C /* ProximaNova-Black.ttf */; };
 		847CDE8922CA19EE00E67C8C /* ProximaNovaT-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE8222CA19EE00E67C8C /* ProximaNovaT-Thin.ttf */; };
 		847CDE8A22CA19EE00E67C8C /* ProximaNova-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE8322CA19EE00E67C8C /* ProximaNova-Bold.ttf */; };
+		848E89C122CC99AC000AA24C /* AACarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848E89C022CC99AC000AA24C /* AACarousel.swift */; };
+		848E89C522CCDDBB000AA24C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848E89C422CCDDBB000AA24C /* HomeViewController.swift */; };
+		848E89C822CCE53E000AA24C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848E89C722CCE53E000AA24C /* BaseViewController.swift */; };
+		848E89CC22CCEAAC000AA24C /* FeatureProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848E89CA22CCEAAC000AA24C /* FeatureProductCollectionViewCell.swift */; };
+		848E89CD22CCEAAC000AA24C /* FeatureProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848E89CB22CCEAAC000AA24C /* FeatureProductCollectionViewCell.xib */; };
+		84E871DD22CB9F3200C2F46A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E871DC22CB9F3200C2F46A /* Home.storyboard */; };
 		9F7E463258DFBE1064395C51 /* Pods_TatayabaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +114,12 @@
 		847CDE8122CA19ED00E67C8C /* ProximaNova-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Black.ttf"; sourceTree = "<group>"; };
 		847CDE8222CA19EE00E67C8C /* ProximaNovaT-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNovaT-Thin.ttf"; sourceTree = "<group>"; };
 		847CDE8322CA19EE00E67C8C /* ProximaNova-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.ttf"; sourceTree = "<group>"; };
+		848E89C022CC99AC000AA24C /* AACarousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AACarousel.swift; sourceTree = "<group>"; };
+		848E89C422CCDDBB000AA24C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		848E89C722CCE53E000AA24C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		848E89CA22CCEAAC000AA24C /* FeatureProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		848E89CB22CCEAAC000AA24C /* FeatureProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeatureProductCollectionViewCell.xib; sourceTree = "<group>"; };
+		84E871DC22CB9F3200C2F46A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		A8251C3E16050691EBDFB247 /* Pods_Tatayaba.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tatayaba.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55E5C982ED14B5FEE4DCD1D /* Pods-TatayabaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaUITests.debug.xcconfig"; path = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E0F8BF293BFC39D47FD4C2EB /* Pods-Tatayaba.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tatayaba.debug.xcconfig"; path = "Target Support Files/Pods-Tatayaba/Pods-Tatayaba.debug.xcconfig"; sourceTree = "<group>"; };
@@ -242,6 +254,7 @@
 		11F52FA522CA7D92000F0D85 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84E871DB22CB9F0100C2F46A /* DashBoard */,
 				114D19F922CBAAA3009205F3 /* Products */,
 				11F52FA622CA7D92000F0D85 /* Splash */,
 				11F52FAB22CA7D92000F0D85 /* User */,
@@ -284,7 +297,6 @@
 		11F52FAB22CA7D92000F0D85 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				11F52FAC22CA7D92000F0D85 /* User.storyboard */,
 				11F52FAD22CA7D92000F0D85 /* SignUp */,
 				11F52FB222CA7D92000F0D85 /* Login */,
 			);
@@ -294,6 +306,7 @@
 		11F52FAD22CA7D92000F0D85 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				11F52FAC22CA7D92000F0D85 /* User.storyboard */,
 				11F52FAE22CA7D92000F0D85 /* ViewModels */,
 				11F52FAF22CA7D92000F0D85 /* Models */,
 				11F52FB022CA7D92000F0D85 /* Views */,
@@ -414,6 +427,7 @@
 		847CDE7822CA12EC00E67C8C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				848E89C622CCE520000AA24C /* BaseView */,
 				11D4917822CBCF7A009D8B23 /* Extensions */,
 				847CDE7C22CA19CF00E67C8C /* Font */,
 				847CDE7B22CA192300E67C8C /* Color Codes */,
@@ -442,6 +456,66 @@
 				847CDE8222CA19EE00E67C8C /* ProximaNovaT-Thin.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		848E89C222CCDD37000AA24C /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				848E89C022CC99AC000AA24C /* AACarousel.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		848E89C322CCDD9D000AA24C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				848E89C922CCEA63000AA24C /* CollectionView */,
+				848E89C422CCDDBB000AA24C /* HomeViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		848E89C622CCE520000AA24C /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				848E89C722CCE53E000AA24C /* BaseViewController.swift */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
+		848E89C922CCEA63000AA24C /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				848E89CA22CCEAAC000AA24C /* FeatureProductCollectionViewCell.swift */,
+				848E89CB22CCEAAC000AA24C /* FeatureProductCollectionViewCell.xib */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		84E871DB22CB9F0100C2F46A /* DashBoard */ = {
+			isa = PBXGroup;
+			children = (
+				848E89C322CCDD9D000AA24C /* Views */,
+				848E89C222CCDD37000AA24C /* Support */,
+				84E871DF22CB9F5100C2F46A /* Models */,
+				84E871DE22CB9F4800C2F46A /* ViewModels */,
+				84E871DC22CB9F3200C2F46A /* Home.storyboard */,
+			);
+			path = DashBoard;
+			sourceTree = "<group>";
+		};
+		84E871DE22CB9F4800C2F46A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		84E871DF22CB9F5100C2F46A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9CDE61A50DEA5CDA03008907 /* Frameworks */ = {
@@ -580,7 +654,9 @@
 			files = (
 				847CDE4E22C9EE2300E67C8C /* LaunchScreen.storyboard in Resources */,
 				847CDE8922CA19EE00E67C8C /* ProximaNovaT-Thin.ttf in Resources */,
+				848E89CD22CCEAAC000AA24C /* FeatureProductCollectionViewCell.xib in Resources */,
 				847CDE4B22C9EE2300E67C8C /* Assets.xcassets in Resources */,
+				84E871DD22CB9F3200C2F46A /* Home.storyboard in Resources */,
 				847CDE8622CA19EE00E67C8C /* ProximaNova-Light.ttf in Resources */,
 				114D1A1622CBB27E009205F3 /* ProductCollectionViewCell.xib in Resources */,
 				847CDE8A22CA19EE00E67C8C /* ProximaNova-Bold.ttf in Resources */,
@@ -670,8 +746,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Tatayaba/Pods-Tatayaba-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
@@ -681,8 +755,6 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftValidator/SwiftValidator.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
@@ -707,8 +779,11 @@
 				114D1A1822CBB33E009205F3 /* Product.swift in Sources */,
 				114D1A1522CBB27E009205F3 /* ProductCollectionViewCell.swift in Sources */,
 				114D19FE22CBAAD1009205F3 /* BrandViewController.swift in Sources */,
+				848E89C822CCE53E000AA24C /* BaseViewController.swift in Sources */,
 				11F52FBA22CA7D92000F0D85 /* LoginViewController.swift in Sources */,
 				11D4917A22CBCF8B009D8B23 /* UIView+Extensions.swift in Sources */,
+				848E89C122CC99AC000AA24C /* AACarousel.swift in Sources */,
+				848E89CC22CCEAAC000AA24C /* FeatureProductCollectionViewCell.swift in Sources */,
 				114D1A0722CBB0EA009205F3 /* ConfigurableCell.swift in Sources */,
 				11D4917722CBC3BB009D8B23 /* UIColor+Extension.swift in Sources */,
 				847CDE4922C9EE2300E67C8C /* Tatayaba.xcdatamodeld in Sources */,
@@ -716,6 +791,7 @@
 				11F52FB922CA7D92000F0D85 /* SignUpViewcontroller.swift in Sources */,
 				114D1A0B22CBB12B009205F3 /* CellActionHandler.swift in Sources */,
 				847CDE4122C9EE2300E67C8C /* AppDelegate.swift in Sources */,
+				848E89C522CCDDBB000AA24C /* HomeViewController.swift in Sources */,
 				114D1A0922CBB10D009205F3 /* TableCellConfigutator.swift in Sources */,
 				114D1A1122CBB17B009205F3 /* CollectionCellActionProxy.swift in Sources */,
 				11D4917C22CBD22D009D8B23 /* BrandViewModel.swift in Sources */,

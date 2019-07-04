@@ -26,11 +26,7 @@ class SignUpViewcontroller: UIViewController {
         btn_Submit.layer.cornerRadius = 20
         btn_Submit.layer.borderColor = logo.cgColor
         
-   
-        
-        
-
-       
+ 
     }
 
     override func didReceiveMemoryWarning() {
