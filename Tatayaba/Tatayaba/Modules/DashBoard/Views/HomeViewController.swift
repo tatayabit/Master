@@ -84,5 +84,15 @@ func collectionView(_ collectionView: UICollectionView,
         return 20
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        print(indexPath.row)
+        
+        self.pushToNextViewController(storyboardName: "ProductDetails", segueName: "ProductViewController")
+        
+        
+        
+    }
+    
 }
 
