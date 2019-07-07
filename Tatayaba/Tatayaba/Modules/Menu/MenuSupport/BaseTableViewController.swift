@@ -32,11 +32,10 @@ class BaseTableViewController: UITableViewController {
         }
     }
     
-    func addLeftBarButton() {
+func addLeftBarButton() {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 19, height: 11))
         button.setBackgroundImage(UIImage(named: leftMenuImage), for: .normal)
         button.addTarget(self, action: #selector(self.leftMenuButtonAction(sender:)), for: .touchUpInside)
-        
         let barbutton = UIBarButtonItem(customView: button)
         self.navigationItem.leftBarButtonItem = barbutton
     }

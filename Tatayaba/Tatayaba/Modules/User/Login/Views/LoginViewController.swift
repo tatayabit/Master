@@ -36,8 +36,8 @@ class LoginViewController: BaseViewController, ValidationDelegate {
     func validationSuccessful() {
         print("Validation Success!")
 
-        guard let email = emailTextField.text else { return }
-        guard let password = passwordTextField.text else { return }
+//        guard let email = emailTextField.text else { return }
+//        guard let password = passwordTextField.text else { return }
 
     }
 
@@ -70,7 +70,7 @@ class LoginViewController: BaseViewController, ValidationDelegate {
  
         self.pushToNextViewController(storyboardName: "Home", segueName: "HomeViewController")
         
-      
+
  
         
         
