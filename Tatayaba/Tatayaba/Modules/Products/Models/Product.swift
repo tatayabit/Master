@@ -15,4 +15,22 @@ struct Product {
     var offerPrices: Float = 0.00
     var price: Float = 0.00
     var inWishlist: Bool = false
+
+    init(name: String, description: String, imageUrl: String, offerPrices: Float, price: Float, inWishlist: Bool) {
+        self.name = name
+        self.description = description
+        self.imageUrl = imageUrl
+        self.offerPrices = offerPrices
+        self.price = price
+        self.inWishlist = inWishlist
+    }
+}
+
+extension Product: Codable {
+    enum UserCodingKeys: String, CodingKey {
+        case name
+        case description
+        case imageUrl = "image_url"
+
+    }
 }
