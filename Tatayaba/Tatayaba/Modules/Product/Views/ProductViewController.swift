@@ -38,7 +38,7 @@ class ProductViewController: UIViewController,AACarouselDelegate {
         product_ScrollView.backgroundColor = UIColor.blue
         product_ScrollView.translatesAutoresizingMaskIntoConstraints = false
         
-        for i in 0 ... 10 {
+        for i in 0 ... 10{
             let button = UIButton()
             button.tag = i
             button.backgroundColor = UIColor.darkGray
