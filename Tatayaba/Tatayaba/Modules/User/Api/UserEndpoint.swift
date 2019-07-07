@@ -56,27 +56,22 @@ extension UserEndpoint: TargetType {
         switch self {
         case .signUp(let user):
 
-
-
-
-//        "first_name": user.firstname,
-//        "last_name": user.lastname,
-//        "email": user.email,
-//        "password": user.password,
-//        "user_type": "C",
-//        "company_id": 1,
-//        "status": "A"
-            return .requestParameters(parameters: [ "email": "testxx3221@test.com",
+            return .requestParameters(parameters: [ "email": user.email,
+                                                    "first_name": user.firstname,
+                                                    "last_name": user.lastname,
+                                                    "password": user.password,
                                                     "user_type": "C",
                                                     "company_id": 1,
-                                                    "status": "A",
-                                                    "password": "12345678"
+                                                    "status": "A"
                 ], encoding: JSONEncoding.default)
         }
     }
 
     var headers: [String : String]? {
-        return ["Content-type": "application/json"]
+
+        return ["Content-type": "application/json",
+                "authorization": "Basic ZGV2MkB0YXRheWFiLmNvbTozTjExWDU4STUxZzlZengyMzFnNUdTUDJFMmg2R3Freg=="
+        ]
     }
 
 }
