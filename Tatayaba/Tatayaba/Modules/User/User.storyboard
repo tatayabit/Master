@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fIl-z0-QnY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fIl-z0-QnY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -113,6 +113,9 @@
                                 <state key="normal" title="SIGN UP NOW">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpAction:" destination="0i5-rk-oXs" eventType="touchUpInside" id="izu-1l-ZV3"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Already have an Account?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8h3-Vm-NWD">
                                 <rect key="frame" x="49" y="617" width="181" height="30"/>
@@ -329,14 +332,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qb1-g6-zMe" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="158" y="145"/>
+            <point key="canvasLocation" x="-79" y="287"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Email" width="25" height="25"/>
-        <image name="FullName" width="50" height="50"/>
-        <image name="Password" width="50" height="50"/>
-        <image name="Phone number" width="50" height="50"/>
-        <image name="Signup_Logo" width="75" height="67"/>
+        <image name="Email" width="138.46153259277344" height="138.46153259277344"/>
+        <image name="FullName" width="138.46153259277344" height="138.46153259277344"/>
+        <image name="Password" width="138.46153259277344" height="138.46153259277344"/>
+        <image name="Phone number" width="138.46153259277344" height="138.46153259277344"/>
+        <image name="Signup_Logo" width="150" height="134"/>
     </resources>
 </document>

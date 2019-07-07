@@ -17,6 +17,9 @@ class SignUpViewcontroller: UIViewController {
     @IBOutlet var text_EmailID: UITextField!
     @IBOutlet var text_Password: UITextField!
     @IBOutlet var text_Phonenumber: UITextField!
+
+    let viewModel = SignUpViewModel()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,14 +38,22 @@ class SignUpViewcontroller: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
+    //MARK:- IBActions
+    @IBAction func signUpAction(_ sender: UIButton) {
+        guard let email = text_EmailID.text else { return }
+        guard let password = text_Password.text else { return }
+        guard let firstname = text_FullName.text else { return }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        print("values: \(email), \(password)")
+        let user = User(email: email, firstname: firstname, lastname: firstname, password: password)
+        viewModel.signUp(user: user) { result in
+            switch result {
+            case .success(let loginResult):
+                print(loginResult!)
+            case .failure(let error):
+                print("the error \(error)")
+            }
+        }
     }
-    */
 
 }
