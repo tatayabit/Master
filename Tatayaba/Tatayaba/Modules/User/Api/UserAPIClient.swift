@@ -16,8 +16,14 @@ struct UserAPIClient: APIClient {
 
     static let environment: APIEnvironment = .production
 
-    func signUp(user: User, completion: @escaping (APIResult<User?, MoyaError>) -> Void) {
+    func signUp(user: User, completion: @escaping (APIResult<SignUpResponse?, MoyaError>) -> Void) {
+//        fetch(with: UserEndpoint.signUp(user: user), completion: completion)
+//        fetch(with: UserEndpoint.getProfile(userId: userId), completion: completion)
         fetch(with: UserEndpoint.signUp(user: user), completion: completion)
+    }
+
+    func getProfile(userId: Int, completion: @escaping (APIResult<User?, MoyaError>) -> Void) {
+        fetch(with: UserEndpoint.getProfile(userId: userId), completion: completion)
     }
 
 }
