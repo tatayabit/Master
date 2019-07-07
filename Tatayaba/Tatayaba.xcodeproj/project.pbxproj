@@ -10,6 +10,8 @@
 		053D694C0D5575CB4917A4B5 /* Pods_TatayabaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */; };
 		112654A722D22AD400904FB5 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 112654A622D22AD400904FB5 /* User.storyboard */; };
 		112654A922D25E5B00904FB5 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112654A822D25E5B00904FB5 /* SignUpResponse.swift */; };
+		112654AC22D2691400904FB5 /* ProductsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112654AB22D2691400904FB5 /* ProductsAPIClient.swift */; };
+		112654AE22D2693600904FB5 /* ProductsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112654AD22D2693600904FB5 /* ProductsEndpoint.swift */; };
 		114D19FE22CBAAD1009205F3 /* BrandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114D19FD22CBAAD1009205F3 /* BrandViewController.swift */; };
 		114D1A0022CBAAE2009205F3 /* Products.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 114D19FF22CBAAE2009205F3 /* Products.storyboard */; };
 		114D1A0722CBB0EA009205F3 /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114D1A0622CBB0EA009205F3 /* ConfigurableCell.swift */; };
@@ -91,6 +93,8 @@
 		04B399FC35D3B3B996D93EC1 /* Pods-TatayabaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaUITests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		112654A622D22AD400904FB5 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		112654A822D25E5B00904FB5 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
+		112654AB22D2691400904FB5 /* ProductsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsAPIClient.swift; sourceTree = "<group>"; };
+		112654AD22D2693600904FB5 /* ProductsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsEndpoint.swift; sourceTree = "<group>"; };
 		114D19FD22CBAAD1009205F3 /* BrandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandViewController.swift; sourceTree = "<group>"; };
 		114D19FF22CBAAE2009205F3 /* Products.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Products.storyboard; sourceTree = "<group>"; };
 		114D1A0622CBB0EA009205F3 /* ConfigurableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
@@ -189,6 +193,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		112654AA22D268FA00904FB5 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				112654AB22D2691400904FB5 /* ProductsAPIClient.swift */,
+				112654AD22D2693600904FB5 /* ProductsEndpoint.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
 		114D19F922CBAAA3009205F3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +209,7 @@
 				114D19FC22CBAABA009205F3 /* ViewModels */,
 				114D19FB22CBAAB3009205F3 /* Models */,
 				114D19FA22CBAAAE009205F3 /* Views */,
+				112654AA22D268FA00904FB5 /* Api */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -920,6 +934,7 @@
 				114D1A0F22CBB165009205F3 /* CollectionCellConfigurator.swift in Sources */,
 				84843C1922D08DB000702E40 /* RightSliderViewController.swift in Sources */,
 				114D1A0D22CBB144009205F3 /* TableCellActionProxy.swift in Sources */,
+				112654AC22D2691400904FB5 /* ProductsAPIClient.swift in Sources */,
 				114D1A1822CBB33E009205F3 /* Product.swift in Sources */,
 				11D612A922CE49D1000D42C3 /* UserEndpoint.swift in Sources */,
 				11D612A122CE48F3000D42C3 /* APIResult.swift in Sources */,
@@ -942,6 +957,7 @@
 				84843C1322D08DB000702E40 /* RootViewController.swift in Sources */,
 				11F52FB922CA7D92000F0D85 /* SignUpViewcontroller.swift in Sources */,
 				84843C1522D08DB000702E40 /* BaseTableViewController.swift in Sources */,
+				112654AE22D2693600904FB5 /* ProductsEndpoint.swift in Sources */,
 				114D1A0B22CBB12B009205F3 /* CellActionHandler.swift in Sources */,
 				84B819DF22D1D6F9000DD69A /* ProductViewController.swift in Sources */,
 				847CDE4122C9EE2300E67C8C /* AppDelegate.swift in Sources */,
