@@ -42,6 +42,15 @@
 		847CDE8822CA19EE00E67C8C /* ProximaNova-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE8122CA19ED00E67C8C /* ProximaNova-Black.ttf */; };
 		847CDE8922CA19EE00E67C8C /* ProximaNovaT-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE8222CA19EE00E67C8C /* ProximaNovaT-Thin.ttf */; };
 		847CDE8A22CA19EE00E67C8C /* ProximaNova-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE8322CA19EE00E67C8C /* ProximaNova-Bold.ttf */; };
+		84843C1122D08DB000702E40 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84843C0822D08DAF00702E40 /* BaseTabBarController.swift */; };
+		84843C1222D08DB000702E40 /* LeftSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84843C0922D08DAF00702E40 /* LeftSliderViewController.swift */; };
+		84843C1322D08DB000702E40 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84843C0A22D08DAF00702E40 /* RootViewController.swift */; };
+		84843C1422D08DB000702E40 /* SliderConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84843C0B22D08DAF00702E40 /* SliderConfiguration.swift */; };
+		84843C1522D08DB000702E40 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84843C0C22D08DAF00702E40 /* BaseTableViewController.swift */; };
+		84843C1622D08DB000702E40 /* LeftSliderProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84843C0D22D08DAF00702E40 /* LeftSliderProfileHeaderCell.swift */; };
+		84843C1722D08DB000702E40 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84843C0E22D08DAF00702E40 /* ContainerViewController.swift */; };
+		84843C1822D08DB000702E40 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84843C0F22D08DB000702E40 /* MenuTableViewCell.swift */; };
+		84843C1922D08DB000702E40 /* RightSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84843C1022D08DB000702E40 /* RightSliderViewController.swift */; };
 		848E89C122CC99AC000AA24C /* AACarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848E89C022CC99AC000AA24C /* AACarousel.swift */; };
 		848E89C522CCDDBB000AA24C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848E89C422CCDDBB000AA24C /* HomeViewController.swift */; };
 		848E89C822CCE53E000AA24C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848E89C722CCE53E000AA24C /* BaseViewController.swift */; };
@@ -114,6 +123,15 @@
 		847CDE8122CA19ED00E67C8C /* ProximaNova-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Black.ttf"; sourceTree = "<group>"; };
 		847CDE8222CA19EE00E67C8C /* ProximaNovaT-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNovaT-Thin.ttf"; sourceTree = "<group>"; };
 		847CDE8322CA19EE00E67C8C /* ProximaNova-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.ttf"; sourceTree = "<group>"; };
+		84843C0822D08DAF00702E40 /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		84843C0922D08DAF00702E40 /* LeftSliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSliderViewController.swift; sourceTree = "<group>"; };
+		84843C0A22D08DAF00702E40 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		84843C0B22D08DAF00702E40 /* SliderConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderConfiguration.swift; sourceTree = "<group>"; };
+		84843C0C22D08DAF00702E40 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		84843C0D22D08DAF00702E40 /* LeftSliderProfileHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSliderProfileHeaderCell.swift; sourceTree = "<group>"; };
+		84843C0E22D08DAF00702E40 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		84843C0F22D08DB000702E40 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		84843C1022D08DB000702E40 /* RightSliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightSliderViewController.swift; sourceTree = "<group>"; };
 		848E89C022CC99AC000AA24C /* AACarousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AACarousel.swift; sourceTree = "<group>"; };
 		848E89C422CCDDBB000AA24C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		848E89C722CCE53E000AA24C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +272,7 @@
 		11F52FA522CA7D92000F0D85 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84843C0622D08C7100702E40 /* Menu */,
 				84E871DB22CB9F0100C2F46A /* DashBoard */,
 				114D19F922CBAAA3009205F3 /* Products */,
 				11F52FA622CA7D92000F0D85 /* Splash */,
@@ -368,6 +387,41 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		845A6C4D22D098C9007C0649 /* MenuCells */ = {
+			isa = PBXGroup;
+			children = (
+				845A6C5022D098E6007C0649 /* Right */,
+				845A6C4E22D098D4007C0649 /* Left */,
+			);
+			path = MenuCells;
+			sourceTree = "<group>";
+		};
+		845A6C4E22D098D4007C0649 /* Left */ = {
+			isa = PBXGroup;
+			children = (
+				84843C0D22D08DAF00702E40 /* LeftSliderProfileHeaderCell.swift */,
+			);
+			path = Left;
+			sourceTree = "<group>";
+		};
+		845A6C5022D098E6007C0649 /* Right */ = {
+			isa = PBXGroup;
+			children = (
+				84843C0F22D08DB000702E40 /* MenuTableViewCell.swift */,
+			);
+			path = Right;
+			sourceTree = "<group>";
+		};
+		845A6C5122D09B88007C0649 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84843C0922D08DAF00702E40 /* LeftSliderViewController.swift */,
+				84843C1022D08DB000702E40 /* RightSliderViewController.swift */,
+				84843C0A22D08DAF00702E40 /* RootViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		847CDE3422C9EE2300E67C8C = {
 			isa = PBXGroup;
 			children = (
@@ -456,6 +510,27 @@
 				847CDE8222CA19EE00E67C8C /* ProximaNovaT-Thin.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		84843C0622D08C7100702E40 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				845A6C5122D09B88007C0649 /* Views */,
+				845A6C4D22D098C9007C0649 /* MenuCells */,
+				84843C0722D08C8400702E40 /* MenuSupport */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		84843C0722D08C8400702E40 /* MenuSupport */ = {
+			isa = PBXGroup;
+			children = (
+				84843C0822D08DAF00702E40 /* BaseTabBarController.swift */,
+				84843C0C22D08DAF00702E40 /* BaseTableViewController.swift */,
+				84843C0E22D08DAF00702E40 /* ContainerViewController.swift */,
+				84843C0B22D08DAF00702E40 /* SliderConfiguration.swift */,
+			);
+			path = MenuSupport;
 			sourceTree = "<group>";
 		};
 		848E89C222CCDD37000AA24C /* Support */ = {
@@ -775,11 +850,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				114D1A0F22CBB165009205F3 /* CollectionCellConfigurator.swift in Sources */,
+				84843C1922D08DB000702E40 /* RightSliderViewController.swift in Sources */,
 				114D1A0D22CBB144009205F3 /* TableCellActionProxy.swift in Sources */,
 				114D1A1822CBB33E009205F3 /* Product.swift in Sources */,
 				114D1A1522CBB27E009205F3 /* ProductCollectionViewCell.swift in Sources */,
 				114D19FE22CBAAD1009205F3 /* BrandViewController.swift in Sources */,
 				848E89C822CCE53E000AA24C /* BaseViewController.swift in Sources */,
+				84843C1222D08DB000702E40 /* LeftSliderViewController.swift in Sources */,
 				11F52FBA22CA7D92000F0D85 /* LoginViewController.swift in Sources */,
 				11D4917A22CBCF8B009D8B23 /* UIView+Extensions.swift in Sources */,
 				848E89C122CC99AC000AA24C /* AACarousel.swift in Sources */,
@@ -787,12 +864,19 @@
 				114D1A0722CBB0EA009205F3 /* ConfigurableCell.swift in Sources */,
 				11D4917722CBC3BB009D8B23 /* UIColor+Extension.swift in Sources */,
 				847CDE4922C9EE2300E67C8C /* Tatayaba.xcdatamodeld in Sources */,
+				84843C1822D08DB000702E40 /* MenuTableViewCell.swift in Sources */,
 				847CDE7A22CA130F00E67C8C /* ColorDef.swift in Sources */,
+				84843C1422D08DB000702E40 /* SliderConfiguration.swift in Sources */,
+				84843C1322D08DB000702E40 /* RootViewController.swift in Sources */,
 				11F52FB922CA7D92000F0D85 /* SignUpViewcontroller.swift in Sources */,
+				84843C1522D08DB000702E40 /* BaseTableViewController.swift in Sources */,
 				114D1A0B22CBB12B009205F3 /* CellActionHandler.swift in Sources */,
 				847CDE4122C9EE2300E67C8C /* AppDelegate.swift in Sources */,
+				84843C1122D08DB000702E40 /* BaseTabBarController.swift in Sources */,
+				84843C1722D08DB000702E40 /* ContainerViewController.swift in Sources */,
 				848E89C522CCDDBB000AA24C /* HomeViewController.swift in Sources */,
 				114D1A0922CBB10D009205F3 /* TableCellConfigutator.swift in Sources */,
+				84843C1622D08DB000702E40 /* LeftSliderProfileHeaderCell.swift in Sources */,
 				114D1A1122CBB17B009205F3 /* CollectionCellActionProxy.swift in Sources */,
 				11D4917C22CBD22D009D8B23 /* BrandViewModel.swift in Sources */,
 				11F52FB722CA7D92000F0D85 /* SplashViewController.swift in Sources */,

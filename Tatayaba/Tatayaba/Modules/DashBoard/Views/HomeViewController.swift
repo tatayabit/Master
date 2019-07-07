@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController,AACarouselDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class HomeViewController: BaseViewController,AACarouselDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     
   @IBOutlet weak internal var collectionView: UICollectionView!
@@ -19,7 +19,7 @@ class HomeViewController: UIViewController,AACarouselDelegate,UICollectionViewDe
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.addLeftBarButton()
       self.NavigationBarWithOutBackButton()
         self.collectionView.register(FeatureProductCollectionViewCell.self, forCellWithReuseIdentifier: "ProductCollectionViewCell")
           carousel()
@@ -32,9 +32,9 @@ class HomeViewController: UIViewController,AACarouselDelegate,UICollectionViewDe
         
         
         let pathArray = ["Dashboard",
+                         "ADD",
                          "Dashboard",
-                         "Dashboard",
-                         "Dashboard"]
+                         "ADD"]
         carouselView.delegate = self
         carouselView.setCarouselData(paths: pathArray,  describedTitle: [""], isAutoScroll: true, timer: 1.5 , defaultImage: "Dashboard")
         carouselView.setCarouselOpaque(layer: false, describedTitle: false, pageIndicator: false)

@@ -1,5 +1,5 @@
 //
-//  BaseViewController.swift
+//  BaseTableViewController.swift
 //  Tatayaba
 //
 //  Created by Admin on 03/07/19.
@@ -8,13 +8,15 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
+class BaseTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        self.configureSliderOptions()
+        self.registerForPanGestures()
     }
+    
+    
     func configureSliderOptions() {
         switch  sliderMenuType {
         case .leftOnly:
@@ -31,9 +33,9 @@ class BaseViewController: UIViewController {
     }
     
     func addLeftBarButton() {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 19, height: 13))
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 19, height: 11))
         button.setBackgroundImage(UIImage(named: leftMenuImage), for: .normal)
-        button.addTarget(self, action: #selector(self.leftMenuButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(self.leftMenuButtonAction(sender:)), for: .touchUpInside)
         
         let barbutton = UIBarButtonItem(customView: button)
         self.navigationItem.leftBarButtonItem = barbutton
@@ -42,7 +44,7 @@ class BaseViewController: UIViewController {
     func addRightBarButton() {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 19, height: 13))
         button.setBackgroundImage(UIImage(named: rightMenuImage), for: .normal)
-        button.addTarget(self, action: #selector(self.rightMenuButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(self.rightMenuButtonAction(sender:)), for: .touchUpInside)
         
         let barbutton = UIBarButtonItem(customView: button)
         self.navigationItem.rightBarButtonItem = barbutton
@@ -59,44 +61,20 @@ class BaseViewController: UIViewController {
         self.view.addGestureRecognizer(rightPan)
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     
-    
-
 }
 
-extension UIViewController {
+extension BaseTableViewController {
     
-    func pushToNextViewController (storyboardName : String?,segueName: String?) {
-        let viewController: UIViewController? = UIStoryboard(name:storyboardName!, bundle: nil).instantiateViewController(withIdentifier: segueName!)
-        self.navigationController?.pushViewController(viewController!, animated: true)
-    
-        
-    }
-    
-    func NavigationBarWithOutBackButton(){
-        navigationController?.isNavigationBarHidden = false
-        self.navigationItem.hidesBackButton = true
-        navigationController?.navigationBar.barTintColor = UIColor.white
-        
-    }
-    
-    
-    
-    
-    
-}
-extension BaseViewController {
-    
-    @objc func leftMenuButtonAction () {
+    @objc func leftMenuButtonAction (sender: UIButton) {
         ContainerViewController.sharedInstance.toggleLeftSlider()
     }
     
-    @objc func rightMenuButtonAction () {
+    @objc func rightMenuButtonAction (sender: UIButton) {
         ContainerViewController.sharedInstance.toggleRightSlider()
     }
     
