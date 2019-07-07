@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		053D694C0D5575CB4917A4B5 /* Pods_TatayabaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */; };
+		112654A722D22AD400904FB5 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 112654A622D22AD400904FB5 /* User.storyboard */; };
 		114D19FE22CBAAD1009205F3 /* BrandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114D19FD22CBAAD1009205F3 /* BrandViewController.swift */; };
 		114D1A0022CBAAE2009205F3 /* Products.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 114D19FF22CBAAE2009205F3 /* Products.storyboard */; };
 		114D1A0722CBB0EA009205F3 /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114D1A0622CBB0EA009205F3 /* ConfigurableCell.swift */; };
@@ -22,8 +23,13 @@
 		11D4917722CBC3BB009D8B23 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D4917622CBC3BB009D8B23 /* UIColor+Extension.swift */; };
 		11D4917A22CBCF8B009D8B23 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D4917922CBCF8B009D8B23 /* UIView+Extensions.swift */; };
 		11D4917C22CBD22D009D8B23 /* BrandViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D4917B22CBD22D009D8B23 /* BrandViewModel.swift */; };
+		11D612A022CE48F3000D42C3 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D6129E22CE48F3000D42C3 /* APIClient.swift */; };
+		11D612A122CE48F3000D42C3 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D6129F22CE48F3000D42C3 /* APIResult.swift */; };
+		11D612A322CE4978000D42C3 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D612A222CE4978000D42C3 /* SignUpViewModel.swift */; };
+		11D612A822CE49D1000D42C3 /* UserAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D612A622CE49D1000D42C3 /* UserAPIClient.swift */; };
+		11D612A922CE49D1000D42C3 /* UserEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D612A722CE49D1000D42C3 /* UserEndpoint.swift */; };
+		11D612AC22CE4A05000D42C3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D612AB22CE4A05000D42C3 /* User.swift */; };
 		11F52FB722CA7D92000F0D85 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F52FAA22CA7D92000F0D85 /* SplashViewController.swift */; };
-		11F52FB822CA7D92000F0D85 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F52FAC22CA7D92000F0D85 /* User.storyboard */; };
 		11F52FB922CA7D92000F0D85 /* SignUpViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F52FB122CA7D92000F0D85 /* SignUpViewcontroller.swift */; };
 		11F52FBA22CA7D92000F0D85 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F52FB622CA7D92000F0D85 /* LoginViewController.swift */; };
 		5AB89CC597A882EAAB8E1262 /* Pods_Tatayaba.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8251C3E16050691EBDFB247 /* Pods_Tatayaba.framework */; };
@@ -80,6 +86,7 @@
 /* Begin PBXFileReference section */
 		02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B399FC35D3B3B996D93EC1 /* Pods-TatayabaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaUITests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		112654A622D22AD400904FB5 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		114D19FD22CBAAD1009205F3 /* BrandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandViewController.swift; sourceTree = "<group>"; };
 		114D19FF22CBAAE2009205F3 /* Products.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Products.storyboard; sourceTree = "<group>"; };
 		114D1A0622CBB0EA009205F3 /* ConfigurableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
@@ -94,8 +101,13 @@
 		11D4917622CBC3BB009D8B23 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		11D4917922CBCF8B009D8B23 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		11D4917B22CBD22D009D8B23 /* BrandViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandViewModel.swift; sourceTree = "<group>"; };
+		11D6129E22CE48F3000D42C3 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		11D6129F22CE48F3000D42C3 /* APIResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
+		11D612A222CE4978000D42C3 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		11D612A622CE49D1000D42C3 /* UserAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPIClient.swift; sourceTree = "<group>"; };
+		11D612A722CE49D1000D42C3 /* UserEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEndpoint.swift; sourceTree = "<group>"; };
+		11D612AB22CE4A05000D42C3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		11F52FAA22CA7D92000F0D85 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
-		11F52FAC22CA7D92000F0D85 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		11F52FB122CA7D92000F0D85 /* SignUpViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewcontroller.swift; sourceTree = "<group>"; };
 		11F52FB622CA7D92000F0D85 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		20779A04B1BCECF103C599EE /* Pods-Tatayaba.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tatayaba.release.xcconfig"; path = "Target Support Files/Pods-Tatayaba/Pods-Tatayaba.release.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +222,7 @@
 		114D1A0122CBB09D009205F3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				11D6129D22CE48F3000D42C3 /* Network */,
 				114D1A0222CBB0A4009205F3 /* Views */,
 			);
 			path = Common;
@@ -269,6 +282,40 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		11D6129D22CE48F3000D42C3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				11D6129E22CE48F3000D42C3 /* APIClient.swift */,
+				11D6129F22CE48F3000D42C3 /* APIResult.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		11D612A422CE4986000D42C3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				11D612A222CE4978000D42C3 /* SignUpViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		11D612A522CE49D1000D42C3 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				11D612A622CE49D1000D42C3 /* UserAPIClient.swift */,
+				11D612A722CE49D1000D42C3 /* UserEndpoint.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		11D612AA22CE49EC000D42C3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11D612AB22CE4A05000D42C3 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		11F52FA522CA7D92000F0D85 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,8 +363,11 @@
 		11F52FAB22CA7D92000F0D85 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				112654A622D22AD400904FB5 /* User.storyboard */,
 				11F52FAD22CA7D92000F0D85 /* SignUp */,
 				11F52FB222CA7D92000F0D85 /* Login */,
+				11D612AA22CE49EC000D42C3 /* Models */,
+				11D612A522CE49D1000D42C3 /* Api */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -325,26 +375,10 @@
 		11F52FAD22CA7D92000F0D85 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				11F52FAC22CA7D92000F0D85 /* User.storyboard */,
-				11F52FAE22CA7D92000F0D85 /* ViewModels */,
-				11F52FAF22CA7D92000F0D85 /* Models */,
+				11D612A422CE4986000D42C3 /* ViewModels */,
 				11F52FB022CA7D92000F0D85 /* Views */,
 			);
 			path = SignUp;
-			sourceTree = "<group>";
-		};
-		11F52FAE22CA7D92000F0D85 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		11F52FAF22CA7D92000F0D85 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		11F52FB022CA7D92000F0D85 /* Views */ = {
@@ -359,7 +393,6 @@
 			isa = PBXGroup;
 			children = (
 				11F52FB322CA7D92000F0D85 /* ViewModels */,
-				11F52FB422CA7D92000F0D85 /* Models */,
 				11F52FB522CA7D92000F0D85 /* Views */,
 			);
 			path = Login;
@@ -370,13 +403,6 @@
 			children = (
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		11F52FB422CA7D92000F0D85 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		11F52FB522CA7D92000F0D85 /* Views */ = {
@@ -738,9 +764,9 @@
 				847CDE8422CA19EE00E67C8C /* ProximaNova-Regular.ttf in Resources */,
 				114D1A0022CBAAE2009205F3 /* Products.storyboard in Resources */,
 				847CDE8722CA19EE00E67C8C /* ProximaNova-Semibold.ttf in Resources */,
+				112654A722D22AD400904FB5 /* User.storyboard in Resources */,
 				847CDE8522CA19EE00E67C8C /* ProximaNova-Extrabld.ttf in Resources */,
 				847CDE4622C9EE2300E67C8C /* Main.storyboard in Resources */,
-				11F52FB822CA7D92000F0D85 /* User.storyboard in Resources */,
 				847CDE8822CA19EE00E67C8C /* ProximaNova-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -853,6 +879,9 @@
 				84843C1922D08DB000702E40 /* RightSliderViewController.swift in Sources */,
 				114D1A0D22CBB144009205F3 /* TableCellActionProxy.swift in Sources */,
 				114D1A1822CBB33E009205F3 /* Product.swift in Sources */,
+				11D612A922CE49D1000D42C3 /* UserEndpoint.swift in Sources */,
+				11D612A122CE48F3000D42C3 /* APIResult.swift in Sources */,
+				11D612A822CE49D1000D42C3 /* UserAPIClient.swift in Sources */,
 				114D1A1522CBB27E009205F3 /* ProductCollectionViewCell.swift in Sources */,
 				114D19FE22CBAAD1009205F3 /* BrandViewController.swift in Sources */,
 				848E89C822CCE53E000AA24C /* BaseViewController.swift in Sources */,
@@ -874,11 +903,14 @@
 				847CDE4122C9EE2300E67C8C /* AppDelegate.swift in Sources */,
 				84843C1122D08DB000702E40 /* BaseTabBarController.swift in Sources */,
 				84843C1722D08DB000702E40 /* ContainerViewController.swift in Sources */,
+				11D612AC22CE4A05000D42C3 /* User.swift in Sources */,
 				848E89C522CCDDBB000AA24C /* HomeViewController.swift in Sources */,
 				114D1A0922CBB10D009205F3 /* TableCellConfigutator.swift in Sources */,
 				84843C1622D08DB000702E40 /* LeftSliderProfileHeaderCell.swift in Sources */,
 				114D1A1122CBB17B009205F3 /* CollectionCellActionProxy.swift in Sources */,
 				11D4917C22CBD22D009D8B23 /* BrandViewModel.swift in Sources */,
+				11D612A322CE4978000D42C3 /* SignUpViewModel.swift in Sources */,
+				11D612A022CE48F3000D42C3 /* APIClient.swift in Sources */,
 				11F52FB722CA7D92000F0D85 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
