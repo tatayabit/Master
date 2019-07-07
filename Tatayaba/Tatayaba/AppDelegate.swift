@@ -18,17 +18,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         
-        let storyboard = UIStoryboard(name: "User", bundle: Bundle.main)
-        let destination = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        let navigationController = UINavigationController(rootViewController: destination)
-        self.window!.rootViewController = navigationController
-        navigationController.isNavigationBarHidden = true
+//        let storyboard = UIStoryboard(name: "User", bundle: Bundle.main)
+//        let destination = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+//        let navigationController = UINavigationController(rootViewController: destination)
+//        self.window!.rootViewController = navigationController
+//        navigationController.isNavigationBarHidden = true
         
-        
+        self.loadRootViewController()
         
         
         // Override point for customization after application launch.
         return true
+    }
+    
+    func loadRootViewController() {
+        let controller = ContainerViewController.sharedInstance
+        self.window?.rootViewController = controller
+        self.window?.makeKeyAndVisible()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

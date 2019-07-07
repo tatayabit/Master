@@ -10,7 +10,7 @@ import UIKit
 import SkyFloatingLabelTextField
 import SwiftValidator
 
-class LoginViewController: UIViewController, ValidationDelegate {
+class LoginViewController: BaseViewController, ValidationDelegate {
 
     //MARK:- Properties
 //    private let viewModel = LoginViewModel()
@@ -69,9 +69,14 @@ class LoginViewController: UIViewController, ValidationDelegate {
         validator.validate(self)
  
         self.pushToNextViewController(storyboardName: "Home", segueName: "HomeViewController")
+        
+      
  
         
         
     }
+    
+    
+    
     
 }
