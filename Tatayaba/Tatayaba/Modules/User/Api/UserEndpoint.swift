@@ -63,7 +63,7 @@ extension UserEndpoint: TargetType {
 
             return .requestParameters(parameters: [ "email": user.email ?? "",
                                                     "first_name": user.firstname ?? "",
-                                                    "last_name": user.lastname ?? "",
+//                                                    "last_name": user.lastname ?? "",
                                                     "password": user.password ?? "",
                                                     "user_type": "C",
                                                     "company_id": 1,
