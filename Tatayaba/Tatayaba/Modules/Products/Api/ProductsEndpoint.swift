@@ -10,6 +10,7 @@ import Moya
 
 enum ProductsEndpoint {
     case getProducts
+    case getAllCategories
 }
 
 
@@ -32,13 +33,15 @@ extension ProductsEndpoint: TargetType {
         switch self {
         case .getProducts:
             return "products"
+        case .getAllCategories:
+            return "categories"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .getProducts:
-            return .post
+        case .getProducts, .getAllCategories:
+            return .get
         }
     }
 
@@ -55,6 +58,11 @@ extension ProductsEndpoint: TargetType {
         switch self {
         case .getProducts:
             return .requestPlain
+        case .getAllCategories:
+            return .requestParameters(parameters: [ "items_per_page": 0,
+                                                    "status": "A"
+                ], encoding: URLEncoding.default)
+
         }
     }
 

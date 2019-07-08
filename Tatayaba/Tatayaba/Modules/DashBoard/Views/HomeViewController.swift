@@ -11,23 +11,35 @@ import UIKit
 class HomeViewController: BaseViewController,AACarouselDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     
-  @IBOutlet weak internal var collectionView: UICollectionView!
-    
+    @IBOutlet weak internal var collectionView: UICollectionView!
     @IBOutlet weak var carouselView: AACarousel!
-    func downloadImages(_ url: String, _ index: Int) {
-        
-    }
+
+    private var viewModel = HomeViewModel()
+
+    //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addLeftBarButton()
-      self.NavigationBarWithOutBackButton()
-        self.collectionView.register(FeatureProductCollectionViewCell.self, forCellWithReuseIdentifier: "ProductCollectionViewCell")
-          carousel()
-       
-     
-      
+        setupUI()
+        setupListners()
     }
-    
+
+    func setupListners() {
+        viewModel.onCategoriesListLoad = {
+            // should load the UI of categories here //
+        }
+    }
+    func downloadImages(_ url: String, _ index: Int) {
+
+    }
+
+    // MARK:- SetupUI
+    func setupUI() {
+        self.addLeftBarButton()
+        self.NavigationBarWithOutBackButton()
+        self.collectionView.register(FeatureProductCollectionViewCell.self, forCellWithReuseIdentifier: "ProductCollectionViewCell")
+        carousel()
+    }
+
     func carousel() {
         
         
@@ -40,21 +52,10 @@ class HomeViewController: BaseViewController,AACarouselDelegate,UICollectionView
         carouselView.setCarouselOpaque(layer: false, describedTitle: false, pageIndicator: false)
         carouselView.setCarouselLayout(displayStyle: 0, pageIndicatorPositon: 2, pageIndicatorColor: nil, describedTitleColor: nil, layerColor: nil)
     }
-    
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-   
-
 }
 
 extension HomeViewController {
-
+    //MARK:- CollectionViewDelegate
 func collectionView(_ collectionView: UICollectionView,
                     numberOfItemsInSection section: Int) -> Int {
     
