@@ -1,21 +1,19 @@
 //
-//  UserEndpoint.swift
+//  ProductsEndpoint.swift
 //  Tatayaba
 //
-//  Created by Kareem Kareem on 7/3/19.
+//  Created by Kareem Kareem on 7/7/19.
 //  Copyright © 2019 Shaik. All rights reserved.
 //
 
 import Moya
 
-enum UserEndpoint {
-    case signUp(user: User)
-    //    case login(email: String, password: String)
-    case getProfile(userId: Int)
+enum ProductsEndpoint {
+    case getProducts
 }
 
 
-extension UserEndpoint: TargetType {
+extension ProductsEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
         case .production: return "https://dev2%40tatayab.com:3N11X58I51g9Yzx231g5GSP2E2h6Gqkz@dev2.tatayab.com/api/"
@@ -32,19 +30,15 @@ extension UserEndpoint: TargetType {
 
     var path: String {
         switch self {
-        case .signUp:
-            return "users"
-        case .getProfile(let userId):
-            return "users/\(userId)"
+        case .getProducts:
+            return "products"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .signUp:
+        case .getProducts:
             return .post
-        case .getProfile:
-            return .get
         }
     }
 
@@ -59,17 +53,7 @@ extension UserEndpoint: TargetType {
 
     var task: Task {
         switch self {
-        case .signUp(let user):
-
-            return .requestParameters(parameters: [ "email": user.email ?? "",
-                                                    "first_name": user.firstname ?? "",
-                                                    "last_name": user.lastname ?? "",
-                                                    "password": user.password ?? "",
-                                                    "user_type": "C",
-                                                    "company_id": 1,
-                                                    "status": "A"
-                ], encoding: JSONEncoding.default)
-        case .getProfile:
+        case .getProducts:
             return .requestPlain
         }
     }
