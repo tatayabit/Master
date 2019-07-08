@@ -8,16 +8,19 @@
 
 import UIKit
 
-class BrandViewController: UIViewController, UICollectionViewDelegate {
+class CategoriesViewController: UIViewController, UICollectionViewDelegate {
 
     @IBOutlet weak var productsCollectionView: UICollectionView!
 
-    private let viewModel = BrandViewModel()
+    private let viewModel = CategoriesViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+
+        viewModel.getAllCategories()
+
     }
 
 //    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
