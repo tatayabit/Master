@@ -54,11 +54,11 @@ extension Category: Codable {
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: UserCodingKeys.self)
 
-        try? container.encode(identifier, forKey: .identifier)
-        try? container.encode(parentId, forKey: .parentId)
-        try? container.encode(name, forKey: .name)
-        try? container.encode(productCount, forKey: .productCount)
-        try? container.encode(description, forKey: .description)
+        try container.encode(identifier, forKey: .identifier)
+        try container.encode(parentId, forKey: .parentId)
+        try container.encode(name, forKey: .name)
+        try container.encode(productCount, forKey: .productCount)
+        try container.encode(description, forKey: .description)
 
     }
 }
