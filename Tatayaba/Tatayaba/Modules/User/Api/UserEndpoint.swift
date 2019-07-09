@@ -18,7 +18,7 @@ enum UserEndpoint {
 extension UserEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
-        case .production: return "https://dev2%40tatayab.com:3N11X58I51g9Yzx231g5GSP2E2h6Gqkz@dev2.tatayab.com/api/"
+        case .production: return "https://dev2%40tatayab.com:E970ASsq0e9GmSJ2EX0BLGvskO2UF841@tatayab.com/old_store/api/"
         case .qa: return "http://localhost:3000/"
         case .staging: return "http://localhost:3000/"
         }
@@ -63,7 +63,7 @@ extension UserEndpoint: TargetType {
 
             return .requestParameters(parameters: [ "email": user.email ?? "",
                                                     "first_name": user.firstname ?? "",
-                                                    "last_name": user.lastname ?? "",
+//                                                    "last_name": user.lastname ?? "",
                                                     "password": user.password ?? "",
                                                     "user_type": "C",
                                                     "company_id": 1,
@@ -77,7 +77,7 @@ extension UserEndpoint: TargetType {
     var headers: [String : String]? {
 
         return ["Content-type": "application/json",
-                "authorization": "Basic ZGV2MkB0YXRheWFiLmNvbTozTjExWDU4STUxZzlZengyMzFnNUdTUDJFMmg2R3Freg=="
+                "authorization": "Basic ZGUyQHRhdGF5YWIuY29tOkU5NzBBU3NxMGU5R21TSjJFWDBCTEd2c2tPMlVGODQx=="
         ]
     }
 

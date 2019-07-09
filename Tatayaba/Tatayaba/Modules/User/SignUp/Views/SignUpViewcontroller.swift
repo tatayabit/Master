@@ -59,9 +59,10 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
             switch result {
             case .success(let loginResult):
                 print(loginResult!)
-                // should move to home VC
+                self.pushToNextViewController(storyboardName: "Home", segueName: "HomeViewController")
             case .failure(let error):
                 print("the error \(error)")
+                // should show error alert
             }
         }
     }
