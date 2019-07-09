@@ -27,6 +27,6 @@ struct ProductsAPIClient: APIClient {
     }
 
     func getProductOf(categoryId: Int, page: Int, completion: @escaping (APIResult<ProductsResult?, MoyaError>) -> Void) {
-        fetch(with: ProductsEndpoint.getProductsOfCategory(categoryId: categoryId, page: page), completion: completion)
+        fetch(with: ProductsEndpoint.getProductsOfCategory(categoryId: String(categoryId), page: String(page)), completion: completion)
     }
 }

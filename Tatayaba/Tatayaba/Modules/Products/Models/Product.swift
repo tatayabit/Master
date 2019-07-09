@@ -23,11 +23,11 @@ struct Product {
     var description: String = ""
     var imageUrl: String = ""
     var offerPrices: Float = 0.00
-    var price: Float = 0.00
+    var price: String = ""
     var inWishlist: Bool = false
     var identifier: String = ""
 
-    init(name: String = "" , description: String = "", imageUrl: String = "", offerPrices: Float = 0.00, price: Float = 0.00, inWishlist: Bool = false, identifier: String = "") {
+    init(name: String = "" , description: String = "", imageUrl: String = "", offerPrices: Float = 0.00, price: String = "", inWishlist: Bool = false, identifier: String = "") {
         self.name = name
         self.description = description
         self.imageUrl = imageUrl
@@ -40,7 +40,7 @@ struct Product {
 
 extension Product: Codable {
     enum UserCodingKeys: String, CodingKey {
-        case name
+        case name = "product"
         case description
         case imageUrl = "image_url"
         case offerPrices = ""
@@ -57,7 +57,7 @@ extension Product: Codable {
         description = try container.decodeIfPresent(String.self, forKey: .description) ?? ""
         imageUrl = try container.decodeIfPresent(String.self, forKey: .imageUrl) ?? ""
         offerPrices = try container.decodeIfPresent(Float.self, forKey: .offerPrices) ?? 0.00
-        price = try container.decodeIfPresent(Float.self, forKey: .price) ?? 0.00
+        price = try container.decodeIfPresent(String.self, forKey: .price) ?? ""
         inWishlist = try container.decodeIfPresent(Bool.self, forKey: .inWishlist) ?? false
         identifier = try container.decodeIfPresent(String.self, forKey: .identifier) ?? ""
 
