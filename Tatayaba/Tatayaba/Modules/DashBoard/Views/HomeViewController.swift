@@ -26,6 +26,7 @@ class HomeViewController: BaseViewController,AACarouselDelegate,UICollectionView
     func setupListners() {
         viewModel.onCategoriesListLoad = {
             // should load the UI of categories here //
+            self.viewModel.getProductsOfCategory()
         }
     }
     func downloadImages(_ url: String, _ index: Int) {

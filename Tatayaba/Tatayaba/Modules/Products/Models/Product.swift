@@ -6,7 +6,17 @@
 //  Copyright © 2019 Shaik. All rights reserved.
 //
 
-import Foundation
+struct ProductsResult {
+    var products: [Product]?
+}
+
+extension ProductsResult: Codable {
+    enum ProductsResultKeys: String, CodingKey {
+        case products
+    }
+}
+
+
 
 struct Product {
     var name: String = ""
