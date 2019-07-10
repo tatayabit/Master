@@ -72,10 +72,6 @@
                                     <constraint firstAttribute="height" constant="96" id="OED-kv-dOx"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NwW-Cm-K8b">
-                                <rect key="frame" x="73" y="599" width="226" height="30"/>
-                                <state key="normal" title="4.00 KWD"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdU-ZE-zv3">
                                 <rect key="frame" x="335" y="30" width="25" height="25"/>
                                 <constraints>
@@ -107,8 +103,6 @@
                             <constraint firstItem="Dsq-DG-9z7" firstAttribute="centerX" secondItem="02n-hM-r8d" secondAttribute="centerX" id="3Cq-ko-Vjv"/>
                             <constraint firstItem="RR4-Bu-8Sk" firstAttribute="leading" secondItem="dfL-gS-ENd" secondAttribute="trailing" constant="8" symbolic="YES" id="3Fw-kD-Ers"/>
                             <constraint firstItem="dfL-gS-ENd" firstAttribute="leading" secondItem="Dsq-DG-9z7" secondAttribute="leading" id="Aps-gc-eGo"/>
-                            <constraint firstItem="NwW-Cm-K8b" firstAttribute="leading" secondItem="NAU-w6-Jpl" secondAttribute="leading" constant="73" id="HdB-rm-MvD"/>
-                            <constraint firstItem="NAU-w6-Jpl" firstAttribute="trailing" secondItem="NwW-Cm-K8b" secondAttribute="trailing" constant="76" id="Jbv-CM-ir8"/>
                             <constraint firstItem="a8J-dQ-qoV" firstAttribute="leading" secondItem="NAU-w6-Jpl" secondAttribute="leading" constant="4" id="LAE-NM-PeI"/>
                             <constraint firstItem="a8J-dQ-qoV" firstAttribute="top" secondItem="dfL-gS-ENd" secondAttribute="bottom" constant="10" id="O4w-lT-CLs"/>
                             <constraint firstItem="dfL-gS-ENd" firstAttribute="top" secondItem="Dsq-DG-9z7" secondAttribute="bottom" constant="9" id="PAB-o3-2Dv"/>
@@ -119,7 +113,6 @@
                             <constraint firstItem="dfL-gS-ENd" firstAttribute="top" secondItem="02n-hM-r8d" secondAttribute="top" constant="300" id="kaP-7D-auL"/>
                             <constraint firstItem="dfL-gS-ENd" firstAttribute="leading" secondItem="NAU-w6-Jpl" secondAttribute="leading" constant="4" id="per-sT-G3w"/>
                             <constraint firstAttribute="trailing" secondItem="dfL-gS-ENd" secondAttribute="trailing" constant="89" id="rUA-SG-CAl"/>
-                            <constraint firstItem="NwW-Cm-K8b" firstAttribute="top" secondItem="a8J-dQ-qoV" secondAttribute="bottom" constant="65" id="wqI-eh-Hwm"/>
                             <constraint firstItem="NAU-w6-Jpl" firstAttribute="trailing" secondItem="xdU-ZE-zv3" secondAttribute="trailing" constant="15" id="yYD-gM-gTD"/>
                             <constraint firstItem="NAU-w6-Jpl" firstAttribute="trailing" secondItem="a8J-dQ-qoV" secondAttribute="trailing" constant="3" id="zRs-84-sBR"/>
                         </constraints>
