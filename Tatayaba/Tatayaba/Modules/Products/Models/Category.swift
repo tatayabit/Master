@@ -17,7 +17,7 @@ extension CategoriesResult: Codable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CategoriesResultCodingKeys.self)
-        let categories = try container.decodeIfPresent([Category].self, forKey: .categories)
+        categories = try container.decodeIfPresent([Category].self, forKey: .categories)
     }
 
     func encode(to encoder: Encoder) throws {
