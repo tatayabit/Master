@@ -37,6 +37,8 @@ struct Product {
     var inWishlist: Bool = false
     var identifier: String = ""
 
+    init() {}
+
     init(name: String = "" , description: String = "", imageUrl: String = "", offerPrices: Float = 0.00, price: String = "", inWishlist: Bool = false, identifier: String = "") {
         self.name = name
         self.description = description
