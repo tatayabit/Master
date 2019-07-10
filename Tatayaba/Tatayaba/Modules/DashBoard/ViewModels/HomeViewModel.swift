@@ -17,6 +17,10 @@ class HomeViewModel {
     /// This closure is being called once the categories api fetch
     var onCategoriesListLoad: (() -> ())?
 
+    var categoriesCount: Int {
+        return categoriesList.count
+    }
+
     //MARK:- Init
     init() {
         getAllCategories()
@@ -42,5 +46,11 @@ class HomeViewModel {
                 print("the error \(error)")
             }
         }
+    }
+
+    //MARK:- Categories data
+    func category(at indexPath: IndexPath) -> Category {
+        guard categoriesList.count > 0 else { return Category() }
+        return categoriesList[indexPath.row]
     }
 }

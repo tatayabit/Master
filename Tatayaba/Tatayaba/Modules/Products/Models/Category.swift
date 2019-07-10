@@ -35,6 +35,10 @@ struct Category {
     var productCount: String = ""
     var description: String = ""
 
+    init() {
+
+    }
+    
     init(identifier: String, parentId: String, name: String, productCount: String, description: String) {
         self.identifier = identifier
         self.parentId = parentId

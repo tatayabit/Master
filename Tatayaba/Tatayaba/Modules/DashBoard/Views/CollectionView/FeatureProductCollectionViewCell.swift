@@ -16,4 +16,6 @@ class FeatureProductCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
+
+    
 }
