@@ -11,8 +11,20 @@ struct CategoriesResult {
 }
 
 extension CategoriesResult: Codable {
-    enum CategoriesResultKeys: String, CodingKey {
+    enum CategoriesResultCodingKeys: String, CodingKey {
         case categories
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CategoriesResultCodingKeys.self)
+        categories = try container.decodeIfPresent([Category].self, forKey: .categories)
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CategoriesResultCodingKeys.self)
+
+        try container.encode(categories, forKey: .categories)
+
     }
 }
 
