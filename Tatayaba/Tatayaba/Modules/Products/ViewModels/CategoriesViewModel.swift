@@ -23,4 +23,19 @@ struct CategoriesViewModel {
             }
         }
     }
+
+    func getProductsOfCategory(categoryId: Int, page: Int) {
+        apiClient.getProductOf(categoryId: 52, page: 0) { result in
+            switch result {
+            case .success(let response):
+                guard let productResult = response else { return }
+                guard let products = productResult.products else { return }
+
+                print(products)
+
+            case .failure(let error):
+                print("the error \(error)")
+            }
+        }
+    }
 }

@@ -11,6 +11,8 @@ import Moya
 enum ProductsEndpoint {
     case getProducts
     case getAllCategories
+    case getProductsOfCategory(categoryId: String, page: String)
+    case getProductFeatures
 }
 
 
@@ -35,12 +37,16 @@ extension ProductsEndpoint: TargetType {
             return "products"
         case .getAllCategories:
             return "categories"
+        case .getProductsOfCategory(let categoryId, _):
+            return "categories/\(categoryId.urlEscaped)/products"
+        case .getProductFeatures:
+            return "features"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .getProducts, .getAllCategories:
+        case .getProducts, .getAllCategories, .getProductsOfCategory, .getProductFeatures:
             return .get
         }
     }
@@ -56,13 +62,17 @@ extension ProductsEndpoint: TargetType {
 
     var task: Task {
         switch self {
-        case .getProducts:
+        case .getProducts, .getProductFeatures:
             return .requestPlain
         case .getAllCategories:
             return .requestParameters(parameters: [ "items_per_page": 0,
                                                     "status": "A"
                 ], encoding: URLEncoding.default)
 
+        case .getProductsOfCategory(_, let page):
+            return .requestParameters(parameters: [ "items_per_page": 20,
+                                                    "page": page.urlEscaped
+                ], encoding: URLEncoding.default)
         }
     }
 
