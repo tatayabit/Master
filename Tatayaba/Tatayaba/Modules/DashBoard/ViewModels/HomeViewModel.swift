@@ -13,6 +13,7 @@ class HomeViewModel {
     private let productsApiClient = ProductsAPIClient()
 
     private var categoriesList = [Category]()
+   
 
     /// This closure is being called once the categories api fetch
     var onCategoriesListLoad: (() -> ())?
