@@ -11,11 +11,14 @@ import UIKit
 class FeatureProductCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var product_Images: UIImageView!
+    @IBOutlet var priceLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-
-    
+    func configure(product: Product) {
+        priceLabel.text = product.price
+    }
 }

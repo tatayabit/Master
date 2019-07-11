@@ -12,6 +12,8 @@ class HomeViewController: BaseViewController,AACarouselDelegate,UICollectionView
     
     let buttonPadding:CGFloat = 10
     var xOffset:CGFloat = 10
+    let productDetailsSegue = "product_details_segue"
+
     @IBOutlet weak internal var collectionView: UICollectionView!
     @IBOutlet weak var carouselView: AACarousel!
 
@@ -28,9 +30,13 @@ class HomeViewController: BaseViewController,AACarouselDelegate,UICollectionView
     
     func setupListners() {
         viewModel.onCategoriesListLoad = {
-         
-           
-            
+
+        }
+
+        viewModel.onFeaturedProductsListLoad = {
+            self.collectionView.delegate = self
+            self.collectionView.dataSource = self
+//            self.collectionView.reloadData()
         }
     }
     func downloadImages(_ url: String, _ index: Int) {
@@ -41,7 +47,7 @@ class HomeViewController: BaseViewController,AACarouselDelegate,UICollectionView
     func setupUI() {
         self.addLeftBarButton()
         self.NavigationBarWithOutBackButton()
-        self.collectionView.register(FeatureProductCollectionViewCell.self, forCellWithReuseIdentifier: "ProductCollectionViewCell")
+        self.collectionView.register(FeatureProductCollectionViewCell.nib, forCellWithReuseIdentifier: FeatureProductCollectionViewCell.identifier)
         carousel()
         CategoriesView()
     }
@@ -97,7 +103,7 @@ extension HomeViewController {
 func collectionView(_ collectionView: UICollectionView,
                     numberOfItemsInSection section: Int) -> Int {
     
-        return 5
+        return viewModel.featuredProductsCount
     
     
 }
@@ -105,10 +111,9 @@ func collectionView(_ collectionView: UICollectionView,
                     cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
  
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as! FeatureProductCollectionViewCell
-    
- cell.backgroundColor = .gray
-  
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeatureProductCollectionViewCell.identifier, for: indexPath) as! FeatureProductCollectionViewCell
+    cell.configure(product: viewModel.featuredProduct(at: indexPath))
+
     return cell
 }
 
@@ -127,13 +132,19 @@ func collectionView(_ collectionView: UICollectionView,
         
         print(indexPath.row)
         
+//        self.pushToNextViewController(storyboardName: "ProductDetails", segueName: "ProductViewController")
+       performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
         
-        
-        self.pushToNextViewController(storyboardName: "ProductDetails", segueName: "ProductViewController")
-       
-        
-        
-        
+    }
+
+    //MARK:- Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == productDetailsSegue {
+            let productDetailsVC = segue.destination as! ProductViewController
+            if let indexPath = sender as? IndexPath {
+                productDetailsVC.viewModel = viewModel.productDetailsViewModel(at: indexPath)
+            }
+        }
     }
     
 }
