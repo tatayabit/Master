@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController,AACarouselDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     let buttonPadding:CGFloat = 05
     var xOffset:CGFloat = 15
@@ -93,41 +93,40 @@ class HomeViewController: BaseViewController,AACarouselDelegate,UICollectionView
 
 extension HomeViewController {
     //MARK:- CollectionViewDelegate
-func collectionView(_ collectionView: UICollectionView,
-                    numberOfItemsInSection section: Int) -> Int {
-    
-        return viewModel.featuredProductsCount
-    
-    
-}
-func collectionView(_ collectionView: UICollectionView,
-                    cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    
- 
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeatureProductCollectionViewCell.identifier, for: indexPath) as! FeatureProductCollectionViewCell
-    cell.configure(product: viewModel.featuredProduct(at: indexPath))
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
 
-    return cell
-}
+        return viewModel.featuredProductsCount
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeatureProductCollectionViewCell.identifier, for: indexPath) as! FeatureProductCollectionViewCell
+        cell.configure(product: viewModel.featuredProduct(at: indexPath))
+
+        return cell
+    }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 02, left: 0, bottom: 07, right: 0)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+
         print(indexPath.row)
-        
-//        self.pushToNextViewController(storyboardName: "ProductDetails", segueName: "ProductViewController")
-       performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
-        
+
+        //        self.pushToNextViewController(storyboardName: "ProductDetails", segueName: "ProductViewController")
+        performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
+
     }
 
     //MARK:- Segue
@@ -139,6 +138,6 @@ func collectionView(_ collectionView: UICollectionView,
             }
         }
     }
-    
+
 }
 
