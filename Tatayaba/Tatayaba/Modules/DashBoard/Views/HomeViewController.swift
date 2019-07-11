@@ -48,11 +48,6 @@ class HomeViewController: BaseViewController,AACarouselDelegate,UICollectionView
     
     
     func CategoriesView(){
-        
-        
-        
-        
-        Categories_Scroll.backgroundColor = .red
         Categories_Scroll.translatesAutoresizingMaskIntoConstraints = false
         
         for i in 0 ... 10{
@@ -61,8 +56,10 @@ class HomeViewController: BaseViewController,AACarouselDelegate,UICollectionView
             button.backgroundColor = UIColor.darkGray
             button.setTitle("\(i)", for: .normal)
             button.layer.cornerRadius = 0.5 * button.bounds.size.width
-            button.layer.borderColor = UIColor.lightGray.cgColor
-            button.layer.borderWidth = 1.0
+            let brown = UIColor.brandBrown
+            button.layer.borderColor = brown.cgColor
+            button.layer.borderWidth = 2.0 //
+            button.setImage(UIImage(named: "perfume_image"), for: .normal)
             button.clipsToBounds = true
             button.frame = CGRect(x: xOffset, y: CGFloat(buttonPadding), width: 70, height: 70)
             

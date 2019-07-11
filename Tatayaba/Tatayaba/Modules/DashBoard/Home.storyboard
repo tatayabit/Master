@@ -24,10 +24,8 @@
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IjG-5C-lba">
                                         <rect key="frame" x="0.0" y="2" width="368" height="74"/>
-                                        <color key="backgroundColor" red="0.4059832484" green="0.060370091690000002" blue="0.56207561490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </scrollView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="IjG-5C-lba" firstAttribute="top" secondItem="X4d-80-F7m" secondAttribute="top" constant="2" id="4eC-GA-NYT"/>
                                     <constraint firstAttribute="width" secondItem="X4d-80-F7m" secondAttribute="height" multiplier="368:107" constant="106.61682242990656" id="4wd-bx-xd4"/>
