@@ -12,6 +12,8 @@ class HomeViewController: BaseViewController,AACarouselDelegate,UICollectionView
     
     let buttonPadding:CGFloat = 10
     var xOffset:CGFloat = 10
+    let productDetailsSegue = "product_details_segue"
+
     @IBOutlet weak internal var collectionView: UICollectionView!
     @IBOutlet weak var carouselView: AACarousel!
 
@@ -130,11 +132,19 @@ func collectionView(_ collectionView: UICollectionView,
         
         print(indexPath.row)
         
-        self.pushToNextViewController(storyboardName: "ProductDetails", segueName: "ProductViewController")
-       
+//        self.pushToNextViewController(storyboardName: "ProductDetails", segueName: "ProductViewController")
+       performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
         
-        
-        
+    }
+
+    //MARK:- Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == productDetailsSegue {
+            let productDetailsVC = segue.destination as! ProductViewController
+            if let indexPath = sender as? IndexPath {
+                productDetailsVC.viewModel = viewModel.productDetailsViewModel(at: indexPath)
+            }
+        }
     }
     
 }

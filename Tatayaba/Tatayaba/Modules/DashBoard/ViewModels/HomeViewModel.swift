@@ -89,4 +89,10 @@ class HomeViewModel {
         guard featuredProductsList.count > 0 else { return Product() }
         return featuredProductsList[indexPath.row]
     }
+
+    //MARK:- ProductDetails ViewModel
+    func productDetailsViewModel(at indexPath: IndexPath) -> ProductDetailsViewModel {
+        let productViewModel = ProductDetailsViewModel(product: featuredProduct(at: indexPath))
+        return productViewModel
+    }
 }
