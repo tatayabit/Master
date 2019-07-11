@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wishlist View Controller-->
+        <scene sceneID="IVC-eb-RbL">
+            <objects>
+                <viewController storyboardIdentifier="WishlistViewController" id="Fgd-MM-Bl1" customClass="WishlistViewController" customModule="Tatayaba" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U5z-F1-ivl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mmo-cw-R2g">
+                                <rect key="frame" x="2" y="24" width="371" height="639"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="3" id="UoU-wj-XJ4">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="mmo-cw-R2g" firstAttribute="leading" secondItem="LVo-Cn-uTK" secondAttribute="leading" constant="2" id="cSR-TI-nu1"/>
+                            <constraint firstItem="LVo-Cn-uTK" firstAttribute="trailing" secondItem="mmo-cw-R2g" secondAttribute="trailing" constant="2" id="ep5-q5-rjs"/>
+                            <constraint firstItem="mmo-cw-R2g" firstAttribute="top" secondItem="LVo-Cn-uTK" secondAttribute="top" constant="4" id="fbO-9o-qtP"/>
+                            <constraint firstItem="LVo-Cn-uTK" firstAttribute="bottom" secondItem="mmo-cw-R2g" secondAttribute="bottom" constant="4" id="npx-hw-QEf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LVo-Cn-uTK"/>
+                    </view>
+                    <connections>
+                        <outlet property="wishlistCollectionView" destination="mmo-cw-R2g" id="5L5-bs-UTV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="grI-Bo-Sbp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="97" y="-15"/>
+        </scene>
+    </scenes>
+</document>
