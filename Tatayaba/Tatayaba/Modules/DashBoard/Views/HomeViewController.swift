@@ -10,8 +10,8 @@ import UIKit
 
 class HomeViewController: BaseViewController,AACarouselDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
-    let buttonPadding:CGFloat = 10
-    var xOffset:CGFloat = 10
+    let buttonPadding:CGFloat = 05
+    var xOffset:CGFloat = 15
     let productDetailsSegue = "product_details_segue"
 
     @IBOutlet weak internal var collectionView: UICollectionView!
@@ -55,7 +55,6 @@ class HomeViewController: BaseViewController,AACarouselDelegate,UICollectionView
     
     func CategoriesView(){
         Categories_Scroll.translatesAutoresizingMaskIntoConstraints = false
-        
         for i in 0 ... 10{
             let button = UIButton()
             button.tag = i
@@ -69,7 +68,7 @@ class HomeViewController: BaseViewController,AACarouselDelegate,UICollectionView
             button.clipsToBounds = true
             button.frame = CGRect(x: xOffset, y: CGFloat(buttonPadding), width: 70, height: 70)
             
-            xOffset = xOffset + CGFloat(buttonPadding) + button.frame.size.width
+            xOffset = xOffset + CGFloat(buttonPadding) + button.frame.size.width+15
             Categories_Scroll.addSubview(button)
             button.layer.cornerRadius = button.frame.width/2
             
@@ -79,11 +78,9 @@ class HomeViewController: BaseViewController,AACarouselDelegate,UICollectionView
     }
     
     
-    
 
     func carousel() {
-        
-        
+
         let pathArray = ["Dashboard",
                          "ADD",
                          "Dashboard",
@@ -115,7 +112,7 @@ func collectionView(_ collectionView: UICollectionView,
 }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 07, left: 0, bottom: 07, right: 0)
+        return UIEdgeInsets(top: 02, left: 0, bottom: 07, right: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

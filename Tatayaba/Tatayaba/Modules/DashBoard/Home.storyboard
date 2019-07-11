@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,11 +19,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4d-80-F7m">
-                                <rect key="frame" x="4" y="20" width="368" height="76"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4d-80-F7m">
+                                <rect key="frame" x="4" y="7" width="368" height="76"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IjG-5C-lba">
                                         <rect key="frame" x="0.0" y="2" width="368" height="74"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="74" id="gVP-fq-qb3"/>
+                                        </constraints>
                                     </scrollView>
                                 </subviews>
                                 <constraints>
@@ -75,28 +79,29 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="X4d-80-F7m" firstAttribute="top" secondItem="7FN-wO-Io4" secondAttribute="top" id="6AL-IV-q4A"/>
+                            <constraint firstItem="X4d-80-F7m" firstAttribute="top" secondItem="7FN-wO-Io4" secondAttribute="top" constant="-13" id="6AL-IV-q4A"/>
                             <constraint firstItem="4M4-Z9-c78" firstAttribute="leading" secondItem="7FN-wO-Io4" secondAttribute="leading" constant="4" id="9lJ-mD-3vI"/>
                             <constraint firstAttribute="bottom" secondItem="ecq-92-wgi" secondAttribute="bottom" constant="9" id="Dc4-sZ-nic"/>
                             <constraint firstItem="4M4-Z9-c78" firstAttribute="top" secondItem="KR5-SS-R1y" secondAttribute="bottom" constant="8" symbolic="YES" id="EOy-MF-4PL"/>
                             <constraint firstItem="7FN-wO-Io4" firstAttribute="trailing" secondItem="X4d-80-F7m" secondAttribute="trailing" constant="3" id="Gt7-f9-TTy"/>
-                            <constraint firstItem="KR5-SS-R1y" firstAttribute="centerX" secondItem="X4d-80-F7m" secondAttribute="centerX" id="NwU-uz-tfr"/>
                             <constraint firstItem="KR5-SS-R1y" firstAttribute="leading" secondItem="4M4-Z9-c78" secondAttribute="leading" id="PTc-A9-5qY"/>
                             <constraint firstItem="KR5-SS-R1y" firstAttribute="top" secondItem="7FN-wO-Io4" secondAttribute="top" constant="91" id="RS0-si-bni"/>
                             <constraint firstItem="4M4-Z9-c78" firstAttribute="leading" secondItem="ecq-92-wgi" secondAttribute="leading" id="Six-Zx-mWg"/>
                             <constraint firstItem="ecq-92-wgi" firstAttribute="top" secondItem="4M4-Z9-c78" secondAttribute="bottom" constant="8" symbolic="YES" id="Xyo-zL-iHu"/>
+                            <constraint firstItem="X4d-80-F7m" firstAttribute="top" secondItem="7FN-wO-Io4" secondAttribute="top" constant="-13" id="cjf-Er-EpE"/>
                             <constraint firstItem="ecq-92-wgi" firstAttribute="trailing" secondItem="X4d-80-F7m" secondAttribute="trailing" id="gUN-b5-hCi"/>
                             <constraint firstItem="7FN-wO-Io4" firstAttribute="trailing" secondItem="X4d-80-F7m" secondAttribute="trailing" constant="3" id="jOD-wq-cCs"/>
                             <constraint firstItem="KR5-SS-R1y" firstAttribute="leading" secondItem="X4d-80-F7m" secondAttribute="leading" id="kKa-Nz-zbx"/>
                             <constraint firstItem="KR5-SS-R1y" firstAttribute="leading" secondItem="7FN-wO-Io4" secondAttribute="leading" constant="4" id="kw7-qP-Fx3"/>
                             <constraint firstItem="X4d-80-F7m" firstAttribute="leading" secondItem="7FN-wO-Io4" secondAttribute="leading" constant="4" id="m4Z-dN-NXW"/>
+                            <constraint firstItem="KR5-SS-R1y" firstAttribute="trailing" secondItem="X4d-80-F7m" secondAttribute="trailing" id="rJd-E7-Dev"/>
                             <constraint firstItem="7FN-wO-Io4" firstAttribute="trailing" secondItem="4M4-Z9-c78" secondAttribute="trailing" constant="5" id="tQo-V7-hiS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7FN-wO-Io4"/>
                     </view>
                     <navigationItem key="navigationItem" title="TATAYAB" id="2gg-SA-nQx"/>
                     <connections>
-                        <outlet property="Categories_Scroll" destination="IjG-5C-lba" id="B4T-pM-xr5"/>
+                        <outlet property="Categories_Scroll" destination="IjG-5C-lba" id="w0f-bm-Dop"/>
                         <outlet property="carouselView" destination="KR5-SS-R1y" id="xCz-ox-UfB"/>
                         <outlet property="collectionView" destination="ecq-92-wgi" id="uLg-Cu-JLN"/>
                         <segue destination="QAy-a0-mKT" kind="show" identifier="product_details_segue" id="iZN-6c-1wt"/>
@@ -116,6 +121,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Ad" width="177.36000061035156" height="36.479999542236328"/>
+        <image name="Ad" width="369" height="76"/>
     </resources>
 </document>
