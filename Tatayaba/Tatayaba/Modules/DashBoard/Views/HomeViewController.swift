@@ -61,8 +61,7 @@ class HomeViewController: BaseViewController,AACarouselDelegate,UICollectionView
             button.backgroundColor = UIColor.darkGray
             button.setTitle("\(i)", for: .normal)
             button.layer.cornerRadius = 0.5 * button.bounds.size.width
-            let brown = UIColor.brandBrown
-            button.layer.borderColor = brown.cgColor
+            button.layer.borderColor = UIColor.brandBrown.cgColor
             button.layer.borderWidth = 2.0 //
             button.setImage(UIImage(named: "perfume_image"), for: .normal)
             button.clipsToBounds = true

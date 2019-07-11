@@ -11,8 +11,12 @@ struct ProductDetailsViewModel {
     private var recommendedList = [Product]()
 
     var name: String { return product.name }
-    var description: String { return product.description }
-    var price: String { return product.price }
+    var description: String {
+        if product.description.isEmpty {
+            return "This is product is one of our best sellers"
+        }
+        return product.description }
+    var price: String { return product.price.formattedPrice }
 
     var selectedQuantity: Int
 
