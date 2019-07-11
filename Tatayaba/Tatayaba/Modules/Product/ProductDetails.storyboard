@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R5I-rt-56k">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -52,9 +52,30 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RR4-Bu-8Sk">
                                 <rect key="frame" x="294" y="300" width="77" height="96"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QTY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8z-cl-rrO">
-                                        <rect key="frame" x="18" y="1" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44l-zk-TPK">
+                                        <rect key="frame" x="21" y="18.5" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="ZY5-Pu-t2U"/>
+                                            <constraint firstAttribute="width" constant="35" id="pSO-iX-K7W"/>
+                                        </constraints>
+                                        <state key="normal" image="up-arrow"/>
+                                        <connections>
+                                            <action selector="increaseQuantity:" destination="R5I-rt-56k" eventType="touchUpInside" id="sDU-3Q-diF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3j-ai-GVw">
+                                        <rect key="frame" x="21" y="61" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="HQc-Qu-iSE"/>
+                                            <constraint firstAttribute="width" constant="35" id="iVG-PR-7Zp"/>
+                                        </constraints>
+                                        <state key="normal" image="down-arrow"/>
+                                        <connections>
+                                            <action selector="decreaseQuantity:" destination="R5I-rt-56k" eventType="touchUpInside" id="nvw-Ns-OiO"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QTY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8z-cl-rrO">
+                                        <rect key="frame" x="3" y="1" width="71" height="17.5"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -69,7 +90,14 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="b8z-cl-rrO" secondAttribute="trailing" constant="3" id="9yT-S0-Ewk"/>
+                                    <constraint firstItem="44l-zk-TPK" firstAttribute="centerX" secondItem="K3j-ai-GVw" secondAttribute="centerX" id="Aps-iJ-BwL"/>
+                                    <constraint firstItem="b8z-cl-rrO" firstAttribute="leading" secondItem="RR4-Bu-8Sk" secondAttribute="leading" constant="3" id="JA0-n3-I4r"/>
                                     <constraint firstAttribute="height" constant="96" id="OED-kv-dOx"/>
+                                    <constraint firstItem="44l-zk-TPK" firstAttribute="top" secondItem="b8z-cl-rrO" secondAttribute="bottom" id="aoQ-Uy-uYX"/>
+                                    <constraint firstItem="K3j-ai-GVw" firstAttribute="centerX" secondItem="RR4-Bu-8Sk" secondAttribute="centerX" id="hJU-ba-zl1"/>
+                                    <constraint firstItem="b8z-cl-rrO" firstAttribute="top" secondItem="RR4-Bu-8Sk" secondAttribute="top" constant="1" id="ybH-hj-Y9v"/>
+                                    <constraint firstAttribute="bottom" secondItem="K3j-ai-GVw" secondAttribute="bottom" id="zx8-Ve-9ut"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdU-ZE-zv3">
@@ -97,10 +125,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jG9-WS-qtY">
-                                <rect key="frame" x="3" y="540" width="368" height="128"/>
+                                <rect key="frame" x="4" y="540" width="367" height="128"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjz-A3-HRP">
-                                        <rect key="frame" x="3" y="3" width="365" height="120"/>
+                                        <rect key="frame" x="3" y="3" width="364" height="120"/>
                                     </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -146,8 +174,13 @@
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="ProductcarouselView" destination="Dsq-DG-9z7" id="gKT-zj-4xd"/>
+                        <outlet property="descriptionLabel" destination="Rz9-4d-ChQ" id="1VJ-Yu-kJx"/>
+                        <outlet property="downButton" destination="K3j-ai-GVw" id="cdJ-nc-Q7c"/>
+                        <outlet property="priceButton" destination="Wj0-c8-vtN" id="IWK-5f-3I2"/>
                         <outlet property="product_ScrollView" destination="PWW-27-h37" id="q0R-7h-GMF"/>
+                        <outlet property="quantityLabel" destination="fV4-7R-fTq" id="Dd1-zQ-3bj"/>
                         <outlet property="recommended_Scrollview" destination="cjz-A3-HRP" id="ZkY-OX-Crc"/>
+                        <outlet property="upButton" destination="44l-zk-TPK" id="x0k-Vm-YzV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vIE-Qi-SLE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -156,6 +189,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="like_active_icon" width="11" height="10"/>
+        <image name="down-arrow" width="50" height="50"/>
+        <image name="like_active_icon" width="11" height="10.5"/>
+        <image name="up-arrow" width="50" height="50"/>
     </resources>
 </document>

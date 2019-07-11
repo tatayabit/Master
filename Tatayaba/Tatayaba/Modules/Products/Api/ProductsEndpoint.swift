@@ -40,7 +40,7 @@ extension ProductsEndpoint: TargetType {
         case .getProductsOfCategory(let categoryId, _):
             return "categories/\(categoryId.urlEscaped)/products"
         case .getProductFeatures:
-            return "features"
+            return "categories/268/products"
         }
     }
 
@@ -62,7 +62,7 @@ extension ProductsEndpoint: TargetType {
 
     var task: Task {
         switch self {
-        case .getProducts, .getProductFeatures:
+        case .getProducts:
             return .requestPlain
         case .getAllCategories:
             return .requestParameters(parameters: [ "items_per_page": 0,
@@ -72,6 +72,10 @@ extension ProductsEndpoint: TargetType {
         case .getProductsOfCategory(_, let page):
             return .requestParameters(parameters: [ "items_per_page": 20,
                                                     "page": page.urlEscaped
+                ], encoding: URLEncoding.default)
+
+        case .getProductFeatures:
+            return .requestParameters(parameters: [ "items_per_page": 10
                 ], encoding: URLEncoding.default)
         }
     }
