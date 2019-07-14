@@ -12,6 +12,11 @@
 		11081EEA22DB823200B68EA5 /* Static.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11081EE922DB823200B68EA5 /* Static.storyboard */; };
 		11081EEC22DB824600B68EA5 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11081EEB22DB824600B68EA5 /* AboutUsViewController.swift */; };
 		11081EEF22DB829200B68EA5 /* AboutUsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11081EEE22DB829200B68EA5 /* AboutUsViewModel.swift */; };
+		11081EF422DB89F600B68EA5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11081EF322DB89F600B68EA5 /* ProfileViewController.swift */; };
+		11081EF622DB8A1600B68EA5 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11081EF522DB8A1600B68EA5 /* ProfileViewModel.swift */; };
+		11081EF822DB8CD800B68EA5 /* StackedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11081EF722DB8CD800B68EA5 /* StackedScrollView.swift */; };
+		11081EFB22DB8F4900B68EA5 /* ProfileDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11081EFA22DB8F4900B68EA5 /* ProfileDetailsView.swift */; };
+		11081EFD22DB8F5500B68EA5 /* ProfileDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11081EFC22DB8F5500B68EA5 /* ProfileDetailsView.xib */; };
 		1119174622D6020600D8E5A9 /* CategoryTempCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1119174422D6020600D8E5A9 /* CategoryTempCollectionViewCell.swift */; };
 		1119174722D6020600D8E5A9 /* CategoryTempCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1119174522D6020600D8E5A9 /* CategoryTempCollectionViewCell.xib */; };
 		112654A722D22AD400904FB5 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 112654A622D22AD400904FB5 /* User.storyboard */; };
@@ -109,6 +114,11 @@
 		11081EE922DB823200B68EA5 /* Static.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Static.storyboard; sourceTree = "<group>"; };
 		11081EEB22DB824600B68EA5 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		11081EEE22DB829200B68EA5 /* AboutUsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewModel.swift; sourceTree = "<group>"; };
+		11081EF322DB89F600B68EA5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		11081EF522DB8A1600B68EA5 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		11081EF722DB8CD800B68EA5 /* StackedScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackedScrollView.swift; sourceTree = "<group>"; };
+		11081EFA22DB8F4900B68EA5 /* ProfileDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsView.swift; sourceTree = "<group>"; };
+		11081EFC22DB8F5500B68EA5 /* ProfileDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileDetailsView.xib; sourceTree = "<group>"; };
 		1119174422D6020600D8E5A9 /* CategoryTempCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTempCollectionViewCell.swift; sourceTree = "<group>"; };
 		1119174522D6020600D8E5A9 /* CategoryTempCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTempCollectionViewCell.xib; sourceTree = "<group>"; };
 		112654A622D22AD400904FB5 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
@@ -263,6 +273,41 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
+		11081EF022DB89C900B68EA5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				11081EF222DB89DF00B68EA5 /* ViewModels */,
+				11081EF122DB89D900B68EA5 /* Views */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		11081EF122DB89D900B68EA5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				11081EF922DB8F1D00B68EA5 /* CustomViews */,
+				11081EF322DB89F600B68EA5 /* ProfileViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		11081EF222DB89DF00B68EA5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				11081EF522DB8A1600B68EA5 /* ProfileViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		11081EF922DB8F1D00B68EA5 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				11081EFA22DB8F4900B68EA5 /* ProfileDetailsView.swift */,
+				11081EFC22DB8F5500B68EA5 /* ProfileDetailsView.xib */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		112654AA22D268FA00904FB5 /* Api */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +382,7 @@
 		114D1A0222CBB0A4009205F3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				11081EF722DB8CD800B68EA5 /* StackedScrollView.swift */,
 				114D1A0422CBB0C1009205F3 /* CollectionCellConfigurator */,
 				114D1A0322CBB0AE009205F3 /* TableCellConfigutator */,
 			);
@@ -534,6 +580,7 @@
 			isa = PBXGroup;
 			children = (
 				112654A622D22AD400904FB5 /* User.storyboard */,
+				11081EF022DB89C900B68EA5 /* Profile */,
 				11F52FAD22CA7D92000F0D85 /* SignUp */,
 				11F52FB222CA7D92000F0D85 /* Login */,
 				11D612AA22CE49EC000D42C3 /* Models */,
@@ -945,6 +992,7 @@
 				11081EEA22DB823200B68EA5 /* Static.storyboard in Resources */,
 				847CDE8722CA19EE00E67C8C /* ProximaNova-Semibold.ttf in Resources */,
 				112654A722D22AD400904FB5 /* User.storyboard in Resources */,
+				11081EFD22DB8F5500B68EA5 /* ProfileDetailsView.xib in Resources */,
 				847CDE8522CA19EE00E67C8C /* ProximaNova-Extrabld.ttf in Resources */,
 				11A8B15D22D7943D001B2661 /* WishlistCollectionViewCell.xib in Resources */,
 				1119174722D6020600D8E5A9 /* CategoryTempCollectionViewCell.xib in Resources */,
@@ -1067,8 +1115,11 @@
 				114D1A1822CBB33E009205F3 /* Product.swift in Sources */,
 				11D612A922CE49D1000D42C3 /* UserEndpoint.swift in Sources */,
 				11D612A122CE48F3000D42C3 /* APIResult.swift in Sources */,
+				11081EF422DB89F600B68EA5 /* ProfileViewController.swift in Sources */,
+				11081EF822DB8CD800B68EA5 /* StackedScrollView.swift in Sources */,
 				11D612A822CE49D1000D42C3 /* UserAPIClient.swift in Sources */,
 				114D1A1522CBB27E009205F3 /* ProductCollectionViewCell.swift in Sources */,
+				11081EF622DB8A1600B68EA5 /* ProfileViewModel.swift in Sources */,
 				848E89C822CCE53E000AA24C /* BaseViewController.swift in Sources */,
 				1100421122D4F3520099AE64 /* String+Extensions.swift in Sources */,
 				84843C1222D08DB000702E40 /* LeftSliderViewController.swift in Sources */,
@@ -1080,6 +1131,7 @@
 				1119174622D6020600D8E5A9 /* CategoryTempCollectionViewCell.swift in Sources */,
 				112654A922D25E5B00904FB5 /* SignUpResponse.swift in Sources */,
 				11D4917722CBC3BB009D8B23 /* UIColor+Extension.swift in Sources */,
+				11081EFB22DB8F4900B68EA5 /* ProfileDetailsView.swift in Sources */,
 				847CDE4922C9EE2300E67C8C /* Tatayaba.xcdatamodeld in Sources */,
 				84843C1822D08DB000702E40 /* MenuTableViewCell.swift in Sources */,
 				847CDE7A22CA130F00E67C8C /* ColorDef.swift in Sources */,

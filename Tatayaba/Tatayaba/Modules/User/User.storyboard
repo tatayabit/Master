@@ -223,6 +223,47 @@
             </objects>
             <point key="canvasLocation" x="914" y="145"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="fcU-Ux-jCb">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="Ocd-ae-jVx" customClass="ProfileViewController" customModule="Tatayaba" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zf1-hj-68i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ijs-o7-6px" customClass="StackedScrollView" customModule="Tatayaba" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="67" width="375" height="580"/>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROFILE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLJ-f0-ngZ">
+                                <rect key="frame" x="20" y="32" width="335" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="72G-z6-EIy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ijs-o7-6px" firstAttribute="top" secondItem="jLJ-f0-ngZ" secondAttribute="bottom" constant="12" id="05V-p1-14u"/>
+                            <constraint firstItem="gcm-ld-n6n" firstAttribute="trailing" secondItem="jLJ-f0-ngZ" secondAttribute="trailing" constant="20" id="9Wd-zh-lE7"/>
+                            <constraint firstItem="jLJ-f0-ngZ" firstAttribute="leading" secondItem="gcm-ld-n6n" secondAttribute="leading" constant="20" id="QcP-kg-YwQ"/>
+                            <constraint firstItem="Ijs-o7-6px" firstAttribute="leading" secondItem="gcm-ld-n6n" secondAttribute="leading" id="khp-y3-vQW"/>
+                            <constraint firstItem="jLJ-f0-ngZ" firstAttribute="top" secondItem="gcm-ld-n6n" secondAttribute="top" constant="12" id="rra-x1-je1"/>
+                            <constraint firstItem="gcm-ld-n6n" firstAttribute="bottom" secondItem="Ijs-o7-6px" secondAttribute="bottom" constant="20" id="yTr-wC-naK"/>
+                            <constraint firstItem="gcm-ld-n6n" firstAttribute="trailing" secondItem="Ijs-o7-6px" secondAttribute="trailing" id="yxg-Gn-M6o"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gcm-ld-n6n"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="Ijs-o7-6px" id="Aqk-gj-U9L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QI9-75-qsa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828" y="143.47826086956522"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="1JW-5u-mAf">
             <objects>

@@ -45,6 +45,9 @@ extension RootViewController: RootViewControllerDelegate {
         switch item {
         case "HOME":
             self.loadHome()
+
+        case "PROFILE":
+            self.loadProfile()
         case "Login VC":
             self.loadFirstVC()
         case "Second VC":
@@ -60,6 +63,11 @@ extension RootViewController: RootViewControllerDelegate {
 
     func loadHome() {
         let controller = UIStoryboard(name: "Home", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        self.navigationController?.pushViewController(controller, animated: false)
+    }
+
+    func loadProfile() {
+        let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
         self.navigationController?.pushViewController(controller, animated: false)
     }
 
