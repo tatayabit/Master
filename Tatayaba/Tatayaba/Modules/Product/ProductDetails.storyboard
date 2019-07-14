@@ -121,10 +121,18 @@
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWW-27-h37">
                                         <rect key="frame" x="3" y="3" width="365" height="120"/>
                                     </scrollView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qi-t0-aYC">
+                                        <rect key="frame" x="9" y="9" width="40.5" height="13.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                                        <color key="textColor" red="0.51764705882352935" green="0.51372549019607838" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="6pG-V4-aTD"/>
+                                    <constraint firstItem="5qi-t0-aYC" firstAttribute="leading" secondItem="a8J-dQ-qoV" secondAttribute="leading" constant="9" id="7he-JH-icE"/>
+                                    <constraint firstItem="5qi-t0-aYC" firstAttribute="top" secondItem="a8J-dQ-qoV" secondAttribute="top" constant="9" id="ATN-eK-nsS"/>
                                     <constraint firstItem="PWW-27-h37" firstAttribute="leading" secondItem="a8J-dQ-qoV" secondAttribute="leading" constant="3" id="O4u-4V-8wz"/>
                                     <constraint firstAttribute="trailing" secondItem="PWW-27-h37" secondAttribute="trailing" id="Ptk-Ue-kBM"/>
                                     <constraint firstItem="PWW-27-h37" firstAttribute="top" secondItem="a8J-dQ-qoV" secondAttribute="top" constant="3" id="nGz-AE-CIu"/>
@@ -137,11 +145,19 @@
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjz-A3-HRP">
                                         <rect key="frame" x="3" y="3" width="364" height="120"/>
                                     </scrollView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommended" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLC-EG-g55">
+                                        <rect key="frame" x="9" y="9" width="80" height="14"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                                        <color key="textColor" red="0.51764705879999995" green="0.51372549020000002" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="cjz-A3-HRP" secondAttribute="trailing" id="3QD-B2-ffB"/>
                                     <constraint firstItem="cjz-A3-HRP" firstAttribute="top" secondItem="jG9-WS-qtY" secondAttribute="top" constant="3" id="DLz-bH-eVd"/>
+                                    <constraint firstItem="GLC-EG-g55" firstAttribute="leading" secondItem="jG9-WS-qtY" secondAttribute="leading" constant="9" id="DmH-NR-QpK"/>
+                                    <constraint firstItem="GLC-EG-g55" firstAttribute="top" secondItem="jG9-WS-qtY" secondAttribute="top" constant="9" id="HLe-v3-K87"/>
                                     <constraint firstAttribute="bottom" secondItem="cjz-A3-HRP" secondAttribute="bottom" constant="5" id="Prf-Ew-Z7l"/>
                                     <constraint firstItem="cjz-A3-HRP" firstAttribute="leading" secondItem="jG9-WS-qtY" secondAttribute="leading" constant="3" id="Vbx-Vx-vnw"/>
                                     <constraint firstAttribute="height" constant="128" id="VkQ-Iz-uJW"/>

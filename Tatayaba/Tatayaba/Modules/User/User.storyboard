@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6jb-no-BSF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6jb-no-BSF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -310,7 +308,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                         <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -666,14 +664,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Email" width="25" height="25"/>
-        <image name="FullName" width="50" height="50"/>
-        <image name="Password" width="50" height="50"/>
-        <image name="Phone number" width="50" height="50"/>
-        <image name="Signup_Logo" width="75" height="67"/>
-        <image name="User" width="60" height="60"/>
+        <image name="Email" width="138.46153259277344" height="138.46153259277344"/>
+        <image name="FullName" width="138.46153259277344" height="138.46153259277344"/>
+        <image name="Password" width="138.46153259277344" height="138.46153259277344"/>
+        <image name="Phone number" width="138.46153259277344" height="138.46153259277344"/>
+        <image name="Signup_Logo" width="150" height="134"/>
+        <image name="User" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2OH-HV-ZhN"/>
+        <segue reference="JQV-5X-VTL"/>
     </inferredMetricsTieBreakers>
 </document>
