@@ -452,6 +452,7 @@
 		11F52FA522CA7D92000F0D85 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				841CE30522DCB3E500A47FA0 /* Messages */,
 				84BC089422DC7CD200C6180E /* Cart */,
 				11A8B15122D79365001B2661 /* Wishlist */,
 				84B819DA22D1D680000DD69A /* Product */,
@@ -545,6 +546,37 @@
 			isa = PBXGroup;
 			children = (
 				11F52FB622CA7D92000F0D85 /* LoginViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		841CE30522DCB3E500A47FA0 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				841CE30822DCB40C00A47FA0 /* Views */,
+				841CE30722DCB40400A47FA0 /* ModelViews */,
+				841CE30622DCB3FC00A47FA0 /* Model */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		841CE30622DCB3FC00A47FA0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		841CE30722DCB40400A47FA0 /* ModelViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelViews;
+			sourceTree = "<group>";
+		};
+		841CE30822DCB40C00A47FA0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Views;
 			sourceTree = "<group>";

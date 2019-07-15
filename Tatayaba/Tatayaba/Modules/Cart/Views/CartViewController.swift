@@ -16,6 +16,7 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
         super.viewDidLoad()
         
         setupUI()
+       
 
         // Do any additional setup after loading the view.
     }
@@ -27,8 +28,9 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
     
     
     func setupUI() {
-        self.addLeftBarButton()
         self.NavigationBarWithOutBackButton()
+        self.addLeftBarButton()
+       
         self.collectionView.register(RecommendedCollectionViewCell.nib, forCellWithReuseIdentifier: RecommendedCollectionViewCell.identifier)
  
     }

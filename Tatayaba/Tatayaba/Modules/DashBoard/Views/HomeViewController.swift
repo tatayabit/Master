@@ -25,11 +25,7 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
         super.viewDidLoad()
         setupUI()
         setupListners()
-    
-   
-        
-
-       
+  
     }
    
     

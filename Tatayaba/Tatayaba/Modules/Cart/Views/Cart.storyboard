@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EFf-bZ-G4f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sVk-iS-5R8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,7 +24,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Cart View Controller-->
+        <!--CART-->
         <scene sceneID="5Tk-1E-S66">
             <objects>
                 <viewController storyboardIdentifier="CartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EFf-bZ-G4f" customClass="CartViewController" customModule="Tatayaba" customModuleProvider="target" sceneMemberID="viewController">
@@ -228,23 +228,33 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="scu-WO-tSO"/>
                     </view>
+                    <navigationItem key="navigationItem" title="CART" id="dfG-Hb-cyf"/>
                     <connections>
                         <outlet property="cart_Tableview" destination="EgH-bz-rDy" id="9wX-gU-SSI"/>
                         <outlet property="collectionView" destination="sCr-3q-tuR" id="k0b-2H-HHa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mR7-fh-ReS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iqn-Nj-U5j">
-                    <rect key="frame" x="0.0" y="0.0" width="74" height="72"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                        <rect key="frame" x="0.0" y="0.0" width="74" height="72"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </view>
-                    <viewLayoutGuide key="safeArea" id="mQE-FK-YGc"/>
-                </collectionViewCell>
             </objects>
-            <point key="canvasLocation" x="120.8" y="154.27286356821591"/>
+            <point key="canvasLocation" x="788" y="161"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="836-rX-CZ0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sVk-iS-5R8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Pg-PR-Tku">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EFf-bZ-G4f" kind="relationship" relationship="rootViewController" id="wRv-RM-uVz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8i6-2A-QXN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="120" y="153.82308845577214"/>
         </scene>
     </scenes>
     <resources>

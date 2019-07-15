@@ -83,19 +83,12 @@ extension UIViewController {
     }
     
     func NavigationBarWithOutBackButton(){
-        navigationController?.isNavigationBarHidden = false
+       
         self.navigationItem.hidesBackButton = true
         navigationController?.navigationBar.barTintColor = UIColor.white
         navigationController?.hidesBottomBarWhenPushed = false
         self.tabBarController?.tabBar.isHidden = false
-        
-        
     }
-    
-    
-    
-    
-    
 }
 extension BaseViewController {
     

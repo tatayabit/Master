@@ -69,13 +69,9 @@ class LoginViewController: BaseViewController, ValidationDelegate {
         emailTextField.updateColors()
         passwordTextField.updateColors()
         validator.validate(self)
- 
-//        self.pushToNextViewController(storyboardName: "Home", segueName: "HomeViewController")
+    
+       
         performSegue(withIdentifier: homeSegue, sender: nil)
-        
-
- 
-        
         
     }
     
