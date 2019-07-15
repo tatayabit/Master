@@ -22,7 +22,6 @@ struct SignUpViewModel {
                 print(signupResult!)
                 guard let signUpResponse = signupResult else { return }
 
-
                 self.apiClient.getProfile(userId: signUpResponse.userId, completion: { profileResult in
                     switch profileResult {
                     case .success(let profileResponse):

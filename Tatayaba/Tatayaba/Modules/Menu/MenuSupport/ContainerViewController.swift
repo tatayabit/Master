@@ -203,7 +203,7 @@ extension ContainerViewController {
             self.rootNavController?.view.layer.masksToBounds = false
             self.rootNavController?.view.layer.shadowColor = UIColor.darkGray.cgColor
             self.rootNavController?.view.layer.shadowOpacity = 0.8
-            self.addOverlayOnCenterView()
+           // self.addOverlayOnCenterView()
         }
         else {
             self.rootViewController?.view.layer.shadowOpacity = 0.0

@@ -12,30 +12,52 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductCollectionViewCell" id="gTV-IL-0wX" customClass="FeatureProductCollectionViewCell" customModule="Tatayaba" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FeatureProductCollectionViewCell" id="gTV-IL-0wX" customClass="FeatureProductCollectionViewCell" customModule="Tatayaba" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="86" height="106"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                <rect key="frame" x="0.0" y="0.0" width="86" height="106"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="perfume_image" translatesAutoresizingMaskIntoConstraints="NO" id="Hni-xf-ezL">
-                        <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                        <rect key="frame" x="0.0" y="0.0" width="86" height="106"/>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7e-gz-EKW">
+                        <rect key="frame" x="5" y="75" width="76" height="26"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.000 KD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcb-Td-iNF">
+                                <rect key="frame" x="3" y="3" width="49.5" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.6588235294117647" green="0.36470588235294116" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.83137254901960778" green="0.84313725490196079" blue="0.85490196078431369" alpha="0.60266285211267601" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26" id="cCS-S8-gfv"/>
+                            <constraint firstAttribute="bottom" secondItem="Kcb-Td-iNF" secondAttribute="bottom" constant="3" id="hqu-Rx-RNJ"/>
+                            <constraint firstItem="Kcb-Td-iNF" firstAttribute="top" secondItem="I7e-gz-EKW" secondAttribute="top" constant="3" id="knD-vN-AKE"/>
+                            <constraint firstItem="Kcb-Td-iNF" firstAttribute="leading" secondItem="I7e-gz-EKW" secondAttribute="leading" constant="3" id="ut8-kX-9Gb"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="Hni-xf-ezL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3Po-lw-ez8"/>
                 <constraint firstAttribute="trailing" secondItem="Hni-xf-ezL" secondAttribute="trailing" id="6N6-FB-meB"/>
                 <constraint firstAttribute="bottom" secondItem="Hni-xf-ezL" secondAttribute="bottom" id="OfG-db-rLD"/>
+                <constraint firstAttribute="trailing" secondItem="I7e-gz-EKW" secondAttribute="trailing" constant="5" id="TWs-d1-BSa"/>
+                <constraint firstAttribute="bottom" secondItem="I7e-gz-EKW" secondAttribute="bottom" constant="5" id="VxT-bu-90K"/>
+                <constraint firstItem="I7e-gz-EKW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="Xrk-zF-T4e"/>
                 <constraint firstItem="Hni-xf-ezL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cHg-bB-Q6X"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="110" height="110"/>
+            <size key="customSize" width="86" height="106"/>
             <connections>
+                <outlet property="priceLabel" destination="Kcb-Td-iNF" id="6Ha-Bj-HLk"/>
                 <outlet property="product_Images" destination="Hni-xf-ezL" id="CAW-BC-nFp"/>
             </connections>
-            <point key="canvasLocation" x="64" y="50"/>
+            <point key="canvasLocation" x="44" y="52"/>
         </collectionViewCell>
     </objects>
     <resources>

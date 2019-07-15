@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="WishlistCollectionViewCell" customModule="Tatayaba" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="134" height="189"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="134" height="189"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.000 KD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssc-9k-Cov">
+                        <rect key="frame" x="8" y="166" width="118" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="939-7v-5Xk"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARABESQUE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDm-1Q-QYc">
+                        <rect key="frame" x="8" y="146.5" width="118" height="14.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                        <color key="textColor" red="0.12941176470588234" green="0.10588235294117647" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wishlist_perfume" translatesAutoresizingMaskIntoConstraints="NO" id="B8T-hQ-QXM">
+                        <rect key="frame" x="20" y="20" width="86" height="122"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dq-39-KZG">
+                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="PHo-BB-OCb"/>
+                            <constraint firstAttribute="height" constant="30" id="f3Q-b6-vzW"/>
+                        </constraints>
+                        <state key="normal" title="cart">
+                            <color key="titleColor" red="0.6588235294" green="0.36470588240000001" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMO-w2-05t">
+                        <rect key="frame" x="104" y="0.0" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="QfE-t3-JsA"/>
+                            <constraint firstAttribute="width" constant="30" id="woH-qb-DIu"/>
+                        </constraints>
+                        <state key="normal" title="del">
+                            <color key="titleColor" red="0.6588235294" green="0.36470588240000001" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="hMO-w2-05t" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="18o-Qp-uDL"/>
+                <constraint firstItem="ssc-9k-Cov" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="1K0-TE-LDu"/>
+                <constraint firstItem="HDm-1Q-QYc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="GAw-Dl-WDq"/>
+                <constraint firstAttribute="trailing" secondItem="ssc-9k-Cov" secondAttribute="trailing" constant="8" id="ScK-tN-ic1"/>
+                <constraint firstItem="ssc-9k-Cov" firstAttribute="top" secondItem="HDm-1Q-QYc" secondAttribute="bottom" constant="5" id="b5h-xO-r5Y"/>
+                <constraint firstAttribute="trailing" secondItem="hMO-w2-05t" secondAttribute="trailing" id="g6Q-CI-Wa8"/>
+                <constraint firstItem="6dq-39-KZG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="hLq-rO-or9"/>
+                <constraint firstAttribute="bottom" secondItem="ssc-9k-Cov" secondAttribute="bottom" constant="8" id="mqt-ga-O9L"/>
+                <constraint firstItem="6dq-39-KZG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="rK4-1q-gMp"/>
+                <constraint firstAttribute="trailing" secondItem="HDm-1Q-QYc" secondAttribute="trailing" constant="8" id="zCy-oU-dfP"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="203" height="252"/>
+            <point key="canvasLocation" x="259.19999999999999" y="228.03598200899552"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="wishlist_perfume" width="42" height="53"/>
+    </resources>
+</document>

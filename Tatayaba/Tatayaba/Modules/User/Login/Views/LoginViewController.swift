@@ -15,6 +15,7 @@ class LoginViewController: BaseViewController, ValidationDelegate {
     //MARK:- Properties
 //    private let viewModel = LoginViewModel()
     private let validator = Validator()
+    private let homeSegue = "show_home_segue"
 
     @IBOutlet weak private var emailTextField: SkyFloatingLabelTextField!
     @IBOutlet weak private var passwordTextField: SkyFloatingLabelTextField!
@@ -22,13 +23,14 @@ class LoginViewController: BaseViewController, ValidationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
      navigationController?.isNavigationBarHidden = true
+       self.tabBarController?.tabBar.isHidden = false
         registerValidator()
     }
 
     //MARK:- Swift Validator
     func registerValidator() {
         validator.registerField(emailTextField, rules: [RequiredRule(message: "Email is required!"), EmailRule(message: "Invalid email")])
-        validator.registerField(passwordTextField, rules: [RequiredRule(message: "Password is required!"), PasswordRule(regex: "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$", message: "Invalid password")])
+        validator.registerField(passwordTextField, rules: [RequiredRule(message: "Password is required!"), PasswordRule(regex: "^(?=(.*\\d){8})[a-zA-Z\\d]{8,20}$", message: "Invalid password")])
         emailTextField.becomeFirstResponder()
     }
 
@@ -67,12 +69,9 @@ class LoginViewController: BaseViewController, ValidationDelegate {
         emailTextField.updateColors()
         passwordTextField.updateColors()
         validator.validate(self)
- 
-        self.pushToNextViewController(storyboardName: "Home", segueName: "HomeViewController")
-        
-
- 
-        
+    
+       
+        performSegue(withIdentifier: homeSegue, sender: nil)
         
     }
     
