@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/DashBoard/ViewModels/HomeViewModel.swift"
-            timestampString = "584451634.000093"
+            filePath = "Tatayaba/Utilities/BaseView/BaseViewController.swift"
+            timestampString = "584891793.8468651"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "init()"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "addLeftBarButton()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

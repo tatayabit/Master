@@ -17,7 +17,13 @@ class ProfileViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupUI()
         addSubViews()
+    }
+
+    func setupUI() {
+        self.NavigationBarWithOutBackButton()
+        self.addLeftBarButton()
     }
 
     func addSubViews() {

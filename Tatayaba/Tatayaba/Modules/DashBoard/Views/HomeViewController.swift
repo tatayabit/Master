@@ -25,8 +25,9 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
         super.viewDidLoad()
         setupUI()
         setupListners()
-       
+  
     }
+   
     
     func setupListners() {
         viewModel.onCategoriesListLoad = {
@@ -36,7 +37,7 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
         viewModel.onFeaturedProductsListLoad = {
             self.collectionView.delegate = self
             self.collectionView.dataSource = self
-//            self.collectionView.reloadData()
+            self.collectionView.reloadData()
         }
     }
     func downloadImages(_ url: String, _ index: Int) {
@@ -99,6 +100,7 @@ extension HomeViewController {
         return viewModel.featuredProductsCount
     }
     
+
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
@@ -115,8 +117,9 @@ extension HomeViewController {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
-    }
+        }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
         return 10
     }
 
@@ -124,7 +127,6 @@ extension HomeViewController {
 
         print(indexPath.row)
 
-        //        self.pushToNextViewController(storyboardName: "ProductDetails", segueName: "ProductViewController")
         performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
 
     }

@@ -56,6 +56,8 @@ extension RootViewController: RootViewControllerDelegate {
             self.loadWishList()
         case "ABOUT":
             self.loadAboutUs()
+        case "ORDERS":
+            self.loadOrdersVC()
         default:
             break
         }
@@ -70,13 +72,20 @@ extension RootViewController: RootViewControllerDelegate {
         let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
         self.navigationController?.pushViewController(controller, animated: false)
     }
-
+    
     func loadFirstVC() {
         let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         self.navigationController?.pushViewController(controller, animated: false)
+      
+
+    }
+     func loadSecondVC() {
     }
     
-    func loadSecondVC() {
+    func loadOrdersVC() {
+        
+        let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
+        self.navigationController?.pushViewController(controller, animated: false)
        
     }
 
