@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    let buttonPadding:CGFloat = 0
+    let buttonPadding:CGFloat = 05
     var xOffset:CGFloat = 15
     let productDetailsSegue = "product_details_segue"
 
@@ -25,10 +25,10 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
         super.viewDidLoad()
         setupUI()
         setupListners()
+    
+   
         
-//        self.hidesBottomBarWhenPushed = false
-//        self.tabBarController?.tabBar.isHidden = false
-       
+
        
     }
    
@@ -131,7 +131,6 @@ extension HomeViewController {
 
         print(indexPath.row)
 
-        //        self.pushToNextViewController(storyboardName: "ProductDetails", segueName: "ProductViewController")
         performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
 
     }

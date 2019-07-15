@@ -32,8 +32,8 @@ class HomeViewModel {
 
     //MARK:- Init
     init() {
-       // getAllCategories()
-       // getFeaturedProducts()
+        getAllCategories()
+        getFeaturedProducts()
     }
 
     //MARK:- Api

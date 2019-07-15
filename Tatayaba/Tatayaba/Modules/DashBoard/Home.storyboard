@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4d-80-F7m">
-                                <rect key="frame" x="4" y="0.0" width="368" height="81"/>
+                                <rect key="frame" x="4" y="4" width="368" height="81"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjG-5C-lba">
                                         <rect key="frame" x="0.0" y="0.0" width="368" height="81"/>
@@ -57,7 +57,7 @@
                                 <rect key="frame" x="4" y="476" width="368" height="142"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="142" id="bOV-DL-Ly1"/>
+                                    <constraint firstAttribute="height" constant="142" id="A4m-jV-AiA"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2rF-aC-zhg">
                                     <size key="itemSize" width="97" height="88"/>
@@ -79,17 +79,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="X4d-80-F7m" firstAttribute="top" secondItem="7FN-wO-Io4" secondAttribute="top" constant="-20" id="6AL-IV-q4A"/>
+                            <constraint firstItem="ecq-92-wgi" firstAttribute="bottom" secondItem="7FN-wO-Io4" secondAttribute="bottom" id="01X-fg-cvA"/>
+                            <constraint firstItem="X4d-80-F7m" firstAttribute="top" secondItem="7FN-wO-Io4" secondAttribute="top" constant="-16" id="6AL-IV-q4A"/>
                             <constraint firstItem="4M4-Z9-c78" firstAttribute="leading" secondItem="7FN-wO-Io4" secondAttribute="leading" constant="4" id="9lJ-mD-3vI"/>
-                            <constraint firstAttribute="bottom" secondItem="ecq-92-wgi" secondAttribute="bottom" constant="49" id="Dc4-sZ-nic"/>
+                            <constraint firstItem="ecq-92-wgi" firstAttribute="bottom" secondItem="7FN-wO-Io4" secondAttribute="bottom" id="9wj-1C-vbb"/>
                             <constraint firstItem="4M4-Z9-c78" firstAttribute="top" secondItem="KR5-SS-R1y" secondAttribute="bottom" constant="8" symbolic="YES" id="EOy-MF-4PL"/>
                             <constraint firstItem="7FN-wO-Io4" firstAttribute="trailing" secondItem="X4d-80-F7m" secondAttribute="trailing" constant="3" id="Gt7-f9-TTy"/>
                             <constraint firstItem="KR5-SS-R1y" firstAttribute="leading" secondItem="4M4-Z9-c78" secondAttribute="leading" id="PTc-A9-5qY"/>
+                            <constraint firstItem="ecq-92-wgi" firstAttribute="leading" secondItem="4M4-Z9-c78" secondAttribute="leading" id="RIX-99-CtD"/>
                             <constraint firstItem="KR5-SS-R1y" firstAttribute="top" secondItem="7FN-wO-Io4" secondAttribute="top" constant="80" id="RS0-si-bni"/>
-                            <constraint firstItem="4M4-Z9-c78" firstAttribute="leading" secondItem="ecq-92-wgi" secondAttribute="leading" id="Six-Zx-mWg"/>
-                            <constraint firstItem="ecq-92-wgi" firstAttribute="top" secondItem="4M4-Z9-c78" secondAttribute="bottom" constant="9" id="Xyo-zL-iHu"/>
-                            <constraint firstItem="X4d-80-F7m" firstAttribute="top" secondItem="7FN-wO-Io4" secondAttribute="top" constant="-20" id="cjf-Er-EpE"/>
-                            <constraint firstItem="ecq-92-wgi" firstAttribute="trailing" secondItem="X4d-80-F7m" secondAttribute="trailing" id="gUN-b5-hCi"/>
+                            <constraint firstItem="ecq-92-wgi" firstAttribute="top" secondItem="4M4-Z9-c78" secondAttribute="bottom" constant="9" id="buN-Ha-qVq"/>
+                            <constraint firstItem="X4d-80-F7m" firstAttribute="top" secondItem="7FN-wO-Io4" secondAttribute="top" constant="-16" id="cjf-Er-EpE"/>
+                            <constraint firstItem="ecq-92-wgi" firstAttribute="trailing" secondItem="KR5-SS-R1y" secondAttribute="trailing" id="eHM-yC-nwl"/>
                             <constraint firstItem="7FN-wO-Io4" firstAttribute="trailing" secondItem="X4d-80-F7m" secondAttribute="trailing" constant="3" id="jOD-wq-cCs"/>
                             <constraint firstItem="KR5-SS-R1y" firstAttribute="leading" secondItem="X4d-80-F7m" secondAttribute="leading" id="kKa-Nz-zbx"/>
                             <constraint firstItem="KR5-SS-R1y" firstAttribute="leading" secondItem="7FN-wO-Io4" secondAttribute="leading" constant="4" id="kw7-qP-Fx3"/>
@@ -99,6 +100,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7FN-wO-Io4"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="HOme" id="0RQ-oJ-4UF"/>
                     <navigationItem key="navigationItem" title="TATAYAB" id="2gg-SA-nQx"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -110,7 +112,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNm-hz-0IP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1756" y="-261.31934032983509"/>
+            <point key="canvasLocation" x="872.79999999999995" y="-261.31934032983509"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="eT0-ar-RnH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Cart" id="qa9-Id-HAB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="NsF-Eq-MEh"/>
+                    <navigationItem key="navigationItem" id="5v9-ks-gjv"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jwc-De-zTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="127" y="289"/>
         </scene>
         <!--ProductDetails-->
         <scene sceneID="J7X-mC-JV2">
@@ -118,7 +131,7 @@
                 <viewControllerPlaceholder storyboardName="ProductDetails" id="QAy-a0-mKT" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lbe-Jo-1Mg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2959.1999999999998" y="-97.151424287856074"/>
+            <point key="canvasLocation" x="1617" y="-262"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Gil-y7-gM7">
@@ -126,42 +139,22 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="GId-Xi-OOd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bi5-HM-f4W">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="selectedImageTintColor" red="0.89666789769999999" green="0.3137178719" blue="0.85429787639999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="WmH-61-1Lp" kind="relationship" relationship="viewControllers" id="fmS-Mj-nk5"/>
+                        <segue destination="QLW-ve-owm" kind="relationship" relationship="viewControllers" id="1yf-VV-WyJ"/>
+                        <segue destination="qa9-Id-HAB" kind="relationship" relationship="viewControllers" id="JHE-v1-VhI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNC-fH-80z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="89" y="-261"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="isf-C2-LAp">
-            <objects>
-                <navigationController wantsFullScreenLayout="YES" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="WmH-61-1Lp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="hamburger" id="IBL-xe-mH7"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b6Y-55-Frs">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="J2L-Co-dSW">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="QLW-ve-owm" kind="relationship" relationship="rootViewController" id="VNt-71-mGN"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0kd-o6-XBC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="969" y="-261"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Ad" width="369" height="76"/>
-        <image name="hamburger" width="20" height="20"/>
     </resources>
 </document>
