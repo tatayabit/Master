@@ -22,6 +22,7 @@ class LoginViewController: BaseViewController, ValidationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
      navigationController?.isNavigationBarHidden = true
+       self.tabBarController?.tabBar.isHidden = false
         registerValidator()
     }
 
@@ -69,6 +70,7 @@ class LoginViewController: BaseViewController, ValidationDelegate {
         validator.validate(self)
  
         self.pushToNextViewController(storyboardName: "Home", segueName: "HomeViewController")
+  
         
 
  

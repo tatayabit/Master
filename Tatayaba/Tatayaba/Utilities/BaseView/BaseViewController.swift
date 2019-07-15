@@ -71,9 +71,13 @@ class BaseViewController: UIViewController {
 
 extension UIViewController {
     
-    func pushToNextViewController (storyboardName : String?,segueName: String?) {
+    func pushToNextViewController (storyboardName : String?,segueName: String?)
+    {
         let viewController: UIViewController? = UIStoryboard(name:storyboardName!, bundle: nil).instantiateViewController(withIdentifier: segueName!)
         self.navigationController?.pushViewController(viewController!, animated: true)
+        
+  
+       
     
         
     }
@@ -82,6 +86,9 @@ extension UIViewController {
         navigationController?.isNavigationBarHidden = false
         self.navigationItem.hidesBackButton = true
         navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationController?.hidesBottomBarWhenPushed = false
+        self.tabBarController?.tabBar.isHidden = false
+        
         
     }
     

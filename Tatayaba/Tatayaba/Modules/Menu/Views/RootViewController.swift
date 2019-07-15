@@ -47,6 +47,8 @@ extension RootViewController: RootViewControllerDelegate {
             self.loadFirstVC()
         case "Second VC":
             self.loadSecondVC()
+        case "WISHLIST":
+            self.loadWishList()
         default:
             break
         }
@@ -54,10 +56,19 @@ extension RootViewController: RootViewControllerDelegate {
     
     func loadFirstVC() {
         let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        controller.hidesBottomBarWhenPushed = false
+        self.navigationController?.hidesBottomBarWhenPushed = false
         self.navigationController?.pushViewController(controller, animated: false)
+      
+
     }
     
     func loadSecondVC() {
        
+    }
+
+    func loadWishList() {
+        let controller = UIStoryboard(name: "Wishlist", bundle: Bundle.main).instantiateViewController(withIdentifier: "WishlistViewController") as! WishlistViewController
+        self.navigationController?.pushViewController(controller, animated: false)
     }
 }

@@ -8,9 +8,9 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController,AACarouselDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    let buttonPadding:CGFloat = 05
+    let buttonPadding:CGFloat = 0
     var xOffset:CGFloat = 15
     let productDetailsSegue = "product_details_segue"
 
@@ -25,8 +25,13 @@ class HomeViewController: BaseViewController,AACarouselDelegate,UICollectionView
         super.viewDidLoad()
         setupUI()
         setupListners()
+        
+//        self.hidesBottomBarWhenPushed = false
+//        self.tabBarController?.tabBar.isHidden = false
+       
        
     }
+   
     
     func setupListners() {
         viewModel.onCategoriesListLoad = {
@@ -36,7 +41,7 @@ class HomeViewController: BaseViewController,AACarouselDelegate,UICollectionView
         viewModel.onFeaturedProductsListLoad = {
             self.collectionView.delegate = self
             self.collectionView.dataSource = self
-//            self.collectionView.reloadData()
+            self.collectionView.reloadData()
         }
     }
     func downloadImages(_ url: String, _ index: Int) {
@@ -61,8 +66,7 @@ class HomeViewController: BaseViewController,AACarouselDelegate,UICollectionView
             button.backgroundColor = UIColor.darkGray
             button.setTitle("\(i)", for: .normal)
             button.layer.cornerRadius = 0.5 * button.bounds.size.width
-            let brown = UIColor.brandBrown
-            button.layer.borderColor = brown.cgColor
+            button.layer.borderColor = UIColor.brandBrown.cgColor
             button.layer.borderWidth = 2.0 //
             button.setImage(UIImage(named: "perfume_image"), for: .normal)
             button.clipsToBounds = true
@@ -94,39 +98,42 @@ class HomeViewController: BaseViewController,AACarouselDelegate,UICollectionView
 
 extension HomeViewController {
     //MARK:- CollectionViewDelegate
-func collectionView(_ collectionView: UICollectionView,
-                    numberOfItemsInSection section: Int) -> Int {
-    
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+
         return viewModel.featuredProductsCount
+    }
     
-    
-}
-func collectionView(_ collectionView: UICollectionView,
-                    cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    
-   let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeatureProductCollectionViewCell.identifier, for: indexPath) as! FeatureProductCollectionViewCell
-    cell.configure(product: viewModel.featuredProduct(at: indexPath))
-    return cell
-    
-}
+
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeatureProductCollectionViewCell.identifier, for: indexPath) as! FeatureProductCollectionViewCell
+        cell.configure(product: viewModel.featuredProduct(at: indexPath))
+
+        return cell
+    }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 02, left: 0, bottom: 07, right: 0)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
-    }
+        }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
         return 10
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+
         print(indexPath.row)
-        
-//        self.pushToNextViewController(storyboardName: "ProductDetails", segueName: "ProductViewController")
-       performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
-        
+
+        //        self.pushToNextViewController(storyboardName: "ProductDetails", segueName: "ProductViewController")
+        performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
+
     }
 
     //MARK:- Segue
@@ -138,6 +145,6 @@ func collectionView(_ collectionView: UICollectionView,
             }
         }
     }
-    
+
 }
 

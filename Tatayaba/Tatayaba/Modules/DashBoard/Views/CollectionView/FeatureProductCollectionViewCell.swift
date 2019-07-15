@@ -19,6 +19,6 @@ class FeatureProductCollectionViewCell: UICollectionViewCell {
     }
 
     func configure(product: Product) {
-        priceLabel.text = product.price
+        priceLabel.text = product.price.formattedPrice
     }
 }
