@@ -15,6 +15,7 @@ class LoginViewController: BaseViewController, ValidationDelegate {
     //MARK:- Properties
 //    private let viewModel = LoginViewModel()
     private let validator = Validator()
+    private let homeSegue = "show_home_segue"
 
     @IBOutlet weak private var emailTextField: SkyFloatingLabelTextField!
     @IBOutlet weak private var passwordTextField: SkyFloatingLabelTextField!
@@ -69,8 +70,8 @@ class LoginViewController: BaseViewController, ValidationDelegate {
         passwordTextField.updateColors()
         validator.validate(self)
  
-        self.pushToNextViewController(storyboardName: "Home", segueName: "HomeViewController")
-  
+//        self.pushToNextViewController(storyboardName: "Home", segueName: "HomeViewController")
+        performSegue(withIdentifier: homeSegue, sender: nil)
         
 
  
