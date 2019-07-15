@@ -47,6 +47,11 @@
 		11F52FB922CA7D92000F0D85 /* SignUpViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F52FB122CA7D92000F0D85 /* SignUpViewcontroller.swift */; };
 		11F52FBA22CA7D92000F0D85 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F52FB622CA7D92000F0D85 /* LoginViewController.swift */; };
 		5AB89CC597A882EAAB8E1262 /* Pods_Tatayaba.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8251C3E16050691EBDFB247 /* Pods_Tatayaba.framework */; };
+		841CE30A22DCC2B300A47FA0 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE30922DCC2B300A47FA0 /* MessagesViewController.swift */; };
+		841CE30C22DCC2D700A47FA0 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841CE30B22DCC2D700A47FA0 /* Message.storyboard */; };
+		841CE30E22DCC32100A47FA0 /* messageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE30D22DCC32100A47FA0 /* messageViewModel.swift */; };
+		841CE31022DCC33600A47FA0 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE30F22DCC33600A47FA0 /* MessageModel.swift */; };
+		841CE31622DCC68A00A47FA0 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE31422DCC68A00A47FA0 /* MessageTableViewCell.swift */; };
 		847CDE4122C9EE2300E67C8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CDE4022C9EE2300E67C8C /* AppDelegate.swift */; };
 		847CDE4622C9EE2300E67C8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE4422C9EE2300E67C8C /* Main.storyboard */; };
 		847CDE4922C9EE2300E67C8C /* Tatayaba.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 847CDE4722C9EE2300E67C8C /* Tatayaba.xcdatamodeld */; };
@@ -151,6 +156,11 @@
 		22CC9CEE04574A387EDF22EE /* Pods-TatayabaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.release.xcconfig"; sourceTree = "<group>"; };
 		2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3521A060629ED90EC6114BA5 /* Pods-TatayabaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.debug.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		841CE30922DCC2B300A47FA0 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		841CE30B22DCC2D700A47FA0 /* Message.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
+		841CE30D22DCC32100A47FA0 /* messageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageViewModel.swift; sourceTree = "<group>"; };
+		841CE30F22DCC33600A47FA0 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		841CE31422DCC68A00A47FA0 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		847CDE3D22C9EE2300E67C8C /* Tatayaba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tatayaba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847CDE4022C9EE2300E67C8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847CDE4522C9EE2300E67C8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -553,6 +563,7 @@
 		841CE30522DCB3E500A47FA0 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
+				841CE31122DCC5D700A47FA0 /* TableCell */,
 				841CE30822DCB40C00A47FA0 /* Views */,
 				841CE30722DCB40400A47FA0 /* ModelViews */,
 				841CE30622DCB3FC00A47FA0 /* Model */,
@@ -563,6 +574,7 @@
 		841CE30622DCB3FC00A47FA0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				841CE30F22DCC33600A47FA0 /* MessageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -570,6 +582,7 @@
 		841CE30722DCB40400A47FA0 /* ModelViews */ = {
 			isa = PBXGroup;
 			children = (
+				841CE30D22DCC32100A47FA0 /* messageViewModel.swift */,
 			);
 			path = ModelViews;
 			sourceTree = "<group>";
@@ -577,8 +590,18 @@
 		841CE30822DCB40C00A47FA0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				841CE30922DCC2B300A47FA0 /* MessagesViewController.swift */,
+				841CE30B22DCC2D700A47FA0 /* Message.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		841CE31122DCC5D700A47FA0 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				841CE31422DCC68A00A47FA0 /* MessageTableViewCell.swift */,
+			);
+			path = TableCell;
 			sourceTree = "<group>";
 		};
 		845A6C4D22D098C9007C0649 /* MenuCells */ = {
@@ -980,6 +1003,7 @@
 				11A8B15322D79377001B2661 /* Wishlist.storyboard in Resources */,
 				847CDE4B22C9EE2300E67C8C /* Assets.xcassets in Resources */,
 				84E871DD22CB9F3200C2F46A /* Home.storyboard in Resources */,
+				841CE30C22DCC2D700A47FA0 /* Message.storyboard in Resources */,
 				847CDE8622CA19EE00E67C8C /* ProximaNova-Light.ttf in Resources */,
 				114D1A1622CBB27E009205F3 /* ProductCollectionViewCell.xib in Resources */,
 				84BC089622DC7CF400C6180E /* Cart.storyboard in Resources */,
@@ -1122,6 +1146,7 @@
 				84843C1222D08DB000702E40 /* LeftSliderViewController.swift in Sources */,
 				11F52FBA22CA7D92000F0D85 /* LoginViewController.swift in Sources */,
 				11D4917A22CBCF8B009D8B23 /* UIView+Extensions.swift in Sources */,
+				841CE30A22DCC2B300A47FA0 /* MessagesViewController.swift in Sources */,
 				848E89C122CC99AC000AA24C /* AACarousel.swift in Sources */,
 				848E89CC22CCEAAC000AA24C /* FeatureProductCollectionViewCell.swift in Sources */,
 				114D1A0722CBB0EA009205F3 /* ConfigurableCell.swift in Sources */,
@@ -1132,7 +1157,9 @@
 				84843C1822D08DB000702E40 /* MenuTableViewCell.swift in Sources */,
 				847CDE7A22CA130F00E67C8C /* ColorDef.swift in Sources */,
 				11B2C41C22D64F0A00EAD9C6 /* ProductDetailsViewModel.swift in Sources */,
+				841CE31022DCC33600A47FA0 /* MessageModel.swift in Sources */,
 				11A8B15F22D797EF001B2661 /* WishlistViewModel.swift in Sources */,
+				841CE31622DCC68A00A47FA0 /* MessageTableViewCell.swift in Sources */,
 				84843C1422D08DB000702E40 /* SliderConfiguration.swift in Sources */,
 				84843C1322D08DB000702E40 /* RootViewController.swift in Sources */,
 				11F52FB922CA7D92000F0D85 /* SignUpViewcontroller.swift in Sources */,
@@ -1151,6 +1178,7 @@
 				84843C1622D08DB000702E40 /* LeftSliderProfileHeaderCell.swift in Sources */,
 				114D1A1122CBB17B009205F3 /* CollectionCellActionProxy.swift in Sources */,
 				11D4917C22CBD22D009D8B23 /* CategoriesViewModel.swift in Sources */,
+				841CE30E22DCC32100A47FA0 /* messageViewModel.swift in Sources */,
 				11D612A322CE4978000D42C3 /* SignUpViewModel.swift in Sources */,
 				11D612A022CE48F3000D42C3 /* APIClient.swift in Sources */,
 				11F52FB722CA7D92000F0D85 /* SplashViewController.swift in Sources */,

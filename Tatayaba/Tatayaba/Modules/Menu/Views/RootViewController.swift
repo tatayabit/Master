@@ -51,6 +51,8 @@ extension RootViewController: RootViewControllerDelegate {
             self.loadWishList()
         case "ORDERS":
             self.loadOrdersVC()
+        case "MESSAGES":
+            self.loadMessageVC()
         default:
             break
         }
@@ -76,4 +78,12 @@ extension RootViewController: RootViewControllerDelegate {
         let controller = UIStoryboard(name: "Wishlist", bundle: Bundle.main).instantiateViewController(withIdentifier: "WishlistViewController") as! WishlistViewController
         self.navigationController?.pushViewController(controller, animated: false)
     }
+    
+    func loadMessageVC() {
+        let controller = UIStoryboard(name: "Message", bundle: Bundle.main).instantiateViewController(withIdentifier: "MessagesViewController") as! MessagesViewController
+        self.navigationController?.pushViewController(controller, animated: false)
+        
+        
+    }
+    
 }
