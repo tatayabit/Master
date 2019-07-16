@@ -84,7 +84,7 @@ class HomeViewModel {
         return categoriesList[indexPath.row]
     }
 
-    //MARK:- Categories data
+    //MARK:- featured Product data
     func featuredProduct(at indexPath: IndexPath) -> Product {
         guard featuredProductsList.count > 0 else { return Product() }
         return featuredProductsList[indexPath.row]
