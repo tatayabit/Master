@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ProximaNova-Extrabld.ttf">
+            <string>ProximaNova-Extrabld</string>
+        </array>
+        <array key="ProximaNova-Regular.ttf">
+            <string>ProximaNova-Regular</string>
+        </array>
+        <array key="ProximaNova-Semibold.ttf">
+            <string>ProximaNova-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProductDetailsView" customModule="Tatayaba" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="376"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rxM-bX-aPE">
+                    <rect key="frame" x="0.0" y="5" width="375" height="255"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="255" id="maR-I1-e0k"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="F3y-II-mRo">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMr-Mb-0Vi" userLabel="QuantityView">
+                    <rect key="frame" x="325" y="280" width="50" height="96"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEk-bs-RUd">
+                            <rect key="frame" x="7.5" y="18.5" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="h6o-JP-OtI"/>
+                                <constraint firstAttribute="width" constant="35" id="wdj-TC-XQV"/>
+                            </constraints>
+                            <state key="normal" image="up-arrow"/>
+                            <connections>
+                                <action selector="increaseQuantity:" destination="iN0-l3-epB" eventType="touchUpInside" id="u7H-Tf-Q61"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urP-lN-lRo">
+                            <rect key="frame" x="7.5" y="61" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="9Hv-86-OJr"/>
+                                <constraint firstAttribute="width" constant="35" id="HZX-cZ-X0i"/>
+                            </constraints>
+                            <state key="normal" image="down-arrow"/>
+                            <connections>
+                                <action selector="decreaseQuantity:" destination="iN0-l3-epB" eventType="touchUpInside" id="XvC-M5-HUY"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QTY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNE-rf-hPP">
+                            <rect key="frame" x="3" y="1" width="44" height="17.5"/>
+                            <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3j-dq-zNs">
+                            <rect key="frame" x="4" y="43" width="42" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="42" id="dtZ-vR-fae"/>
+                                <constraint firstAttribute="height" constant="24" id="g9v-57-cug"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="ProximaNova-Extrabld" family="Proxima Nova" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="urP-lN-lRo" firstAttribute="centerX" secondItem="DMr-Mb-0Vi" secondAttribute="centerX" id="KFA-AO-aoc"/>
+                        <constraint firstAttribute="width" constant="50" id="TAM-7l-fSh"/>
+                        <constraint firstAttribute="trailing" secondItem="y3j-dq-zNs" secondAttribute="trailing" constant="4" id="VLt-RG-wb3"/>
+                        <constraint firstItem="hNE-rf-hPP" firstAttribute="top" secondItem="DMr-Mb-0Vi" secondAttribute="top" constant="1" id="ad7-AJ-sGy"/>
+                        <constraint firstItem="WEk-bs-RUd" firstAttribute="top" secondItem="hNE-rf-hPP" secondAttribute="bottom" id="bXx-BQ-Pee"/>
+                        <constraint firstItem="hNE-rf-hPP" firstAttribute="leading" secondItem="DMr-Mb-0Vi" secondAttribute="leading" constant="3" id="e5f-jL-Kpr"/>
+                        <constraint firstItem="WEk-bs-RUd" firstAttribute="centerX" secondItem="urP-lN-lRo" secondAttribute="centerX" id="gMK-MO-cwz"/>
+                        <constraint firstAttribute="height" constant="96" id="iif-Bx-gyX"/>
+                        <constraint firstAttribute="bottom" secondItem="urP-lN-lRo" secondAttribute="bottom" id="o3j-AY-9Zh"/>
+                        <constraint firstAttribute="bottom" secondItem="y3j-dq-zNs" secondAttribute="bottom" constant="29" id="r7d-Ig-78J"/>
+                        <constraint firstAttribute="trailing" secondItem="hNE-rf-hPP" secondAttribute="trailing" constant="3" id="rxn-lE-EYT"/>
+                        <constraint firstItem="y3j-dq-zNs" firstAttribute="leading" secondItem="DMr-Mb-0Vi" secondAttribute="leading" constant="4" id="zR0-3J-PR8"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AdE-Rc-My4">
+                    <rect key="frame" x="335" y="10" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="U0p-fm-ubm"/>
+                        <constraint firstAttribute="width" constant="25" id="ovq-K1-DEw"/>
+                    </constraints>
+                    <state key="normal" image="like_active_icon"/>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XpC-rN-nRc" userLabel="DescriptionView">
+                    <rect key="frame" x="0.0" y="280" width="317" height="96"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Tatayab - Where there's a scent for every mood. Your online platform for perfume, home fragrances, bukhour and more." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgi-v1-9yn">
+                            <rect key="frame" x="7" y="6" width="267" height="82"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="96" id="WWw-DB-FfR"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="DMr-Mb-0Vi" firstAttribute="trailing" secondItem="rxM-bX-aPE" secondAttribute="trailing" id="1le-Ci-mIJ"/>
+                <constraint firstItem="XpC-rN-nRc" firstAttribute="top" secondItem="DMr-Mb-0Vi" secondAttribute="top" id="BiT-t5-VUI"/>
+                <constraint firstItem="DMr-Mb-0Vi" firstAttribute="leading" secondItem="XpC-rN-nRc" secondAttribute="trailing" constant="8" symbolic="YES" id="EFF-9t-Fjm"/>
+                <constraint firstItem="AdE-Rc-My4" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="Hzy-Yl-GYY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AdE-Rc-My4" secondAttribute="trailing" constant="15" id="LxB-SS-e4k"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="rxM-bX-aPE" secondAttribute="trailing" id="N1o-tl-Ejn"/>
+                <constraint firstItem="rxM-bX-aPE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="U3s-Rk-EGA"/>
+                <constraint firstItem="XpC-rN-nRc" firstAttribute="bottom" secondItem="DMr-Mb-0Vi" secondAttribute="bottom" id="YfE-7q-wTa"/>
+                <constraint firstItem="XpC-rN-nRc" firstAttribute="leading" secondItem="rxM-bX-aPE" secondAttribute="leading" id="gc6-vl-v9T"/>
+                <constraint firstItem="XpC-rN-nRc" firstAttribute="top" secondItem="rxM-bX-aPE" secondAttribute="bottom" constant="20" id="gh3-he-eTA"/>
+                <constraint firstItem="rxM-bX-aPE" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="qJS-2G-3LT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="sgi-v1-9yn" id="OjZ-xK-gwb"/>
+                <outlet property="downButton" destination="urP-lN-lRo" id="sk0-q1-NJ2"/>
+                <outlet property="favoriteButton" destination="AdE-Rc-My4" id="hTH-Cs-LXY"/>
+                <outlet property="productcollectionView" destination="rxM-bX-aPE" id="G1s-cy-Xgk"/>
+                <outlet property="quantityLabel" destination="y3j-dq-zNs" id="pAt-7a-SCM"/>
+                <outlet property="upButton" destination="WEk-bs-RUd" id="9SE-mB-ndM"/>
+            </connections>
+            <point key="canvasLocation" x="138.40000000000001" y="0.0"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="down-arrow" width="7.5" height="4"/>
+        <image name="like_active_icon" width="11" height="10.5"/>
+        <image name="up-arrow" width="7.5" height="4"/>
+    </resources>
+</document>

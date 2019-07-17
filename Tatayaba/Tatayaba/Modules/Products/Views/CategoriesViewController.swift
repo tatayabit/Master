@@ -30,6 +30,8 @@ class CategoriesViewController: BaseViewController, UICollectionViewDelegate, UI
     }
 
     func setupUI() {
+        self.addLeftBarButton()
+        self.NavigationBarWithOutBackButton()
         categoriesCollectionView.register(CategoryCollectionViewCell.nib, forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
     }
 

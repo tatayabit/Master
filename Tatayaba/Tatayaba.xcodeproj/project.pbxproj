@@ -57,6 +57,11 @@
 		11F52FB722CA7D92000F0D85 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F52FAA22CA7D92000F0D85 /* SplashViewController.swift */; };
 		11F52FB922CA7D92000F0D85 /* SignUpViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F52FB122CA7D92000F0D85 /* SignUpViewcontroller.swift */; };
 		11F52FBA22CA7D92000F0D85 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F52FB622CA7D92000F0D85 /* LoginViewController.swift */; };
+		11FEB4D822DF822A00F2E9B8 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FEB4D722DF822A00F2E9B8 /* ProductDetailsViewController.swift */; };
+		11FEB4DB22DF84FE00F2E9B8 /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FEB4DA22DF84FE00F2E9B8 /* ProductDetailsView.swift */; };
+		11FEB4DD22DF850700F2E9B8 /* ProductDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FEB4DC22DF850700F2E9B8 /* ProductDetailsView.xib */; };
+		11FEB4E022DF921800F2E9B8 /* CarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FEB4DE22DF921800F2E9B8 /* CarouselCollectionViewCell.swift */; };
+		11FEB4E122DF921800F2E9B8 /* CarouselCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FEB4DF22DF921800F2E9B8 /* CarouselCollectionViewCell.xib */; };
 		5AB89CC597A882EAAB8E1262 /* Pods_Tatayaba.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8251C3E16050691EBDFB247 /* Pods_Tatayaba.framework */; };
 		847CDE4122C9EE2300E67C8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CDE4022C9EE2300E67C8C /* AppDelegate.swift */; };
 		847CDE4622C9EE2300E67C8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847CDE4422C9EE2300E67C8C /* Main.storyboard */; };
@@ -168,6 +173,11 @@
 		11F52FAA22CA7D92000F0D85 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		11F52FB122CA7D92000F0D85 /* SignUpViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewcontroller.swift; sourceTree = "<group>"; };
 		11F52FB622CA7D92000F0D85 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		11FEB4D722DF822A00F2E9B8 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		11FEB4DA22DF84FE00F2E9B8 /* ProductDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
+		11FEB4DC22DF850700F2E9B8 /* ProductDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailsView.xib; sourceTree = "<group>"; };
+		11FEB4DE22DF921800F2E9B8 /* CarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCollectionViewCell.swift; sourceTree = "<group>"; };
+		11FEB4DF22DF921800F2E9B8 /* CarouselCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselCollectionViewCell.xib; sourceTree = "<group>"; };
 		20779A04B1BCECF103C599EE /* Pods-Tatayaba.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tatayaba.release.xcconfig"; path = "Target Support Files/Pods-Tatayaba/Pods-Tatayaba.release.xcconfig"; sourceTree = "<group>"; };
 		22CC9CEE04574A387EDF22EE /* Pods-TatayabaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.release.xcconfig"; sourceTree = "<group>"; };
 		2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -654,6 +664,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		11FEB4D922DF838500F2E9B8 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				11FEB4DA22DF84FE00F2E9B8 /* ProductDetailsView.swift */,
+				11FEB4DC22DF850700F2E9B8 /* ProductDetailsView.xib */,
+				11FEB4DE22DF921800F2E9B8 /* CarouselCollectionViewCell.swift */,
+				11FEB4DF22DF921800F2E9B8 /* CarouselCollectionViewCell.xib */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		841CE30522DCB3E500A47FA0 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
@@ -879,7 +900,9 @@
 		84B819DD22D1D6D5000DD69A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				11FEB4D922DF838500F2E9B8 /* CustomViews */,
 				84B819DE22D1D6F9000DD69A /* ProductViewController.swift */,
+				11FEB4D722DF822A00F2E9B8 /* ProductDetailsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1085,8 +1108,10 @@
 				114D1A1622CBB27E009205F3 /* ProductCollectionViewCell.xib in Resources */,
 				84BC089622DC7CF400C6180E /* Cart.storyboard in Resources */,
 				84B819E322D1D775000DD69A /* ProductDetails.storyboard in Resources */,
+				11FEB4DD22DF850700F2E9B8 /* ProductDetailsView.xib in Resources */,
 				847CDE8A22CA19EE00E67C8C /* ProximaNova-Bold.ttf in Resources */,
 				847CDE8422CA19EE00E67C8C /* ProximaNova-Regular.ttf in Resources */,
+				11FEB4E122DF921800F2E9B8 /* CarouselCollectionViewCell.xib in Resources */,
 				114D1A0022CBAAE2009205F3 /* Products.storyboard in Resources */,
 				11007BD622DE2F2E00AC9957 /* CategoryCollectionViewCell.xib in Resources */,
 				11081EEA22DB823200B68EA5 /* Static.storyboard in Resources */,
@@ -1231,6 +1256,7 @@
 				11D4917A22CBCF8B009D8B23 /* UIView+Extensions.swift in Sources */,
 				848E89C122CC99AC000AA24C /* AACarousel.swift in Sources */,
 				11007BD222DE2E6600AC9957 /* ProductsListViewModel.swift in Sources */,
+				11FEB4E022DF921800F2E9B8 /* CarouselCollectionViewCell.swift in Sources */,
 				848E89CC22CCEAAC000AA24C /* FeatureProductCollectionViewCell.swift in Sources */,
 				114D1A0722CBB0EA009205F3 /* ConfigurableCell.swift in Sources */,
 				112654A922D25E5B00904FB5 /* SignUpResponse.swift in Sources */,
@@ -1248,6 +1274,7 @@
 				11007BD522DE2F2E00AC9957 /* CategoryCollectionViewCell.swift in Sources */,
 				11F52FB922CA7D92000F0D85 /* SignUpViewcontroller.swift in Sources */,
 				84843C1522D08DB000702E40 /* BaseTableViewController.swift in Sources */,
+				11FEB4D822DF822A00F2E9B8 /* ProductDetailsViewController.swift in Sources */,
 				84BC089822DC7D0D00C6180E /* CartViewController.swift in Sources */,
 				112654AE22D2693600904FB5 /* ProductsEndpoint.swift in Sources */,
 				114D1A0B22CBB12B009205F3 /* CellActionHandler.swift in Sources */,
@@ -1258,6 +1285,7 @@
 				84843C1722D08DB000702E40 /* ContainerViewController.swift in Sources */,
 				11D612AC22CE4A05000D42C3 /* User.swift in Sources */,
 				848E89C522CCDDBB000AA24C /* HomeViewController.swift in Sources */,
+				11FEB4DB22DF84FE00F2E9B8 /* ProductDetailsView.swift in Sources */,
 				114D1A0922CBB10D009205F3 /* TableCellConfigutator.swift in Sources */,
 				84843C1622D08DB000702E40 /* LeftSliderProfileHeaderCell.swift in Sources */,
 				11081EEF22DB829200B68EA5 /* AboutUsViewModel.swift in Sources */,

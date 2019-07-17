@@ -37,6 +37,10 @@ class ProductsListViewModel {
                 self.productsList = products
                 print(products)
 
+                if let newCategoriesArrived = self.onProductsListLoad {
+                    newCategoriesArrived()
+                }
+
             case .failure(let error):
                 print("the error \(error)")
             }
@@ -47,5 +51,11 @@ class ProductsListViewModel {
     func product(at indexPath: IndexPath) -> Product {
         guard productsList.count > 0 else { return Product() }
         return productsList[indexPath.row]
+    }
+
+    //MARK:- ProductDetails ViewModel
+    func productDetailsViewModel(at indexPath: IndexPath) -> ProductDetailsViewModel {
+        let productViewModel = ProductDetailsViewModel(product: product(at: indexPath))
+        return productViewModel
     }
 }

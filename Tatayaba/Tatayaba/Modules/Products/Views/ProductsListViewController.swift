@@ -13,6 +13,8 @@ class ProductsListViewController: BaseViewController, UICollectionViewDelegate, 
     @IBOutlet weak var productsCollectionView: UICollectionView!
 
     var viewModel: ProductsListViewModel?
+    private let productDetailsSegue = "product_details_segue"
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +32,7 @@ class ProductsListViewController: BaseViewController, UICollectionViewDelegate, 
     }
 
     func setupUI() {
-        productsCollectionView.register(ProductCollectionViewCell.nib, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
+        productsCollectionView.register(FeatureProductCollectionViewCell.nib, forCellWithReuseIdentifier: FeatureProductCollectionViewCell.identifier)
     }
 
     //MARK:- CollectionViewDelegate
@@ -52,9 +54,25 @@ class ProductsListViewController: BaseViewController, UICollectionViewDelegate, 
         return cell
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
+    }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         return CGSize(width: (self.view.bounds.width - 32) / 3, height: 154)
+    }
+
+    //MARK:- Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == productDetailsSegue {
+            let productDetailsVC = segue.destination as! ProductDetailsViewController
+            if let indexPath = sender as? IndexPath {
+                if let viewModel = viewModel {
+                    productDetailsVC.viewModel = viewModel.productDetailsViewModel(at: indexPath)
+                }
+            }
+        }
     }
 
 }

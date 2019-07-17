@@ -26,18 +26,17 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgL-AS-6oM">
-                        <rect key="frame" x="8" y="132" width="84" height="14"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <rect key="frame" x="8" y="118.5" width="84" height="13.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="JgL-AS-6oM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="FuB-1a-tMw"/>
-                <constraint firstAttribute="bottom" secondItem="JgL-AS-6oM" secondAttribute="bottom" constant="8" id="LvE-md-yfZ"/>
+                <constraint firstAttribute="bottom" secondItem="JgL-AS-6oM" secondAttribute="bottom" constant="22" id="LvE-md-yfZ"/>
                 <constraint firstAttribute="trailing" secondItem="JgL-AS-6oM" secondAttribute="trailing" constant="8" id="fHr-mG-sEo"/>
-                <constraint firstItem="JgL-AS-6oM" firstAttribute="top" secondItem="Mrk-eA-nwP" secondAttribute="bottom" constant="10" id="iaL-pD-nKH"/>
                 <constraint firstItem="Mrk-eA-nwP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="l81-mI-ijG"/>
                 <constraint firstItem="Mrk-eA-nwP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="oAb-yS-IFd"/>
                 <constraint firstAttribute="trailing" secondItem="Mrk-eA-nwP" secondAttribute="trailing" constant="12" id="vWd-9L-Eaz"/>
@@ -51,6 +50,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="chanel-misia-photo copy" width="48" height="80.879997253417969"/>
+        <image name="chanel-misia-photo copy" width="26.399999618530273" height="44.639999389648438"/>
     </resources>
 </document>
