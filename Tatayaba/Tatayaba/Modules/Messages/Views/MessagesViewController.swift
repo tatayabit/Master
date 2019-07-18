@@ -13,10 +13,12 @@ class MessagesViewController: BaseViewController,UITableViewDelegate,UITableView
     @IBOutlet var messageTable_view: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        messageTable_view.separatorColor = UIColor.clear
+
 
         
         setupUI()
-        // Do any additional setup after loading the view.
+      
     }
     
     func setupUI() {
@@ -27,7 +29,7 @@ class MessagesViewController: BaseViewController,UITableViewDelegate,UITableView
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
     
@@ -51,13 +53,15 @@ extension MessagesViewController{
         return 4
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130
+        return 113
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "MessageTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MessageTableViewCell
+
+        cell.cell_view.layer.borderColor = UIColor.brandBrown.cgColor
         
         return cell
     }

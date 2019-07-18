@@ -10,6 +10,7 @@ import UIKit
 
 class CartTableViewCell: UITableViewCell {
 
+    @IBOutlet var cell_Close: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

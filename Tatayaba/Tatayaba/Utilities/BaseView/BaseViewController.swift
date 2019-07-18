@@ -85,6 +85,7 @@ extension UIViewController {
     func NavigationBarWithOutBackButton(){
        
         self.navigationItem.hidesBackButton = true
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         navigationController?.navigationBar.barTintColor = UIColor.white
         navigationController?.hidesBottomBarWhenPushed = false
         self.tabBarController?.tabBar.isHidden = false
