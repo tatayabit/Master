@@ -8,15 +8,31 @@
 
 import Moya
 
-struct CategoriesViewModel {
+class CategoriesViewModel {
     let apiClient = ProductsAPIClient()
 
-    //MARK:- Api
+    private var categoriesList = [Category]()
 
+    /// This closure is being called once the categories api fetch
+    var onCategoriesListLoad: (() -> ())?
+
+    var categoriesCount: Int { return categoriesList.count }
+
+    //MARK:- Api
     func getAllCategories() {
         apiClient.getAllCategories { result in
             switch result {
             case .success(let response):
+                guard let categoriesResult = response else { return }
+                guard let categories = categoriesResult.categories else { return }
+
+                self.categoriesList = categories.filter({ $0.parentId == "0" })
+                print(categories)
+
+
+                if let newCategoriesArrived = self.onCategoriesListLoad {
+                    newCategoriesArrived()
+                }
                 print(response!)
             case .failure(let error):
                 print("the error \(error)")
@@ -24,18 +40,16 @@ struct CategoriesViewModel {
         }
     }
 
-    func getProductsOfCategory(categoryId: Int, page: Int) {
-        apiClient.getProductOf(categoryId: 52, page: 0) { result in
-            switch result {
-            case .success(let response):
-                guard let productResult = response else { return }
-                guard let products = productResult.products else { return }
+    //MARK:- Categories data
+    func category(at indexPath: IndexPath) -> Category {
+        guard categoriesList.count > 0 else { return Category() }
+        return categoriesList[indexPath.row]
+    }
 
-                print(products)
 
-            case .failure(let error):
-                print("the error \(error)")
-            }
-        }
+    //MARK:- ProductsListViewModel
+    func productsListViewModel(indexPath: IndexPath) -> ProductsListViewModel {
+        let category = categoriesList[indexPath.row]
+        return ProductsListViewModel(categoryId: Int(category.identifier) ?? 0)
     }
 }
