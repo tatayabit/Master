@@ -43,17 +43,34 @@ extension RootViewController: RootViewControllerDelegate {
     /// - Parameter item: selected menu item
     func didSelectMenu(item: String) {
         switch item {
+        case "HOME":
+            self.loadHome()
+
+        case "PROFILE":
+            self.loadProfile()
         case "Login VC":
             self.loadFirstVC()
         case "Second VC":
             self.loadSecondVC()
         case "WISHLIST":
             self.loadWishList()
+        case "ABOUT":
+            self.loadAboutUs()
         case "ORDERS":
             self.loadOrdersVC()
         default:
             break
         }
+    }
+
+    func loadHome() {
+        let controller = UIStoryboard(name: "Home", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        self.navigationController?.pushViewController(controller, animated: false)
+    }
+
+    func loadProfile() {
+        let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        self.navigationController?.pushViewController(controller, animated: false)
     }
     
     func loadFirstVC() {
@@ -74,6 +91,11 @@ extension RootViewController: RootViewControllerDelegate {
 
     func loadWishList() {
         let controller = UIStoryboard(name: "Wishlist", bundle: Bundle.main).instantiateViewController(withIdentifier: "WishlistViewController") as! WishlistViewController
+        self.navigationController?.pushViewController(controller, animated: false)
+    }
+
+    func loadAboutUs() {
+        let controller = UIStoryboard(name: "Static", bundle: Bundle.main).instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
         self.navigationController?.pushViewController(controller, animated: false)
     }
 }
