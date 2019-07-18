@@ -6,7 +6,7 @@
 //  Copyright © 2019 Shaik. All rights reserved.
 //
 
-struct ProductDetailsViewModel {
+class ProductDetailsViewModel {
     private var product: Product
     private var recommendedList = [Product]()
 
@@ -27,15 +27,18 @@ struct ProductDetailsViewModel {
     }
 
     //MARK:- Product Details
-    mutating func increase() {
+    func increase() {
         if self.selectedQuantity < 100 {
             self.selectedQuantity += 1
         }
     }
 
-    mutating func decrease() {
+    func decrease() {
         if self.selectedQuantity > 1 {
             self.selectedQuantity -= 1
         }
     }
+
+    //MARK:- Product Options
+    
 }

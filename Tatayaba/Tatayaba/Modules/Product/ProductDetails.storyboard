@@ -53,7 +53,7 @@
                                 <rect key="frame" x="321" y="300" width="50" height="96"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44l-zk-TPK">
-                                        <rect key="frame" x="7.5" y="18.5" width="35" height="35"/>
+                                        <rect key="frame" x="7.5" y="17.5" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="ZY5-Pu-t2U"/>
                                             <constraint firstAttribute="width" constant="35" id="pSO-iX-K7W"/>
@@ -75,7 +75,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QTY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8z-cl-rrO">
-                                        <rect key="frame" x="3" y="1" width="44" height="17.5"/>
+                                        <rect key="frame" x="3" y="1" width="44" height="16.5"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
