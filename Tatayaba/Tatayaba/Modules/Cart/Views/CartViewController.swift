@@ -9,16 +9,21 @@
 import UIKit
 
 class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource {
+     let EditBtn = UIButton()
+    let EditOkBtn = UIButton()
+    var EditButton = String()
+    
 
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var cart_Tableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        EditButton = "0"
         setupUI()
+        
+        
        
-
-        // Do any additional setup after loading the view.
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,9 +35,54 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
     func setupUI() {
         self.NavigationBarWithOutBackButton()
         self.addLeftBarButton()
+        Add_EDitUI()
+
+  
        
         self.collectionView.register(RecommendedCollectionViewCell.nib, forCellWithReuseIdentifier: RecommendedCollectionViewCell.identifier)
  
+    }
+    
+    func Add_EDitUI(){
+        
+        EditBtn.setImage(UIImage(named: "Edit"), for: [])
+        EditBtn.addTarget(self, action: #selector(Edit_Button_Action), for: UIControlEvents.touchUpInside)
+        EditBtn.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        let EditButton = UIBarButtonItem(customView: EditBtn)
+        self.navigationItem.rightBarButtonItem  = EditButton
+        
+        
+       
+        
+    }
+
+    
+    
+    @objc func Edit_Button_Action() {
+        
+        EditButton = "1"
+     
+        EditBtn.isHidden = true
+        EditOkBtn.setImage(UIImage(named: "tick"), for: [])
+        EditOkBtn.addTarget(self, action: #selector(EditOK_Button_Action), for: UIControlEvents.touchUpInside)
+        EditOkBtn.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        let OkButton = UIBarButtonItem(customView: EditOkBtn)
+        self.navigationItem.rightBarButtonItem  = OkButton
+        EditOkBtn.isHidden = false
+        
+        
+        
+        cart_Tableview.reloadData()
+        
+    }
+    @objc func EditOK_Button_Action() {
+        
+        EditButton = "0"
+        EditBtn.isHidden = false
+        EditOkBtn.isHidden = true
+        Add_EDitUI()
+        cart_Tableview.reloadData()
+        
     }
     
 
@@ -61,6 +111,14 @@ extension CartViewController{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "CartCellIdentifier"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CartTableViewCell
+        
+        if EditButton == "1"{
+           cell.cell_Close.isHidden = false
+        }else{
+           cell.cell_Close.isHidden = true
+            
+        }
+        
         
         return cell
     }

@@ -97,11 +97,18 @@
                                                             <rect key="frame" x="316" y="90" width="23" height="24"/>
                                                             <state key="normal" title="-"/>
                                                         </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x79-ig-m4N">
+                                                            <rect key="frame" x="304" y="39" width="50" height="50"/>
+                                                            <state key="normal" image="Close"/>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="x79-ig-m4N" secondAttribute="trailing" constant="21" id="1P4-ZT-M1t"/>
+                                                        <constraint firstItem="x79-ig-m4N" firstAttribute="leading" secondItem="o58-T2-bDr" secondAttribute="leading" id="Azz-8r-NFr"/>
                                                         <constraint firstItem="VhM-Ww-8aO" firstAttribute="top" secondItem="whS-Yz-XyK" secondAttribute="top" id="Dge-NG-AZN"/>
                                                         <constraint firstItem="WKS-SU-I9L" firstAttribute="leading" secondItem="eHs-0i-b0U" secondAttribute="leading" constant="7" id="E1E-He-aNz"/>
+                                                        <constraint firstItem="A3c-fC-M0d" firstAttribute="top" secondItem="x79-ig-m4N" secondAttribute="bottom" constant="1" id="ILp-ei-vo3"/>
                                                         <constraint firstItem="A3c-fC-M0d" firstAttribute="baseline" secondItem="bNR-Of-umM" secondAttribute="firstBaseline" id="IOz-0Y-z6W"/>
                                                         <constraint firstItem="o58-T2-bDr" firstAttribute="leading" secondItem="bNR-Of-umM" secondAttribute="trailing" constant="2" id="Il7-86-3MK"/>
                                                         <constraint firstItem="VhM-Ww-8aO" firstAttribute="top" secondItem="K4f-ph-dFJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Kbn-dW-8of"/>
@@ -122,6 +129,7 @@
                                                         <constraint firstItem="o58-T2-bDr" firstAttribute="top" secondItem="whS-Yz-XyK" secondAttribute="bottom" constant="1" id="oUg-l9-EQI"/>
                                                         <constraint firstAttribute="bottom" secondItem="WKS-SU-I9L" secondAttribute="bottom" constant="35" id="q56-5L-JL1"/>
                                                         <constraint firstItem="VhM-Ww-8aO" firstAttribute="bottom" secondItem="whS-Yz-XyK" secondAttribute="bottom" id="uNF-de-4K5"/>
+                                                        <constraint firstItem="x79-ig-m4N" firstAttribute="centerY" secondItem="eHs-0i-b0U" secondAttribute="centerY" id="uoR-ec-alL"/>
                                                         <constraint firstItem="bNR-Of-umM" firstAttribute="top" secondItem="whS-Yz-XyK" secondAttribute="bottom" constant="4" id="vN4-dm-zgU"/>
                                                         <constraint firstItem="WKS-SU-I9L" firstAttribute="top" secondItem="eHs-0i-b0U" secondAttribute="top" constant="15" id="vdk-DQ-e7w"/>
                                                     </constraints>
@@ -134,6 +142,9 @@
                                                 <constraint firstItem="eHs-0i-b0U" firstAttribute="top" secondItem="1R7-rG-3Kr" secondAttribute="top" id="tre-pY-AHL"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cell_Close" destination="x79-ig-m4N" id="bTq-m5-UDN"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -236,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mR7-fh-ReS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="788" y="161"/>
+            <point key="canvasLocation" x="788" y="160.56971514242881"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="836-rX-CZ0">
@@ -259,6 +270,7 @@
     </scenes>
     <resources>
         <image name="Cart" width="30" height="30"/>
+        <image name="Close" width="130" height="130"/>
         <image name="price _rounded_rectangle" width="123" height="29"/>
     </resources>
 </document>

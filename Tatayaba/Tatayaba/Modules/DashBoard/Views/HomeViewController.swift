@@ -56,6 +56,7 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
     
     func CategoriesView(){
         Categories_Scroll.translatesAutoresizingMaskIntoConstraints = false
+    
         for i in 0 ... 10{
             let button = UIButton()
             button.tag = i
@@ -75,6 +76,9 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
         }
         Categories_Scroll.contentSize = CGSize(width: xOffset, height: Categories_Scroll.frame.height)
         
+      
+     
+        
     }
     
     
@@ -86,9 +90,10 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
                          "Dashboard",
                          "ADD"]
         carouselView.delegate = self
-        carouselView.setCarouselData(paths: pathArray,  describedTitle: [""], isAutoScroll: true, timer: 1.5 , defaultImage: "Dashboard")
+        carouselView.setCarouselData(paths: pathArray,  describedTitle: [""], isAutoScroll: false, timer: 1.5 , defaultImage: "1.png")
         carouselView.setCarouselOpaque(layer: false, describedTitle: false, pageIndicator: false)
         carouselView.setCarouselLayout(displayStyle: 0, pageIndicatorPositon: 2, pageIndicatorColor: nil, describedTitleColor: nil, layerColor: nil)
+       
     }
 }
 

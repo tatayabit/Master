@@ -1,5 +1,5 @@
 //
-//  CartTableViewCell.swift
+//  MessageTableViewCell.swift
 //  Tatayaba
 //
 //  Created by Admin on 15/07/19.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class CartTableViewCell: UITableViewCell {
+class MessageTableViewCell: UITableViewCell {
 
-    @IBOutlet var cell_Close: UIButton!
+    @IBOutlet var cell_view: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +19,7 @@ class CartTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+        // Configure the view for the selected state
     }
-
+    
 }
