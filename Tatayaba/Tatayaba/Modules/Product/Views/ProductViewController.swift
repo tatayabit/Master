@@ -49,15 +49,10 @@ class ProductViewController: UIViewController,AACarouselDelegate {
         priceButton.setTitle(viewModel.price, for: .normal)
         descriptionLabel.text = viewModel.description
         quantityLabel.text = String(viewModel.selectedQuantity)
-
     }
 
 
     func FeatureProducts(){
-
-
-//        product_ScrollView.backgroundColor = .red
-
 
         product_ScrollView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -65,18 +60,14 @@ class ProductViewController: UIViewController,AACarouselDelegate {
             let button = UIButton()
             button.tag = i
             button.backgroundColor = UIColor.darkGray
-//            button.setTitle("\(i)", for: .normal)
             button.layer.cornerRadius = 0.5 * button.bounds.size.width
             button.clipsToBounds = true
             button.frame = CGRect(x: xOffset, y: CGFloat(buttonPadding), width: 70, height: 70)
-//            button.layer.borderColor = UIColor.brandBrown.cgColor
             button.layer.borderWidth = 0.0 //
-
             button.setImage(UIImage(named: "perfume_image"), for: .normal)
 
             xOffset = xOffset + CGFloat(buttonPadding) + button.frame.size.width
             product_ScrollView.addSubview(button)
-//            button.layer.cornerRadius = button.frame.width/2
 
         }
         product_ScrollView.contentSize = CGSize(width: xOffset, height: product_ScrollView.frame.height)
@@ -87,19 +78,13 @@ class ProductViewController: UIViewController,AACarouselDelegate {
 
     func RecomandedProducts(){
 
-
-//        recommended_Scrollview.backgroundColor = .red
-
-
         recommended_Scrollview.translatesAutoresizingMaskIntoConstraints = false
 
         for i in 0 ... 10{
             let button = UIButton()
             button.tag = i
             button.backgroundColor = .clear
-//            button.setTitle("", for: .normal)
             button.layer.cornerRadius = 0.5 * button.bounds.size.width
-//            button.layer.borderColor = UIColor.lightGray.cgColor
             button.frame = CGRect(x: xOffsetRecommend, y: CGFloat(buttonPadding), width: 70, height: 70)
 
             button.layer.borderWidth = 0.0 //
@@ -113,28 +98,6 @@ class ProductViewController: UIViewController,AACarouselDelegate {
 
         }
         recommended_Scrollview.contentSize = CGSize(width: xOffsetRecommend, height: recommended_Scrollview.frame.height)
-
-
-//        for i in 0 ... 10 {
-//            let button = UIButton()
-//            button.tag = i
-//            button.backgroundColor = UIColor.darkGray
-//            button.setTitle("\(i)", for: .normal)
-//            button.layer.cornerRadius = 0.5 * button.bounds.size.width
-//            let brown = UIColor.brandBrown
-//            button.layer.borderColor = brown.cgColor
-//            button.layer.borderWidth = 2.0 //
-//            button.setImage(UIImage(named: "perfume_image"), for: .normal)
-//            button.clipsToBounds = true
-//            button.frame = CGRect(x: xOffset, y: CGFloat(buttonPadding), width: 70, height: 70)
-//
-//            xOffset = xOffset + CGFloat(buttonPadding) + button.frame.size.width+15
-//            Categories_Scroll.addSubview(button)
-//            button.layer.cornerRadius = button.frame.width/2
-//
-//        }
-//        Categories_Scroll.contentSize = CGSize(width: xOffset, height: Categories_Scroll.frame.height)
-
     }
 
 

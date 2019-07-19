@@ -43,8 +43,8 @@ extension RootViewController: RootViewControllerDelegate {
     /// - Parameter item: selected menu item
     func didSelectMenu(item: String) {
         switch item {
-        case "HOME":
-            self.loadHome()
+//        case "HOME":
+//            self.loadHome()
 
         case "PROFILE":
             self.loadProfile()

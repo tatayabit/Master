@@ -12,7 +12,7 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
     
     let buttonPadding:CGFloat = 05
     var xOffset:CGFloat = 15
-    let productDetailsSegue = "product_details_segue"
+    private let productDetailsSegue = "product_details_segue"
 
     @IBOutlet weak internal var collectionView: UICollectionView!
     @IBOutlet weak var carouselView: AACarousel!
@@ -139,7 +139,7 @@ extension HomeViewController {
     //MARK:- Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == productDetailsSegue {
-            let productDetailsVC = segue.destination as! ProductViewController
+            let productDetailsVC = segue.destination as! ProductDetailsViewController
             if let indexPath = sender as? IndexPath {
                 productDetailsVC.viewModel = viewModel.productDetailsViewModel(at: indexPath)
             }
