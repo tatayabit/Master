@@ -6,4 +6,9 @@
 //  Copyright © 2019 Shaik. All rights reserved.
 //
 
-import Foundation
+class Cart {
+    static let shared = Cart()
+    var products = [String: Any]()
+
+
+}

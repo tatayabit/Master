@@ -65,6 +65,14 @@
 		11F52FB722CA7D92000F0D85 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F52FAA22CA7D92000F0D85 /* SplashViewController.swift */; };
 		11F52FB922CA7D92000F0D85 /* SignUpViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F52FB122CA7D92000F0D85 /* SignUpViewcontroller.swift */; };
 		11F52FBA22CA7D92000F0D85 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F52FB622CA7D92000F0D85 /* LoginViewController.swift */; };
+		11F6FE8622E4CBBA00FA7D82 /* OrdersAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F6FE8522E4CBBA00FA7D82 /* OrdersAPIClient.swift */; };
+		11F6FE8822E4CBDD00FA7D82 /* OrdersEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F6FE8722E4CBDD00FA7D82 /* OrdersEndpoint.swift */; };
+		11F6FE8F22E4DB6A00FA7D82 /* ShippingAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F6FE8E22E4DB6A00FA7D82 /* ShippingAPIClient.swift */; };
+		11F6FE9122E4DB7900FA7D82 /* ShippingEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F6FE9022E4DB7900FA7D82 /* ShippingEndpoint.swift */; };
+		11F6FE9322E4DCCF00FA7D82 /* ShippingMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F6FE9222E4DCCF00FA7D82 /* ShippingMethod.swift */; };
+		11F6FE9822E4E01B00FA7D82 /* PaymentAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F6FE9722E4E01B00FA7D82 /* PaymentAPIClient.swift */; };
+		11F6FE9A22E4E02900FA7D82 /* PaymentEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F6FE9922E4E02900FA7D82 /* PaymentEndpoint.swift */; };
+		11F6FE9D22E4E08600FA7D82 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F6FE9C22E4E08600FA7D82 /* Payment.swift */; };
 		11FEB4D822DF822A00F2E9B8 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FEB4D722DF822A00F2E9B8 /* ProductDetailsViewController.swift */; };
 		11FEB4DB22DF84FE00F2E9B8 /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FEB4DA22DF84FE00F2E9B8 /* ProductDetailsView.swift */; };
 		11FEB4DD22DF850700F2E9B8 /* ProductDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FEB4DC22DF850700F2E9B8 /* ProductDetailsView.xib */; };
@@ -195,6 +203,14 @@
 		11F52FAA22CA7D92000F0D85 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		11F52FB122CA7D92000F0D85 /* SignUpViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewcontroller.swift; sourceTree = "<group>"; };
 		11F52FB622CA7D92000F0D85 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		11F6FE8522E4CBBA00FA7D82 /* OrdersAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersAPIClient.swift; sourceTree = "<group>"; };
+		11F6FE8722E4CBDD00FA7D82 /* OrdersEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersEndpoint.swift; sourceTree = "<group>"; };
+		11F6FE8E22E4DB6A00FA7D82 /* ShippingAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingAPIClient.swift; sourceTree = "<group>"; };
+		11F6FE9022E4DB7900FA7D82 /* ShippingEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingEndpoint.swift; sourceTree = "<group>"; };
+		11F6FE9222E4DCCF00FA7D82 /* ShippingMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingMethod.swift; sourceTree = "<group>"; };
+		11F6FE9722E4E01B00FA7D82 /* PaymentAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAPIClient.swift; sourceTree = "<group>"; };
+		11F6FE9922E4E02900FA7D82 /* PaymentEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentEndpoint.swift; sourceTree = "<group>"; };
+		11F6FE9C22E4E08600FA7D82 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		11FEB4D722DF822A00F2E9B8 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		11FEB4DA22DF84FE00F2E9B8 /* ProductDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
 		11FEB4DC22DF850700F2E9B8 /* ProductDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailsView.xib; sourceTree = "<group>"; };
@@ -614,6 +630,9 @@
 		11F52FA522CA7D92000F0D85 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				11F6FE9522E4DFFB00FA7D82 /* Payment */,
+				11F6FE8922E4CCDE00FA7D82 /* Shipping */,
+				11F6FE8022E4CB8000FA7D82 /* Orders */,
 				11081EE522DB820A00B68EA5 /* Static Screens */,
 				841CE30522DCB3E500A47FA0 /* Messages */,
 				84BC089422DC7CD200C6180E /* Cart */,
@@ -712,6 +731,115 @@
 				11F52FB622CA7D92000F0D85 /* LoginViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		11F6FE8022E4CB8000FA7D82 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				11F6FE8322E4CB8F00FA7D82 /* Models */,
+				11F6FE8222E4CB8A00FA7D82 /* ViewModels */,
+				11F6FE8122E4CB8500FA7D82 /* Views */,
+				11F6FE8422E4CB9400FA7D82 /* Api */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		11F6FE8122E4CB8500FA7D82 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		11F6FE8222E4CB8A00FA7D82 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		11F6FE8322E4CB8F00FA7D82 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		11F6FE8422E4CB9400FA7D82 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				11F6FE8522E4CBBA00FA7D82 /* OrdersAPIClient.swift */,
+				11F6FE8722E4CBDD00FA7D82 /* OrdersEndpoint.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		11F6FE8922E4CCDE00FA7D82 /* Shipping */ = {
+			isa = PBXGroup;
+			children = (
+				11F6FE8D22E4CCF700FA7D82 /* ViewModels */,
+				11F6FE8C22E4CCF100FA7D82 /* Models */,
+				11F6FE8B22E4CCED00FA7D82 /* Views */,
+				11F6FE8A22E4CCE500FA7D82 /* Api */,
+			);
+			path = Shipping;
+			sourceTree = "<group>";
+		};
+		11F6FE8A22E4CCE500FA7D82 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				11F6FE8E22E4DB6A00FA7D82 /* ShippingAPIClient.swift */,
+				11F6FE9022E4DB7900FA7D82 /* ShippingEndpoint.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		11F6FE8B22E4CCED00FA7D82 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		11F6FE8C22E4CCF100FA7D82 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11F6FE9222E4DCCF00FA7D82 /* ShippingMethod.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		11F6FE8D22E4CCF700FA7D82 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		11F6FE9522E4DFFB00FA7D82 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				11F6FE9B22E4E07200FA7D82 /* Models */,
+				11F6FE9622E4E00200FA7D82 /* Api */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		11F6FE9622E4E00200FA7D82 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				11F6FE9722E4E01B00FA7D82 /* PaymentAPIClient.swift */,
+				11F6FE9922E4E02900FA7D82 /* PaymentEndpoint.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		11F6FE9B22E4E07200FA7D82 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11F6FE9C22E4E08600FA7D82 /* Payment.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		11FEB4D922DF838500F2E9B8 /* CustomViews */ = {
@@ -1170,7 +1298,6 @@
 				848E89CD22CCEAAC000AA24C /* FeatureProductCollectionViewCell.xib in Resources */,
 				11A8B15322D79377001B2661 /* Wishlist.storyboard in Resources */,
 				847CDE4B22C9EE2300E67C8C /* Assets.xcassets in Resources */,
-				84E871DD22CB9F3200C2F46A /* Home.storyboard in Resources */,
 				841CE30C22DCC2D700A47FA0 /* Message.storyboard in Resources */,
 				847CDE8622CA19EE00E67C8C /* ProximaNova-Light.ttf in Resources */,
 				114D1A1622CBB27E009205F3 /* ProductCollectionViewCell.xib in Resources */,
@@ -1193,7 +1320,6 @@
 				11081EFD22DB8F5500B68EA5 /* ProfileDetailsView.xib in Resources */,
 				847CDE8522CA19EE00E67C8C /* ProximaNova-Extrabld.ttf in Resources */,
 				11A8B15D22D7943D001B2661 /* WishlistCollectionViewCell.xib in Resources */,
-				1119174722D6020600D8E5A9 /* CategoryTempCollectionViewCell.xib in Resources */,
 				84BA80C922E0666A00A57F71 /* 1.png in Resources */,
 				847CDE4622C9EE2300E67C8C /* Main.storyboard in Resources */,
 				110295D022DCD3A400C6A54B /* Home.storyboard in Resources */,
@@ -1316,9 +1442,11 @@
 				84BC089A22DC7D3400C6180E /* CartViewModel.swift in Sources */,
 				112654AC22D2691400904FB5 /* ProductsAPIClient.swift in Sources */,
 				114D1A1822CBB33E009205F3 /* Product.swift in Sources */,
+				11F6FE9822E4E01B00FA7D82 /* PaymentAPIClient.swift in Sources */,
 				84BC089C22DC7D4900C6180E /* CartModel.swift in Sources */,
 				11D612A922CE49D1000D42C3 /* UserEndpoint.swift in Sources */,
 				11D612A122CE48F3000D42C3 /* APIResult.swift in Sources */,
+				11F6FE8622E4CBBA00FA7D82 /* OrdersAPIClient.swift in Sources */,
 				11081EF422DB89F600B68EA5 /* ProfileViewController.swift in Sources */,
 				11081EF822DB8CD800B68EA5 /* StackedScrollView.swift in Sources */,
 				11D612A822CE49D1000D42C3 /* UserAPIClient.swift in Sources */,
@@ -1328,12 +1456,14 @@
 				1100421122D4F3520099AE64 /* String+Extensions.swift in Sources */,
 				84843C1222D08DB000702E40 /* LeftSliderViewController.swift in Sources */,
 				11F52FBA22CA7D92000F0D85 /* LoginViewController.swift in Sources */,
+				11F6FE9D22E4E08600FA7D82 /* Payment.swift in Sources */,
 				11D4917A22CBCF8B009D8B23 /* UIView+Extensions.swift in Sources */,
 				841CE30A22DCC2B300A47FA0 /* MessagesViewController.swift in Sources */,
 				848E89C122CC99AC000AA24C /* AACarousel.swift in Sources */,
 				11007BD222DE2E6600AC9957 /* ProductsListViewModel.swift in Sources */,
 				11FEB4E022DF921800F2E9B8 /* CarouselCollectionViewCell.swift in Sources */,
 				1101C66D22E0D75500416307 /* HProductCollectionViewCell.swift in Sources */,
+				11F6FE9A22E4E02900FA7D82 /* PaymentEndpoint.swift in Sources */,
 				848E89CC22CCEAAC000AA24C /* FeatureProductCollectionViewCell.swift in Sources */,
 				114D1A0722CBB0EA009205F3 /* ConfigurableCell.swift in Sources */,
 				112654A922D25E5B00904FB5 /* SignUpResponse.swift in Sources */,
@@ -1342,6 +1472,7 @@
 				847CDE4922C9EE2300E67C8C /* Tatayaba.xcdatamodeld in Sources */,
 				11007BD022DE2DC700AC9957 /* ProductsListViewController.swift in Sources */,
 				84843C1822D08DB000702E40 /* MenuTableViewCell.swift in Sources */,
+				11F6FE9322E4DCCF00FA7D82 /* ShippingMethod.swift in Sources */,
 				847CDE7A22CA130F00E67C8C /* ColorDef.swift in Sources */,
 				11B2C41C22D64F0A00EAD9C6 /* ProductDetailsViewModel.swift in Sources */,
 				841CE31022DCC33600A47FA0 /* MessageModel.swift in Sources */,
@@ -1354,6 +1485,7 @@
 				11F52FB922CA7D92000F0D85 /* SignUpViewcontroller.swift in Sources */,
 				84843C1522D08DB000702E40 /* BaseTableViewController.swift in Sources */,
 				11FEB4D822DF822A00F2E9B8 /* ProductDetailsViewController.swift in Sources */,
+				11F6FE9122E4DB7900FA7D82 /* ShippingEndpoint.swift in Sources */,
 				84BC089822DC7D0D00C6180E /* CartViewController.swift in Sources */,
 				112654AE22D2693600904FB5 /* ProductsEndpoint.swift in Sources */,
 				114D1A0B22CBB12B009205F3 /* CellActionHandler.swift in Sources */,
@@ -1361,6 +1493,7 @@
 				84BC089E22DC84A900C6180E /* CartTableViewCell.swift in Sources */,
 				847CDE4122C9EE2300E67C8C /* AppDelegate.swift in Sources */,
 				84843C1122D08DB000702E40 /* BaseTabBarController.swift in Sources */,
+				11F6FE8F22E4DB6A00FA7D82 /* ShippingAPIClient.swift in Sources */,
 				84843C1722D08DB000702E40 /* ContainerViewController.swift in Sources */,
 				11D612AC22CE4A05000D42C3 /* User.swift in Sources */,
 				848E89C522CCDDBB000AA24C /* HomeViewController.swift in Sources */,
@@ -1372,6 +1505,7 @@
 				11D4917C22CBD22D009D8B23 /* CategoriesViewModel.swift in Sources */,
 				841CE30E22DCC32100A47FA0 /* messageViewModel.swift in Sources */,
 				11D612A322CE4978000D42C3 /* SignUpViewModel.swift in Sources */,
+				11F6FE8822E4CBDD00FA7D82 /* OrdersEndpoint.swift in Sources */,
 				11D612A022CE48F3000D42C3 /* APIClient.swift in Sources */,
 				11F52FB722CA7D92000F0D85 /* SplashViewController.swift in Sources */,
 				1101C65E22E0C42800416307 /* ProductOptionsView.swift in Sources */,
