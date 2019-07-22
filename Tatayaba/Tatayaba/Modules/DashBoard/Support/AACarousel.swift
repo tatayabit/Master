@@ -80,6 +80,7 @@ public class AACarousel: UIView,UIScrollViewDelegate {
         initWithPageControl()
         initWithGestureRecognizer()
         setNeedsDisplay()
+    
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -97,6 +98,7 @@ public class AACarousel: UIView,UIScrollViewDelegate {
         scrollView.bounces = false
         scrollView.delegate = self
         addSubview(scrollView)
+  
         
     }
     
@@ -139,6 +141,7 @@ public class AACarousel: UIView,UIScrollViewDelegate {
         beforeImageView.clipsToBounds = true
         currentImageView.clipsToBounds = true
         afterImageView.clipsToBounds = true
+        currentImageView.image = UIImage.init(named: "Dashboard")
         scrollView.addSubview(beforeImageView)
         scrollView.addSubview(currentImageView)
         scrollView.addSubview(afterImageView)
@@ -160,7 +163,7 @@ public class AACarousel: UIView,UIScrollViewDelegate {
      
        
         for _ in 0..<paths.count {
-            images.append(UIImage(named: defaultImg ?? "") ?? UIImage())
+            images.append(UIImage(named: defaultImg ?? "Dashboard") ?? UIImage())
         }
         
        
@@ -190,6 +193,7 @@ public class AACarousel: UIView,UIScrollViewDelegate {
         scrollView.frame = CGRect.init(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
         scrollView.contentSize = CGSize.init(width: frame.size.width * 5, height:0)
         scrollView.contentOffset = CGPoint.init(x: frame.size.width * 2, y: 0)
+       
         
     }
     
@@ -281,18 +285,21 @@ public class AACarousel: UIView,UIScrollViewDelegate {
         setImage(paths, currentIndex)
         setLabel(describedTitle, currentIndex)
         setScrollEnabled(paths, isAutoScroll)
+      
     }
     
    
     fileprivate func setScrollEnabled(_ url:[String],_ isAutoScroll:Bool) {
         
-        stopAutoScroll()
+        //stopAutoScroll()
         
         if isAutoScroll && url.count > 1 {
-            scrollView.isScrollEnabled = true
-            startAutoScroll()
+            scrollView.isScrollEnabled = false
+           // startAutoScroll()
+            stopAutoScroll()
         } else if url.count == 1 {
             scrollView.isScrollEnabled = false
+            stopAutoScroll()
         }
     }
     
@@ -356,7 +363,7 @@ public class AACarousel: UIView,UIScrollViewDelegate {
            
             beforeImageView.image = currentImageView.image
             currentImageView.image = images[currentIndex]
-            
+
             if currentIndex + 1 > images.count - 1 {
                 afterImageView.image = images[0]
             } else {
@@ -367,7 +374,7 @@ public class AACarousel: UIView,UIScrollViewDelegate {
         case .left:
             //change ImageView
             afterImageView.image = currentImageView.image
-            currentImageView.image =  images[currentIndex]
+            currentImageView.image =  images[0]
             
             if currentIndex - 1 < 0 {
                 beforeImageView.image = images[images.count - 1]
@@ -478,7 +485,7 @@ public class AACarousel: UIView,UIScrollViewDelegate {
     
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
        
-        startAutoScroll()
+       stopAutoScroll() //startAutoScroll() shaik
         
     }
     
@@ -532,7 +539,7 @@ public class AACarousel: UIView,UIScrollViewDelegate {
  
     public func startScrollImageView() {
         
-        startAutoScroll()
+          stopAutoScroll()// startAutoScroll() shaik
     }
     
     public func stopScrollImageView() {

@@ -221,7 +221,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Op-H1-iNe" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="914" y="145"/>
+            <point key="canvasLocation" x="820" y="143"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="fcU-Ux-jCb">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="Ocd-ae-jVx" customClass="ProfileViewController" customModule="Tatayaba" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zf1-hj-68i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ijs-o7-6px" customClass="StackedScrollView" customModule="Tatayaba" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="67" width="375" height="580"/>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROFILE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLJ-f0-ngZ">
+                                <rect key="frame" x="20" y="32" width="335" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="72G-z6-EIy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ijs-o7-6px" firstAttribute="top" secondItem="jLJ-f0-ngZ" secondAttribute="bottom" constant="12" id="05V-p1-14u"/>
+                            <constraint firstItem="gcm-ld-n6n" firstAttribute="trailing" secondItem="jLJ-f0-ngZ" secondAttribute="trailing" constant="20" id="9Wd-zh-lE7"/>
+                            <constraint firstItem="jLJ-f0-ngZ" firstAttribute="leading" secondItem="gcm-ld-n6n" secondAttribute="leading" constant="20" id="QcP-kg-YwQ"/>
+                            <constraint firstItem="Ijs-o7-6px" firstAttribute="leading" secondItem="gcm-ld-n6n" secondAttribute="leading" id="khp-y3-vQW"/>
+                            <constraint firstItem="jLJ-f0-ngZ" firstAttribute="top" secondItem="gcm-ld-n6n" secondAttribute="top" constant="12" id="rra-x1-je1"/>
+                            <constraint firstItem="gcm-ld-n6n" firstAttribute="bottom" secondItem="Ijs-o7-6px" secondAttribute="bottom" constant="20" id="yTr-wC-naK"/>
+                            <constraint firstItem="gcm-ld-n6n" firstAttribute="trailing" secondItem="Ijs-o7-6px" secondAttribute="trailing" id="yxg-Gn-M6o"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gcm-ld-n6n"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="Ijs-o7-6px" id="Aqk-gj-U9L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QI9-75-qsa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828" y="143.47826086956522"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="1JW-5u-mAf">
@@ -308,7 +349,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                         <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -375,11 +416,12 @@
                     <connections>
                         <outlet property="emailTextField" destination="uAj-qN-buH" id="iKr-o8-9fs"/>
                         <outlet property="passwordTextField" destination="wBz-kP-Qjb" id="dsa-Y0-MMd"/>
+                        <segue destination="BgT-lq-qQx" kind="show" identifier="show_home_segue" id="5d0-vt-cjK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qb1-g6-zMe" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="158" y="145"/>
+            <point key="canvasLocation" x="129" y="143"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="odK-mh-6BB">
@@ -398,7 +440,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bin-4F-Ije" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-858" y="144"/>
+            <point key="canvasLocation" x="-575" y="144"/>
         </scene>
         <!--Left Slider View Controller-->
         <scene sceneID="uHw-X0-FRO">
@@ -428,7 +470,7 @@
                                                         <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="7Mq-SY-6oY">
                                                             <rect key="frame" x="0.0" y="0.0" width="228" height="149"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9EU-Ic-24T">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9EU-Ic-24T">
                                                                     <rect key="frame" x="8" y="5" width="212" height="141"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SHAIK NAYEEMUDDIN" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQ3-XF-orq">
@@ -448,6 +490,7 @@
                                                             </subviews>
                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
+                                                                <constraint firstItem="9EU-Ic-24T" firstAttribute="trailing" secondItem="7Mq-SY-6oY" secondAttribute="trailingMargin" id="338-Fo-HTt"/>
                                                                 <constraint firstAttribute="bottom" secondItem="9EU-Ic-24T" secondAttribute="bottom" constant="3" id="ERu-IX-xcQ"/>
                                                                 <constraint firstItem="9EU-Ic-24T" firstAttribute="top" secondItem="7Mq-SY-6oY" secondAttribute="top" constant="5" id="ZLl-dx-KJa"/>
                                                                 <constraint firstItem="9EU-Ic-24T" firstAttribute="leading" secondItem="7Mq-SY-6oY" secondAttribute="leadingMargin" id="dLg-hf-zrP"/>
@@ -644,7 +687,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6e-Yy-oNS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-858.39999999999998" y="821.73913043478262"/>
+            <point key="canvasLocation" x="-858" y="865"/>
         </scene>
         <!--Right Slider View Controller-->
         <scene sceneID="nOU-sd-fV3">
@@ -659,7 +702,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ycm-Dg-bor" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-158" y="822"/>
+            <point key="canvasLocation" x="129" y="865"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="PN0-FG-tcL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="BgT-lq-qQx" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FwN-vF-s6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="827" y="688"/>
         </scene>
     </scenes>
     <resources>
@@ -671,6 +722,6 @@
         <image name="User" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JQV-5X-VTL"/>
+        <segue reference="2OH-HV-ZhN"/>
     </inferredMetricsTieBreakers>
 </document>

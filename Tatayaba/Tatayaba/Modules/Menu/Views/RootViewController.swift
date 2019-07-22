@@ -43,21 +43,73 @@ extension RootViewController: RootViewControllerDelegate {
     /// - Parameter item: selected menu item
     func didSelectMenu(item: String) {
         switch item {
+//        case "HOME":
+//            self.loadHome()
+
+        case "PROFILE":
+            self.loadProfile()
         case "Login VC":
             self.loadFirstVC()
         case "Second VC":
             self.loadSecondVC()
+        case "WISHLIST":
+            self.loadWishList()
+        case "ABOUT":
+            self.loadAboutUs()
+        case "ORDERS":
+            self.loadOrdersVC()
+        case "MESSAGES":
+            self.loadMessageVC()
         default:
             break
         }
+    }
+
+    func loadHome() {
+        let controller = UIStoryboard(name: "Home", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        self.navigationController?.pushViewController(controller, animated: false)
+    }
+
+    func loadProfile() {
+        let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        self.navigationController?.pushViewController(controller, animated: false)
     }
     
     func loadFirstVC() {
         let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         self.navigationController?.pushViewController(controller, animated: false)
+      
+
+    }
+     func loadSecondVC() {
     }
     
-    func loadSecondVC() {
+    func loadOrdersVC() {
+        
+        let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
+        self.navigationController?.pushViewController(controller, animated: false)
        
     }
+
+    func loadWishList() {
+        let controller = UIStoryboard(name: "Wishlist", bundle: Bundle.main).instantiateViewController(withIdentifier: "WishlistViewController") as! WishlistViewController
+        self.navigationController?.pushViewController(controller, animated: false)
+    }
+
+
+    func loadAboutUs() {
+        let controller = UIStoryboard(name: "Static", bundle: Bundle.main).instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
+        self.navigationController?.pushViewController(controller, animated: false)
+    }
+
+    
+    func loadMessageVC() {
+        let controller = UIStoryboard(name: "Message", bundle: Bundle.main).instantiateViewController(withIdentifier: "MessagesViewController") as! MessagesViewController
+        self.navigationController?.pushViewController(controller, animated: false)
+        
+        
+        
+    }
+    
+
 }
