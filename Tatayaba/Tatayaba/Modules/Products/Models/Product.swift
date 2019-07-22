@@ -36,6 +36,7 @@ struct Product {
     var price: String = ""
     var inWishlist: Bool = false
     var identifier: String = ""
+    var selectedQuantity = 0
 
     init() {}
 
