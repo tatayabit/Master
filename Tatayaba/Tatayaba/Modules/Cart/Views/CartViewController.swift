@@ -20,10 +20,6 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
         super.viewDidLoad()
         EditButton = "0"
         setupUI()
-        
-        
-       
-       
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,9 +32,6 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
         self.NavigationBarWithOutBackButton()
         self.addLeftBarButton()
         Add_EDitUI()
-
-  
-       
         self.collectionView.register(RecommendedCollectionViewCell.nib, forCellWithReuseIdentifier: RecommendedCollectionViewCell.identifier)
  
     }
@@ -50,10 +43,6 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
         EditBtn.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         let EditButton = UIBarButtonItem(customView: EditBtn)
         self.navigationItem.rightBarButtonItem  = EditButton
-        
-        
-       
-        
     }
 
     
