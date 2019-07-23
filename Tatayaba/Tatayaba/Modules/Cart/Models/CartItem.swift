@@ -14,7 +14,7 @@ class CartItem {
     private let maxCount = 99
     private let minCount = 0
 
-    init(productId: String, productName: String) {
+    init(productId: String = "" , productName: String = "") {
         self.productId = productId
         self.productName = productName
         self.increaseCount(by: 1)

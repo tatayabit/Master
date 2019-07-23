@@ -9,51 +9,52 @@
 import UIKit
 
 class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource {
-     let EditBtn = UIButton()
+    let EditBtn = UIButton()
     let EditOkBtn = UIButton()
     var EditButton = String()
-    
+    let cart = Cart.shared
+
 
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var cart_Tableview: UITableView!
+    @IBOutlet weak var totalButton: UIButton!
+
+    //MARK:- Init
     override func viewDidLoad() {
         super.viewDidLoad()
         EditButton = "0"
         setupUI()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-       
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        cart_Tableview.reloadData()
+        totalButton.setTitle(cart.totalPrice, for: .normal)
     }
-    
     
     func setupUI() {
         self.NavigationBarWithOutBackButton()
         self.addLeftBarButton()
-        Add_EDitUI()
+        AddEditUI()
         self.collectionView.register(RecommendedCollectionViewCell.nib, forCellWithReuseIdentifier: RecommendedCollectionViewCell.identifier)
- 
     }
     
-    func Add_EDitUI(){
+    func AddEditUI(){
         
         EditBtn.setImage(UIImage(named: "Edit"), for: [])
-        EditBtn.addTarget(self, action: #selector(Edit_Button_Action), for: UIControlEvents.touchUpInside)
+        EditBtn.addTarget(self, action: #selector(EditButtonAction), for: UIControlEvents.touchUpInside)
         EditBtn.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         let EditButton = UIBarButtonItem(customView: EditBtn)
         self.navigationItem.rightBarButtonItem  = EditButton
     }
-
     
-    
-    @objc func Edit_Button_Action() {
+    @objc func EditButtonAction() {
         
         EditButton = "1"
      
         EditBtn.isHidden = true
         EditOkBtn.setImage(UIImage(named: "tick"), for: [])
-        EditOkBtn.addTarget(self, action: #selector(EditOK_Button_Action), for: UIControlEvents.touchUpInside)
+        EditOkBtn.addTarget(self, action: #selector(EditOKButtonAction), for: UIControlEvents.touchUpInside)
         EditOkBtn.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         let OkButton = UIBarButtonItem(customView: EditOkBtn)
         self.navigationItem.rightBarButtonItem  = OkButton
@@ -64,33 +65,47 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
         cart_Tableview.reloadData()
         
     }
-    @objc func EditOK_Button_Action() {
+    @objc func EditOKButtonAction() {
         
         EditButton = "0"
         EditBtn.isHidden = false
         EditOkBtn.isHidden = true
-        Add_EDitUI()
+        AddEditUI()
         cart_Tableview.reloadData()
         
     }
-    
 
-    /*
-    // MARK: - Navigation
+    //MARK:- Add / Remove Cell Actions
+    func addOneMoreAction(indexPath: IndexPath) {
+        let cartProduct = cart.product(at: indexPath)
+        cart.increaseCount(cartItem: cartProduct.1)
+//        cart_Tableview.reloadRows(at: [indexPath], with: .automatic)
+        totalButton.setTitle(cart.totalPrice, for: .normal)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
+
+    func removeOneAction(indexPath: IndexPath) {
+        let cartProduct = cart.product(at: indexPath)
+        cart.decreaseCount(cartItem: cartProduct.1)
+//        cart_Tableview.reloadRows(at: [indexPath], with: .automatic)
+        totalButton.setTitle(cart.totalPrice, for: .normal)
+
+    }
+
+    func removeItemAction(indexPath: IndexPath) {
+        let cartProduct = cart.product(at: indexPath)
+        cart.removeProduct(cartItem: cartProduct.1)
+        totalButton.setTitle(cart.totalPrice, for: .normal)
+
+//        cart_Tableview.reloadRows(at: [indexPath], with: .automatic)
+    }
 
 }
  //Tableview
-extension CartViewController{
+extension CartViewController {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return cart.productsCount
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
@@ -100,15 +115,30 @@ extension CartViewController{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "CartCellIdentifier"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CartTableViewCell
-        
-        if EditButton == "1"{
-           cell.cell_Close.isHidden = false
-        }else{
-           cell.cell_Close.isHidden = true
-            
+
+        let cartProduct = cart.product(at: indexPath)
+        cell.configure(product: cartProduct.0, cartItem: cartProduct.1)
+//        if EditButton == "1"{
+//           cell.removeItem.isHidden = false
+//        }else{
+//           cell.removeItem.isHidden = true
+//
+//        }
+
+        cell.onAddMoreClick = {
+            self.addOneMoreAction(indexPath: indexPath)
+            cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
         }
-        
-        
+
+        cell.onRemoveOneCountClick = {
+            self.removeOneAction(indexPath: indexPath)
+            cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
+        }
+
+        cell.onRemoveItemClick = {
+            self.removeItemAction(indexPath: indexPath)
+            cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
+        }
         return cell
     }
     

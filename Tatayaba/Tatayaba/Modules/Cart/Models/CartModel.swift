@@ -6,11 +6,15 @@
 //  Copyright © 2019 Shaik. All rights reserved.
 //
 
+import UIKit
+
 class Cart {
     static let shared = Cart()
     private var products = [CartItem]()
+    private var productsArr = [Product]()
 
-
+    var productsCount: Int { return products.count }
+    var totalPrice: String { return String(calculateTotal()).formattedPrice }
     //MARK:- Operational functions
     func addProduct(product: Product) {
         if productExistedInCart(product: product) {
@@ -19,6 +23,7 @@ class Cart {
         } else {
             let productModel = CartItem(productId: product.identifier, productName: product.name)
             products.append(productModel)
+            productsArr.append(product)
         }
     }
 
@@ -38,10 +43,27 @@ class Cart {
         cartItem.decreaseCount(by: 1)
     }
 
+    func product(at indexPath: IndexPath) -> (Product, CartItem) {
+        guard products.count > 0 else { return (Product(), CartItem()) }
+        return (productsArr[indexPath.row], products[indexPath.row])
+    }
+
     //MARK:- Private functions
     private func productExistedInCart(product: Product) -> Bool {
         let existed = products.contains(where: { $0.productId == product.identifier})
         return existed
+    }
+
+    func calculateTotal() -> Float {
+        var total: Float = 0
+        for i in 0...productsArr.count - 1 {
+            let productItem = productsArr[i]
+            let cartItem = products[i]
+            let price = (productItem.price as NSString).floatValue//Float(productItem.price) ?? 0.0
+            let quantity = Float(cartItem.count)
+                total += (quantity * price)
+        }
+        return total
     }
 
 }
