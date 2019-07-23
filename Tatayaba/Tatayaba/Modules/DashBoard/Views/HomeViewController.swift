@@ -90,7 +90,7 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
                          "Dashboard",
                          "ADD"]
         carouselView.delegate = self
-        carouselView.setCarouselData(paths: pathArray,  describedTitle: [""], isAutoScroll: false, timer: 1.5 , defaultImage: "1.png")
+        carouselView.setCarouselData(paths: pathArray,  describedTitle: [""], isAutoScroll: false, timer: 1.5 , defaultImage: "ADD")
         carouselView.setCarouselOpaque(layer: false, describedTitle: false, pageIndicator: false)
         carouselView.setCarouselLayout(displayStyle: 0, pageIndicatorPositon: 2, pageIndicatorColor: nil, describedTitleColor: nil, layerColor: nil)
        
