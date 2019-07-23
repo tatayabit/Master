@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProductDetailsViewController: BaseViewController, AACarouselDelegate {
+class ProductDetailsViewController: BaseViewController {
 
     @IBOutlet weak var scrollView: StackedScrollView!
     let productDetailsView: ProductDetailsView = .fromNib()
@@ -17,6 +17,7 @@ class ProductDetailsViewController: BaseViewController, AACarouselDelegate {
 
     var viewModel: ProductDetailsViewModel?
 
+    //MARK:- Init
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,11 +25,14 @@ class ProductDetailsViewController: BaseViewController, AACarouselDelegate {
         addSubViews()
     }
 
+    //MARK:- Setup StackedScrollView
     func addSubViews() {
         setupProductDetailsView()
         setupOptionsView()
         setupPriceButton()
     }
+
+
 
     fileprivate func setupProductDetailsView() {
         productDetailsView.viewModel = viewModel
@@ -66,11 +70,15 @@ class ProductDetailsViewController: BaseViewController, AACarouselDelegate {
         priceButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
 //        priceButton.widthAnchor.constraint(equalToConstant: 120).isActive = true
         priceButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+        priceButton.actionHandle(controlEvents: .touchUpInside) {
+            self.addToCartAction()
+        }
     }
 
-    //MARK:- AACarouselDelegate
-    func downloadImages(_ url: String, _ index: Int) {
-
+    //MARK:- IBActions
+    func addToCartAction() {
+        guard let viewModel = viewModel else { return }
+        viewModel.addToCart()
     }
 
 }

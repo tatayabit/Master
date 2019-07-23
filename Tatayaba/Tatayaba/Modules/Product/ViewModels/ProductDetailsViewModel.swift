@@ -39,6 +39,11 @@ class ProductDetailsViewModel {
         }
     }
 
+    func addToCart()  {
+        let cart = Cart.shared
+        cart.addProduct(product: product)
+    }
+
     //MARK:- Product Options
     
 }

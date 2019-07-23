@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sVk-iS-5R8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sVk-iS-5R8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -83,6 +80,9 @@
                                                                 <constraint firstAttribute="width" constant="23" id="4an-6g-CVO"/>
                                                             </constraints>
                                                             <state key="normal" title="+"/>
+                                                            <connections>
+                                                                <action selector="addOneCountAction:" destination="0JF-oX-Cgy" eventType="touchUpInside" id="cZv-b8-ckN"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o58-T2-bDr">
                                                             <rect key="frame" x="304" y="87" width="16" height="30"/>
@@ -96,10 +96,16 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3c-fC-M0d">
                                                             <rect key="frame" x="316" y="90" width="23" height="24"/>
                                                             <state key="normal" title="-"/>
+                                                            <connections>
+                                                                <action selector="removeOneCountAction:" destination="0JF-oX-Cgy" eventType="touchUpInside" id="cz5-qk-3Lw"/>
+                                                            </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x79-ig-m4N">
+                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x79-ig-m4N">
                                                             <rect key="frame" x="304" y="39" width="50" height="50"/>
                                                             <state key="normal" image="Close"/>
+                                                            <connections>
+                                                                <action selector="removeItemAction:" destination="0JF-oX-Cgy" eventType="touchUpInside" id="hc3-5l-d7v"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -143,7 +149,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="cell_Close" destination="x79-ig-m4N" id="bTq-m5-UDN"/>
+                                            <outlet property="addMoreButton" destination="bNR-Of-umM" id="QZ5-um-e4s"/>
+                                            <outlet property="nameLabel" destination="K4f-ph-dFJ" id="adK-uw-fcD"/>
+                                            <outlet property="priceLabel" destination="whS-Yz-XyK" id="YHM-1u-J3f"/>
+                                            <outlet property="productImageView" destination="WKS-SU-I9L" id="mcM-LZ-tf5"/>
+                                            <outlet property="quantityLabel" destination="VhM-Ww-8aO" id="fbB-nA-z5i"/>
+                                            <outlet property="removeItem" destination="x79-ig-m4N" id="bTq-m5-UDN"/>
+                                            <outlet property="removeOneButton" destination="A3c-fC-M0d" id="Fpr-cp-s5t"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -226,10 +238,10 @@
                         <constraints>
                             <constraint firstItem="DXq-eG-5oh" firstAttribute="top" secondItem="mmR-AF-zjh" secondAttribute="bottom" constant="27" id="09D-tX-A0G"/>
                             <constraint firstItem="scu-WO-tSO" firstAttribute="trailing" secondItem="oEU-Gk-fEG" secondAttribute="trailing" constant="7" id="6iG-oW-3jt"/>
-                            <constraint firstItem="EgH-bz-rDy" firstAttribute="top" secondItem="hfg-r0-u4D" secondAttribute="top" constant="108" id="DuS-8d-Shb"/>
                             <constraint firstItem="scu-WO-tSO" firstAttribute="trailing" secondItem="DXq-eG-5oh" secondAttribute="trailing" constant="85" id="LmV-5f-9xB"/>
                             <constraint firstItem="EgH-bz-rDy" firstAttribute="trailing" secondItem="mmR-AF-zjh" secondAttribute="trailing" id="M61-M3-Jr3"/>
                             <constraint firstAttribute="trailing" secondItem="EgH-bz-rDy" secondAttribute="trailing" id="OF2-91-nkD"/>
+                            <constraint firstItem="oEU-Gk-fEG" firstAttribute="top" secondItem="scu-WO-tSO" secondAttribute="top" constant="7" id="nzN-20-0Ek"/>
                             <constraint firstItem="mmR-AF-zjh" firstAttribute="top" secondItem="EgH-bz-rDy" secondAttribute="bottom" constant="8" id="oIZ-PH-eXs"/>
                             <constraint firstItem="EgH-bz-rDy" firstAttribute="leading" secondItem="mmR-AF-zjh" secondAttribute="leading" id="odH-JW-z63"/>
                             <constraint firstItem="DXq-eG-5oh" firstAttribute="leading" secondItem="scu-WO-tSO" secondAttribute="leading" constant="86" id="pMU-eW-eQ5"/>
@@ -243,6 +255,7 @@
                     <connections>
                         <outlet property="cart_Tableview" destination="EgH-bz-rDy" id="9wX-gU-SSI"/>
                         <outlet property="collectionView" destination="sCr-3q-tuR" id="k0b-2H-HHa"/>
+                        <outlet property="totalButton" destination="DXq-eG-5oh" id="m3N-CC-3Qm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mR7-fh-ReS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -269,8 +282,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Cart" width="30" height="30"/>
-        <image name="Close" width="130" height="130"/>
-        <image name="price _rounded_rectangle" width="123" height="29"/>
+        <image name="Cart" width="60" height="60"/>
+        <image name="Close" width="195" height="195"/>
+        <image name="price _rounded_rectangle" width="123" height="29.5"/>
     </resources>
 </document>
