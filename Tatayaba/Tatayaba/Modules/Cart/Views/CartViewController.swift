@@ -33,27 +33,20 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
     
     
     func setupUI() {
-        self.NavigationBarWithOutBackButton()
-        self.addLeftBarButton()
-        Add_EDitUI()
-
-  
-       
-        self.collectionView.register(RecommendedCollectionViewCell.nib, forCellWithReuseIdentifier: RecommendedCollectionViewCell.identifier)
+         self.NavigationBarWithOutBackButton()
+         self.addLeftBarButton()
+         self.Add_EDitUI()
+         self.collectionView.register(RecommendedCollectionViewCell.nib, forCellWithReuseIdentifier: RecommendedCollectionViewCell.identifier)
  
     }
     
-    func Add_EDitUI(){
-        
+    func Add_EDitUI()
+    {
         EditBtn.setImage(UIImage(named: "Edit"), for: [])
         EditBtn.addTarget(self, action: #selector(Edit_Button_Action), for: UIControlEvents.touchUpInside)
         EditBtn.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         let EditButton = UIBarButtonItem(customView: EditBtn)
         self.navigationItem.rightBarButtonItem  = EditButton
-        
-        
-       
-        
     }
 
     
@@ -61,7 +54,6 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
     @objc func Edit_Button_Action() {
         
         EditButton = "1"
-     
         EditBtn.isHidden = true
         EditOkBtn.setImage(UIImage(named: "tick"), for: [])
         EditOkBtn.addTarget(self, action: #selector(EditOK_Button_Action), for: UIControlEvents.touchUpInside)
@@ -69,9 +61,6 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
         let OkButton = UIBarButtonItem(customView: EditOkBtn)
         self.navigationItem.rightBarButtonItem  = OkButton
         EditOkBtn.isHidden = false
-        
-        
-        
         cart_Tableview.reloadData()
         
     }

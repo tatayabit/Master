@@ -37,15 +37,10 @@ class RootViewController: BaseViewController {
 
 extension RootViewController: RootViewControllerDelegate {
     
-    
-    /// Determines selected menu and navigates to selected screen
-    ///
-    /// - Parameter item: selected menu item
     func didSelectMenu(item: String) {
         switch item {
-//        case "HOME":
-//            self.loadHome()
-
+        case "HOME":
+            self.loadHome()
         case "PROFILE":
             self.loadProfile()
         case "Login VC":
@@ -84,13 +79,6 @@ extension RootViewController: RootViewControllerDelegate {
      func loadSecondVC() {
     }
     
-    func loadOrdersVC() {
-        
-        let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
-        self.navigationController?.pushViewController(controller, animated: false)
-       
-    }
-
     func loadWishList() {
         let controller = UIStoryboard(name: "Wishlist", bundle: Bundle.main).instantiateViewController(withIdentifier: "WishlistViewController") as! WishlistViewController
         self.navigationController?.pushViewController(controller, animated: false)
@@ -105,6 +93,12 @@ extension RootViewController: RootViewControllerDelegate {
     
     func loadMessageVC() {
         let controller = UIStoryboard(name: "Message", bundle: Bundle.main).instantiateViewController(withIdentifier: "MessagesViewController") as! MessagesViewController
+        self.navigationController?.pushViewController(controller, animated: false)
+        
+    }
+    
+    func loadOrdersVC() {
+        let controller = UIStoryboard(name: "Order", bundle: Bundle.main).instantiateViewController(withIdentifier: "OrderViewController") as! OrderViewController
         self.navigationController?.pushViewController(controller, animated: false)
         
         

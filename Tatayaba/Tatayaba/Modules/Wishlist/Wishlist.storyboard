@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Wishlist View Controller-->
+        <!--TATAYAB-->
         <scene sceneID="IVC-eb-RbL">
             <objects>
                 <viewController storyboardIdentifier="WishlistViewController" id="Fgd-MM-Bl1" customClass="WishlistViewController" customModule="Tatayaba" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mmo-cw-R2g">
-                                <rect key="frame" x="2" y="24" width="371" height="639"/>
+                                <rect key="frame" x="2" y="68" width="371" height="595"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="3" id="UoU-wj-XJ4">
                                     <size key="itemSize" width="50" height="50"/>
@@ -39,13 +39,32 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LVo-Cn-uTK"/>
                     </view>
+                    <navigationItem key="navigationItem" title="TATAYAB" id="imK-gG-LUY"/>
                     <connections>
                         <outlet property="wishlistCollectionView" destination="mmo-cw-R2g" id="5L5-bs-UTV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="grI-Bo-Sbp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="97" y="-15"/>
+            <point key="canvasLocation" x="393" y="-3"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LgL-NU-HTF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Ch-sP-q2q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4qs-d4-I4o">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Fgd-MM-Bl1" kind="relationship" relationship="rootViewController" id="gl6-Ub-eJi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M5H-5C-dPO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-330" y="-3"/>
         </scene>
     </scenes>
 </document>
