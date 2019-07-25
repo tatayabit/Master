@@ -16,7 +16,7 @@ enum ShippingEndpoint {
 extension ShippingEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
-        case .production: return "https://dev2%40tatayab.com:E970ASsq0e9GmSJ2EX0BLGvskO2UF841@tatayab.com/old_store/api/"
+        case .production: return "https://dev2%40tatayab.com:E970ASsq0e9GmSJ2EX0BLGvskO2UF841@old.tatayab.com/api/"
         case .qa: return "http://localhost:3000/"
         case .staging: return "http://localhost:3000/"
         }
@@ -31,7 +31,7 @@ extension ShippingEndpoint: TargetType {
     var path: String {
         switch self {
         case .getShippings:
-            return "users"
+            return "shippings"
         }
     }
 

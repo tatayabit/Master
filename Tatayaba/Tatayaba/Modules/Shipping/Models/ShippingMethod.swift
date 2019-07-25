@@ -6,6 +6,27 @@
 //  Copyright © 2019 Shaik. All rights reserved.
 //
 
+struct ShippingMethodResult {
+    var shippings: [ShippingMethod]?
+}
+
+extension ShippingMethodResult: Codable {
+    enum ShippingMethodResultCodingKeys: String, CodingKey {
+        case shippings
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: ShippingMethodResultCodingKeys.self)
+        shippings = try container.decodeIfPresent([ShippingMethod].self, forKey: .shippings)
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: ShippingMethodResultCodingKeys.self)
+        try container.encode(shippings, forKey: .shippings)
+    }
+}
+
+
 struct ShippingMethod {
     var shippingId: String = ""
     var position: String = ""

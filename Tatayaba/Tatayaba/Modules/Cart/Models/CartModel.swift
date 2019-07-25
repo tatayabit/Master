@@ -13,8 +13,11 @@ class Cart {
     private var products = [CartItem]()
     private var productsArr = [Product]()
 
+    var defaultShipping: ShippingMethod?
+
     var productsCount: Int { return products.count }
-    var totalPrice: String { return String(calculateTotal()).formattedPrice }
+    var subtotalPrice: String { return String(calculateSubTotal()).formattedPrice }
+
     //MARK:- Operational functions
     func addProduct(product: Product) {
         if productExistedInCart(product: product) {
@@ -54,7 +57,7 @@ class Cart {
         return existed
     }
 
-    func calculateTotal() -> Float {
+    func calculateSubTotal() -> Float {
         var total: Float = 0
         for i in 0...productsArr.count - 1 {
             let productItem = productsArr[i]

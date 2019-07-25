@@ -11,34 +11,38 @@ import UIKit
 class CheckOutViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
 
     @IBOutlet var PaymentcollectionView: UICollectionView!
+    @IBOutlet weak var subTotalValueLabel: UILabel!
+    @IBOutlet weak var shippingValueLabel: UILabel!
+    @IBOutlet weak var vatValueLabel: UILabel!
+    @IBOutlet weak var totalPriceButton: UIButton!
 
     private let viewModel = CheckOutViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
+        self.updateData()
+    }
 
+    func updateData() {
+        subTotalValueLabel.text = viewModel.subTotalValue
+        totalPriceButton.setTitle(viewModel.totalValue, for: .normal)
+        shippingValueLabel.text = viewModel.shippingValue
     }
     
     
     func setupUI() {
         self.NavigationBarWithOutBackButton()
-      
 
-
-        
         self.PaymentcollectionView.register(PaymentSelectionViewCell.nib, forCellWithReuseIdentifier: PaymentSelectionViewCell.identifier)
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-     
+    //MARK:- IBActions
+
+    @IBAction func totalPriceAction(_ sender: Any) {
+
     }
-    
-
-
-
 }
 
 /// Collection View
