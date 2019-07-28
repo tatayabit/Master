@@ -41,7 +41,18 @@ class CheckOutViewController: UIViewController,UICollectionViewDelegate,UICollec
     //MARK:- IBActions
 
     @IBAction func totalPriceAction(_ sender: Any) {
+        viewModel.placeOrder { result in
+            switch result {
+            case .success(let response):
+                guard let placeOrderResult = response else { return }
+                //                guard let paymentMethods = paymentResult.paymentMethods else { return }
 
+                print(placeOrderResult)
+
+            case .failure(let error):
+                print("the error \(error)")
+            }
+        }
     }
 }
 

@@ -51,12 +51,6 @@ class Cart {
         return (productsArr[indexPath.row], products[indexPath.row])
     }
 
-    //MARK:- Private functions
-    private func productExistedInCart(product: Product) -> Bool {
-        let existed = products.contains(where: { $0.productId == product.identifier})
-        return existed
-    }
-
     func calculateSubTotal() -> Float {
         var total: Float = 0
         for i in 0...productsArr.count - 1 {
@@ -64,9 +58,22 @@ class Cart {
             let cartItem = products[i]
             let price = (productItem.price as NSString).floatValue//Float(productItem.price) ?? 0.0
             let quantity = Float(cartItem.count)
-                total += (quantity * price)
+            total += (quantity * price)
         }
         return total
     }
 
+    func cartItemsList() -> [CartItem] {
+        return self.products
+    }
+
+    func productsList() -> [Product] {
+        return self.productsArr
+    }
+
+    //MARK:- Private functions
+    private func productExistedInCart(product: Product) -> Bool {
+        let existed = products.contains(where: { $0.productId == product.identifier})
+        return existed
+    }
 }

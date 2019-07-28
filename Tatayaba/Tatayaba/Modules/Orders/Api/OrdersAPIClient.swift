@@ -16,10 +16,7 @@ struct OrdersAPIClient: APIClient {
 
     static let environment: APIEnvironment = .production
 
-    func signUp(user: User, completion: @escaping (APIResult<SignUpResponse?, MoyaError>) -> Void) {
-        //        fetch(with: UserEndpoint.signUp(user: user), completion: completion)
-        //        fetch(with: UserEndpoint.getProfile(userId: userId), completion: completion)
-        fetch(with: UserEndpoint.signUp(user: user), completion: completion)
+    func CreateOrder(products: [String: Any], userId: String, userData: [String: Any]?, completion: @escaping (APIResult<PlaceOrderResult?, MoyaError>) -> Void) {
+        fetch(with: OrdersEndpoint.create(products: products, userId: userId, userData: userData), completion: completion)
     }
-
 }
