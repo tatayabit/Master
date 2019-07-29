@@ -33,13 +33,13 @@
                                 <rect key="frame" x="0.0" y="32" width="375" height="168"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADDRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gh1-Ri-VsH">
-                                        <rect key="frame" x="8" y="4" width="367" height="21"/>
+                                        <rect key="frame" x="8" y="4" width="367" height="20"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="HOME  BLOCK 3 STREET 312,HOUSE 109,QAIRAWAN,KUWAIT.13278-KUWAIT +96594419882" translatesAutoresizingMaskIntoConstraints="NO" id="Rg5-MU-o9M">
-                                        <rect key="frame" x="8" y="33" width="359" height="127"/>
+                                        <rect key="frame" x="8" y="32" width="359" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="15"/>
@@ -233,14 +233,86 @@
                         <outlet property="subTotalValueLabel" destination="Jum-z5-41f" id="PE4-YP-dpx"/>
                         <outlet property="totalPriceButton" destination="4ys-UM-ZuG" id="WKU-t0-HOo"/>
                         <outlet property="vatValueLabel" destination="FGB-50-0Ky" id="EF5-0k-M6B"/>
+                        <segue destination="i39-8c-VeR" kind="show" identifier="checkout_completed_segue" id="2B7-re-64b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhQ-1H-nRS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="340" y="79.610194902548727"/>
         </scene>
+        <!--TATAYAB-->
+        <scene sceneID="mr8-aN-x5I">
+            <objects>
+                <viewController storyboardIdentifier="CheckoutCompletedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="i39-8c-VeR" customClass="CheckoutCompletedViewController" customModule="Tatayaba" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="muA-vO-MLf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THANK YOU FOR YOUR ORDER!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzj-a1-yeI">
+                                <rect key="frame" x="30" y="80" width="315" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ORDER # 50001" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sH-Xv-YsG">
+                                <rect key="frame" x="30" y="103.5" width="315" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="textColor" red="0.50982971967494117" green="0.51673860624548817" blue="0.55210499261236434" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="order_completed_person" translatesAutoresizingMaskIntoConstraints="NO" id="CQT-5h-nwp">
+                                <rect key="frame" x="63" y="150.5" width="249" height="290"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="249" id="HUE-cx-F6M"/>
+                                    <constraint firstAttribute="height" constant="290" id="VlA-tJ-ycv"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPw-Ge-FyI">
+                                <rect key="frame" x="85.5" y="559" width="204" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="204" id="3v9-bN-vqE"/>
+                                    <constraint firstAttribute="height" constant="45" id="RY7-DP-H4q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="16"/>
+                                <state key="normal" title="VIEW ORDERS" backgroundImage="price _rounded_rectangle">
+                                    <color key="titleColor" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="totalPriceAction:" destination="JJ9-U2-IUw" eventType="touchUpInside" id="0Wi-Uw-skO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.99997597932815552" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="3sH-Xv-YsG" firstAttribute="leading" secondItem="gzj-a1-yeI" secondAttribute="leading" id="4gV-ZO-Fct"/>
+                            <constraint firstItem="gzj-a1-yeI" firstAttribute="top" secondItem="aZE-1Y-6gd" secondAttribute="top" constant="60" id="GS8-mn-xs0"/>
+                            <constraint firstItem="CQT-5h-nwp" firstAttribute="top" secondItem="3sH-Xv-YsG" secondAttribute="bottom" constant="30" id="JNJ-yi-ovm"/>
+                            <constraint firstItem="3sH-Xv-YsG" firstAttribute="trailing" secondItem="gzj-a1-yeI" secondAttribute="trailing" id="Tme-wB-fdm"/>
+                            <constraint firstItem="lPw-Ge-FyI" firstAttribute="centerX" secondItem="muA-vO-MLf" secondAttribute="centerX" id="fbr-cf-1b7"/>
+                            <constraint firstItem="aZE-1Y-6gd" firstAttribute="bottom" secondItem="lPw-Ge-FyI" secondAttribute="bottom" constant="63" id="id9-Le-S8y"/>
+                            <constraint firstItem="gzj-a1-yeI" firstAttribute="leading" secondItem="aZE-1Y-6gd" secondAttribute="leading" constant="30" id="jrN-hX-H26"/>
+                            <constraint firstItem="CQT-5h-nwp" firstAttribute="centerX" secondItem="muA-vO-MLf" secondAttribute="centerX" id="qKX-sr-dgY"/>
+                            <constraint firstItem="aZE-1Y-6gd" firstAttribute="trailing" secondItem="gzj-a1-yeI" secondAttribute="trailing" constant="30" id="qOd-16-qsc"/>
+                            <constraint firstItem="3sH-Xv-YsG" firstAttribute="top" secondItem="gzj-a1-yeI" secondAttribute="bottom" constant="4" id="vir-q2-P17"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aZE-1Y-6gd"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="TATAYAB" id="GsK-Xn-94L">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="BZN-Cs-QTc">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="orderIdLabel" destination="3sH-Xv-YsG" id="gLT-ug-n4u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Rb-H5-PfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1120.8" y="79.610194902548727"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="order_completed_person" width="379" height="438"/>
         <image name="price _rounded_rectangle" width="123" height="29.5"/>
     </resources>
 </document>

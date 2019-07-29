@@ -127,4 +127,9 @@ struct CheckOutViewModel {
 //    "b_zipcode":"02125",
 //    "b_address": "44 Main street"
 //    }
+
+    //MARK:- CheckoutCompletedViewModel
+    func checkoutCompletedViewModel(orderId: String) -> CheckoutCompletedViewModel {
+        return checkoutCompletedViewModel(orderId: orderId)
+    }
 }

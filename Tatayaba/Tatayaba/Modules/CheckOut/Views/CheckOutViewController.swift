@@ -18,6 +18,8 @@ class CheckOutViewController: UIViewController,UICollectionViewDelegate,UICollec
 
     private let viewModel = CheckOutViewModel()
 
+    let checkoutCompletedSegue = "checkout_completed_segue"
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
@@ -48,6 +50,7 @@ class CheckOutViewController: UIViewController,UICollectionViewDelegate,UICollec
                 //                guard let paymentMethods = paymentResult.paymentMethods else { return }
 
                 print(placeOrderResult)
+                self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
 
             case .failure(let error):
                 print("the error \(error)")

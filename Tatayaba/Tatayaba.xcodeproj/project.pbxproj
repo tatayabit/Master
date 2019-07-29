@@ -32,6 +32,8 @@
 		11081EFD22DB8F5500B68EA5 /* ProfileDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11081EFC22DB8F5500B68EA5 /* ProfileDetailsView.xib */; };
 		1120C45D22E613FD00F99B60 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1120C45C22E613FD00F99B60 /* CartItem.swift */; };
 		1120C45F22E6184600F99B60 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1120C45E22E6184600F99B60 /* UIButton+Extensions.swift */; };
+		11252A9D22EF514300FC577D /* CheckoutCompletedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11252A9C22EF514300FC577D /* CheckoutCompletedViewModel.swift */; };
+		11252A9F22EF51C000FC577D /* CheckoutCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11252A9E22EF51C000FC577D /* CheckoutCompletedViewController.swift */; };
 		112654A722D22AD400904FB5 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 112654A622D22AD400904FB5 /* User.storyboard */; };
 		112654A922D25E5B00904FB5 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112654A822D25E5B00904FB5 /* SignUpResponse.swift */; };
 		112654AC22D2691400904FB5 /* ProductsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112654AB22D2691400904FB5 /* ProductsAPIClient.swift */; };
@@ -177,6 +179,8 @@
 		11081EFC22DB8F5500B68EA5 /* ProfileDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileDetailsView.xib; sourceTree = "<group>"; };
 		1120C45C22E613FD00F99B60 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		1120C45E22E6184600F99B60 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		11252A9C22EF514300FC577D /* CheckoutCompletedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutCompletedViewModel.swift; sourceTree = "<group>"; };
+		11252A9E22EF51C000FC577D /* CheckoutCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutCompletedViewController.swift; sourceTree = "<group>"; };
 		112654A622D22AD400904FB5 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		112654A822D25E5B00904FB5 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		112654AB22D2691400904FB5 /* ProductsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsAPIClient.swift; sourceTree = "<group>"; };
@@ -1178,6 +1182,7 @@
 			isa = PBXGroup;
 			children = (
 				84BF091B22E1AB93001671A4 /* CheckOutViewController.swift */,
+				11252A9E22EF51C000FC577D /* CheckoutCompletedViewController.swift */,
 				84BF091D22E1ABA6001671A4 /* CheckOut.storyboard */,
 			);
 			path = Views;
@@ -1195,6 +1200,7 @@
 			isa = PBXGroup;
 			children = (
 				84BF091F22E1ABBE001671A4 /* CheckOutViewModel.swift */,
+				11252A9C22EF514300FC577D /* CheckoutCompletedViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1507,6 +1513,7 @@
 				114D1A1822CBB33E009205F3 /* Product.swift in Sources */,
 				1120C45F22E6184600F99B60 /* UIButton+Extensions.swift in Sources */,
 				11F6FE9822E4E01B00FA7D82 /* PaymentAPIClient.swift in Sources */,
+				11252A9F22EF51C000FC577D /* CheckoutCompletedViewController.swift in Sources */,
 				84BC089C22DC7D4900C6180E /* CartModel.swift in Sources */,
 				1120C45D22E613FD00F99B60 /* CartItem.swift in Sources */,
 				11D612A922CE49D1000D42C3 /* UserEndpoint.swift in Sources */,
@@ -1545,6 +1552,7 @@
 				841CE31022DCC33600A47FA0 /* MessageModel.swift in Sources */,
 				11A8B15F22D797EF001B2661 /* WishlistViewModel.swift in Sources */,
 				841CE31622DCC68A00A47FA0 /* MessageTableViewCell.swift in Sources */,
+				11252A9D22EF514300FC577D /* CheckoutCompletedViewModel.swift in Sources */,
 				84843C1422D08DB000702E40 /* SliderConfiguration.swift in Sources */,
 				84843C1322D08DB000702E40 /* RootViewController.swift in Sources */,
 				11081EEC22DB824600B68EA5 /* AboutUsViewController.swift in Sources */,
