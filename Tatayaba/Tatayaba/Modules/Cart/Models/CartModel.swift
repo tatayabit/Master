@@ -53,6 +53,7 @@ class Cart {
 
     func calculateSubTotal() -> Float {
         var total: Float = 0
+        if productsArr.count > 0 {
         for i in 0...productsArr.count - 1 {
             let productItem = productsArr[i]
             let cartItem = products[i]
@@ -60,7 +61,9 @@ class Cart {
             let quantity = Float(cartItem.count)
             total += (quantity * price)
         }
+        }
         return total
+        
     }
 
     func cartItemsList() -> [CartItem] {
