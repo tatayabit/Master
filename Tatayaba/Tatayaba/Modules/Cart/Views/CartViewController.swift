@@ -69,7 +69,7 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
         EditButton = "0"
         EditBtn.isHidden = false
         EditOkBtn.isHidden = true
-        AddEditUI()
+        Add_EDitUI()
         cart_Tableview.reloadData()
 
     }
