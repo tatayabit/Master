@@ -10,7 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tatayaba/Modules/DashBoard/Support/AACarousel.swift"
+<<<<<<< HEAD
             timestampString = "585220292.683216"
+=======
+            timestampString = "585664026.879576"
+>>>>>>> FT_OrderScreen24072019
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "376"
@@ -26,11 +30,15 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tatayaba/Modules/Cart/Views/CartViewController.swift"
+<<<<<<< HEAD
             timestampString = "585220292.683331"
+=======
+            timestampString = "585664026.879784"
+>>>>>>> FT_OrderScreen24072019
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "EditOK_Button_Action()"
             landmarkType = "7">
          </BreakpointContent>

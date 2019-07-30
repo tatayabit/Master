@@ -141,7 +141,7 @@ public class AACarousel: UIView,UIScrollViewDelegate {
         beforeImageView.clipsToBounds = true
         currentImageView.clipsToBounds = true
         afterImageView.clipsToBounds = true
-        currentImageView.image = UIImage.init(named: "Dashboard")
+        currentImageView.image = UIImage.init(named: "ADD")
         scrollView.addSubview(beforeImageView)
         scrollView.addSubview(currentImageView)
         scrollView.addSubview(afterImageView)

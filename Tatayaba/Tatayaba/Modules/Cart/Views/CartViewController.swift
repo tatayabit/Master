@@ -33,27 +33,27 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
         cart_Tableview.reloadData()
         totalButton.setTitle(cart.subtotalPrice, for: .normal)
     }
-    
+
     func setupUI() {
-        self.NavigationBarWithOutBackButton()
-        self.addLeftBarButton()
-        AddEditUI()
-        self.collectionView.register(RecommendedCollectionViewCell.nib, forCellWithReuseIdentifier: RecommendedCollectionViewCell.identifier)
+         self.NavigationBarWithOutBackButton()
+         self.addLeftBarButton()
+         self.Add_EDitUI()
+         self.collectionView.register(RecommendedCollectionViewCell.nib, forCellWithReuseIdentifier: RecommendedCollectionViewCell.identifier)
+
     }
-    
-    func AddEditUI(){
-        
+
+    func Add_EDitUI()
+    {
         EditBtn.setImage(UIImage(named: "Edit"), for: [])
         EditBtn.addTarget(self, action: #selector(EditButtonAction), for: UIControlEvents.touchUpInside)
         EditBtn.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         let EditButton = UIBarButtonItem(customView: EditBtn)
         self.navigationItem.rightBarButtonItem  = EditButton
     }
-    
+
     @objc func EditButtonAction() {
-        
+
         EditButton = "1"
-     
         EditBtn.isHidden = true
         EditOkBtn.setImage(UIImage(named: "tick"), for: [])
         EditOkBtn.addTarget(self, action: #selector(EditOKButtonAction), for: UIControlEvents.touchUpInside)
@@ -61,20 +61,17 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
         let OkButton = UIBarButtonItem(customView: EditOkBtn)
         self.navigationItem.rightBarButtonItem  = OkButton
         EditOkBtn.isHidden = false
-        
-        
-        
         cart_Tableview.reloadData()
-        
+
     }
     @objc func EditOKButtonAction() {
-        
+
         EditButton = "0"
         EditBtn.isHidden = false
         EditOkBtn.isHidden = true
         AddEditUI()
         cart_Tableview.reloadData()
-        
+
     }
 
     //MARK:- IBActions
@@ -110,15 +107,15 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
 }
  //Tableview
 extension CartViewController {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cart.productsCount
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
-        
+
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "CartCellIdentifier"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CartTableViewCell
@@ -148,45 +145,45 @@ extension CartViewController {
         }
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+
     }
 }
 /// Collection View
 extension CartViewController{
-    
+
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        
+
         return 10
 }
-    
-    
+
+
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
+
+
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendedCollectionViewCell.identifier, for: indexPath) as! RecommendedCollectionViewCell
-       
-        
+
+
         return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 02, left: 0, bottom: 07, right: 0)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        
+
         return 10
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+
 
     }
 }
