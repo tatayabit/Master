@@ -14,6 +14,8 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
     var EditButton = String()
     let cart = Cart.shared
 
+    private let checkoutSegue = "checkout_segue"
+
 
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var cart_Tableview: UITableView!
@@ -29,7 +31,7 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         cart_Tableview.reloadData()
-        totalButton.setTitle(cart.totalPrice, for: .normal)
+        totalButton.setTitle(cart.subtotalPrice, for: .normal)
     }
     
     func setupUI() {
@@ -75,12 +77,17 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
         
     }
 
+    //MARK:- IBActions
+    @IBAction func checkoutAction(_ sender: Any) {
+        performSegue(withIdentifier: checkoutSegue, sender: nil)
+    }
+
     //MARK:- Add / Remove Cell Actions
     func addOneMoreAction(indexPath: IndexPath) {
         let cartProduct = cart.product(at: indexPath)
         cart.increaseCount(cartItem: cartProduct.1)
 //        cart_Tableview.reloadRows(at: [indexPath], with: .automatic)
-        totalButton.setTitle(cart.totalPrice, for: .normal)
+        totalButton.setTitle(cart.subtotalPrice, for: .normal)
 
     }
 
@@ -88,14 +95,14 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
         let cartProduct = cart.product(at: indexPath)
         cart.decreaseCount(cartItem: cartProduct.1)
 //        cart_Tableview.reloadRows(at: [indexPath], with: .automatic)
-        totalButton.setTitle(cart.totalPrice, for: .normal)
+        totalButton.setTitle(cart.subtotalPrice, for: .normal)
 
     }
 
     func removeItemAction(indexPath: IndexPath) {
         let cartProduct = cart.product(at: indexPath)
         cart.removeProduct(cartItem: cartProduct.1)
-        totalButton.setTitle(cart.totalPrice, for: .normal)
+        totalButton.setTitle(cart.subtotalPrice, for: .normal)
 
 //        cart_Tableview.reloadRows(at: [indexPath], with: .automatic)
     }

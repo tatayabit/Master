@@ -17,7 +17,7 @@ struct ShippingAPIClient: APIClient {
 
     static let environment: APIEnvironment = .production
 
-    func getShippings(completion: @escaping (APIResult<ShippingMethod?, MoyaError>) -> Void) {
+    func getShippings(completion: @escaping (APIResult<ShippingMethodResult?, MoyaError>) -> Void) {
         fetch(with: ShippingEndpoint.getShippings, completion: completion)
     }
 }

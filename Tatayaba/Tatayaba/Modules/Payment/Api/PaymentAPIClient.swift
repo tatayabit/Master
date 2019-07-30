@@ -17,7 +17,7 @@ struct PaymentAPIClient: APIClient {
 
     static let environment: APIEnvironment = .production
 
-    func getPayments(completion: @escaping (APIResult<Payment?, MoyaError>) -> Void) {
+    func getPayments(completion: @escaping (APIResult<PaymentResult?, MoyaError>) -> Void) {
         fetch(with: PaymentEndpoint.getPayments, completion: completion)
     }
 }

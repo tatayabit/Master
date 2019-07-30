@@ -175,7 +175,7 @@
                                     <color key="titleColor" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="WJK-Ai-eAw" kind="show" identifier="product_checkout" id="TJr-y3-IQb"/>
+                                    <action selector="checkoutAction:" destination="EFf-bZ-G4f" eventType="touchUpInside" id="x6K-d8-GVE"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmR-AF-zjh">
@@ -259,6 +259,7 @@
                         <outlet property="cart_Tableview" destination="EgH-bz-rDy" id="9wX-gU-SSI"/>
                         <outlet property="collectionView" destination="sCr-3q-tuR" id="k0b-2H-HHa"/>
                         <outlet property="totalButton" destination="DXq-eG-5oh" id="m3N-CC-3Qm"/>
+                        <segue destination="WJK-Ai-eAw" kind="show" identifier="checkout_segue" id="7Oz-XM-C63"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mR7-fh-ReS" userLabel="First Responder" sceneMemberID="firstResponder"/>
