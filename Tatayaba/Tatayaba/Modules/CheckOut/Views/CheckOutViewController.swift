@@ -10,7 +10,7 @@ import UIKit
 
 class CheckOutViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
 
-    @IBOutlet var PaymentcollectionView: UICollectionView!
+    @IBOutlet var paymentcollectionView: UICollectionView!
     @IBOutlet weak var subTotalValueLabel: UILabel!
     @IBOutlet weak var shippingValueLabel: UILabel!
     @IBOutlet weak var vatValueLabel: UILabel!
