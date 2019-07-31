@@ -50,7 +50,11 @@ class CheckOutViewController: UIViewController,UICollectionViewDelegate,UICollec
                 //                guard let paymentMethods = paymentResult.paymentMethods else { return }
 
                 print(placeOrderResult)
-                self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
+                if placeOrderResult.orderId > 0 {
+                    self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
+                } else {
+                    print("the error order id == \(placeOrderResult.orderId)")
+                }
 
             case .failure(let error):
                 print("the error \(error)")

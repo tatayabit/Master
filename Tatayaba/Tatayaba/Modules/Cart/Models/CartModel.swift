@@ -10,7 +10,7 @@ import UIKit
 
 class Cart {
     static let shared = Cart()
-    private var products = [cartItem]()
+    private var products = [CartItem]()
     private var productsArr = [Product]()
 
     var defaultShipping: ShippingMethod?
@@ -24,7 +24,7 @@ class Cart {
             let cartItem = self.cartItem(for: product)
             increaseCount(cartItem: cartItem)
         } else {
-            let productModel = cartItem(productId: product.identifier, productName: product.name)
+            let productModel = CartItem(productId: product.identifier, productName: product.name)
             products.append(productModel)
             productsArr.append(product)
         }
