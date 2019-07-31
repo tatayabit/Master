@@ -72,6 +72,11 @@
 		11A8B15D22D7943D001B2661 /* WishlistCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A8B15B22D7943D001B2661 /* WishlistCollectionViewCell.xib */; };
 		11A8B15F22D797EF001B2661 /* WishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A8B15E22D797EF001B2661 /* WishlistViewModel.swift */; };
 		11B2C41C22D64F0A00EAD9C6 /* ProductDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2C41B22D64F0A00EAD9C6 /* ProductDetailsViewModel.swift */; };
+		11C271AE22F20614004613E3 /* AddressesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C271AD22F20614004613E3 /* AddressesListViewController.swift */; };
+		11C271B022F20625004613E3 /* AddressesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C271AF22F20625004613E3 /* AddressesListViewModel.swift */; };
+		11C271B222F20636004613E3 /* Addresses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C271B122F20636004613E3 /* Addresses.storyboard */; };
+		11C271B622F20E24004613E3 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C271B422F20E24004613E3 /* AddressTableViewCell.swift */; };
+		11C271B722F20E24004613E3 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C271B522F20E24004613E3 /* AddressTableViewCell.xib */; };
 		11D4917722CBC3BB009D8B23 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D4917622CBC3BB009D8B23 /* UIColor+Extension.swift */; };
 		11D4917A22CBCF8B009D8B23 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D4917922CBCF8B009D8B23 /* UIView+Extensions.swift */; };
 		11D4917C22CBD22D009D8B23 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D4917B22CBD22D009D8B23 /* CategoriesViewModel.swift */; };
@@ -224,6 +229,11 @@
 		11A8B15B22D7943D001B2661 /* WishlistCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishlistCollectionViewCell.xib; sourceTree = "<group>"; };
 		11A8B15E22D797EF001B2661 /* WishlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewModel.swift; sourceTree = "<group>"; };
 		11B2C41B22D64F0A00EAD9C6 /* ProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModel.swift; sourceTree = "<group>"; };
+		11C271AD22F20614004613E3 /* AddressesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesListViewController.swift; sourceTree = "<group>"; };
+		11C271AF22F20625004613E3 /* AddressesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesListViewModel.swift; sourceTree = "<group>"; };
+		11C271B122F20636004613E3 /* Addresses.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Addresses.storyboard; sourceTree = "<group>"; };
+		11C271B422F20E24004613E3 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
+		11C271B522F20E24004613E3 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
 		11D4917622CBC3BB009D8B23 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		11D4917922CBCF8B009D8B23 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		11D4917B22CBD22D009D8B23 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
@@ -735,6 +745,50 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		11C271A922F205C9004613E3 /* Addresses */ = {
+			isa = PBXGroup;
+			children = (
+				11C271B122F20636004613E3 /* Addresses.storyboard */,
+				11C271AC22F205E0004613E3 /* ViewModels */,
+				11C271AA22F205D2004613E3 /* Views */,
+				11C271AB22F205D7004613E3 /* Api */,
+			);
+			path = Addresses;
+			sourceTree = "<group>";
+		};
+		11C271AA22F205D2004613E3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				11C271B322F20DC2004613E3 /* CustomCells */,
+				11C271AD22F20614004613E3 /* AddressesListViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		11C271AB22F205D7004613E3 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		11C271AC22F205E0004613E3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				11C271AF22F20625004613E3 /* AddressesListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		11C271B322F20DC2004613E3 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				11C271B422F20E24004613E3 /* AddressTableViewCell.swift */,
+				11C271B522F20E24004613E3 /* AddressTableViewCell.xib */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
 		11D4917822CBCF7A009D8B23 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -783,6 +837,7 @@
 		11F52FA522CA7D92000F0D85 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				11C271A922F205C9004613E3 /* Addresses */,
 				11945B9622F0A2A1000F08DC /* Shipping */,
 				11945B8922F0A08D000F08DC /* CheckOut */,
 				116C938822F0954500921893 /* Payment */,
@@ -1396,6 +1451,7 @@
 				84BC089622DC7CF400C6180E /* Cart.storyboard in Resources */,
 				84B819E322D1D775000DD69A /* ProductDetails.storyboard in Resources */,
 				11FEB4DD22DF850700F2E9B8 /* ProductDetailsView.xib in Resources */,
+				11C271B222F20636004613E3 /* Addresses.storyboard in Resources */,
 				1101C66522E0C96C00416307 /* OptionCollectionViewCell.xib in Resources */,
 				1101C66E22E0D75500416307 /* HProductCollectionViewCell.xib in Resources */,
 				847CDE8A22CA19EE00E67C8C /* ProximaNova-Bold.ttf in Resources */,
@@ -1408,6 +1464,7 @@
 				1101C66A22E0D71500416307 /* HProductsListView.xib in Resources */,
 				11081EEA22DB823200B68EA5 /* Static.storyboard in Resources */,
 				84BC08A622DC972300C6180E /* RecommendedCollectionViewCell.xib in Resources */,
+				11C271B722F20E24004613E3 /* AddressTableViewCell.xib in Resources */,
 				847CDE8722CA19EE00E67C8C /* ProximaNova-Semibold.ttf in Resources */,
 				112654A722D22AD400904FB5 /* User.storyboard in Resources */,
 				11081EFD22DB8F5500B68EA5 /* ProfileDetailsView.xib in Resources */,
@@ -1553,6 +1610,7 @@
 				11D4917A22CBCF8B009D8B23 /* UIView+Extensions.swift in Sources */,
 				841CE30A22DCC2B300A47FA0 /* MessagesViewController.swift in Sources */,
 				848E89C122CC99AC000AA24C /* AACarousel.swift in Sources */,
+				11C271B622F20E24004613E3 /* AddressTableViewCell.swift in Sources */,
 				11945BBE22F0B08D000F08DC /* CheckOutViewModel.swift in Sources */,
 				11007BD222DE2E6600AC9957 /* ProductsListViewModel.swift in Sources */,
 				11FEB4E022DF921800F2E9B8 /* CarouselCollectionViewCell.swift in Sources */,
@@ -1570,6 +1628,7 @@
 				8407BABF22E8623E001F2C2A /* OrderModel.swift in Sources */,
 				11007BD022DE2DC700AC9957 /* ProductsListViewController.swift in Sources */,
 				8407BAC222E869A8001F2C2A /* OrderTableViewCell.swift in Sources */,
+				11C271AE22F20614004613E3 /* AddressesListViewController.swift in Sources */,
 				84843C1822D08DB000702E40 /* MenuTableViewCell.swift in Sources */,
 				847CDE7A22CA130F00E67C8C /* ColorDef.swift in Sources */,
 				116C936422F0930300921893 /* OrdersAPIClient.swift in Sources */,
@@ -1578,6 +1637,7 @@
 				841CE31022DCC33600A47FA0 /* MessageModel.swift in Sources */,
 				11A8B15F22D797EF001B2661 /* WishlistViewModel.swift in Sources */,
 				841CE31622DCC68A00A47FA0 /* MessageTableViewCell.swift in Sources */,
+				11C271B022F20625004613E3 /* AddressesListViewModel.swift in Sources */,
 				84843C1422D08DB000702E40 /* SliderConfiguration.swift in Sources */,
 				84843C1322D08DB000702E40 /* RootViewController.swift in Sources */,
 				11945BBD22F0B08D000F08DC /* CheckOutModel.swift in Sources */,
