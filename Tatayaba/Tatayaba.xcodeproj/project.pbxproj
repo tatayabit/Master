@@ -564,12 +564,10 @@
 		116C938822F0954500921893 /* Payment */ = {
 			isa = PBXGroup;
 			children = (
-				11945B8822F0A000000F08DC /* CheckOut */,
 				116C938922F0954500921893 /* Models */,
 				116C938B22F0954500921893 /* Api */,
 			);
-			name = Payment;
-			path = ../../../../../../Desktop/Modules/Payment;
+			path = Payment;
 			sourceTree = "<group>";
 		};
 		116C938922F0954500921893 /* Models */ = {
@@ -587,13 +585,6 @@
 				116C938D22F0954500921893 /* PaymentEndpoint.swift */,
 			);
 			path = Api;
-			sourceTree = "<group>";
-		};
-		11945B8822F0A000000F08DC /* CheckOut */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CheckOut;
 			sourceTree = "<group>";
 		};
 		11945B8922F0A08D000F08DC /* CheckOut */ = {
