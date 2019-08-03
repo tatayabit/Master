@@ -19,21 +19,28 @@
                 <rect key="frame" x="0.0" y="0.0" width="367" height="119.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xsq-RB-KPI">
-                        <rect key="frame" x="16" y="19" width="328" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xsq-RB-KPI">
+                        <rect key="frame" x="8" y="8" width="351" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOZ-69-GM6">
-                        <rect key="frame" x="19" y="49" width="328" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOZ-69-GM6">
+                        <rect key="frame" x="8" y="32" width="351" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Xsq-RB-KPI" secondAttribute="trailing" constant="8" id="AR2-q9-0Sp"/>
+                    <constraint firstAttribute="bottom" secondItem="HOZ-69-GM6" secondAttribute="bottom" constant="8" id="QEl-bD-D72"/>
+                    <constraint firstItem="HOZ-69-GM6" firstAttribute="top" secondItem="Xsq-RB-KPI" secondAttribute="bottom" constant="3" id="V3h-1Y-u3k"/>
+                    <constraint firstItem="HOZ-69-GM6" firstAttribute="leading" secondItem="Xsq-RB-KPI" secondAttribute="leading" id="Wdq-aH-QPl"/>
+                    <constraint firstItem="HOZ-69-GM6" firstAttribute="trailing" secondItem="Xsq-RB-KPI" secondAttribute="trailing" id="bBE-Tj-dHV"/>
+                    <constraint firstItem="Xsq-RB-KPI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="efO-A7-9qO"/>
+                    <constraint firstItem="Xsq-RB-KPI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="x8a-JN-p9m"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
