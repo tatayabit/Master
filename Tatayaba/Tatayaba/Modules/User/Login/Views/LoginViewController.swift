@@ -44,7 +44,7 @@ class LoginViewController: BaseViewController, ValidationDelegate {
         let user = User(email: email, password: password)//User(email: email, firstname: firstname, lastname: firstname, password: password)
 
         viewModel.login(user: user) { result in
-            
+
         }
 
 //        performSegue(withIdentifier: homeSegue, sender: nil)
@@ -79,7 +79,7 @@ class LoginViewController: BaseViewController, ValidationDelegate {
         validator.validate(self)
     
        
-//        performSegue(withIdentifier: homeSegue, sender: nil)
+        performSegue(withIdentifier: homeSegue, sender: nil)
 
     }
     
