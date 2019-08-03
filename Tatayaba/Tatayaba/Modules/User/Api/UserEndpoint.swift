@@ -10,8 +10,9 @@ import Moya
 
 enum UserEndpoint {
     case signUp(user: User)
-    //    case login(email: String, password: String)
+    case login(user: User)
     case getProfile(userId: Int)
+    
 }
 
 
@@ -36,12 +37,14 @@ extension UserEndpoint: TargetType {
             return "users"
         case .getProfile(let userId):
             return "users/\(userId)"
+        case .login:
+            return "3.0/auth"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .signUp:
+        case .signUp, .login:
             return .post
         case .getProfile:
             return .get
@@ -71,6 +74,10 @@ extension UserEndpoint: TargetType {
                 ], encoding: JSONEncoding.default)
         case .getProfile:
             return .requestPlain
+        case .login(let user):
+            return .requestParameters(parameters: [ "email": user.email ?? "",
+                                             "password": user.password ?? ""
+                ], encoding: JSONEncoding.default)
         }
     }
 

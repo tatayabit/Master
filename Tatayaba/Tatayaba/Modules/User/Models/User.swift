@@ -15,7 +15,7 @@ struct User {
     var lastname: String?
     var password: String?
 
-    init(email: String, firstname: String, lastname: String, password: String, identifier: String? = "") {
+    init(email: String, firstname: String? = "", lastname: String? = "", password: String, identifier: String? = "") {
         self.email = email
         self.firstname = firstname
         self.lastname = lastname
@@ -38,20 +38,20 @@ extension User: Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: UserCodingKeys.self)
 
-        identifier = try? container.decode(String.self, forKey: .identifier)
-        email = try? container.decode(String.self, forKey: .email)
-        firstname = try? container.decode(String.self, forKey: .firstname)
-        lastname = try? container.decode(String.self, forKey: .lastname)
-        password = try? container.decode(String.self, forKey: .password)
+        identifier = try container.decodeIfPresent(String.self, forKey: .identifier)
+        email = try container.decodeIfPresent(String.self, forKey: .email)
+        firstname = try container.decodeIfPresent(String.self, forKey: .firstname)
+        lastname = try container.decodeIfPresent(String.self, forKey: .lastname)
+        password = try container.decodeIfPresent(String.self, forKey: .password)
     }
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: UserCodingKeys.self)
 
-        try? container.encode(identifier, forKey: .identifier)
-        try? container.encode(email, forKey: .email)
-        try? container.encode(firstname, forKey: .firstname)
-        try? container.encode(lastname, forKey: .lastname)
-        try? container.encode(password, forKey: .password)
+        try container.encodeIfPresent(identifier, forKey: .identifier)
+        try container.encodeIfPresent(email, forKey: .email)
+        try container.encodeIfPresent(firstname, forKey: .firstname)
+        try container.encodeIfPresent(lastname, forKey: .lastname)
+        try container.encodeIfPresent(password, forKey: .password)
     }
 }

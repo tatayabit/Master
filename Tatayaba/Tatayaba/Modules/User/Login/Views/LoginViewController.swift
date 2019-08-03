@@ -13,7 +13,7 @@ import SwiftValidator
 class LoginViewController: BaseViewController, ValidationDelegate {
 
     //MARK:- Properties
-//    private let viewModel = LoginViewModel()
+    private let viewModel = LoginViewModel()
     private let validator = Validator()
     private let homeSegue = "show_home_segue"
 
@@ -38,8 +38,16 @@ class LoginViewController: BaseViewController, ValidationDelegate {
     func validationSuccessful() {
         print("Validation Success!")
 
-//        guard let email = emailTextField.text else { return }
-//        guard let password = passwordTextField.text else { return }
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+
+        let user = User(email: email, password: password)//User(email: email, firstname: firstname, lastname: firstname, password: password)
+
+        viewModel.login(user: user) { result in
+            
+        }
+
+//        performSegue(withIdentifier: homeSegue, sender: nil)
 
     }
 
@@ -71,8 +79,8 @@ class LoginViewController: BaseViewController, ValidationDelegate {
         validator.validate(self)
     
        
-        performSegue(withIdentifier: homeSegue, sender: nil)
-        
+//        performSegue(withIdentifier: homeSegue, sender: nil)
+
     }
     
     
