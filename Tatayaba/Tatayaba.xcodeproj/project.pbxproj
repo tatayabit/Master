@@ -87,6 +87,7 @@
 		11D612A822CE49D1000D42C3 /* UserAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D612A622CE49D1000D42C3 /* UserAPIClient.swift */; };
 		11D612A922CE49D1000D42C3 /* UserEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D612A722CE49D1000D42C3 /* UserEndpoint.swift */; };
 		11D612AC22CE4A05000D42C3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D612AB22CE4A05000D42C3 /* User.swift */; };
+		11E8512922F7332900E80DF6 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E8512822F7332900E80DF6 /* LoginResult.swift */; };
 		11F52FB722CA7D92000F0D85 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F52FAA22CA7D92000F0D85 /* SplashViewController.swift */; };
 		11F52FB922CA7D92000F0D85 /* SignUpViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F52FB122CA7D92000F0D85 /* SignUpViewcontroller.swift */; };
 		11F52FBA22CA7D92000F0D85 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F52FB622CA7D92000F0D85 /* LoginViewController.swift */; };
@@ -245,6 +246,7 @@
 		11D612A622CE49D1000D42C3 /* UserAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPIClient.swift; sourceTree = "<group>"; };
 		11D612A722CE49D1000D42C3 /* UserEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEndpoint.swift; sourceTree = "<group>"; };
 		11D612AB22CE4A05000D42C3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		11E8512822F7332900E80DF6 /* LoginResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
 		11F52FAA22CA7D92000F0D85 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		11F52FB122CA7D92000F0D85 /* SignUpViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewcontroller.swift; sourceTree = "<group>"; };
 		11F52FB622CA7D92000F0D85 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -831,6 +833,7 @@
 			isa = PBXGroup;
 			children = (
 				11D612AB22CE4A05000D42C3 /* User.swift */,
+				11E8512822F7332900E80DF6 /* LoginResult.swift */,
 				112654A822D25E5B00904FB5 /* SignUpResponse.swift */,
 			);
 			path = Models;
@@ -1591,6 +1594,7 @@
 				112654B622D3AE3F00904FB5 /* HomeViewModel.swift in Sources */,
 				114D1A0D22CBB144009205F3 /* TableCellActionProxy.swift in Sources */,
 				84BC08A422DC94AA00C6180E /* RecommendedCollectionViewCell.swift in Sources */,
+				11E8512922F7332900E80DF6 /* LoginResult.swift in Sources */,
 				84BC089A22DC7D3400C6180E /* CartViewModel.swift in Sources */,
 				112654AC22D2691400904FB5 /* ProductsAPIClient.swift in Sources */,
 				114D1A1822CBB33E009205F3 /* Product.swift in Sources */,

@@ -19,7 +19,7 @@ enum UserEndpoint {
 extension UserEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
-        case .production: return "https://dev2%40tatayab.com:E970ASsq0e9GmSJ2EX0BLGvskO2UF841@old.tatayab.com/api/"
+        case .production: return "http://dev2%40tatayab.com:E970ASsq0e9GmSJ2EX0BLGvskO2UF841@old.tatayab.com/api/"
         case .qa: return "http://localhost:3000/"
         case .staging: return "http://localhost:3000/"
         }
@@ -82,10 +82,14 @@ extension UserEndpoint: TargetType {
     }
 
     var headers: [String : String]? {
-
-        return ["Content-type": "application/json",
-                "authorization": "Basic ZGUyQHRhdGF5YWIuY29tOkU5NzBBU3NxMGU5R21TSjJFWDBCTEd2c2tPMlVGODQx=="
-        ]
+//        switch self {
+//        case .login:
+//            return ["Content-type": "application/json"]
+//        default:
+            return ["Content-type": "application/json",
+                    "authorization": "Basic ZGUyQHRhdGF5YWIuY29tOkU5NzBBU3NxMGU5R21TSjJFWDBCTEd2c2tPMlVGODQx=="
+            ]
+//        }
     }
 
 }
