@@ -64,10 +64,9 @@ extension UserEndpoint: TargetType {
         switch self {
         case .signUp(let user):
 
-            return .requestParameters(parameters: [ "email": user.email ?? "",
-                                                    "first_name": user.firstname ?? "",
-//                                                    "last_name": user.lastname ?? "",
-                                                    "password": user.password ?? "",
+            return .requestParameters(parameters: [ "email": user.email ,
+                                                    "first_name": user.firstname ,
+                                                    "password": user.password ,
                                                     "user_type": "C",
                                                     "company_id": 1,
                                                     "status": "A"
@@ -75,21 +74,16 @@ extension UserEndpoint: TargetType {
         case .getProfile:
             return .requestPlain
         case .login(let user):
-            return .requestParameters(parameters: [ "email": user.email ?? "",
-                                             "password": user.password ?? ""
+            return .requestParameters(parameters: [ "email": user.email ,
+                                                    "password": user.password
                 ], encoding: JSONEncoding.default)
         }
     }
 
     var headers: [String : String]? {
-//        switch self {
-//        case .login:
-//            return ["Content-type": "application/json"]
-//        default:
             return ["Content-type": "application/json",
                     "authorization": "Basic ZGUyQHRhdGF5YWIuY29tOkU5NzBBU3NxMGU5R21TSjJFWDBCTEd2c2tPMlVGODQx=="
             ]
-//        }
     }
 
 }

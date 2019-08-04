@@ -38,7 +38,8 @@ extension ProductsEndpoint: TargetType {
         case .getAllCategories:
             return "categories"
         case .getProductsOfCategory(let categoryId, _):
-            return "categories/\(categoryId.urlEscaped)/products"
+            let version = "3.0"
+            return "\(version.urlEscaped)/categories/\(categoryId.urlEscaped)/products"
         case .getProductFeatures:
             return "categories/268/products"
         }

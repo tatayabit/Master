@@ -14,13 +14,13 @@ struct LoginViewModel {
 
     //MARK:- Api
 
-    func login(user: User, completion: @escaping (APIResult<User?, MoyaError>) -> Void) {
+    func login(user: User, completion: @escaping (APIResult<LoginResult?, MoyaError>) -> Void) {
         apiClient.login(user: user) { result in
             switch result {
             case .success(let loginResult):
                 print(loginResult!)
                 guard let loginResultResponse = loginResult else { return }
-
+                
                 print("loginResultResponse: \(loginResultResponse)")
 //                self.apiClient.getProfile(userId: signUpResponse.userId, completion: { profileResult in
 //                    switch profileResult {

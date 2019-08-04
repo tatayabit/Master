@@ -31,14 +31,14 @@ extension ProductsResult: Codable {
 struct Product {
     var name: String = ""
     var description: String = ""
-    var imageUrl: String = ""
+    var imageUrl: String
     var offerPrices: Float = 0.00
     var price: String = ""
     var inWishlist: Bool = false
     var identifier: String = ""
     var selectedQuantity = 0
 
-    init() {}
+//    init() {}
 
     init(name: String = "" , description: String = "", imageUrl: String = "", offerPrices: Float = 0.00, price: String = "", inWishlist: Bool = false, identifier: String = "") {
         self.name = name
@@ -55,7 +55,7 @@ extension Product: Codable {
     enum UserCodingKeys: String, CodingKey {
         case name = "product"
         case description
-        case imageUrl = "image_url"
+        case imageUrl = "https_image_path"
         case offerPrices = ""
         case price
         case inWishlist

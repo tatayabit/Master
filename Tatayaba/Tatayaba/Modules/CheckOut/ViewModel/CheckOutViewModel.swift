@@ -130,6 +130,6 @@ struct CheckOutViewModel {
 
     //MARK:- CheckoutCompletedViewModel
     func checkoutCompletedViewModel(orderId: String) -> CheckoutCompletedViewModel {
-        return checkoutCompletedViewModel(orderId: orderId)
+        return CheckoutCompletedViewModel(orderId: orderId)
     }
 }
