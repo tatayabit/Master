@@ -20,7 +20,7 @@ struct UserAPIClient: APIClient {
           fetch(with: UserEndpoint.signUp(user: user), completion: completion)
     }
 
-    func login(user: User, completion: @escaping (APIResult<SignUpResponse?, MoyaError>) -> Void) {
+    func login(user: User, completion: @escaping (APIResult<LoginResult?, MoyaError>) -> Void) {
         fetch(with: UserEndpoint.login(user: user), completion: completion)
     }
 
