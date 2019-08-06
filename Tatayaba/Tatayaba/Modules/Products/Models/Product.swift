@@ -37,10 +37,10 @@ struct Product {
     var inWishlist: Bool = false
     var identifier: String = ""
     var selectedQuantity = 0
+    var status: String
 
-//    init() {}
 
-    init(name: String = "" , description: String = "", imageUrl: String = "", offerPrices: Float = 0.00, price: String = "", inWishlist: Bool = false, identifier: String = "") {
+    init(name: String = "" , description: String = "", imageUrl: String = "", offerPrices: Float = 0.00, price: String = "", inWishlist: Bool = false, identifier: String = "", status: String = "H") {
         self.name = name
         self.description = description
         self.imageUrl = imageUrl
@@ -48,6 +48,7 @@ struct Product {
         self.price = price
         self.inWishlist = inWishlist
         self.identifier = identifier
+        self.status = status
     }
 }
 
@@ -60,6 +61,7 @@ extension Product: Codable {
         case price
         case inWishlist
         case identifier = "product_id"
+        case status = "status"
 
     }
 
@@ -73,18 +75,19 @@ extension Product: Codable {
         price = try container.decodeIfPresent(String.self, forKey: .price) ?? ""
         inWishlist = try container.decodeIfPresent(Bool.self, forKey: .inWishlist) ?? false
         identifier = try container.decodeIfPresent(String.self, forKey: .identifier) ?? ""
-
+        status = try container.decodeIfPresent(String.self, forKey: .status) ?? "H"
     }
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: UserCodingKeys.self)
-        try container.encode(name, forKey: .name)
-        try container.encode(description, forKey: .description)
-        try container.encode(imageUrl, forKey: .imageUrl)
-        try container.encode(offerPrices, forKey: .offerPrices)
-        try container.encode(price, forKey: .price)
-        try container.encode(inWishlist, forKey: .inWishlist)
-        try container.encode(identifier, forKey: .identifier)
-
+        
+        try container.encodeIfPresent(name, forKey: .name)
+        try container.encodeIfPresent(description, forKey: .description)
+        try container.encodeIfPresent(imageUrl, forKey: .imageUrl)
+        try container.encodeIfPresent(offerPrices, forKey: .offerPrices)
+        try container.encodeIfPresent(price, forKey: .price)
+        try container.encodeIfPresent(inWishlist, forKey: .inWishlist)
+        try container.encodeIfPresent(identifier, forKey: .identifier)
+        try container.encodeIfPresent(status, forKey: .status)
     }
 }

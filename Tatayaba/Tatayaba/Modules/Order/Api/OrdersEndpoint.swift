@@ -10,6 +10,7 @@ import Moya
 
 enum OrdersEndpoint {
     case create(products: [String: Any], userId: String, userData: [String: Any]?)
+    case getAllOrders(page: Int)
 }
 
 
@@ -32,6 +33,8 @@ extension OrdersEndpoint: TargetType {
         switch self {
         case .create:
             return "stores/1/orders/"
+        case .getAllOrders:
+            return "orders/"
         }
     }
 
@@ -39,6 +42,8 @@ extension OrdersEndpoint: TargetType {
         switch self {
         case .create:
             return .post
+        case .getAllOrders:
+            return .get
         }
     }
 
@@ -124,6 +129,9 @@ extension OrdersEndpoint: TargetType {
 //                        "b_address": "44 Main street"
 //                    }
 //            }
+        case .getAllOrders(let page):
+            return .requestParameters(parameters: [ "user_id": 10045
+                ], encoding: JSONEncoding.default)
         }
     }
 

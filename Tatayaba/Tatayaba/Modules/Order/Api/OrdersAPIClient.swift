@@ -19,4 +19,8 @@ struct OrdersAPIClient: APIClient {
     func CreateOrder(products: [String: Any], userId: String, userData: [String: Any]?, completion: @escaping (APIResult<PlaceOrderResult?, MoyaError>) -> Void) {
         fetch(with: OrdersEndpoint.create(products: products, userId: userId, userData: userData), completion: completion)
     }
+
+    func getAllOrders(page: Int, completion: @escaping (APIResult<[PlaceOrderResult?], MoyaError>) -> Void) {
+        fetch(with: OrdersEndpoint.getAllOrders(page: 0), completion: completion)
+    }
 }

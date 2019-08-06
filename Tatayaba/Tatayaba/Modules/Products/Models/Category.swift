@@ -29,20 +29,29 @@ extension CategoriesResult: Codable {
 }
 
 struct Category {
-    var identifier: String = ""
-    var parentId: String = ""
-    var name: String = ""
-    var productCount: String = ""
-    var description: String = ""
+    var identifier: String
+    var parentId: String
+    var name: String
+    var productCount: String
+    var description: String
+    var imageUrl: String
 
-    init() {}
+    init() {
+        self.identifier = ""
+        self.parentId = ""
+        self.name = ""
+        self.productCount = ""
+        self.description = ""
+        self.imageUrl = ""
+    }
     
-    init(identifier: String, parentId: String, name: String, productCount: String, description: String) {
+    init(identifier: String, parentId: String = "", name: String = "", productCount: String = "", description: String = "", imageUrl: String = "") {
         self.identifier = identifier
         self.parentId = parentId
         self.name = name
         self.productCount = productCount
         self.description = description
+        self.imageUrl = imageUrl
     }
 }
 
@@ -53,26 +62,28 @@ extension Category: Codable {
         case name = "category"
         case productCount = "product_count"
         case description
+        case imageUrl = "https_image_path"
     }
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: UserCodingKeys.self)
 
-        identifier = try container.decode(String.self, forKey: .identifier)
-        parentId = try container.decode(String.self, forKey: .parentId)
-        name = try container.decode(String.self, forKey: .name)
-        productCount = try container.decode(String.self, forKey: .productCount)
-        description = try container.decode(String.self, forKey: .description)
+        identifier = try container.decodeIfPresent(String.self, forKey: .identifier) ?? ""
+        parentId = try container.decodeIfPresent(String.self, forKey: .parentId) ?? ""
+        name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
+        productCount = try container.decodeIfPresent(String.self, forKey: .productCount) ?? ""
+        description = try container.decodeIfPresent(String.self, forKey: .description) ?? ""
+        imageUrl = try container.decodeIfPresent(String.self, forKey: .imageUrl) ?? ""
     }
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: UserCodingKeys.self)
 
-        try container.encode(identifier, forKey: .identifier)
-        try container.encode(parentId, forKey: .parentId)
-        try container.encode(name, forKey: .name)
-        try container.encode(productCount, forKey: .productCount)
-        try container.encode(description, forKey: .description)
-
+        try container.encodeIfPresent(identifier, forKey: .identifier)
+        try container.encodeIfPresent(parentId, forKey: .parentId)
+        try container.encodeIfPresent(name, forKey: .name)
+        try container.encodeIfPresent(productCount, forKey: .productCount)
+        try container.encodeIfPresent(description, forKey: .description)
+        try container.encodeIfPresent(imageUrl, forKey: .imageUrl)
     }
 }

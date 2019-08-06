@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CategoryCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var categoryImageView: UIImageView!
 
 
     override func awakeFromNib() {
@@ -21,6 +23,9 @@ class CategoryCollectionViewCell: UICollectionViewCell {
 
     func configure(category: Category) {
         nameLabel.text = category.name
+        if !category.imageUrl.isEmpty {
+            categoryImageView.sd_setImage(with: URL(string: category.imageUrl), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
+        }
     }
 
 
