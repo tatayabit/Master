@@ -14,23 +14,27 @@ class OrdersViewModel {
 
     private var ordersList = [OrderModel]()
 
+    var orderCount: Int { return ordersList.count }
 
     /// This closure is being called once the categories api fetch
     var onOrdersListLoad: (() -> ())?
 
     //MARK:- Init
     init() {
-        getAllCategories()
+        getAllOrders()
     }
 
     //MARK:- Api
 
-    func getAllCategories() {
+    func getAllOrders() {
         ordersApiClient.getAllOrders(page: 0) { result in
             switch result {
             case .success(let response):
+                guard let ordersResult = response else { return }
+                guard let orders = ordersResult.orders else { return }
 
-                print(response)
+                self.ordersList = orders
+                print(orders)
 
                 if let newOrdersArrived = self.onOrdersListLoad {
                     newOrdersArrived()
@@ -43,5 +47,8 @@ class OrdersViewModel {
 
 
     //MARK:- Orders data
-
+    func order(at indexPath: IndexPath) -> OrderModel {
+        guard ordersList.count > 0 else { return OrderModel() }
+        return ordersList[indexPath.row]
+    }
 }

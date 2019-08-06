@@ -20,7 +20,7 @@ struct OrdersAPIClient: APIClient {
         fetch(with: OrdersEndpoint.create(products: products, userId: userId, userData: userData), completion: completion)
     }
 
-    func getAllOrders(page: Int, completion: @escaping (APIResult<[PlaceOrderResult?], MoyaError>) -> Void) {
+    func getAllOrders(page: Int, completion: @escaping (APIResult<OrdersResult?, MoyaError>) -> Void) {
         fetch(with: OrdersEndpoint.getAllOrders(page: 0), completion: completion)
     }
 }

@@ -57,7 +57,11 @@ struct CheckOutViewModel {
 
     //MARK:- Placing Order
     func placeOrder(completion: @escaping (APIResult<PlaceOrderResult?, MoyaError>) -> Void) {
-        ordersApiClient.CreateOrder(products: getProductsModel(), userId: "0", userData: getUserDataModel()) { result in
+
+        let userId = getUserId()
+        let userData = userId == "0" ? getUserDataModel() : nil
+
+        ordersApiClient.CreateOrder(products: getProductsModel(), userId: userId, userData: userData) { result in
             switch result {
             case .success(let response):
                 guard let placeOrderResult = response else { return }
@@ -68,6 +72,15 @@ struct CheckOutViewModel {
             }
             completion(result)
         }
+    }
+
+    func getUserId() -> String {
+        let customer = Customer.shared
+        if customer.loggedin {
+            guard let user = customer.user else { return "0" }
+            return user.identifier
+        }
+        return "0"
     }
 
     func getProductsModel() -> [String: Any] {
@@ -107,26 +120,6 @@ struct CheckOutViewModel {
         ]
         return dict
     }
-
-//    {
-//    "email":"guest@example.com",
-//    "firstname": "Guest",
-//    "lastname": "Guest",
-//    "s_firstname": "Guest",
-//    "s_lastname": "Guest",
-//    "s_country": "US",
-//    "s_city": "Boston",
-//    "s_state": "MA",
-//    "s_zipcode": "02125",
-//    "s_address": "44 Main street",
-//    "b_firstname": "Guest",
-//    "b_lastname": "Guest",
-//    "b_country":"US",
-//    "b_city": "Boston",
-//    "b_state": "MA",
-//    "b_zipcode":"02125",
-//    "b_address": "44 Main street"
-//    }
 
     //MARK:- CheckoutCompletedViewModel
     func checkoutCompletedViewModel(orderId: String) -> CheckoutCompletedViewModel {

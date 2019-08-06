@@ -9,30 +9,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Products/ViewModels/ProductsListViewModel.swift"
-            timestampString = "586707936.410096"
+            filePath = "Tatayaba/Modules/CheckOut/ViewModel/CheckOutViewModel.swift"
+            timestampString = "586804759.569581"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "getProductsOfCategory()"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "placeOrder(completion:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Products/ViewModels/ProductsListViewModel.swift"
-            timestampString = "586708108.703724"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "getProductsOfCategory()"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tatayaba.CheckOutViewModel.placeOrder(completion: (Tatayaba.APIResult&lt;Swift.Optional&lt;Tatayaba.PlaceOrderResult&gt;, Moya.MoyaError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Tatayaba"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kareemkareem/Documents/Apps/TTProject/Tatayaba/Tatayaba/Modules/CheckOut/ViewModel/CheckOutViewModel.swift"
+                  timestampString = "586807365.655652"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "290">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Tatayaba.APIResult&lt;Swift.Optional&lt;Tatayaba.PlaceOrderResult&gt;, Moya.MoyaError&gt;) -&gt; () in Tatayaba.CheckOutViewModel.placeOrder(completion: (Tatayaba.APIResult&lt;Swift.Optional&lt;Tatayaba.PlaceOrderResult&gt;, Moya.MoyaError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Tatayaba"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kareemkareem/Documents/Apps/TTProject/Tatayaba/Tatayaba/Modules/CheckOut/ViewModel/CheckOutViewModel.swift"
+                  timestampString = "586807365.657294"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "89">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

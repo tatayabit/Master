@@ -9,16 +9,17 @@
 import UIKit
 
 class OrderTableViewCell: UITableViewCell {
+    @IBOutlet weak var orderIdLabel: UILabel!
+    @IBOutlet weak var totalPriceLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configure(order: OrderModel) {
+        self.orderIdLabel.text = "# \(order.identifier)"
+        self.totalPriceLabel.text = order.totalPrice.formattedPrice
     }
-
 }
