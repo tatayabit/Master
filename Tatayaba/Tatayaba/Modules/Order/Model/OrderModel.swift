@@ -6,4 +6,6 @@
 //  Copyright © 2019 Shaik. All rights reserved.
 //
 
-import Foundation
+struct OrderModel {
+    
+}

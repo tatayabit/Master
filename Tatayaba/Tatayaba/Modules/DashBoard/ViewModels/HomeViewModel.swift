@@ -11,8 +11,6 @@ import Moya
 class HomeViewModel {
 
     private let productsApiClient = ProductsAPIClient()
-    private let ordersApiClient = OrdersAPIClient()
-
 
     private var categoriesList = [Category]()
     private var featuredProductsList = [Product]()
@@ -36,7 +34,6 @@ class HomeViewModel {
     init() {
         getAllCategories()
         getFeaturedProducts()
-        getAllOrders()
     }
 
     //MARK:- Api
@@ -75,22 +72,6 @@ class HomeViewModel {
                 if let newfeaturedProductsArrived = self.onFeaturedProductsListLoad {
                     newfeaturedProductsArrived()
                 }
-            case .failure(let error):
-                print("the error \(error)")
-            }
-        }
-    }
-
-    func getAllOrders() {
-        ordersApiClient.getAllOrders(page: 0) { result in
-            switch result {
-            case .success(let response):
-//                guard let productsResult = response else { return }
-//                guard let products = productsResult.products else { return }
-
-//                self.featuredProductsList = products
-                print(response)
-
             case .failure(let error):
                 print("the error \(error)")
             }
