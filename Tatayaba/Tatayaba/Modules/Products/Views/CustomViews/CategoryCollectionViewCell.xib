@@ -44,6 +44,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="192" height="154"/>
             <connections>
+                <outlet property="categoryImageView" destination="Mrk-eA-nwP" id="U0Z-na-KU0"/>
                 <outlet property="nameLabel" destination="JgL-AS-6oM" id="Vxa-dk-Gwd"/>
             </connections>
             <point key="canvasLocation" x="251.19999999999999" y="154.72263868065968"/>
