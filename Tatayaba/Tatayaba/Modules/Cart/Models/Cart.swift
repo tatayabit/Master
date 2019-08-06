@@ -1,5 +1,5 @@
 //
-//  CartModel.swift
+//  Cart.swift
 //  Tatayaba
 //
 //  Created by Admin on 15/07/19.

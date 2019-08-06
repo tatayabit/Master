@@ -62,32 +62,12 @@ extension OrdersEndpoint: TargetType {
             var params = [
                 "user_id": userId,
                 "payment_id": "2",
-                "shipping_id": "7",
+                "shipping_id": "9",
                 "products": products
                 ] as [String : Any]
 
             if userData != nil {
                 params["user_data"] = userData
-//                    [
-//                    "email":"guest@example.com",
-//                    "firstname": "Guest",
-//                    "lastname": "Guest",
-//                    "s_firstname": "Guest",
-//                    "s_lastname": "Guest",
-//                    "s_country": "US",
-//                    "s_city": "Boston",
-//                    "s_state": "MA",
-//                    "s_zipcode": "02125",
-//                    "s_address": "44 Main street",
-//                    "b_firstname": "Guest",
-//                    "b_lastname": "Guest",
-//                    "b_country":"US",
-//                    "b_city": "Boston",
-//                    "b_state": "MA",
-//                    "b_zipcode":"02125",
-//                    "b_address": "44 Main street"
-//                    ]
-
             }
 
             let jsonData = try! JSONSerialization.data(withJSONObject: params, options: [])
@@ -95,43 +75,15 @@ extension OrdersEndpoint: TargetType {
 
             print("decoded: \(decoded)")
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
-//                {
-//                    "user_id": "0",
-//                    "payment_id": "2",
-//                    "shipping_id": "1",
-//                    "products": {
-//                        "1": {
-//                            "product_id": "12",
-//                            "amount": "1"
-//                        },
-//                        "2": {
-//                            "product_id":"13",
-//                            "amount":"2"
-//                        }
-//                    },
-//                    "user_data": {
-//                        "email":"guest@example.com",
-//                        "firstname": "Guest",
-//                        "lastname": "Guest",
-//                        "s_firstname": "Guest",
-//                        "s_lastname": "Guest",
-//                        "s_country": "US",
-//                        "s_city": "Boston",
-//                        "s_state": "MA",
-//                        "s_zipcode": "02125",
-//                        "s_address": "44 Main street",
-//                        "b_firstname": "Guest",
-//                        "b_lastname": "Guest",
-//                        "b_country":"US",
-//                        "b_city": "Boston",
-//                        "b_state": "MA",
-//                        "b_zipcode":"02125",
-//                        "b_address": "44 Main street"
-//                    }
-//            }
-        case .getAllOrders(let page):
-            return .requestParameters(parameters: [ "user_id": 10045
-                ], encoding: JSONEncoding.default)
+
+        case .getAllOrders:
+            let customer = Customer.shared
+            var userId = "10045"
+            if let user = customer.user {
+                userId = user.identifier
+            }
+            return .requestParameters(parameters: [ "user_id": userId
+                ], encoding: URLEncoding.queryString)
         }
     }
 

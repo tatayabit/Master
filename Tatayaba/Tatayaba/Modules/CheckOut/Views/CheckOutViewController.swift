@@ -42,7 +42,7 @@ class CheckOutViewController: UIViewController,UICollectionViewDelegate,UICollec
 
     //MARK:- IBActions
 
-    @IBAction func totalPriceAction(_ sender: Any) {
+    @IBAction func placeOrderAction(_ sender: Any) {
         viewModel.placeOrder { result in
             switch result {
             case .success(let response):

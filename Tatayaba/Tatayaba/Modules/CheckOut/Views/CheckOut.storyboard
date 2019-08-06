@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JJ9-U2-IUw">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,20 +22,20 @@
             <objects>
                 <viewController storyboardIdentifier="CheckOutViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JJ9-U2-IUw" customClass="CheckOutViewController" customModule="Tatayaba" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4PZ-hJ-5V0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNP-Z4-QaP">
-                                <rect key="frame" x="0.0" y="32" width="375" height="168"/>
+                                <rect key="frame" x="0.0" y="32" width="600" height="168"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADDRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gh1-Ri-VsH">
-                                        <rect key="frame" x="8" y="4" width="367" height="20"/>
+                                        <rect key="frame" x="8" y="4" width="592" height="20"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="HOME  BLOCK 3 STREET 312,HOUSE 109,QAIRAWAN,KUWAIT.13278-KUWAIT +96594419882" translatesAutoresizingMaskIntoConstraints="NO" id="Rg5-MU-o9M">
-                                        <rect key="frame" x="8" y="32" width="359" height="128"/>
+                                        <rect key="frame" x="8" y="32" width="584" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="15"/>
@@ -73,7 +69,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dm5-83-LdN">
-                                <rect key="frame" x="0.0" y="208" width="375" height="168"/>
+                                <rect key="frame" x="0.0" y="208" width="600" height="168"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PAYMENT METHOD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGq-bw-eu6">
                                         <rect key="frame" x="4" y="8" width="367" height="30"/>
@@ -83,7 +79,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="K7R-9y-VWe">
-                                        <rect key="frame" x="4" y="33" width="367" height="128"/>
+                                        <rect key="frame" x="4" y="33" width="592" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zeX-wM-Vgj">
                                             <size key="itemSize" width="100" height="100"/>
@@ -134,7 +130,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4z-gj-0Zn">
-                                <rect key="frame" x="0.0" y="384" width="375" height="116"/>
+                                <rect key="frame" x="0.0" y="384" width="600" height="116"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PAYMENT SUMMARY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAH-4F-g5L">
                                         <rect key="frame" x="4" y="4" width="367" height="30"/>
@@ -192,7 +188,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ys-UM-ZuG">
-                                <rect key="frame" x="85.5" y="559" width="204" height="45"/>
+                                <rect key="frame" x="198" y="559" width="204" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Ayu-4o-XGv"/>
                                     <constraint firstAttribute="width" constant="204" id="l2Y-rQ-TsF"/>
@@ -202,7 +198,7 @@
                                     <color key="titleColor" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="totalPriceAction:" destination="JJ9-U2-IUw" eventType="touchUpInside" id="uTQ-Ki-5BN"/>
+                                    <action selector="placeOrderAction:" destination="JJ9-U2-IUw" eventType="touchUpInside" id="uTQ-Ki-5BN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -245,30 +241,30 @@
             <objects>
                 <viewController storyboardIdentifier="CheckoutCompletedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="i39-8c-VeR" customClass="CheckoutCompletedViewController" customModule="Tatayaba" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="muA-vO-MLf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THANK YOU FOR YOUR ORDER!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzj-a1-yeI">
-                                <rect key="frame" x="30" y="80" width="315" height="19.5"/>
+                                <rect key="frame" x="30" y="80" width="540" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ORDER # 50001" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sH-Xv-YsG">
-                                <rect key="frame" x="30" y="103.5" width="315" height="17"/>
+                                <rect key="frame" x="30" y="103.5" width="540" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" red="0.50982971967494117" green="0.51673860624548817" blue="0.55210499261236434" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="order_completed_person" translatesAutoresizingMaskIntoConstraints="NO" id="CQT-5h-nwp">
-                                <rect key="frame" x="63" y="150.5" width="249" height="290"/>
+                                <rect key="frame" x="175.5" y="150.5" width="249" height="290"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="249" id="HUE-cx-F6M"/>
                                     <constraint firstAttribute="height" constant="290" id="VlA-tJ-ycv"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPw-Ge-FyI">
-                                <rect key="frame" x="85.5" y="559" width="204" height="45"/>
+                                <rect key="frame" x="198" y="492" width="204" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="204" id="3v9-bN-vqE"/>
                                     <constraint firstAttribute="height" constant="45" id="RY7-DP-H4q"/>
@@ -278,7 +274,7 @@
                                     <color key="titleColor" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="totalPriceAction:" destination="JJ9-U2-IUw" eventType="touchUpInside" id="0Wi-Uw-skO"/>
+                                    <action selector="placeOrderAction:" destination="JJ9-U2-IUw" eventType="touchUpInside" id="0Wi-Uw-skO"/>
                                 </connections>
                             </button>
                         </subviews>

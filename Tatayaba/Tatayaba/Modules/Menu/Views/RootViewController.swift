@@ -98,7 +98,7 @@ extension RootViewController: RootViewControllerDelegate {
     }
     
     func loadOrdersVC() {
-        let controller = UIStoryboard(name: "Order", bundle: Bundle.main).instantiateViewController(withIdentifier: "OrderViewController") as! OrderViewController
+        let controller = UIStoryboard(name: "Order", bundle: Bundle.main).instantiateViewController(withIdentifier: "OrderViewController") as! OrdersViewController
         self.navigationController?.pushViewController(controller, animated: false)
         
         

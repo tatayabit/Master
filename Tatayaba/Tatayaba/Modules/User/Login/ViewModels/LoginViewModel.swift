@@ -22,17 +22,7 @@ struct LoginViewModel {
                 guard let loginResultResponse = loginResult else { return }
                 
                 print("loginResultResponse: \(loginResultResponse)")
-//                self.apiClient.getProfile(userId: signUpResponse.userId, completion: { profileResult in
-//                    switch profileResult {
-//                    case .success(let profileResponse):
-//                        guard let userResponse = profileResponse else { return }
-//
-//                        print(userResponse)
-//                    case .failure(let profileError):
-//                        print("the profile error \(profileError)")
-//                    }
-//                    completion(profileResult)
-//                })
+                Customer.shared.setUser(loginResultResponse.user)
             case .failure(let error):
                 print("the error \(error)")
                 //                completion(error)
