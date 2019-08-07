@@ -68,6 +68,8 @@
 		11945BC922F0B0C6000F08DC /* ShippingMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11945BC322F0B0C6000F08DC /* ShippingMethod.swift */; };
 		11945BCA22F0B0C6000F08DC /* ShippingAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11945BC522F0B0C6000F08DC /* ShippingAPIClient.swift */; };
 		11945BCB22F0B0C6000F08DC /* ShippingEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11945BC622F0B0C6000F08DC /* ShippingEndpoint.swift */; };
+		11A09F3C22FB255700C3E5B8 /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A09F3B22FB255700C3E5B8 /* OrderDetailsViewController.swift */; };
+		11A09F3E22FB44AA00C3E5B8 /* OrderDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A09F3D22FB44AA00C3E5B8 /* OrderDetailsViewModel.swift */; };
 		11A8B15322D79377001B2661 /* Wishlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A8B15222D79377001B2661 /* Wishlist.storyboard */; };
 		11A8B15822D793AC001B2661 /* WishlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A8B15722D793AC001B2661 /* WishlistViewController.swift */; };
 		11A8B15C22D7943D001B2661 /* WishlistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A8B15A22D7943D001B2661 /* WishlistCollectionViewCell.swift */; };
@@ -228,6 +230,8 @@
 		11945BC322F0B0C6000F08DC /* ShippingMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippingMethod.swift; sourceTree = "<group>"; };
 		11945BC522F0B0C6000F08DC /* ShippingAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippingAPIClient.swift; sourceTree = "<group>"; };
 		11945BC622F0B0C6000F08DC /* ShippingEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippingEndpoint.swift; sourceTree = "<group>"; };
+		11A09F3B22FB255700C3E5B8 /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
+		11A09F3D22FB44AA00C3E5B8 /* OrderDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewModel.swift; sourceTree = "<group>"; };
 		11A8B15222D79377001B2661 /* Wishlist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wishlist.storyboard; sourceTree = "<group>"; };
 		11A8B15722D793AC001B2661 /* WishlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewController.swift; sourceTree = "<group>"; };
 		11A8B15A22D7943D001B2661 /* WishlistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -988,6 +992,7 @@
 			children = (
 				8407BAC022E8695F001F2C2A /* CustomCells */,
 				8407BAB822E86205001F2C2A /* OrdersViewController.swift */,
+				11A09F3B22FB255700C3E5B8 /* OrderDetailsViewController.swift */,
 				8407BABA22E86213001F2C2A /* Order.storyboard */,
 			);
 			path = View;
@@ -997,6 +1002,7 @@
 			isa = PBXGroup;
 			children = (
 				1137042822F9C79200EAFBBD /* OrdersViewModel.swift */,
+				11A09F3D22FB44AA00C3E5B8 /* OrderDetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1627,6 +1633,7 @@
 				1100421122D4F3520099AE64 /* String+Extensions.swift in Sources */,
 				84843C1222D08DB000702E40 /* LeftSliderViewController.swift in Sources */,
 				11F52FBA22CA7D92000F0D85 /* LoginViewController.swift in Sources */,
+				11A09F3C22FB255700C3E5B8 /* OrderDetailsViewController.swift in Sources */,
 				11D4917A22CBCF8B009D8B23 /* UIView+Extensions.swift in Sources */,
 				1137042C22F9E35D00EAFBBD /* Customer.swift in Sources */,
 				841CE30A22DCC2B300A47FA0 /* MessagesViewController.swift in Sources */,
@@ -1639,6 +1646,7 @@
 				848E89CC22CCEAAC000AA24C /* FeatureProductCollectionViewCell.swift in Sources */,
 				116C938F22F0954500921893 /* PaymentAPIClient.swift in Sources */,
 				11945BBF22F0B08D000F08DC /* CheckoutCompletedViewModel.swift in Sources */,
+				11A09F3E22FB44AA00C3E5B8 /* OrderDetailsViewModel.swift in Sources */,
 				114D1A0722CBB0EA009205F3 /* ConfigurableCell.swift in Sources */,
 				112654A922D25E5B00904FB5 /* SignUpResponse.swift in Sources */,
 				11945BBB22F0B08D000F08DC /* CheckOutViewController.swift in Sources */,

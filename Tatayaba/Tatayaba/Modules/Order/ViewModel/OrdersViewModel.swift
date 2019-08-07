@@ -51,4 +51,11 @@ class OrdersViewModel {
         guard ordersList.count > 0 else { return OrderModel() }
         return ordersList[indexPath.row]
     }
+
+    //MARK:- OrderDetailsViewModel
+    func getOrderDetailsViewModel(at indexPath: IndexPath) -> OrderDetailsViewModel {
+        let order = self.order(at: indexPath)
+        let orderDetailsVM = OrderDetailsViewModel(orderId: order.identifier)
+        return orderDetailsVM
+    }
 }
