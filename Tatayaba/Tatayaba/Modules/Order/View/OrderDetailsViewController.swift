@@ -16,9 +16,14 @@ class OrderDetailsViewController: BaseViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setuprUI()
+        setupListeners()
     }
 
     func setuprUI() {
+        
+    }
+
+    func setupListeners() {
         
     }
 }

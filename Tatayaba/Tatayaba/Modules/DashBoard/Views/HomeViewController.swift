@@ -25,12 +25,15 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
         super.viewDidLoad()
         setupUI()
         setupListners()
-  
     }
-   
+    
     
     func setupListners() {
         viewModel.onCategoriesListLoad = {
+
+        }
+
+        viewModel.onBannersBlockLoad = {
 
         }
 

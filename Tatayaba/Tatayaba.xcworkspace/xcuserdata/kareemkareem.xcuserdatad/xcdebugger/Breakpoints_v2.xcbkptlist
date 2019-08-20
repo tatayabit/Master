@@ -4,51 +4,45 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/CheckOut/ViewModel/CheckOutViewModel.swift"
-            timestampString = "586804759.569581"
+            filePath = "Tatayaba/Modules/DashBoard/ViewModels/HomeViewModel.swift"
+            timestampString = "588007742.219386"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "placeOrder(completion:)"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "getBlock44()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Tatayaba.CheckOutViewModel.placeOrder(completion: (Tatayaba.APIResult&lt;Swift.Optional&lt;Tatayaba.PlaceOrderResult&gt;, Moya.MoyaError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Tatayaba"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kareemkareem/Documents/Apps/TTProject/Tatayaba/Tatayaba/Modules/CheckOut/ViewModel/CheckOutViewModel.swift"
-                  timestampString = "586807365.655652"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "64"
-                  endingLineNumber = "64"
-                  offsetFromSymbolStart = "290">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Tatayaba.APIResult&lt;Swift.Optional&lt;Tatayaba.PlaceOrderResult&gt;, Moya.MoyaError&gt;) -&gt; () in Tatayaba.CheckOutViewModel.placeOrder(completion: (Tatayaba.APIResult&lt;Swift.Optional&lt;Tatayaba.PlaceOrderResult&gt;, Moya.MoyaError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Tatayaba"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kareemkareem/Documents/Apps/TTProject/Tatayaba/Tatayaba/Modules/CheckOut/ViewModel/CheckOutViewModel.swift"
-                  timestampString = "586807365.657294"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "89">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/DashBoard/ViewModels/HomeViewModel.swift"
+            timestampString = "588007742.2197061"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "getBlock44()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

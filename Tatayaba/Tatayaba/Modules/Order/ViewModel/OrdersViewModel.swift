@@ -53,7 +53,7 @@ class OrdersViewModel {
     }
 
     //MARK:- OrderDetailsViewModel
-    func getOrderDetailsViewModel(at indexPath: IndexPath) -> OrderDetailsViewModel {
+    func orderDetailsViewModel(at indexPath: IndexPath) -> OrderDetailsViewModel {
         let order = self.order(at: indexPath)
         let orderDetailsVM = OrderDetailsViewModel(orderId: order.identifier)
         return orderDetailsVM

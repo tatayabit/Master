@@ -11,9 +11,12 @@ import Moya
 class HomeViewModel {
 
     private let productsApiClient = ProductsAPIClient()
+    private let blocksApiClient = BlocksAPIClient()
+
 
     private var categoriesList = [Category]()
     private var featuredProductsList = [Product]()
+    private var bannersBlock: Block = Block()
 
 
     /// This closure is being called once the categories api fetch
@@ -22,18 +25,17 @@ class HomeViewModel {
     /// This closure is being called once the featured products api fetch
     var onFeaturedProductsListLoad: (() -> ())?
 
-    var categoriesCount: Int {
-        return categoriesList.count
-    }
+    /// This closure is being called once the banners block api fetch
+    var onBannersBlockLoad: (() -> ())?
 
-    var featuredProductsCount: Int {
-        return featuredProductsList.count
-    }
+    var categoriesCount: Int { return categoriesList.count }
+    var featuredProductsCount: Int { return featuredProductsList.count }
 
     //MARK:- Init
     init() {
         getAllCategories()
         getFeaturedProducts()
+        getBlock44()
     }
 
     //MARK:- Api
@@ -67,6 +69,25 @@ class HomeViewModel {
 
                 self.featuredProductsList = products
                 print(products)
+
+
+                if let newfeaturedProductsArrived = self.onFeaturedProductsListLoad {
+                    newfeaturedProductsArrived()
+                }
+            case .failure(let error):
+                print("the error \(error)")
+            }
+        }
+    }
+
+    func getBlock44() {
+        blocksApiClient.getBlock(blockId: "44") { result in
+            switch result {
+            case .success(let response):
+                guard let block = response else { return }
+//
+//                self.featuredProductsList = products
+                print(block)
 
 
                 if let newfeaturedProductsArrived = self.onFeaturedProductsListLoad {

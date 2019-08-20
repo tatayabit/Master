@@ -12,6 +12,7 @@ class OrderDetailsViewModel {
 
     private let ordersApiClient = OrdersAPIClient()
     private var orderId: String
+    var order: OrderModel = OrderModel()
 
     /// This closure is being called once the categories api fetch
     var onOrderLoad: (() -> ())?
@@ -29,7 +30,9 @@ class OrderDetailsViewModel {
             switch result {
             case .success(let response):
 
-                print(response)
+                guard let order = response else { return }
+                self.order = order
+                print(order)
 
                 if let orderDetailsArrived = self.onOrderLoad {
                     orderDetailsArrived()

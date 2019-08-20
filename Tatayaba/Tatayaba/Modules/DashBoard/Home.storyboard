@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GId-Xi-OOd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GId-Xi-OOd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +21,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4d-80-F7m">
                                 <rect key="frame" x="4" y="48" width="368" height="81"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjG-5C-lba">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjG-5C-lba">
                                         <rect key="frame" x="0.0" y="0.0" width="368" height="81"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="81" id="gVP-fq-qb3"/>
@@ -53,7 +52,7 @@
                                     <constraint firstAttribute="trailing" secondItem="oA1-yE-5iF" secondAttribute="trailing" id="pJ0-82-cox"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ecq-92-wgi">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ecq-92-wgi">
                                 <rect key="frame" x="4" y="476" width="368" height="142"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -72,10 +71,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KR5-SS-R1y" customClass="AACarousel" customModule="Tatayaba" customModuleProvider="target">
-                                <rect key="frame" x="4" y="144" width="368" height="219"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -83,19 +78,12 @@
                             <constraint firstItem="X4d-80-F7m" firstAttribute="top" secondItem="7FN-wO-Io4" secondAttribute="top" constant="-16" id="6AL-IV-q4A"/>
                             <constraint firstItem="4M4-Z9-c78" firstAttribute="leading" secondItem="7FN-wO-Io4" secondAttribute="leading" constant="4" id="9lJ-mD-3vI"/>
                             <constraint firstItem="ecq-92-wgi" firstAttribute="bottom" secondItem="7FN-wO-Io4" secondAttribute="bottom" id="9wj-1C-vbb"/>
-                            <constraint firstItem="4M4-Z9-c78" firstAttribute="top" secondItem="KR5-SS-R1y" secondAttribute="bottom" constant="8" symbolic="YES" id="EOy-MF-4PL"/>
                             <constraint firstItem="7FN-wO-Io4" firstAttribute="trailing" secondItem="X4d-80-F7m" secondAttribute="trailing" constant="3" id="Gt7-f9-TTy"/>
-                            <constraint firstItem="KR5-SS-R1y" firstAttribute="leading" secondItem="4M4-Z9-c78" secondAttribute="leading" id="PTc-A9-5qY"/>
                             <constraint firstItem="ecq-92-wgi" firstAttribute="leading" secondItem="4M4-Z9-c78" secondAttribute="leading" id="RIX-99-CtD"/>
-                            <constraint firstItem="KR5-SS-R1y" firstAttribute="top" secondItem="7FN-wO-Io4" secondAttribute="top" constant="80" id="RS0-si-bni"/>
                             <constraint firstItem="ecq-92-wgi" firstAttribute="top" secondItem="4M4-Z9-c78" secondAttribute="bottom" constant="9" id="buN-Ha-qVq"/>
                             <constraint firstItem="X4d-80-F7m" firstAttribute="top" secondItem="7FN-wO-Io4" secondAttribute="top" constant="-16" id="cjf-Er-EpE"/>
-                            <constraint firstItem="ecq-92-wgi" firstAttribute="trailing" secondItem="KR5-SS-R1y" secondAttribute="trailing" id="eHM-yC-nwl"/>
                             <constraint firstItem="7FN-wO-Io4" firstAttribute="trailing" secondItem="X4d-80-F7m" secondAttribute="trailing" constant="3" id="jOD-wq-cCs"/>
-                            <constraint firstItem="KR5-SS-R1y" firstAttribute="leading" secondItem="X4d-80-F7m" secondAttribute="leading" id="kKa-Nz-zbx"/>
-                            <constraint firstItem="KR5-SS-R1y" firstAttribute="leading" secondItem="7FN-wO-Io4" secondAttribute="leading" constant="4" id="kw7-qP-Fx3"/>
                             <constraint firstItem="X4d-80-F7m" firstAttribute="leading" secondItem="7FN-wO-Io4" secondAttribute="leading" constant="4" id="m4Z-dN-NXW"/>
-                            <constraint firstItem="KR5-SS-R1y" firstAttribute="trailing" secondItem="X4d-80-F7m" secondAttribute="trailing" id="rJd-E7-Dev"/>
                             <constraint firstItem="7FN-wO-Io4" firstAttribute="trailing" secondItem="4M4-Z9-c78" secondAttribute="trailing" constant="5" id="tQo-V7-hiS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7FN-wO-Io4"/>
@@ -104,14 +92,13 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="Categories_Scroll" destination="IjG-5C-lba" id="w0f-bm-Dop"/>
-                        <outlet property="carouselView" destination="KR5-SS-R1y" id="xCz-ox-UfB"/>
                         <outlet property="collectionView" destination="ecq-92-wgi" id="uLg-Cu-JLN"/>
                         <segue destination="QAy-a0-mKT" kind="show" identifier="product_details_segue" id="iZN-6c-1wt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNm-hz-0IP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1409" y="-251"/>
+            <point key="canvasLocation" x="1529" y="-251"/>
         </scene>
         <!--CartViewController-->
         <scene sceneID="eT0-ar-RnH">
@@ -129,7 +116,7 @@
                 <viewControllerPlaceholder storyboardName="ProductDetails" id="QAy-a0-mKT" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lbe-Jo-1Mg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1956" y="-262.66866566716647"/>
+            <point key="canvasLocation" x="2142" y="-292"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Gil-y7-gM7">
@@ -222,6 +209,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Ad" width="369" height="76"/>
+        <image name="Ad" width="177.36000061035156" height="36.479999542236328"/>
     </resources>
 </document>

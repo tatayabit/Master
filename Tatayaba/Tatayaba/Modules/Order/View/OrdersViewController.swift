@@ -11,6 +11,7 @@ import UIKit
 class OrdersViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
 
     private let viewModel = OrdersViewModel()
+    private let orderDetailsSegue = "order_details_segue"
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -64,6 +65,17 @@ extension OrdersViewController{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: orderDetailsSegue, sender: indexPath)
+    }
+
+    //MARK:- Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == orderDetailsSegue {
+            let orderDetailsVC = segue.destination as! OrderDetailsViewController
+            if let indexPath = sender as? IndexPath {
+                orderDetailsVC.viewModel = viewModel.orderDetailsViewModel(at: indexPath)
+            }
+        }
     }
 }

@@ -162,11 +162,27 @@
                     <navigationItem key="navigationItem" title="TATAYAB" id="nh5-qy-aXk"/>
                     <connections>
                         <outlet property="tableView" destination="TtJ-PH-qt5" id="CmV-yI-gdZ"/>
+                        <segue destination="Vbz-LN-onO" kind="show" identifier="order_details_segue" id="Gsf-cl-tSc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJM-NZ-V6C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="405.60000000000002" y="190.25487256371815"/>
+        </scene>
+        <!--Order Details View Controller-->
+        <scene sceneID="qaU-yn-zja">
+            <objects>
+                <viewController storyboardIdentifier="OrderDetailsViewController" id="Vbz-LN-onO" customClass="OrderDetailsViewController" customModule="Tatayaba" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T5Z-OT-g6V">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="2oE-gt-7Kx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NaJ-Lv-kdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1148" y="190"/>
         </scene>
     </scenes>
     <resources>

@@ -10,34 +10,34 @@ struct OrderModel {
     var identifier: String
     var status: String
     var totalPrice: String
-    var subtotal: String
-    var discount: String
-    var subtotalDiscount: String
+    var subtotal: Double
+    var discount: Double
+    var subtotalDiscount: Double
     var shippingCost: String
 
     var shippingCity: String
     var shippingCountry: String
     var shippingPhone: String
-    var timestamp: Double
+    var timestamp: String
 
     init() {
         self.identifier = ""
         self.status = ""
         self.totalPrice = ""
-        self.subtotal = ""
-        self.discount = ""
-        self.subtotalDiscount = ""
+        self.subtotal = 0.0
+        self.discount = 0.0
+        self.subtotalDiscount = 0.0
         self.shippingCost = ""
         self.shippingCity = ""
         self.shippingCountry = ""
         self.shippingPhone = ""
-        self.timestamp = 0.0
+        self.timestamp = ""
     }
 
 }
 
 extension OrderModel: Codable {
-    enum UserCodingKeys: String, CodingKey {
+    enum OrderModelCodingKeys: String, CodingKey {
         case identifier = "order_id"
         case status
         case totalPrice = "total"
@@ -52,23 +52,23 @@ extension OrderModel: Codable {
     }
 
     init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: UserCodingKeys.self)
+        let container = try decoder.container(keyedBy: OrderModelCodingKeys.self)
         identifier = try container.decodeIfPresent(String.self, forKey: .identifier) ?? ""
         status = try container.decodeIfPresent(String.self, forKey: .status) ?? ""
         totalPrice = try container.decodeIfPresent(String.self, forKey: .totalPrice) ?? ""
-        subtotal = try container.decodeIfPresent(String.self, forKey: .subtotal) ?? ""
-        discount = try container.decodeIfPresent(String.self, forKey: .discount) ?? ""
-        subtotalDiscount = try container.decodeIfPresent(String.self, forKey: .subtotalDiscount) ?? ""
+        subtotal = try container.decodeIfPresent(Double.self, forKey: .subtotal) ?? 0.0
+        discount = try container.decodeIfPresent(Double.self, forKey: .discount) ?? 0.0
+        subtotalDiscount = try container.decodeIfPresent(Double.self, forKey: .subtotalDiscount) ?? 0.0
         shippingCost = try container.decodeIfPresent(String.self, forKey: .shippingCost) ?? ""
         shippingCity = try container.decodeIfPresent(String.self, forKey: .shippingCity) ?? ""
         shippingCountry = try container.decodeIfPresent(String.self, forKey: .shippingCountry) ?? ""
         shippingPhone = try container.decodeIfPresent(String.self, forKey: .shippingPhone) ?? ""
-        timestamp = try container.decodeIfPresent(Double.self, forKey: .timestamp) ?? 0.0
+        timestamp = try container.decodeIfPresent(String.self, forKey: .timestamp) ?? ""
 
     }
 
     func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: UserCodingKeys.self)
+        var container = encoder.container(keyedBy: OrderModelCodingKeys.self)
         try container.encodeIfPresent(identifier, forKey: .identifier)
         try container.encodeIfPresent(status, forKey: .status)
         try container.encodeIfPresent(totalPrice, forKey: .totalPrice)
