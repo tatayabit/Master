@@ -10,15 +10,16 @@ import Moya
 
 enum UserEndpoint {
     case signUp(user: User)
-    //    case login(email: String, password: String)
+    case login(user: User)
     case getProfile(userId: Int)
+    
 }
 
 
 extension UserEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
-        case .production: return "https://dev2%40tatayab.com:3N11X58I51g9Yzx231g5GSP2E2h6Gqkz@dev2.tatayab.com/api/"
+        case .production: return "http://dev2%40tatayab.com:E970ASsq0e9GmSJ2EX0BLGvskO2UF841@old.tatayab.com/api/"
         case .qa: return "http://localhost:3000/"
         case .staging: return "http://localhost:3000/"
         }
@@ -36,12 +37,14 @@ extension UserEndpoint: TargetType {
             return "users"
         case .getProfile(let userId):
             return "users/\(userId)"
+        case .login:
+            return "3.0/auth"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .signUp:
+        case .signUp, .login:
             return .post
         case .getProfile:
             return .get
@@ -61,24 +64,26 @@ extension UserEndpoint: TargetType {
         switch self {
         case .signUp(let user):
 
-            return .requestParameters(parameters: [ "email": user.email ?? "",
-                                                    "first_name": user.firstname ?? "",
-                                                    "last_name": user.lastname ?? "",
-                                                    "password": user.password ?? "",
+            return .requestParameters(parameters: [ "email": user.email ,
+                                                    "first_name": user.firstname ,
+                                                    "password": user.password ,
                                                     "user_type": "C",
                                                     "company_id": 1,
                                                     "status": "A"
                 ], encoding: JSONEncoding.default)
         case .getProfile:
             return .requestPlain
+        case .login(let user):
+            return .requestParameters(parameters: [ "email": user.email ,
+                                                    "password": user.password
+                ], encoding: JSONEncoding.default)
         }
     }
 
     var headers: [String : String]? {
-
-        return ["Content-type": "application/json",
-                "authorization": "Basic ZGV2MkB0YXRheWFiLmNvbTozTjExWDU4STUxZzlZengyMzFnNUdTUDJFMmg2R3Freg=="
-        ]
+            return ["Content-type": "application/json",
+                    "authorization": "Basic ZGUyQHRhdGF5YWIuY29tOkU5NzBBU3NxMGU5R21TSjJFWDBCTEd2c2tPMlVGODQx=="
+            ]
     }
 
 }

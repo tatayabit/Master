@@ -14,7 +14,7 @@ class LeftSliderViewController: UIViewController {
     
     var rootViewDelegate: RootViewControllerDelegate?
     var sliderMenuDelegate: SliderMenuDelegate?
-    var menuItems: [String] = ["HOME", "PROFILE","ÖRDERS","WISHLIST","NOTIFICATIONS","MESSAGES","ABOUT","CHAT","SETTINGS","LOGOUT"]
+    var menuItems: [String] = ["HOME", "PROFILE","ORDERS","WISHLIST","NOTIFICATIONS","MESSAGES","ABOUT","CHAT","SETTINGS","LOGOUT"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

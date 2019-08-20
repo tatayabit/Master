@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Addresses List View Controller-->
+        <scene sceneID="r8u-uY-an8">
+            <objects>
+                <viewController storyboardIdentifier="AddressesListViewController" id="hra-6k-ckA" customClass="AddressesListViewController" customModule="Tatayaba" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sn5-1p-tZQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2B-8Z-sud">
+                                <rect key="frame" x="16" y="611" width="343" height="40"/>
+                                <color key="backgroundColor" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="BmS-Sh-uJ9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="Add New Address">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mcb-w1-NdI">
+                                <rect key="frame" x="0.0" y="20" width="375" height="583"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mcb-w1-NdI" firstAttribute="top" secondItem="AUo-Iu-Gph" secondAttribute="top" id="0Qt-UA-Z4u"/>
+                            <constraint firstItem="AUo-Iu-Gph" firstAttribute="trailing" secondItem="O2B-8Z-sud" secondAttribute="trailing" constant="16" id="E3I-CH-2cZ"/>
+                            <constraint firstItem="O2B-8Z-sud" firstAttribute="leading" secondItem="AUo-Iu-Gph" secondAttribute="leading" constant="16" id="JkD-ui-utG"/>
+                            <constraint firstItem="AUo-Iu-Gph" firstAttribute="trailing" secondItem="mcb-w1-NdI" secondAttribute="trailing" id="P9t-D9-rz5"/>
+                            <constraint firstItem="AUo-Iu-Gph" firstAttribute="bottom" secondItem="O2B-8Z-sud" secondAttribute="bottom" constant="16" id="Tgi-3b-CLx"/>
+                            <constraint firstItem="O2B-8Z-sud" firstAttribute="top" secondItem="mcb-w1-NdI" secondAttribute="bottom" constant="8" id="Z0x-S2-SBr"/>
+                            <constraint firstItem="mcb-w1-NdI" firstAttribute="leading" secondItem="AUo-Iu-Gph" secondAttribute="leading" id="cNi-dC-USc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AUo-Iu-Gph"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IHZ-LM-Bsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-37" y="51"/>
+        </scene>
+    </scenes>
+</document>
