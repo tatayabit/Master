@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
    
-     
+        Customer.shared.loadData()
         self.loadRootViewController()
        
         

@@ -11,6 +11,7 @@ import Moya
 enum OrdersEndpoint {
     case create(products: [String: Any], userId: String, userData: [String: Any]?)
     case getAllOrders(page: Int)
+    case getOrder(orderId: String)
 }
 
 
@@ -35,6 +36,8 @@ extension OrdersEndpoint: TargetType {
             return "stores/1/orders/"
         case .getAllOrders:
             return "orders/"
+        case .getOrder(let orderId):
+            return "orders/\(orderId.urlEscaped)"
         }
     }
 
@@ -42,7 +45,7 @@ extension OrdersEndpoint: TargetType {
         switch self {
         case .create:
             return .post
-        case .getAllOrders:
+        case .getAllOrders, .getOrder:
             return .get
         }
     }
@@ -76,7 +79,7 @@ extension OrdersEndpoint: TargetType {
             print("decoded: \(decoded)")
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
 
-        case .getAllOrders:
+        case .getAllOrders, .getOrder:
             let customer = Customer.shared
             var userId = "10045"
             if let user = customer.user {

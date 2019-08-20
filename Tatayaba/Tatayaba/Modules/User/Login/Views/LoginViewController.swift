@@ -82,8 +82,11 @@ class LoginViewController: BaseViewController, ValidationDelegate {
         performSegue(withIdentifier: homeSegue, sender: nil)
 
     }
+
     
-    
+    @IBAction func skipAction(_ sender: UIButton) {
+        performSegue(withIdentifier: homeSegue, sender: nil)
+    }
     
     
 }

@@ -23,4 +23,8 @@ struct OrdersAPIClient: APIClient {
     func getAllOrders(page: Int, completion: @escaping (APIResult<OrdersResult?, MoyaError>) -> Void) {
         fetch(with: OrdersEndpoint.getAllOrders(page: 0), completion: completion)
     }
+
+    func getOrder(orderId: String, completion: @escaping (APIResult<OrderModel?, MoyaError>) -> Void) {
+        fetch(with: OrdersEndpoint.getOrder(orderId: orderId), completion: completion)
+    }
 }
