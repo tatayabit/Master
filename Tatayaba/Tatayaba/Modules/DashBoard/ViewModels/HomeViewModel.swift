@@ -26,7 +26,7 @@ class HomeViewModel {
     var onFeaturedProductsListLoad: (() -> ())?
 
     /// This closure is being called once the banners block api fetch
-    var onBannersBlockLoad: (() -> ())?
+    var onTopBannersBlockLoad: (() -> ())?
 
     var categoriesCount: Int { return categoriesList.count }
     var featuredProductsCount: Int { return featuredProductsList.count }
@@ -35,7 +35,7 @@ class HomeViewModel {
     init() {
         getAllCategories()
         getFeaturedProducts()
-        getBlock44()
+        getBlock58()
     }
 
     //MARK:- Api
@@ -80,18 +80,18 @@ class HomeViewModel {
         }
     }
 
-    func getBlock44() {
-        blocksApiClient.getBlock(blockId: "44") { result in
+    func getBlock58() {
+        blocksApiClient.getBlock(blockId: "58") { result in
             switch result {
             case .success(let response):
                 guard let block = response else { return }
-//
-//                self.featuredProductsList = products
+                //
+                //                self.featuredProductsList = products
                 print(block)
 
 
-                if let newfeaturedProductsArrived = self.onFeaturedProductsListLoad {
-                    newfeaturedProductsArrived()
+                if let newBannersArrived = self.onTopBannersBlockLoad {
+                    newBannersArrived()
                 }
             case .failure(let error):
                 print("the error \(error)")

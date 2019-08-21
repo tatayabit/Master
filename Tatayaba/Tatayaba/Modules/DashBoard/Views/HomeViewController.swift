@@ -9,14 +9,12 @@
 import UIKit
 
 class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
+
     let buttonPadding:CGFloat = 05
     var xOffset:CGFloat = 15
     private let productDetailsSegue = "product_details_segue"
 
     @IBOutlet weak internal var collectionView: UICollectionView!
-    @IBOutlet weak var carouselView: AACarousel!
-
     @IBOutlet var Categories_Scroll: UIScrollView!
     private var viewModel = HomeViewModel()
 
@@ -26,14 +24,14 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
         setupUI()
         setupListners()
     }
-    
-    
+
+
     func setupListners() {
         viewModel.onCategoriesListLoad = {
 
         }
 
-        viewModel.onBannersBlockLoad = {
+        viewModel.onTopBannersBlockLoad = {
 
         }
 
@@ -52,14 +50,13 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
         self.addLeftBarButton()
         self.NavigationBarWithOutBackButton()
         self.collectionView.register(FeatureProductCollectionViewCell.nib, forCellWithReuseIdentifier: FeatureProductCollectionViewCell.identifier)
-        carousel()
         CategoriesView()
     }
-    
-    
+
+
     func CategoriesView(){
         Categories_Scroll.translatesAutoresizingMaskIntoConstraints = false
-    
+
         for i in 0 ... 10{
             let button = UIButton()
             button.tag = i
@@ -71,34 +68,17 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
             button.setImage(UIImage(named: "perfume_image"), for: .normal)
             button.clipsToBounds = true
             button.frame = CGRect(x: xOffset, y: CGFloat(buttonPadding), width: 70, height: 70)
-            
+
             xOffset = xOffset + CGFloat(buttonPadding) + button.frame.size.width+15
             Categories_Scroll.addSubview(button)
             button.layer.cornerRadius = button.frame.width/2
-            
+
         }
         Categories_Scroll.contentSize = CGSize(width: xOffset, height: Categories_Scroll.frame.height)
-        
-      
-     
-        
-    }
-    
-    
 
-    func carousel() {
 
-        let pathArray = ["Dashboard",
-                         "ADD",
-                         "Dashboard",
-                         "ADD"]
-        carouselView.delegate = self
 
-        carouselView.setCarouselData(paths: pathArray,  describedTitle: [""], isAutoScroll: false, timer: 1.5 , defaultImage: "ADD")
 
-        carouselView.setCarouselOpaque(layer: false, describedTitle: false, pageIndicator: false)
-        carouselView.setCarouselLayout(displayStyle: 0, pageIndicatorPositon: 2, pageIndicatorColor: nil, describedTitleColor: nil, layerColor: nil)
-       
     }
 }
 
@@ -109,7 +89,7 @@ extension HomeViewController {
 
         return viewModel.featuredProductsCount
     }
-    
+
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -127,9 +107,9 @@ extension HomeViewController {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
-        }
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        
+
         return 10
     }
 
