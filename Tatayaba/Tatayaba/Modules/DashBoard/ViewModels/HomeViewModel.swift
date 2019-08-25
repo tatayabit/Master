@@ -16,8 +16,9 @@ class HomeViewModel {
 
     private var categoriesList = [Category]()
     private var featuredProductsList = [Product]()
-    private var bannersBlock: Block = Block()
 
+    var topBannersBlock: Block = Block()
+    
 
     /// This closure is being called once the categories api fetch
     var onCategoriesListLoad: (() -> ())?
@@ -85,6 +86,7 @@ class HomeViewModel {
             switch result {
             case .success(let response):
                 guard let block = response else { return }
+                self.topBannersBlock = block
                 //
                 //                self.featuredProductsList = products
                 print(block)

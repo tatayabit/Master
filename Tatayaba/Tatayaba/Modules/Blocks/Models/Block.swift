@@ -51,4 +51,3 @@ extension Block: Codable {
         try container.encodeIfPresent(banners, forKey: .banners)
     }
 }
-

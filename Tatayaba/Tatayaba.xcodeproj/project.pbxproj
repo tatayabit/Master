@@ -53,6 +53,11 @@
 		114D1A1522CBB27E009205F3 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114D1A1322CBB27E009205F3 /* ProductCollectionViewCell.swift */; };
 		114D1A1622CBB27E009205F3 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 114D1A1422CBB27E009205F3 /* ProductCollectionViewCell.xib */; };
 		114D1A1822CBB33E009205F3 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114D1A1722CBB33E009205F3 /* Product.swift */; };
+		115DC427231177FC0001EF67 /* HomeHorizontalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115DC426231177FC0001EF67 /* HomeHorizontalLayout.swift */; };
+		115DC42B2311878B0001EF67 /* BannersBlocksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115DC42A2311878B0001EF67 /* BannersBlocksView.swift */; };
+		115DC42D231187950001EF67 /* BannersBlocksView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 115DC42C231187950001EF67 /* BannersBlocksView.xib */; };
+		115DC43023118A500001EF67 /* BannerBlockCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115DC42E23118A500001EF67 /* BannerBlockCollectionViewCell.swift */; };
+		115DC43123118A500001EF67 /* BannerBlockCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 115DC42F23118A500001EF67 /* BannerBlockCollectionViewCell.xib */; };
 		11624ECF230C454A00E81ABD /* BlockProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11624ECE230C454A00E81ABD /* BlockProduct.swift */; };
 		11624ED1230C464800E81ABD /* BlockImagePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11624ED0230C464800E81ABD /* BlockImagePair.swift */; };
 		11624ED3230C468700E81ABD /* BlockImagePairDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11624ED2230C468700E81ABD /* BlockImagePairDetailed.swift */; };
@@ -225,6 +230,11 @@
 		114D1A1322CBB27E009205F3 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		114D1A1422CBB27E009205F3 /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		114D1A1722CBB33E009205F3 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		115DC426231177FC0001EF67 /* HomeHorizontalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHorizontalLayout.swift; sourceTree = "<group>"; };
+		115DC42A2311878B0001EF67 /* BannersBlocksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannersBlocksView.swift; sourceTree = "<group>"; };
+		115DC42C231187950001EF67 /* BannersBlocksView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannersBlocksView.xib; sourceTree = "<group>"; };
+		115DC42E23118A500001EF67 /* BannerBlockCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerBlockCollectionViewCell.swift; sourceTree = "<group>"; };
+		115DC42F23118A500001EF67 /* BannerBlockCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerBlockCollectionViewCell.xib; sourceTree = "<group>"; };
 		11624ECE230C454A00E81ABD /* BlockProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockProduct.swift; sourceTree = "<group>"; };
 		11624ED0230C464800E81ABD /* BlockImagePair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockImagePair.swift; sourceTree = "<group>"; };
 		11624ED2230C468700E81ABD /* BlockImagePairDetailed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockImagePairDetailed.swift; sourceTree = "<group>"; };
@@ -625,6 +635,34 @@
 				11007BD422DE2F2E00AC9957 /* CategoryCollectionViewCell.xib */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		115DC425231177BD0001EF67 /* CollectionViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				115DC426231177FC0001EF67 /* HomeHorizontalLayout.swift */,
+			);
+			path = CollectionViewLayout;
+			sourceTree = "<group>";
+		};
+		115DC428231187190001EF67 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				848E89CA22CCEAAC000AA24C /* FeatureProductCollectionViewCell.swift */,
+				848E89CB22CCEAAC000AA24C /* FeatureProductCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		115DC429231187610001EF67 /* BannersBlocksView */ = {
+			isa = PBXGroup;
+			children = (
+				115DC42A2311878B0001EF67 /* BannersBlocksView.swift */,
+				115DC42C231187950001EF67 /* BannersBlocksView.xib */,
+				115DC42E23118A500001EF67 /* BannerBlockCollectionViewCell.swift */,
+				115DC42F23118A500001EF67 /* BannerBlockCollectionViewCell.xib */,
+			);
+			path = BannersBlocksView;
 			sourceTree = "<group>";
 		};
 		11624ED4230C6B7000E81ABD /* Product */ = {
@@ -1292,6 +1330,8 @@
 		848E89C322CCDD9D000AA24C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				115DC429231187610001EF67 /* BannersBlocksView */,
+				115DC425231177BD0001EF67 /* CollectionViewLayout */,
 				848E89C922CCEA63000AA24C /* CollectionView */,
 				848E89C422CCDDBB000AA24C /* HomeViewController.swift */,
 			);
@@ -1309,8 +1349,7 @@
 		848E89C922CCEA63000AA24C /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				848E89CA22CCEAAC000AA24C /* FeatureProductCollectionViewCell.swift */,
-				848E89CB22CCEAAC000AA24C /* FeatureProductCollectionViewCell.xib */,
+				115DC428231187190001EF67 /* Cells */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -1548,10 +1587,12 @@
 				847CDE8422CA19EE00E67C8C /* ProximaNova-Regular.ttf in Resources */,
 				11FEB4E122DF921800F2E9B8 /* CarouselCollectionViewCell.xib in Resources */,
 				1101C66022E0C43100416307 /* ProductOptionsView.xib in Resources */,
+				115DC42D231187950001EF67 /* BannersBlocksView.xib in Resources */,
 				8407BABB22E86213001F2C2A /* Order.storyboard in Resources */,
 				114D1A0022CBAAE2009205F3 /* Products.storyboard in Resources */,
 				11007BD622DE2F2E00AC9957 /* CategoryCollectionViewCell.xib in Resources */,
 				1101C66A22E0D71500416307 /* HProductsListView.xib in Resources */,
+				115DC43123118A500001EF67 /* BannerBlockCollectionViewCell.xib in Resources */,
 				11081EEA22DB823200B68EA5 /* Static.storyboard in Resources */,
 				84BC08A622DC972300C6180E /* RecommendedCollectionViewCell.xib in Resources */,
 				11C271B722F20E24004613E3 /* AddressTableViewCell.xib in Resources */,
@@ -1678,6 +1719,7 @@
 				114D1A0F22CBB165009205F3 /* CollectionCellConfigurator.swift in Sources */,
 				1101C66422E0C96C00416307 /* OptionCollectionViewCell.swift in Sources */,
 				11A8B15C22D7943D001B2661 /* WishlistCollectionViewCell.swift in Sources */,
+				115DC42B2311878B0001EF67 /* BannersBlocksView.swift in Sources */,
 				84843C1922D08DB000702E40 /* RightSliderViewController.swift in Sources */,
 				112654B622D3AE3F00904FB5 /* HomeViewModel.swift in Sources */,
 				114D1A0D22CBB144009205F3 /* TableCellActionProxy.swift in Sources */,
@@ -1688,6 +1730,7 @@
 				114D1A1822CBB33E009205F3 /* Product.swift in Sources */,
 				1120C45F22E6184600F99B60 /* UIButton+Extensions.swift in Sources */,
 				84BC089C22DC7D4900C6180E /* Cart.swift in Sources */,
+				115DC427231177FC0001EF67 /* HomeHorizontalLayout.swift in Sources */,
 				11D612A922CE49D1000D42C3 /* UserEndpoint.swift in Sources */,
 				11D612A122CE48F3000D42C3 /* APIResult.swift in Sources */,
 				116C938722F0952700921893 /* PlaceOrderResult.swift in Sources */,
@@ -1730,6 +1773,7 @@
 				8407BABF22E8623E001F2C2A /* OrderModel.swift in Sources */,
 				11007BD022DE2DC700AC9957 /* ProductsListViewController.swift in Sources */,
 				8407BAC222E869A8001F2C2A /* OrderTableViewCell.swift in Sources */,
+				115DC43023118A500001EF67 /* BannerBlockCollectionViewCell.swift in Sources */,
 				11C271AE22F20614004613E3 /* AddressesListViewController.swift in Sources */,
 				84843C1822D08DB000702E40 /* MenuTableViewCell.swift in Sources */,
 				847CDE7A22CA130F00E67C8C /* ColorDef.swift in Sources */,

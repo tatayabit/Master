@@ -14,15 +14,26 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
     var xOffset:CGFloat = 15
     private let productDetailsSegue = "product_details_segue"
 
-    @IBOutlet weak internal var collectionView: UICollectionView!
-    @IBOutlet var Categories_Scroll: UIScrollView!
+    @IBOutlet weak var scrollView: StackedScrollView!
+
     private var viewModel = HomeViewModel()
+    let bannersBlockView: BannersBlocksView = .fromNib()
+
+
 
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupListners()
+    }
+
+    fileprivate func setupBannersBlockView() {
+        bannersBlockView.block = viewModel.topBannersBlock
+        bannersBlockView.loadData()
+        scrollView.stackView.addArrangedSubview(bannersBlockView)
+        bannersBlockView.translatesAutoresizingMaskIntoConstraints = false
+        bannersBlockView.heightAnchor.constraint(equalToConstant: 300).isActive = true
     }
 
 
@@ -32,13 +43,13 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
         }
 
         viewModel.onTopBannersBlockLoad = {
-
+            self.setupBannersBlockView()
         }
 
         viewModel.onFeaturedProductsListLoad = {
-            self.collectionView.delegate = self
-            self.collectionView.dataSource = self
-            self.collectionView.reloadData()
+//            self.collectionView.delegate = self
+//            self.collectionView.dataSource = self
+//            self.collectionView.reloadData()
         }
     }
     func downloadImages(_ url: String, _ index: Int) {
@@ -49,37 +60,37 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
     func setupUI() {
         self.addLeftBarButton()
         self.NavigationBarWithOutBackButton()
-        self.collectionView.register(FeatureProductCollectionViewCell.nib, forCellWithReuseIdentifier: FeatureProductCollectionViewCell.identifier)
-        CategoriesView()
+//        self.collectionView.register(FeatureProductCollectionViewCell.nib, forCellWithReuseIdentifier: FeatureProductCollectionViewCell.identifier)
+//        CategoriesView()
     }
 
 
-    func CategoriesView(){
-        Categories_Scroll.translatesAutoresizingMaskIntoConstraints = false
-
-        for i in 0 ... 10{
-            let button = UIButton()
-            button.tag = i
-            button.backgroundColor = UIColor.darkGray
-            button.setTitle("\(i)", for: .normal)
-            button.layer.cornerRadius = 0.5 * button.bounds.size.width
-            button.layer.borderColor = UIColor.brandBrown.cgColor
-            button.layer.borderWidth = 2.0 //
-            button.setImage(UIImage(named: "perfume_image"), for: .normal)
-            button.clipsToBounds = true
-            button.frame = CGRect(x: xOffset, y: CGFloat(buttonPadding), width: 70, height: 70)
-
-            xOffset = xOffset + CGFloat(buttonPadding) + button.frame.size.width+15
-            Categories_Scroll.addSubview(button)
-            button.layer.cornerRadius = button.frame.width/2
-
-        }
-        Categories_Scroll.contentSize = CGSize(width: xOffset, height: Categories_Scroll.frame.height)
-
-
-
-
-    }
+//    func CategoriesView(){
+//        Categories_Scroll.translatesAutoresizingMaskIntoConstraints = false
+//
+//        for i in 0 ... 10{
+//            let button = UIButton()
+//            button.tag = i
+//            button.backgroundColor = UIColor.darkGray
+//            button.setTitle("\(i)", for: .normal)
+//            button.layer.cornerRadius = 0.5 * button.bounds.size.width
+//            button.layer.borderColor = UIColor.brandBrown.cgColor
+//            button.layer.borderWidth = 2.0 //
+//            button.setImage(UIImage(named: "perfume_image"), for: .normal)
+//            button.clipsToBounds = true
+//            button.frame = CGRect(x: xOffset, y: CGFloat(buttonPadding), width: 70, height: 70)
+//
+//            xOffset = xOffset + CGFloat(buttonPadding) + button.frame.size.width+15
+//            Categories_Scroll.addSubview(button)
+//            button.layer.cornerRadius = button.frame.width/2
+//
+//        }
+//        Categories_Scroll.contentSize = CGSize(width: xOffset, height: Categories_Scroll.frame.height)
+//
+//
+//
+//
+//    }
 }
 
 extension HomeViewController {
