@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="uWj-eu-VqO" customClass="BannersCarouselView" customModule="Tatayaba" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1R-Ld-kom" userLabel="DescriptionView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdP-tK-ryi">
+                            <rect key="frame" x="10" y="6" width="42" height="48"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJA-7i-7M6">
+                            <rect key="frame" x="299" y="6" width="66" height="48"/>
+                            <state key="normal" title="See more"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="ZdP-tK-ryi" secondAttribute="bottom" constant="6" id="GJh-KY-uA6"/>
+                        <constraint firstAttribute="height" constant="60" id="KAh-7V-xBd"/>
+                        <constraint firstItem="TJA-7i-7M6" firstAttribute="top" secondItem="u1R-Ld-kom" secondAttribute="top" constant="6" id="ZP5-VW-EWh"/>
+                        <constraint firstItem="ZdP-tK-ryi" firstAttribute="leading" secondItem="u1R-Ld-kom" secondAttribute="leading" constant="10" id="euH-hg-dXT"/>
+                        <constraint firstAttribute="trailing" secondItem="TJA-7i-7M6" secondAttribute="trailing" constant="10" id="gxB-VP-EPc"/>
+                        <constraint firstAttribute="bottom" secondItem="TJA-7i-7M6" secondAttribute="bottom" constant="6" id="jDs-Jj-R3u"/>
+                        <constraint firstItem="ZdP-tK-ryi" firstAttribute="top" secondItem="u1R-Ld-kom" secondAttribute="top" constant="6" id="qKx-N8-2sX"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="iiJ-zA-aZK">
+                    <rect key="frame" x="10" y="60" width="355" height="140"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="140" id="C0P-hf-lds"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="3" minimumInteritemSpacing="3" id="35z-8q-0xJ">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="IeH-3D-DGm" firstAttribute="bottom" secondItem="iiJ-zA-aZK" secondAttribute="bottom" id="KI0-Ym-oQu"/>
+                <constraint firstItem="u1R-Ld-kom" firstAttribute="top" secondItem="IeH-3D-DGm" secondAttribute="top" id="RI6-Im-1jB"/>
+                <constraint firstItem="IeH-3D-DGm" firstAttribute="trailing" secondItem="u1R-Ld-kom" secondAttribute="trailing" id="ULh-0x-jh4"/>
+                <constraint firstItem="iiJ-zA-aZK" firstAttribute="leading" secondItem="IeH-3D-DGm" secondAttribute="leading" constant="10" id="WeV-k4-1ZW"/>
+                <constraint firstItem="IeH-3D-DGm" firstAttribute="trailing" secondItem="iiJ-zA-aZK" secondAttribute="trailing" constant="10" id="hbP-Nf-Zn6"/>
+                <constraint firstItem="u1R-Ld-kom" firstAttribute="leading" secondItem="IeH-3D-DGm" secondAttribute="leading" id="mlM-3H-bvA"/>
+                <constraint firstItem="iiJ-zA-aZK" firstAttribute="top" secondItem="u1R-Ld-kom" secondAttribute="bottom" id="wQE-IV-VOg"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="IeH-3D-DGm"/>
+            <connections>
+                <outlet property="bannersCollectionView" destination="iiJ-zA-aZK" id="MXR-BM-ZgY"/>
+                <outlet property="titleLabel" destination="ZdP-tK-ryi" id="x7c-pv-p2f"/>
+                <outlet property="viewAllButton" destination="TJA-7i-7M6" id="zqR-Ik-TiJ"/>
+            </connections>
+            <point key="canvasLocation" x="138.40000000000001" y="0.0"/>
+        </view>
+    </objects>
+</document>

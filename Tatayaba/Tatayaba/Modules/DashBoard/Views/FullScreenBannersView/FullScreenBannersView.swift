@@ -1,25 +1,22 @@
 //
-//  BannersBlocksView.swift
+//  FullScreenBannersView.swift
 //  Tatayaba
 //
-//  Created by Kareem Kareem on 8/24/19.
+//  Created by Kareem Kareem on 8/25/19.
 //  Copyright © 2019 Shaik. All rights reserved.
 //
 
 import UIKit
 
-protocol BannersBlocksViewProtocol: class {
+protocol FullScreenBannersViewProtocol: class {
     func didSelectBanner(at indexPath: IndexPath)
 }
 
-class BannersBlocksView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class FullScreenBannersView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var bannersCollectionView: UICollectionView!
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var viewAllButton: UIButton!
-
-    weak var delegate: BannersBlocksViewProtocol?
+    weak var delegate: FullScreenBannersViewProtocol?
 
     var block: Block?
 
@@ -46,7 +43,6 @@ class BannersBlocksView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     func loadData() {
         guard let block = block else { return }
         setupUI()
-        titleLabel.text = block.name
     }
 
     //MARK:- CollectionViewDelegate
@@ -54,7 +50,6 @@ class BannersBlocksView: UIView, UICollectionViewDelegate, UICollectionViewDataS
                         numberOfItemsInSection section: Int) -> Int {
         guard let block = block else { return 0 }
         return block.banners.count
-
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -69,7 +64,7 @@ class BannersBlocksView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.bounds.width, height: 255)
+        return CGSize(width: self.bounds.width, height: 140)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

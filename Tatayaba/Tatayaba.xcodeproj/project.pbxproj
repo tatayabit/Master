@@ -99,6 +99,10 @@
 		11D4917722CBC3BB009D8B23 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D4917622CBC3BB009D8B23 /* UIColor+Extension.swift */; };
 		11D4917A22CBCF8B009D8B23 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D4917922CBCF8B009D8B23 /* UIView+Extensions.swift */; };
 		11D4917C22CBD22D009D8B23 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D4917B22CBD22D009D8B23 /* CategoriesViewModel.swift */; };
+		11D4E69A2312E14500226A23 /* BannersCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D4E6992312E14500226A23 /* BannersCarouselView.swift */; };
+		11D4E69C2312E1A400226A23 /* BannersCarouselView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D4E69B2312E1A400226A23 /* BannersCarouselView.xib */; };
+		11D4E69F2312FC5500226A23 /* FullScreenBannersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D4E69E2312FC5500226A23 /* FullScreenBannersView.swift */; };
+		11D4E6A12312FCDB00226A23 /* FullScreenBannersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D4E6A02312FCDB00226A23 /* FullScreenBannersView.xib */; };
 		11D612A022CE48F3000D42C3 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D6129E22CE48F3000D42C3 /* APIClient.swift */; };
 		11D612A122CE48F3000D42C3 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D6129F22CE48F3000D42C3 /* APIResult.swift */; };
 		11D612A322CE4978000D42C3 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D612A222CE4978000D42C3 /* SignUpViewModel.swift */; };
@@ -275,6 +279,10 @@
 		11D4917622CBC3BB009D8B23 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		11D4917922CBCF8B009D8B23 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		11D4917B22CBD22D009D8B23 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
+		11D4E6992312E14500226A23 /* BannersCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannersCarouselView.swift; sourceTree = "<group>"; };
+		11D4E69B2312E1A400226A23 /* BannersCarouselView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannersCarouselView.xib; sourceTree = "<group>"; };
+		11D4E69E2312FC5500226A23 /* FullScreenBannersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenBannersView.swift; sourceTree = "<group>"; };
+		11D4E6A02312FCDB00226A23 /* FullScreenBannersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullScreenBannersView.xib; sourceTree = "<group>"; };
 		11D6129E22CE48F3000D42C3 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		11D6129F22CE48F3000D42C3 /* APIResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
 		11D612A222CE4978000D42C3 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -922,6 +930,24 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		11D4E6982312E12500226A23 /* BannersCarouselView */ = {
+			isa = PBXGroup;
+			children = (
+				11D4E6992312E14500226A23 /* BannersCarouselView.swift */,
+				11D4E69B2312E1A400226A23 /* BannersCarouselView.xib */,
+			);
+			path = BannersCarouselView;
+			sourceTree = "<group>";
+		};
+		11D4E69D2312FBF700226A23 /* FullScreenBannersView */ = {
+			isa = PBXGroup;
+			children = (
+				11D4E69E2312FC5500226A23 /* FullScreenBannersView.swift */,
+				11D4E6A02312FCDB00226A23 /* FullScreenBannersView.xib */,
+			);
+			path = FullScreenBannersView;
+			sourceTree = "<group>";
+		};
 		11D6129D22CE48F3000D42C3 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -1330,6 +1356,8 @@
 		848E89C322CCDD9D000AA24C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				11D4E69D2312FBF700226A23 /* FullScreenBannersView */,
+				11D4E6982312E12500226A23 /* BannersCarouselView */,
 				115DC429231187610001EF67 /* BannersBlocksView */,
 				115DC425231177BD0001EF67 /* CollectionViewLayout */,
 				848E89C922CCEA63000AA24C /* CollectionView */,
@@ -1599,6 +1627,8 @@
 				847CDE8722CA19EE00E67C8C /* ProximaNova-Semibold.ttf in Resources */,
 				112654A722D22AD400904FB5 /* User.storyboard in Resources */,
 				11081EFD22DB8F5500B68EA5 /* ProfileDetailsView.xib in Resources */,
+				11D4E6A12312FCDB00226A23 /* FullScreenBannersView.xib in Resources */,
+				11D4E69C2312E1A400226A23 /* BannersCarouselView.xib in Resources */,
 				847CDE8522CA19EE00E67C8C /* ProximaNova-Extrabld.ttf in Resources */,
 				11A8B15D22D7943D001B2661 /* WishlistCollectionViewCell.xib in Resources */,
 				847CDE4622C9EE2300E67C8C /* Main.storyboard in Resources */,
@@ -1759,11 +1789,13 @@
 				848E89CC22CCEAAC000AA24C /* FeatureProductCollectionViewCell.swift in Sources */,
 				116C938F22F0954500921893 /* PaymentAPIClient.swift in Sources */,
 				11624ED1230C464800E81ABD /* BlockImagePair.swift in Sources */,
+				11D4E69A2312E14500226A23 /* BannersCarouselView.swift in Sources */,
 				111C8A3C230B1487003F5FDB /* Block.swift in Sources */,
 				11945BBF22F0B08D000F08DC /* CheckoutCompletedViewModel.swift in Sources */,
 				11A09F3E22FB44AA00C3E5B8 /* OrderDetailsViewModel.swift in Sources */,
 				114D1A0722CBB0EA009205F3 /* ConfigurableCell.swift in Sources */,
 				112654A922D25E5B00904FB5 /* SignUpResponse.swift in Sources */,
+				11D4E69F2312FC5500226A23 /* FullScreenBannersView.swift in Sources */,
 				11945BBB22F0B08D000F08DC /* CheckOutViewController.swift in Sources */,
 				11D4917722CBC3BB009D8B23 /* UIColor+Extension.swift in Sources */,
 				116C936322F0930300921893 /* OrdersEndpoint.swift in Sources */,

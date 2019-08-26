@@ -17,7 +17,7 @@ class BannerBlockCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
-    func configure(block: BlockBanner) {
-        bannerImageView.sd_setImage(with: URL(string: block.bgImage.icon.imagePath), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
+    func configure(_ banner: BlockBanner) {
+        bannerImageView.sd_setImage(with: URL(string: banner.bgImage.icon.imagePath), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
     }
 }

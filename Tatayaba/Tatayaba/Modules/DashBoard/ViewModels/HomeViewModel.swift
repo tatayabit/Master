@@ -33,7 +33,7 @@ class HomeViewModel {
     var featuredProductsCount: Int { return featuredProductsList.count }
 
     //MARK:- Init
-    init() {
+    func loadAPIs() {
         getAllCategories()
         getFeaturedProducts()
         getBlock58()
@@ -87,10 +87,7 @@ class HomeViewModel {
             case .success(let response):
                 guard let block = response else { return }
                 self.topBannersBlock = block
-                //
-                //                self.featuredProductsList = products
                 print(block)
-
 
                 if let newBannersArrived = self.onTopBannersBlockLoad {
                     newBannersArrived()

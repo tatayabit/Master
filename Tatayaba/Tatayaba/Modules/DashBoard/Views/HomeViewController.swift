@@ -18,14 +18,17 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
 
     private var viewModel = HomeViewModel()
     let bannersBlockView: BannersBlocksView = .fromNib()
+    let bannersCarouselView: BannersCarouselView = .fromNib()
+    let fullScreenBannersView: FullScreenBannersView = .fromNib()
 
 
 
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
         setupListners()
+        setupUI()
+        viewModel.loadAPIs()
     }
 
     fileprivate func setupBannersBlockView() {
@@ -33,17 +36,37 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
         bannersBlockView.loadData()
         scrollView.stackView.addArrangedSubview(bannersBlockView)
         bannersBlockView.translatesAutoresizingMaskIntoConstraints = false
-        bannersBlockView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        bannersBlockView.heightAnchor.constraint(equalToConstant: 280).isActive = true
+    }
+
+
+    fileprivate func setupBannersCarouselView() {
+        bannersCarouselView.block = viewModel.topBannersBlock
+        bannersCarouselView.loadData()
+        scrollView.stackView.addArrangedSubview(bannersCarouselView)
+        bannersCarouselView.translatesAutoresizingMaskIntoConstraints = false
+        bannersCarouselView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+    }
+
+    fileprivate func setupFullScreenBannersViewView() {
+        fullScreenBannersView.block = viewModel.topBannersBlock
+        fullScreenBannersView.loadData()
+        scrollView.stackView.addArrangedSubview(fullScreenBannersView)
+        fullScreenBannersView.translatesAutoresizingMaskIntoConstraints = false
+        fullScreenBannersView.heightAnchor.constraint(equalToConstant: 130).isActive = true
     }
 
 
     func setupListners() {
         viewModel.onCategoriesListLoad = {
-
+//            self.setupBannersCarouselView()
         }
 
         viewModel.onTopBannersBlockLoad = {
+            self.setupFullScreenBannersViewView()
             self.setupBannersBlockView()
+            self.setupBannersCarouselView()
+
         }
 
         viewModel.onFeaturedProductsListLoad = {
@@ -64,33 +87,6 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
 //        CategoriesView()
     }
 
-
-//    func CategoriesView(){
-//        Categories_Scroll.translatesAutoresizingMaskIntoConstraints = false
-//
-//        for i in 0 ... 10{
-//            let button = UIButton()
-//            button.tag = i
-//            button.backgroundColor = UIColor.darkGray
-//            button.setTitle("\(i)", for: .normal)
-//            button.layer.cornerRadius = 0.5 * button.bounds.size.width
-//            button.layer.borderColor = UIColor.brandBrown.cgColor
-//            button.layer.borderWidth = 2.0 //
-//            button.setImage(UIImage(named: "perfume_image"), for: .normal)
-//            button.clipsToBounds = true
-//            button.frame = CGRect(x: xOffset, y: CGFloat(buttonPadding), width: 70, height: 70)
-//
-//            xOffset = xOffset + CGFloat(buttonPadding) + button.frame.size.width+15
-//            Categories_Scroll.addSubview(button)
-//            button.layer.cornerRadius = button.frame.width/2
-//
-//        }
-//        Categories_Scroll.contentSize = CGSize(width: xOffset, height: Categories_Scroll.frame.height)
-//
-//
-//
-//
-//    }
 }
 
 extension HomeViewController {

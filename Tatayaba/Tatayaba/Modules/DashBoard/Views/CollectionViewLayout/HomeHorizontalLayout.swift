@@ -14,7 +14,7 @@ class HomeHorizontalLayout: UICollectionViewLayout {
     fileprivate var numberOfRows = 2
     fileprivate var numberOfColumns = 4
 
-    fileprivate var cellPadding: CGFloat = 2
+    fileprivate var cellPadding: CGFloat = 3
 
     fileprivate var cache = [UICollectionViewLayoutAttributes]()
 
@@ -28,7 +28,8 @@ class HomeHorizontalLayout: UICollectionViewLayout {
 
 
     override var collectionViewContentSize: CGSize {
-        return CGSize(width: contentWidth, height: superWidth)
+//        print("collectionViewContentSize: width: \(contentWidth), height: \(superWidth)")
+        return CGSize(width: contentWidth, height: 220)
     }
 
     //MARK:- UICollectionViewLayout Delegate
