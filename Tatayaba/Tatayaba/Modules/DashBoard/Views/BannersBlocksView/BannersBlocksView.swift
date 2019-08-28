@@ -9,7 +9,7 @@
 import UIKit
 
 protocol BannersBlocksViewProtocol: class {
-    func didSelectBanner(at indexPath: IndexPath)
+    func didSelectBannerBlocks(at indexPath: IndexPath)
 }
 
 class BannersBlocksView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -74,7 +74,7 @@ class BannersBlocksView: UIView, UICollectionViewDelegate, UICollectionViewDataS
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let delegate = delegate {
-            delegate.didSelectBanner(at: indexPath)
+            delegate.didSelectBannerBlocks(at: indexPath)
         }
     }
 }

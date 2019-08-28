@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, BannersBlocksViewProtocol {
 
     let buttonPadding:CGFloat = 05
     var xOffset:CGFloat = 15
@@ -34,6 +34,7 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
     fileprivate func setupBannersBlockView() {
         bannersBlockView.block = viewModel.topBannersBlock
         bannersBlockView.loadData()
+        bannersBlockView.delegate = self
         scrollView.stackView.addArrangedSubview(bannersBlockView)
         bannersBlockView.translatesAutoresizingMaskIntoConstraints = false
         bannersBlockView.heightAnchor.constraint(equalToConstant: 280).isActive = true
@@ -87,6 +88,9 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
 //        CategoriesView()
     }
 
+    func didSelectBannerBlocks(at indexPath: IndexPath) {
+        viewModel.parseDeeplink(at: indexPath)
+    }
 }
 
 extension HomeViewController {

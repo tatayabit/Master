@@ -82,10 +82,11 @@ class HomeViewModel {
     }
 
     func getBlock58() {
-        blocksApiClient.getBlock(blockId: "58") { result in
+        blocksApiClient.getBlock(blockId: "246") { result in
+//            58
             switch result {
-            case .success(let response):
-                guard let block = response else { return }
+            case .success(let responseB58):
+                guard let block = responseB58 else { return }
                 self.topBannersBlock = block
                 print(block)
 
@@ -109,6 +110,16 @@ class HomeViewModel {
         guard featuredProductsList.count > 0 else { return Product() }
         return featuredProductsList[indexPath.row]
     }
+
+    //MARK:- Parsing Deeplink
+    func parseDeeplink(at indexPath: IndexPath) {
+        guard topBannersBlock.banners.count > 0 else { return }
+        let banner = topBannersBlock.banners[indexPath.row]
+
+        let deeplink = DeeplinkHandler(urlString: banner.url, type: .category)
+        deeplink.parse()
+    }
+
 
     //MARK:- ProductDetails ViewModel
     func productDetailsViewModel(at indexPath: IndexPath) -> ProductDetailsViewModel {

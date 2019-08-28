@@ -9,7 +9,7 @@
 import UIKit
 
 protocol BannersCarouselViewProtocol: class {
-    func didSelectBanner(at indexPath: IndexPath)
+    func didSelectCarouselBanner(at indexPath: IndexPath)
 }
 
 class BannersCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -73,7 +73,7 @@ class BannersCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDat
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let delegate = delegate {
-            delegate.didSelectBanner(at: indexPath)
+            delegate.didSelectCarouselBanner(at: indexPath)
         }
     }
 }

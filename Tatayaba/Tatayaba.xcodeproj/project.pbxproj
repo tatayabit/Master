@@ -71,6 +71,7 @@
 		116C938E22F0954500921893 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C938A22F0954500921893 /* Payment.swift */; };
 		116C938F22F0954500921893 /* PaymentAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C938C22F0954500921893 /* PaymentAPIClient.swift */; };
 		116C939022F0954500921893 /* PaymentEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C938D22F0954500921893 /* PaymentEndpoint.swift */; };
+		117AC9F82314444200EFCE25 /* DeeplinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117AC9F72314444200EFCE25 /* DeeplinkHandler.swift */; };
 		11945BBA22F0B08D000F08DC /* CheckoutCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11945BAF22F0B08D000F08DC /* CheckoutCompletedViewController.swift */; };
 		11945BBB22F0B08D000F08DC /* CheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11945BB022F0B08D000F08DC /* CheckOutViewController.swift */; };
 		11945BBC22F0B08D000F08DC /* CheckOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11945BB122F0B08D000F08DC /* CheckOut.storyboard */; };
@@ -251,6 +252,7 @@
 		116C938A22F0954500921893 /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		116C938C22F0954500921893 /* PaymentAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentAPIClient.swift; sourceTree = "<group>"; };
 		116C938D22F0954500921893 /* PaymentEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentEndpoint.swift; sourceTree = "<group>"; };
+		117AC9F72314444200EFCE25 /* DeeplinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkHandler.swift; sourceTree = "<group>"; };
 		11945BAF22F0B08D000F08DC /* CheckoutCompletedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutCompletedViewController.swift; sourceTree = "<group>"; };
 		11945BB022F0B08D000F08DC /* CheckOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckOutViewController.swift; sourceTree = "<group>"; };
 		11945BB122F0B08D000F08DC /* CheckOut.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CheckOut.storyboard; sourceTree = "<group>"; };
@@ -728,6 +730,14 @@
 			path = Api;
 			sourceTree = "<group>";
 		};
+		117AC9F62314442600EFCE25 /* Deeplinks */ = {
+			isa = PBXGroup;
+			children = (
+				117AC9F72314444200EFCE25 /* DeeplinkHandler.swift */,
+			);
+			path = Deeplinks;
+			sourceTree = "<group>";
+		};
 		11945B8922F0A08D000F08DC /* CheckOut */ = {
 			isa = PBXGroup;
 			children = (
@@ -987,6 +997,7 @@
 		11F52FA522CA7D92000F0D85 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				117AC9F62314442600EFCE25 /* Deeplinks */,
 				111C8A39230B12B4003F5FDB /* Blocks */,
 				11C271A922F205C9004613E3 /* Addresses */,
 				11945B9622F0A2A1000F08DC /* Shipping */,
@@ -1759,6 +1770,7 @@
 				112654AC22D2691400904FB5 /* ProductsAPIClient.swift in Sources */,
 				114D1A1822CBB33E009205F3 /* Product.swift in Sources */,
 				1120C45F22E6184600F99B60 /* UIButton+Extensions.swift in Sources */,
+				117AC9F82314444200EFCE25 /* DeeplinkHandler.swift in Sources */,
 				84BC089C22DC7D4900C6180E /* Cart.swift in Sources */,
 				115DC427231177FC0001EF67 /* HomeHorizontalLayout.swift in Sources */,
 				11D612A922CE49D1000D42C3 /* UserEndpoint.swift in Sources */,
