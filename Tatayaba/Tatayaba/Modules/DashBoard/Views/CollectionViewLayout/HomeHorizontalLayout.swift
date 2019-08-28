@@ -118,7 +118,7 @@ class HomeHorizontalLayout: UICollectionViewLayout {
 
     func updateFirstItem(columnWidth: CGFloat, x: CGFloat, y: CGFloat, xOffsetColumn:CGFloat) -> (CGFloat, Int, Int) {
         // 4
-        let height = cellPadding * 2 + (columnWidth * 2)
+        let height = cellPadding * 2 + (columnWidth * 2) + 10
         let frame = CGRect(x: x, y: y, width: height, height: height)
         let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
 

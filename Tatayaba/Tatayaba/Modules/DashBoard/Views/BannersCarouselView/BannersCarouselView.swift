@@ -22,6 +22,7 @@ class BannersCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDat
     weak var delegate: BannersCarouselViewProtocol?
 
     var block: Block?
+    var bannerType: BannerType = .banner
 
     //MARK:- Init
     override func awakeFromNib() {
@@ -53,6 +54,9 @@ class BannersCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         guard let block = block else { return 0 }
+        if bannerType == .product {
+            return block.products.count
+        }
         return block.banners.count
     }
 
@@ -62,7 +66,11 @@ class BannersCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDat
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BannerBlockCollectionViewCell.identifier, for: indexPath) as! BannerBlockCollectionViewCell
 
         guard let block = block else { return cell }
-        cell.configure(block.banners[indexPath.row])
+        if bannerType == .product {
+            cell.configure(block.products[indexPath.row])
+        } else {
+            cell.configure(block.banners[indexPath.row])
+        }
 
         return cell
     }
