@@ -12,9 +12,12 @@ class HomeViewModel {
 
     private let productsApiClient = ProductsAPIClient()
     private let blocksApiClient = BlocksAPIClient()
+    private let suppliersApiClient = SuppliersAPIClient()
 
 
     var categoriesList = [Category]()
+    var suppliersList = [Supplier]()
+
     private var featuredProductsList = [Product]()
 
     var topBannersBlock: Block = Block()
@@ -41,6 +44,7 @@ class HomeViewModel {
         getFeaturedProducts()
         getBlock58()
         getBlock44()
+        getAllSuppliers()
     }
 
     //MARK:- Api
@@ -54,6 +58,26 @@ class HomeViewModel {
 
                 self.categoriesList = categories.filter({ $0.parentId == "0" })
                 print(categories)
+
+
+                if let newCategoriesArrived = self.onCategoriesListLoad {
+                    newCategoriesArrived()
+                }
+            case .failure(let error):
+                print("the error \(error)")
+            }
+        }
+    }
+
+    func getAllSuppliers() {
+        suppliersApiClient.getSuppliers { result in
+            switch result {
+            case .success(let response):
+                guard let suppliersResult = response else { return }
+                guard let suppliers = suppliersResult.suppliers else { return }
+
+                self.suppliersList = suppliers
+                print("suppliers: \(suppliers)")
 
 
                 if let newCategoriesArrived = self.onCategoriesListLoad {
