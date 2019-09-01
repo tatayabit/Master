@@ -14,10 +14,11 @@ class HomeViewModel {
     private let blocksApiClient = BlocksAPIClient()
 
 
-    private var categoriesList = [Category]()
+    var categoriesList = [Category]()
     private var featuredProductsList = [Product]()
-    private var bannersBlock: Block = Block()
 
+    var topBannersBlock: Block = Block()
+    var productsBlock: Block = Block()
 
     /// This closure is being called once the categories api fetch
     var onCategoriesListLoad: (() -> ())?
@@ -26,15 +27,19 @@ class HomeViewModel {
     var onFeaturedProductsListLoad: (() -> ())?
 
     /// This closure is being called once the banners block api fetch
-    var onBannersBlockLoad: (() -> ())?
+    var onTopBannersBlockLoad: (() -> ())?
 
-    var categoriesCount: Int { return categoriesList.count }
+    /// This closure is being called once the products block api fetch
+    var onProductsBlockLoad: (() -> ())?
+
+
     var featuredProductsCount: Int { return featuredProductsList.count }
 
     //MARK:- Init
-    init() {
+    func loadAPIs() {
         getAllCategories()
         getFeaturedProducts()
+        getBlock58()
         getBlock44()
     }
 
@@ -80,18 +85,36 @@ class HomeViewModel {
         }
     }
 
-    func getBlock44() {
-        blocksApiClient.getBlock(blockId: "44") { result in
+    func getBlock58() {
+        // 246 banners
+        blocksApiClient.getBlock(blockId: "246") { result in
             switch result {
-            case .success(let response):
-                guard let block = response else { return }
-//
-//                self.featuredProductsList = products
+            case .success(let responseB58):
+                guard let block = responseB58 else { return }
+                self.topBannersBlock = block
                 print(block)
 
+                if let newBannersArrived = self.onTopBannersBlockLoad {
+                    newBannersArrived()
+                }
+            case .failure(let error):
+                print("the error \(error)")
+            }
+        }
+    }
 
-                if let newfeaturedProductsArrived = self.onFeaturedProductsListLoad {
-                    newfeaturedProductsArrived()
+    func getBlock44() {
+        // 44 products
+        blocksApiClient.getBlock(blockId: "44") { result in
+            //            58
+            switch result {
+            case .success(let responseB44):
+                guard let block = responseB44 else { return }
+                self.productsBlock = block
+                print(block)
+
+                if let newBannersArrived = self.onProductsBlockLoad {
+                    newBannersArrived()
                 }
             case .failure(let error):
                 print("the error \(error)")
@@ -111,9 +134,25 @@ class HomeViewModel {
         return featuredProductsList[indexPath.row]
     }
 
+    //MARK:- Parsing Deeplink
+    func parseDeeplink(at indexPath: IndexPath) {
+        guard topBannersBlock.banners.count > 0 else { return }
+        let banner = topBannersBlock.banners[indexPath.row]
+
+        let deeplink = DeeplinkHandler(urlString: banner.url, type: .category)
+        deeplink.parse()
+    }
+
+
     //MARK:- ProductDetails ViewModel
     func productDetailsViewModel(at indexPath: IndexPath) -> ProductDetailsViewModel {
         let productViewModel = ProductDetailsViewModel(product: featuredProduct(at: indexPath))
         return productViewModel
+    }
+
+    //MARK:- ProductsListViewModel
+    func productsListViewModel(indexPath: IndexPath) -> ProductsListViewModel {
+        let category = categoriesList[indexPath.row]
+        return ProductsListViewModel(categoryId: Int(category.identifier) ?? 0)
     }
 }
