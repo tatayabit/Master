@@ -37,6 +37,7 @@
                     <connections>
                         <outlet property="scrollView" destination="FZ2-A0-U7k" id="XUM-4h-33a"/>
                         <segue destination="QAy-a0-mKT" kind="show" identifier="product_details_segue" id="iZN-6c-1wt"/>
+                        <segue destination="qwp-Xb-7g4" kind="show" identifier="category_products_segue" id="rvK-k9-LrT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNm-hz-0IP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -60,6 +61,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lbe-Jo-1Mg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2142" y="-292"/>
+        </scene>
+        <!--ProductsListViewController-->
+        <scene sceneID="SaT-42-oan">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Products" referencedIdentifier="ProductsListViewController" id="qwp-Xb-7g4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j6K-zt-4Im" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2202" y="-195"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Gil-y7-gM7">

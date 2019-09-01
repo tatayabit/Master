@@ -10,10 +10,10 @@ struct Block {
     var blockId: String = ""
     var type: String = ""
     var name: String = ""
-    var products: [BlockProduct]
+    var products: [Product]//[BlockProduct]
     var banners: [BlockBanner]
 
-    init(blockId: String = "" , type: String = "", name: String = "", products: [BlockProduct] = [BlockProduct](), banners: [BlockBanner] = [BlockBanner]()) {
+    init(blockId: String = "" , type: String = "", name: String = "", products: [Product] = [Product](), banners: [BlockBanner] = [BlockBanner]()) {
         self.blockId = blockId
         self.type = type
         self.name = name
@@ -37,7 +37,7 @@ extension Block: Codable {
         blockId = try container.decodeIfPresent(String.self, forKey: .blockId) ?? ""
         type = try container.decodeIfPresent(String.self, forKey: .type) ?? ""
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
-        products = try container.decodeIfPresent([BlockProduct].self, forKey: .products) ?? [BlockProduct]()
+        products = try container.decodeIfPresent([Product].self, forKey: .products) ?? [Product]()
         banners = try container.decodeIfPresent([BlockBanner].self, forKey: .banners) ?? [BlockBanner]()
     }
 

@@ -8,9 +8,12 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController,AACarouselDelegate, BannersBlocksViewProtocol {
+class HomeViewController: BaseViewController, BannersBlocksViewProtocol, CategoriesBlockViewProtocol {
+
 
     private let productDetailsSegue = "product_details_segue"
+    private let categoryProductsSegue = "category_products_segue"
+    private let allCategoriesSegue = "all_categories_segue"
 
     @IBOutlet weak var scrollView: StackedScrollView!
 
@@ -36,7 +39,7 @@ class HomeViewController: BaseViewController,AACarouselDelegate, BannersBlocksVi
         fullScreenBannersView.translatesAutoresizingMaskIntoConstraints = false
         fullScreenBannersView.heightAnchor.constraint(equalToConstant: 150).isActive = true
 
-//        categoriesBlockView.delegate = self
+        categoriesBlockView.delegate = self
         scrollView.stackView.addArrangedSubview(categoriesBlockView)
         categoriesBlockView.translatesAutoresizingMaskIntoConstraints = false
         categoriesBlockView.heightAnchor.constraint(equalToConstant: 115).isActive = true
@@ -100,9 +103,6 @@ class HomeViewController: BaseViewController,AACarouselDelegate, BannersBlocksVi
 //            self.collectionView.reloadData()
         }
     }
-    func downloadImages(_ url: String, _ index: Int) {
-
-    }
 
     // MARK:- SetupUI
     func setupUI() {
@@ -111,6 +111,11 @@ class HomeViewController: BaseViewController,AACarouselDelegate, BannersBlocksVi
         self.NavigationBarWithOutBackButton()
     }
 
+    // MARK:- CategoriesBlockView delegate
+    func didSelectCategory(at indexPath: IndexPath) {
+        performSegue(withIdentifier: categoryProductsSegue, sender: indexPath)
+    }
+    
     func didSelectBannerBlocks(at indexPath: IndexPath) {
         viewModel.parseDeeplink(at: indexPath)
     }
@@ -126,6 +131,16 @@ extension HomeViewController {
                 productDetailsVC.viewModel = viewModel.productDetailsViewModel(at: indexPath)
             }
         }
+
+        if segue.identifier == categoryProductsSegue {
+            let productsListVC = segue.destination as! ProductsListViewController
+            if let indexPath = sender as? IndexPath {
+                productsListVC.viewModel = viewModel.productsListViewModel(indexPath: indexPath)
+            }
+        }
+
+
+
     }
 
 }
