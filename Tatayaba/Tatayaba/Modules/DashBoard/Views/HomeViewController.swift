@@ -19,6 +19,8 @@ class HomeViewController: BaseViewController,AACarouselDelegate, BannersBlocksVi
     let bannersBlockView: BannersBlocksView = .fromNib()
     let bannersCarouselView: BannersCarouselView = .fromNib()
     let fullScreenBannersView: FullScreenBannersView = .fromNib()
+    let categoriesBlockView: CategoriesBlockView = .fromNib()
+
 
     //MARK:- Life Cycle
     override func viewDidLoad() {
@@ -34,10 +36,17 @@ class HomeViewController: BaseViewController,AACarouselDelegate, BannersBlocksVi
         fullScreenBannersView.translatesAutoresizingMaskIntoConstraints = false
         fullScreenBannersView.heightAnchor.constraint(equalToConstant: 150).isActive = true
 
+//        categoriesBlockView.delegate = self
+        scrollView.stackView.addArrangedSubview(categoriesBlockView)
+        categoriesBlockView.translatesAutoresizingMaskIntoConstraints = false
+        categoriesBlockView.heightAnchor.constraint(equalToConstant: 115).isActive = true
+
+
         bannersBlockView.delegate = self
         scrollView.stackView.addArrangedSubview(bannersBlockView)
         bannersBlockView.translatesAutoresizingMaskIntoConstraints = false
         bannersBlockView.heightAnchor.constraint(equalToConstant: 280).isActive = true
+        bannersBlockView.titleLabel.text = "Trending on Tatayab"
 
 
         scrollView.stackView.addArrangedSubview(bannersCarouselView)
@@ -63,10 +72,16 @@ class HomeViewController: BaseViewController,AACarouselDelegate, BannersBlocksVi
         fullScreenBannersView.loadData()
     }
 
+    fileprivate func loadCategoriesBlockViewData() {
+        categoriesBlockView.categories = viewModel.categoriesList
+        categoriesBlockView.loadData()
+    }
+
 
     func setupListners() {
         viewModel.onCategoriesListLoad = {
 //            self.setupBannersCarouselView()
+            self.loadCategoriesBlockViewData()
         }
 
         viewModel.onProductsBlockLoad = {
@@ -91,6 +106,7 @@ class HomeViewController: BaseViewController,AACarouselDelegate, BannersBlocksVi
 
     // MARK:- SetupUI
     func setupUI() {
+        self.scrollView.stackView.spacing = 0
         self.addLeftBarButton()
         self.NavigationBarWithOutBackButton()
     }

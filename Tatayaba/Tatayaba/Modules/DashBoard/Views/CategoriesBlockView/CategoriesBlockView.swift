@@ -36,7 +36,7 @@ class CategoriesBlockView: UIView, UICollectionViewDelegate, UICollectionViewDat
     }
 
     private func setupUI() {
-        bannersCollectionView.register(CategoryCollectionViewCell.nib, forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
+        bannersCollectionView.register(CategoriesBlockCollectionViewCell.nib, forCellWithReuseIdentifier: CategoriesBlockCollectionViewCell.identifier)
         bannersCollectionView.dataSource = self
         bannersCollectionView.delegate = self
     }
@@ -57,7 +57,7 @@ class CategoriesBlockView: UIView, UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as! CategoryCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesBlockCollectionViewCell.identifier, for: indexPath) as! CategoriesBlockCollectionViewCell
 
         guard let categories = categories else { return cell }
         cell.configure(category: categories[indexPath.row])

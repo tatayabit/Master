@@ -14,7 +14,7 @@ class HomeViewModel {
     private let blocksApiClient = BlocksAPIClient()
 
 
-    private var categoriesList = [Category]()
+    var categoriesList = [Category]()
     private var featuredProductsList = [Product]()
 
     var topBannersBlock: Block = Block()
@@ -33,7 +33,6 @@ class HomeViewModel {
     var onProductsBlockLoad: (() -> ())?
 
 
-    var categoriesCount: Int { return categoriesList.count }
     var featuredProductsCount: Int { return featuredProductsList.count }
 
     //MARK:- Init
