@@ -89,6 +89,8 @@ extension UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor.white
         navigationController?.hidesBottomBarWhenPushed = false
         self.tabBarController?.tabBar.isHidden = false
+      //  let navBackgroundImage:UIImage! = UIImage(named:" ")
+    self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "Header")?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .stretch), for: .default)
     }
 }
 extension BaseViewController {

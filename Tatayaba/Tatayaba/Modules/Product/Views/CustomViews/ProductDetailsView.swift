@@ -19,7 +19,7 @@ class ProductDetailsView: UIView, UICollectionViewDelegate, UICollectionViewData
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
 
-    let imagesArray = ["Dashboard",
+    let imagesArray = ["ProductImg",
                      "ADD",
                      "Dashboard",
                      "ADD"]

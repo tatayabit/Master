@@ -25,6 +25,7 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
         super.viewDidLoad()
         setupUI()
         setupListners()
+        collectionView.isHidden = false
     }
     
     
@@ -52,7 +53,7 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
         self.addLeftBarButton()
         self.NavigationBarWithOutBackButton()
         self.collectionView.register(FeatureProductCollectionViewCell.nib, forCellWithReuseIdentifier: FeatureProductCollectionViewCell.identifier)
-        carousel()
+       // carousel()
         CategoriesView()
     }
     
@@ -71,7 +72,6 @@ class HomeViewController: BaseViewController,AACarouselDelegate, UICollectionVie
             button.setImage(UIImage(named: "perfume_image"), for: .normal)
             button.clipsToBounds = true
             button.frame = CGRect(x: xOffset, y: CGFloat(buttonPadding), width: 70, height: 70)
-            
             xOffset = xOffset + CGFloat(buttonPadding) + button.frame.size.width+15
             Categories_Scroll.addSubview(button)
             button.layer.cornerRadius = button.frame.width/2

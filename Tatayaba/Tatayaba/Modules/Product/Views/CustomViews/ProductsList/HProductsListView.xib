@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Myriad Pro Regular.ttf">
+            <string>MyriadPro-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -26,21 +31,23 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPTIONS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xq3-xZ-oc2">
-                    <rect key="frame" x="8" y="4" width="61.5" height="17"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequently boight together" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xq3-xZ-oc2">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
+                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
                     <color key="textColor" white="0.6677953767" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="xq3-xZ-oc2" firstAttribute="leading" secondItem="KYg-oA-r2t" secondAttribute="leading" constant="8" id="3iT-7c-gJK"/>
-                <constraint firstItem="KYg-oA-r2t" firstAttribute="trailing" secondItem="bUj-Lg-PDU" secondAttribute="trailing" id="B9X-yO-Ryq"/>
-                <constraint firstAttribute="bottom" secondItem="bUj-Lg-PDU" secondAttribute="bottom" id="Cbs-0N-hwn"/>
-                <constraint firstItem="bUj-Lg-PDU" firstAttribute="top" secondItem="ECi-Eg-fOr" secondAttribute="top" constant="20" id="GNF-55-clK"/>
-                <constraint firstItem="xq3-xZ-oc2" firstAttribute="top" secondItem="KYg-oA-r2t" secondAttribute="top" constant="4" id="YdD-3N-85E"/>
-                <constraint firstItem="bUj-Lg-PDU" firstAttribute="leading" secondItem="KYg-oA-r2t" secondAttribute="leading" id="h7x-jb-yWZ"/>
+                <constraint firstItem="KYg-oA-r2t" firstAttribute="bottom" secondItem="xq3-xZ-oc2" secondAttribute="bottom" constant="79" id="54x-GT-n3S"/>
+                <constraint firstItem="xq3-xZ-oc2" firstAttribute="leading" secondItem="ECi-Eg-fOr" secondAttribute="leading" id="9xr-ql-rv8"/>
+                <constraint firstAttribute="trailing" secondItem="xq3-xZ-oc2" secondAttribute="trailing" id="FV4-JC-6FO"/>
+                <constraint firstItem="bUj-Lg-PDU" firstAttribute="bottom" secondItem="KYg-oA-r2t" secondAttribute="bottom" id="HrG-uv-uzP"/>
+                <constraint firstItem="xq3-xZ-oc2" firstAttribute="trailing" secondItem="bUj-Lg-PDU" secondAttribute="trailing" id="NPM-rk-4jf"/>
+                <constraint firstItem="bUj-Lg-PDU" firstAttribute="top" secondItem="ECi-Eg-fOr" secondAttribute="top" constant="20" symbolic="YES" id="Thu-iL-1KV"/>
+                <constraint firstItem="xq3-xZ-oc2" firstAttribute="top" secondItem="KYg-oA-r2t" secondAttribute="top" id="kJj-d3-J1y"/>
+                <constraint firstItem="xq3-xZ-oc2" firstAttribute="leading" secondItem="bUj-Lg-PDU" secondAttribute="leading" id="udv-Oj-GpD"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="KYg-oA-r2t"/>
@@ -48,6 +55,7 @@
                 <outlet property="listTitleLabel" destination="xq3-xZ-oc2" id="rp2-dM-dpd"/>
                 <outlet property="optionsCollectionView" destination="bUj-Lg-PDU" id="eGq-b0-0mN"/>
             </connections>
+            <point key="canvasLocation" x="138.40000000000001" y="115.14242878560721"/>
         </view>
     </objects>
 </document>
