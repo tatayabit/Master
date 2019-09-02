@@ -15,8 +15,12 @@ struct SuppliersAPIClient: APIClient {
     var provider = MoyaProvider<MultiTarget>(plugins: [NetworkLoggerPlugin(verbose: true)])
 
     static let environment: APIEnvironment = .production
+
     func getSuppliers(completion: @escaping (APIResult<SuppliersResult?, MoyaError>) -> Void) {
         fetch(with: SuppliersEndpoint.getSuppliers(), completion: completion)
     }
 
+    func getProductsOfSupplier(supplierId: String, completion: @escaping (APIResult<[Product]?, MoyaError>) -> Void) {
+        fetch(with: SuppliersEndpoint.getProductsOfSupplier(supplierId: supplierId), completion: completion)
+    }
 }

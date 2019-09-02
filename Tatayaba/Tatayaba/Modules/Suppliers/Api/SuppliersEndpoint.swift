@@ -10,13 +10,14 @@ import Moya
 
 enum SuppliersEndpoint {
     case getSuppliers()
+    case getProductsOfSupplier(supplierId: String)
 }
 
 
 extension SuppliersEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
-        case .production: return "http://dev2%40tatayab.com:E970ASsq0e9GmSJ2EX0BLGvskO2UF841@old.tatayab.com/api/"
+        case .production: return "http://dev2%40tatayab.com:89IO39N3ZJMTJI70yGF9PjB99D8U5729@dev2.tatayab.com/api/"
         case .qa: return "http://localhost:3000/"
         case .staging: return "http://localhost:3000/"
         }
@@ -31,14 +32,17 @@ extension SuppliersEndpoint: TargetType {
     var path: String {
         switch self {
         case .getSuppliers:
-            let version = "3.0"
-            return "\(version.urlEscaped)/suppliers/"
+            let version = "4.0"
+            return "\(version.urlEscaped)/TtmSuppliers/"
+        case .getProductsOfSupplier(let supplierId):
+            let version = "4.0"
+            return "\(version.urlEscaped)/TtmSuppliers/\(supplierId.urlEscaped)"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .getSuppliers:
+        case .getSuppliers, .getProductsOfSupplier:
             return .get
         }
     }
@@ -54,14 +58,14 @@ extension SuppliersEndpoint: TargetType {
 
     var task: Task {
         switch self {
-        case .getSuppliers:
+        case .getSuppliers, .getProductsOfSupplier:
             return .requestPlain
         }
     }
 
     var headers: [String : String]? {
         return ["Content-type": "application/json",
-                "authorization": "Basic ZGUyQHRhdGF5YWIuY29tOkU5NzBBU3NxMGU5R21TSjJFWDBCTEd2c2tPMlVGODQx=="
+                "authorization": "Basic ZGV2MkB0YXRheWFiLmNvbTo4OUlPMzlOM1pKTVRKSTcweUdGOVBqQjk5RDhVNTcyOQ=="
         ]
     }
 

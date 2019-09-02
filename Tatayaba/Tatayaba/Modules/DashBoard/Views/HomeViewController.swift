@@ -23,6 +23,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     let bannersCarouselView: BannersCarouselView = .fromNib()
     let fullScreenBannersView: FullScreenBannersView = .fromNib()
     let categoriesBlockView: CategoriesBlockView = .fromNib()
+    let suppliersBlockView: SuppliersBlockView = .fromNib()
 
 
     //MARK:- Life Cycle
@@ -56,6 +57,11 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         bannersCarouselView.translatesAutoresizingMaskIntoConstraints = false
         bannersCarouselView.heightAnchor.constraint(equalToConstant: 200).isActive = true
 
+
+        scrollView.stackView.addArrangedSubview(suppliersBlockView)
+        suppliersBlockView.translatesAutoresizingMaskIntoConstraints = false
+        suppliersBlockView.heightAnchor.constraint(equalToConstant: 115).isActive = true
+
     }
 
     fileprivate func loadBannersBlockViewData() {
@@ -80,6 +86,11 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         categoriesBlockView.loadData()
     }
 
+    fileprivate func loadSuppliersBlockViewData() {
+        suppliersBlockView.suppliers = viewModel.suppliersList
+        suppliersBlockView.loadData()
+    }
+
 
     func setupListners() {
         viewModel.onCategoriesListLoad = {
@@ -94,7 +105,10 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         viewModel.onTopBannersBlockLoad = {
             self.loadFullScreenBannersViewData()
             self.loadBannersBlockViewData()
+        }
 
+        viewModel.onSuppliersBlockLoad = {
+            self.loadSuppliersBlockViewData()
         }
 
         viewModel.onFeaturedProductsListLoad = {
@@ -106,7 +120,10 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
 
     // MARK:- SetupUI
     func setupUI() {
-        self.scrollView.stackView.spacing = 0
+        self.scrollView.stackView.spacing = 10
+        self.scrollView.stackView.backgroundColor = .clear
+        self.scrollView.backgroundColor = .clear
+
         self.addLeftBarButton()
         self.NavigationBarWithOutBackButton()
     }
