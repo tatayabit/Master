@@ -24,10 +24,10 @@ class CategoriesViewModel {
             switch result {
             case .success(let response):
                 guard let categoriesResult = response else { return }
-                guard let categories = categoriesResult.categories else { return }
+//                guard let categories = categoriesResult else { return }
 
-                self.categoriesList = categories.filter({ $0.parentId == "0" })
-                print(categories)
+                self.categoriesList = categoriesResult.filter({ $0.parentId == "0" })
+                print(self.categoriesList)
 
 
                 if let newCategoriesArrived = self.onCategoriesListLoad {
@@ -42,7 +42,7 @@ class CategoriesViewModel {
 
     //MARK:- Categories data
     func category(at indexPath: IndexPath) -> Category {
-        guard categoriesList.count > 0 else { return Category() }
+        guard categoriesList.count > 0 else { return Category(identifier: "0") }
         return categoriesList[indexPath.row]
     }
 

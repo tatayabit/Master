@@ -22,7 +22,6 @@ class CategoriesBlockCollectionViewCell: UICollectionViewCell {
 
     func configure(category: Category) {
         nameLabel.text = category.name
-        print("icon: \(category.imageUrl)")
         if !category.imageUrl.isEmpty {
             categoryImageView.sd_setImage(with: URL(string: category.imageUrl), placeholderImage: UIImage(named: iconPlaceholder), options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
         }

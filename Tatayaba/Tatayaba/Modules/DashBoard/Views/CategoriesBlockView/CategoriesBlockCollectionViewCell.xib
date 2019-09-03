@@ -19,11 +19,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="category_Icon_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="x1z-zC-F8e">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="category_Icon_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="x1z-zC-F8e">
                         <rect key="frame" x="4" y="4" width="92" height="70.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70.5" id="JT1-XS-Kgb"/>
+                            <constraint firstAttribute="width" constant="92" id="PeE-HB-ugg"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zd9-fW-27Q">
-                        <rect key="frame" x="4" y="77.5" width="92" height="14.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zd9-fW-27Q">
+                        <rect key="frame" x="4" y="77.5" width="92" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
