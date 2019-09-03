@@ -28,23 +28,23 @@ class SuppliersViewModel {
 
     //MARK:- Api
     func getProductsOfCategory() {
-        apiClient.getProductOf(categoryId: categoryId, page: page) { result in
-            switch result {
-            case .success(let response):
-                guard let productResult = response else { return }
-                //                guard let products = productResult.products else { return }
-
-                self.productsList = productResult
-                print(productResult)
-
-                if let newCategoriesArrived = self.onProductsListLoad {
-                    newCategoriesArrived()
-                }
-
-            case .failure(let error):
-                print("the error \(error)")
-            }
-        }
+//        apiClient.getProductOf(categoryId: categoryId, page: page) { result in
+//            switch result {
+//            case .success(let response):
+//                guard let productResult = response else { return }
+//                //                guard let products = productResult.products else { return }
+//
+//                self.productsList = productResult
+//                print(productResult)
+//
+//                if let newCategoriesArrived = self.onProductsListLoad {
+//                    newCategoriesArrived()
+//                }
+//
+//            case .failure(let error):
+//                print("the error \(error)")
+//            }
+//        }
     }
 
     //MARK:- Product data
