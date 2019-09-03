@@ -1,26 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sab-ra-ANU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sab-ra-ANU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Myriad Pro Regular.ttf">
+            <string>MyriadPro-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Product Details View Controller-->
         <scene sceneID="u64-mt-OE4">
             <objects>
                 <viewController storyboardIdentifier="ProductDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sab-ra-ANU" customClass="ProductDetailsViewController" customModule="Tatayaba" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iB0-e7-ZzJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJB-7f-aos" customClass="StackedScrollView" customModule="Tatayaba" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="780"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JlS-HH-1kn">
+                                        <rect key="frame" x="5" y="398" width="365" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="L83-xu-SYK"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVL-Ss-WTh">
+                                        <rect key="frame" x="5" y="328" width="365" height="62"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="62" id="FPW-jc-Syg"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="JlS-HH-1kn" secondAttribute="bottom" constant="72" id="DIo-Ta-yaJ"/>
+                                    <constraint firstItem="fVL-Ss-WTh" firstAttribute="leading" secondItem="JlS-HH-1kn" secondAttribute="leading" id="Eht-NE-LGg"/>
+                                    <constraint firstItem="JlS-HH-1kn" firstAttribute="top" secondItem="fVL-Ss-WTh" secondAttribute="bottom" constant="8" symbolic="YES" id="K3Q-sr-F3T"/>
+                                    <constraint firstAttribute="trailing" secondItem="fVL-Ss-WTh" secondAttribute="trailing" constant="5" id="KT8-LG-Fj9"/>
+                                    <constraint firstItem="fVL-Ss-WTh" firstAttribute="centerX" secondItem="hJB-7f-aos" secondAttribute="centerX" id="KYJ-L1-GaZ"/>
+                                    <constraint firstItem="fVL-Ss-WTh" firstAttribute="trailing" secondItem="JlS-HH-1kn" secondAttribute="trailing" id="WDn-Lr-eT2"/>
+                                    <constraint firstItem="fVL-Ss-WTh" firstAttribute="top" secondItem="hJB-7f-aos" secondAttribute="top" constant="328" id="Y2j-ss-q7w"/>
+                                    <constraint firstItem="fVL-Ss-WTh" firstAttribute="leading" secondItem="hJB-7f-aos" secondAttribute="leading" constant="5" id="aOE-FB-qjf"/>
+                                </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scC-D0-zMw">
+                                <rect key="frame" x="287" y="555" width="82" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.87564182281494141" green="0.63852697610855103" blue="0.61103826761245728" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="11"/>
+                                <state key="normal" title="ONE CLICK BUY">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDx-B2-sDF">
+                                <rect key="frame" x="5" y="555" width="274" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.13354238869999999" green="0.1071816161" blue="0.2066496015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
+                                <state key="normal" title="ADD TO CART">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="Add_Cart:" destination="sab-ra-ANU" eventType="touchUpInside" id="dx0-gs-saX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -31,14 +83,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9X9-mn-eJ3"/>
                     </view>
-                    <size key="freeformSize" width="375" height="800"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="scrollView" destination="hJB-7f-aos" id="YNW-Yv-yK5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CNv-SD-yx9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="778" y="22"/>
+            <point key="canvasLocation" x="384.80000000000001" y="-349.47526236881561"/>
         </scene>
     </scenes>
 </document>

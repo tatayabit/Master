@@ -52,7 +52,6 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         bannersBlockView.heightAnchor.constraint(equalToConstant: 280).isActive = true
         bannersBlockView.titleLabel.text = "Trending on Tatayab"
 
-
         scrollView.stackView.addArrangedSubview(bannersCarouselView)
         bannersCarouselView.translatesAutoresizingMaskIntoConstraints = false
         bannersCarouselView.heightAnchor.constraint(equalToConstant: 200).isActive = true

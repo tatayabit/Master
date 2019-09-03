@@ -138,6 +138,8 @@
 		11FEB4DD22DF850700F2E9B8 /* ProductDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FEB4DC22DF850700F2E9B8 /* ProductDetailsView.xib */; };
 		11FEB4E022DF921800F2E9B8 /* CarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FEB4DE22DF921800F2E9B8 /* CarouselCollectionViewCell.swift */; };
 		11FEB4E122DF921800F2E9B8 /* CarouselCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FEB4DF22DF921800F2E9B8 /* CarouselCollectionViewCell.xib */; };
+		4CEDFF3F231A69DD001385DD /* Myriad Pro Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CEDFF3E231A69DD001385DD /* Myriad Pro Regular.ttf */; };
+		4CEDFF41231D29DF001385DD /* PaymenyTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDFF40231D29DF001385DD /* PaymenyTableCell.swift */; };
 		5AB89CC597A882EAAB8E1262 /* Pods_Tatayaba.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8251C3E16050691EBDFB247 /* Pods_Tatayaba.framework */; };
 		8407BAB922E86205001F2C2A /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8407BAB822E86205001F2C2A /* OrdersViewController.swift */; };
 		8407BABB22E86213001F2C2A /* Order.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8407BABA22E86213001F2C2A /* Order.storyboard */; };
@@ -342,6 +344,8 @@
 		22CC9CEE04574A387EDF22EE /* Pods-TatayabaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.release.xcconfig"; sourceTree = "<group>"; };
 		2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3521A060629ED90EC6114BA5 /* Pods-TatayabaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.debug.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4CEDFF3E231A69DD001385DD /* Myriad Pro Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad Pro Regular.ttf"; sourceTree = "<group>"; };
+		4CEDFF40231D29DF001385DD /* PaymenyTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymenyTableCell.swift; sourceTree = "<group>"; };
 		8407BAB822E86205001F2C2A /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		8407BABA22E86213001F2C2A /* Order.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Order.storyboard; sourceTree = "<group>"; };
 		8407BABE22E8623E001F2C2A /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
@@ -857,6 +861,7 @@
 			children = (
 				11945BB822F0B08D000F08DC /* PaymentSelectionViewCell.swift */,
 				11945BB922F0B08D000F08DC /* PaymentSelectionViewCell.xib */,
+				4CEDFF40231D29DF001385DD /* PaymenyTableCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1442,6 +1447,7 @@
 		847CDE7C22CA19CF00E67C8C /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				4CEDFF3E231A69DD001385DD /* Myriad Pro Regular.ttf */,
 				847CDE8122CA19ED00E67C8C /* ProximaNova-Black.ttf */,
 				847CDE8322CA19EE00E67C8C /* ProximaNova-Bold.ttf */,
 				847CDE7E22CA19EC00E67C8C /* ProximaNova-Extrabld.ttf */,
@@ -1730,6 +1736,7 @@
 				11945BBC22F0B08D000F08DC /* CheckOut.storyboard in Resources */,
 				847CDE4E22C9EE2300E67C8C /* LaunchScreen.storyboard in Resources */,
 				847CDE8922CA19EE00E67C8C /* ProximaNovaT-Thin.ttf in Resources */,
+				4CEDFF3F231A69DD001385DD /* Myriad Pro Regular.ttf in Resources */,
 				11945BC122F0B08D000F08DC /* PaymentSelectionViewCell.xib in Resources */,
 				848E89CD22CCEAAC000AA24C /* FeatureProductCollectionViewCell.xib in Resources */,
 				11A8B15322D79377001B2661 /* Wishlist.storyboard in Resources */,
@@ -2000,6 +2007,7 @@
 				11F52FB722CA7D92000F0D85 /* SplashViewController.swift in Sources */,
 				1101C65E22E0C42800416307 /* ProductOptionsView.swift in Sources */,
 				1101C66822E0D6E300416307 /* HProductsListView.swift in Sources */,
+				4CEDFF41231D29DF001385DD /* PaymenyTableCell.swift in Sources */,
 				116C938E22F0954500921893 /* Payment.swift in Sources */,
 				11FB5849231C2147005DA4F0 /* CategoriesBlockCollectionViewCell.swift in Sources */,
 				8407BAB922E86205001F2C2A /* OrdersViewController.swift in Sources */,
