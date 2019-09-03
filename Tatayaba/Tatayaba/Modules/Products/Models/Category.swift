@@ -22,9 +22,7 @@ extension CategoriesResult: Codable {
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CategoriesResultCodingKeys.self)
-
-        try container.encode(categories, forKey: .categories)
-
+        try container.encodeIfPresent(categories, forKey: .categories)
     }
 }
 
@@ -35,15 +33,6 @@ struct Category {
     var productCount: String
     var description: String
     var imageUrl: String
-
-    init() {
-        self.identifier = ""
-        self.parentId = ""
-        self.name = ""
-        self.productCount = ""
-        self.description = ""
-        self.imageUrl = ""
-    }
     
     init(identifier: String, parentId: String = "", name: String = "", productCount: String = "", description: String = "", imageUrl: String = "") {
         self.identifier = identifier
@@ -56,7 +45,7 @@ struct Category {
 }
 
 extension Category: Codable {
-    enum UserCodingKeys: String, CodingKey {
+    enum CategoryCodingKeys: String, CodingKey {
         case identifier = "category_id"
         case parentId = "parent_id"
         case name = "category"
@@ -66,7 +55,7 @@ extension Category: Codable {
     }
 
     init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: UserCodingKeys.self)
+        let container = try decoder.container(keyedBy: CategoryCodingKeys.self)
 
         identifier = try container.decodeIfPresent(String.self, forKey: .identifier) ?? ""
         parentId = try container.decodeIfPresent(String.self, forKey: .parentId) ?? ""
@@ -77,7 +66,7 @@ extension Category: Codable {
     }
 
     func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: UserCodingKeys.self)
+        var container = encoder.container(keyedBy: CategoryCodingKeys.self)
 
         try container.encodeIfPresent(identifier, forKey: .identifier)
         try container.encodeIfPresent(parentId, forKey: .parentId)

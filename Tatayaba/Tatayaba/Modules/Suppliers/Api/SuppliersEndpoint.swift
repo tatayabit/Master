@@ -1,19 +1,20 @@
 //
-//  ShippingEndpoint.swift
+//  SuppliersEndpoint.swift
 //  Tatayaba
 //
-//  Created by Kareem Kareem on 7/21/19.
+//  Created by Kareem Kareem on 9/1/19.
 //  Copyright © 2019 Shaik. All rights reserved.
 //
 
 import Moya
 
-enum ShippingEndpoint {
-    case getShippings
+enum SuppliersEndpoint {
+    case getSuppliers()
+    case getProductsOfSupplier(supplierId: String)
 }
 
 
-extension ShippingEndpoint: TargetType {
+extension SuppliersEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
         case .production: return "http://dev2%40tatayab.com:89IO39N3ZJMTJI70yGF9PjB99D8U5729@dev2.tatayab.com/api/"
@@ -30,14 +31,18 @@ extension ShippingEndpoint: TargetType {
 
     var path: String {
         switch self {
-        case .getShippings:
-            return "shippings"
+        case .getSuppliers:
+            let version = "4.0"
+            return "\(version.urlEscaped)/TtmSuppliers/"
+        case .getProductsOfSupplier(let supplierId):
+            let version = "4.0"
+            return "\(version.urlEscaped)/TtmSuppliers/\(supplierId.urlEscaped)"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .getShippings:
+        case .getSuppliers, .getProductsOfSupplier:
             return .get
         }
     }
@@ -53,15 +58,14 @@ extension ShippingEndpoint: TargetType {
 
     var task: Task {
         switch self {
-        case .getShippings:
+        case .getSuppliers, .getProductsOfSupplier:
             return .requestPlain
         }
     }
 
     var headers: [String : String]? {
-
         return ["Content-type": "application/json",
-                "authorization": "Basic ZGUyQHRhdGF5YWIuY29tOkU5NzBBU3NxMGU5R21TSjJFWDBCTEd2c2tPMlVGODQx=="
+                "authorization": "Basic ZGV2MkB0YXRheWFiLmNvbTo4OUlPMzlOM1pKTVRKSTcweUdGOVBqQjk5RDhVNTcyOQ=="
         ]
     }
 

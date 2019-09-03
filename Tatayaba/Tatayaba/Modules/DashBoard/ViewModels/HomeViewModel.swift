@@ -12,9 +12,12 @@ class HomeViewModel {
 
     private let productsApiClient = ProductsAPIClient()
     private let blocksApiClient = BlocksAPIClient()
+    private let suppliersApiClient = SuppliersAPIClient()
 
 
     var categoriesList = [Category]()
+    var suppliersList = [Supplier]()
+
     private var featuredProductsList = [Product]()
 
     var topBannersBlock: Block = Block()
@@ -33,6 +36,8 @@ class HomeViewModel {
     var onProductsBlockLoad: (() -> ())?
 
 
+    var onSuppliersBlockLoad: (() -> ())?
+
     var featuredProductsCount: Int { return featuredProductsList.count }
 
     //MARK:- Init
@@ -41,6 +46,7 @@ class HomeViewModel {
         getFeaturedProducts()
         getBlock58()
         getBlock44()
+        getAllSuppliers()
     }
 
     //MARK:- Api
@@ -50,14 +56,35 @@ class HomeViewModel {
             switch result {
             case .success(let response):
                 guard let categoriesResult = response else { return }
-                guard let categories = categoriesResult.categories else { return }
+                //                guard let categories = categoriesResult else { return }
 
-                self.categoriesList = categories.filter({ $0.parentId == "0" })
-                print(categories)
+                self.categoriesList = categoriesResult//.filter({ $0.parentId == "0" })
+
+                print(self.categoriesList)
 
 
                 if let newCategoriesArrived = self.onCategoriesListLoad {
                     newCategoriesArrived()
+                }
+            case .failure(let error):
+                print("the error \(error)")
+            }
+        }
+    }
+
+    func getAllSuppliers() {
+        suppliersApiClient.getSuppliers { result in
+            switch result {
+            case .success(let response):
+                guard let suppliersResult = response else { return }
+                guard let suppliers = suppliersResult.suppliers else { return }
+
+                self.suppliersList = suppliers
+                print("suppliers: \(suppliers)")
+
+
+                if let newSuppliersArrived = self.onSuppliersBlockLoad {
+                    newSuppliersArrived()
                 }
             case .failure(let error):
                 print("the error \(error)")
@@ -124,7 +151,7 @@ class HomeViewModel {
 
     //MARK:- Categories data
     func category(at indexPath: IndexPath) -> Category {
-        guard categoriesList.count > 0 else { return Category() }
+        guard categoriesList.count > 0 else { return Category(identifier: "0") }
         return categoriesList[indexPath.row]
     }
 

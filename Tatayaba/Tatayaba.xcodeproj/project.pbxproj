@@ -30,6 +30,8 @@
 		11081EF822DB8CD800B68EA5 /* StackedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11081EF722DB8CD800B68EA5 /* StackedScrollView.swift */; };
 		11081EFB22DB8F4900B68EA5 /* ProfileDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11081EFA22DB8F4900B68EA5 /* ProfileDetailsView.swift */; };
 		11081EFD22DB8F5500B68EA5 /* ProfileDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11081EFC22DB8F5500B68EA5 /* ProfileDetailsView.xib */; };
+		111004E0231D8088001CF248 /* SuppliersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111004DF231D8088001CF248 /* SuppliersViewController.swift */; };
+		111004E2231D809A001CF248 /* SuppliersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111004E1231D809A001CF248 /* SuppliersViewModel.swift */; };
 		111C8A36230B1123003F5FDB /* BlocksAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C8A35230B1123003F5FDB /* BlocksAPIClient.swift */; };
 		111C8A38230B1135003F5FDB /* BlocksEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C8A37230B1135003F5FDB /* BlocksEndpoint.swift */; };
 		111C8A3C230B1487003F5FDB /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C8A3B230B1487003F5FDB /* Block.swift */; };
@@ -122,6 +124,15 @@
 		11FB584F231C2DCE005DA4F0 /* ProductsBlockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FB584E231C2DCE005DA4F0 /* ProductsBlockView.xib */; };
 		11FB5852231C2EC2005DA4F0 /* ProductsBlockCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FB5850231C2EC2005DA4F0 /* ProductsBlockCollectionViewCell.swift */; };
 		11FB5853231C2EC2005DA4F0 /* ProductsBlockCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FB5851231C2EC2005DA4F0 /* ProductsBlockCollectionViewCell.xib */; };
+		11FB5859231C3B18005DA4F0 /* SuppliersAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FB5858231C3B18005DA4F0 /* SuppliersAPIClient.swift */; };
+		11FB585B231C3B26005DA4F0 /* SuppliersEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FB585A231C3B26005DA4F0 /* SuppliersEndpoint.swift */; };
+		11FB585D231C3C3C005DA4F0 /* Supplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FB585C231C3C3C005DA4F0 /* Supplier.swift */; };
+		11FB585F231C3E17005DA4F0 /* SupplierLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FB585E231C3E17005DA4F0 /* SupplierLogo.swift */; };
+		11FB5861231C3EA7005DA4F0 /* SupplierIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FB5860231C3EA7005DA4F0 /* SupplierIcon.swift */; };
+		11FB586F231D5EFF005DA4F0 /* SuppliersBlockCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FB586D231D5EFF005DA4F0 /* SuppliersBlockCollectionViewCell.swift */; };
+		11FB5870231D5EFF005DA4F0 /* SuppliersBlockCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FB586E231D5EFF005DA4F0 /* SuppliersBlockCollectionViewCell.xib */; };
+		11FB5872231D5F13005DA4F0 /* SuppliersBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FB5871231D5F13005DA4F0 /* SuppliersBlockView.swift */; };
+		11FB5874231D5F1C005DA4F0 /* SuppliersBlockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FB5873231D5F1C005DA4F0 /* SuppliersBlockView.xib */; };
 		11FEB4D822DF822A00F2E9B8 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FEB4D722DF822A00F2E9B8 /* ProductDetailsViewController.swift */; };
 		11FEB4DB22DF84FE00F2E9B8 /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FEB4DA22DF84FE00F2E9B8 /* ProductDetailsView.swift */; };
 		11FEB4DD22DF850700F2E9B8 /* ProductDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FEB4DC22DF850700F2E9B8 /* ProductDetailsView.xib */; };
@@ -219,6 +230,8 @@
 		11081EF722DB8CD800B68EA5 /* StackedScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackedScrollView.swift; sourceTree = "<group>"; };
 		11081EFA22DB8F4900B68EA5 /* ProfileDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsView.swift; sourceTree = "<group>"; };
 		11081EFC22DB8F5500B68EA5 /* ProfileDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileDetailsView.xib; sourceTree = "<group>"; };
+		111004DF231D8088001CF248 /* SuppliersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuppliersViewController.swift; sourceTree = "<group>"; };
+		111004E1231D809A001CF248 /* SuppliersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuppliersViewModel.swift; sourceTree = "<group>"; };
 		111C8A35230B1123003F5FDB /* BlocksAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksAPIClient.swift; sourceTree = "<group>"; };
 		111C8A37230B1135003F5FDB /* BlocksEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksEndpoint.swift; sourceTree = "<group>"; };
 		111C8A3B230B1487003F5FDB /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
@@ -311,6 +324,15 @@
 		11FB584E231C2DCE005DA4F0 /* ProductsBlockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsBlockView.xib; sourceTree = "<group>"; };
 		11FB5850231C2EC2005DA4F0 /* ProductsBlockCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsBlockCollectionViewCell.swift; sourceTree = "<group>"; };
 		11FB5851231C2EC2005DA4F0 /* ProductsBlockCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsBlockCollectionViewCell.xib; sourceTree = "<group>"; };
+		11FB5858231C3B18005DA4F0 /* SuppliersAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuppliersAPIClient.swift; sourceTree = "<group>"; };
+		11FB585A231C3B26005DA4F0 /* SuppliersEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuppliersEndpoint.swift; sourceTree = "<group>"; };
+		11FB585C231C3C3C005DA4F0 /* Supplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supplier.swift; sourceTree = "<group>"; };
+		11FB585E231C3E17005DA4F0 /* SupplierLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierLogo.swift; sourceTree = "<group>"; };
+		11FB5860231C3EA7005DA4F0 /* SupplierIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierIcon.swift; sourceTree = "<group>"; };
+		11FB586D231D5EFF005DA4F0 /* SuppliersBlockCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuppliersBlockCollectionViewCell.swift; sourceTree = "<group>"; };
+		11FB586E231D5EFF005DA4F0 /* SuppliersBlockCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuppliersBlockCollectionViewCell.xib; sourceTree = "<group>"; };
+		11FB5871231D5F13005DA4F0 /* SuppliersBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuppliersBlockView.swift; sourceTree = "<group>"; };
+		11FB5873231D5F1C005DA4F0 /* SuppliersBlockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuppliersBlockView.xib; sourceTree = "<group>"; };
 		11FEB4D722DF822A00F2E9B8 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		11FEB4DA22DF84FE00F2E9B8 /* ProductDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
 		11FEB4DC22DF850700F2E9B8 /* ProductDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailsView.xib; sourceTree = "<group>"; };
@@ -502,6 +524,22 @@
 				11081EFC22DB8F5500B68EA5 /* ProfileDetailsView.xib */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		111004DD231D7FAA001CF248 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				111004DF231D8088001CF248 /* SuppliersViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		111004DE231D7FAE001CF248 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				111004E1231D809A001CF248 /* SuppliersViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		111C8A34230B1106003F5FDB /* Api */ = {
@@ -1024,6 +1062,7 @@
 		11F52FA522CA7D92000F0D85 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				11FB5855231C3AEE005DA4F0 /* Suppliers */,
 				117AC9F62314442600EFCE25 /* Deeplinks */,
 				111C8A39230B12B4003F5FDB /* Blocks */,
 				11C271A922F205C9004613E3 /* Addresses */,
@@ -1141,6 +1180,47 @@
 				11FB5851231C2EC2005DA4F0 /* ProductsBlockCollectionViewCell.xib */,
 			);
 			path = ProductsBlockView;
+			sourceTree = "<group>";
+		};
+		11FB5855231C3AEE005DA4F0 /* Suppliers */ = {
+			isa = PBXGroup;
+			children = (
+				111004DE231D7FAE001CF248 /* ViewModels */,
+				111004DD231D7FAA001CF248 /* Views */,
+				11FB5857231C3B04005DA4F0 /* Api */,
+				11FB5856231C3AFE005DA4F0 /* Models */,
+			);
+			path = Suppliers;
+			sourceTree = "<group>";
+		};
+		11FB5856231C3AFE005DA4F0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11FB585C231C3C3C005DA4F0 /* Supplier.swift */,
+				11FB585E231C3E17005DA4F0 /* SupplierLogo.swift */,
+				11FB5860231C3EA7005DA4F0 /* SupplierIcon.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		11FB5857231C3B04005DA4F0 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				11FB5858231C3B18005DA4F0 /* SuppliersAPIClient.swift */,
+				11FB585A231C3B26005DA4F0 /* SuppliersEndpoint.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		11FB586C231D5BF8005DA4F0 /* SuppliersBlockView */ = {
+			isa = PBXGroup;
+			children = (
+				11FB5871231D5F13005DA4F0 /* SuppliersBlockView.swift */,
+				11FB5873231D5F1C005DA4F0 /* SuppliersBlockView.xib */,
+				11FB586D231D5EFF005DA4F0 /* SuppliersBlockCollectionViewCell.swift */,
+				11FB586E231D5EFF005DA4F0 /* SuppliersBlockCollectionViewCell.xib */,
+			);
+			path = SuppliersBlockView;
 			sourceTree = "<group>";
 		};
 		11FEB4D922DF838500F2E9B8 /* CustomViews */ = {
@@ -1405,6 +1485,7 @@
 		848E89C322CCDD9D000AA24C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				11FB586C231D5BF8005DA4F0 /* SuppliersBlockView */,
 				11FB584B231C2D9A005DA4F0 /* ProductsBlockView */,
 				113647F82316FEF00097FDB3 /* CategoriesBlockView */,
 				11D4E69D2312FBF700226A23 /* FullScreenBannersView */,
@@ -1676,8 +1757,10 @@
 				11081EEA22DB823200B68EA5 /* Static.storyboard in Resources */,
 				84BC08A622DC972300C6180E /* RecommendedCollectionViewCell.xib in Resources */,
 				11C271B722F20E24004613E3 /* AddressTableViewCell.xib in Resources */,
+				11FB5870231D5EFF005DA4F0 /* SuppliersBlockCollectionViewCell.xib in Resources */,
 				847CDE8722CA19EE00E67C8C /* ProximaNova-Semibold.ttf in Resources */,
 				112654A722D22AD400904FB5 /* User.storyboard in Resources */,
+				11FB5874231D5F1C005DA4F0 /* SuppliersBlockView.xib in Resources */,
 				11081EFD22DB8F5500B68EA5 /* ProfileDetailsView.xib in Resources */,
 				11D4E6A12312FCDB00226A23 /* FullScreenBannersView.xib in Resources */,
 				11D4E69C2312E1A400226A23 /* BannersCarouselView.xib in Resources */,
@@ -1810,6 +1893,9 @@
 				114D1A0D22CBB144009205F3 /* TableCellActionProxy.swift in Sources */,
 				84BC08A422DC94AA00C6180E /* RecommendedCollectionViewCell.swift in Sources */,
 				11E8512922F7332900E80DF6 /* LoginResult.swift in Sources */,
+				11FB586F231D5EFF005DA4F0 /* SuppliersBlockCollectionViewCell.swift in Sources */,
+				11FB585F231C3E17005DA4F0 /* SupplierLogo.swift in Sources */,
+				11FB5861231C3EA7005DA4F0 /* SupplierIcon.swift in Sources */,
 				84BC089A22DC7D3400C6180E /* CartViewModel.swift in Sources */,
 				112654AC22D2691400904FB5 /* ProductsAPIClient.swift in Sources */,
 				114D1A1822CBB33E009205F3 /* Product.swift in Sources */,
@@ -1851,6 +1937,7 @@
 				11945BBF22F0B08D000F08DC /* CheckoutCompletedViewModel.swift in Sources */,
 				11A09F3E22FB44AA00C3E5B8 /* OrderDetailsViewModel.swift in Sources */,
 				114D1A0722CBB0EA009205F3 /* ConfigurableCell.swift in Sources */,
+				11FB5872231D5F13005DA4F0 /* SuppliersBlockView.swift in Sources */,
 				112654A922D25E5B00904FB5 /* SignUpResponse.swift in Sources */,
 				11D4E69F2312FC5500226A23 /* FullScreenBannersView.swift in Sources */,
 				11945BBB22F0B08D000F08DC /* CheckOutViewController.swift in Sources */,
@@ -1881,6 +1968,7 @@
 				84843C1322D08DB000702E40 /* RootViewController.swift in Sources */,
 				11945BBD22F0B08D000F08DC /* CheckOutModel.swift in Sources */,
 				11081EEC22DB824600B68EA5 /* AboutUsViewController.swift in Sources */,
+				111004E2231D809A001CF248 /* SuppliersViewModel.swift in Sources */,
 				11007BD522DE2F2E00AC9957 /* CategoryCollectionViewCell.swift in Sources */,
 				11F52FB922CA7D92000F0D85 /* SignUpViewcontroller.swift in Sources */,
 				84843C1522D08DB000702E40 /* BaseTableViewController.swift in Sources */,
@@ -1888,6 +1976,7 @@
 				84BC089822DC7D0D00C6180E /* CartViewController.swift in Sources */,
 				116C939022F0954500921893 /* PaymentEndpoint.swift in Sources */,
 				112654AE22D2693600904FB5 /* ProductsEndpoint.swift in Sources */,
+				11FB585D231C3C3C005DA4F0 /* Supplier.swift in Sources */,
 				114D1A0B22CBB12B009205F3 /* CellActionHandler.swift in Sources */,
 				11945BC022F0B08D000F08DC /* PaymentSelectionViewCell.swift in Sources */,
 				84BC089E22DC84A900C6180E /* CartTableViewCell.swift in Sources */,
@@ -1919,6 +2008,9 @@
 				11A8B15822D793AC001B2661 /* WishlistViewController.swift in Sources */,
 				11624EDB230C6C1800E81ABD /* BlockBgImageIcon.swift in Sources */,
 				11945BC922F0B0C6000F08DC /* ShippingMethod.swift in Sources */,
+				11FB5859231C3B18005DA4F0 /* SuppliersAPIClient.swift in Sources */,
+				11FB585B231C3B26005DA4F0 /* SuppliersEndpoint.swift in Sources */,
+				111004E0231D8088001CF248 /* SuppliersViewController.swift in Sources */,
 				111C8A36230B1123003F5FDB /* BlocksAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
