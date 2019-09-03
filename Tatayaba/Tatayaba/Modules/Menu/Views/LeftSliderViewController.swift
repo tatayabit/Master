@@ -14,7 +14,8 @@ class LeftSliderViewController: UIViewController {
     
     var rootViewDelegate: RootViewControllerDelegate?
     var sliderMenuDelegate: SliderMenuDelegate?
-    var menuItems: [String] = ["HOME", "PROFILE","ORDERS","WISHLIST","NOTIFICATIONS","MESSAGES","ABOUT","CHAT","SETTINGS","LOGOUT"]
+    var menuItems: [String] = ["HOME", "CONCIERGE","BRANDS","MY ORDERS","WISHLIST","LIVE CHAT","INSTAGRAM","LOGOUT"]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,17 +58,19 @@ extension LeftSliderViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
+        return 60
     }
      
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LeftSliderMenuCell", for: indexPath) as! MenuTableViewCell
         cell.menuTitle.text = self.menuItems[indexPath.row]
+      //  let image : UIImage = UIImage(named:self.menuItems[indexPath.row])!
+        cell.img_menu.image = UIImage(named: self.menuItems[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 150
+        return 50
     }
    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

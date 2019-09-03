@@ -27,8 +27,8 @@ class ProductDetailsViewController: BaseViewController {
     //MARK:- Setup StackedScrollView
     func addSubViews() {
         setupProductDetailsView()
-        setupOptionsView()
-        setupPriceButton()
+      //  setupOptionsView()
+       // setupPriceButton()
     }
 
 
@@ -74,6 +74,13 @@ class ProductDetailsViewController: BaseViewController {
         }
     }
 
+    @IBAction func Add_Cart(_ sender: Any) {
+        
+        let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
+        self.navigationController?.pushViewController(controller, animated: false)
+        
+        
+    }
     //MARK:- IBActions
     func addToCartAction() {
         guard let viewModel = viewModel else { return }

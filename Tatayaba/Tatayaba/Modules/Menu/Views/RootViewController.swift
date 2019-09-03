@@ -51,7 +51,7 @@ extension RootViewController: RootViewControllerDelegate {
             self.loadWishList()
         case "ABOUT":
             self.loadAboutUs()
-        case "ORDERS":
+        case "MY ORDERS":
             self.loadOrdersVC()
         case "MESSAGES":
             self.loadMessageVC()

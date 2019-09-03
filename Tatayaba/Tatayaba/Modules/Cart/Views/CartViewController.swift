@@ -31,48 +31,19 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         cart_Tableview.reloadData()
-        totalButton.setTitle(cart.subtotalPrice, for: .normal)
+        //totalButton.setTitle(cart.subtotalPrice, for: .normal)
     }
 
     func setupUI() {
          self.NavigationBarWithOutBackButton()
          self.addLeftBarButton()
-         self.Add_EDitUI()
-         self.collectionView.register(RecommendedCollectionViewCell.nib, forCellWithReuseIdentifier: RecommendedCollectionViewCell.identifier)
+        // self.collectionView.register(RecommendedCollectionViewCell.nib, forCellWithReuseIdentifier: RecommendedCollectionViewCell.identifier)
 
     }
 
-    func Add_EDitUI()
-    {
-        EditBtn.setImage(UIImage(named: "Edit"), for: [])
-        EditBtn.addTarget(self, action: #selector(EditButtonAction), for: UIControlEvents.touchUpInside)
-        EditBtn.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-        let EditButton = UIBarButtonItem(customView: EditBtn)
-        self.navigationItem.rightBarButtonItem  = EditButton
-    }
+   
 
-    @objc func EditButtonAction() {
-
-        EditButton = "1"
-        EditBtn.isHidden = true
-        EditOkBtn.setImage(UIImage(named: "tick"), for: [])
-        EditOkBtn.addTarget(self, action: #selector(EditOKButtonAction), for: UIControlEvents.touchUpInside)
-        EditOkBtn.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-        let OkButton = UIBarButtonItem(customView: EditOkBtn)
-        self.navigationItem.rightBarButtonItem  = OkButton
-        EditOkBtn.isHidden = false
-        cart_Tableview.reloadData()
-
-    }
-    @objc func EditOKButtonAction() {
-
-        EditButton = "0"
-        EditBtn.isHidden = false
-        EditOkBtn.isHidden = true
-        Add_EDitUI()
-        cart_Tableview.reloadData()
-
-    }
+  
 
     //MARK:- IBActions
     @IBAction func checkoutAction(_ sender: Any) {
@@ -109,10 +80,10 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
 extension CartViewController {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cart.productsCount
+        return 2
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130
+        return 100
 
     }
 
@@ -120,29 +91,23 @@ extension CartViewController {
         let cellIdentifier = "CartCellIdentifier"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CartTableViewCell
 
-        let cartProduct = cart.product(at: indexPath)
-        cell.configure(product: cartProduct.0, cartItem: cartProduct.1)
-//        if EditButton == "1"{
-//           cell.removeItem.isHidden = false
-//        }else{
-//           cell.removeItem.isHidden = true
+//        let cartProduct = cart.product(at: indexPath)
+//        cell.configure(product: cartProduct.0, cartItem: cartProduct.1)
 //
+//        cell.onAddMoreClick = {
+//            self.addOneMoreAction(indexPath: indexPath)
+//            cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
 //        }
-
-        cell.onAddMoreClick = {
-            self.addOneMoreAction(indexPath: indexPath)
-            cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
-        }
-
-        cell.onRemoveOneCountClick = {
-            self.removeOneAction(indexPath: indexPath)
-            cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
-        }
-
-        cell.onRemoveItemClick = {
-            self.removeItemAction(indexPath: indexPath)
-            cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
-        }
+//
+//        cell.onRemoveOneCountClick = {
+//            self.removeOneAction(indexPath: indexPath)
+//            cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
+//        }
+//
+//        cell.onRemoveItemClick = {
+//            self.removeItemAction(indexPath: indexPath)
+//            cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
+//        }
         return cell
     }
 

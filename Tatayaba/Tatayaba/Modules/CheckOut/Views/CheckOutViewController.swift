@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CheckOutViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+class CheckOutViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet var PaymentcollectionView: UICollectionView!
     @IBOutlet weak var subTotalValueLabel: UILabel!
@@ -23,7 +23,7 @@ class CheckOutViewController: UIViewController,UICollectionViewDelegate,UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
-        self.updateData()
+       // self.updateData()
     }
 
     func updateData() {
@@ -36,32 +36,63 @@ class CheckOutViewController: UIViewController,UICollectionViewDelegate,UICollec
     func setupUI() {
         self.NavigationBarWithOutBackButton()
 
-        self.PaymentcollectionView.register(PaymentSelectionViewCell.nib, forCellWithReuseIdentifier: PaymentSelectionViewCell.identifier)
+       // self.PaymentcollectionView.register(PaymentSelectionViewCell.nib, forCellWithReuseIdentifier: PaymentSelectionViewCell.identifier)
         
     }
 
     //MARK:- IBActions
 
     @IBAction func placeOrderAction(_ sender: Any) {
-        viewModel.placeOrder { result in
-            switch result {
-            case .success(let response):
-                guard let placeOrderResult = response else { return }
-                //                guard let paymentMethods = paymentResult.paymentMethods else { return }
+        
+         self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
+//        viewModel.placeOrder { result in
+//            switch result {
+//            case .success(let response):
+//                guard let placeOrderResult = response else { return }
+//                //                guard let paymentMethods = paymentResult.paymentMethods else { return }
+//
+//                print(placeOrderResult)
+//                if placeOrderResult.orderId > 0 {
+//                    self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
+//                } else {
+//                    print("the error order id == \(placeOrderResult.orderId)")
+//                }
+//
+//            case .failure(let error):
+//                print("the error \(error)")
+//            }
+//        }
+   }
+}
 
-                print(placeOrderResult)
-                if placeOrderResult.orderId > 0 {
-                    self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
-                } else {
-                    print("the error order id == \(placeOrderResult.orderId)")
-                }
+///tableview
 
-            case .failure(let error):
-                print("the error \(error)")
-            }
-        }
+//Tableview
+extension CheckOutViewController {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "PaymenyTableCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PaymenyTableCell
+        
+      
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
 }
+
+
+
 
 /// Collection View
 extension CheckOutViewController{
