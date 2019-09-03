@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CategoriesBlockCollectionViewCell" customModule="Tatayaba" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="category_Icon_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="x1z-zC-F8e">
+                        <rect key="frame" x="4" y="4" width="92" height="70.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70.5" id="JT1-XS-Kgb"/>
+                            <constraint firstAttribute="width" constant="92" id="PeE-HB-ugg"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zd9-fW-27Q">
+                        <rect key="frame" x="4" y="77.5" width="92" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Zd9-fW-27Q" firstAttribute="top" secondItem="x1z-zC-F8e" secondAttribute="bottom" constant="3" id="0Yq-28-ORm"/>
+                <constraint firstAttribute="trailing" secondItem="Zd9-fW-27Q" secondAttribute="trailing" constant="4" id="KGO-e2-KSY"/>
+                <constraint firstItem="x1z-zC-F8e" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="QEo-gR-jnI"/>
+                <constraint firstItem="x1z-zC-F8e" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="RdO-Ec-ou6"/>
+                <constraint firstAttribute="bottom" secondItem="Zd9-fW-27Q" secondAttribute="bottom" constant="2" id="drN-1g-rSw"/>
+                <constraint firstItem="Zd9-fW-27Q" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="jGN-jW-vdQ"/>
+                <constraint firstAttribute="trailing" secondItem="x1z-zC-F8e" secondAttribute="trailing" constant="4" id="oGA-t2-BMy"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="categoryImageView" destination="x1z-zC-F8e" id="Oll-PW-Czb"/>
+                <outlet property="nameLabel" destination="Zd9-fW-27Q" id="ADl-ZT-Qnk"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="category_Icon_placeholder" width="17.5" height="29.5"/>
+    </resources>
+</document>
