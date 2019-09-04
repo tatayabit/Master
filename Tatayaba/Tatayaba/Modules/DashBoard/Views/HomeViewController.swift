@@ -19,7 +19,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
 
     private var viewModel = HomeViewModel()
 
-    let bannersBlockView: BannersBlocksView = .fromNib()
+    let squaredBlockView: BannersBlocksView = .fromNib()
     let bannersCarouselView: BannersCarouselView = .fromNib()
     let fullScreenBannersView: FullScreenBannersView = .fromNib()
     let categoriesBlockView: CategoriesBlockView = .fromNib()
@@ -46,11 +46,11 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         categoriesBlockView.heightAnchor.constraint(equalToConstant: 115).isActive = true
 
 
-        bannersBlockView.delegate = self
-        scrollView.stackView.addArrangedSubview(bannersBlockView)
-        bannersBlockView.translatesAutoresizingMaskIntoConstraints = false
-        bannersBlockView.heightAnchor.constraint(equalToConstant: 280).isActive = true
-        bannersBlockView.titleLabel.text = "Trending on Tatayab"
+        squaredBlockView.delegate = self
+        scrollView.stackView.addArrangedSubview(squaredBlockView)
+        squaredBlockView.translatesAutoresizingMaskIntoConstraints = false
+        squaredBlockView.heightAnchor.constraint(equalToConstant: 280).isActive = true
+        squaredBlockView.titleLabel.text = "Trending on Tatayab"
 
         scrollView.stackView.addArrangedSubview(bannersCarouselView)
         bannersCarouselView.translatesAutoresizingMaskIntoConstraints = false
@@ -63,15 +63,15 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
 
     }
 
-    fileprivate func loadBannersBlockViewData() {
-        bannersBlockView.block = viewModel.topBannersBlock
-        bannersBlockView.loadData()
+    fileprivate func loadSquaredBlockViewData() {
+        squaredBlockView.block = viewModel.squareBlock
+        squaredBlockView.loadData()
     }
 
 
     fileprivate func loadBannersCarouselViewData() {
         bannersCarouselView.bannerType = .product
-        bannersCarouselView.block = viewModel.productsBlock
+        bannersCarouselView.block = viewModel.squareBlock
         bannersCarouselView.loadData()
     }
 
@@ -93,27 +93,19 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
 
     func setupListners() {
         viewModel.onCategoriesListLoad = {
-//            self.setupBannersCarouselView()
             self.loadCategoriesBlockViewData()
         }
 
-        viewModel.onProductsBlockLoad = {
-            self.loadBannersCarouselViewData()
+        viewModel.onSquareBlockLoad = {
+            self.loadSquaredBlockViewData()
         }
 
         viewModel.onTopBannersBlockLoad = {
             self.loadFullScreenBannersViewData()
-            self.loadBannersBlockViewData()
         }
 
         viewModel.onSuppliersBlockLoad = {
             self.loadSuppliersBlockViewData()
-        }
-
-        viewModel.onFeaturedProductsListLoad = {
-//            self.collectionView.delegate = self
-//            self.collectionView.dataSource = self
-//            self.collectionView.reloadData()
         }
     }
 
@@ -143,9 +135,9 @@ extension HomeViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == productDetailsSegue {
             let productDetailsVC = segue.destination as! ProductDetailsViewController
-            if let indexPath = sender as? IndexPath {
-                productDetailsVC.viewModel = viewModel.productDetailsViewModel(at: indexPath)
-            }
+//            if let indexPath = sender as? IndexPath {
+//                productDetailsVC.viewModel = viewModel.productDetailsViewModel(at: indexPath)
+//            }
         }
 
         if segue.identifier == categoryProductsSegue {

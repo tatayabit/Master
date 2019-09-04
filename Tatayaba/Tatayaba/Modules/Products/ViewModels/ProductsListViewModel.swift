@@ -32,9 +32,9 @@ class ProductsListViewModel {
             switch result {
             case .success(let response):
                 guard let productResult = response else { return }
-//                guard let products = productResult.products else { return }
+                guard let products = productResult.products else { return }
 
-                self.productsList = productResult
+                self.productsList = products
                 print(productResult)
 
                 if let newCategoriesArrived = self.onProductsListLoad {

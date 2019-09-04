@@ -27,6 +27,4 @@ class CategoryCollectionViewCell: UICollectionViewCell {
             categoryImageView.sd_setImage(with: URL(string: category.imageUrl), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
         }
     }
-
-
 }
