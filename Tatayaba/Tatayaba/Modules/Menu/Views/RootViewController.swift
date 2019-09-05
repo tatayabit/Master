@@ -53,6 +53,8 @@ extension RootViewController: RootViewControllerDelegate {
             self.loadAboutUs()
         case "MY ORDERS":
             self.loadOrdersVC()
+        case "BRANDS":
+            self.SuppliersList()
         case "MESSAGES":
             self.loadMessageVC()
         default:
@@ -83,6 +85,13 @@ extension RootViewController: RootViewControllerDelegate {
         let controller = UIStoryboard(name: "Wishlist", bundle: Bundle.main).instantiateViewController(withIdentifier: "WishlistViewController") as! WishlistViewController
         self.navigationController?.pushViewController(controller, animated: false)
     }
+    
+    
+    func SuppliersList() {
+        let controller = UIStoryboard(name: "Suppliers", bundle: Bundle.main).instantiateViewController(withIdentifier: "SuppliersViewController") as! SuppliersViewController
+        self.navigationController?.pushViewController(controller, animated: false)
+    }
+
 
 
     func loadAboutUs() {

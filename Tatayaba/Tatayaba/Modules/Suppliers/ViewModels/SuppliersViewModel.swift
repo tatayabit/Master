@@ -46,13 +46,11 @@ class SuppliersViewModel {
 //            }
 //        }
     }
-
     //MARK:- Product data
     func product(at indexPath: IndexPath) -> Product {
         guard productsList.count > 0 else { return Product() }
         return productsList[indexPath.row]
     }
-
     //MARK:- ProductDetails ViewModel
     func productDetailsViewModel(at indexPath: IndexPath) -> ProductDetailsViewModel {
         let productViewModel = ProductDetailsViewModel(product: product(at: indexPath))
