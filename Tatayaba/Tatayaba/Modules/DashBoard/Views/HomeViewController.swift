@@ -50,7 +50,6 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         scrollView.stackView.addArrangedSubview(squaredBlockView)
         squaredBlockView.translatesAutoresizingMaskIntoConstraints = false
         squaredBlockView.heightAnchor.constraint(equalToConstant: 280).isActive = true
-        squaredBlockView.titleLabel.text = "Trending on Tatayab"
 
         scrollView.stackView.addArrangedSubview(bannersCarouselView)
         bannersCarouselView.translatesAutoresizingMaskIntoConstraints = false
@@ -66,6 +65,8 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     fileprivate func loadSquaredBlockViewData() {
         squaredBlockView.block = viewModel.squareBlock
         squaredBlockView.loadData()
+        squaredBlockView.titleLabel.text = "Trending on Tatayab"
+        squaredBlockView.viewAllButton.isHidden = true
     }
 
 
