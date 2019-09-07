@@ -139,6 +139,9 @@
 		11FEB4DD22DF850700F2E9B8 /* ProductDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FEB4DC22DF850700F2E9B8 /* ProductDetailsView.xib */; };
 		11FEB4E022DF921800F2E9B8 /* CarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FEB4DE22DF921800F2E9B8 /* CarouselCollectionViewCell.swift */; };
 		11FEB4E122DF921800F2E9B8 /* CarouselCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FEB4DF22DF921800F2E9B8 /* CarouselCollectionViewCell.xib */; };
+		4CD8B8A6232129D300D25CC3 /* Suppliers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8B8A5232129D300D25CC3 /* Suppliers.storyboard */; };
+		4CD8B8AA23212A3100D25CC3 /* SuppliersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8B8A823212A3100D25CC3 /* SuppliersCollectionViewCell.swift */; };
+		4CD8B8AB23212A3100D25CC3 /* SuppliersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8B8A923212A3100D25CC3 /* SuppliersCollectionViewCell.xib */; };
 		4CEDFF3F231A69DD001385DD /* Myriad Pro Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CEDFF3E231A69DD001385DD /* Myriad Pro Regular.ttf */; };
 		4CEDFF41231D29DF001385DD /* PaymenyTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDFF40231D29DF001385DD /* PaymenyTableCell.swift */; };
 		5AB89CC597A882EAAB8E1262 /* Pods_Tatayaba.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8251C3E16050691EBDFB247 /* Pods_Tatayaba.framework */; };
@@ -346,6 +349,9 @@
 		22CC9CEE04574A387EDF22EE /* Pods-TatayabaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.release.xcconfig"; sourceTree = "<group>"; };
 		2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3521A060629ED90EC6114BA5 /* Pods-TatayabaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.debug.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4CD8B8A5232129D300D25CC3 /* Suppliers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Suppliers.storyboard; sourceTree = "<group>"; };
+		4CD8B8A823212A3100D25CC3 /* SuppliersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuppliersCollectionViewCell.swift; sourceTree = "<group>"; };
+		4CD8B8A923212A3100D25CC3 /* SuppliersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuppliersCollectionViewCell.xib; sourceTree = "<group>"; };
 		4CEDFF3E231A69DD001385DD /* Myriad Pro Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad Pro Regular.ttf"; sourceTree = "<group>"; };
 		4CEDFF40231D29DF001385DD /* PaymenyTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymenyTableCell.swift; sourceTree = "<group>"; };
 		8407BAB822E86205001F2C2A /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
@@ -536,6 +542,7 @@
 			isa = PBXGroup;
 			children = (
 				111004DF231D8088001CF248 /* SuppliersViewController.swift */,
+				4CD8B8A5232129D300D25CC3 /* Suppliers.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1193,6 +1200,7 @@
 		11FB5855231C3AEE005DA4F0 /* Suppliers */ = {
 			isa = PBXGroup;
 			children = (
+				4CD8B8A723212A0B00D25CC3 /* Cell */,
 				111004DE231D7FAE001CF248 /* ViewModels */,
 				111004DD231D7FAA001CF248 /* Views */,
 				11FB5857231C3B04005DA4F0 /* Api */,
@@ -1242,6 +1250,15 @@
 				11FEB4DF22DF921800F2E9B8 /* CarouselCollectionViewCell.xib */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		4CD8B8A723212A0B00D25CC3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4CD8B8A823212A3100D25CC3 /* SuppliersCollectionViewCell.swift */,
+				4CD8B8A923212A3100D25CC3 /* SuppliersCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		8407BAB422E86195001F2C2A /* Order */ = {
@@ -1766,6 +1783,7 @@
 				115DC43123118A500001EF67 /* BannerBlockCollectionViewCell.xib in Resources */,
 				11081EEA22DB823200B68EA5 /* Static.storyboard in Resources */,
 				84BC08A622DC972300C6180E /* RecommendedCollectionViewCell.xib in Resources */,
+				4CD8B8AB23212A3100D25CC3 /* SuppliersCollectionViewCell.xib in Resources */,
 				11C271B722F20E24004613E3 /* AddressTableViewCell.xib in Resources */,
 				11FB5870231D5EFF005DA4F0 /* SuppliersBlockCollectionViewCell.xib in Resources */,
 				847CDE8722CA19EE00E67C8C /* ProximaNova-Semibold.ttf in Resources */,
@@ -1780,6 +1798,7 @@
 				113647FC2316FF0F0097FDB3 /* CategoriesBlockView.xib in Resources */,
 				847CDE4622C9EE2300E67C8C /* Main.storyboard in Resources */,
 				11FB584A231C2147005DA4F0 /* CategoriesBlockCollectionViewCell.xib in Resources */,
+				4CD8B8A6232129D300D25CC3 /* Suppliers.storyboard in Resources */,
 				110295D022DCD3A400C6A54B /* Home.storyboard in Resources */,
 				847CDE8822CA19EE00E67C8C /* ProximaNova-Black.ttf in Resources */,
 			);
@@ -1894,6 +1913,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				112654B222D3AC6F00904FB5 /* CategoriesViewController.swift in Sources */,
+				4CD8B8AA23212A3100D25CC3 /* SuppliersCollectionViewCell.swift in Sources */,
 				114D1A0F22CBB165009205F3 /* CollectionCellConfigurator.swift in Sources */,
 				1101C66422E0C96C00416307 /* OptionCollectionViewCell.swift in Sources */,
 				11A8B15C22D7943D001B2661 /* WishlistCollectionViewCell.swift in Sources */,
