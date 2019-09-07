@@ -1,5 +1,5 @@
 //
-//  SuppliersViewModel.swift
+//  SupplierDetailsViewModel.swift
 //  Tatayaba
 //
 //  Created by Kareem Kareem on 9/2/19.
@@ -8,7 +8,7 @@
 
 import Moya
 
-class SuppliersViewModel {
+class SupplierDetailsViewModel {
     let apiClient = SuppliersAPIClient()
 
     private var productsList = [Product]()
@@ -46,6 +46,8 @@ class SuppliersViewModel {
 //            }
 //        }
     }
+
+
     //MARK:- Product data
     func product(at indexPath: IndexPath) -> Product {
         guard productsList.count > 0 else { return Product() }

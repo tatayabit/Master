@@ -1,5 +1,5 @@
 //
-//  SuppliersViewController.swift
+//  SuppliersListViewController.swift
 //  Tatayaba
 //
 //  Created by Kareem Kareem on 9/2/19.
@@ -8,38 +8,45 @@
 
 import UIKit
 
-class SuppliersViewController: BaseViewController,UICollectionViewDelegate,UICollectionViewDataSource,UISearchBarDelegate {
+class SuppliersListViewController: BaseViewController,UICollectionViewDelegate,UICollectionViewDataSource,UISearchBarDelegate {
 
     @IBOutlet weak var supplierCollection_View: UICollectionView!
     lazy var searchBar:UISearchBar = UISearchBar()
+    let viewModel = SuppliersListViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-    self.setupUI()
-        
-       
+        self.setupUI()
+        viewModel.onsuppliersListLoad = {
+            self.supplierCollection_View.reloadData()
+        }
+        viewModel.getSuppliersList()
     }
-        func setupUI() {
+
+    func setupUI() {
         self.addLeftBarButton()
         self.NavigationBarWithOutBackButton()
         supplierCollection_View.register(SuppliersCollectionViewCell.nib, forCellWithReuseIdentifier: SuppliersCollectionViewCell.identifier)
-        self.addSearchBarButton()
-            searchBar.isHidden = true
-            searchBar.searchBarStyle = UISearchBarStyle.prominent
-            searchBar.placeholder = " Search..."
-            searchBar.sizeToFit()
-            searchBar.delegate = self
-            searchBar.isTranslucent = false
-            searchBar.backgroundImage = UIImage()
-            searchBar.showsCancelButton = true
-            let cancelButtonAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white]
-            UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes(cancelButtonAttributes, for: .normal)
-
-            navigationItem.titleView = searchBar
+        setupSearchButton()
             
     }
     
-    
-    
+    // MARK:- SetupSearch Button
+    fileprivate func setupSearchButton() {
+        self.addSearchBarButton()
+        searchBar.isHidden = true
+        searchBar.searchBarStyle = UISearchBarStyle.prominent
+        searchBar.placeholder = " Search..."
+        searchBar.sizeToFit()
+        searchBar.delegate = self
+        searchBar.isTranslucent = false
+        searchBar.backgroundImage = UIImage()
+        searchBar.showsCancelButton = true
+        let cancelButtonAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white]
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes(cancelButtonAttributes, for: .normal)
+
+        navigationItem.titleView = searchBar
+    }
     
      func addSearchBarButton() {
         let button = UIButton(frame: CGRect(x:UIScreen.main.bounds.width-40 , y: 0, width: 20, height: 20))
@@ -69,7 +76,7 @@ class SuppliersViewController: BaseViewController,UICollectionViewDelegate,UICol
     
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return viewModel.suppliersList.count
     }
     
     
@@ -77,7 +84,7 @@ class SuppliersViewController: BaseViewController,UICollectionViewDelegate,UICol
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SuppliersCollectionViewCell.identifier, for: indexPath) as! SuppliersCollectionViewCell
-      
+            cell.configure(supplier: viewModel.supplier(at: indexPath))
         
         return cell
     }

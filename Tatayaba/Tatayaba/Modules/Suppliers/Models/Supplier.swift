@@ -33,7 +33,7 @@ struct Supplier {
     var name: String = ""
     var logo: SupplierLogo
 
-    init(supplierId: String = "", status: String = "", name: String = "", logo: SupplierLogo) {
+    init(supplierId: String = "", status: String = "", name: String = "", logo: SupplierLogo = SupplierLogo()) {
         self.supplierId = supplierId
         self.status = status
         self.name = name
@@ -45,7 +45,7 @@ extension Supplier: Codable {
     enum SupplierCodingKeys: String, CodingKey {
         case supplierId = "supplier_id"
         case status
-        case name = "shipping"
+        case name
         case logo
     }
 

@@ -32,8 +32,8 @@ extension BlocksEndpoint: TargetType {
     var path: String {
         switch self {
         case .getBlock(let blockId):
-            let version = "3.0"
-            return "\(version.urlEscaped)/blocks/\(blockId.urlEscaped)"
+            let version = "4.0"
+            return "\(version.urlEscaped)/TtmBlocks/\(blockId.urlEscaped)"
         }
     }
 
