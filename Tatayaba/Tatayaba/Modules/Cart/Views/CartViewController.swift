@@ -80,7 +80,7 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
 extension CartViewController {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return cart.productsCount
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
@@ -91,23 +91,23 @@ extension CartViewController {
         let cellIdentifier = "CartCellIdentifier"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CartTableViewCell
 
-//        let cartProduct = cart.product(at: indexPath)
-//        cell.configure(product: cartProduct.0, cartItem: cartProduct.1)
-//
-//        cell.onAddMoreClick = {
-//            self.addOneMoreAction(indexPath: indexPath)
-//            cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
-//        }
-//
-//        cell.onRemoveOneCountClick = {
-//            self.removeOneAction(indexPath: indexPath)
-//            cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
-//        }
-//
-//        cell.onRemoveItemClick = {
-//            self.removeItemAction(indexPath: indexPath)
-//            cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
-//        }
+        let cartProduct = cart.product(at: indexPath)
+        cell.configure(product: cartProduct.0, cartItem: cartProduct.1)
+
+        cell.onAddMoreClick = {
+            self.addOneMoreAction(indexPath: indexPath)
+            cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
+        }
+
+        cell.onRemoveOneCountClick = {
+            self.removeOneAction(indexPath: indexPath)
+            cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
+        }
+
+        cell.onRemoveItemClick = {
+            self.removeItemAction(indexPath: indexPath)
+            cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
+        }
         return cell
     }
 
