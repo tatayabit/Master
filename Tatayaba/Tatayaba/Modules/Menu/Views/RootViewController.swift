@@ -88,7 +88,7 @@ extension RootViewController: RootViewControllerDelegate {
     
     
     func SuppliersList() {
-        let controller = UIStoryboard(name: "Suppliers", bundle: Bundle.main).instantiateViewController(withIdentifier: "SuppliersViewController") as! SuppliersViewController
+        let controller = UIStoryboard(name: "Suppliers", bundle: Bundle.main).instantiateViewController(withIdentifier: "SuppliersViewController") as! SuppliersListViewController
         self.navigationController?.pushViewController(controller, animated: false)
     }
 
