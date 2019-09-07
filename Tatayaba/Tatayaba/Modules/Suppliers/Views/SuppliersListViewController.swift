@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SuppliersListViewController: BaseViewController,UICollectionViewDelegate,UICollectionViewDataSource,UISearchBarDelegate {
+class SuppliersListViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
 
     @IBOutlet weak var supplierCollection_View: UICollectionView!
     lazy var searchBar:UISearchBar = UISearchBar()
@@ -92,24 +92,9 @@ class SuppliersListViewController: BaseViewController,UICollectionViewDelegate,U
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //
-        return CGSize(width:(self.view.bounds.width - 34) / 3 , height:150)
-        
+        return CGSize(width: (self.view.bounds.width - 14) / 3, height: 150)
     }
-    
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -25,17 +25,17 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03I-0w-IYF">
-                        <rect key="frame" x="0.0" y="0.0" width="81" height="113"/>
+                        <rect key="frame" x="1.5" y="1.5" width="78" height="110"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BrandPage" translatesAutoresizingMaskIntoConstraints="NO" id="bAS-Co-YqM">
-                                <rect key="frame" x="15" y="28" width="51" height="50"/>
+                                <rect key="frame" x="15" y="28" width="48" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="GEw-gm-Uai"/>
-                                    <constraint firstAttribute="width" constant="51" id="wmb-3n-VIU"/>
+                                    <constraint firstAttribute="width" constant="48" id="wmb-3n-VIU"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="product" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gip-6U-zEH">
-                                <rect key="frame" x="0.0" y="86" width="81" height="12"/>
+                                <rect key="frame" x="2" y="83" width="74" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="geE-aL-Fq3"/>
                                 </constraints>
@@ -46,21 +46,26 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="gip-6U-zEH" secondAttribute="trailing" id="7fH-Nx-tKl"/>
-                            <constraint firstItem="gip-6U-zEH" firstAttribute="leading" secondItem="03I-0w-IYF" secondAttribute="leading" id="CzQ-T7-W8P"/>
+                            <constraint firstAttribute="trailing" secondItem="gip-6U-zEH" secondAttribute="trailing" constant="2" id="7fH-Nx-tKl"/>
+                            <constraint firstItem="gip-6U-zEH" firstAttribute="leading" secondItem="03I-0w-IYF" secondAttribute="leading" constant="2" id="CzQ-T7-W8P"/>
                             <constraint firstItem="bAS-Co-YqM" firstAttribute="top" secondItem="03I-0w-IYF" secondAttribute="top" constant="28" id="JeI-vE-p4q"/>
                             <constraint firstAttribute="trailing" secondItem="bAS-Co-YqM" secondAttribute="trailing" constant="15" id="gUF-yO-7cR"/>
                             <constraint firstAttribute="bottom" secondItem="gip-6U-zEH" secondAttribute="bottom" constant="15" id="phb-te-Cxm"/>
                             <constraint firstItem="bAS-Co-YqM" firstAttribute="leading" secondItem="03I-0w-IYF" secondAttribute="leading" constant="15" id="xoF-AH-wRl"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="03I-0w-IYF" secondAttribute="trailing" id="PGl-Py-Wzz"/>
-                <constraint firstItem="03I-0w-IYF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="S0b-jL-aRa"/>
-                <constraint firstItem="03I-0w-IYF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="eC5-bH-k3w"/>
-                <constraint firstAttribute="bottom" secondItem="03I-0w-IYF" secondAttribute="bottom" id="nAs-d8-5c4"/>
+                <constraint firstAttribute="trailing" secondItem="03I-0w-IYF" secondAttribute="trailing" constant="1.5" id="PGl-Py-Wzz"/>
+                <constraint firstItem="03I-0w-IYF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1.5" id="S0b-jL-aRa"/>
+                <constraint firstItem="03I-0w-IYF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1.5" id="eC5-bH-k3w"/>
+                <constraint firstAttribute="bottom" secondItem="03I-0w-IYF" secondAttribute="bottom" constant="1.5" id="nAs-d8-5c4"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="81" height="113"/>
