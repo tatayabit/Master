@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource {
+class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDelegate {
     let EditBtn = UIButton()
     let EditOkBtn = UIButton()
     var EditButton = String()
@@ -17,9 +17,9 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
     private let checkoutSegue = "checkout_segue"
 
 
-    @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var cart_Tableview: UITableView!
-    @IBOutlet weak var totalButton: UIButton!
+    @IBOutlet weak var totalPriceLabel: UILabel!
+    @IBOutlet weak var subtotalPriceLabel: UILabel!
 
     //MARK:- Init
     override func viewDidLoad() {
@@ -37,13 +37,7 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
     func setupUI() {
          self.NavigationBarWithOutBackButton()
          self.addLeftBarButton()
-        // self.collectionView.register(RecommendedCollectionViewCell.nib, forCellWithReuseIdentifier: RecommendedCollectionViewCell.identifier)
-
     }
-
-   
-
-  
 
     //MARK:- IBActions
     @IBAction func checkoutAction(_ sender: Any) {
@@ -54,25 +48,19 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
     func addOneMoreAction(indexPath: IndexPath) {
         let cartProduct = cart.product(at: indexPath)
         cart.increaseCount(cartItem: cartProduct.1)
-//        cart_Tableview.reloadRows(at: [indexPath], with: .automatic)
-        totalButton.setTitle(cart.subtotalPrice, for: .normal)
-
+        subtotalPriceLabel.text = cart.subtotalPrice
     }
 
     func removeOneAction(indexPath: IndexPath) {
         let cartProduct = cart.product(at: indexPath)
         cart.decreaseCount(cartItem: cartProduct.1)
-//        cart_Tableview.reloadRows(at: [indexPath], with: .automatic)
-        totalButton.setTitle(cart.subtotalPrice, for: .normal)
-
+        subtotalPriceLabel.text = cart.subtotalPrice
     }
 
     func removeItemAction(indexPath: IndexPath) {
         let cartProduct = cart.product(at: indexPath)
         cart.removeProduct(cartItem: cartProduct.1)
-        totalButton.setTitle(cart.subtotalPrice, for: .normal)
-
-//        cart_Tableview.reloadRows(at: [indexPath], with: .automatic)
+        subtotalPriceLabel.text = cart.subtotalPrice
     }
 
 }
@@ -112,43 +100,6 @@ extension CartViewController {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-    }
-}
-/// Collection View
-extension CartViewController{
-
-    func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
-
-        return 10
-}
-
-
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendedCollectionViewCell.identifier, for: indexPath) as! RecommendedCollectionViewCell
-
-
-        return cell
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 02, left: 0, bottom: 07, right: 0)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-
-        return 10
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
 
     }
 }
