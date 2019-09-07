@@ -75,11 +75,10 @@ class ProductDetailsViewController: BaseViewController {
     }
 
     @IBAction func Add_Cart(_ sender: Any) {
-        
+
+        addToCartAction()
         let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
         self.navigationController?.pushViewController(controller, animated: false)
-        
-        
     }
     //MARK:- IBActions
     func addToCartAction() {
