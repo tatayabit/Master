@@ -67,7 +67,7 @@ class BannersCarouselView: UIView, UICollectionViewDelegate, UICollectionViewDat
 
         guard let block = block else { return cell }
         if bannerType == .product {
-            cell.configure(block.products[indexPath.row])
+            cell.configure(block.products[indexPath.row].fullDetails)
         } else {
             cell.configure(block.banners[indexPath.row])
         }

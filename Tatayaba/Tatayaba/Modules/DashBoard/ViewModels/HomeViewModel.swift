@@ -22,6 +22,9 @@ class HomeViewModel {
     var topBannersBlock: Block = Block()
     var squareBlock: Block = Block()
 
+    var productsBlock: Block = Block()
+
+
     /// This closure is being called once the categories api fetch
     var onCategoriesListLoad: (() -> ())?
 
@@ -30,6 +33,9 @@ class HomeViewModel {
 
     /// This closure is being called once the square block api fetch
     var onSquareBlockLoad: (() -> ())?
+
+    /// This closure is being called once the products block api fetch
+    var onProductsBlockLoad: (() -> ())?
 
 
     var onSuppliersBlockLoad: (() -> ())?
@@ -41,10 +47,10 @@ class HomeViewModel {
         loadTopBannerApi()
         getSquaredBlock()
         getAllSuppliers()
+        getProductBlock()
     }
 
     //MARK:- Api
-
     func getAllCategories() {
         productsApiClient.getAllCategories { result in
             switch result {
@@ -116,6 +122,25 @@ class HomeViewModel {
 
                 if let newBannersArrived = self.onSquareBlockLoad {
                     newBannersArrived()
+                }
+            case .failure(let error):
+                print("the error \(error)")
+            }
+        }
+    }
+
+    func getProductBlock() {
+        // squaredBlock
+        blocksApiClient.getBlock(blockId: "268") { result in
+            // 258
+            switch result {
+            case .success(let responseB44):
+                guard let block = responseB44 else { return }
+                self.productsBlock = block
+                print(block)
+
+                if let newProductsArrived = self.onProductsBlockLoad {
+                    newProductsArrived()
                 }
             case .failure(let error):
                 print("the error \(error)")

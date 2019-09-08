@@ -18,8 +18,9 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
-    func configure(_ banner: BlockProduct) {
-        bannerImageView.sd_setImage(with: URL(string: banner.imagePair.detailed.imagePath), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
+    func configure(_ product: Product) {
+
+        bannerImageView.sd_setImage(with: URL(string: product.mainPair.detailedPair.imageUrl), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
     }
 
 }

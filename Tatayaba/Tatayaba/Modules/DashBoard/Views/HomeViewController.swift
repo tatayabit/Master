@@ -20,7 +20,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     private var viewModel = HomeViewModel()
 
     let squaredBlockView: BannersBlocksView = .fromNib()
-    let bannersCarouselView: BannersCarouselView = .fromNib()
+    let productsBlocklView: ProductsBlockView = .fromNib()
     let fullScreenBannersView: FullScreenBannersView = .fromNib()
     let categoriesBlockView: CategoriesBlockView = .fromNib()
     let suppliersBlockView: SuppliersBlockView = .fromNib()
@@ -51,9 +51,9 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         squaredBlockView.translatesAutoresizingMaskIntoConstraints = false
         squaredBlockView.heightAnchor.constraint(equalToConstant: 280).isActive = true
 
-        scrollView.stackView.addArrangedSubview(bannersCarouselView)
-        bannersCarouselView.translatesAutoresizingMaskIntoConstraints = false
-        bannersCarouselView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        scrollView.stackView.addArrangedSubview(productsBlocklView)
+        productsBlocklView.translatesAutoresizingMaskIntoConstraints = false
+        productsBlocklView.heightAnchor.constraint(equalToConstant: 200).isActive = true
 
 
         scrollView.stackView.addArrangedSubview(suppliersBlockView)
@@ -70,10 +70,9 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     }
 
 
-    fileprivate func loadBannersCarouselViewData() {
-        bannersCarouselView.bannerType = .product
-        bannersCarouselView.block = viewModel.squareBlock
-        bannersCarouselView.loadData()
+    fileprivate func loadProductsBlockViewData() {
+        productsBlocklView.block = viewModel.productsBlock
+        productsBlocklView.loadData()
     }
 
     fileprivate func loadFullScreenBannersViewData() {
@@ -107,6 +106,10 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
 
         viewModel.onSuppliersBlockLoad = {
             self.loadSuppliersBlockViewData()
+        }
+
+        viewModel.onProductsBlockLoad = {
+            self.loadProductsBlockViewData()
         }
     }
 
