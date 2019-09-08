@@ -26,6 +26,8 @@
 		11069C3B2323A35F0093D6FF /* SuppliersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11069C3A2323A35F0093D6FF /* SuppliersListViewModel.swift */; };
 		11069C3D2323A43A0093D6FF /* SuppliersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11069C3C2323A43A0093D6FF /* SuppliersListViewController.swift */; };
 		11069C3F2323DB4E0093D6FF /* TITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11069C3E2323DB4E0093D6FF /* TITextField.swift */; };
+		11069C412323FFA60093D6FF /* ProductMainPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11069C402323FFA50093D6FF /* ProductMainPair.swift */; };
+		11069C432323FFD70093D6FF /* ProductDetailedPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11069C422323FFD70093D6FF /* ProductDetailedPair.swift */; };
 		1107DE1023200CAC000F8398 /* BannerMainPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1107DE0F23200CAC000F8398 /* BannerMainPair.swift */; };
 		11081EEA22DB823200B68EA5 /* Static.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11081EE922DB823200B68EA5 /* Static.storyboard */; };
 		11081EEC22DB824600B68EA5 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11081EEB22DB824600B68EA5 /* AboutUsViewController.swift */; };
@@ -234,6 +236,8 @@
 		11069C3A2323A35F0093D6FF /* SuppliersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuppliersListViewModel.swift; sourceTree = "<group>"; };
 		11069C3C2323A43A0093D6FF /* SuppliersListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuppliersListViewController.swift; sourceTree = "<group>"; };
 		11069C3E2323DB4E0093D6FF /* TITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TITextField.swift; sourceTree = "<group>"; };
+		11069C402323FFA50093D6FF /* ProductMainPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductMainPair.swift; sourceTree = "<group>"; };
+		11069C422323FFD70093D6FF /* ProductDetailedPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailedPair.swift; sourceTree = "<group>"; };
 		1107DE0F23200CAC000F8398 /* BannerMainPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerMainPair.swift; sourceTree = "<group>"; };
 		11081EE922DB823200B68EA5 /* Static.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Static.storyboard; sourceTree = "<group>"; };
 		11081EEB22DB824600B68EA5 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
@@ -657,6 +661,8 @@
 			isa = PBXGroup;
 			children = (
 				114D1A1722CBB33E009205F3 /* Product.swift */,
+				11069C402323FFA50093D6FF /* ProductMainPair.swift */,
+				11069C422323FFD70093D6FF /* ProductDetailedPair.swift */,
 				112654AF22D3A2B900904FB5 /* Category.swift */,
 			);
 			path = Models;
@@ -1993,6 +1999,7 @@
 				847CDE7A22CA130F00E67C8C /* ColorDef.swift in Sources */,
 				116C936422F0930300921893 /* OrdersAPIClient.swift in Sources */,
 				11945BCA22F0B0C6000F08DC /* ShippingAPIClient.swift in Sources */,
+				11069C412323FFA60093D6FF /* ProductMainPair.swift in Sources */,
 				11B2C41C22D64F0A00EAD9C6 /* ProductDetailsViewModel.swift in Sources */,
 				841CE31022DCC33600A47FA0 /* MessageModel.swift in Sources */,
 				11FB5852231C2EC2005DA4F0 /* ProductsBlockCollectionViewCell.swift in Sources */,
@@ -2010,6 +2017,7 @@
 				11F52FB922CA7D92000F0D85 /* SignUpViewcontroller.swift in Sources */,
 				84843C1522D08DB000702E40 /* BaseTableViewController.swift in Sources */,
 				11FEB4D822DF822A00F2E9B8 /* ProductDetailsViewController.swift in Sources */,
+				11069C432323FFD70093D6FF /* ProductDetailedPair.swift in Sources */,
 				84BC089822DC7D0D00C6180E /* CartViewController.swift in Sources */,
 				116C939022F0954500921893 /* PaymentEndpoint.swift in Sources */,
 				112654AE22D2693600904FB5 /* ProductsEndpoint.swift in Sources */,

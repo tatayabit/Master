@@ -22,7 +22,7 @@ class ProductsBlockView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     weak var delegate: ProductsBlockViewProtocol?
 
     var block: Block?
-    var bannerType: BannerType = .banner
+//    var bannerType: BannerType = .banner
 
     //MARK:- Init
     override func awakeFromNib() {
@@ -38,7 +38,7 @@ class ProductsBlockView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     }
 
     private func setupUI() {
-        bannersCollectionView.register(BannerBlockCollectionViewCell.nib, forCellWithReuseIdentifier: BannerBlockCollectionViewCell.identifier)
+        bannersCollectionView.register(ProductsBlockCollectionViewCell.nib, forCellWithReuseIdentifier: ProductsBlockCollectionViewCell.identifier)
         bannersCollectionView.dataSource = self
         bannersCollectionView.delegate = self
     }
@@ -54,21 +54,16 @@ class ProductsBlockView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         guard let block = block else { return 0 }
-        if bannerType == .product {
-            return block.products.count
-        }
-        return block.banners.count
+        return block.products.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BannerBlockCollectionViewCell.identifier, for: indexPath) as! BannerBlockCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductsBlockCollectionViewCell.identifier, for: indexPath) as! ProductsBlockCollectionViewCell
 
         guard let block = block else { return cell }
-        if bannerType == .product {
-            cell.configure(block.products[indexPath.row])
-        }
+        cell.configure(block.products[indexPath.row].fullDetails)
 
         return cell
     }
