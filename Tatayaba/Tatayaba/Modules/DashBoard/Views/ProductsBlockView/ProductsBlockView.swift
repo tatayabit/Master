@@ -10,6 +10,7 @@ import UIKit
 
 protocol ProductsBlockViewProtocol: class {
     func didSelectProduct(at indexPath: IndexPath)
+//    func didAddToCart(at indexPath: IndexPath)
 }
 
 class ProductsBlockView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -69,7 +70,7 @@ class ProductsBlockView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150, height: 170)
+        return CGSize(width: UIScreen.main.bounds.size.width / 2.4, height: 170)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

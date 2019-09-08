@@ -165,10 +165,10 @@ class HomeViewModel {
 
 
     //MARK:- ProductDetails ViewModel
-//    func productDetailsViewModel(at indexPath: IndexPath) -> ProductDetailsViewModel {
-//        let productViewModel = ProductDetailsViewModel(product: featuredProduct(at: indexPath))
-//        return productViewModel
-//    }
+    func productDetailsViewModel(at indexPath: IndexPath) -> ProductDetailsViewModel {
+        let productViewModel = ProductDetailsViewModel(product: productsBlock.products[indexPath.row].fullDetails)
+        return productViewModel
+    }
 
     //MARK:- ProductsListViewModel
     func productsListViewModel(indexPath: IndexPath) -> ProductsListViewModel {

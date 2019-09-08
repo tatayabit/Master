@@ -31,7 +31,7 @@ extension ProductsResult: Codable {
 struct Product {
     var name: String = ""
     var description: String = ""
-    var imageUrl: String
+//    var imageUrl: String
     var offerPrices: Float = 0.00
     var price: String = ""
     var inWishlist: Bool = false
@@ -41,10 +41,10 @@ struct Product {
     var mainPair: ProductMainPair
 
 
-    init(name: String = "" , description: String = "", imageUrl: String = "", offerPrices: Float = 0.00, price: String = "", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair()) {
+    init(name: String = "" , description: String = "", offerPrices: Float = 0.00, price: String = "", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair()) {
         self.name = name
         self.description = description
-        self.imageUrl = imageUrl
+//        self.imageUrl = imageUrl
         self.offerPrices = offerPrices
         self.price = price
         self.inWishlist = inWishlist
@@ -72,7 +72,7 @@ extension Product: Codable {
 
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
         description = try container.decodeIfPresent(String.self, forKey: .description) ?? ""
-        imageUrl = try container.decodeIfPresent(String.self, forKey: .imageUrl) ?? ""
+//        imageUrl = try container.decodeIfPresent(String.self, forKey: .imageUrl) ?? ""
         offerPrices = try container.decodeIfPresent(Float.self, forKey: .offerPrices) ?? 0.00
         price = try container.decodeIfPresent(String.self, forKey: .price) ?? ""
         inWishlist = try container.decodeIfPresent(Bool.self, forKey: .inWishlist) ?? false
@@ -95,7 +95,7 @@ extension Product: Codable {
         
         try container.encodeIfPresent(name, forKey: .name)
         try container.encodeIfPresent(description, forKey: .description)
-        try container.encodeIfPresent(imageUrl, forKey: .imageUrl)
+//        try container.encodeIfPresent(imageUrl, forKey: .imageUrl)
         try container.encodeIfPresent(offerPrices, forKey: .offerPrices)
         try container.encodeIfPresent(price, forKey: .price)
         try container.encodeIfPresent(inWishlist, forKey: .inWishlist)

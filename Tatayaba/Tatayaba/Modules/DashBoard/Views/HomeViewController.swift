@@ -8,8 +8,7 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController, BannersBlocksViewProtocol, CategoriesBlockViewProtocol {
-
+class HomeViewController: BaseViewController, BannersBlocksViewProtocol, CategoriesBlockViewProtocol, ProductsBlockViewProtocol {
 
     private let productDetailsSegue = "product_details_segue"
     private let categoryProductsSegue = "category_products_segue"
@@ -51,14 +50,15 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         squaredBlockView.translatesAutoresizingMaskIntoConstraints = false
         squaredBlockView.heightAnchor.constraint(equalToConstant: 280).isActive = true
 
+        productsBlocklView.delegate = self
         scrollView.stackView.addArrangedSubview(productsBlocklView)
         productsBlocklView.translatesAutoresizingMaskIntoConstraints = false
-        productsBlocklView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        productsBlocklView.heightAnchor.constraint(equalToConstant: 235).isActive = true
 
 
         scrollView.stackView.addArrangedSubview(suppliersBlockView)
         suppliersBlockView.translatesAutoresizingMaskIntoConstraints = false
-        suppliersBlockView.heightAnchor.constraint(equalToConstant: 115).isActive = true
+        suppliersBlockView.heightAnchor.constraint(equalToConstant: 145).isActive = true
 
     }
 
@@ -131,6 +131,11 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     func didSelectBannerBlocks(at indexPath: IndexPath) {
         viewModel.parseDeeplink(at: indexPath)
     }
+
+    //MARK:- ProductsBlockViewProtocol
+    func didSelectProduct(at indexPath: IndexPath) {
+        performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
+    }
 }
 
 extension HomeViewController {
@@ -139,9 +144,9 @@ extension HomeViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == productDetailsSegue {
             let productDetailsVC = segue.destination as! ProductDetailsViewController
-//            if let indexPath = sender as? IndexPath {
-//                productDetailsVC.viewModel = viewModel.productDetailsViewModel(at: indexPath)
-//            }
+            if let indexPath = sender as? IndexPath {
+                productDetailsVC.viewModel = viewModel.productDetailsViewModel(at: indexPath)
+            }
         }
 
         if segue.identifier == categoryProductsSegue {
