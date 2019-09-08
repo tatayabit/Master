@@ -76,10 +76,18 @@ extension Product: Codable {
         offerPrices = try container.decodeIfPresent(Float.self, forKey: .offerPrices) ?? 0.00
         price = try container.decodeIfPresent(String.self, forKey: .price) ?? ""
         inWishlist = try container.decodeIfPresent(Bool.self, forKey: .inWishlist) ?? false
-        identifier = try container.decodeIfPresent(String.self, forKey: .identifier) ?? ""
+//        identifier = try container.decodeIfPresent(String.self, forKey: .identifier) ?? ""
         status = try container.decodeIfPresent(String.self, forKey: .status) ?? "H"
         mainPair = try container.decodeIfPresent(ProductMainPair.self, forKey: .mainPair) ?? ProductMainPair()
 
+        var idVal = ""
+        if let identifierString = try? container.decode(String.self, forKey: .identifier) {
+            idVal = identifierString
+        } else if let identifierInt = try? container.decode(Int.self, forKey: .identifier) {
+            idVal = "\(identifierInt)"
+        }
+        identifier = idVal
+        
     }
 
     func encode(to encoder: Encoder) throws {
