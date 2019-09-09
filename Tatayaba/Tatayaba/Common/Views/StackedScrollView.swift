@@ -31,7 +31,7 @@ class StackedScrollView: UIScrollView {
         // 2. Content is a stack view
         stackView.axis = .vertical
         stackView.alignment = .fill
-        stackView.spacing = 20
+        stackView.spacing = 400
         stackView.distribution = .fill
         addSubview(stackView)
 
