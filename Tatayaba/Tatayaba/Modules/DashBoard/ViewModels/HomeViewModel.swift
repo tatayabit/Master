@@ -164,6 +164,12 @@ class HomeViewModel {
     }
 
 
+    // MARK:- AddToCart
+    func addToCart(product: Product)  {
+        let cart = Cart.shared
+        cart.addProduct(product: product)
+    }
+
     //MARK:- ProductDetails ViewModel
     func productDetailsViewModel(at indexPath: IndexPath) -> ProductDetailsViewModel {
         let productViewModel = ProductDetailsViewModel(product: productsBlock.products[indexPath.row].fullDetails)

@@ -10,10 +10,10 @@ import UIKit
 
 protocol ProductsBlockViewProtocol: class {
     func didSelectProduct(at indexPath: IndexPath)
-//    func didAddToCart(at indexPath: IndexPath)
+    func didAddToCart(product: Product)
 }
 
-class ProductsBlockView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class ProductsBlockView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ProductsBlockCollectionViewCellDelegate {
 
     @IBOutlet weak var bannersCollectionView: UICollectionView!
 
@@ -64,8 +64,8 @@ class ProductsBlockView: UIView, UICollectionViewDelegate, UICollectionViewDataS
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductsBlockCollectionViewCell.identifier, for: indexPath) as! ProductsBlockCollectionViewCell
 
         guard let block = block else { return cell }
-        cell.configure(block.products[indexPath.row].fullDetails)
-
+        cell.configure(block.products[indexPath.row].fullDetails, indexPath: indexPath)
+        cell.delegate = self
         return cell
     }
 
@@ -76,6 +76,15 @@ class ProductsBlockView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let delegate = delegate {
             delegate.didSelectProduct(at: indexPath)
+        }
+    }
+
+    // MARK:- ProductsBlockCollectionViewCellDelegate
+    func didSelectAddToCartCell(indexPath: IndexPath) {
+        if let delegate = delegate {
+            guard let block = block else { return }
+            let product = block.products[indexPath.row].fullDetails
+            delegate.didAddToCart(product: product)
         }
     }
 }

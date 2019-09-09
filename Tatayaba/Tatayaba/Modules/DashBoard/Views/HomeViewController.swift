@@ -116,8 +116,8 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     // MARK:- SetupUI
     func setupUI() {
         self.scrollView.stackView.spacing = 10
-        self.scrollView.stackView.backgroundColor = .clear
-        self.scrollView.backgroundColor = .clear
+        self.scrollView.stackView.backgroundColor = UIColor(hexString: "F3F3F3")
+        self.scrollView.backgroundColor = UIColor(hexString: "F3F3F3")
 
         self.addLeftBarButton()
         self.NavigationBarWithOutBackButton()
@@ -135,6 +135,11 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     //MARK:- ProductsBlockViewProtocol
     func didSelectProduct(at indexPath: IndexPath) {
         performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
+    }
+
+    func didAddToCart(product: Product) {
+        // addProdcut to cart
+        viewModel.addToCart(product: product)
     }
 }
 

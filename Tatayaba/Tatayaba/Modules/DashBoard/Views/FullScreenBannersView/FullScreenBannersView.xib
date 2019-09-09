@@ -18,7 +18,7 @@
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0H4-HS-zU1">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="150" id="iga-JV-LMc"/>
                     </constraints>
@@ -30,7 +30,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="AWw-Gj-MaF" firstAttribute="trailing" secondItem="0H4-HS-zU1" secondAttribute="trailing" id="2nD-Gz-Oq0"/>
                 <constraint firstItem="0H4-HS-zU1" firstAttribute="leading" secondItem="AWw-Gj-MaF" secondAttribute="leading" id="f3O-K2-QIg"/>
