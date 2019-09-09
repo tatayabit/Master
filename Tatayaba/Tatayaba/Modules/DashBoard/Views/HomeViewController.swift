@@ -136,6 +136,11 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     func didSelectProduct(at indexPath: IndexPath) {
         performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
     }
+
+    func didAddToCart(product: Product) {
+        // addProdcut to cart
+        viewModel.addToCart(product: product)
+    }
 }
 
 extension HomeViewController {

@@ -30,6 +30,9 @@
                         <color key="backgroundColor" red="0.13333333333333333" green="0.10980392156862745" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <state key="normal" title="ADD TO CART"/>
+                        <connections>
+                            <action selector="addToCartAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="lbX-Hp-acW"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ndg-qA-zgg">
                         <rect key="frame" x="126" y="144" width="40" height="30"/>
