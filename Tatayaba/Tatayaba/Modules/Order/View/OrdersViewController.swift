@@ -26,11 +26,11 @@ class OrdersViewController: BaseViewController,UITableViewDelegate,UITableViewDa
 
     func setupListners() {
 
-       // viewModel.onOrdersListLoad = {
+        viewModel.onOrdersListLoad = {
             self.tableView.delegate = self
             self.tableView.dataSource = self
             self.tableView.reloadData()
-       // }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,7 +61,7 @@ extension OrdersViewController{
         let cellIdentifier = "OrderTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! OrderTableViewCell
 
-        //cell.configure(order: viewModel.order(at: indexPath))
+        cell.configure(order: viewModel.order(at: indexPath))
 
         return cell
     }
