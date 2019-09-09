@@ -18,6 +18,8 @@ class ProductDetailsView: UIView, UICollectionViewDelegate, UICollectionViewData
 
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
 
     let imagesArray = ["ProductImg",
                      "ADD",
@@ -53,6 +55,8 @@ class ProductDetailsView: UIView, UICollectionViewDelegate, UICollectionViewData
         guard let viewModel = viewModel else { return }
         descriptionLabel.text = viewModel.description
         quantityLabel.text = String(viewModel.selectedQuantity)
+        nameLabel.text = viewModel.name
+        priceLabel.text = viewModel.price
     }
 
     //MARK:- CollectionViewDelegate

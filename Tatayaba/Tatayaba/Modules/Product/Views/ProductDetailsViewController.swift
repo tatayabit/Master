@@ -26,8 +26,10 @@ class ProductDetailsViewController: BaseViewController {
 
     //MARK:- Setup StackedScrollView
     func addSubViews() {
+        scrollView.backgroundColor = UIColor(hexString: "#E9EBEC")
+        scrollView.stackView.backgroundColor = UIColor(hexString: "#E9EBEC")
         setupProductDetailsView()
-      //  setupOptionsView()
+        setupOptionsView()
        // setupPriceButton()
     }
 
@@ -38,7 +40,7 @@ class ProductDetailsViewController: BaseViewController {
         productDetailsView.loadData()
         scrollView.stackView.addArrangedSubview(productDetailsView)
         productDetailsView.translatesAutoresizingMaskIntoConstraints = false
-        productDetailsView.heightAnchor.constraint(equalToConstant: 376).isActive = true
+        productDetailsView.heightAnchor.constraint(equalToConstant: 415).isActive = true
     }
 
     fileprivate func setupOptionsView() {
@@ -46,7 +48,7 @@ class ProductDetailsViewController: BaseViewController {
 //        productOptionsView.loadData()
         scrollView.stackView.addArrangedSubview(productOptionsView)
         productOptionsView.translatesAutoresizingMaskIntoConstraints = false
-        productOptionsView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        productOptionsView.heightAnchor.constraint(equalToConstant: 54).isActive = true
     }
 
     fileprivate func setupPriceButton() {

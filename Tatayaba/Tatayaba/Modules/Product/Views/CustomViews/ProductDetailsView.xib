@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Myriad Pro Regular.ttf">
+            <string>MyriadPro-Regular</string>
+        </array>
         <array key="ProximaNova-Extrabld.ttf">
             <string>ProximaNova-Extrabld</string>
         </array>
@@ -21,7 +24,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProductDetailsView" customModule="Tatayaba" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="376"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="415"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rxM-bX-aPE">
@@ -38,7 +41,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMr-Mb-0Vi" userLabel="QuantityView">
-                    <rect key="frame" x="315" y="263" width="50" height="96"/>
+                    <rect key="frame" x="315" y="307" width="50" height="96"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEk-bs-RUd">
                             <rect key="frame" x="7.5" y="8" width="35" height="35"/>
@@ -95,7 +98,7 @@
                     <state key="normal" image="like_active_icon"/>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XpC-rN-nRc" userLabel="DescriptionView">
-                    <rect key="frame" x="12" y="263" width="294" height="96"/>
+                    <rect key="frame" x="12" y="307" width="294" height="96"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Tatayab - Where there's a scent for every mood. Your online platform for perfume, home fragrances, bukhour and more." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgi-v1-9yn">
                             <rect key="frame" x="8" y="6" width="267" height="82"/>
@@ -105,7 +108,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.91340368986129761" green="0.92158454656600952" blue="0.92563194036483765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.9137254901960784" green="0.92156862745098034" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="96" id="WWw-DB-FfR"/>
                     </constraints>
@@ -114,20 +117,41 @@
                     <rect key="frame" x="12" y="10" width="30" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom box - Tatera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xm8-kC-h6T">
+                    <rect key="frame" x="12" y="263" width="351" height="13"/>
+                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
+                    <color key="textColor" red="0.13333333333333333" green="0.10980392156862745" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f05-yL-kOf">
+                    <rect key="frame" x="12" y="282" width="351" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="VM0-h8-7PK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
+                    <color key="textColor" red="0.19607843137254902" green="0.22745098039215686" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="f05-yL-kOf" firstAttribute="leading" secondItem="Xm8-kC-h6T" secondAttribute="leading" id="0A9-O0-Hgy"/>
                 <constraint firstItem="DMr-Mb-0Vi" firstAttribute="trailing" secondItem="rxM-bX-aPE" secondAttribute="trailing" constant="-10" id="1le-Ci-mIJ"/>
+                <constraint firstItem="f05-yL-kOf" firstAttribute="trailing" secondItem="Xm8-kC-h6T" secondAttribute="trailing" id="B7C-oA-xML"/>
                 <constraint firstItem="XpC-rN-nRc" firstAttribute="top" secondItem="DMr-Mb-0Vi" secondAttribute="top" id="BiT-t5-VUI"/>
                 <constraint firstItem="DMr-Mb-0Vi" firstAttribute="leading" secondItem="XpC-rN-nRc" secondAttribute="trailing" constant="9" id="EFF-9t-Fjm"/>
                 <constraint firstItem="AdE-Rc-My4" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="Hzy-Yl-GYY"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AdE-Rc-My4" secondAttribute="trailing" constant="15" id="LxB-SS-e4k"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="rxM-bX-aPE" secondAttribute="trailing" id="N1o-tl-Ejn"/>
+                <constraint firstItem="Xm8-kC-h6T" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="QZe-sv-V7D"/>
                 <constraint firstItem="rxM-bX-aPE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="U3s-Rk-EGA"/>
                 <constraint firstItem="XpC-rN-nRc" firstAttribute="bottom" secondItem="DMr-Mb-0Vi" secondAttribute="bottom" id="YfE-7q-wTa"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Xm8-kC-h6T" secondAttribute="trailing" constant="12" id="aPk-Z3-l4M"/>
+                <constraint firstItem="f05-yL-kOf" firstAttribute="top" secondItem="Xm8-kC-h6T" secondAttribute="bottom" constant="6" id="aqs-qg-IQT"/>
                 <constraint firstItem="XpC-rN-nRc" firstAttribute="leading" secondItem="rxM-bX-aPE" secondAttribute="leading" constant="12" id="gc6-vl-v9T"/>
-                <constraint firstItem="XpC-rN-nRc" firstAttribute="top" secondItem="rxM-bX-aPE" secondAttribute="bottom" constant="8" id="gh3-he-eTA"/>
+                <constraint firstItem="XpC-rN-nRc" firstAttribute="top" secondItem="f05-yL-kOf" secondAttribute="bottom" constant="10" id="ov0-N6-Tfg"/>
                 <constraint firstItem="rxM-bX-aPE" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="qJS-2G-3LT"/>
+                <constraint firstItem="Xm8-kC-h6T" firstAttribute="top" secondItem="rxM-bX-aPE" secondAttribute="bottom" constant="8" id="wwG-5h-EhU"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -135,11 +159,13 @@
                 <outlet property="descriptionLabel" destination="sgi-v1-9yn" id="OjZ-xK-gwb"/>
                 <outlet property="downButton" destination="urP-lN-lRo" id="sk0-q1-NJ2"/>
                 <outlet property="favoriteButton" destination="AdE-Rc-My4" id="hTH-Cs-LXY"/>
+                <outlet property="nameLabel" destination="Xm8-kC-h6T" id="ySm-up-wVZ"/>
+                <outlet property="priceLabel" destination="f05-yL-kOf" id="qEh-eY-BXJ"/>
                 <outlet property="productCollectionView" destination="rxM-bX-aPE" id="sWW-WW-Zmw"/>
                 <outlet property="quantityLabel" destination="y3j-dq-zNs" id="pAt-7a-SCM"/>
                 <outlet property="upButton" destination="WEk-bs-RUd" id="9SE-mB-ndM"/>
             </connections>
-            <point key="canvasLocation" x="138.40000000000001" y="0.0"/>
+            <point key="canvasLocation" x="138.40000000000001" y="21.139430284857571"/>
         </view>
     </objects>
     <resources>
