@@ -24,14 +24,14 @@ class Cart {
             let cartItem = self.cartItem(for: product)
             increaseCount(cartItem: cartItem)
         } else {
-            let productModel = CartItem(productId: product.identifier, productName: product.name)
+            let productModel = CartItem(productId: String(product.identifier), productName: product.name)
             products.append(productModel)
             productsArr.append(product)
         }
     }
 
     func cartItem(for product: Product) -> CartItem {
-        return products.filter({ $0.productId == product.identifier }).first ?? CartItem(productId: product.identifier, productName: product.name)
+        return products.filter({ $0.productId == String(product.identifier) }).first ?? CartItem(productId: String(product.identifier), productName: product.name)
     }
 
     func removeProduct(cartItem: CartItem) {
@@ -76,7 +76,7 @@ class Cart {
 
     //MARK:- Private functions
     private func productExistedInCart(product: Product) -> Bool {
-        let existed = products.contains(where: { $0.productId == product.identifier})
+        let existed = products.contains(where: { $0.productId == String(product.identifier) })
         return existed
     }
 }

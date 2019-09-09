@@ -69,7 +69,7 @@ class FullScreenBannersView: UIView, UICollectionViewDelegate, UICollectionViewD
 
         guard let block = block else { return cell }
         if bannerType == .product {
-            cell.configure(block.products[indexPath.row])
+            cell.configure(block.products[indexPath.row].fullDetails)
         } else {
             cell.configure(block.banners[indexPath.row])
         }

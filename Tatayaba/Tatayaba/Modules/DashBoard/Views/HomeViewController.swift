@@ -8,8 +8,7 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController, BannersBlocksViewProtocol, CategoriesBlockViewProtocol {
-
+class HomeViewController: BaseViewController, BannersBlocksViewProtocol, CategoriesBlockViewProtocol, ProductsBlockViewProtocol {
 
     private let productDetailsSegue = "product_details_segue"
     private let categoryProductsSegue = "category_products_segue"
@@ -19,8 +18,8 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
 
     private var viewModel = HomeViewModel()
 
-    let bannersBlockView: BannersBlocksView = .fromNib()
-    let bannersCarouselView: BannersCarouselView = .fromNib()
+    let squaredBlockView: BannersBlocksView = .fromNib()
+    let productsBlocklView: ProductsBlockView = .fromNib()
     let fullScreenBannersView: FullScreenBannersView = .fromNib()
     let categoriesBlockView: CategoriesBlockView = .fromNib()
     let suppliersBlockView: SuppliersBlockView = .fromNib()
@@ -46,33 +45,34 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         categoriesBlockView.heightAnchor.constraint(equalToConstant: 115).isActive = true
 
 
-        bannersBlockView.delegate = self
-        scrollView.stackView.addArrangedSubview(bannersBlockView)
-        bannersBlockView.translatesAutoresizingMaskIntoConstraints = false
-        bannersBlockView.heightAnchor.constraint(equalToConstant: 280).isActive = true
-        bannersBlockView.titleLabel.text = "Trending on Tatayab"
+        squaredBlockView.delegate = self
+        scrollView.stackView.addArrangedSubview(squaredBlockView)
+        squaredBlockView.translatesAutoresizingMaskIntoConstraints = false
+        squaredBlockView.heightAnchor.constraint(equalToConstant: 280).isActive = true
 
-        scrollView.stackView.addArrangedSubview(bannersCarouselView)
-        bannersCarouselView.translatesAutoresizingMaskIntoConstraints = false
-        bannersCarouselView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        productsBlocklView.delegate = self
+        scrollView.stackView.addArrangedSubview(productsBlocklView)
+        productsBlocklView.translatesAutoresizingMaskIntoConstraints = false
+        productsBlocklView.heightAnchor.constraint(equalToConstant: 235).isActive = true
 
 
         scrollView.stackView.addArrangedSubview(suppliersBlockView)
         suppliersBlockView.translatesAutoresizingMaskIntoConstraints = false
-        suppliersBlockView.heightAnchor.constraint(equalToConstant: 115).isActive = true
+        suppliersBlockView.heightAnchor.constraint(equalToConstant: 145).isActive = true
 
     }
 
-    fileprivate func loadBannersBlockViewData() {
-        bannersBlockView.block = viewModel.topBannersBlock
-        bannersBlockView.loadData()
+    fileprivate func loadSquaredBlockViewData() {
+        squaredBlockView.block = viewModel.squareBlock
+        squaredBlockView.loadData()
+        squaredBlockView.titleLabel.text = "Trending on Tatayab"
+        squaredBlockView.viewAllButton.isHidden = true
     }
 
 
-    fileprivate func loadBannersCarouselViewData() {
-        bannersCarouselView.bannerType = .product
-        bannersCarouselView.block = viewModel.productsBlock
-        bannersCarouselView.loadData()
+    fileprivate func loadProductsBlockViewData() {
+        productsBlocklView.block = viewModel.productsBlock
+        productsBlocklView.loadData()
     }
 
     fileprivate func loadFullScreenBannersViewData() {
@@ -93,35 +93,31 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
 
     func setupListners() {
         viewModel.onCategoriesListLoad = {
-//            self.setupBannersCarouselView()
             self.loadCategoriesBlockViewData()
         }
 
-        viewModel.onProductsBlockLoad = {
-            self.loadBannersCarouselViewData()
+        viewModel.onSquareBlockLoad = {
+            self.loadSquaredBlockViewData()
         }
 
         viewModel.onTopBannersBlockLoad = {
             self.loadFullScreenBannersViewData()
-            self.loadBannersBlockViewData()
         }
 
         viewModel.onSuppliersBlockLoad = {
             self.loadSuppliersBlockViewData()
         }
 
-        viewModel.onFeaturedProductsListLoad = {
-//            self.collectionView.delegate = self
-//            self.collectionView.dataSource = self
-//            self.collectionView.reloadData()
+        viewModel.onProductsBlockLoad = {
+            self.loadProductsBlockViewData()
         }
     }
 
     // MARK:- SetupUI
     func setupUI() {
         self.scrollView.stackView.spacing = 10
-        self.scrollView.stackView.backgroundColor = .clear
-        self.scrollView.backgroundColor = .clear
+        self.scrollView.stackView.backgroundColor = UIColor(hexString: "F3F3F3")
+        self.scrollView.backgroundColor = UIColor(hexString: "F3F3F3")
 
         self.addLeftBarButton()
         self.NavigationBarWithOutBackButton()
@@ -134,6 +130,16 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     
     func didSelectBannerBlocks(at indexPath: IndexPath) {
         viewModel.parseDeeplink(at: indexPath)
+    }
+
+    //MARK:- ProductsBlockViewProtocol
+    func didSelectProduct(at indexPath: IndexPath) {
+        performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
+    }
+
+    func didAddToCart(product: Product) {
+        // addProdcut to cart
+        viewModel.addToCart(product: product)
     }
 }
 

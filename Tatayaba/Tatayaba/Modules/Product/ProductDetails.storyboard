@@ -25,35 +25,10 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJB-7f-aos" customClass="StackedScrollView" customModule="Tatayaba" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JlS-HH-1kn">
-                                        <rect key="frame" x="5" y="398" width="365" height="128"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="L83-xu-SYK"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVL-Ss-WTh">
-                                        <rect key="frame" x="5" y="328" width="365" height="62"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="62" id="FPW-jc-Syg"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="JlS-HH-1kn" secondAttribute="bottom" constant="72" id="DIo-Ta-yaJ"/>
-                                    <constraint firstItem="fVL-Ss-WTh" firstAttribute="leading" secondItem="JlS-HH-1kn" secondAttribute="leading" id="Eht-NE-LGg"/>
-                                    <constraint firstItem="JlS-HH-1kn" firstAttribute="top" secondItem="fVL-Ss-WTh" secondAttribute="bottom" constant="8" symbolic="YES" id="K3Q-sr-F3T"/>
-                                    <constraint firstAttribute="trailing" secondItem="fVL-Ss-WTh" secondAttribute="trailing" constant="5" id="KT8-LG-Fj9"/>
-                                    <constraint firstItem="fVL-Ss-WTh" firstAttribute="centerX" secondItem="hJB-7f-aos" secondAttribute="centerX" id="KYJ-L1-GaZ"/>
-                                    <constraint firstItem="fVL-Ss-WTh" firstAttribute="trailing" secondItem="JlS-HH-1kn" secondAttribute="trailing" id="WDn-Lr-eT2"/>
-                                    <constraint firstItem="fVL-Ss-WTh" firstAttribute="top" secondItem="hJB-7f-aos" secondAttribute="top" constant="328" id="Y2j-ss-q7w"/>
-                                    <constraint firstItem="fVL-Ss-WTh" firstAttribute="leading" secondItem="hJB-7f-aos" secondAttribute="leading" constant="5" id="aOE-FB-qjf"/>
-                                </constraints>
+                                <color key="backgroundColor" red="0.5718726516" green="0.75843685869999999" blue="0.35391110180000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scC-D0-zMw">
-                                <rect key="frame" x="287" y="555" width="82" height="60"/>
+                                <rect key="frame" x="287" y="561" width="82" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.87564182281494141" green="0.63852697610855103" blue="0.61103826761245728" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="11"/>
@@ -62,7 +37,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDx-B2-sDF">
-                                <rect key="frame" x="5" y="555" width="274" height="60"/>
+                                <rect key="frame" x="5" y="562" width="274" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.13354238869999999" green="0.1071816161" blue="0.2066496015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
@@ -76,15 +51,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="9X9-mn-eJ3" firstAttribute="bottom" secondItem="hJB-7f-aos" secondAttribute="bottom" id="Zpy-gu-yJa"/>
-                            <constraint firstItem="hJB-7f-aos" firstAttribute="top" secondItem="9X9-mn-eJ3" secondAttribute="top" id="ogy-fb-byc"/>
-                            <constraint firstItem="9X9-mn-eJ3" firstAttribute="trailing" secondItem="hJB-7f-aos" secondAttribute="trailing" id="stC-l8-EYu"/>
-                            <constraint firstItem="hJB-7f-aos" firstAttribute="leading" secondItem="9X9-mn-eJ3" secondAttribute="leading" id="xh4-YQ-FFq"/>
+                            <constraint firstItem="hJB-7f-aos" firstAttribute="leading" secondItem="iB0-e7-ZzJ" secondAttribute="leading" id="2jg-HZ-Mvh"/>
+                            <constraint firstItem="hJB-7f-aos" firstAttribute="top" secondItem="9X9-mn-eJ3" secondAttribute="top" id="639-8e-sYo"/>
+                            <constraint firstAttribute="trailing" secondItem="hJB-7f-aos" secondAttribute="trailing" id="sqe-3u-Z5a"/>
+                            <constraint firstItem="hJB-7f-aos" firstAttribute="bottom" secondItem="9X9-mn-eJ3" secondAttribute="bottom" id="wv6-hR-OY2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9X9-mn-eJ3"/>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="scrollView" destination="hJB-7f-aos" id="YNW-Yv-yK5"/>
                     </connections>

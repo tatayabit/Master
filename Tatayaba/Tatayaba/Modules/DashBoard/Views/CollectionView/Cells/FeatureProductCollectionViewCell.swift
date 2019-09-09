@@ -21,8 +21,8 @@ class FeatureProductCollectionViewCell: UICollectionViewCell {
 
     func configure(product: Product) {
         priceLabel.text = product.price.formattedPrice
-        if !product.imageUrl.isEmpty {
-            productImageView.sd_setImage(with: URL(string: product.imageUrl), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
+        if !product.mainPair.detailedPair.imageUrl.isEmpty {
+            productImageView.sd_setImage(with: URL(string: product.mainPair.detailedPair.imageUrl), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
         }
     }
 }

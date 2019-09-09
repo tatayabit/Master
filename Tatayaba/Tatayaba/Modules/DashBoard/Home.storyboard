@@ -94,7 +94,7 @@
         <scene sceneID="vG3-VF-qNM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kTb-40-w61" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="HOME" id="0RQ-oJ-4UF">
+                    <tabBarItem key="tabBarItem" title="HOME" image="home_unselected" selectedImage="home_selected" id="0RQ-oJ-4UF">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -125,7 +125,7 @@
         <scene sceneID="KQ0-EP-wsT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EIq-rX-aj8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="CART" id="NsF-Eq-MEh"/>
+                    <tabBarItem key="tabBarItem" title="CART" image="cart_unselected" id="NsF-Eq-MEh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ftp-YA-PPb">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -144,7 +144,7 @@
         <scene sceneID="HYp-Pu-Y1X">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J1J-Na-IoS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="CATEGORIES" id="hj0-Yf-ojD"/>
+                    <tabBarItem key="tabBarItem" title="CATEGORIES" image="category_unselected" id="hj0-Yf-ojD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WIr-Ad-Ke2">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -160,4 +160,10 @@
             <point key="canvasLocation" x="-270" y="504"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cart_unselected" width="10" height="11.5"/>
+        <image name="category_unselected" width="11.5" height="11.5"/>
+        <image name="home_selected" width="11" height="11.5"/>
+        <image name="home_unselected" width="11" height="11.5"/>
+    </resources>
 </document>

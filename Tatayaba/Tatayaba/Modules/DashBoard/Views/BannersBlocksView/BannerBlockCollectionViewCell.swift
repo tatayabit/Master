@@ -18,10 +18,10 @@ class BannerBlockCollectionViewCell: UICollectionViewCell {
     }
 
     func configure(_ banner: BlockBanner) {
-        bannerImageView.sd_setImage(with: URL(string: banner.bgImage.icon.imagePath), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
+        bannerImageView.sd_setImage(with: URL(string: banner.bannerMainPair.icon.imagePath), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
     }
 
     func configure(_ banner: Product) {
-        bannerImageView.sd_setImage(with: URL(string: banner.imageUrl), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
+        bannerImageView.sd_setImage(with: URL(string: banner.mainPair.detailedPair.imageUrl), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
     }
 }

@@ -18,15 +18,15 @@ struct ProductsAPIClient: APIClient {
     static let environment: APIEnvironment = .production
 
 
-    func getProducts(completion: @escaping (APIResult<[Product]?, MoyaError>) -> Void) {
+    func getProducts(completion: @escaping (APIResult<ProductsResult?, MoyaError>) -> Void) {
         fetch(with: ProductsEndpoint.getProducts, completion: completion)
     }
 
-    func getAllCategories(completion: @escaping (APIResult<[Category]?, MoyaError>) -> Void) {
+    func getAllCategories(completion: @escaping (APIResult<CategoriesResult?, MoyaError>) -> Void) {
         fetch(with: ProductsEndpoint.getAllCategories, completion: completion)
     }
 
-    func getProductOf(categoryId: Int, page: Int, completion: @escaping (APIResult<[Product]?, MoyaError>) -> Void) {
+    func getProductOf(categoryId: Int, page: Int, completion: @escaping (APIResult<ProductsResult?, MoyaError>) -> Void) {
         fetch(with: ProductsEndpoint.getProductsOfCategory(categoryId: String(categoryId), page: String(page)), completion: completion)
     }
 

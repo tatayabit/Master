@@ -36,13 +36,13 @@ extension ProductsEndpoint: TargetType {
         case .getProducts:
             return "products"
         case .getAllCategories:
-            let version = "3.0"
-            return "\(version.urlEscaped)/categories"
+            let version = "4.0"
+            return "\(version.urlEscaped)/TtmCategories"
         case .getProductsOfCategory(let categoryId, _):
-            let version = "3.0"
-            return "\(version.urlEscaped)/categories/\(categoryId.urlEscaped)/products"
+            let version = "4.0"
+            return "\(version.urlEscaped)/TtmCategories/\(categoryId.urlEscaped)/products"
         case .getProductFeatures:
-            return "categories/268/products"
+            return "TtmCategories/268/products"
         }
     }
 
