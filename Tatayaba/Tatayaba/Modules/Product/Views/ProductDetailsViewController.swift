@@ -27,8 +27,8 @@ class ProductDetailsViewController: BaseViewController {
     //MARK:- Setup StackedScrollView
     func addSubViews() {
         setupProductDetailsView()
-      //  setupOptionsView()
-       // setupPriceButton()
+        setupOptionsView()
+      // setupPriceButton()
     }
 
 
@@ -38,15 +38,15 @@ class ProductDetailsViewController: BaseViewController {
         productDetailsView.loadData()
         scrollView.stackView.addArrangedSubview(productDetailsView)
         productDetailsView.translatesAutoresizingMaskIntoConstraints = false
-        productDetailsView.heightAnchor.constraint(equalToConstant: 376).isActive = true
+        productDetailsView.heightAnchor.constraint(equalToConstant: 200).isActive = true
     }
 
     fileprivate func setupOptionsView() {
         productOptionsView.viewModel = viewModel
-//        productOptionsView.loadData()
-        scrollView.stackView.addArrangedSubview(productOptionsView)
+       scrollView.stackView.addArrangedSubview(productOptionsView)
         productOptionsView.translatesAutoresizingMaskIntoConstraints = false
         productOptionsView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        
     }
 
     fileprivate func setupPriceButton() {
