@@ -48,6 +48,7 @@
                 <outlet property="categoryImageView" destination="x1z-zC-F8e" id="Oll-PW-Czb"/>
                 <outlet property="nameLabel" destination="Zd9-fW-27Q" id="ADl-ZT-Qnk"/>
             </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="123.23838080959521"/>
         </collectionViewCell>
     </objects>
     <resources>

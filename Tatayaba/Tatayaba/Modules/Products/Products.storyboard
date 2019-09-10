@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GLN-Po-Fbg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GLN-Po-Fbg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,31 +18,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ss2-Th-MhB">
-                                <rect key="frame" x="8" y="28" width="359" height="87"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e7J-S5-Wr6">
+                                <rect key="frame" x="0.0" y="20" width="375" height="40"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brand_logo_temp" translatesAutoresizingMaskIntoConstraints="NO" id="L3m-hy-gNb">
-                                        <rect key="frame" x="135" y="27.5" width="89" height="32"/>
-                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JAZLEY PERFUMES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3r-Og-etN">
+                                        <rect key="frame" x="40" y="8" width="295" height="24"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                        <color key="textColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="87" id="XnQ-pq-D2Z"/>
-                                    <constraint firstItem="L3m-hy-gNb" firstAttribute="centerY" secondItem="ss2-Th-MhB" secondAttribute="centerY" id="mKN-D1-AbD"/>
-                                    <constraint firstItem="L3m-hy-gNb" firstAttribute="centerX" secondItem="ss2-Th-MhB" secondAttribute="centerX" id="yLB-JJ-PCN"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e7J-S5-Wr6">
-                                <rect key="frame" x="12" y="124" width="351" height="45"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="Sod-Fn-2oF"/>
+                                    <constraint firstItem="s3r-Og-etN" firstAttribute="top" secondItem="e7J-S5-Wr6" secondAttribute="top" constant="8" id="9vL-9X-IBs"/>
+                                    <constraint firstAttribute="trailing" secondItem="s3r-Og-etN" secondAttribute="trailing" constant="40" id="PcD-5Y-B3B"/>
+                                    <constraint firstAttribute="height" constant="40" id="Sod-Fn-2oF"/>
+                                    <constraint firstItem="s3r-Og-etN" firstAttribute="leading" secondItem="e7J-S5-Wr6" secondAttribute="leading" constant="40" id="xn3-bI-F1I"/>
+                                    <constraint firstAttribute="bottom" secondItem="s3r-Og-etN" secondAttribute="bottom" constant="8" id="y4g-E2-c6S"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="92z-o3-Ol4">
-                                <rect key="frame" x="10" y="188" width="355" height="479"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="jbE-BQ-axa">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="jbE-BQ-axa">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -51,22 +49,20 @@
                                 <cells/>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.83137254901960778" green="0.84313725490196079" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="e7J-S5-Wr6" firstAttribute="leading" secondItem="Nd9-TB-MVB" secondAttribute="leading" constant="12" id="65B-tV-q1n"/>
-                            <constraint firstItem="Nd9-TB-MVB" firstAttribute="trailing" secondItem="92z-o3-Ol4" secondAttribute="trailing" constant="10" id="Ahc-bD-T4T"/>
-                            <constraint firstItem="Nd9-TB-MVB" firstAttribute="trailing" secondItem="ss2-Th-MhB" secondAttribute="trailing" constant="8" id="B9B-6u-TvM"/>
-                            <constraint firstItem="Nd9-TB-MVB" firstAttribute="trailing" secondItem="e7J-S5-Wr6" secondAttribute="trailing" constant="12" id="M3a-mf-fmN"/>
+                            <constraint firstItem="e7J-S5-Wr6" firstAttribute="top" secondItem="Nd9-TB-MVB" secondAttribute="top" id="3cr-KZ-WUD"/>
+                            <constraint firstItem="e7J-S5-Wr6" firstAttribute="leading" secondItem="Nd9-TB-MVB" secondAttribute="leading" id="65B-tV-q1n"/>
+                            <constraint firstItem="Nd9-TB-MVB" firstAttribute="trailing" secondItem="92z-o3-Ol4" secondAttribute="trailing" id="Ahc-bD-T4T"/>
+                            <constraint firstItem="Nd9-TB-MVB" firstAttribute="trailing" secondItem="e7J-S5-Wr6" secondAttribute="trailing" id="M3a-mf-fmN"/>
                             <constraint firstItem="Nd9-TB-MVB" firstAttribute="bottom" secondItem="92z-o3-Ol4" secondAttribute="bottom" id="Mey-pu-LMC"/>
-                            <constraint firstItem="ss2-Th-MhB" firstAttribute="leading" secondItem="Nd9-TB-MVB" secondAttribute="leading" constant="8" id="OQg-5L-Z62"/>
-                            <constraint firstItem="92z-o3-Ol4" firstAttribute="top" secondItem="e7J-S5-Wr6" secondAttribute="bottom" constant="19" id="Sli-SN-Ojn"/>
-                            <constraint firstItem="ss2-Th-MhB" firstAttribute="top" secondItem="Nd9-TB-MVB" secondAttribute="top" constant="8" id="ZjP-Yw-6wU"/>
-                            <constraint firstItem="92z-o3-Ol4" firstAttribute="leading" secondItem="Nd9-TB-MVB" secondAttribute="leading" constant="10" id="hya-wx-C7k"/>
-                            <constraint firstItem="e7J-S5-Wr6" firstAttribute="top" secondItem="ss2-Th-MhB" secondAttribute="bottom" constant="9" id="xHG-s6-ebk"/>
+                            <constraint firstItem="92z-o3-Ol4" firstAttribute="top" secondItem="e7J-S5-Wr6" secondAttribute="bottom" constant="4" id="Sli-SN-Ojn"/>
+                            <constraint firstItem="92z-o3-Ol4" firstAttribute="leading" secondItem="Nd9-TB-MVB" secondAttribute="leading" id="hya-wx-C7k"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nd9-TB-MVB"/>
                     </view>
                     <connections>
+                        <outlet property="categoryNameLabel" destination="s3r-Og-etN" id="Xs9-e6-DY7"/>
                         <outlet property="productsCollectionView" destination="92z-o3-Ol4" id="FQA-sx-fMk"/>
                         <segue destination="d0B-yD-4bh" kind="show" identifier="product_details_segue" id="fIf-Rr-DOj"/>
                     </connections>
@@ -122,7 +118,4 @@
             <point key="canvasLocation" x="-580" y="15.742128935532236"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="brand_logo_temp" width="89" height="32.5"/>
-    </resources>
 </document>

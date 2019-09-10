@@ -57,7 +57,7 @@ class CategoriesViewController: BaseViewController, UICollectionViewDelegate, UI
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //
-    return CGSize(width:(self.view.bounds.width - 17) / 2 , height:225)
+    return CGSize(width:(self.view.bounds.width - 17) / 3 , height:115)
       
     }
 

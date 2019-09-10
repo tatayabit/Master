@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ProductsListViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class ProductsListViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ProductsBlockCollectionViewCellDelegate {
 
     @IBOutlet weak var productsCollectionView: UICollectionView!
+    @IBOutlet weak var categoryNameLabel: UILabel!
 
     var viewModel: ProductsListViewModel?
     private let productDetailsSegue = "product_details_segue"
@@ -32,7 +33,8 @@ class ProductsListViewController: BaseViewController, UICollectionViewDelegate, 
     }
 
     func setupUI() {
-        productsCollectionView.register(FeatureProductCollectionViewCell.nib, forCellWithReuseIdentifier: FeatureProductCollectionViewCell.identifier)
+        productsCollectionView.register(ProductsBlockCollectionViewCell.nib, forCellWithReuseIdentifier: ProductsBlockCollectionViewCell.identifier)
+        self.categoryNameLabel.text = viewModel?.category.name
     }
 
     //MARK:- CollectionViewDelegate
@@ -46,11 +48,11 @@ class ProductsListViewController: BaseViewController, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeatureProductCollectionViewCell.identifier, for: indexPath) as! FeatureProductCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductsBlockCollectionViewCell.identifier, for: indexPath) as! ProductsBlockCollectionViewCell
         guard let viewModel = viewModel else { return cell }
 
-        cell.configure(product: viewModel.product(at: indexPath))
-
+        cell.configure(viewModel.product(at: indexPath), indexPath: indexPath)
+        cell.delegate = self
         return cell
     }
 
@@ -60,7 +62,7 @@ class ProductsListViewController: BaseViewController, UICollectionViewDelegate, 
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        return CGSize(width: (self.view.bounds.width - 32) / 3, height: 154)
+        return CGSize(width: self.view.bounds.width / 2, height: 245)
     }
 
     //MARK:- Segue
@@ -73,6 +75,11 @@ class ProductsListViewController: BaseViewController, UICollectionViewDelegate, 
                 }
             }
         }
+    }
+
+    // MARK:- ProductsBlockCollectionViewCellDelegate
+    func didSelectAddToCartCell(indexPath: IndexPath) {
+        viewModel?.addToCart(at: indexPath)
     }
 
 }

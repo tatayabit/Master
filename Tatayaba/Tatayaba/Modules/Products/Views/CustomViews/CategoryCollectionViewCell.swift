@@ -2,29 +2,28 @@
 //  CategoryCollectionViewCell.swift
 //  Tatayaba
 //
-//  Created by Kareem Kareem on 7/16/19.
+//  Created by Kareem Kareem on 7/2/19.
 //  Copyright © 2019 Shaik. All rights reserved.
 //
 
 import UIKit
-import SDWebImage
 
 class CategoryCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var categoryImageView: UIImageView!
+    @IBOutlet weak var categoryNameLabel: UILabel!
+    @IBOutlet weak var categoryImageView: UIImageView!
 
+
+    func configure(category: Category) {
+        categoryNameLabel.text = category.name
+        if !category.imageUrl.isEmpty {
+            categoryImageView.sd_setImage(with: URL(string: category.imageUrl), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-
-    func configure(category: Category) {
-        nameLabel.text = category.name
-        if !category.imageUrl.isEmpty {
-            categoryImageView.sd_setImage(with: URL(string: category.imageUrl), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
-        }
-    }
 }
