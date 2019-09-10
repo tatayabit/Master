@@ -122,6 +122,8 @@
 		11D612AC22CE4A05000D42C3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D612AB22CE4A05000D42C3 /* User.swift */; };
 		11E8512922F7332900E80DF6 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E8512822F7332900E80DF6 /* LoginResult.swift */; };
 		11E8A6762327FE070091BD11 /* NewCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E8A6752327FE070091BD11 /* NewCartViewController.swift */; };
+		11E8A679232816730091BD11 /* PriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E8A677232816730091BD11 /* PriceTableViewCell.swift */; };
+		11E8A67A232816730091BD11 /* PriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11E8A678232816730091BD11 /* PriceTableViewCell.xib */; };
 		11F52FB722CA7D92000F0D85 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F52FAA22CA7D92000F0D85 /* SplashViewController.swift */; };
 		11F52FB922CA7D92000F0D85 /* SignUpViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F52FB122CA7D92000F0D85 /* SignUpViewcontroller.swift */; };
 		11F52FBA22CA7D92000F0D85 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F52FB622CA7D92000F0D85 /* LoginViewController.swift */; };
@@ -145,6 +147,9 @@
 		11FEB4DD22DF850700F2E9B8 /* ProductDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FEB4DC22DF850700F2E9B8 /* ProductDetailsView.xib */; };
 		11FEB4E022DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FEB4DE22DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.swift */; };
 		11FEB4E122DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FEB4DF22DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib */; };
+		4CC28C482327EF59003EAEA6 /* GothamHTF-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CC28C472327EF59003EAEA6 /* GothamHTF-Book.ttf */; };
+		4CC28C5E2327F1CF003EAEA6 /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4CC28C4C2327F1CE003EAEA6 /* Gotham-Light.otf */; };
+		4CC28C702327F961003EAEA6 /* GOTHAM-MEDIUM.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 4CC28C6F2327F961003EAEA6 /* GOTHAM-MEDIUM.TTF */; };
 		4CD8B8A6232129D300D25CC3 /* Suppliers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8B8A5232129D300D25CC3 /* Suppliers.storyboard */; };
 		4CD8B8AA23212A3100D25CC3 /* SuppliersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8B8A823212A3100D25CC3 /* SuppliersCollectionViewCell.swift */; };
 		4CD8B8AB23212A3100D25CC3 /* SuppliersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8B8A923212A3100D25CC3 /* SuppliersCollectionViewCell.xib */; };
@@ -334,6 +339,8 @@
 		11D612AB22CE4A05000D42C3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		11E8512822F7332900E80DF6 /* LoginResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
 		11E8A6752327FE070091BD11 /* NewCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCartViewController.swift; sourceTree = "<group>"; };
+		11E8A677232816730091BD11 /* PriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTableViewCell.swift; sourceTree = "<group>"; };
+		11E8A678232816730091BD11 /* PriceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceTableViewCell.xib; sourceTree = "<group>"; };
 		11F52FAA22CA7D92000F0D85 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		11F52FB122CA7D92000F0D85 /* SignUpViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewcontroller.swift; sourceTree = "<group>"; };
 		11F52FB622CA7D92000F0D85 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -361,6 +368,9 @@
 		22CC9CEE04574A387EDF22EE /* Pods-TatayabaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.release.xcconfig"; sourceTree = "<group>"; };
 		2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3521A060629ED90EC6114BA5 /* Pods-TatayabaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.debug.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4CC28C472327EF59003EAEA6 /* GothamHTF-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamHTF-Book.ttf"; sourceTree = "<group>"; };
+		4CC28C4C2327F1CE003EAEA6 /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.otf"; sourceTree = "<group>"; };
+		4CC28C6F2327F961003EAEA6 /* GOTHAM-MEDIUM.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GOTHAM-MEDIUM.TTF"; sourceTree = "<group>"; };
 		4CD8B8A5232129D300D25CC3 /* Suppliers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Suppliers.storyboard; sourceTree = "<group>"; };
 		4CD8B8A823212A3100D25CC3 /* SuppliersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuppliersCollectionViewCell.swift; sourceTree = "<group>"; };
 		4CD8B8A923212A3100D25CC3 /* SuppliersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuppliersCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -1484,6 +1494,8 @@
 		847CDE7C22CA19CF00E67C8C /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				4CC28C6F2327F961003EAEA6 /* GOTHAM-MEDIUM.TTF */,
+				4CC28C4C2327F1CE003EAEA6 /* Gotham-Light.otf */,
 				4CEDFF3E231A69DD001385DD /* Myriad Pro Regular.ttf */,
 				847CDE8122CA19ED00E67C8C /* ProximaNova-Black.ttf */,
 				847CDE8322CA19EE00E67C8C /* ProximaNova-Bold.ttf */,
@@ -1491,6 +1503,7 @@
 				847CDE7F22CA19ED00E67C8C /* ProximaNova-Light.ttf */,
 				847CDE7D22CA19EC00E67C8C /* ProximaNova-Regular.ttf */,
 				847CDE8022CA19ED00E67C8C /* ProximaNova-Semibold.ttf */,
+				4CC28C472327EF59003EAEA6 /* GothamHTF-Book.ttf */,
 				847CDE8222CA19EE00E67C8C /* ProximaNovaT-Thin.ttf */,
 			);
 			path = Font;
@@ -1619,6 +1632,8 @@
 			isa = PBXGroup;
 			children = (
 				84BC089D22DC84A900C6180E /* CartTableViewCell.swift */,
+				11E8A677232816730091BD11 /* PriceTableViewCell.swift */,
+				11E8A678232816730091BD11 /* PriceTableViewCell.xib */,
 				84BC08A322DC94AA00C6180E /* RecommendedCollectionViewCell.swift */,
 				84BC08A522DC972300C6180E /* RecommendedCollectionViewCell.xib */,
 			);
@@ -1780,12 +1795,14 @@
 				11A8B15322D79377001B2661 /* Wishlist.storyboard in Resources */,
 				847CDE4B22C9EE2300E67C8C /* Assets.xcassets in Resources */,
 				841CE30C22DCC2D700A47FA0 /* Message.storyboard in Resources */,
+				4CC28C5E2327F1CF003EAEA6 /* Gotham-Light.otf in Resources */,
 				847CDE8622CA19EE00E67C8C /* ProximaNova-Light.ttf in Resources */,
 				114D1A1622CBB27E009205F3 /* CategoryCollectionViewCell.xib in Resources */,
 				84BC089622DC7CF400C6180E /* Cart.storyboard in Resources */,
 				84B819E322D1D775000DD69A /* ProductDetails.storyboard in Resources */,
 				11FEB4DD22DF850700F2E9B8 /* ProductDetailsView.xib in Resources */,
 				11C271B222F20636004613E3 /* Addresses.storyboard in Resources */,
+				4CC28C482327EF59003EAEA6 /* GothamHTF-Book.ttf in Resources */,
 				1101C66522E0C96C00416307 /* OptionCollectionViewCell.xib in Resources */,
 				1101C66E22E0D75500416307 /* HProductCollectionViewCell.xib in Resources */,
 				847CDE8A22CA19EE00E67C8C /* ProximaNova-Bold.ttf in Resources */,
@@ -1802,6 +1819,7 @@
 				11081EEA22DB823200B68EA5 /* Static.storyboard in Resources */,
 				84BC08A622DC972300C6180E /* RecommendedCollectionViewCell.xib in Resources */,
 				4CD8B8AB23212A3100D25CC3 /* SuppliersCollectionViewCell.xib in Resources */,
+				11E8A67A232816730091BD11 /* PriceTableViewCell.xib in Resources */,
 				11C271B722F20E24004613E3 /* AddressTableViewCell.xib in Resources */,
 				11FB5870231D5EFF005DA4F0 /* SuppliersBlockCollectionViewCell.xib in Resources */,
 				847CDE8722CA19EE00E67C8C /* ProximaNova-Semibold.ttf in Resources */,
@@ -1815,6 +1833,7 @@
 				11A8B15D22D7943D001B2661 /* WishlistCollectionViewCell.xib in Resources */,
 				113647FC2316FF0F0097FDB3 /* CategoriesBlockView.xib in Resources */,
 				847CDE4622C9EE2300E67C8C /* Main.storyboard in Resources */,
+				4CC28C702327F961003EAEA6 /* GOTHAM-MEDIUM.TTF in Resources */,
 				11FB584A231C2147005DA4F0 /* CategoriesBlockCollectionViewCell.xib in Resources */,
 				4CD8B8A6232129D300D25CC3 /* Suppliers.storyboard in Resources */,
 				110295D022DCD3A400C6A54B /* Home.storyboard in Resources */,
@@ -1981,6 +2000,7 @@
 				848E89CC22CCEAAC000AA24C /* FeatureProductCollectionViewCell.swift in Sources */,
 				116C938F22F0954500921893 /* PaymentAPIClient.swift in Sources */,
 				11624ED1230C464800E81ABD /* BlockImagePair.swift in Sources */,
+				11E8A679232816730091BD11 /* PriceTableViewCell.swift in Sources */,
 				11D4E69A2312E14500226A23 /* BannersCarouselView.swift in Sources */,
 				111C8A3C230B1487003F5FDB /* Block.swift in Sources */,
 				11069C3D2323A43A0093D6FF /* SuppliersListViewController.swift in Sources */,
