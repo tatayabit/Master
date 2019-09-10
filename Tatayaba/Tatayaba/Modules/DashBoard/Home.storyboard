@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="1528.8" y="-251.42428785607197"/>
         </scene>
-        <!--CartViewController-->
+        <!--NewCartViewController-->
         <scene sceneID="eT0-ar-RnH">
             <objects>
-                <viewControllerPlaceholder storyboardName="Cart" referencedIdentifier="CartViewController" id="qa9-Id-HAB" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Cart" referencedIdentifier="NewCartViewController" id="qa9-Id-HAB" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="5v9-ks-gjv"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jwc-De-zTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
