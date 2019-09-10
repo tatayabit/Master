@@ -43,8 +43,12 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHs-0i-b0U">
                                                             <rect key="frame" x="0.0" y="0.0" width="355" height="111"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CartImage" translatesAutoresizingMaskIntoConstraints="NO" id="WKS-SU-I9L">
-                                                                    <rect key="frame" x="28" y="16" width="24" height="55"/>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CartImage" translatesAutoresizingMaskIntoConstraints="NO" id="WKS-SU-I9L">
+                                                                    <rect key="frame" x="16" y="16" width="60" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="60" id="YgF-gW-EGN"/>
+                                                                        <constraint firstAttribute="width" constant="60" id="eS9-V2-dvx"/>
+                                                                    </constraints>
                                                                 </imageView>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOg-Ss-NGy">
                                                                     <rect key="frame" x="314" y="58" width="15" height="18"/>
@@ -57,22 +61,22 @@
                                                                     </connections>
                                                                 </button>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Bi4-CK-inz">
-                                                                    <rect key="frame" x="88" y="16" width="85.5" height="59"/>
+                                                                    <rect key="frame" x="90" y="16" width="204" height="59"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intash- 500ml" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4O-o1-m9A">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="85.5" height="15"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="204" height="15"/>
                                                                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.00 KWD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcr-Ih-tIj">
-                                                                            <rect key="frame" x="0.0" y="22" width="85.5" height="15"/>
+                                                                            <rect key="frame" x="0.0" y="22" width="204" height="15"/>
                                                                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QTY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vM3-WI-CgY">
-                                                                            <rect key="frame" x="0.0" y="44" width="85.5" height="15"/>
+                                                                            <rect key="frame" x="0.0" y="44" width="204" height="15"/>
                                                                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -85,8 +89,9 @@
                                                                 <constraint firstItem="WKS-SU-I9L" firstAttribute="top" secondItem="Bi4-CK-inz" secondAttribute="top" id="3u2-p2-eV0"/>
                                                                 <constraint firstItem="MOg-Ss-NGy" firstAttribute="top" secondItem="eHs-0i-b0U" secondAttribute="top" constant="58" id="8uc-oW-H8n"/>
                                                                 <constraint firstItem="WKS-SU-I9L" firstAttribute="top" secondItem="eHs-0i-b0U" secondAttribute="top" constant="16" id="9Wq-to-4xX"/>
-                                                                <constraint firstItem="WKS-SU-I9L" firstAttribute="leading" secondItem="eHs-0i-b0U" secondAttribute="leading" constant="28" id="is5-3N-dWe"/>
-                                                                <constraint firstItem="Bi4-CK-inz" firstAttribute="leading" secondItem="WKS-SU-I9L" secondAttribute="trailing" constant="36" id="nlH-go-fPg"/>
+                                                                <constraint firstItem="MOg-Ss-NGy" firstAttribute="leading" secondItem="Bi4-CK-inz" secondAttribute="trailing" constant="20" id="DAA-U9-YIS"/>
+                                                                <constraint firstItem="WKS-SU-I9L" firstAttribute="leading" secondItem="eHs-0i-b0U" secondAttribute="leading" constant="16" id="is5-3N-dWe"/>
+                                                                <constraint firstItem="Bi4-CK-inz" firstAttribute="leading" secondItem="WKS-SU-I9L" secondAttribute="trailing" constant="14" id="nlH-go-fPg"/>
                                                                 <constraint firstAttribute="trailing" secondItem="MOg-Ss-NGy" secondAttribute="trailing" constant="26" id="sAk-BO-XLl"/>
                                                             </constraints>
                                                         </view>
@@ -358,6 +363,169 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8i6-2A-QXN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="120" y="153.82308845577214"/>
+        </scene>
+        <!--CART-->
+        <scene sceneID="WlR-5y-WeC">
+            <objects>
+                <viewController storyboardIdentifier="NewCartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jjl-9Q-NrU" customClass="NewCartViewController" customModule="Tatayaba" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zkh-rZ-djh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93f-4v-x2G">
+                                <rect key="frame" x="0.0" y="629" width="375" height="71"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cart total " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzS-WW-8Am">
+                                        <rect key="frame" x="8" y="5" width="62" height="15"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(2 items)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kY-n2-kJV">
+                                        <rect key="frame" x="74" y="5" width="54" height="15"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="14.200 KWD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3s-NS-Zlb">
+                                        <rect key="frame" x="279" y="5" width="76" height="15"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDu-Kn-4cr">
+                                        <rect key="frame" x="8" y="25" width="359" height="40"/>
+                                        <color key="backgroundColor" red="0.13354238869999999" green="0.1071816161" blue="0.2066496015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="fQa-zz-pAZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
+                                        <state key="normal" title="CHECKOUT NOW">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="checkoutAction:" destination="Jjl-9Q-NrU" eventType="touchUpInside" id="wsR-uw-mmf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="eDu-Kn-4cr" secondAttribute="bottom" constant="6" id="GTj-Pe-h2b"/>
+                                    <constraint firstAttribute="height" constant="71" id="OUQ-mx-wLE"/>
+                                    <constraint firstItem="eDu-Kn-4cr" firstAttribute="leading" secondItem="93f-4v-x2G" secondAttribute="leading" constant="8" id="j22-ZR-rQ8"/>
+                                    <constraint firstAttribute="trailing" secondItem="eDu-Kn-4cr" secondAttribute="trailing" constant="8" id="wyr-fr-BA7"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sdk-r7-OJA">
+                                <rect key="frame" x="0.0" y="20" width="375" height="609"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartCellIdentifier" rowHeight="106" id="QE9-ah-kei" customClass="CartTableViewCell" customModule="Tatayaba" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="106"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QE9-ah-kei" id="j07-hG-qqI">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="105.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGo-EY-Jpe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="111"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CartImage" translatesAutoresizingMaskIntoConstraints="NO" id="rhL-QG-rQF">
+                                                            <rect key="frame" x="16" y="16" width="60" height="60"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="60" id="QaV-HQ-vZ6"/>
+                                                                <constraint firstAttribute="height" constant="60" id="Qca-7x-61t"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Jv-Ca-kv8">
+                                                            <rect key="frame" x="334" y="58" width="15" height="18"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="15" id="rcs-q1-RrP"/>
+                                                            </constraints>
+                                                            <state key="normal" backgroundImage="delete"/>
+                                                            <connections>
+                                                                <action selector="removeItemAction:" destination="QE9-ah-kei" eventType="touchUpInside" id="9r0-cg-Z7m"/>
+                                                            </connections>
+                                                        </button>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="cnR-Pl-RzP">
+                                                            <rect key="frame" x="90" y="16" width="224" height="59"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intash- 500ml" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzI-9s-7db">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="224" height="15"/>
+                                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.00 KWD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1N5-Qh-0zj">
+                                                                    <rect key="frame" x="0.0" y="22" width="224" height="15"/>
+                                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QTY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sh4-ce-mNU">
+                                                                    <rect key="frame" x="0.0" y="44" width="224" height="15"/>
+                                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.97244364019999996" green="0.97260981800000001" blue="0.97243314979999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="4Jv-Ca-kv8" secondAttribute="trailing" constant="26" id="Boz-Ou-pVt"/>
+                                                        <constraint firstItem="4Jv-Ca-kv8" firstAttribute="top" secondItem="GGo-EY-Jpe" secondAttribute="top" constant="58" id="L2Y-gB-k8n"/>
+                                                        <constraint firstItem="cnR-Pl-RzP" firstAttribute="leading" secondItem="rhL-QG-rQF" secondAttribute="trailing" constant="14" id="Xjs-yj-lGO"/>
+                                                        <constraint firstItem="rhL-QG-rQF" firstAttribute="top" secondItem="GGo-EY-Jpe" secondAttribute="top" constant="16" id="Z6p-Bu-CCz"/>
+                                                        <constraint firstItem="rhL-QG-rQF" firstAttribute="leading" secondItem="GGo-EY-Jpe" secondAttribute="leading" constant="16" id="dnd-Y6-USV"/>
+                                                        <constraint firstItem="4Jv-Ca-kv8" firstAttribute="leading" secondItem="cnR-Pl-RzP" secondAttribute="trailing" constant="20" id="gWc-4s-wgM"/>
+                                                        <constraint firstItem="rhL-QG-rQF" firstAttribute="top" secondItem="cnR-Pl-RzP" secondAttribute="top" id="yTQ-F9-dWr"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GGo-EY-Jpe" firstAttribute="leading" secondItem="j07-hG-qqI" secondAttribute="leading" id="0qn-03-EgN"/>
+                                                <constraint firstAttribute="trailing" secondItem="GGo-EY-Jpe" secondAttribute="trailing" id="3Wa-ZI-uDg"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="GGo-EY-Jpe" secondAttribute="bottom" constant="-16" id="Mho-D9-Ncf"/>
+                                                <constraint firstItem="GGo-EY-Jpe" firstAttribute="top" secondItem="j07-hG-qqI" secondAttribute="top" id="sO4-km-GRj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="gzI-9s-7db" id="M9L-kp-TK2"/>
+                                            <outlet property="priceLabel" destination="1N5-Qh-0zj" id="Ga1-5m-8bD"/>
+                                            <outlet property="productImageView" destination="rhL-QG-rQF" id="SLt-ua-WPB"/>
+                                            <outlet property="quantityLabel" destination="Sh4-ce-mNU" id="s49-0a-BkZ"/>
+                                            <outlet property="removeItem" destination="4Jv-Ca-kv8" id="9Sm-4m-YTI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sdk-r7-OJA" firstAttribute="leading" secondItem="6fX-3b-IIb" secondAttribute="leading" id="1Eo-3l-heT"/>
+                            <constraint firstItem="93f-4v-x2G" firstAttribute="trailing" secondItem="6fX-3b-IIb" secondAttribute="trailing" id="9nl-LC-VPo"/>
+                            <constraint firstItem="93f-4v-x2G" firstAttribute="bottom" secondItem="6fX-3b-IIb" secondAttribute="bottom" id="CTo-Zv-Hqv"/>
+                            <constraint firstItem="93f-4v-x2G" firstAttribute="top" secondItem="sdk-r7-OJA" secondAttribute="bottom" id="Gd6-ID-IpY"/>
+                            <constraint firstItem="93f-4v-x2G" firstAttribute="leading" secondItem="6fX-3b-IIb" secondAttribute="leading" id="X7Z-hR-3zk"/>
+                            <constraint firstItem="sdk-r7-OJA" firstAttribute="top" secondItem="6fX-3b-IIb" secondAttribute="top" id="mpW-DT-wDl"/>
+                            <constraint firstItem="6fX-3b-IIb" firstAttribute="trailing" secondItem="sdk-r7-OJA" secondAttribute="trailing" id="ugU-Yn-yMg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6fX-3b-IIb"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="CART" id="Pgx-AB-vCh"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="700"/>
+                    <connections>
+                        <outlet property="totalPriceLabel" destination="r3s-NS-Zlb" id="JNh-Ry-dZq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YQI-Kc-uD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1596" y="152"/>
         </scene>
     </scenes>
     <resources>
