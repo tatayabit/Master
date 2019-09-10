@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t5I-hQ-hog">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t5I-hQ-hog">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="GOTHAM-MEDIUM.TTF">
+            <string>GothamMedium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--About Us View Controller-->
         <scene sceneID="PRh-o0-KoY">
@@ -26,29 +31,32 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABOUT US" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2T5-hn-fPP">
-                                <rect key="frame" x="20" y="401" width="335" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="401" width="335" height="15.5"/>
+                                <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Tatayab - Where there's a scent for every mood. Your online platform for perfume, home fragrances, bukhour and more." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45F-Wm-nlL">
-                                <rect key="frame" x="20" y="442" width="335" height="81.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="436.5" width="335" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="89" id="gkl-71-fJu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="45F-Wm-nlL" firstAttribute="top" secondItem="2T5-hn-fPP" secondAttribute="bottom" constant="20" id="1Tt-M7-uSg"/>
-                            <constraint firstItem="45F-Wm-nlL" firstAttribute="leading" secondItem="RIv-mk-Jzz" secondAttribute="leading" constant="20" id="F39-DE-Qn3"/>
+                            <constraint firstItem="45F-Wm-nlL" firstAttribute="leading" secondItem="2T5-hn-fPP" secondAttribute="leading" id="9Yb-Dl-P8i"/>
                             <constraint firstItem="2T5-hn-fPP" firstAttribute="top" secondItem="8Dh-zx-ihL" secondAttribute="bottom" constant="18" id="Mmx-Gx-39A"/>
+                            <constraint firstItem="45F-Wm-nlL" firstAttribute="top" secondItem="2T5-hn-fPP" secondAttribute="bottom" constant="20" id="NkX-tH-MXH"/>
                             <constraint firstItem="2T5-hn-fPP" firstAttribute="leading" secondItem="RIv-mk-Jzz" secondAttribute="leading" constant="20" id="RAd-Xg-9FC"/>
                             <constraint firstItem="RIv-mk-Jzz" firstAttribute="trailing" secondItem="2T5-hn-fPP" secondAttribute="trailing" constant="20" id="U2c-H0-nO2"/>
                             <constraint firstItem="8Dh-zx-ihL" firstAttribute="top" secondItem="RIv-mk-Jzz" secondAttribute="top" constant="91" id="fgu-6n-58u"/>
                             <constraint firstItem="8Dh-zx-ihL" firstAttribute="leading" secondItem="RIv-mk-Jzz" secondAttribute="leading" constant="3" id="hv3-eu-Bke"/>
-                            <constraint firstItem="RIv-mk-Jzz" firstAttribute="trailing" secondItem="45F-Wm-nlL" secondAttribute="trailing" constant="20" id="lPL-1v-XYA"/>
                             <constraint firstItem="RIv-mk-Jzz" firstAttribute="trailing" secondItem="8Dh-zx-ihL" secondAttribute="trailing" constant="3" id="vOo-7u-fhk"/>
+                            <constraint firstItem="45F-Wm-nlL" firstAttribute="trailing" secondItem="2T5-hn-fPP" secondAttribute="trailing" id="w65-Gn-4eb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RIv-mk-Jzz"/>
                     </view>
