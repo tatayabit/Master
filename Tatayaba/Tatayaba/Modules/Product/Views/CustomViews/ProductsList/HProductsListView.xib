@@ -10,8 +10,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Myriad Pro Regular.ttf">
-            <string>MyriadPro-Regular</string>
+        <array key="GothamHTF-Book.ttf">
+            <string>GothamHTF-Book</string>
         </array>
     </customFonts>
     <objects>
@@ -33,7 +33,7 @@
                 </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequently boight together" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xq3-xZ-oc2">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
-                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
+                    <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="13"/>
                     <color key="textColor" white="0.6677953767" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
