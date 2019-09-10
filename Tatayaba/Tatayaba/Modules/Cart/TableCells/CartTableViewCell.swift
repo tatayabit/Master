@@ -32,6 +32,9 @@ class CartTableViewCell: UITableViewCell {
     func configure(product: Product, cartItem: CartItem) {
         self.nameLabel.text = product.name
         self.cartItemX = cartItem
+        productImageView.sd_setImage(with: URL(string: product.mainPair.detailedPair.imageUrl), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
+
+
         updatePrice(product: product, cartItem: cartItem)
     }
 
