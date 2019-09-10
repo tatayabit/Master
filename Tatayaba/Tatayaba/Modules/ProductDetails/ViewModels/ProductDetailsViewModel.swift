@@ -17,6 +17,7 @@ class ProductDetailsViewModel {
         }
         return product.description }
     var price: String { return product.price.formattedPrice }
+    var imageUrl: String { return product.mainPair.detailedPair.imageUrl }
 
     var selectedQuantity: Int
 
