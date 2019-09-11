@@ -81,6 +81,7 @@
 		116C938F22F0954500921893 /* PaymentAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C938C22F0954500921893 /* PaymentAPIClient.swift */; };
 		116C939022F0954500921893 /* PaymentEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C938D22F0954500921893 /* PaymentEndpoint.swift */; };
 		117AC9F82314444200EFCE25 /* DeeplinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117AC9F72314444200EFCE25 /* DeeplinkHandler.swift */; };
+		118A10F423294EA9003F86DE /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118A10F323294EA9003F86DE /* UIFont+Extensions.swift */; };
 		11945BBA22F0B08D000F08DC /* CheckoutCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11945BAF22F0B08D000F08DC /* CheckoutCompletedViewController.swift */; };
 		11945BBB22F0B08D000F08DC /* CheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11945BB022F0B08D000F08DC /* CheckOutViewController.swift */; };
 		11945BBC22F0B08D000F08DC /* CheckOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11945BB122F0B08D000F08DC /* CheckOut.storyboard */; };
@@ -298,6 +299,7 @@
 		116C938C22F0954500921893 /* PaymentAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentAPIClient.swift; sourceTree = "<group>"; };
 		116C938D22F0954500921893 /* PaymentEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentEndpoint.swift; sourceTree = "<group>"; };
 		117AC9F72314444200EFCE25 /* DeeplinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkHandler.swift; sourceTree = "<group>"; };
+		118A10F323294EA9003F86DE /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		11945BAF22F0B08D000F08DC /* CheckoutCompletedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutCompletedViewController.swift; sourceTree = "<group>"; };
 		11945BB022F0B08D000F08DC /* CheckOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckOutViewController.swift; sourceTree = "<group>"; };
 		11945BB122F0B08D000F08DC /* CheckOut.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CheckOut.storyboard; sourceTree = "<group>"; };
@@ -1043,6 +1045,7 @@
 				11D4917922CBCF8B009D8B23 /* UIView+Extensions.swift */,
 				1100421022D4F3520099AE64 /* String+Extensions.swift */,
 				1120C45E22E6184600F99B60 /* UIButton+Extensions.swift */,
+				118A10F323294EA9003F86DE /* UIFont+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2067,6 +2070,7 @@
 				11945BBA22F0B08D000F08DC /* CheckoutCompletedViewController.swift in Sources */,
 				1107DE1023200CAC000F8398 /* BannerMainPair.swift in Sources */,
 				114D1A1122CBB17B009205F3 /* CollectionCellActionProxy.swift in Sources */,
+				118A10F423294EA9003F86DE /* UIFont+Extensions.swift in Sources */,
 				11D4917C22CBD22D009D8B23 /* CategoriesViewModel.swift in Sources */,
 				841CE30E22DCC32100A47FA0 /* messageViewModel.swift in Sources */,
 				11D612A322CE4978000D42C3 /* SignUpViewModel.swift in Sources */,
