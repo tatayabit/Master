@@ -147,8 +147,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="producttag" translatesAutoresizingMaskIntoConstraints="NO" id="Crf-M4-giN">
-                                                    <rect key="frame" x="20" y="50" width="30" height="30"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Status" translatesAutoresizingMaskIntoConstraints="NO" id="Crf-M4-giN">
+                                                    <rect key="frame" x="21" y="50" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="CgP-t0-GBK"/>
                                                         <constraint firstAttribute="width" constant="30" id="wnz-dt-0lv"/>
@@ -161,7 +161,7 @@
                                                 <constraint firstItem="gNL-61-kln" firstAttribute="top" secondItem="04b-gE-5vw" secondAttribute="top" constant="10" id="D3f-Fh-iLk"/>
                                                 <constraint firstAttribute="trailing" secondItem="gNL-61-kln" secondAttribute="trailing" constant="15" id="Mld-qn-mwD"/>
                                                 <constraint firstItem="0Y7-EK-4WJ" firstAttribute="leading" secondItem="04b-gE-5vw" secondAttribute="leading" constant="35" id="Oez-Qo-y0V"/>
-                                                <constraint firstItem="Crf-M4-giN" firstAttribute="leading" secondItem="04b-gE-5vw" secondAttribute="leading" constant="20" id="VF4-tc-0Dh"/>
+                                                <constraint firstItem="Crf-M4-giN" firstAttribute="leading" secondItem="04b-gE-5vw" secondAttribute="leading" constant="21" id="VF4-tc-0Dh"/>
                                                 <constraint firstAttribute="bottom" secondItem="0Y7-EK-4WJ" secondAttribute="bottom" constant="-4" id="ZtR-6q-Wtx"/>
                                                 <constraint firstItem="gNL-61-kln" firstAttribute="leading" secondItem="0Y7-EK-4WJ" secondAttribute="trailing" constant="24" id="dLW-DY-VHs"/>
                                                 <constraint firstItem="Crf-M4-giN" firstAttribute="centerY" secondItem="0Y7-EK-4WJ" secondAttribute="centerY" id="fnS-EH-I0b"/>
@@ -170,7 +170,10 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.95677906274795532" green="0.95691639184951782" blue="0.95674902200698853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
+                                            <outlet property="StatusLabel" destination="XHU-Ir-bWJ" id="pBM-jH-NeE"/>
                                             <outlet property="orderIdLabel" destination="5W1-vT-QCN" id="OLl-Mr-2ux"/>
+                                            <outlet property="status_Image" destination="Crf-M4-giN" id="Xoc-UT-ZZl"/>
+                                            <outlet property="timeLabel" destination="Icc-zX-IH4" id="fC0-KI-maw"/>
                                             <outlet property="totalPriceLabel" destination="QJb-Cf-G5E" id="vYT-xw-RXx"/>
                                         </connections>
                                     </tableViewCell>
@@ -213,6 +216,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="producttag" width="24.5" height="24.5"/>
+        <image name="Status" width="30.5" height="30.5"/>
     </resources>
 </document>
