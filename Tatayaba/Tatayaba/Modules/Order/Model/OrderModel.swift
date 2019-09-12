@@ -39,16 +39,16 @@ struct OrderModel {
 extension OrderModel: Codable {
     enum OrderModelCodingKeys: String, CodingKey {
         case identifier = "order_id"
-        case status
+        case status = "status"
         case totalPrice = "total"
-        case subtotal
-        case discount
+        case subtotal = "subtotal"
+        case discount = "discount"
         case subtotalDiscount = "subtotal_discount"
         case shippingCost = "shipping_cost"
         case shippingCity = "s_city"
         case shippingCountry = "s_country_descr"
         case shippingPhone = "s_phone"
-        case timestamp
+        case timestamp = "timestamp"
     }
 
     init(from decoder: Decoder) throws {
