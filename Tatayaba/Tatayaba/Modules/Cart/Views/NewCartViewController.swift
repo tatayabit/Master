@@ -59,7 +59,7 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
 
         let newStr = NSMutableAttributedString(string: textVal)
         newStr.addAttributes(strokeTextAttributes, range: (textVal as NSString).range(of: text))
-        return newStr//NSAttributedString(string: text, attributes: strokeTextAttributes)
+        return newStr
     }
 
     func removeItemAction(indexPath: IndexPath) {

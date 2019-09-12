@@ -7,7 +7,7 @@
 //
 import Moya
 
-struct CheckOutViewModel {
+class CheckOutViewModel {
     private let shippingApiClient = ShippingAPIClient()
     private let paymentApiClient = PaymentAPIClient()
     private let ordersApiClient = OrdersAPIClient()
@@ -18,6 +18,10 @@ struct CheckOutViewModel {
     var subTotalValue: String { return cart.subtotalPrice }
     var shippingValue: String { return "1.000".formattedPrice }
     var totalValue: String { return String(cart.calculateSubTotal() + 1.000 + 0.500).formattedPrice }
+    var paymentMethods = [Payment]()
+
+    /// This closure is being called once the payement methods api fetch
+    var onPaymentMethodsListLoad: (() -> ())?
 
     init() {
         getShippingMethods()
@@ -45,9 +49,13 @@ struct CheckOutViewModel {
             switch result {
             case .success(let response):
                 guard let paymentResult = response else { return }
-                guard let paymentMethods = paymentResult.paymentMethods else { return }
+                guard let methods = paymentResult.paymentMethods else { return }
+                self.paymentMethods = methods
+                print(self.paymentMethods)
 
-                print(paymentMethods)
+                if let newPaymentsArrived = self.onPaymentMethodsListLoad {
+                    newPaymentsArrived()
+                }
 
             case .failure(let error):
                 print("the error \(error)")
