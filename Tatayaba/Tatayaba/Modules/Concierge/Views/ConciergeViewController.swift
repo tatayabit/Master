@@ -8,11 +8,28 @@
 
 import UIKit
 
-class ConciergeViewController: BaseViewController {
+class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate {
+
+    @IBOutlet weak var scrollView: StackedScrollView!
+
+    let conciergeSubView: ConciergeSubView = .fromNib()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
+        addconciergeSubView()
+    }
+
+    fileprivate func addconciergeSubView() {
+        scrollView.stackView.addArrangedSubview(conciergeSubView)
+        conciergeSubView.translatesAutoresizingMaskIntoConstraints = false
+        conciergeSubView.heightAnchor.constraint(equalToConstant: 750).isActive = true
+    }
+
+    // MARK:- ConciergeSubViewDelegate
+    func didSelectUplaodConcierge() {
+        
     }
 }
