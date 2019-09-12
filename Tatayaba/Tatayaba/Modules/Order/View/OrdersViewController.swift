@@ -17,9 +17,6 @@ class OrdersViewController: BaseViewController,UITableViewDelegate,UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
-
-        // Do any additional setup after loading the view.
-
         setupListners()
     }
 
@@ -50,7 +47,7 @@ extension OrdersViewController{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        // return viewModel.orderCount
         
-         return 10
+         return viewModel.orderCount
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
