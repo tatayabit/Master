@@ -58,8 +58,7 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
     }
 
     func removeItemAction(indexPath: IndexPath) {
-        let cartProduct = cart.product(at: indexPath)
-        cart.removeProduct(cartItem: cartProduct.1)
+        cart.removeProduct(at: indexPath)
         subtotalPriceLabel.text = cart.subtotalPrice
     }
 
@@ -97,9 +96,5 @@ extension CartViewController {
             cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
         }
         return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
     }
 }

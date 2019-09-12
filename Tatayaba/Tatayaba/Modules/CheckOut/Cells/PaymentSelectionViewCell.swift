@@ -8,11 +8,20 @@
 
 import UIKit
 
-class PaymentSelectionViewCell: UICollectionViewCell {
+class PaymentSelectionViewCell: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+
+    func configure(payment: Payment) {
+        nameLabel.text = payment.name
+        
     }
 
 }

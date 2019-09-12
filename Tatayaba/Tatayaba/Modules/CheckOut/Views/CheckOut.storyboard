@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JJ9-U2-IUw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JJ9-U2-IUw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="GOTHAM-MEDIUM.TTF">
+            <string>GothamMedium</string>
+        </array>
         <array key="Myriad Pro Regular.ttf">
             <string>MyriadPro-Regular</string>
         </array>
@@ -32,36 +35,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gae-zR-qWU">
-                                <rect key="frame" x="8" y="80" width="359" height="247"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gae-zR-qWU">
+                                <rect key="frame" x="0.0" y="85" width="375" height="528"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PaymenyTableCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PaymenyTableCell" rowHeight="96" id="h9q-Sn-glO" customClass="PaymenyTableCell" customModule="Tatayaba" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="359" height="96"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h9q-Sn-glO" id="KJq-Ir-Rmn">
-                                            <rect key="frame" x="0.0" y="0.0" width="359" height="95.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Visa" translatesAutoresizingMaskIntoConstraints="NO" id="q2s-9A-1Jr">
-                                                    <rect key="frame" x="25" y="24" width="40" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Knet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jft-F0-5Vl">
-                                                    <rect key="frame" x="84" y="31" width="189" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="JJ9-U2-IUw" id="Hbx-aH-4g4"/>
-                                    <outlet property="delegate" destination="JJ9-U2-IUw" id="3Yo-LU-Xwm"/>
+                                    <outlet property="dataSource" destination="JJ9-U2-IUw" id="o3d-Ff-dBY"/>
+                                    <outlet property="delegate" destination="JJ9-U2-IUw" id="WPf-2d-yof"/>
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lv1-z7-fqa">
@@ -90,20 +69,40 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTb-hr-1Uu">
-                                <rect key="frame" x="8" y="484" width="360" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgV-Yr-ArJ">
+                                <rect key="frame" x="8" y="621" width="359" height="40"/>
                                 <color key="backgroundColor" red="0.13354238869999999" green="0.1071816161" blue="0.2066496015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Rya-Xb-VcY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
                                 <state key="normal" title="PAY NOW">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="placeOrderAction:" destination="JJ9-U2-IUw" eventType="touchUpInside" id="LVi-LP-gTK"/>
-                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SECURE CHECKOUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibO-EQ-sMv">
+                                <rect key="frame" x="20" y="40" width="335" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="EJW-YA-BbD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="13"/>
+                                <color key="textColor" red="0.13333333333333333" green="0.10980392156862745" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.95677906274795532" green="0.95691639184951782" blue="0.95674902200698853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RgV-Yr-ArJ" firstAttribute="top" secondItem="Gae-zR-qWU" secondAttribute="bottom" constant="8" id="5v8-r9-6yW"/>
+                            <constraint firstItem="RgV-Yr-ArJ" firstAttribute="leading" secondItem="I6r-yz-TSn" secondAttribute="leading" constant="8" id="Emb-oo-eN3"/>
+                            <constraint firstItem="ibO-EQ-sMv" firstAttribute="top" secondItem="I6r-yz-TSn" secondAttribute="top" constant="20" id="FRb-zn-3hr"/>
+                            <constraint firstItem="Gae-zR-qWU" firstAttribute="top" secondItem="ibO-EQ-sMv" secondAttribute="bottom" constant="20" id="GeZ-2z-e3I"/>
+                            <constraint firstItem="I6r-yz-TSn" firstAttribute="trailing" secondItem="ibO-EQ-sMv" secondAttribute="trailing" constant="20" id="ONW-gM-Uee"/>
+                            <constraint firstItem="Gae-zR-qWU" firstAttribute="leading" secondItem="I6r-yz-TSn" secondAttribute="leading" id="QDg-Yd-Jns"/>
+                            <constraint firstItem="ibO-EQ-sMv" firstAttribute="leading" secondItem="I6r-yz-TSn" secondAttribute="leading" constant="20" id="Smb-0h-Dae"/>
+                            <constraint firstItem="I6r-yz-TSn" firstAttribute="bottom" secondItem="RgV-Yr-ArJ" secondAttribute="bottom" constant="6" id="eDh-6E-8bc"/>
+                            <constraint firstItem="I6r-yz-TSn" firstAttribute="trailing" secondItem="RgV-Yr-ArJ" secondAttribute="trailing" constant="8" id="odN-GC-QN4"/>
+                            <constraint firstItem="I6r-yz-TSn" firstAttribute="trailing" secondItem="Gae-zR-qWU" secondAttribute="trailing" id="y8u-f0-Plh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="I6r-yz-TSn"/>
                     </view>
                     <navigationItem key="navigationItem" title="TATAYAB" id="5Zc-2H-YFY">
@@ -112,6 +111,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="paymentTableView" destination="Gae-zR-qWU" id="8aX-ip-Opr"/>
                         <segue destination="i39-8c-VeR" kind="show" identifier="checkout_completed_segue" id="2B7-re-64b"/>
                     </connections>
                 </viewController>
@@ -187,8 +187,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Edit" width="30" height="30"/>
-        <image name="Productway" width="242.5" height="207.5"/>
-        <image name="Visa" width="19" height="19.5"/>
+        <image name="Edit" width="60" height="60"/>
+        <image name="Productway" width="485" height="415"/>
     </resources>
 </document>

@@ -8,36 +8,37 @@
 
 import UIKit
 
-class CheckOutViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource {
+class CheckOutViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet var PaymentcollectionView: UICollectionView!
-    @IBOutlet weak var subTotalValueLabel: UILabel!
-    @IBOutlet weak var shippingValueLabel: UILabel!
-    @IBOutlet weak var vatValueLabel: UILabel!
-    @IBOutlet weak var totalPriceButton: UIButton!
+    @IBOutlet weak var paymentTableView: UITableView!
 
     private let viewModel = CheckOutViewModel()
 
     let checkoutCompletedSegue = "checkout_completed_segue"
 
+    enum sectionType: Int {
+        case payment = 0, address
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
        // self.updateData()
+        viewModel.onPaymentMethodsListLoad = {
+            self.paymentTableView.reloadData()
+        }
     }
 
     func updateData() {
-        subTotalValueLabel.text = viewModel.subTotalValue
-        totalPriceButton.setTitle(viewModel.totalValue, for: .normal)
-        shippingValueLabel.text = viewModel.shippingValue
+//        subTotalValueLabel.text = viewModel.subTotalValue
+//        totalPriceButton.setTitle(viewModel.totalValue, for: .normal)
+//        shippingValueLabel.text = viewModel.shippingValue
     }
     
     
     func setupUI() {
         self.NavigationBarWithOutBackButton()
-
-       // self.PaymentcollectionView.register(PaymentSelectionViewCell.nib, forCellWithReuseIdentifier: PaymentSelectionViewCell.identifier)
-        
+        self.paymentTableView.register(PaymentSelectionViewCell.nib, forCellReuseIdentifier: PaymentSelectionViewCell.identifier)
     }
 
     //MARK:- IBActions
@@ -65,71 +66,57 @@ class CheckOutViewController: UIViewController,UICollectionViewDelegate,UICollec
    }
 }
 
-///tableview
-
 //Tableview
 extension CheckOutViewController {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+
+    // MARK:- UITableView - Header
+    func numberOfSections(in tableView: UITableView) -> Int {
+//        if viewModel.pricingList.count > 0 {
+//            return 2
+//        }
+        return 1
     }
+
+    // MARK:- UITableViewDataSource - Cell
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-        
+
+        switch indexPath.section {
+        case sectionType.payment.rawValue:
+            return 80
+//        case sectionType.pricing.rawValue:
+//            return 50
+        default: return 0
+        }
     }
-    
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case sectionType.payment.rawValue:
+            return viewModel.paymentMethods.count//cart.productsCount
+//        case sectionType.pricing.rawValue:
+//            return viewModel.pricingList.count
+        default: return 0
+        }
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "PaymenyTableCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PaymenyTableCell
-        
-      
+        switch indexPath.section {
+        case sectionType.payment.rawValue:
+            return getPaymentCell(tableView: tableView, indexPath: indexPath)
+
+//        case sectionType.pricing.rawValue:
+//            return getPricingCell(tableView:tableView, indexPath: indexPath)
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: PaymentSelectionViewCell.identifier, for: indexPath) as! PaymentSelectionViewCell
+            return cell
+        }
+    }
+
+    // MARK:- CartTableViewCell
+    func getPaymentCell(tableView: UITableView, indexPath: IndexPath) -> PaymentSelectionViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: PaymentSelectionViewCell.identifier, for: indexPath) as! PaymentSelectionViewCell
+
+        cell.configure(payment: viewModel.paymentMethods[indexPath.row])
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-}
-
-
-
-
-/// Collection View
-extension CheckOutViewController{
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
-        
-        return 09
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PaymentSelectionViewCell.identifier, for: indexPath) as! PaymentSelectionViewCell
-        cell.layer.borderColor = UIColor.brandBrown.cgColor
-        cell.layer.cornerRadius = 5
-        cell.layer.borderWidth = 2
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 07, left: 10, bottom: 07, right: 10)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        
     }
 }
