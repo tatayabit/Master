@@ -12,7 +12,7 @@ struct PaymentResult {
 
 extension PaymentResult: Codable {
     enum paymentMethodsResultCodingKeys: String, CodingKey {
-        case paymentMethods
+        case paymentMethods = "payments"
     }
 
     init(from decoder: Decoder) throws {

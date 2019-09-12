@@ -10,8 +10,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Myriad Pro Regular.ttf">
-            <string>MyriadPro-Regular</string>
+        <array key="GothamHTF-Book.ttf">
+            <string>GothamHTF-Book</string>
         </array>
     </customFonts>
     <objects>
@@ -31,20 +31,28 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Frequently bought together" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnb-XF-qDB">
-                    <rect key="frame" x="0.0" y="2" width="375" height="17"/>
-                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPTIONS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnb-XF-qDB">
+                    <rect key="frame" x="8" y="4" width="71.5" height="16.5"/>
+                    <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="15"/>
                     <color key="textColor" white="0.6677953767123288" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQe-Of-1R7">
+                    <rect key="frame" x="347" y="4" width="20" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.67000000000000004" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="ex8-e5-cj9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="8Rw-vk-B9r"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eQe-Of-1R7" secondAttribute="trailing" constant="8" id="QZd-9o-hqc"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ex8-e5-cj9" secondAttribute="trailing" id="RKd-mo-SE7"/>
                 <constraint firstAttribute="bottom" secondItem="ex8-e5-cj9" secondAttribute="bottom" id="btt-ew-Mye"/>
-                <constraint firstItem="vnb-XF-qDB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="jSu-t6-D02"/>
-                <constraint firstItem="vnb-XF-qDB" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="2" id="rTa-Wf-EkT"/>
+                <constraint firstItem="vnb-XF-qDB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="jSu-t6-D02"/>
+                <constraint firstItem="eQe-Of-1R7" firstAttribute="top" secondItem="vnb-XF-qDB" secondAttribute="top" id="odq-e5-d6x"/>
+                <constraint firstItem="vnb-XF-qDB" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="4" id="rTa-Wf-EkT"/>
                 <constraint firstItem="ex8-e5-cj9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="yHZ-Dq-sXC"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -52,7 +60,6 @@
             <connections>
                 <outlet property="optionsCollectionView" destination="ex8-e5-cj9" id="Pr1-iH-LrI"/>
             </connections>
-            <point key="canvasLocation" x="16.800000000000001" y="66.566716641679164"/>
         </view>
     </objects>
 </document>

@@ -1,14 +1,18 @@
 //
-//  PaymenyTableCell.swift
+//  CheckoutAddressTableViewCell.swift
 //  Tatayaba
 //
-//  Created by Maheep on 02/09/19.
+//  Created by Kareem Kareem on 9/11/19.
 //  Copyright © 2019 Shaik. All rights reserved.
 //
 
 import UIKit
 
-class PaymenyTableCell: UITableViewCell {
+class CheckoutAddressTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var detailsLabel: UILabel!
+    @IBOutlet weak var editButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,5 +24,5 @@ class PaymenyTableCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

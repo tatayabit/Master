@@ -10,12 +10,12 @@ import UIKit
 
 class Cart {
     static let shared = Cart()
-    private var products = [CartItem]()
+    private var cartItemsArr = [CartItem]()
     private var productsArr = [Product]()
 
     var defaultShipping: ShippingMethod?
 
-    var productsCount: Int { return products.count }
+    var productsCount: Int { return cartItemsArr.count }
     var subtotalPrice: String { return String(calculateSubTotal()).formattedPrice }
 
     //MARK:- Operational functions
@@ -25,17 +25,19 @@ class Cart {
             increaseCount(cartItem: cartItem)
         } else {
             let productModel = CartItem(productId: String(product.identifier), productName: product.name)
-            products.append(productModel)
+            cartItemsArr.append(productModel)
             productsArr.append(product)
         }
     }
 
     func cartItem(for product: Product) -> CartItem {
-        return products.filter({ $0.productId == String(product.identifier) }).first ?? CartItem(productId: String(product.identifier), productName: product.name)
+        return cartItemsArr.filter({ $0.productId == String(product.identifier) }).first ?? CartItem(productId: String(product.identifier), productName: product.name)
     }
 
-    func removeProduct(cartItem: CartItem) {
-
+    func removeProduct(at indexPath: IndexPath) {
+        let cartProduct = product(at: indexPath)
+        cartItemsArr.remove(at: indexPath.row)
+        productsArr.remove(at: indexPath.row)
     }
 
     func increaseCount(cartItem: CartItem) {
@@ -47,8 +49,8 @@ class Cart {
     }
 
     func product(at indexPath: IndexPath) -> (Product, CartItem) {
-        guard products.count > 0 else { return (Product(), CartItem()) }
-        return (productsArr[indexPath.row], products[indexPath.row])
+        guard cartItemsArr.count > 0 else { return (Product(), CartItem()) }
+        return (productsArr[indexPath.row], cartItemsArr[indexPath.row])
     }
 
     func calculateSubTotal() -> Float {
@@ -56,7 +58,7 @@ class Cart {
         if productsArr.count > 0 {
         for i in 0...productsArr.count - 1 {
             let productItem = productsArr[i]
-            let cartItem = products[i]
+            let cartItem = cartItemsArr[i]
             let price = (productItem.price as NSString).floatValue//Float(productItem.price) ?? 0.0
             let quantity = Float(cartItem.count)
             total += (quantity * price)
@@ -67,7 +69,7 @@ class Cart {
     }
 
     func cartItemsList() -> [CartItem] {
-        return self.products
+        return self.cartItemsArr
     }
 
     func productsList() -> [Product] {
@@ -76,7 +78,7 @@ class Cart {
 
     //MARK:- Private functions
     private func productExistedInCart(product: Product) -> Bool {
-        let existed = products.contains(where: { $0.productId == String(product.identifier) })
+        let existed = cartItemsArr.contains(where: { $0.productId == String(product.identifier) })
         return existed
     }
 }

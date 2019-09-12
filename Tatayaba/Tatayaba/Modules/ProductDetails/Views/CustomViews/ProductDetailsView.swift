@@ -18,6 +18,8 @@ class ProductDetailsView: UIView, UICollectionViewDelegate, UICollectionViewData
 
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
 
     let imagesArray = ["ProductImg",
                      "ADD",
@@ -43,7 +45,7 @@ class ProductDetailsView: UIView, UICollectionViewDelegate, UICollectionViewData
     }
 
     private func setupUI() {
-        productCollectionView.register(CarouselCollectionViewCell.nib, forCellWithReuseIdentifier: CarouselCollectionViewCell.identifier)
+        productCollectionView.register(ProductImageCarouselCollectionViewCell.nib, forCellWithReuseIdentifier: ProductImageCarouselCollectionViewCell.identifier)
         productCollectionView.dataSource = self
         productCollectionView.delegate = self
     }
@@ -53,23 +55,25 @@ class ProductDetailsView: UIView, UICollectionViewDelegate, UICollectionViewData
         guard let viewModel = viewModel else { return }
         descriptionLabel.text = viewModel.description
         quantityLabel.text = String(viewModel.selectedQuantity)
+        nameLabel.text = viewModel.name
+        priceLabel.text = viewModel.price
+        
     }
 
     //MARK:- CollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
 //        guard let viewModel = viewModel else { return 0 }
-        return 3
+        return 1
     }
 
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselCollectionViewCell.identifier, for: indexPath) as! CarouselCollectionViewCell
-//        guard let viewModel = viewModel else { return cell }
-        cell.configure(imageName: imagesArray[indexPath.row])
-
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductImageCarouselCollectionViewCell.identifier, for: indexPath) as! ProductImageCarouselCollectionViewCell
+        guard let viewModel = viewModel else { return cell }
+        cell.configure(imageUrl: viewModel.imageUrl)
         return cell
     }
 

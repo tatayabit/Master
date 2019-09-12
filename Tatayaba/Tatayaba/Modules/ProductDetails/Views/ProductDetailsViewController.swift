@@ -26,9 +26,11 @@ class ProductDetailsViewController: BaseViewController {
 
     //MARK:- Setup StackedScrollView
     func addSubViews() {
+        scrollView.backgroundColor = UIColor(hexString: "#E9EBEC")
+        scrollView.stackView.backgroundColor = UIColor(hexString: "#E9EBEC")
         setupProductDetailsView()
         setupOptionsView()
-      // setupPriceButton()
+       // setupPriceButton()
     }
 
 
@@ -38,15 +40,14 @@ class ProductDetailsViewController: BaseViewController {
         productDetailsView.loadData()
         scrollView.stackView.addArrangedSubview(productDetailsView)
         productDetailsView.translatesAutoresizingMaskIntoConstraints = false
-        productDetailsView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        productDetailsView.heightAnchor.constraint(equalToConstant: 415).isActive = true
     }
 
     fileprivate func setupOptionsView() {
         productOptionsView.viewModel = viewModel
        scrollView.stackView.addArrangedSubview(productOptionsView)
         productOptionsView.translatesAutoresizingMaskIntoConstraints = false
-        productOptionsView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        
+        productOptionsView.heightAnchor.constraint(equalToConstant: 54).isActive = true
     }
 
     fileprivate func setupPriceButton() {
@@ -77,7 +78,7 @@ class ProductDetailsViewController: BaseViewController {
     @IBAction func Add_Cart(_ sender: Any) {
 
         addToCartAction()
-        let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
+        let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewCartViewController") as! NewCartViewController
         self.navigationController?.pushViewController(controller, animated: false)
     }
     //MARK:- IBActions

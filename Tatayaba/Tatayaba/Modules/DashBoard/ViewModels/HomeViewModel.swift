@@ -179,6 +179,6 @@ class HomeViewModel {
     //MARK:- ProductsListViewModel
     func productsListViewModel(indexPath: IndexPath) -> ProductsListViewModel {
         let category = categoriesList[indexPath.row]
-        return ProductsListViewModel(categoryId: Int(category.identifier) ?? 0)
+        return ProductsListViewModel(category: category)
     }
 }

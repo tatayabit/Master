@@ -18,16 +18,17 @@ class ProductsListViewModel {
 
     var productsCount: Int { return productsList.count }
 
-    var categoryId: Int
     var page: Int = 0
+    var category: Category
 
-    init(categoryId: Int) {
-        self.categoryId = categoryId
+    init(category: Category) {
+        self.category = category
     }
 
 
     //MARK:- Api
     func getProductsOfCategory() {
+        let categoryId = Int(category.identifier) ?? 0
         apiClient.getProductOf(categoryId: categoryId, page: page) { result in
             switch result {
             case .success(let response):
@@ -57,5 +58,11 @@ class ProductsListViewModel {
     func productDetailsViewModel(at indexPath: IndexPath) -> ProductDetailsViewModel {
         let productViewModel = ProductDetailsViewModel(product: product(at: indexPath))
         return productViewModel
+    }
+
+    // MARK:- AddToCart
+    func addToCart(at indexPath: IndexPath)  {
+        let cart = Cart.shared
+        cart.addProduct(product: product(at: indexPath))
     }
 }

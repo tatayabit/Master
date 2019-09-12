@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Myriad Pro Regular.ttf">
+            <string>MyriadPro-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProductOptionsView" customModule="Tatayaba" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8S7-MB-E3i">
+                    <rect key="frame" x="16" y="14" width="343" height="40"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="mdm-8d-E2C">
+                            <rect key="frame" x="323" y="17" width="11" height="6"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="11" id="Mvq-Vr-LDq"/>
+                                <constraint firstAttribute="height" constant="6" id="frc-X7-Uij"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your bottles*" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1r-XO-ck4">
+                            <rect key="frame" x="20" y="7.5" width="303" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="PP7-pI-YHg"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="11"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="h1r-XO-ck4" firstAttribute="centerY" secondItem="mdm-8d-E2C" secondAttribute="centerY" id="0R8-xF-vWw"/>
+                        <constraint firstAttribute="trailing" secondItem="mdm-8d-E2C" secondAttribute="trailing" constant="9" id="FYV-27-O3x"/>
+                        <constraint firstItem="mdm-8d-E2C" firstAttribute="centerY" secondItem="8S7-MB-E3i" secondAttribute="centerY" id="Iwj-LC-DK5"/>
+                        <constraint firstItem="h1r-XO-ck4" firstAttribute="leading" secondItem="8S7-MB-E3i" secondAttribute="leading" constant="20" id="Kps-Z0-38h"/>
+                        <constraint firstAttribute="trailing" secondItem="h1r-XO-ck4" secondAttribute="trailing" constant="20" id="OTL-7a-K1S"/>
+                        <constraint firstAttribute="height" constant="40" id="rD3-0R-dUl"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="8S7-MB-E3i" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="19E-Bq-gVP"/>
+                <constraint firstItem="8S7-MB-E3i" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="14" id="iov-lB-YYB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8S7-MB-E3i" secondAttribute="trailing" constant="16" id="p21-6s-U28"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="138.40000000000001" y="102.54872563718142"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="down-arrow" width="7.5" height="4"/>
+    </resources>
+</document>
