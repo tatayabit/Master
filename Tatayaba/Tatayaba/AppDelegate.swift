@@ -103,5 +103,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    // MARK:- ChangeLanguage
+    func changeLang() {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        loadRootViewController()
+    }
+    
 }
 
+//#pragma mark - ChangeLanguage
+//-(void)changeLang {
+//
+//
+//    UIStoryboard * storyboard = [UIStoryboard  storyboardWithName:@"Main" bundle:nil];
+//
+//
+//    //    if ([LanguageManager isArabicLanguage]){
+//    //        storyboard = [UIStoryboard  storyboardWithName:kArabicStoryBoard bundle:nil];
+//    //    }
+//
+//    UIViewController * initialViewController = [storyboard instantiateViewControllerWithIdentifier:@"CharitiesViewController"];
+//
+//
+//
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.window.rootViewController = [storyboard instantiateInitialViewController];
+//
+//    UINavigationController *navController =
+//        (UINavigationController *)self.window.rootViewController;
+//    //[navController pushViewController:initialViewController animated:NO];
+//    navController.viewControllers = @[initialViewController];
+//    [self.window makeKeyAndVisible];
+//
+//}

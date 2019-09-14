@@ -60,6 +60,8 @@
 		11453958232A984900EDC908 /* ConciergeSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11453957232A984900EDC908 /* ConciergeSubView.swift */; };
 		1145395A232A987900EDC908 /* ConciergeSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11453959232A987900EDC908 /* ConciergeSubView.xib */; };
 		1145395D232CDC7C00EDC908 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145395C232CDC7C00EDC908 /* ImagePicker.swift */; };
+		11453961232CEF3400EDC908 /* L012Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145395F232CEF3400EDC908 /* L012Localizer.swift */; };
+		11453962232CEF3400EDC908 /* L333Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11453960232CEF3400EDC908 /* L333Language.swift */; };
 		114D1A0022CBAAE2009205F3 /* Products.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 114D19FF22CBAAE2009205F3 /* Products.storyboard */; };
 		114D1A0722CBB0EA009205F3 /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114D1A0622CBB0EA009205F3 /* ConfigurableCell.swift */; };
 		114D1A0922CBB10D009205F3 /* TableCellConfigutator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114D1A0822CBB10D009205F3 /* TableCellConfigutator.swift */; };
@@ -286,6 +288,8 @@
 		11453957232A984900EDC908 /* ConciergeSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConciergeSubView.swift; sourceTree = "<group>"; };
 		11453959232A987900EDC908 /* ConciergeSubView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConciergeSubView.xib; sourceTree = "<group>"; };
 		1145395C232CDC7C00EDC908 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		1145395F232CEF3400EDC908 /* L012Localizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L012Localizer.swift; sourceTree = "<group>"; };
+		11453960232CEF3400EDC908 /* L333Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L333Language.swift; sourceTree = "<group>"; };
 		114D19FF22CBAAE2009205F3 /* Products.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Products.storyboard; sourceTree = "<group>"; };
 		114D1A0622CBB0EA009205F3 /* ConfigurableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
 		114D1A0822CBB10D009205F3 /* TableCellConfigutator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellConfigutator.swift; sourceTree = "<group>"; };
@@ -707,6 +711,15 @@
 				1145395C232CDC7C00EDC908 /* ImagePicker.swift */,
 			);
 			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		1145395E232CEF3400EDC908 /* Localize */ = {
+			isa = PBXGroup;
+			children = (
+				1145395F232CEF3400EDC908 /* L012Localizer.swift */,
+				11453960232CEF3400EDC908 /* L333Language.swift */,
+			);
+			path = Localize;
 			sourceTree = "<group>";
 		};
 		114D19F922CBAAA3009205F3 /* Products */ = {
@@ -1504,6 +1517,7 @@
 		847CDE3F22C9EE2300E67C8C /* Tatayaba */ = {
 			isa = PBXGroup;
 			children = (
+				1145395E232CEF3400EDC908 /* Localize */,
 				114D1A0122CBB09D009205F3 /* Common */,
 				11F52FA522CA7D92000F0D85 /* Modules */,
 				847CDE7822CA12EC00E67C8C /* Utilities */,
@@ -2045,8 +2059,10 @@
 				11945BCB22F0B0C6000F08DC /* ShippingEndpoint.swift in Sources */,
 				11081EF822DB8CD800B68EA5 /* StackedScrollView.swift in Sources */,
 				11D612A822CE49D1000D42C3 /* UserAPIClient.swift in Sources */,
+				11453961232CEF3400EDC908 /* L012Localizer.swift in Sources */,
 				114D1A1522CBB27E009205F3 /* CategoryCollectionViewCell.swift in Sources */,
 				11C271B922F5CB59004613E3 /* LoginViewModel.swift in Sources */,
+				11453962232CEF3400EDC908 /* L333Language.swift in Sources */,
 				11081EF622DB8A1600B68EA5 /* ProfileViewModel.swift in Sources */,
 				11453954232A8D2900EDC908 /* ConciergeViewModel.swift in Sources */,
 				848E89C822CCE53E000AA24C /* BaseViewController.swift in Sources */,
