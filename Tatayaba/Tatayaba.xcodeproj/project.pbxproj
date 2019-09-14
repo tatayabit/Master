@@ -59,6 +59,7 @@
 		11453956232A954B00EDC908 /* Concierge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11453955232A954B00EDC908 /* Concierge.storyboard */; };
 		11453958232A984900EDC908 /* ConciergeSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11453957232A984900EDC908 /* ConciergeSubView.swift */; };
 		1145395A232A987900EDC908 /* ConciergeSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11453959232A987900EDC908 /* ConciergeSubView.xib */; };
+		1145395D232CDC7C00EDC908 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145395C232CDC7C00EDC908 /* ImagePicker.swift */; };
 		114D1A0022CBAAE2009205F3 /* Products.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 114D19FF22CBAAE2009205F3 /* Products.storyboard */; };
 		114D1A0722CBB0EA009205F3 /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114D1A0622CBB0EA009205F3 /* ConfigurableCell.swift */; };
 		114D1A0922CBB10D009205F3 /* TableCellConfigutator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114D1A0822CBB10D009205F3 /* TableCellConfigutator.swift */; };
@@ -284,6 +285,7 @@
 		11453955232A954B00EDC908 /* Concierge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Concierge.storyboard; sourceTree = "<group>"; };
 		11453957232A984900EDC908 /* ConciergeSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConciergeSubView.swift; sourceTree = "<group>"; };
 		11453959232A987900EDC908 /* ConciergeSubView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConciergeSubView.xib; sourceTree = "<group>"; };
+		1145395C232CDC7C00EDC908 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		114D19FF22CBAAE2009205F3 /* Products.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Products.storyboard; sourceTree = "<group>"; };
 		114D1A0622CBB0EA009205F3 /* ConfigurableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
 		114D1A0822CBB10D009205F3 /* TableCellConfigutator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellConfigutator.swift; sourceTree = "<group>"; };
@@ -699,6 +701,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		1145395B232CDC6900EDC908 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				1145395C232CDC7C00EDC908 /* ImagePicker.swift */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
 		114D19F922CBAAA3009205F3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -754,6 +764,7 @@
 		114D1A0222CBB0A4009205F3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1145395B232CDC6900EDC908 /* ImagePicker */,
 				11081EF722DB8CD800B68EA5 /* StackedScrollView.swift */,
 				114D1A0422CBB0C1009205F3 /* CollectionCellConfigurator */,
 				114D1A0322CBB0AE009205F3 /* TableCellConfigutator */,
@@ -2098,6 +2109,7 @@
 				84843C1322D08DB000702E40 /* RootViewController.swift in Sources */,
 				11945BBD22F0B08D000F08DC /* CheckOutModel.swift in Sources */,
 				11081EEC22DB824600B68EA5 /* AboutUsViewController.swift in Sources */,
+				1145395D232CDC7C00EDC908 /* ImagePicker.swift in Sources */,
 				11007BD522DE2F2E00AC9957 /* NewProductCollectionViewCell.swift in Sources */,
 				11F52FB922CA7D92000F0D85 /* SignUpViewcontroller.swift in Sources */,
 				84843C1522D08DB000702E40 /* BaseTableViewController.swift in Sources */,
