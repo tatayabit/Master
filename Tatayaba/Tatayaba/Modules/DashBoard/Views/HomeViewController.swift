@@ -53,7 +53,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         productsBlocklView.delegate = self
         scrollView.stackView.addArrangedSubview(productsBlocklView)
         productsBlocklView.translatesAutoresizingMaskIntoConstraints = false
-        productsBlocklView.heightAnchor.constraint(equalToConstant: 235).isActive = true
+        productsBlocklView.heightAnchor.constraint(equalToConstant: 265).isActive = true
 
 
         scrollView.stackView.addArrangedSubview(suppliersBlockView)
