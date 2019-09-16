@@ -10,11 +10,12 @@ import UIKit
 import MOLH
 
 class profileTabMenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-      var Session1: [String] = ["Wish List", "My Orders"]
+    var Session1: [String] = ["Wish List", "My Orders"]
     var Session1_img: [String] = ["WISHLIST", "MY ORDERS"]
-      var Session2: [String] = ["Change Language", "Live Chat","Notifications"]
-      var Session2_img: [String] = ["Setting", "LIVE CHAT","Notifications"]
-        var Session3: [String] = ["Delivery and Return Policy", "Privacy Policy","Logout"]
+    var Session2: [String] = ["Change Language", "Live Chat","Notifications"]
+    var Session2_img: [String] = ["Setting", "LIVE CHAT","Notifications"]
+    var Session3: [String] = ["Delivery and Return Policy", "Privacy Policy","Logout"]
+    var Session4: [String] = ["Delivery and Return Policy", "Privacy Policy"]
     var Session3_img: [String] = ["Delivery and Return Policy", "Privacy Policy","LOGOUT"]
     
     private let orderDetailsSegue = "order_details_segue"
@@ -29,16 +30,6 @@ class profileTabMenuViewController: UIViewController,UITableViewDelegate,UITable
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     @objc func sign_buttonAction() {
    
        self.loadFirstVC()
@@ -49,7 +40,6 @@ class profileTabMenuViewController: UIViewController,UITableViewDelegate,UITable
 extension profileTabMenuViewController{
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 3
     }
     
@@ -61,8 +51,15 @@ extension profileTabMenuViewController{
             }else{
                 return 1
             }
-        }else {
+        }else if section == 1 {
             return Session2.count
+        }else{
+            let UserID = UserDefaults.standard.value(forKey: "UserID") as! String
+            if UserID == "1"{
+                return Session3.count
+            }else{
+                return Session4.count
+            }
         }
      
     }
@@ -85,7 +82,6 @@ extension profileTabMenuViewController{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "ProfileMenuTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ProfileMenuTableViewCell
-       
         if  indexPath.section == 0 {
             let UserID = UserDefaults.standard.value(forKey: "UserID") as! String
             if UserID == "1"{
@@ -95,7 +91,7 @@ extension profileTabMenuViewController{
                 cell.title_lbl.isHidden = true
                 cell.title_img.isHidden = true
                 cell.accessoryType = UITableViewCellAccessoryType.none
-                let sign_button = UIButton(frame: CGRect(x: 120, y: 25, width: 150, height: 50))
+                let sign_button = UIButton(frame: CGRect(x: UIScreen.main.bounds.size.width/2-70, y: 25, width: 150, height: 50))
                  sign_button.setTitle("Sign in", for: .normal)
       sign_button.addTarget(self, action: #selector(sign_buttonAction), for: .touchUpInside)
                sign_button.setTitleColor(UIColor.black, for: .normal)
@@ -103,16 +99,20 @@ extension profileTabMenuViewController{
                 sign_button.layer.borderColor =  UIColor.black.cgColor
                 sign_button.layer.cornerRadius = 15
                cell.addSubview(sign_button)
-                
             }
-           
         }
        else if  indexPath.section == 1 {
             cell.title_lbl.text = self.Session2[indexPath.row]
             cell.title_img.image = UIImage(named: self.Session2_img[indexPath.row])
         }
         else if  indexPath.section == 2 {
-            cell.title_lbl.text = self.Session3[indexPath.row]
+            
+            let UserID = UserDefaults.standard.value(forKey: "UserID") as! String
+            if UserID == "1"{
+                 cell.title_lbl.text = self.Session3[indexPath.row]
+            }else{
+                 cell.title_lbl.text = self.Session4[indexPath.row]
+            }
             cell.title_img.image = UIImage(named: self.Session3_img[indexPath.row])
         }
         return cell
@@ -140,12 +140,14 @@ extension profileTabMenuViewController{
             
         }else if  indexPath.section == 2 {
             let indextitle = self.Session3[indexPath.row]
-            if indextitle  == "Delivery and Return Policy"{
+            if indextitle  == "Privacy Policy" {
+            UserDefaults.standard.set("Privacy", forKey: "Privacy")
+                self.PrivacyView()
+            } else if indextitle  == "Delivery and Return Policy" {
+            UserDefaults.standard.set("Delivery", forKey: "Privacy")
                 
-                //Policy page
-              
-            }
-            if indextitle  == "Logout"{
+                 self.PrivacyView()
+            }else  if indextitle  == "Logout"{
             self.loadFirstVC()
                 
             }
@@ -194,6 +196,12 @@ extension profileTabMenuViewController{
         let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         self.navigationController?.pushViewController(controller, animated: false)
          self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    func PrivacyView() {
+        let controller = UIStoryboard(name: "ProfileTab", bundle: Bundle.main).instantiateViewController(withIdentifier: "WebViewViewController") as! WebViewViewController
+        self.navigationController?.pushViewController(controller, animated: false)
+        self.tabBarController?.tabBar.isHidden = true
     }
     
   

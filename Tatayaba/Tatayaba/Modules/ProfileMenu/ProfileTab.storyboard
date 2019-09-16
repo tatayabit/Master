@@ -79,11 +79,41 @@
                     </view>
                     <connections>
                         <outlet property="profileMenu_tableView" destination="w2s-aB-VEg" id="hEm-Fc-kdB"/>
+                        <segue destination="DjB-Hy-s7y" kind="push" identifier="WebViewViewController" id="LM7-dU-FBb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QZi-7h-h0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="29.600000000000001" y="99.400299850074973"/>
+        </scene>
+        <!--Web View View Controller-->
+        <scene sceneID="ffn-Lu-JVx">
+            <objects>
+                <viewController storyboardIdentifier="WebViewViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DjB-Hy-s7y" customClass="WebViewViewController" customModule="Tatayaba" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BWH-sa-BUI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qYM-It-RpC">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="DjB-Hy-s7y" id="ZQY-06-KY2"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="nXN-af-3Nh"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mAC-W1-vw1"/>
+                    <connections>
+                        <outlet property="webView" destination="qYM-It-RpC" id="QnQ-xU-vio"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vo3-Yf-IdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="880.79999999999995" y="98.50074962518741"/>
         </scene>
     </scenes>
     <resources>
