@@ -64,7 +64,7 @@ class CategoriesViewController: BaseViewController, UICollectionViewDelegate, UI
     //MARK:- Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == productsListSegue {
-            let productsListVC = segue.destination as! ProductsListViewController
+            let productsListVC = segue.destination as! CatProductsViewController
             if let indexPath = sender as? IndexPath {
                 productsListVC.viewModel = viewModel.productsListViewModel(indexPath: indexPath)
             }

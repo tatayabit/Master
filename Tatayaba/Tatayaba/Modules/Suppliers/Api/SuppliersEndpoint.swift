@@ -10,7 +10,7 @@ import Moya
 
 enum SuppliersEndpoint {
     case getSuppliers()
-    case getProductsOfSupplier(supplierId: String)
+    case getSupplierDetails(supplierId: String)
 }
 
 
@@ -34,7 +34,7 @@ extension SuppliersEndpoint: TargetType {
         case .getSuppliers:
             let version = "4.0"
             return "\(version.urlEscaped)/TtmSuppliers/"
-        case .getProductsOfSupplier(let supplierId):
+        case .getSupplierDetails(let supplierId):
             let version = "4.0"
             return "\(version.urlEscaped)/TtmSuppliers/\(supplierId.urlEscaped)"
         }
@@ -42,7 +42,7 @@ extension SuppliersEndpoint: TargetType {
 
     var method: Moya.Method {
         switch self {
-        case .getSuppliers, .getProductsOfSupplier:
+        case .getSuppliers, .getSupplierDetails:
             return .get
         }
     }
@@ -58,7 +58,7 @@ extension SuppliersEndpoint: TargetType {
 
     var task: Task {
         switch self {
-        case .getSuppliers, .getProductsOfSupplier:
+        case .getSuppliers, .getSupplierDetails:
             return .requestPlain
         }
     }

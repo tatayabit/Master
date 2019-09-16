@@ -8,7 +8,7 @@
 
 import Moya
 
-class ProductsListViewModel {
+class CatProductsViewModel {
     let apiClient = ProductsAPIClient()
 
     private var productsList = [Product]()

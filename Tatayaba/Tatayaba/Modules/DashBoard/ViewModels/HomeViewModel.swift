@@ -177,8 +177,14 @@ class HomeViewModel {
     }
 
     //MARK:- ProductsListViewModel
-    func productsListViewModel(indexPath: IndexPath) -> ProductsListViewModel {
+    func catProductsListViewModel(indexPath: IndexPath) -> CatProductsViewModel {
         let category = categoriesList[indexPath.row]
-        return ProductsListViewModel(category: category)
+        return CatProductsViewModel(category: category)
+    }
+
+    //MARK:- SupplierProductsViewModel
+    func supplierProductsViewModel(indexPath: IndexPath) -> SupplierProductsViewModel {
+        let supplier = suppliersList[indexPath.row]
+        return SupplierProductsViewModel(supplier: supplier)
     }
 }

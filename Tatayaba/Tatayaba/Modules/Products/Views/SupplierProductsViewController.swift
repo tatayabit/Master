@@ -1,19 +1,19 @@
 //
-//  ProductsListViewController.swift
+//  SupplierProductsViewController.swift
 //  Tatayaba
 //
-//  Created by Kareem Kareem on 7/16/19.
+//  Created by Kareem Kareem on 9/16/19.
 //  Copyright © 2019 Shaik. All rights reserved.
 //
 
 import UIKit
 
-class ProductsListViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ProductsBlockCollectionViewCellDelegate {
+class SupplierProductsViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ProductsBlockCollectionViewCellDelegate {
 
     @IBOutlet weak var productsCollectionView: UICollectionView!
-    @IBOutlet weak var categoryNameLabel: UILabel!
+    @IBOutlet weak var supplierNameLabel: UILabel!
 
-    var viewModel: ProductsListViewModel?
+    var viewModel: SupplierProductsViewModel?
     private let productDetailsSegue = "product_details_segue"
 
 
@@ -24,8 +24,8 @@ class ProductsListViewController: BaseViewController, UICollectionViewDelegate, 
 
         setupUI()
         guard let viewModel = viewModel else { return }
-        viewModel.getProductsOfCategory()
-        viewModel.onProductsListLoad = {
+        viewModel.getSupplierDetails()
+        viewModel.onSupplierLoad = {
             self.productsCollectionView.dataSource = self
             self.productsCollectionView.delegate = self
         }
@@ -34,14 +34,14 @@ class ProductsListViewController: BaseViewController, UICollectionViewDelegate, 
 
     func setupUI() {
         productsCollectionView.register(ProductsBlockCollectionViewCell.nib, forCellWithReuseIdentifier: ProductsBlockCollectionViewCell.identifier)
-        self.categoryNameLabel.text = viewModel?.category.name
+        self.supplierNameLabel.text = viewModel?.supplier.name
     }
 
     //MARK:- CollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         guard let viewModel = viewModel else { return 0 }
-        return viewModel.productsCount
+        return viewModel.supplier.products.count
     }
 
 

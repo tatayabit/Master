@@ -30,8 +30,8 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
     func configure(_ product: Product, indexPath: IndexPath) {
         bannerImageView.sd_setImage(with: URL(string: product.mainPair.detailedPair.imageUrl), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
 
-        nameLabel.text = product.name
-        descriptionLabel.text = product.description
+        nameLabel.text = product.supplierName
+        descriptionLabel.text = product.name
         priceLabel.text = product.price.formattedPrice
         self.indexPath = indexPath
     }
