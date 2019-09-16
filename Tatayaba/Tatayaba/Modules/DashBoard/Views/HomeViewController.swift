@@ -15,7 +15,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     private let allCategoriesSegue = "all_categories_segue"
 
     @IBOutlet weak var scrollView: StackedScrollView!
-
+     var tabbar:UITabBar?
     private var viewModel = HomeViewModel()
 
     let squaredBlockView: BannersBlocksView = .fromNib()
@@ -121,6 +121,12 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
 
         self.addLeftBarButton()
         self.NavigationBarWithOutBackButton()
+        self.tabbar?.selectedItem = tabbar?.items?[0]
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated) // No need for semicolon
+        self.tabBarController?.tabBar.isHidden = false
     }
 
     // MARK:- CategoriesBlockView delegate
