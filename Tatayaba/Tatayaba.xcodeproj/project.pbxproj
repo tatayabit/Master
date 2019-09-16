@@ -158,6 +158,9 @@
 		4CC28C482327EF59003EAEA6 /* GothamHTF-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CC28C472327EF59003EAEA6 /* GothamHTF-Book.ttf */; };
 		4CC28C5E2327F1CF003EAEA6 /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4CC28C4C2327F1CE003EAEA6 /* Gotham-Light.otf */; };
 		4CC28C702327F961003EAEA6 /* GOTHAM-MEDIUM.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 4CC28C6F2327F961003EAEA6 /* GOTHAM-MEDIUM.TTF */; };
+		4CC343A4232F96A6005BA810 /* ProfileTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC343A3232F96A6005BA810 /* ProfileTab.storyboard */; };
+		4CC343A6232F96C2005BA810 /* profileTabMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC343A5232F96C2005BA810 /* profileTabMenuViewController.swift */; };
+		4CC343A8232F9FAF005BA810 /* ProfileMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC343A7232F9FAF005BA810 /* ProfileMenuTableViewCell.swift */; };
 		4CD8B8A6232129D300D25CC3 /* Suppliers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8B8A5232129D300D25CC3 /* Suppliers.storyboard */; };
 		4CD8B8AA23212A3100D25CC3 /* SuppliersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8B8A823212A3100D25CC3 /* SuppliersCollectionViewCell.swift */; };
 		4CD8B8AB23212A3100D25CC3 /* SuppliersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8B8A923212A3100D25CC3 /* SuppliersCollectionViewCell.xib */; };
@@ -386,6 +389,9 @@
 		4CC28C472327EF59003EAEA6 /* GothamHTF-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamHTF-Book.ttf"; sourceTree = "<group>"; };
 		4CC28C4C2327F1CE003EAEA6 /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.otf"; sourceTree = "<group>"; };
 		4CC28C6F2327F961003EAEA6 /* GOTHAM-MEDIUM.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GOTHAM-MEDIUM.TTF"; sourceTree = "<group>"; };
+		4CC343A3232F96A6005BA810 /* ProfileTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileTab.storyboard; sourceTree = "<group>"; };
+		4CC343A5232F96C2005BA810 /* profileTabMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileTabMenuViewController.swift; sourceTree = "<group>"; };
+		4CC343A7232F9FAF005BA810 /* ProfileMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuTableViewCell.swift; sourceTree = "<group>"; };
 		4CD8B8A5232129D300D25CC3 /* Suppliers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Suppliers.storyboard; sourceTree = "<group>"; };
 		4CD8B8A823212A3100D25CC3 /* SuppliersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuppliersCollectionViewCell.swift; sourceTree = "<group>"; };
 		4CD8B8A923212A3100D25CC3 /* SuppliersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuppliersCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -1156,6 +1162,7 @@
 		11F52FA522CA7D92000F0D85 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4CC343A2232F9683005BA810 /* ProfileMenu */,
 				1145394D232A8B9600EDC908 /* Concierge */,
 				11FB5855231C3AEE005DA4F0 /* Suppliers */,
 				117AC9F62314442600EFCE25 /* Deeplinks */,
@@ -1330,6 +1337,16 @@
 				11FEB4DF22DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		4CC343A2232F9683005BA810 /* ProfileMenu */ = {
+			isa = PBXGroup;
+			children = (
+				4CC343A3232F96A6005BA810 /* ProfileTab.storyboard */,
+				4CC343A5232F96C2005BA810 /* profileTabMenuViewController.swift */,
+				4CC343A7232F9FAF005BA810 /* ProfileMenuTableViewCell.swift */,
+			);
+			path = ProfileMenu;
 			sourceTree = "<group>";
 		};
 		4CD8B8A723212A0B00D25CC3 /* Cell */ = {
@@ -1851,6 +1868,7 @@
 				847CDE4B22C9EE2300E67C8C /* Assets.xcassets in Resources */,
 				841CE30C22DCC2D700A47FA0 /* Message.storyboard in Resources */,
 				4CC28C5E2327F1CF003EAEA6 /* Gotham-Light.otf in Resources */,
+				4CC343A4232F96A6005BA810 /* ProfileTab.storyboard in Resources */,
 				847CDE8622CA19EE00E67C8C /* ProximaNova-Light.ttf in Resources */,
 				114D1A1622CBB27E009205F3 /* CategoryCollectionViewCell.xib in Resources */,
 				84BC089622DC7CF400C6180E /* Cart.storyboard in Resources */,
@@ -2114,6 +2132,7 @@
 				847CDE4122C9EE2300E67C8C /* AppDelegate.swift in Sources */,
 				84843C1122D08DB000702E40 /* BaseTabBarController.swift in Sources */,
 				84843C1722D08DB000702E40 /* ContainerViewController.swift in Sources */,
+				4CC343A6232F96C2005BA810 /* profileTabMenuViewController.swift in Sources */,
 				11D612AC22CE4A05000D42C3 /* User.swift in Sources */,
 				1113A79B2329698200FAAC7F /* CheckoutAddressTableViewCell.swift in Sources */,
 				1137042922F9C79200EAFBBD /* OrdersViewModel.swift in Sources */,
@@ -2141,6 +2160,7 @@
 				11FB5849231C2147005DA4F0 /* CategoriesBlockCollectionViewCell.swift in Sources */,
 				8407BAB922E86205001F2C2A /* OrdersViewController.swift in Sources */,
 				116C937022F0949B00921893 /* CartItem.swift in Sources */,
+				4CC343A8232F9FAF005BA810 /* ProfileMenuTableViewCell.swift in Sources */,
 				112654B022D3A2B900904FB5 /* Category.swift in Sources */,
 				11A8B15822D793AC001B2661 /* WishlistViewController.swift in Sources */,
 				11624EDB230C6C1800E81ABD /* BlockBgImageIcon.swift in Sources */,
