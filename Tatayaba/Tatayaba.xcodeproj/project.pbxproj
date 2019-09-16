@@ -155,6 +155,7 @@
 		11FEB4DD22DF850700F2E9B8 /* ProductDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FEB4DC22DF850700F2E9B8 /* ProductDetailsView.xib */; };
 		11FEB4E022DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FEB4DE22DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.swift */; };
 		11FEB4E122DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FEB4DF22DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib */; };
+		4C30D9E8232FDD9500629D38 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30D9E7232FDD9500629D38 /* WebViewViewController.swift */; };
 		4CC28C482327EF59003EAEA6 /* GothamHTF-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CC28C472327EF59003EAEA6 /* GothamHTF-Book.ttf */; };
 		4CC28C5E2327F1CF003EAEA6 /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4CC28C4C2327F1CE003EAEA6 /* Gotham-Light.otf */; };
 		4CC28C702327F961003EAEA6 /* GOTHAM-MEDIUM.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 4CC28C6F2327F961003EAEA6 /* GOTHAM-MEDIUM.TTF */; };
@@ -386,6 +387,7 @@
 		22CC9CEE04574A387EDF22EE /* Pods-TatayabaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.release.xcconfig"; sourceTree = "<group>"; };
 		2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3521A060629ED90EC6114BA5 /* Pods-TatayabaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.debug.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4C30D9E7232FDD9500629D38 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		4CC28C472327EF59003EAEA6 /* GothamHTF-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamHTF-Book.ttf"; sourceTree = "<group>"; };
 		4CC28C4C2327F1CE003EAEA6 /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.otf"; sourceTree = "<group>"; };
 		4CC28C6F2327F961003EAEA6 /* GOTHAM-MEDIUM.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GOTHAM-MEDIUM.TTF"; sourceTree = "<group>"; };
@@ -1345,6 +1347,7 @@
 				4CC343A3232F96A6005BA810 /* ProfileTab.storyboard */,
 				4CC343A5232F96C2005BA810 /* profileTabMenuViewController.swift */,
 				4CC343A7232F9FAF005BA810 /* ProfileMenuTableViewCell.swift */,
+				4C30D9E7232FDD9500629D38 /* WebViewViewController.swift */,
 			);
 			path = ProfileMenu;
 			sourceTree = "<group>";
@@ -2081,6 +2084,7 @@
 				111C8A3C230B1487003F5FDB /* Block.swift in Sources */,
 				11069C3D2323A43A0093D6FF /* SuppliersListViewController.swift in Sources */,
 				11945BBF22F0B08D000F08DC /* CheckoutCompletedViewModel.swift in Sources */,
+				4C30D9E8232FDD9500629D38 /* WebViewViewController.swift in Sources */,
 				11A09F3E22FB44AA00C3E5B8 /* OrderDetailsViewModel.swift in Sources */,
 				114D1A0722CBB0EA009205F3 /* ConfigurableCell.swift in Sources */,
 				11069C392323A2EE0093D6FF /* SupplierDetailsViewModel.swift in Sources */,
