@@ -23,8 +23,14 @@ class LoginViewController: BaseViewController, ValidationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
      navigationController?.isNavigationBarHidden = true
-       self.tabBarController?.tabBar.isHidden = false
+       self.tabBarController?.tabBar.isHidden = true
         registerValidator()
+      
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated) // No need for semicolon
+          self.tabBarController?.tabBar.isHidden = true
     }
 
     //MARK:- Swift Validator
@@ -77,14 +83,15 @@ class LoginViewController: BaseViewController, ValidationDelegate {
         emailTextField.updateColors()
         passwordTextField.updateColors()
         validator.validate(self)
-    
-       
+      UserDefaults.standard.set("1", forKey: "UserID") // Need to give userid
+      
         performSegue(withIdentifier: homeSegue, sender: nil)
 
     }
 
     
     @IBAction func skipAction(_ sender: UIButton) {
+         UserDefaults.standard.set("0", forKey: "UserID")
         performSegue(withIdentifier: homeSegue, sender: nil)
     }
     

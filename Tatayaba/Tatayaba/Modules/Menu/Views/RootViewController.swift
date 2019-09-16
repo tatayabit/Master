@@ -65,17 +65,19 @@ extension RootViewController: RootViewControllerDelegate {
     func loadHome() {
         let controller = UIStoryboard(name: "Home", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
         self.navigationController?.pushViewController(controller, animated: false)
+         self.tabBarController?.tabBar.isHidden = false
     }
 
     func loadProfile() {
         let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
         self.navigationController?.pushViewController(controller, animated: false)
+              self.tabBarController?.tabBar.isHidden = false
     }
     
     func loadFirstVC() {
         let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         self.navigationController?.pushViewController(controller, animated: false)
-      
+            self.tabBarController?.tabBar.isHidden = false
 
     }
      func loadSecondVC() {
@@ -84,12 +86,14 @@ extension RootViewController: RootViewControllerDelegate {
     func loadWishList() {
         let controller = UIStoryboard(name: "Wishlist", bundle: Bundle.main).instantiateViewController(withIdentifier: "WishlistViewController") as! WishlistViewController
         self.navigationController?.pushViewController(controller, animated: false)
+              self.tabBarController?.tabBar.isHidden = false
     }
     
     
     func SuppliersList() {
         let controller = UIStoryboard(name: "Suppliers", bundle: Bundle.main).instantiateViewController(withIdentifier: "SuppliersViewController") as! SuppliersListViewController
         self.navigationController?.pushViewController(controller, animated: false)
+              self.tabBarController?.tabBar.isHidden = false
     }
 
 
@@ -97,20 +101,22 @@ extension RootViewController: RootViewControllerDelegate {
     func loadAboutUs() {
         let controller = UIStoryboard(name: "Static", bundle: Bundle.main).instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
         self.navigationController?.pushViewController(controller, animated: false)
+              self.tabBarController?.tabBar.isHidden = false
     }
 
     
     func loadMessageVC() {
         let controller = UIStoryboard(name: "Message", bundle: Bundle.main).instantiateViewController(withIdentifier: "MessagesViewController") as! MessagesViewController
         self.navigationController?.pushViewController(controller, animated: false)
+              self.tabBarController?.tabBar.isHidden = false
         
     }
     
     func loadOrdersVC() {
         let controller = UIStoryboard(name: "Order", bundle: Bundle.main).instantiateViewController(withIdentifier: "OrderViewController") as! OrdersViewController
         self.navigationController?.pushViewController(controller, animated: false)
-        
-        
+
+              self.tabBarController?.tabBar.isHidden = false
         
     }
     
