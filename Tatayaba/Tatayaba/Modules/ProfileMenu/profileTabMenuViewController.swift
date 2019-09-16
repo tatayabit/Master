@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import MOLH
 
 class profileTabMenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var Session1: [String] = ["Wish List", "My Orders"]
     var Session1_img: [String] = ["WISHLIST", "MY ORDERS"]
-    var Session2: [String] = ["Setting", "Live Chat","Notifications"]
+    var Session2: [String] = ["Change Language", "Live Chat","Notifications"]
     var Session2_img: [String] = ["Setting", "LIVE CHAT","Notifications"]
     var Session3: [String] = ["Delivery and Return Policy", "Privacy Policy","Logout"]
     var Session4: [String] = ["Delivery and Return Policy", "Privacy Policy"]
@@ -132,8 +133,9 @@ extension profileTabMenuViewController{
             
         }else if  indexPath.section == 1 {
             let indextitle = self.Session2[indexPath.row]
-            if indextitle  == "Setting"{
+            if indextitle  == "Change Language"{
                 //setting page
+                self.changeLanguege()
             }
             
         }else if  indexPath.section == 2 {
@@ -156,7 +158,28 @@ extension profileTabMenuViewController{
     }
     
 
-   
+    func changeLanguege() {
+//        LanguageManager.setLanguage(currentLanguage)
+//        L333Localizer.switchTheLanguage(lan: currentLanguage, fromrestPage: true)
+
+        MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
+        MOLH.reset()
+
+        reloadUI()
+//        didUpdateLanguage
+//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didUpdateLanguage"), object: nil)
+
+    }
+
+    func reloadUI() {
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+
+        let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeTabBar") as! UITabBarController
+
+        let window = UIApplication.shared.keyWindow
+        window?.rootViewController = homeVC
+        window?.makeKeyAndVisible()
+    }
     
     func loadWishList() {
         let controller = UIStoryboard(name: "Wishlist", bundle: Bundle.main).instantiateViewController(withIdentifier: "WishlistViewController") as! WishlistViewController
