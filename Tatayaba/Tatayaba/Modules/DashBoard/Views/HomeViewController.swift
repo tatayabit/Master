@@ -8,10 +8,11 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController, BannersBlocksViewProtocol, CategoriesBlockViewProtocol, ProductsBlockViewProtocol {
+class HomeViewController: BaseViewController, BannersBlocksViewProtocol, CategoriesBlockViewProtocol, ProductsBlockViewProtocol, SuppliersBlockViewProtocol {
 
     private let productDetailsSegue = "product_details_segue"
     private let categoryProductsSegue = "category_products_segue"
+    private let supplierProductsSegue = "supplier_products_segue"
     private let allCategoriesSegue = "all_categories_segue"
 
     @IBOutlet weak var scrollView: StackedScrollView!
@@ -56,6 +57,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         productsBlocklView.heightAnchor.constraint(equalToConstant: 265).isActive = true
 
 
+        suppliersBlockView.delegate = self
         scrollView.stackView.addArrangedSubview(suppliersBlockView)
         suppliersBlockView.translatesAutoresizingMaskIntoConstraints = false
         suppliersBlockView.heightAnchor.constraint(equalToConstant: 145).isActive = true
@@ -147,6 +149,11 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         // addProdcut to cart
         viewModel.addToCart(product: product)
     }
+
+    //MARK:- SuppliersBlockViewProtocol
+    func didSelectSupplier(at indexPath: IndexPath) {
+        performSegue(withIdentifier: supplierProductsSegue, sender: indexPath)
+    }
 }
 
 extension HomeViewController {
@@ -161,9 +168,16 @@ extension HomeViewController {
         }
 
         if segue.identifier == categoryProductsSegue {
-            let productsListVC = segue.destination as! ProductsListViewController
+            let productsListVC = segue.destination as! CatProductsViewController
             if let indexPath = sender as? IndexPath {
-                productsListVC.viewModel = viewModel.productsListViewModel(indexPath: indexPath)
+                productsListVC.viewModel = viewModel.catProductsListViewModel(indexPath: indexPath)
+            }
+        }
+
+        if segue.identifier == supplierProductsSegue {
+            let productsListVC = segue.destination as! SupplierProductsViewController
+            if let indexPath = sender as? IndexPath {
+                productsListVC.viewModel = viewModel.supplierProductsViewModel(indexPath: indexPath)
             }
         }
 
