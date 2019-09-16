@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import MOLH
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,9 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
    
         Customer.shared.loadData()
+        MOLH.shared.activate(true)
         self.loadRootViewController()
        
-        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "didUpdateLanguage"), object: nil, queue: OperationQueue.main) { (_ Notification) in
+            self.loadRootViewController()
+        }
         
         // Override point for customization after application launch.
         return true
