@@ -6,4 +6,9 @@
   Copyright © 2019 Shaik. All rights reserved.
 */
 
-"Continue"="Continue";
+// Tab Bar Titles
+"HOME"="Home";
+"CART"="CART";
+"CONCIERGE"="CONCIERGE";
+"CATEGORIES"="CATEGORIES";
+"PROFILE"="PROFILE";

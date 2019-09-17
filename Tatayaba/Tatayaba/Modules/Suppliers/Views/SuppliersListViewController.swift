@@ -14,6 +14,8 @@ class SuppliersListViewController: BaseViewController, UICollectionViewDelegate,
     lazy var searchBar:UISearchBar = UISearchBar()
     let viewModel = SuppliersListViewModel()
 
+    private let supplierProductsSegue = "supplier_products_segue"
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
@@ -90,11 +92,22 @@ class SuppliersListViewController: BaseViewController, UICollectionViewDelegate,
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        performSegue(withIdentifier: supplierProductsSegue, sender: indexPath)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (self.view.bounds.width - 14) / 3, height: 150)
     }
 
+
+    //MARK:- Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == supplierProductsSegue {
+            let productsListVC = segue.destination as! SupplierProductsViewController
+            if let indexPath = sender as? IndexPath {
+                productsListVC.viewModel = viewModel.supplierProductsViewModel(indexPath: indexPath)
+            }
+        }
+    }
 }
