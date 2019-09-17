@@ -68,12 +68,14 @@ extension ProductsEndpoint: TargetType {
             return .requestPlain
         case .getAllCategories:
             return .requestParameters(parameters: [ "items_per_page": 0,
-                                                    "status": "A"
+                                                    "status": "A",
+                                                    "lang_code": LanguageManager.getLanguage()
                 ], encoding: URLEncoding.default)
 
         case .getProductsOfCategory(_, let page):
             return .requestParameters(parameters: [ "items_per_page": 20,
-                                                    "page": page.urlEscaped
+                                                    "page": page.urlEscaped,
+                                                    "lang_code": LanguageManager.getLanguage()
                 ], encoding: URLEncoding.default)
 
         case .getProductFeatures:

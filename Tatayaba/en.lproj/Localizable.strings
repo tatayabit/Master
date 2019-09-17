@@ -7,8 +7,4 @@
 */
 
 // Tab Bar Titles
-"HOME"="Home";
-"cart"="CART";
-"CONCIERGE"="CONCIERGE";
-"CATEGORIES"="CATEGORIES";
-"PROFILE"="PROFILE";
+"Change Language"="Change Language";

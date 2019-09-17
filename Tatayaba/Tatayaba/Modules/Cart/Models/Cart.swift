@@ -35,7 +35,6 @@ class Cart {
     }
 
     func removeProduct(at indexPath: IndexPath) {
-        let cartProduct = product(at: indexPath)
         cartItemsArr.remove(at: indexPath.row)
         productsArr.remove(at: indexPath.row)
     }

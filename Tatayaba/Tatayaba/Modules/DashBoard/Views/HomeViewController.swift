@@ -121,7 +121,6 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         self.scrollView.stackView.backgroundColor = UIColor(hexString: "F3F3F3")
         self.scrollView.backgroundColor = UIColor(hexString: "F3F3F3")
 
-        self.addLeftBarButton()
         self.NavigationBarWithOutBackButton()
         self.tabbar?.selectedItem = tabbar?.items?[0]
     }

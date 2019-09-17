@@ -26,7 +26,6 @@ class SuppliersListViewController: BaseViewController, UICollectionViewDelegate,
     }
 
     func setupUI() {
-        self.addLeftBarButton()
         self.NavigationBarWithOutBackButton()
         supplierCollection_View.register(SuppliersCollectionViewCell.nib, forCellWithReuseIdentifier: SuppliersCollectionViewCell.identifier)
         setupSearchButton()

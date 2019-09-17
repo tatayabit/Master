@@ -49,12 +49,11 @@
         <scene sceneID="eT0-ar-RnH">
             <objects>
                 <viewControllerPlaceholder storyboardName="Cart" referencedIdentifier="NewCartViewController" id="qa9-Id-HAB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="yGl-X9-zVs"/>
                     <navigationItem key="navigationItem" id="5v9-ks-gjv"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jwc-De-zTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="122" y="749"/>
+            <point key="canvasLocation" x="281" y="1204"/>
         </scene>
         <!--ProductDetails-->
         <scene sceneID="J7X-mC-JV2">
@@ -95,7 +94,7 @@
                         <segue destination="J1J-Na-IoS" kind="relationship" relationship="viewControllers" id="V0b-4J-nFF"/>
                         <segue destination="g5t-26-yVe" kind="relationship" relationship="viewControllers" id="dO3-1y-W79"/>
                         <segue destination="Dvx-nP-vye" kind="relationship" relationship="viewControllers" id="DIC-JB-mXY"/>
-                        <segue destination="qa9-Id-HAB" kind="relationship" relationship="viewControllers" id="U4H-ux-KmA"/>
+                        <segue destination="Ghk-TS-HUY" kind="relationship" relationship="viewControllers" id="U4H-ux-KmA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNC-fH-80z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -189,7 +188,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wzy-TF-WBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="849" y="501"/>
+            <point key="canvasLocation" x="1788" y="500.59970014992507"/>
         </scene>
         <!--Profile-->
         <scene sceneID="lXd-T9-9hX">
@@ -208,7 +207,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lyr-0v-FIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1615" y="501"/>
+            <point key="canvasLocation" x="2552.8000000000002" y="500.59970014992507"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="bTk-yj-2Ei">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ghk-TS-HUY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cart" id="yGl-X9-zVs"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r4R-aK-XXV">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qa9-Id-HAB" kind="relationship" relationship="rootViewController" id="tPG-QE-PHk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kd6-og-R04" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="82" y="522"/>
         </scene>
     </scenes>
     <resources>

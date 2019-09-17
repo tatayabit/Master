@@ -28,8 +28,6 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
         // Do any additional setup after loading the view.
         setupUI()
         viewModel.delegate = self
-        self.tabBarItem.title = "cart".localized()
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +39,6 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     func setupUI() {
         cartTableview.register(PriceTableViewCell.nib, forCellReuseIdentifier: PriceTableViewCell.identifier)
         self.NavigationBarWithOutBackButton()
-        self.addLeftBarButton()
     }
 
     func calculateTotal() {

@@ -56,7 +56,10 @@ extension BlocksEndpoint: TargetType {
     var task: Task {
         switch self {
         case .getBlock:
-            return .requestPlain
+//            "lang_code": LanguageManager.getLanguage()
+//            return .requestPlain
+            return .requestParameters(parameters: ["lang_code": LanguageManager.getLanguage()
+                ], encoding: URLEncoding.default)
         }
     }
 

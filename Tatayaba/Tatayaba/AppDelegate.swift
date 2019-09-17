@@ -33,9 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func loadRootViewController() {
-        let controller = ContainerViewController.sharedInstance
-        self.window?.rootViewController = controller
-        self.window?.makeKeyAndVisible()
+//        let controller = ContainerViewController.sharedInstance
+//        self.window?.rootViewController = controller
+//        self.window?.makeKeyAndVisible()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -13,19 +13,7 @@ let kEnglishLanguage = "en"
 let kArabicLanguage = "ar"
 
 class LanguageManager {
-//    static let DEFAULT_LANGUAGE = "defLanguageVal"
-
-//    class func setLanguage(_ lang: String) {
-//        UserDefaults.standard.set(lang, forKey: DEFAULT_LANGUAGE)
-//    }
-
     class func getLanguage() -> String {
-//        let currentLanguage = UserDefaults.standard.string(forKey: DEFAULT_LANGUAGE)
-//        if currentLanguage == nil {
-//            setLanguage(kEnglishLanguage)
-//            MOLH.setLanguageTo(kEnglishLanguage)
-//        }
-
         return MOLHLanguage.currentAppleLanguage()
     }
 
@@ -33,19 +21,9 @@ class LanguageManager {
         let currentLanguage = getLanguage()
         return currentLanguage == kArabicLanguage
     }
-
-
-//    class func value(for key: String) -> String {
-//        if isArabicLanguage() {
-//            return Bundle.main.localizedString(forKey: key, value: "", table: "ArabicStrings")
-//        } else {
-//            return Bundle.main.localizedString(forKey: key, value: "", table: "EnglishStrings")
-//        }
-//    }
 }
 
 extension String {
-
     func localized() -> String {
         return NSLocalizedString(self, comment: "")
     }
