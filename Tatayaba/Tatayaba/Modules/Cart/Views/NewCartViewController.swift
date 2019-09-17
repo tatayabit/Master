@@ -28,6 +28,8 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
         // Do any additional setup after loading the view.
         setupUI()
         viewModel.delegate = self
+        self.tabBarItem.title = "cart".localized()
+
     }
 
     override func viewWillAppear(_ animated: Bool) {

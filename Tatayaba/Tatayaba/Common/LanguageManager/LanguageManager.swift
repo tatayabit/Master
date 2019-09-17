@@ -47,11 +47,6 @@ class LanguageManager {
 extension String {
 
     func localized() -> String {
-
-        if LanguageManager.isArabicLanguage() {
-            print("arabiC: key--> \(self) --- Value: \(NSLocalizedString(self, tableName: "ArabicStrings", bundle: .main, value: "", comment: ""))")
-            return NSLocalizedString(self, tableName: "ArabicStrings", bundle: .main, value: "", comment: "")
-        }
-        return NSLocalizedString(self, tableName: "EnglishStrings", bundle: .main, value: "", comment: "")
+        return NSLocalizedString(self, comment: "")
     }
 }

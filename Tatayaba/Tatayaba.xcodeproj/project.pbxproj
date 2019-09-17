@@ -71,10 +71,9 @@
 		114D1A1622CBB27E009205F3 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 114D1A1422CBB27E009205F3 /* CategoryCollectionViewCell.xib */; };
 		114D1A1822CBB33E009205F3 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114D1A1722CBB33E009205F3 /* Product.swift */; };
 		115795BD232FE42C0002075E /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115795BC232FE42C0002075E /* LanguageManager.swift */; };
-		115795C0232FE4970002075E /* ArabicStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 115795BF232FE4970002075E /* ArabicStrings.strings */; };
-		115795C2232FE4B30002075E /* EnglishStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 115795C1232FE4B30002075E /* EnglishStrings.strings */; };
 		115795C4233001E70002075E /* SupplierProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115795C3233001E70002075E /* SupplierProductsViewController.swift */; };
 		115795C6233001F60002075E /* SupplierProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115795C5233001F60002075E /* SupplierProductsViewModel.swift */; };
+		115795CD23314CB00002075E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 115795CF23314CB00002075E /* Localizable.strings */; };
 		115DC427231177FC0001EF67 /* HomeHorizontalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115DC426231177FC0001EF67 /* HomeHorizontalLayout.swift */; };
 		115DC42B2311878B0001EF67 /* BannersBlocksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115DC42A2311878B0001EF67 /* BannersBlocksView.swift */; };
 		115DC42D231187950001EF67 /* BannersBlocksView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 115DC42C231187950001EF67 /* BannersBlocksView.xib */; };
@@ -306,10 +305,10 @@
 		114D1A1422CBB27E009205F3 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		114D1A1722CBB33E009205F3 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		115795BC232FE42C0002075E /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
-		115795BF232FE4970002075E /* ArabicStrings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = ArabicStrings.strings; sourceTree = "<group>"; };
-		115795C1232FE4B30002075E /* EnglishStrings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = EnglishStrings.strings; sourceTree = "<group>"; };
 		115795C3233001E70002075E /* SupplierProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierProductsViewController.swift; sourceTree = "<group>"; };
 		115795C5233001F60002075E /* SupplierProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierProductsViewModel.swift; sourceTree = "<group>"; };
+		115795CE23314CB00002075E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		115795D023314CC20002075E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		115DC426231177FC0001EF67 /* HomeHorizontalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHorizontalLayout.swift; sourceTree = "<group>"; };
 		115DC42A2311878B0001EF67 /* BannersBlocksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannersBlocksView.swift; sourceTree = "<group>"; };
 		115DC42C231187950001EF67 /* BannersBlocksView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannersBlocksView.xib; sourceTree = "<group>"; };
@@ -837,8 +836,6 @@
 			isa = PBXGroup;
 			children = (
 				115795BC232FE42C0002075E /* LanguageManager.swift */,
-				115795BF232FE4970002075E /* ArabicStrings.strings */,
-				115795C1232FE4B30002075E /* EnglishStrings.strings */,
 			);
 			path = LanguageManager;
 			sourceTree = "<group>";
@@ -1525,6 +1522,7 @@
 		847CDE3422C9EE2300E67C8C = {
 			isa = PBXGroup;
 			children = (
+				115795CF23314CB00002075E /* Localizable.strings */,
 				847CDE3F22C9EE2300E67C8C /* Tatayaba */,
 				847CDE5722C9EE2300E67C8C /* TatayabaTests */,
 				847CDE6222C9EE2300E67C8C /* TatayabaUITests */,
@@ -1875,6 +1873,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 847CDE3422C9EE2300E67C8C;
 			productRefGroup = 847CDE3E22C9EE2300E67C8C /* Products */;
@@ -1897,7 +1896,6 @@
 				847CDE4E22C9EE2300E67C8C /* LaunchScreen.storyboard in Resources */,
 				847CDE8922CA19EE00E67C8C /* ProximaNovaT-Thin.ttf in Resources */,
 				4CEDFF3F231A69DD001385DD /* Myriad Pro Regular.ttf in Resources */,
-				115795C2232FE4B30002075E /* EnglishStrings.strings in Resources */,
 				11453956232A954B00EDC908 /* Concierge.storyboard in Resources */,
 				11945BC122F0B08D000F08DC /* PaymentSelectionViewCell.xib in Resources */,
 				848E89CD22CCEAAC000AA24C /* FeatureProductCollectionViewCell.xib in Resources */,
@@ -1909,6 +1907,7 @@
 				4CC343A4232F96A6005BA810 /* ProfileTab.storyboard in Resources */,
 				847CDE8622CA19EE00E67C8C /* ProximaNova-Light.ttf in Resources */,
 				114D1A1622CBB27E009205F3 /* CategoryCollectionViewCell.xib in Resources */,
+				115795CD23314CB00002075E /* Localizable.strings in Resources */,
 				84BC089622DC7CF400C6180E /* Cart.storyboard in Resources */,
 				84B819E322D1D775000DD69A /* ProductDetails.storyboard in Resources */,
 				11FEB4DD22DF850700F2E9B8 /* ProductDetailsView.xib in Resources */,
@@ -1947,7 +1946,6 @@
 				847CDE4622C9EE2300E67C8C /* Main.storyboard in Resources */,
 				4CC28C702327F961003EAEA6 /* GOTHAM-MEDIUM.TTF in Resources */,
 				11FB584A231C2147005DA4F0 /* CategoriesBlockCollectionViewCell.xib in Resources */,
-				115795C0232FE4970002075E /* ArabicStrings.strings in Resources */,
 				4CD8B8A6232129D300D25CC3 /* Suppliers.storyboard in Resources */,
 				110295D022DCD3A400C6A54B /* Home.storyboard in Resources */,
 				847CDE8822CA19EE00E67C8C /* ProximaNova-Black.ttf in Resources */,
@@ -2249,6 +2247,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		115795CF23314CB00002075E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				115795CE23314CB00002075E /* en */,
+				115795D023314CC20002075E /* ar */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		847CDE4422C9EE2300E67C8C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2272,6 +2279,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2329,6 +2337,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

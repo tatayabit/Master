@@ -1,14 +1,15 @@
 /* 
-  ArabicStrings.strings
+  Localizable.strings
   Tatayaba
 
-  Created by Kareem Kareem on 9/16/19.
+  Created by Kareem Kareem on 9/17/19.
   Copyright © 2019 Shaik. All rights reserved.
 */
 
 // Tab Bar Titles
 "HOME"="الرئيسية";
-"CART"="السلة";
+"cart"="السلة";
 "CONCIERGE"="كونسيرج";
 "CATEGORIES"="الفئات";
 "PROFILE"="حسابي";
+
