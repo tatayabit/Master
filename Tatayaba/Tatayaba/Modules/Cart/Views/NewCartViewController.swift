@@ -39,7 +39,6 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     func setupUI() {
         cartTableview.register(PriceTableViewCell.nib, forCellReuseIdentifier: PriceTableViewCell.identifier)
         self.NavigationBarWithOutBackButton()
-        self.addLeftBarButton()
     }
 
     func calculateTotal() {

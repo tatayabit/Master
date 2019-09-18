@@ -20,7 +20,6 @@ class WishlistViewController: BaseViewController, UICollectionViewDelegate, UICo
 
         setupCollectionView()
         self.NavigationBarWithOutBackButton()
-        self.addLeftBarButton()
     }
 
     fileprivate func setupCollectionView() {

@@ -36,7 +36,6 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
 
     func setupUI() {
          self.NavigationBarWithOutBackButton()
-         self.addLeftBarButton()
     }
 
     //MARK:- IBActions

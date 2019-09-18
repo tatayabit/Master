@@ -64,6 +64,7 @@
                     <connections>
                         <outlet property="searchDisplayController" destination="7Ri-Xl-BEv" id="Oqf-bx-sce"/>
                         <outlet property="supplierCollection_View" destination="88h-Dv-iTC" id="fFk-da-5b0"/>
+                        <segue destination="7ts-ut-Jvw" kind="show" identifier="supplier_products_segue" id="7za-aB-ZZC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cp8-68-2jf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -77,6 +78,14 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-143.47826086956522" y="96.195652173913047"/>
+        </scene>
+        <!--SupplierProductsViewController-->
+        <scene sceneID="Ccr-gl-zHY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Products" referencedIdentifier="SupplierProductsViewController" id="7ts-ut-Jvw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vf3-3D-nna" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="580" y="96"/>
         </scene>
     </scenes>
 </document>

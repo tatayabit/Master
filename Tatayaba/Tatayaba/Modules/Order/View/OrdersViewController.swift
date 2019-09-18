@@ -37,7 +37,6 @@ class OrdersViewController: BaseViewController,UITableViewDelegate,UITableViewDa
     
     func setupUI() {
         self.NavigationBarWithOutBackButton()
-        self.addLeftBarButton()
     }
 }
 

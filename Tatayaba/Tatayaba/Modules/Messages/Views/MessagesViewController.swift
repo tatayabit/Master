@@ -23,7 +23,6 @@ class MessagesViewController: BaseViewController,UITableViewDelegate,UITableView
     
     func setupUI() {
         self.NavigationBarWithOutBackButton()
-        self.addLeftBarButton()
         
     }
 

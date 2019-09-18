@@ -10,9 +10,9 @@ import UIKit
 import MOLH
 
 class profileTabMenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    var Session1: [String] = ["Wish List", "My Orders"]
-    var Session1_img: [String] = ["WISHLIST", "MY ORDERS"]
-    var Session2: [String] = ["Change Language", "Live Chat","Notifications"]
+    var Session1: [String] = ["BRANDS","Wish List", "My Orders"]
+    var Session1_img: [String] = ["WISHLIST", "WISHLIST", "MY ORDERS"]
+    var Session2: [String] = ["Change Language".localized(), "Live Chat","Notifications"]
     var Session2_img: [String] = ["Setting", "LIVE CHAT","Notifications"]
     var Session3: [String] = ["Delivery and Return Policy", "Privacy Policy","Logout"]
     var Session4: [String] = ["Delivery and Return Policy", "Privacy Policy"]
@@ -133,7 +133,7 @@ extension profileTabMenuViewController{
             
         }else if  indexPath.section == 1 {
             let indextitle = self.Session2[indexPath.row]
-            if indextitle  == "Change Language"{
+            if indextitle  == "Change Language".localized() {
                 //setting page
                 self.changeLanguege()
             }
@@ -199,6 +199,12 @@ extension profileTabMenuViewController{
     
     func PrivacyView() {
         let controller = UIStoryboard(name: "ProfileTab", bundle: Bundle.main).instantiateViewController(withIdentifier: "WebViewViewController") as! WebViewViewController
+        self.navigationController?.pushViewController(controller, animated: false)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+
+    func loadBrands() {
+        let controller = UIStoryboard(name: "Suppliers", bundle: Bundle.main).instantiateViewController(withIdentifier: "SuppliersViewController") as! SuppliersListViewController
         self.navigationController?.pushViewController(controller, animated: false)
         self.tabBarController?.tabBar.isHidden = true
     }
