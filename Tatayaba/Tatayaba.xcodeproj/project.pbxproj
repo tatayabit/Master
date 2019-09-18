@@ -161,6 +161,9 @@
 		11FEB4DD22DF850700F2E9B8 /* ProductDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FEB4DC22DF850700F2E9B8 /* ProductDetailsView.xib */; };
 		11FEB4E022DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FEB4DE22DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.swift */; };
 		11FEB4E122DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FEB4DF22DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib */; };
+		4C2007A723313FB50090658A /* productDeatailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2007A623313FB50090658A /* productDeatailsTableViewCell.swift */; };
+		4C2007A923320DE40090658A /* SelectOptionProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2007A823320DE40090658A /* SelectOptionProduct.swift */; };
+		4C2007AB23320E150090658A /* SelectOptionProduct.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C2007AA23320E150090658A /* SelectOptionProduct.xib */; };
 		4C30D9E8232FDD9500629D38 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30D9E7232FDD9500629D38 /* WebViewViewController.swift */; };
 		4CC28C482327EF59003EAEA6 /* GothamHTF-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CC28C472327EF59003EAEA6 /* GothamHTF-Book.ttf */; };
 		4CC28C5E2327F1CF003EAEA6 /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4CC28C4C2327F1CE003EAEA6 /* Gotham-Light.otf */; };
@@ -399,6 +402,9 @@
 		22CC9CEE04574A387EDF22EE /* Pods-TatayabaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.release.xcconfig"; sourceTree = "<group>"; };
 		2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3521A060629ED90EC6114BA5 /* Pods-TatayabaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.debug.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4C2007A623313FB50090658A /* productDeatailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productDeatailsTableViewCell.swift; sourceTree = "<group>"; };
+		4C2007A823320DE40090658A /* SelectOptionProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionProduct.swift; sourceTree = "<group>"; };
+		4C2007AA23320E150090658A /* SelectOptionProduct.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectOptionProduct.xib; sourceTree = "<group>"; };
 		4C30D9E7232FDD9500629D38 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		4CC28C472327EF59003EAEA6 /* GothamHTF-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamHTF-Book.ttf"; sourceTree = "<group>"; };
 		4CC28C4C2327F1CE003EAEA6 /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.otf"; sourceTree = "<group>"; };
@@ -1365,6 +1371,8 @@
 		11FEB4D922DF838500F2E9B8 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				4C2007A823320DE40090658A /* SelectOptionProduct.swift */,
+				4C2007AA23320E150090658A /* SelectOptionProduct.xib */,
 				11FEB4DA22DF84FE00F2E9B8 /* ProductDetailsView.swift */,
 				11FEB4DC22DF850700F2E9B8 /* ProductDetailsView.xib */,
 				1101C66122E0C8E900416307 /* Options */,
@@ -1373,6 +1381,14 @@
 				11FEB4DF22DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		4C2007A523313F5E0090658A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4C2007A623313FB50090658A /* productDeatailsTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		4CC343A2232F9683005BA810 /* ProfileMenu */ = {
@@ -1691,6 +1707,7 @@
 		84B819DD22D1D6D5000DD69A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4C2007A523313F5E0090658A /* Cell */,
 				11FEB4D922DF838500F2E9B8 /* CustomViews */,
 				11FEB4D722DF822A00F2E9B8 /* ProductDetailsViewController.swift */,
 			);
@@ -1916,6 +1933,7 @@
 				4CC28C482327EF59003EAEA6 /* GothamHTF-Book.ttf in Resources */,
 				1101C66522E0C96C00416307 /* OptionCollectionViewCell.xib in Resources */,
 				1101C66E22E0D75500416307 /* HProductCollectionViewCell.xib in Resources */,
+				4C2007AB23320E150090658A /* SelectOptionProduct.xib in Resources */,
 				847CDE8A22CA19EE00E67C8C /* ProximaNova-Bold.ttf in Resources */,
 				847CDE8422CA19EE00E67C8C /* ProximaNova-Regular.ttf in Resources */,
 				11FEB4E122DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib in Resources */,
@@ -2126,6 +2144,7 @@
 				11945BBF22F0B08D000F08DC /* CheckoutCompletedViewModel.swift in Sources */,
 				4C30D9E8232FDD9500629D38 /* WebViewViewController.swift in Sources */,
 				11A09F3E22FB44AA00C3E5B8 /* OrderDetailsViewModel.swift in Sources */,
+				4C2007A923320DE40090658A /* SelectOptionProduct.swift in Sources */,
 				114D1A0722CBB0EA009205F3 /* ConfigurableCell.swift in Sources */,
 				11069C392323A2EE0093D6FF /* SupplierDetailsViewModel.swift in Sources */,
 				11FB5872231D5F13005DA4F0 /* SuppliersBlockView.swift in Sources */,
@@ -2138,6 +2157,7 @@
 				11081EFB22DB8F4900B68EA5 /* ProfileDetailsView.swift in Sources */,
 				847CDE4922C9EE2300E67C8C /* Tatayaba.xcdatamodeld in Sources */,
 				8407BABF22E8623E001F2C2A /* OrderModel.swift in Sources */,
+				4C2007A723313FB50090658A /* productDeatailsTableViewCell.swift in Sources */,
 				11007BD022DE2DC700AC9957 /* CatProductsViewController.swift in Sources */,
 				8407BAC222E869A8001F2C2A /* OrderTableViewCell.swift in Sources */,
 				115DC43023118A500001EF67 /* BannerBlockCollectionViewCell.swift in Sources */,
