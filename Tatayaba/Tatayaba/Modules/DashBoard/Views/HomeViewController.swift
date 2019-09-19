@@ -33,6 +33,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         setupListners()
         setupUI()
         viewModel.loadAPIs()
+        CountriesManager.loadCountriesList()
     }
 
     fileprivate func addBannersSubView() {
