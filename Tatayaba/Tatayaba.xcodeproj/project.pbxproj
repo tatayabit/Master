@@ -39,6 +39,7 @@
 		11089C0423328ADD00BE9B78 /* countries_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 11089C0323328ADD00BE9B78 /* countries_list.json */; };
 		11089C0A23328B2200BE9B78 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11089C0923328B2200BE9B78 /* Country.swift */; };
 		11089C0C23328CFD00BE9B78 /* CountriesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11089C0B23328CFD00BE9B78 /* CountriesManager.swift */; };
+		11089C172333E8A600BE9B78 /* ShippingRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11089C162333E8A600BE9B78 /* ShippingRate.swift */; };
 		1113A79B2329698200FAAC7F /* CheckoutAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1113A7992329698200FAAC7F /* CheckoutAddressTableViewCell.swift */; };
 		1113A79C2329698200FAAC7F /* CheckoutAddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1113A79A2329698200FAAC7F /* CheckoutAddressTableViewCell.xib */; };
 		111C8A36230B1123003F5FDB /* BlocksAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C8A35230B1123003F5FDB /* BlocksAPIClient.swift */; };
@@ -269,6 +270,7 @@
 		11089C0323328ADD00BE9B78 /* countries_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries_list.json; sourceTree = "<group>"; };
 		11089C0923328B2200BE9B78 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		11089C0B23328CFD00BE9B78 /* CountriesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesManager.swift; sourceTree = "<group>"; };
+		11089C162333E8A600BE9B78 /* ShippingRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingRate.swift; sourceTree = "<group>"; };
 		1113A7992329698200FAAC7F /* CheckoutAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutAddressTableViewCell.swift; sourceTree = "<group>"; };
 		1113A79A2329698200FAAC7F /* CheckoutAddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckoutAddressTableViewCell.xib; sourceTree = "<group>"; };
 		111C8A35230B1123003F5FDB /* BlocksAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksAPIClient.swift; sourceTree = "<group>"; };
@@ -1026,6 +1028,7 @@
 			isa = PBXGroup;
 			children = (
 				11945BC322F0B0C6000F08DC /* ShippingMethod.swift */,
+				11089C162333E8A600BE9B78 /* ShippingRate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2135,6 +2138,7 @@
 				11069C412323FFA60093D6FF /* ProductMainPair.swift in Sources */,
 				11089C0C23328CFD00BE9B78 /* CountriesManager.swift in Sources */,
 				11B2C41C22D64F0A00EAD9C6 /* ProductDetailsViewModel.swift in Sources */,
+				11089C172333E8A600BE9B78 /* ShippingRate.swift in Sources */,
 				841CE31022DCC33600A47FA0 /* MessageModel.swift in Sources */,
 				11FB5852231C2EC2005DA4F0 /* ProductsBlockCollectionViewCell.swift in Sources */,
 				11A8B15F22D797EF001B2661 /* WishlistViewModel.swift in Sources */,
