@@ -33,6 +33,7 @@ class Customer {
     func logout() {
         userData = nil
         print("loggedOut: \(String(describing: userData))")
+        KeychainWrapper.standard.removeObject(forKey: userDataKey)
     }
 
     //MARK:- UserData KeyChain

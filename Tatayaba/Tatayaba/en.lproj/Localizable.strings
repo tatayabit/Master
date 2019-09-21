@@ -8,3 +8,18 @@
 
 // Tab Bar Titles
 "Change Language"="Change Language";
+"Subtotal"="Subtotal";
+"Shipping"="Shipping";
+"items"="items";
+"Cart Total"="Cart Total";
+
+
+// Login
+"Email"="Email";
+"Passwrod"="Passwrod";
+"LOG IN"="LOG IN";
+"Forgot Password?"="Forgot Password?";
+"OR"="OR";
+"Already have an Account?"="Already have an Account?";
+"Sign Up"="Sign Up";
+"Skip"="Skip";

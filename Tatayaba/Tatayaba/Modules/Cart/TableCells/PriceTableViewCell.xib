@@ -25,7 +25,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O5b-8v-wL8">
-                        <rect key="frame" x="8" y="8" width="304" height="27.5"/>
+                        <rect key="frame" x="8" y="0.0" width="304" height="43.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cart Total" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEf-N5-qjP">
@@ -45,11 +45,11 @@
                 <constraints>
                     <constraint firstItem="CEf-N5-qjP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="9tM-1V-cuB"/>
                     <constraint firstItem="O5b-8v-wL8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="BuY-gc-aWR"/>
-                    <constraint firstItem="O5b-8v-wL8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="EQK-zr-FKh"/>
+                    <constraint firstItem="O5b-8v-wL8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="EQK-zr-FKh"/>
                     <constraint firstAttribute="trailing" secondItem="O5b-8v-wL8" secondAttribute="trailing" constant="8" id="HQo-Zk-35u"/>
                     <constraint firstAttribute="trailing" secondItem="pJ5-jC-maW" secondAttribute="trailing" constant="20" id="Jm5-zY-yeT"/>
                     <constraint firstItem="CEf-N5-qjP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="UBR-hK-vQi"/>
-                    <constraint firstAttribute="bottom" secondItem="O5b-8v-wL8" secondAttribute="bottom" constant="8" id="aB3-m8-uOo"/>
+                    <constraint firstAttribute="bottom" secondItem="O5b-8v-wL8" secondAttribute="bottom" id="aB3-m8-uOo"/>
                     <constraint firstAttribute="bottom" secondItem="pJ5-jC-maW" secondAttribute="bottom" constant="8" id="enZ-KJ-oig"/>
                     <constraint firstAttribute="bottom" secondItem="CEf-N5-qjP" secondAttribute="bottom" constant="8" id="hfd-xT-xXM"/>
                     <constraint firstItem="pJ5-jC-maW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="j7w-mn-WmY"/>

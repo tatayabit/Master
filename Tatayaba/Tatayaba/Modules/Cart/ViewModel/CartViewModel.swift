@@ -28,7 +28,10 @@ class CartViewModel {
 
     func loadPricingListContent() {
         pricingList.removeAll()
-        let model = CartPricingModel(title: "Subtotal", value: cart.subtotalPrice)
+        var model = CartPricingModel(title: "Subtotal".localized(), value: cart.subtotalPrice)
+        pricingList.append(model)
+
+        model = CartPricingModel(title: "Shipping".localized(), value: cart.shippingFormatedPrice)
         pricingList.append(model)
         if let delegate = delegate {
             delegate.didFinishLoadingPricing()

@@ -36,9 +36,10 @@ extension UserEndpoint: TargetType {
         case .signUp:
             return "users"
         case .getProfile(let userId):
-            return "users/\(userId)"
+            let version = "4.0"
+            return "\(version.urlEscaped)/TtmUsers/\(userId)"
         case .login:
-            return "3.0/auth"
+            return "4.0/auth"
         }
     }
 

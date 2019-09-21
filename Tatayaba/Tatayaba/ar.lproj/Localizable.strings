@@ -8,3 +8,17 @@
 
 // Tab Bar Titles
 "Change Language"="تغيير اللغة";
+"Subtotal"="المجموع";
+"Shipping"="الشحن";
+"items"="أصناف";
+"Cart Total"="المجموع الكلي";
+
+// Login
+"Email"="البريد الالكتروني";
+"Passwrod"="كلمة المرور";
+"LOG IN"="تسجيل الدخول";
+"Forgot Password?"="نسيت كلمة المرور؟";
+"OR"="أو";
+"Already have an Account?"="لديك حساب؟";
+"Sign Up"="إنشاء حساب";
+"Skip"="تخطي";

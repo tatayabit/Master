@@ -42,14 +42,14 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     }
 
     func calculateTotal() {
-        totalPriceLabel.text = cart.subtotalPrice
+        totalPriceLabel.text = cart.totalPrice
         viewModel.loadPricingListContent()
-        let totalItemsText = "(" + String(cart.productsCount) + " items)"
+        let totalItemsText = "(" + String(cart.productsCount) + " " + "items".localized()+")"
         totalTitleLabel.attributedText = attributedTotalTitle(text: totalItemsText)
     }
 
     func attributedTotalTitle(text: String) -> NSAttributedString {
-        let textVal = "Cart Total " + text
+        let textVal = "Cart Total".localized() + " " + text
 
         let strokeTextAttributes = [
             NSAttributedString.Key.foregroundColor : UIColor(hexString: "221C35"),

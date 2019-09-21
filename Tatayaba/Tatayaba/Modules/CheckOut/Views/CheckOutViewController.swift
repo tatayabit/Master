@@ -37,32 +37,32 @@ class CheckOutViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     func setupUI() {
-        self.NavigationBarWithOutBackButton()
-        self.paymentTableView.register(PaymentSelectionViewCell.nib, forCellReuseIdentifier: PaymentSelectionViewCell.identifier)
+//        self.NavigationBarWithOutBackButton()
+        self.paymentTableView.register(PaymentMethodTableViewCell.nib, forCellReuseIdentifier: PaymentMethodTableViewCell.identifier)
+        self.paymentTableView.register(CheckoutAddressTableViewCell.nib, forCellReuseIdentifier: CheckoutAddressTableViewCell.identifier)
     }
 
     //MARK:- IBActions
-
     @IBAction func placeOrderAction(_ sender: Any) {
         
-         self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
-//        viewModel.placeOrder { result in
-//            switch result {
-//            case .success(let response):
-//                guard let placeOrderResult = response else { return }
-//                //                guard let paymentMethods = paymentResult.paymentMethods else { return }
-//
-//                print(placeOrderResult)
-//                if placeOrderResult.orderId > 0 {
-//                    self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
-//                } else {
-//                    print("the error order id == \(placeOrderResult.orderId)")
-//                }
-//
-//            case .failure(let error):
-//                print("the error \(error)")
-//            }
-//        }
+//         self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
+        viewModel.placeOrder { result in
+            switch result {
+            case .success(let response):
+                guard let placeOrderResult = response else { return }
+                //                guard let paymentMethods = paymentResult.paymentMethods else { return }
+
+                print(placeOrderResult)
+                if placeOrderResult.orderId > 0 {
+                    self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
+                } else {
+                    print("the error order id == \(placeOrderResult.orderId)")
+                }
+
+            case .failure(let error):
+                print("the error \(error)")
+            }
+        }
    }
 }
 
@@ -74,17 +74,31 @@ extension CheckOutViewController {
 //        if viewModel.pricingList.count > 0 {
 //            return 2
 //        }
-        return 1
+        return 2
+    }
+
+    // MARK:- UITableViewDelegate - Cell
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case sectionType.payment.rawValue:
+            viewModel.selectPaymentMethod(at: indexPath)
+            tableView.reloadData()
+        default: break
+        }
     }
 
     // MARK:- UITableViewDataSource - Cell
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
+    }
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
         switch indexPath.section {
         case sectionType.payment.rawValue:
-            return 80
-//        case sectionType.pricing.rawValue:
-//            return 50
+            return 60
+        case sectionType.address.rawValue:
+            return 100
         default: return 0
         }
     }
@@ -92,9 +106,9 @@ extension CheckOutViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case sectionType.payment.rawValue:
-            return viewModel.paymentMethods.count//cart.productsCount
-//        case sectionType.pricing.rawValue:
-//            return viewModel.pricingList.count
+            return viewModel.paymentMethods.count
+        case sectionType.address.rawValue:
+            return 1
         default: return 0
         }
     }
@@ -104,19 +118,27 @@ extension CheckOutViewController {
         case sectionType.payment.rawValue:
             return getPaymentCell(tableView: tableView, indexPath: indexPath)
 
-//        case sectionType.pricing.rawValue:
-//            return getPricingCell(tableView:tableView, indexPath: indexPath)
+        case sectionType.address.rawValue:
+            return getAddressCell(tableView: tableView, indexPath: indexPath)
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: PaymentSelectionViewCell.identifier, for: indexPath) as! PaymentSelectionViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: PaymentMethodTableViewCell.identifier, for: indexPath) as! PaymentMethodTableViewCell
             return cell
         }
     }
 
-    // MARK:- CartTableViewCell
-    func getPaymentCell(tableView: UITableView, indexPath: IndexPath) -> PaymentSelectionViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PaymentSelectionViewCell.identifier, for: indexPath) as! PaymentSelectionViewCell
+    // MARK:- PaymentSelectionViewCell
+    func getPaymentCell(tableView: UITableView, indexPath: IndexPath) -> PaymentMethodTableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: PaymentMethodTableViewCell.identifier, for: indexPath) as! PaymentMethodTableViewCell
 
         cell.configure(payment: viewModel.paymentMethods[indexPath.row])
+        return cell
+    }
+
+    // MARK:- CheckoutAddressTableViewCell
+    func getAddressCell(tableView: UITableView, indexPath: IndexPath) -> CheckoutAddressTableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CheckoutAddressTableViewCell.identifier, for: indexPath) as! CheckoutAddressTableViewCell
+
+//        cell.configure(payment: viewModel.paymentMethods[indexPath.row])
         return cell
     }
 }

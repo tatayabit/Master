@@ -35,40 +35,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gae-zR-qWU">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gae-zR-qWU">
                                 <rect key="frame" x="0.0" y="85" width="375" height="528"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="JJ9-U2-IUw" id="o3d-Ff-dBY"/>
                                     <outlet property="delegate" destination="JJ9-U2-IUw" id="WPf-2d-yof"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lv1-z7-fqa">
-                                <rect key="frame" x="8" y="343" width="359" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ship to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUQ-wX-nxB">
-                                        <rect key="frame" x="8" y="8" width="157" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="2948 Cambridge Court , Indian Trail, San Francisco, CA, 10063, " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kg7-P5-Jvg">
-                                        <rect key="frame" x="8" y="43" width="300" height="68"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKl-TB-fKE">
-                                        <rect key="frame" x="313" y="49" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="Edit"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgV-Yr-ArJ">
                                 <rect key="frame" x="8" y="621" width="359" height="40"/>
                                 <color key="backgroundColor" red="0.13354238869999999" green="0.1071816161" blue="0.2066496015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -79,6 +53,9 @@
                                 <state key="normal" title="PAY NOW">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="placeOrderAction:" destination="JJ9-U2-IUw" eventType="touchUpInside" id="1Xd-Nq-zl1"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SECURE CHECKOUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibO-EQ-sMv">
                                 <rect key="frame" x="20" y="40" width="335" height="25"/>
@@ -90,7 +67,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.95677906274795532" green="0.95691639184951782" blue="0.95674902200698853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RgV-Yr-ArJ" firstAttribute="top" secondItem="Gae-zR-qWU" secondAttribute="bottom" constant="8" id="5v8-r9-6yW"/>
                             <constraint firstItem="RgV-Yr-ArJ" firstAttribute="leading" secondItem="I6r-yz-TSn" secondAttribute="leading" constant="8" id="Emb-oo-eN3"/>
@@ -105,11 +82,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I6r-yz-TSn"/>
                     </view>
-                    <navigationItem key="navigationItem" title="TATAYAB" id="5Zc-2H-YFY">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="O7D-78-I9v">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="TATAYAB" id="5Zc-2H-YFY"/>
                     <connections>
                         <outlet property="paymentTableView" destination="Gae-zR-qWU" id="8aX-ip-Opr"/>
                         <segue destination="i39-8c-VeR" kind="show" identifier="checkout_completed_segue" id="2B7-re-64b"/>
@@ -187,7 +160,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Edit" width="60" height="60"/>
         <image name="Productway" width="485" height="415"/>
     </resources>
 </document>

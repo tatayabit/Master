@@ -9,7 +9,7 @@
 import Moya
 
 enum OrdersEndpoint {
-    case create(products: [String: Any], userId: String, userData: [String: Any]?)
+    case create(products: [String: Any], userId: String, userData: [String: Any]?, paymentId: String)
     case getAllOrders(page: Int)
     case getOrder(orderId: String)
 }
@@ -61,10 +61,10 @@ extension OrdersEndpoint: TargetType {
 
     var task: Task {
         switch self {
-        case .create(let products, let userId, let userData):
+        case .create(let products, let userId, let userData, let paymentId):
             var params = [
                 "user_id": userId,
-                "payment_id": "2",
+                "payment_id": paymentId,
                 "shipping_id": "9",
                 "products": products
                 ] as [String : Any]

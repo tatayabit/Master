@@ -213,7 +213,7 @@
         <scene sceneID="bTk-yj-2Ei">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ghk-TS-HUY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cart" id="yGl-X9-zVs"/>
+                    <tabBarItem key="tabBarItem" title="Cart" image="cart_unselected" id="yGl-X9-zVs"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r4R-aK-XXV">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -231,6 +231,7 @@
     </scenes>
     <resources>
         <image name="ProfileMenu" width="34" height="34"/>
+        <image name="cart_unselected" width="10" height="11.5"/>
         <image name="category_unselected" width="11.5" height="11.5"/>
         <image name="home_selected" width="11" height="11.5"/>
         <image name="home_unselected" width="11" height="11.5"/>
