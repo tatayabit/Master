@@ -12,6 +12,7 @@ target 'Tatayaba' do
   pod 'SDWebImage', '~> 5.0'
   pod 'SwiftKeychainWrapper', '~> 3.2.0'
   pod 'MOLH'
+  pod 'MBProgressHUD', '~> 1.1.0'
   
   target 'TatayabaTests' do
     inherit! :search_paths

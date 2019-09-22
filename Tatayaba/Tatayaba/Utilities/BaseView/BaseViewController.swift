@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class BaseViewController: UIViewController {
+    var loadingArr = [UIView]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +22,31 @@ class BaseViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+
+
+    // MARK:- Error Alert
+    func showErrorAlerr(title: String?, message: String?, handler: ((UIAlertAction) -> Void)?) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK".localized(), style: .cancel, handler: handler)
+        alert.addAction(action)
+
+        self.present(alert, animated: true) {
+            print("completion block alert")
+        }
+    }
     
-    
+    // MARK:- MBProgressHUD
+    func showLoadingIndicator(to containerView: UIView) {
+        MBProgressHUD.showAdded(to: containerView, animated: true)
+        loadingArr.append(containerView)
+    }
+
+    func hideLoadingIndicator(from containerView: UIView) {
+        MBProgressHUD.hide(for: containerView, animated: true)
+        if loadingArr.contains(containerView) {
+            loadingArr.removeAll(where: { $0 == containerView })
+        }
+    }
     
 
 }

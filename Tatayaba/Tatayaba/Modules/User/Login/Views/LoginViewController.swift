@@ -48,13 +48,19 @@ class LoginViewController: BaseViewController, ValidationDelegate {
         guard let password = passwordTextField.text else { return }
 
         let user = User(email: email, password: password)//User(email: email, firstname: firstname, lastname: firstname, password: password)
+        showLoadingIndicator(to: self.view)
 
         viewModel.login(user: user) { result in
-
+            self.hideLoadingIndicator(from: self.view)
+            switch result {
+            case .success(let loginResult):
+                print(loginResult!)
+                self.performSegue(withIdentifier: self.homeSegue, sender: nil)
+            case .failure(let error):
+                print("the error \(error)")
+                self.showErrorAlerr(title: "Error".localized(), message: "Username or password are invalid".localized(), handler: nil)
+            }
         }
-
-//        performSegue(withIdentifier: homeSegue, sender: nil)
-
     }
 
     func validationFailed(_ errors: [(Validatable, ValidationError)]) {
@@ -83,15 +89,15 @@ class LoginViewController: BaseViewController, ValidationDelegate {
         emailTextField.updateColors()
         passwordTextField.updateColors()
         validator.validate(self)
-        UserDefaults.standard.set("1", forKey: "UserID") // Need to give userid
-      
-        performSegue(withIdentifier: homeSegue, sender: nil)
+//        UserDefaults.standard.set("1", forKey: "UserID") // Need to give userid
+
+//        performSegue(withIdentifier: homeSegue, sender: nil)
 
     }
 
     
     @IBAction func skipAction(_ sender: UIButton) {
-         UserDefaults.standard.set("0", forKey: "UserID")
+//         UserDefaults.standard.set("0", forKey: "UserID")
         performSegue(withIdentifier: homeSegue, sender: nil)
     }
     

@@ -10,12 +10,12 @@ import UIKit
 import MOLH
 
 class profileTabMenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    var Session1: [String] = ["BRANDS","Wish List", "My Orders"]
+    var Session1: [String] = ["BRANDS".localized(),"Wish List", "My Orders".localized()]
     var Session1_img: [String] = ["WISHLIST", "WISHLIST", "MY ORDERS"]
     var Session2: [String] = ["Change Language".localized(), "Live Chat","Notifications"]
     var Session2_img: [String] = ["Setting", "LIVE CHAT","Notifications"]
-    var Session3: [String] = ["Delivery and Return Policy", "Privacy Policy","Logout"]
-    var Session4: [String] = ["Delivery and Return Policy", "Privacy Policy"]
+    var Session3: [String] = ["Delivery and Return Policy", "Privacy Policy".localized(),"Logout".localized()]
+    var Session4: [String] = ["Delivery and Return Policy".localized(), "Privacy Policy".localized()]
     var Session3_img: [String] = ["Delivery and Return Policy", "Privacy Policy","LOGOUT"]
     
     private let orderDetailsSegue = "order_details_segue"
@@ -23,15 +23,18 @@ class profileTabMenuViewController: UIViewController,UITableViewDelegate,UITable
     @IBOutlet weak var profileMenu_tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Welcome \("Shaik")"
-        self.profileMenu_tableView.reloadData()
-        
+    }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if Customer.shared.loggedin {
+            self.navigationItem.title = "Welcome \(Customer.shared.user?.firstname ?? "")"
+        }
+        self.profileMenu_tableView.reloadData()
     }
     
 
     @objc func sign_buttonAction() {
-   
        self.loadFirstVC()
     }
 
@@ -39,95 +42,86 @@ class profileTabMenuViewController: UIViewController,UITableViewDelegate,UITable
 
 extension profileTabMenuViewController{
 
+    // MARK:- TableView Number of sections and rows
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            let UserID = UserDefaults.standard.value(forKey: "UserID") as! String
-            if UserID == "1"{
+            if Customer.shared.loggedin {
                  return Session1.count
-            }else{
-                return 1
             }
-        }else if section == 1 {
+            return 1
+        } else if section == 1 {
             return Session2.count
-        }else{
-            let UserID = UserDefaults.standard.value(forKey: "UserID") as! String
-            if UserID == "1"{
-                return Session3.count
-            }else{
-                return Session4.count
-            }
         }
-     
+
+        if Customer.shared.loggedin {
+            return Session3.count
+        }
+        return Session4.count
     }
+
+    // MARK:- TableView Height
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 20
+    }
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         if indexPath.section == 0 {
-            let UserID = UserDefaults.standard.value(forKey: "UserID") as! String
-            if UserID == "1"{
-                 return 60
-            }else{
-                 return 100
+            if Customer.shared.loggedin {
+                return 60
             }
-        }else {
-           return 60
+            return 100
         }
-       
-        
+        return 60
     }
-    
+
+    // MARK:- TableView DataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "ProfileMenuTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ProfileMenuTableViewCell
         if  indexPath.section == 0 {
-            let UserID = UserDefaults.standard.value(forKey: "UserID") as! String
-            if UserID == "1"{
-              cell.title_lbl.text = self.Session1[indexPath.row]
-         cell.title_img.image = UIImage(named: self.Session1_img[indexPath.row])
-            }else{
+            if Customer.shared.loggedin {
+                cell.title_lbl.text = self.Session1[indexPath.row]
+                cell.title_img.image = UIImage(named: self.Session1_img[indexPath.row])
+            } else {
                 cell.title_lbl.isHidden = true
                 cell.title_img.isHidden = true
                 cell.accessoryType = UITableViewCellAccessoryType.none
                 let sign_button = UIButton(frame: CGRect(x: UIScreen.main.bounds.size.width/2-70, y: 25, width: 150, height: 50))
-                 sign_button.setTitle("Sign in", for: .normal)
-      sign_button.addTarget(self, action: #selector(sign_buttonAction), for: .touchUpInside)
-               sign_button.setTitleColor(UIColor.black, for: .normal)
+                sign_button.setTitle("Sign in", for: .normal)
+                sign_button.addTarget(self, action: #selector(sign_buttonAction), for: .touchUpInside)
+                sign_button.setTitleColor(UIColor.black, for: .normal)
                 sign_button.layer.borderWidth = 1
                 sign_button.layer.borderColor =  UIColor.black.cgColor
                 sign_button.layer.cornerRadius = 15
-               cell.addSubview(sign_button)
+                cell.addSubview(sign_button)
             }
-        }
-       else if  indexPath.section == 1 {
+        } else if  indexPath.section == 1 {
             cell.title_lbl.text = self.Session2[indexPath.row]
             cell.title_img.image = UIImage(named: self.Session2_img[indexPath.row])
-        }
-        else if  indexPath.section == 2 {
-            
-            let UserID = UserDefaults.standard.value(forKey: "UserID") as! String
-            if UserID == "1"{
-                 cell.title_lbl.text = self.Session3[indexPath.row]
-            }else{
-                 cell.title_lbl.text = self.Session4[indexPath.row]
+        } else if  indexPath.section == 2 {
+
+            if Customer.shared.loggedin {
+                cell.title_lbl.text = self.Session3[indexPath.row]
+            } else {
+                cell.title_lbl.text = self.Session4[indexPath.row]
             }
             cell.title_img.image = UIImage(named: self.Session3_img[indexPath.row])
         }
         return cell
-}
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 20
     }
+
+    // MARK:- TableView Delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if  indexPath.section == 0 {
        let indextitle = self.Session1[indexPath.row]
-            if indextitle  == "Wish List"{
+            if indextitle  == "Wish List".localized() {
                 self.loadWishList()
-            }else if indextitle  == "My Orders"{
+            } else if indextitle  == "My Orders".localized() {
                 self.loadOrdersVC()
             }
             
@@ -156,17 +150,12 @@ extension profileTabMenuViewController{
         
     }
     
-
+    // MARK:- Change Language
     func changeLanguege() {
-//        LanguageManager.setLanguage(currentLanguage)
-//        L333Localizer.switchTheLanguage(lan: currentLanguage, fromrestPage: true)
 
         MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
         MOLH.reset()
-
         reloadUI()
-//        didUpdateLanguage
-//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didUpdateLanguage"), object: nil)
 
     }
 
@@ -179,6 +168,7 @@ extension profileTabMenuViewController{
         window?.rootViewController = homeVC
         window?.makeKeyAndVisible()
     }
+    // MARK:- Actions
     
     func loadWishList() {
         let controller = UIStoryboard(name: "Wishlist", bundle: Bundle.main).instantiateViewController(withIdentifier: "WishlistViewController") as! WishlistViewController

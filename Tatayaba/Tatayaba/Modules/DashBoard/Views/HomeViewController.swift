@@ -40,32 +40,39 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         scrollView.stackView.addArrangedSubview(fullScreenBannersView)
         fullScreenBannersView.translatesAutoresizingMaskIntoConstraints = false
         fullScreenBannersView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        self.showLoadingIndicator(to: fullScreenBannersView)
 
         categoriesBlockView.delegate = self
         scrollView.stackView.addArrangedSubview(categoriesBlockView)
         categoriesBlockView.translatesAutoresizingMaskIntoConstraints = false
         categoriesBlockView.heightAnchor.constraint(equalToConstant: 115).isActive = true
+        self.showLoadingIndicator(to: categoriesBlockView)
 
 
         squaredBlockView.delegate = self
         scrollView.stackView.addArrangedSubview(squaredBlockView)
         squaredBlockView.translatesAutoresizingMaskIntoConstraints = false
         squaredBlockView.heightAnchor.constraint(equalToConstant: 280).isActive = true
+        self.showLoadingIndicator(to: squaredBlockView)
+
 
         productsBlocklView.delegate = self
         scrollView.stackView.addArrangedSubview(productsBlocklView)
         productsBlocklView.translatesAutoresizingMaskIntoConstraints = false
         productsBlocklView.heightAnchor.constraint(equalToConstant: 265).isActive = true
+        self.showLoadingIndicator(to: productsBlocklView)
 
 
         suppliersBlockView.delegate = self
         scrollView.stackView.addArrangedSubview(suppliersBlockView)
         suppliersBlockView.translatesAutoresizingMaskIntoConstraints = false
         suppliersBlockView.heightAnchor.constraint(equalToConstant: 145).isActive = true
+        self.showLoadingIndicator(to: suppliersBlockView)
 
     }
 
     fileprivate func loadSquaredBlockViewData() {
+        self.hideLoadingIndicator(from: squaredBlockView)
         squaredBlockView.block = viewModel.squareBlock
         squaredBlockView.loadData()
         squaredBlockView.titleLabel.text = "Trending on Tatayab"
@@ -74,21 +81,28 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
 
 
     fileprivate func loadProductsBlockViewData() {
+        self.hideLoadingIndicator(from: productsBlocklView)
         productsBlocklView.block = viewModel.productsBlock
         productsBlocklView.loadData()
     }
 
     fileprivate func loadFullScreenBannersViewData() {
+        self.hideLoadingIndicator(from: fullScreenBannersView)
+
         fullScreenBannersView.block = viewModel.topBannersBlock
         fullScreenBannersView.loadData()
     }
 
     fileprivate func loadCategoriesBlockViewData() {
+        self.hideLoadingIndicator(from: categoriesBlockView)
+
         categoriesBlockView.categories = viewModel.categoriesList
         categoriesBlockView.loadData()
     }
 
     fileprivate func loadSuppliersBlockViewData() {
+        self.hideLoadingIndicator(from: suppliersBlockView)
+
         suppliersBlockView.suppliers = viewModel.suppliersList
         suppliersBlockView.loadData()
     }

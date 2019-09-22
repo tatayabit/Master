@@ -39,7 +39,7 @@ extension UserEndpoint: TargetType {
             let version = "4.0"
             return "\(version.urlEscaped)/TtmUsers/\(userId)"
         case .login:
-            return "4.0/auth"
+            return "4.0/TtmAuth"
         }
     }
 

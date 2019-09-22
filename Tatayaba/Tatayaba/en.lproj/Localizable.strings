@@ -23,3 +23,15 @@
 "Already have an Account?"="Already have an Account?";
 "Sign Up"="Sign Up";
 "Skip"="Skip";
+"Username or password are invalid"="Username or password are invalid";
+
+// Error
+"Error"="Error";
+
+// Profile
+"My Orders"="My Orders";
+"Wish List"="Wish List";
+"Privacy Policy"="Privacy Policy";
+"BRANDS"="Brands";
+"Logout"="Logout";
+"Delivery and Return Policy"="Delivery and Return Policy";
