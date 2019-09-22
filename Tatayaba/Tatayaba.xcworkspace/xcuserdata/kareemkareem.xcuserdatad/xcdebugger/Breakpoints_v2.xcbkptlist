@@ -16,75 +16,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/CheckOut/ViewModel/CheckOutViewModel.swift"
-            timestampString = "590858089.196511"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "placeOrder(completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Tatayaba.CheckOutViewModel.placeOrder(completion: (Tatayaba.APIResult&lt;Swift.Optional&lt;Tatayaba.PlaceOrderResult&gt;, Moya.MoyaError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Tatayaba"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kareemkareem/Documents/Apps/TTProject/Tatayaba/Tatayaba/Modules/CheckOut/ViewModel/CheckOutViewModel.swift"
-                  timestampString = "590868441.3775049"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "89"
-                  endingLineNumber = "89"
-                  offsetFromSymbolStart = "760">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Tatayaba.APIResult&lt;Swift.Optional&lt;Tatayaba.PlaceOrderResult&gt;, Moya.MoyaError&gt;) -&gt; () in Tatayaba.CheckOutViewModel.placeOrder(completion: (Tatayaba.APIResult&lt;Swift.Optional&lt;Tatayaba.PlaceOrderResult&gt;, Moya.MoyaError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Tatayaba"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kareemkareem/Documents/Apps/TTProject/Tatayaba/Tatayaba/Modules/CheckOut/ViewModel/CheckOutViewModel.swift"
-                  timestampString = "590868441.381568"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "89">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/CheckOut/ViewModel/CheckOutViewModel.swift"
-            timestampString = "590858089.196962"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "placeOrder(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tatayaba/Modules/User/Login/ViewModels/LoginViewModel.swift"
-            timestampString = "590868441.177691"
+            timestampString = "590870423.903163"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -100,7 +36,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tatayaba/Modules/User/Login/Views/LoginViewController.swift"
-            timestampString = "590868441.177791"
+            timestampString = "590870423.903257"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
@@ -116,7 +52,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tatayaba/Utilities/BaseView/BaseViewController.swift"
-            timestampString = "590868441.177869"
+            timestampString = "590870423.9033591"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -132,7 +68,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tatayaba/Modules/User/Login/Views/LoginViewController.swift"
-            timestampString = "590868441.177937"
+            timestampString = "590870423.903453"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
@@ -180,7 +116,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tatayaba/Modules/ProfileMenu/profileTabMenuViewController.swift"
-            timestampString = "590868441.177996"
+            timestampString = "590870423.9035209"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -196,7 +132,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tatayaba/Common/Shared/Customer.swift"
-            timestampString = "590868441.178396"
+            timestampString = "590869711.520012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
@@ -212,7 +148,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tatayaba/Common/Shared/Customer.swift"
-            timestampString = "590868441.178739"
+            timestampString = "590869711.52039"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"

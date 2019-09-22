@@ -24,12 +24,19 @@ class SupplierProductsViewController: BaseViewController, UICollectionViewDelega
 
         setupUI()
         guard let viewModel = viewModel else { return }
-        viewModel.getSupplierDetails()
-        viewModel.onSupplierLoad = {
-            self.productsCollectionView.dataSource = self
-            self.productsCollectionView.delegate = self
-        }
+        self.showLoadingIndicator(to: self.view)
+        viewModel.getSupplierDetails { result in
+            self.hideLoadingIndicator(from: self.view)
+            switch result {
+            case .success:
+                self.productsCollectionView.dataSource = self
+                self.productsCollectionView.delegate = self
 
+            case .failure(let error):
+                print("the error \(error)")
+                self.showErrorAlerr(title: "Error".localized(), message: error.localizedDescription, handler: nil)
+            }
+        }
     }
 
     func setupUI() {

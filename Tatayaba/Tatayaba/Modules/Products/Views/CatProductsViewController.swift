@@ -24,10 +24,19 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
 
         setupUI()
         guard let viewModel = viewModel else { return }
-        viewModel.getProductsOfCategory()
-        viewModel.onProductsListLoad = {
-            self.productsCollectionView.dataSource = self
-            self.productsCollectionView.delegate = self
+        self.showLoadingIndicator(to: self.view)
+        viewModel.getProductsOfCategory { result in
+            self.hideLoadingIndicator(from: self.view)
+            switch result {
+            case .success:
+
+                self.productsCollectionView.dataSource = self
+                self.productsCollectionView.delegate = self
+
+            case .failure(let error):
+                print("the error \(error)")
+                self.showErrorAlerr(title: "Error".localized(), message: error.localizedDescription, handler: nil)
+            }
         }
 
     }

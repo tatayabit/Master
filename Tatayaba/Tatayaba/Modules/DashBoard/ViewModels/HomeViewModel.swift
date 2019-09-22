@@ -68,6 +68,7 @@ class HomeViewModel {
                 }
             case .failure(let error):
                 print("the error \(error)")
+                self.getAllCategories()
             }
         }
     }
@@ -88,6 +89,7 @@ class HomeViewModel {
                 }
             case .failure(let error):
                 print("the error \(error)")
+                self.getAllSuppliers()
             }
         }
     }
@@ -106,6 +108,7 @@ class HomeViewModel {
                 }
             case .failure(let error):
                 print("the error \(error)")
+                self.loadTopBannerApi()
             }
         }
     }
@@ -125,6 +128,7 @@ class HomeViewModel {
                 }
             case .failure(let error):
                 print("the error \(error)")
+                self.getSquaredBlock()
             }
         }
     }
@@ -144,6 +148,7 @@ class HomeViewModel {
                 }
             case .failure(let error):
                 print("the error \(error)")
+                self.getProductBlock()
             }
         }
     }

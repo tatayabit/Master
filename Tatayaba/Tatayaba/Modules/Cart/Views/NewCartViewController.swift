@@ -33,6 +33,7 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         calculateTotal()
+        self.tabBarController?.tabBar.isHidden = false
     }
 
     // MARK:- setupUI

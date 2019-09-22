@@ -11,12 +11,6 @@ import Moya
 class SupplierProductsViewModel {
     let apiClient = SuppliersAPIClient()
 
-
-    /// This closure is being called once the categories api fetch
-    var onSupplierLoad: (() -> ())?
-
-//    var productsCount: Int { return productsList.count }
-
     var page: Int = 0
     var supplier: Supplier
 
@@ -26,23 +20,21 @@ class SupplierProductsViewModel {
 
 
     //MARK:- Api
-    func getSupplierDetails() {
+    func getSupplierDetails(completion: @escaping (APIResult<Supplier?, MoyaError>) -> Void) {
+
         apiClient.getSupplierDetails(supplierId: supplier.supplierId) { result in
             switch result {
             case .success(let response):
                 guard let supplierResult = response else { return }
-//                guard let products = supplier.products else { return }
+                //                guard let products = supplier.products else { return }
 
                 self.supplier = supplierResult
                 print(self.supplier)
 
-                if let newSuppilerArrived = self.onSupplierLoad {
-                    newSuppilerArrived()
-                }
-
             case .failure(let error):
                 print("the error \(error)")
             }
+            completion(result)
         }
     }
 

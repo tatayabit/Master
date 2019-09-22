@@ -13,9 +13,6 @@ class CatProductsViewModel {
 
     private var productsList = [Product]()
 
-    /// This closure is being called once the categories api fetch
-    var onProductsListLoad: (() -> ())?
-
     var productsCount: Int { return productsList.count }
 
     var page: Int = 0
@@ -27,7 +24,7 @@ class CatProductsViewModel {
 
 
     //MARK:- Api
-    func getProductsOfCategory() {
+    func getProductsOfCategory(completion: @escaping (APIResult<ProductsResult?, MoyaError>) -> Void) {
         let categoryId = Int(category.identifier) ?? 0
         apiClient.getProductOf(categoryId: categoryId, page: page) { result in
             switch result {
@@ -38,13 +35,10 @@ class CatProductsViewModel {
                 self.productsList = products
                 print(productResult)
 
-                if let newCategoriesArrived = self.onProductsListLoad {
-                    newCategoriesArrived()
-                }
-
             case .failure(let error):
                 print("the error \(error)")
             }
+            completion(result)
         }
     }
 

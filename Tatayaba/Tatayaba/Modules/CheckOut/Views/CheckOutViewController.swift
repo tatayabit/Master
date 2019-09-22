@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CheckOutViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var paymentTableView: UITableView!
 
@@ -37,6 +37,7 @@ class CheckOutViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     func setupUI() {
+        self.tabBarController?.tabBar.isHidden = true
 //        self.NavigationBarWithOutBackButton()
         self.paymentTableView.register(PaymentMethodTableViewCell.nib, forCellReuseIdentifier: PaymentMethodTableViewCell.identifier)
         self.paymentTableView.register(CheckoutAddressTableViewCell.nib, forCellReuseIdentifier: CheckoutAddressTableViewCell.identifier)
@@ -46,21 +47,23 @@ class CheckOutViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func placeOrderAction(_ sender: Any) {
         
 //         self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
+        self.showLoadingIndicator(to: self.view)
         viewModel.placeOrder { result in
+            self.hideLoadingIndicator(from: self.view)
             switch result {
             case .success(let response):
                 guard let placeOrderResult = response else { return }
-                //                guard let paymentMethods = paymentResult.paymentMethods else { return }
-
                 print(placeOrderResult)
                 if placeOrderResult.orderId > 0 {
                     self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
                 } else {
                     print("the error order id == \(placeOrderResult.orderId)")
+                    self.showErrorAlerr(title: "Error".localized(), message: "Placing order failed", handler: nil)
                 }
 
             case .failure(let error):
                 print("the error \(error)")
+                self.showErrorAlerr(title: "Error".localized(), message: error.localizedDescription, handler: nil)
             }
         }
    }
