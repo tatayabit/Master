@@ -36,7 +36,7 @@ class LoginViewController: BaseViewController, ValidationDelegate {
     //MARK:- Swift Validator
     func registerValidator() {
         validator.registerField(emailTextField, rules: [RequiredRule(message: "Email is required!"), EmailRule(message: "Invalid email")])
-        validator.registerField(passwordTextField, rules: [RequiredRule(message: "Password is required!"), PasswordRule(regex: "^(?=(.*\\d){8})[a-zA-Z\\d]{8,20}$", message: "Invalid password")])
+        validator.registerField(passwordTextField, rules: [RequiredRule(message: "Password is required!"), PasswordRule(regex: "^.{6,20}$", message: "Invalid password")])
         emailTextField.becomeFirstResponder()
     }
 
