@@ -38,9 +38,9 @@ extension ProductsEndpoint: TargetType {
         case .getAllCategories:
             let version = "4.0"
             return "\(version.urlEscaped)/TtmCategories"
-        case .getProductsOfCategory(let categoryId, _):
+        case .getProductsOfCategory:
             let version = "4.0"
-            return "\(version.urlEscaped)/TtmCategories/\(categoryId.urlEscaped)/products"
+            return "\(version.urlEscaped)/TtmProducts"
         case .getProductFeatures:
             return "TtmCategories/268/products"
         }
@@ -72,8 +72,9 @@ extension ProductsEndpoint: TargetType {
                                                     "lang_code": LanguageManager.getLanguage()
                 ], encoding: URLEncoding.default)
 
-        case .getProductsOfCategory(_, let page):
+        case .getProductsOfCategory(let category, let page):
             return .requestParameters(parameters: [ "items_per_page": 20,
+                                                    "cid": category,
                                                     "page": page.urlEscaped,
                                                     "lang_code": LanguageManager.getLanguage()
                 ], encoding: URLEncoding.default)

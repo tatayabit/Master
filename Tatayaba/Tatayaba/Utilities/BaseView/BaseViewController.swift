@@ -72,6 +72,22 @@ extension UIViewController {
         navigationController?.hidesBottomBarWhenPushed = false
         self.tabBarController?.tabBar.isHidden = false
       //  let navBackgroundImage:UIImage! = UIImage(named:" ")
-    self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "Header")?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .stretch), for: .default)
+        setupNavBarLogo()
+//    self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "Header")?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .stretch), for: .default)
+    }
+}
+
+
+extension UIViewController {
+    func setupNavigationBar(image: UIImage) {
+        //set your image navigation bar center
+        //set titile
+        //self.navigationItem.title =  title
+        //set image in the center
+        self.navigationItem.titleView = UIImageView(image: image)
+    }
+
+    func setupNavBarLogo() {
+        self.setupNavigationBar(image:UIImage(named: "log_nav")!)
     }
 }

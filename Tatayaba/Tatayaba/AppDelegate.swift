@@ -140,3 +140,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    [self.window makeKeyAndVisible];
 //
 //}
+
+extension AppDelegate {
+    static var shared: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+    var rootViewController: UITabBarController {
+        return window!.rootViewController as! UITabBarController
+    }
+}

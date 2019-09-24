@@ -35,3 +35,6 @@
 "BRANDS"="Brands";
 "Logout"="Logout";
 "Delivery and Return Policy"="Delivery and Return Policy";
+
+// Concierge
+"Something went wrong while submitting your concierge!"="Something went wrong while submitting your concierge!";

@@ -248,6 +248,11 @@
             <viewLayoutGuide key="safeArea" id="Lau-fo-u0d"/>
             <connections>
                 <outlet property="bannerImageView" destination="QPz-oN-vuA" id="AMP-fj-Pcz"/>
+                <outlet property="commentTextField" destination="FQ9-Gc-Hej" id="Yjz-UY-hhH"/>
+                <outlet property="countryButton" destination="SVF-cJ-Lsi" id="LA7-eG-ue7"/>
+                <outlet property="customerNameTextField" destination="OCb-v7-g18" id="LuA-bL-nqO"/>
+                <outlet property="perfumeNameTextField" destination="dpM-x7-6Sn" id="txw-sy-vxa"/>
+                <outlet property="phoneTextField" destination="iqm-uc-Uhe" id="Czy-Dc-OJ2"/>
             </connections>
             <point key="canvasLocation" x="157.59999999999999" y="179.91004497751126"/>
         </view>

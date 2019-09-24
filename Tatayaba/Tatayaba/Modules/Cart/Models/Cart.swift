@@ -32,6 +32,7 @@ class Cart {
             cartItemsArr.append(productModel)
             productsArr.append(product)
         }
+        updateTabBarCount()
     }
 
     func cartItem(for product: Product) -> CartItem {
@@ -41,20 +42,33 @@ class Cart {
     func removeProduct(at indexPath: IndexPath) {
         cartItemsArr.remove(at: indexPath.row)
         productsArr.remove(at: indexPath.row)
+        updateTabBarCount()
     }
 
     func increaseCount(cartItem: CartItem) {
         cartItem.increaseCount(by: 1)
+        updateTabBarCount()
     }
 
     func decreaseCount(cartItem: CartItem) {
         cartItem.decreaseCount(by: 1)
+        updateTabBarCount()
     }
 
     func product(at indexPath: IndexPath) -> (Product, CartItem) {
         guard cartItemsArr.count > 0 else { return (Product(), CartItem()) }
         return (productsArr[indexPath.row], cartItemsArr[indexPath.row])
     }
+
+    // MARK:- UpdateCartCount
+    func updateTabBarCount() {
+        if productsCount > 0 {
+            AppDelegate.shared.rootViewController.tabBar.items?[4].badgeValue = String(productsCount)
+        } else {
+            AppDelegate.shared.rootViewController.tabBar.items?[4].badgeValue = nil
+        }
+    }
+    
     //MARK:- Calculate Price
     func calculateSubTotal() -> Float {
         var total: Float = 0

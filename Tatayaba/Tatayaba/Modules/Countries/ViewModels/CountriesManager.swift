@@ -10,7 +10,7 @@ import Foundation
 
 struct CountriesManager {
     static let countriesJsonFile = "countries_list"
-    static func loadCountriesList() {
+    static func loadCountriesList() -> [Country] {
         let url = Bundle.main.url(forResource: countriesJsonFile, withExtension: "json")!
         do {
             let jsonData = try Data(contentsOf: url)
@@ -18,7 +18,9 @@ struct CountriesManager {
             // the name data is misleading
             let myStruct = try decoder.decode([Country].self, from: jsonData)
 //            print(myStruct)
+            return myStruct
 
         } catch { print(error) }
+        return [Country(code: "KW", name: "Kuwait")]
     }
 }

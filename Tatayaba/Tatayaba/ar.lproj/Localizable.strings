@@ -35,3 +35,6 @@
 "BRANDS"="العلامات التجارية";
 "Logout"="تسجيل الخروج";
 "Delivery and Return Policy"="سياسة الاستبدال والاسترجاع";
+
+// Concierge
+"Something went wrong while submitting your concierge!"="حدث خطأ أثناء تقديم الكونسيرج!";

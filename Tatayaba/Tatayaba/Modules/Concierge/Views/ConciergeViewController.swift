@@ -14,6 +14,7 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
 
     let conciergeSubView: ConciergeSubView = .fromNib()
     private lazy var imagePicker = ImagePicker()
+    let viewModel = ConciergeViewModel()
 
 
 
@@ -40,6 +41,25 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
     // MARK:- ConciergeSubViewDelegate
     func didSelectUplaodConcierge() {
         imagePicker.photoGalleryAsscessRequest()
+    }
+
+    func didSelectSubmitConcierge(concierge: Concierge) {
+
+        showLoadingIndicator(to: self.view)
+        viewModel.uploadConcierge(concierge: concierge) { result in
+            self.hideLoadingIndicator(from: self.view)
+            switch result {
+            case .success(let ConciergeResult):
+                print(ConciergeResult!)
+                self.showErrorAlerr(title: "Uploaded".localized(), message: "Thanks for using concierge feature,\nWe will call you back withing 48 hours!".localized(), handler: { action in
+
+                })
+
+            case .failure(let error):
+                print("the error \(error)")
+                self.showErrorAlerr(title: "Error".localized(), message: "Something went wrong while submitting your concierge!".localized(), handler: nil)
+            }
+        }
     }
 
     // MARK:- ImagePickerDelegate
