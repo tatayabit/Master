@@ -23,10 +23,17 @@ class OrdersViewController: BaseViewController,UITableViewDelegate,UITableViewDa
 
     func setupListners() {
 
+        self.showLoadingIndicator(to: self.view)
         viewModel.onOrdersListLoad = {
+            self.hideLoadingIndicator(from: self.view)
             self.tableView.delegate = self
             self.tableView.dataSource = self
             self.tableView.reloadData()
+        }
+
+        viewModel.onOrdersListLoadFailed = { error in
+            self.hideLoadingIndicator(from: self.view)
+            self.showErrorAlerr(title: "Error".localized(), message: error.localizedDescription, handler: nil)
         }
     }
 

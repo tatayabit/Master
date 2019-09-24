@@ -22,8 +22,8 @@ class LoginViewController: BaseViewController, ValidationDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-     navigationController?.isNavigationBarHidden = true
-       self.tabBarController?.tabBar.isHidden = true
+        navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = true
         registerValidator()
       
     }
@@ -65,6 +65,10 @@ class LoginViewController: BaseViewController, ValidationDelegate {
 
     func validationFailed(_ errors: [(Validatable, ValidationError)]) {
         print("Validation FAILED!")
+        if errors.count > 0 {
+            self.showErrorAlerr(title: "Error".localized(), message: errors[0].1.errorMessage, handler: nil)
+        }
+
         for error in errors {
             print("errors:::: \(String(describing: error.1.errorMessage))")
         }
@@ -98,7 +102,8 @@ class LoginViewController: BaseViewController, ValidationDelegate {
     
     @IBAction func skipAction(_ sender: UIButton) {
 //         UserDefaults.standard.set("0", forKey: "UserID")
-        performSegue(withIdentifier: homeSegue, sender: nil)
+//        performSegue(withIdentifier: homeSegue, sender: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     

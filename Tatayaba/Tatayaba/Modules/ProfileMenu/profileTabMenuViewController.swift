@@ -27,6 +27,8 @@ class profileTabMenuViewController: UIViewController,UITableViewDelegate,UITable
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
+        self.tabBarController?.tabBar.isHidden = false
         if Customer.shared.loggedin {
             self.navigationItem.title = "Welcome \(Customer.shared.user?.firstname ?? "")"
         }
@@ -134,14 +136,15 @@ extension profileTabMenuViewController{
             
         }else if  indexPath.section == 2 {
             let indextitle = self.Session3[indexPath.row]
-            if indextitle  == "Privacy Policy" {
+            if indextitle  == "Privacy Policy".localized() {
             UserDefaults.standard.set("Privacy", forKey: "Privacy")
                 self.PrivacyView()
-            } else if indextitle  == "Delivery and Return Policy" {
+            } else if indextitle  == "Delivery and Return Policy".localized() {
             UserDefaults.standard.set("Delivery", forKey: "Privacy")
                 
                  self.PrivacyView()
-            }else  if indextitle  == "Logout"{
+            }else  if indextitle  == "Logout".localized(){
+                Customer.shared.logout()
             self.loadFirstVC()
                 
             }

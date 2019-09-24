@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.2)
+  - IQKeyboardManagerSwift (6.4.0)
   - MBProgressHUD (1.1.0)
   - MOLH (1.0)
   - Moya (12.0.1):
@@ -16,6 +17,7 @@ PODS:
   - SwiftValidator (4.0.0)
 
 DEPENDENCIES:
+  - IQKeyboardManagerSwift
   - MBProgressHUD (~> 1.1.0)
   - MOLH
   - Moya (~> 12.0)
@@ -27,6 +29,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - IQKeyboardManagerSwift
     - MBProgressHUD
     - MOLH
     - Moya
@@ -47,6 +50,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  IQKeyboardManagerSwift: ed9b04ee0e3067ffba543283462d619f944b05e5
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MOLH: 2492e7f8fe3400580832312dc0fb9e05d7e92726
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
@@ -56,6 +60,6 @@ SPEC CHECKSUMS:
   SwiftKeychainWrapper: 82c4c02cdc36f9a24f7edfcaab3e336401caa1a1
   SwiftValidator: 58c155c8ae8421ef716a96e52a49984dd54c700c
 
-PODFILE CHECKSUM: 33ebfcb670bf5721b83f5923857048447cf9adbb
+PODFILE CHECKSUM: a99b05da232757f20ca1751117102b7dc2a9838e
 
 COCOAPODS: 1.7.4
