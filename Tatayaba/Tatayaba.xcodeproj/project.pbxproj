@@ -119,6 +119,7 @@
 		11B07912233A771F003041E8 /* Concierge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B07911233A771F003041E8 /* Concierge.swift */; };
 		11B07915233A780D003041E8 /* ConciergeAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B07914233A780D003041E8 /* ConciergeAPIClient.swift */; };
 		11B07917233A781F003041E8 /* ConciergeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B07916233A781F003041E8 /* ConciergeEndpoint.swift */; };
+		11B07919233BAF31003041E8 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B07918233BAF31003041E8 /* UITableView+Extensions.swift */; };
 		11B2C41C22D64F0A00EAD9C6 /* ProductDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2C41B22D64F0A00EAD9C6 /* ProductDetailsViewModel.swift */; };
 		11C271AE22F20614004613E3 /* AddressesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C271AD22F20614004613E3 /* AddressesListViewController.swift */; };
 		11C271B022F20625004613E3 /* AddressesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C271AF22F20625004613E3 /* AddressesListViewModel.swift */; };
@@ -358,6 +359,7 @@
 		11B07911233A771F003041E8 /* Concierge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concierge.swift; sourceTree = "<group>"; };
 		11B07914233A780D003041E8 /* ConciergeAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConciergeAPIClient.swift; sourceTree = "<group>"; };
 		11B07916233A781F003041E8 /* ConciergeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConciergeEndpoint.swift; sourceTree = "<group>"; };
+		11B07918233BAF31003041E8 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		11B2C41B22D64F0A00EAD9C6 /* ProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModel.swift; sourceTree = "<group>"; };
 		11C271AD22F20614004613E3 /* AddressesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesListViewController.swift; sourceTree = "<group>"; };
 		11C271AF22F20625004613E3 /* AddressesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesListViewModel.swift; sourceTree = "<group>"; };
@@ -1184,6 +1186,7 @@
 			isa = PBXGroup;
 			children = (
 				11D4917922CBCF8B009D8B23 /* UIView+Extensions.swift */,
+				11B07918233BAF31003041E8 /* UITableView+Extensions.swift */,
 				11B0790F233A7661003041E8 /* UIImage+Extensions.swift */,
 				1100421022D4F3520099AE64 /* String+Extensions.swift */,
 				1120C45E22E6184600F99B60 /* UIButton+Extensions.swift */,
@@ -2097,6 +2100,7 @@
 				84BC089A22DC7D3400C6180E /* CartViewModel.swift in Sources */,
 				112654AC22D2691400904FB5 /* ProductsAPIClient.swift in Sources */,
 				114D1A1822CBB33E009205F3 /* Product.swift in Sources */,
+				11B07919233BAF31003041E8 /* UITableView+Extensions.swift in Sources */,
 				1120C45F22E6184600F99B60 /* UIButton+Extensions.swift in Sources */,
 				117AC9F82314444200EFCE25 /* DeeplinkHandler.swift in Sources */,
 				84BC089C22DC7D4900C6180E /* Cart.swift in Sources */,

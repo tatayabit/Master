@@ -24,7 +24,6 @@
         <!--CART-->
         <scene sceneID="5Tk-1E-S66">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mR7-fh-ReS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="CartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EFf-bZ-G4f" customClass="CartViewController" customModule="Tatayaba" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hfg-r0-u4D">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
@@ -339,6 +338,7 @@
                         <segue destination="WJK-Ai-eAw" kind="show" identifier="checkout_segue" id="7Oz-XM-C63"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mR7-fh-ReS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="844" y="152.02398800599701"/>
         </scene>
@@ -532,6 +532,7 @@
                     <size key="freeformSize" width="375" height="700"/>
                     <connections>
                         <outlet property="cartTableview" destination="sdk-r7-OJA" id="rqQ-t2-OWM"/>
+                        <outlet property="checkoutContainerView" destination="93f-4v-x2G" id="jjc-RO-msW"/>
                         <outlet property="totalPriceLabel" destination="r3s-NS-Zlb" id="JNh-Ry-dZq"/>
                         <outlet property="totalTitleLabel" destination="zzS-WW-8Am" id="pcZ-bk-a2q"/>
                         <segue destination="WJK-Ai-eAw" kind="show" identifier="checkout_segue" id="Rn2-Wi-Ytg"/>

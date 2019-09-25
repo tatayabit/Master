@@ -13,6 +13,8 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     @IBOutlet var cartTableview: UITableView!
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var totalTitleLabel: UILabel!
+    @IBOutlet weak var checkoutContainerView: UIView!
+
 
     let cart = Cart.shared
     let viewModel = CartViewModel()
@@ -80,6 +82,15 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
+        if cart.productsCount > 0 {
+            self.cartTableview.restore()
+            checkoutContainerView.isHidden = false
+        } else {
+            self.cartTableview.setEmptyMessage("Your Cart is Empty!".localized())
+            checkoutContainerView.isHidden = true
+            return 0
+        }
+
         if viewModel.pricingList.count > 0 {
             return 2
         }
