@@ -7,6 +7,7 @@
 //
 
 import Foundation
+ private var countryList = [Country]()
 
 struct CountriesManager {
     static let countriesJsonFile = "countries_list"
@@ -17,10 +18,17 @@ struct CountriesManager {
             let decoder = JSONDecoder()
             // the name data is misleading
             let myStruct = try decoder.decode([Country].self, from: jsonData)
-//            print(myStruct)
+            
             return myStruct
 
         } catch { print(error) }
         return [Country(code: "KW", name: "Kuwait")]
     }
+    
+    
+    func country(at indexPath: IndexPath) -> Country {
+        guard countryList.count > 0 else { return Country() }
+        return countryList[indexPath.row]
+    }
+    
 }

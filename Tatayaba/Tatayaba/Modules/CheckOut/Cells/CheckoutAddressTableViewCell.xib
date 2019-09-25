@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,22 +24,22 @@
                 <rect key="frame" x="0.0" y="0.0" width="395" height="99.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fi-dS-Gi4">
-                        <rect key="frame" x="339" y="38" width="40" height="40"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fi-dS-Gi4">
+                        <rect key="frame" x="339" y="43.5" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="Sga-hi-JQf"/>
                             <constraint firstAttribute="width" constant="40" id="dRU-u6-TFG"/>
                         </constraints>
                         <state key="normal" backgroundImage="Edit"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="SHIP TO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaL-fn-Fjl">
-                        <rect key="frame" x="16" y="16" width="363" height="25"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHIP TO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaL-fn-Fjl">
+                        <rect key="frame" x="16" y="16" width="363" height="15.5"/>
                         <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="25"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OJ-90-UEl">
-                        <rect key="frame" x="16" y="38" width="311" height="56"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OJ-90-UEl">
+                        <rect key="frame" x="16" y="43.5" width="311" height="40"/>
                         <string key="text">2948 Cambridge Court , Indian Trail,
 San Francisco, CA, 10063, USA</string>
                         <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="11"/>
@@ -52,6 +52,7 @@ San Francisco, CA, 10063, USA</string>
                     <constraint firstItem="9fi-dS-Gi4" firstAttribute="centerY" secondItem="3OJ-90-UEl" secondAttribute="centerY" id="G0A-Vn-Lbp"/>
                     <constraint firstItem="aaL-fn-Fjl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Ku9-rG-u0t"/>
                     <constraint firstAttribute="trailing" secondItem="9fi-dS-Gi4" secondAttribute="trailing" constant="16" id="OOk-Bo-OC2"/>
+                    <constraint firstItem="3OJ-90-UEl" firstAttribute="top" secondItem="9fi-dS-Gi4" secondAttribute="top" id="Tr7-IX-dM2"/>
                     <constraint firstAttribute="bottom" secondItem="3OJ-90-UEl" secondAttribute="bottom" constant="16" id="a1w-7a-QV8"/>
                     <constraint firstItem="3OJ-90-UEl" firstAttribute="top" secondItem="aaL-fn-Fjl" secondAttribute="bottom" constant="12" id="hV4-AR-7Y0"/>
                     <constraint firstAttribute="trailing" secondItem="aaL-fn-Fjl" secondAttribute="trailing" constant="16" id="l4n-gB-5vd"/>
@@ -69,6 +70,6 @@ San Francisco, CA, 10063, USA</string>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Edit" width="60" height="60"/>
+        <image name="Edit" width="30" height="30"/>
     </resources>
 </document>
