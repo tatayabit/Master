@@ -93,7 +93,7 @@ extension profileTabMenuViewController{
                 cell.title_img.isHidden = true
                 cell.accessoryType = UITableViewCellAccessoryType.none
                 let sign_button = UIButton(frame: CGRect(x: UIScreen.main.bounds.size.width/2-70, y: 25, width: 150, height: 50))
-                sign_button.setTitle("Sign in", for: .normal)
+                sign_button.setTitle("LOG IN".localized(), for: .normal)
                 sign_button.addTarget(self, action: #selector(sign_buttonAction), for: .touchUpInside)
                 sign_button.setTitleColor(UIColor.black, for: .normal)
                 sign_button.layer.borderWidth = 1

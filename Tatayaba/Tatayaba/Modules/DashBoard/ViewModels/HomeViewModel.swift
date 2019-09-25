@@ -68,7 +68,10 @@ class HomeViewModel {
                 }
             case .failure(let error):
                 print("the error \(error)")
-                self.getAllCategories()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+                    self.getAllCategories()
+                })
+
             }
         }
     }
@@ -89,7 +92,11 @@ class HomeViewModel {
                 }
             case .failure(let error):
                 print("the error \(error)")
-                self.getAllSuppliers()
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+                    self.getAllSuppliers()
+                })
+
             }
         }
     }
@@ -108,7 +115,10 @@ class HomeViewModel {
                 }
             case .failure(let error):
                 print("the error \(error)")
-                self.loadTopBannerApi()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+                    self.loadTopBannerApi()
+                })
+
             }
         }
     }
@@ -128,7 +138,10 @@ class HomeViewModel {
                 }
             case .failure(let error):
                 print("the error \(error)")
-                self.getSquaredBlock()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+                    self.getSquaredBlock()
+                })
+
             }
         }
     }
@@ -148,7 +161,9 @@ class HomeViewModel {
                 }
             case .failure(let error):
                 print("the error \(error)")
-                self.getProductBlock()
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+//                    self.getProductBlock()
+//                })
             }
         }
     }

@@ -289,7 +289,6 @@
 		112574322331595A0015C3AD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/ProductsBlockCollectionViewCell.strings; sourceTree = "<group>"; };
 		11257434233159B20015C3AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Concierge.storyboard; sourceTree = "<group>"; };
 		11257439233159CB0015C3AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ConciergeSubView.xib; sourceTree = "<group>"; };
-		1125743F23315A860015C3AD /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/ConciergeSubView.xib; sourceTree = "<group>"; };
 		112654A822D25E5B00904FB5 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		112654AB22D2691400904FB5 /* ProductsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsAPIClient.swift; sourceTree = "<group>"; };
 		112654AD22D2693600904FB5 /* ProductsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsEndpoint.swift; sourceTree = "<group>"; };
@@ -360,6 +359,7 @@
 		11B07914233A780D003041E8 /* ConciergeAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConciergeAPIClient.swift; sourceTree = "<group>"; };
 		11B07916233A781F003041E8 /* ConciergeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConciergeEndpoint.swift; sourceTree = "<group>"; };
 		11B07918233BAF31003041E8 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		11B0791A233BC70E003041E8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/ConciergeSubView.strings; sourceTree = "<group>"; };
 		11B2C41B22D64F0A00EAD9C6 /* ProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModel.swift; sourceTree = "<group>"; };
 		11C271AD22F20614004613E3 /* AddressesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesListViewController.swift; sourceTree = "<group>"; };
 		11C271AF22F20625004613E3 /* AddressesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesListViewModel.swift; sourceTree = "<group>"; };
@@ -2297,7 +2297,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				11257439233159CB0015C3AD /* Base */,
-				1125743F23315A860015C3AD /* ar */,
+				11B0791A233BC70E003041E8 /* ar */,
 			);
 			name = ConciergeSubView.xib;
 			sourceTree = "<group>";
