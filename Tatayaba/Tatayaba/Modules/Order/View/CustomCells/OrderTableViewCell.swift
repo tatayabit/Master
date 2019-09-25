@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol OrderTableViewCellDelegate: class {
+    func didSelectViewOrder(at indexPath: IndexPath)
+}
+
 class OrderTableViewCell: UITableViewCell {
     @IBOutlet weak var orderIdLabel: UILabel!
     @IBOutlet weak var totalPriceLabel: UILabel!
@@ -15,15 +19,21 @@ class OrderTableViewCell: UITableViewCell {
 
     @IBOutlet weak var status_Image: UIImageView!
     @IBOutlet weak var StatusLabel: UILabel!
+    private var indexPath: IndexPath?
+
+    weak var delegate: OrderTableViewCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    func configure(order: OrderModel) {
+    func configure(order: OrderModel, indexPath: IndexPath) {
+        self.indexPath = indexPath
         self.orderIdLabel.text = "# \(order.identifier)"
         self.totalPriceLabel.text = order.totalPrice.formattedPrice
-        self.timeLabel.text = order.timestamp
+        let orderStampDouble = Double(order.timestamp)
+        let timeInterval = TimeInterval(orderStampDouble ?? 0.0)
+        self.timeLabel.text = Date(timeIntervalSince1970: timeInterval).toString(dateFormat: "yyyy-MM-dd HH:mm:ss")
         self.StatusLabel.text = order.status
         if self.StatusLabel.text == "Completed"{
             self.StatusLabel.textColor = UIColor.init(hexString:"#AEC779")
@@ -37,4 +47,13 @@ class OrderTableViewCell: UITableViewCell {
         }
         
     }
+
+    // MARK:- IBActions
+    @IBAction func viewOrderAction(_ sender: Any) {
+        if let delegate = delegate {
+            guard let indexPath = indexPath else { return }
+            delegate.didSelectViewOrder(at: indexPath)
+        }
+    }
+
 }

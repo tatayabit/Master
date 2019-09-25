@@ -122,6 +122,7 @@
 		11B07919233BAF31003041E8 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B07918233BAF31003041E8 /* UITableView+Extensions.swift */; };
 		11B0791C233BCA25003041E8 /* AddressAddEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B0791B233BCA25003041E8 /* AddressAddEditViewModel.swift */; };
 		11B0791F233BCB2A003041E8 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B0791E233BCB2A003041E8 /* Address.swift */; };
+		11B07921233BD756003041E8 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B07920233BD756003041E8 /* Date+Extensions.swift */; };
 		11B2C41C22D64F0A00EAD9C6 /* ProductDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B2C41B22D64F0A00EAD9C6 /* ProductDetailsViewModel.swift */; };
 		11C271AE22F20614004613E3 /* AddressesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C271AD22F20614004613E3 /* AddressesListViewController.swift */; };
 		11C271B022F20625004613E3 /* AddressesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C271AF22F20625004613E3 /* AddressesListViewModel.swift */; };
@@ -364,6 +365,7 @@
 		11B0791A233BC70E003041E8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/ConciergeSubView.strings; sourceTree = "<group>"; };
 		11B0791B233BCA25003041E8 /* AddressAddEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAddEditViewModel.swift; sourceTree = "<group>"; };
 		11B0791E233BCB2A003041E8 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		11B07920233BD756003041E8 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		11B2C41B22D64F0A00EAD9C6 /* ProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModel.swift; sourceTree = "<group>"; };
 		11C271AD22F20614004613E3 /* AddressesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesListViewController.swift; sourceTree = "<group>"; };
 		11C271AF22F20625004613E3 /* AddressesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesListViewModel.swift; sourceTree = "<group>"; };
@@ -1205,6 +1207,7 @@
 				1100421022D4F3520099AE64 /* String+Extensions.swift */,
 				1120C45E22E6184600F99B60 /* UIButton+Extensions.swift */,
 				118A10F323294EA9003F86DE /* UIFont+Extensions.swift */,
+				11B07920233BD756003041E8 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2162,6 +2165,7 @@
 				11A09F3E22FB44AA00C3E5B8 /* OrderDetailsViewModel.swift in Sources */,
 				4C2007A923320DE40090658A /* SelectOptionProduct.swift in Sources */,
 				114D1A0722CBB0EA009205F3 /* ConfigurableCell.swift in Sources */,
+				11B07921233BD756003041E8 /* Date+Extensions.swift in Sources */,
 				11069C392323A2EE0093D6FF /* SupplierDetailsViewModel.swift in Sources */,
 				11FB5872231D5F13005DA4F0 /* SuppliersBlockView.swift in Sources */,
 				112654A922D25E5B00904FB5 /* SignUpResponse.swift in Sources */,

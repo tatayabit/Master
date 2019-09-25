@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrdersViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
+class OrdersViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, OrderTableViewCellDelegate {
 
     private let viewModel = OrdersViewModel()
     private let orderDetailsSegue = "order_details_segue"
@@ -64,13 +64,18 @@ extension OrdersViewController{
         let cellIdentifier = "OrderTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! OrderTableViewCell
 
-        cell.configure(order: viewModel.order(at: indexPath))
+        cell.configure(order: viewModel.order(at: indexPath), indexPath: indexPath)
 
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+//        performSegue(withIdentifier: orderDetailsSegue, sender: indexPath)
+    }
+
+    // MARK:- OrderTableViewCellDelegate
+    func didSelectViewOrder(at indexPath: IndexPath) {
         performSegue(withIdentifier: orderDetailsSegue, sender: indexPath)
     }
 
