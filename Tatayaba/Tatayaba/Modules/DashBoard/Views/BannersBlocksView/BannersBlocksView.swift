@@ -39,8 +39,9 @@ class BannersBlocksView: UIView, UICollectionViewDelegate, UICollectionViewDataS
 
     private func setupUI() {
         bannersCollectionView.register(BannerBlockCollectionViewCell.nib, forCellWithReuseIdentifier: BannerBlockCollectionViewCell.identifier)
-        bannersCollectionView.dataSource = self
-        bannersCollectionView.delegate = self
+        self.bannersCollectionView.dataSource = self
+        self.bannersCollectionView.delegate = self
+        
     }
 
     //MARK:- Load Data
@@ -77,5 +78,8 @@ class BannersBlocksView: UIView, UICollectionViewDelegate, UICollectionViewDataS
         if let delegate = delegate {
             delegate.didSelectBannerBlocks(at: indexPath)
         }
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 05, left: 05, bottom: 05, right: 05)
     }
 }

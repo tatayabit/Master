@@ -70,6 +70,7 @@ extension ImagePicker {
     }
 
     func photoGalleryAsscessRequest() {
+
         PHPhotoLibrary.requestAuthorization { [weak self] result in
             guard let self = self else { return }
             if result == .authorized {
@@ -82,6 +83,9 @@ extension ImagePicker {
             }
         }
     }
+    
+  
+    
 }
 
 extension ImagePicker: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

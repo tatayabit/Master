@@ -15,7 +15,7 @@ struct WishlistViewModel {
     var onWishlistProductsLoad: (() -> ())?
 
     var wishlistCount: Int {
-        return 16//wishlistProducts.count
+        return wishlistProducts.count
     }
 
     //MARK:- Categories data

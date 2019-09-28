@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -45,14 +45,16 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5bD-Qe-4T2">
-                        <rect key="frame" x="12" y="17" width="144" height="104"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5bD-Qe-4T2">
+                        <rect key="frame" x="20" y="5" width="128" height="119"/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJx-Wu-3a2">
                         <rect key="frame" x="5" y="170" width="116" height="30"/>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.10980392156862745" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="10"/>
-                        <state key="normal" title="ADD TO CART"/>
+                        <state key="normal" title="ADD TO CART">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="3"/>
@@ -128,12 +130,12 @@
                 <constraint firstItem="Ndg-qA-zgg" firstAttribute="bottom" secondItem="rcq-m0-cLY" secondAttribute="bottom" constant="-2" id="OMH-P7-s7A"/>
                 <constraint firstItem="rcq-m0-cLY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="3" id="Op9-JS-iAF"/>
                 <constraint firstItem="Ndg-qA-zgg" firstAttribute="trailing" secondItem="rcq-m0-cLY" secondAttribute="trailing" constant="-2" id="UFt-wk-jrL"/>
-                <constraint firstItem="5bD-Qe-4T2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="17" id="UUM-bL-YAH"/>
+                <constraint firstItem="5bD-Qe-4T2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="UUM-bL-YAH"/>
                 <constraint firstItem="Ndg-qA-zgg" firstAttribute="height" secondItem="lJx-Wu-3a2" secondAttribute="height" id="VWq-nx-8Gf"/>
                 <constraint firstItem="H7V-tf-fQL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="X16-db-Jsv"/>
                 <constraint firstItem="lJx-Wu-3a2" firstAttribute="leading" secondItem="rcq-m0-cLY" secondAttribute="leading" constant="2" id="Zx0-MJ-vTp"/>
-                <constraint firstAttribute="trailing" secondItem="5bD-Qe-4T2" secondAttribute="trailing" constant="12" id="a2P-P0-0sN"/>
-                <constraint firstItem="uau-dH-D7f" firstAttribute="top" secondItem="5bD-Qe-4T2" secondAttribute="bottom" constant="5" id="axW-Mw-URh"/>
+                <constraint firstAttribute="trailing" secondItem="5bD-Qe-4T2" secondAttribute="trailing" constant="20" id="a2P-P0-0sN"/>
+                <constraint firstItem="uau-dH-D7f" firstAttribute="top" secondItem="5bD-Qe-4T2" secondAttribute="bottom" constant="2" id="axW-Mw-URh"/>
                 <constraint firstAttribute="trailing" secondItem="rcq-m0-cLY" secondAttribute="trailing" constant="3" id="cyn-YO-cEo"/>
                 <constraint firstItem="hOq-pl-Bgm" firstAttribute="top" secondItem="uau-dH-D7f" secondAttribute="bottom" constant="3" id="fKV-ii-AH0"/>
                 <constraint firstItem="lJx-Wu-3a2" firstAttribute="top" secondItem="Ndg-qA-zgg" secondAttribute="top" id="iJo-54-CIy"/>
@@ -141,7 +143,7 @@
                 <constraint firstItem="Ndg-qA-zgg" firstAttribute="leading" secondItem="lJx-Wu-3a2" secondAttribute="trailing" constant="2" id="plK-Ct-Fkb"/>
                 <constraint firstItem="H7V-tf-fQL" firstAttribute="top" secondItem="hOq-pl-Bgm" secondAttribute="bottom" constant="3" id="qYt-Xi-Fti"/>
                 <constraint firstItem="rcq-m0-cLY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="rsW-Bf-fGr"/>
-                <constraint firstItem="5bD-Qe-4T2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="toG-Fh-NLP"/>
+                <constraint firstItem="5bD-Qe-4T2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="toG-Fh-NLP"/>
                 <constraint firstAttribute="trailing" secondItem="uau-dH-D7f" secondAttribute="trailing" constant="7" id="ug3-uc-Wle"/>
                 <constraint firstItem="uau-dH-D7f" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="wGS-W7-ss6"/>
             </constraints>
