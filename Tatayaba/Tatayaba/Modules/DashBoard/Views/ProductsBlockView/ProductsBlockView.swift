@@ -70,7 +70,7 @@ class ProductsBlockView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.size.width / 2.4, height: 170)
+        return CGSize(width: UIScreen.main.bounds.size.width / 2.4, height: 204)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

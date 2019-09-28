@@ -13,14 +13,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="AE6-c3-yEy" customClass="BannersBlocksView" customModule="Tatayaba" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Z0-5o-11f" userLabel="DescriptionView">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Go-1k-3MJ">
-                            <rect key="frame" x="6" y="0.0" width="0.0" height="31"/>
+                            <rect key="frame" x="6" y="0.0" width="0.0" height="43"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -32,6 +32,7 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="height" constant="48" id="6fa-0T-u3E"/>
                         <constraint firstItem="8Go-1k-3MJ" firstAttribute="top" secondItem="7Z0-5o-11f" secondAttribute="top" id="76u-fu-Es8"/>
                         <constraint firstItem="8Go-1k-3MJ" firstAttribute="top" secondItem="FX5-nw-R5L" secondAttribute="top" constant="-6" id="eHy-08-XN1"/>
                         <constraint firstAttribute="trailing" secondItem="FX5-nw-R5L" secondAttribute="trailing" constant="6" id="i3Z-KQ-4zE"/>
@@ -40,11 +41,8 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="KPg-lD-9L6">
-                    <rect key="frame" x="0.0" y="36" width="375" height="161"/>
+                    <rect key="frame" x="0.0" y="48" width="375" height="229"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="161" id="E1X-d7-AaM"/>
-                    </constraints>
                     <collectionViewLayout key="collectionViewLayout" id="IG1-id-pQg" customClass="HomeHorizontalLayout" customModule="Tatayaba" customModuleProvider="target"/>
                 </collectionView>
             </subviews>
