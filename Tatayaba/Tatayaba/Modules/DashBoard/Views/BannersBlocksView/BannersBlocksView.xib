@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,10 +17,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Z0-5o-11f" userLabel="DescriptionView">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="25"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Go-1k-3MJ">
-                            <rect key="frame" x="6" y="0.0" width="0.0" height="20"/>
+                            <rect key="frame" x="6" y="0.0" width="0.0" height="31"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="KPg-lD-9L6">
-                    <rect key="frame" x="0.0" y="25" width="375" height="161"/>
+                    <rect key="frame" x="0.0" y="36" width="375" height="161"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="161" id="E1X-d7-AaM"/>
@@ -51,7 +51,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="7Z0-5o-11f" firstAttribute="top" secondItem="rkf-rF-38U" secondAttribute="top" id="0Yi-s6-VQn"/>
-                <constraint firstItem="rkf-rF-38U" firstAttribute="bottom" secondItem="KPg-lD-9L6" secondAttribute="bottom" constant="14" id="Bv1-eZ-nm8"/>
+                <constraint firstItem="rkf-rF-38U" firstAttribute="bottom" secondItem="KPg-lD-9L6" secondAttribute="bottom" constant="3" id="Bv1-eZ-nm8"/>
                 <constraint firstItem="KPg-lD-9L6" firstAttribute="top" secondItem="7Z0-5o-11f" secondAttribute="bottom" id="HAw-fN-deY"/>
                 <constraint firstItem="KPg-lD-9L6" firstAttribute="leading" secondItem="7Z0-5o-11f" secondAttribute="leading" id="Neh-Rx-ZKf"/>
                 <constraint firstAttribute="trailing" secondItem="7Z0-5o-11f" secondAttribute="trailing" id="Uuc-QB-wDD"/>
