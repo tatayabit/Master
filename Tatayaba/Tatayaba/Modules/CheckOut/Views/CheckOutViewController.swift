@@ -125,6 +125,9 @@ extension CheckOutViewController {
             return getAddressCell(tableView: tableView, indexPath: indexPath)
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: PaymentMethodTableViewCell.identifier, for: indexPath) as! PaymentMethodTableViewCell
+            
+      
+            
             return cell
         }
     }
@@ -140,8 +143,18 @@ extension CheckOutViewController {
     // MARK:- CheckoutAddressTableViewCell
     func getAddressCell(tableView: UITableView, indexPath: IndexPath) -> CheckoutAddressTableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CheckoutAddressTableViewCell.identifier, for: indexPath) as! CheckoutAddressTableViewCell
+        
+        cell.editButton.addTarget(self, action: #selector(EditAddressButton), for: .touchUpInside)
 
 //        cell.configure(payment: viewModel.paymentMethods[indexPath.row])
         return cell
+    }
+    
+    
+    @objc func EditAddressButton(){
+        
+        let controller = UIStoryboard(name: "Addresses", bundle: Bundle.main).instantiateViewController(withIdentifier: "AddressAddEditViewController") as! AddressAddEditViewController
+        self.navigationController?.pushViewController(controller, animated: false)
+    
     }
 }

@@ -68,12 +68,14 @@ extension UIViewController {
        
         self.navigationItem.hidesBackButton = true
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = UIColor(red: 34.0/255, green: 28.0/255, blue: 53.0/255, alpha: 1.0)
         navigationController?.hidesBottomBarWhenPushed = false
         self.tabBarController?.tabBar.isHidden = false
-      //  let navBackgroundImage:UIImage! = UIImage(named:" ")
-        setupNavBarLogo()
-//    self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "Header")?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .stretch), for: .default)
+       let logo = UIImage(named: "barName_Eng")
+        let imageView = UIImageView(image:logo)
+        imageView.contentMode = .scaleAspectFit
+        navigationItem.titleView = imageView
+
     }
 }
 

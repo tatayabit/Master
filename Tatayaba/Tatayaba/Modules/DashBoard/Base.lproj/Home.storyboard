@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--TATAYAB-->
+        <!--Home View Controller-->
         <scene sceneID="u11-ua-R5X">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QLW-ve-owm" customClass="HomeViewController" customModule="Tatayaba" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,7 +32,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7FN-wO-Io4"/>
                     </view>
-                    <navigationItem key="navigationItem" title="TATAYAB" id="2gg-SA-nQx"/>
+                    <navigationItem key="navigationItem" id="2gg-SA-nQx"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="scrollView" destination="FZ2-A0-U7k" id="XUM-4h-33a"/>
