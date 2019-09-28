@@ -24,6 +24,7 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
 
         addconciergeSubView()
         imagePicker.delegate = self
+        self.NavigationBarWithOutBackButton()
 
     }
 
@@ -42,6 +43,13 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
     func didSelectUplaodConcierge() {
         imagePicker.photoGalleryAsscessRequest()
     }
+    func didSelectCounty()
+    {
+        let controller = UIStoryboard(name: "Country", bundle: Bundle.main).instantiateViewController(withIdentifier: "CountryViewController") as! CountryViewController
+        self.navigationController?.pushViewController(controller, animated: false)
+        
+    }
+    
 
     func didSelectSubmitConcierge(concierge: Concierge) {
 

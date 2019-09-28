@@ -11,6 +11,7 @@ import SkyFloatingLabelTextField
 
 protocol ConciergeSubViewDelegate: class {
     func didSelectUplaodConcierge()
+    func didSelectCounty()
     func didSelectSubmitConcierge(concierge: Concierge)
 }
 
@@ -55,6 +56,12 @@ class ConciergeSubView: UIView {
     }
 
     @IBAction func countryAction(_ sender: Any) {
+       
+        if let delegate = delegate {
+            delegate.didSelectCounty()
+        }
+
+        
     }
 
     @IBAction func submitAction(_ sender: Any) {

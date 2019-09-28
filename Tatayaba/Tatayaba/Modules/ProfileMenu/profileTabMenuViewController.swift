@@ -23,6 +23,7 @@ class profileTabMenuViewController: UIViewController,UITableViewDelegate,UITable
     @IBOutlet weak var profileMenu_tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+         self.NavigationBarWithOutBackButton()
     }
 
     override func viewWillAppear(_ animated: Bool) {
