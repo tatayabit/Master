@@ -41,6 +41,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         fullScreenBannersView.translatesAutoresizingMaskIntoConstraints = false
         fullScreenBannersView.heightAnchor.constraint(equalToConstant: 150).isActive = true
         self.showLoadingIndicator(to: fullScreenBannersView)
+      
 
         categoriesBlockView.delegate = self
         scrollView.stackView.addArrangedSubview(categoriesBlockView)
@@ -52,7 +53,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         squaredBlockView.delegate = self
         scrollView.stackView.addArrangedSubview(squaredBlockView)
         squaredBlockView.translatesAutoresizingMaskIntoConstraints = false
-        squaredBlockView.heightAnchor.constraint(equalToConstant: 280).isActive = true
+        squaredBlockView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         self.showLoadingIndicator(to: squaredBlockView)
 
 
@@ -132,8 +133,8 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
 
     // MARK:- SetupUI
     func setupUI() {
-        self.scrollView.stackView.spacing = 10
-        self.scrollView.stackView.backgroundColor = UIColor(hexString: "F3F3F3")
+        self.scrollView.stackView.spacing = 0
+       self.scrollView.stackView.backgroundColor = UIColor(hexString: "F3F3F3")
         self.scrollView.backgroundColor = UIColor(hexString: "F3F3F3")
 
         self.NavigationBarWithOutBackButton()

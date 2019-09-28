@@ -40,8 +40,38 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
 
     // MARK:- ConciergeSubViewDelegate
     func didSelectUplaodConcierge() {
-        imagePicker.photoGalleryAsscessRequest()
+
+       
+        self.showAlert()
     }
+    
+    func showAlert() {
+        
+        let alert = UIAlertController(title: "TATAYAB", message: "", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action: UIAlertAction) in
+            self.getImage(fromSourceType: .camera)
+        }))
+        alert.addAction(UIAlertAction(title: "Photo Album", style: .default, handler: {(action: UIAlertAction) in
+            self.getImage(fromSourceType: .photoLibrary)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    func getImage(fromSourceType sourceType: UIImagePickerControllerSourceType) {
+   let imagePickerController = UIImagePickerController()
+        
+        if imagePickerController.sourceType == UIImagePickerControllerSourceType.camera
+    {
+        imagePicker.cameraAsscessRequest()
+        
+    }else if imagePickerController.sourceType == UIImagePickerControllerSourceType.photoLibrary{
+        imagePicker.photoGalleryAsscessRequest()
+        }
+        
+        
+       
+    }
+    
 
     func didSelectSubmitConcierge(concierge: Concierge) {
 

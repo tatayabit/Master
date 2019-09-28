@@ -30,6 +30,7 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
         // Do any additional setup after loading the view.
         setupUI()
         viewModel.delegate = self
+        cartTableview.separatorColor = .clear
     }
 
     override func viewWillAppear(_ animated: Bool) {
