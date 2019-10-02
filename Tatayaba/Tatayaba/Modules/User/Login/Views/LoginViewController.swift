@@ -58,7 +58,7 @@ class LoginViewController: BaseViewController, ValidationDelegate {
                 self.performSegue(withIdentifier: self.homeSegue, sender: nil)
             case .failure(let error):
                 print("the error \(error)")
-                self.showErrorAlerr(title: "Error".localized(), message: "Username or password are invalid".localized(), handler: nil)
+                self.showErrorAlerr(title: Constants.Common.error, message: "Username or password are invalid".localized(), handler: nil)
             }
         }
     }
@@ -66,7 +66,7 @@ class LoginViewController: BaseViewController, ValidationDelegate {
     func validationFailed(_ errors: [(Validatable, ValidationError)]) {
         print("Validation FAILED!")
         if errors.count > 0 {
-            self.showErrorAlerr(title: "Error".localized(), message: errors[0].1.errorMessage, handler: nil)
+            self.showErrorAlerr(title: Constants.Common.error, message: errors[0].1.errorMessage, handler: nil)
         }
 
         for error in errors {

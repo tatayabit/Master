@@ -24,3 +24,9 @@ struct ConciergeViewModel {
         }
     }
 }
+
+extension Constants {
+    struct Concierge {
+        static let uploaded = "Uploaded".localized()
+    }
+}

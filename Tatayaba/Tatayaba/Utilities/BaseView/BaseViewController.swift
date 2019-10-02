@@ -9,6 +9,13 @@
 import UIKit
 import MBProgressHUD
 
+extension Constants {
+    struct Common {
+        static let ok = "OK".localized()
+        static let error = "Error".localized()
+    }
+}
+
 class BaseViewController: UIViewController {
     var loadingArr = [UIView]()
 
@@ -27,7 +34,7 @@ class BaseViewController: UIViewController {
     // MARK:- Error Alert
     func showErrorAlerr(title: String?, message: String?, handler: ((UIAlertAction) -> Void)?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK".localized(), style: .cancel, handler: handler)
+        let action = UIAlertAction(title: Constants.Common.ok, style: .cancel, handler: handler)
         alert.addAction(action)
 
         self.present(alert, animated: true) {

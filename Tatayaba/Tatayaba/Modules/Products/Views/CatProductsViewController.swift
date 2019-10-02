@@ -35,7 +35,7 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
 
             case .failure(let error):
                 print("the error \(error)")
-                self.showErrorAlerr(title: "Error".localized(), message: error.localizedDescription, handler: nil)
+                self.showErrorAlerr(title: Constants.Common.error, message: error.localizedDescription, handler: nil)
             }
         }
 
