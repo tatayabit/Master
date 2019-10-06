@@ -28,15 +28,23 @@ class CartViewModel {
 
     func loadPricingListContent() {
         pricingList.removeAll()
-        var model = CartPricingModel(title: "Subtotal".localized(), value: cart.subtotalPrice)
+        var model = CartPricingModel(title: Constants.Cart.subtotal, value: cart.subtotalPrice)
         pricingList.append(model)
 
-        model = CartPricingModel(title: "Shipping".localized(), value: cart.shippingFormatedPrice)
+        model = CartPricingModel(title: Constants.Cart.shipping, value: cart.shippingFormatedPrice)
         pricingList.append(model)
         if let delegate = delegate {
             delegate.didFinishLoadingPricing()
         }
     }
+}
 
-
+extension Constants {
+    struct Cart {
+        static let subtotal = "Subtotal".localized()
+        static let shipping = "Shipping".localized()
+        static let items = "items".localized()
+        static let cartTotal = "Cart Total".localized()
+        static let cartEmpty = "Your Cart is Empty!".localized()
+    }
 }

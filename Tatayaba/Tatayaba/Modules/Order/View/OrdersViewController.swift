@@ -33,7 +33,7 @@ class OrdersViewController: BaseViewController, UITableViewDelegate, UITableView
 
         viewModel.onOrdersListLoadFailed = { error in
             self.hideLoadingIndicator(from: self.view)
-            self.showErrorAlerr(title: "Error".localized(), message: error.localizedDescription, handler: nil)
+            self.showErrorAlerr(title: Constants.Common.error, message: error.localizedDescription, handler: nil)
         }
     }
 

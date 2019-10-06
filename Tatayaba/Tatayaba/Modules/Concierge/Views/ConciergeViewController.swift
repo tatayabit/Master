@@ -89,13 +89,13 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
             switch result {
             case .success(let ConciergeResult):
                 print(ConciergeResult!)
-                self.showErrorAlerr(title: "Uploaded".localized(), message: "Thanks for using concierge feature,\nWe will call you back withing 48 hours!".localized(), handler: { action in
+                self.showErrorAlerr(title: Constants.Concierge.uploaded, message: "Thanks for using concierge feature,\nWe will call you back withing 48 hours!".localized(), handler: { action in
 
                 })
 
             case .failure(let error):
                 print("the error \(error)")
-                self.showErrorAlerr(title: "Error".localized(), message: "Something went wrong while submitting your concierge!".localized(), handler: nil)
+                self.showErrorAlerr(title: Constants.Common.error, message: "Something went wrong while submitting your concierge!".localized(), handler: nil)
             }
         }
     }

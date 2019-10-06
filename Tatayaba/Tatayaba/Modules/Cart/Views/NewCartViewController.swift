@@ -48,12 +48,12 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     func calculateTotal() {
         totalPriceLabel.text = cart.totalPrice
         viewModel.loadPricingListContent()
-        let totalItemsText = "(" + String(cart.productsCount) + " " + "items".localized()+")"
+        let totalItemsText = "(" + String(cart.productsCount) + " " + Constants.Cart.items + ")"
         totalTitleLabel.attributedText = attributedTotalTitle(text: totalItemsText)
     }
 
     func attributedTotalTitle(text: String) -> NSAttributedString {
-        let textVal = "Cart Total".localized() + " " + text
+        let textVal = Constants.Cart.cartTotal + " " + text
 
         let strokeTextAttributes = [
             NSAttributedString.Key.foregroundColor : UIColor(hexString: "221C35"),
@@ -87,7 +87,7 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
             self.cartTableview.restore()
             checkoutContainerView.isHidden = false
         } else {
-            self.cartTableview.setEmptyMessage("Your Cart is Empty!".localized())
+            self.cartTableview.setEmptyMessage(Constants.Cart.cartEmpty)
             checkoutContainerView.isHidden = true
             return 0
         }

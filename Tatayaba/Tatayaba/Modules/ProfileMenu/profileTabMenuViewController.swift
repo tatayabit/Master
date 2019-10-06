@@ -9,14 +9,44 @@
 import UIKit
 import MOLH
 
-class profileTabMenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    var Session1: [String] = ["BRANDS".localized(),"Wish List", "My Orders".localized()]
+// <<<<<<< FT_DesignChnages_Issues
+// =======
+extension Constants {
+    struct Profile {
+        static let brands = "BRANDS".localized()
+        static let wishlist = "Wish List".localized()
+        static let myOrders = "My Orders".localized()
+        static let changeLanguage = "Change Language".localized()
+        static let privacyPolicy = "Privacy Policy".localized()
+        static let logout = "Logout".localized()
+        static let deliveryAndReturnPolicy = "Delivery and Return Policy".localized()
+        static let liveChat = "Live Chat".localized()
+        static let notifications = "Notifications".localized()
+        static let welcome = "Welcome".localized()
+        static let login = "LOG IN".localized()
+    }
+}
+
+class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+  
+  /*
+      var Session1: [String] = ["BRANDS".localized(),"Wish List", "My Orders".localized()]
     var Session1_img: [String] = ["wishlist", "wishlist", "Cart"]
     var Session2: [String] = ["Change Language".localized(), "Live Chat","Notifications"]
     var Session2_img: [String] = ["settings", "liveChat","Notifiction"]
     var Session3: [String] = ["Delivery and Return Policy", "Privacy Policy".localized(),"Logout".localized()]
     var Session4: [String] = ["Delivery and Return Policy".localized(), "Privacy Policy".localized()]
     var Session3_img: [String] = ["delivery", "privacy","logout"]
+  */
+  
+    var Session1: [String] = [Constants.Profile.brands, Constants.Profile.wishlist, Constants.Profile.myOrders]
+    var Session1_img: [String] = ["WISHLIST", "WISHLIST", "MY ORDERS"]
+    var Session2: [String] = [Constants.Profile.changeLanguage, Constants.Profile.liveChat, Constants.Profile.notifications]
+    var Session2_img: [String] = ["Setting", "LIVE CHAT","Notifications"]
+    var Session3: [String] = [Constants.Profile.deliveryAndReturnPolicy, Constants.Profile.privacyPolicy,Constants.Profile.logout]
+    var Session4: [String] = [Constants.Profile.deliveryAndReturnPolicy, Constants.Profile.privacyPolicy]
+    var Session3_img: [String] = ["Delivery and Return Policy", "Privacy Policy","LOGOUT"]
+// >>>>>>> develop
     
     private let orderDetailsSegue = "order_details_segue"
 
@@ -31,7 +61,7 @@ class profileTabMenuViewController: UIViewController,UITableViewDelegate,UITable
         navigationController?.isNavigationBarHidden = false
         self.tabBarController?.tabBar.isHidden = false
         if Customer.shared.loggedin {
-            self.navigationItem.title = "Welcome \(Customer.shared.user?.firstname ?? "")"
+            self.navigationItem.title = "\(Constants.Profile.welcome) \(Customer.shared.user?.firstname ?? "")"
         }
         self.profileMenu_tableView.reloadData()
     }
@@ -94,7 +124,7 @@ extension profileTabMenuViewController{
                 cell.title_img.isHidden = true
                 cell.accessoryType = UITableViewCellAccessoryType.none
                 let sign_button = UIButton(frame: CGRect(x: UIScreen.main.bounds.size.width/2-70, y: 25, width: 150, height: 50))
-                sign_button.setTitle("LOG IN".localized(), for: .normal)
+                sign_button.setTitle(Constants.Profile.login, for: .normal)
                 sign_button.addTarget(self, action: #selector(sign_buttonAction), for: .touchUpInside)
                 sign_button.setTitleColor(UIColor.black, for: .normal)
                 sign_button.layer.borderWidth = 1
@@ -122,29 +152,29 @@ extension profileTabMenuViewController{
         tableView.deselectRow(at: indexPath, animated: true)
         if  indexPath.section == 0 {
        let indextitle = self.Session1[indexPath.row]
-            if indextitle  == "Wish List".localized() {
+            if indextitle  == Constants.Profile.wishlist {
                 self.loadWishList()
-            } else if indextitle  == "My Orders".localized() {
+            } else if indextitle  == Constants.Profile.myOrders {
                 self.loadOrdersVC()
             }
             
         }else if  indexPath.section == 1 {
             let indextitle = self.Session2[indexPath.row]
-            if indextitle  == "Change Language".localized() {
+            if indextitle  == Constants.Profile.changeLanguage {
                 //setting page
                 self.changeLanguege()
             }
             
         }else if  indexPath.section == 2 {
             let indextitle = self.Session3[indexPath.row]
-            if indextitle  == "Privacy Policy".localized() {
+            if indextitle  == Constants.Profile.privacyPolicy {
             UserDefaults.standard.set("Privacy", forKey: "Privacy")
                 self.PrivacyView()
-            } else if indextitle  == "Delivery and Return Policy".localized() {
+            } else if indextitle  == Constants.Profile.deliveryAndReturnPolicy {
             UserDefaults.standard.set("Delivery", forKey: "Privacy")
                 
                  self.PrivacyView()
-            }else  if indextitle  == "Logout".localized(){
+            }else  if indextitle  == Constants.Profile.logout {
                 Customer.shared.logout()
             self.loadFirstVC()
                 
@@ -156,11 +186,9 @@ extension profileTabMenuViewController{
     
     // MARK:- Change Language
     func changeLanguege() {
-
         MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
         MOLH.reset()
         reloadUI()
-
     }
 
     func reloadUI() {
@@ -172,19 +200,18 @@ extension profileTabMenuViewController{
         window?.rootViewController = homeVC
         window?.makeKeyAndVisible()
     }
+
     // MARK:- Actions
-    
     func loadWishList() {
         let controller = UIStoryboard(name: "Wishlist", bundle: Bundle.main).instantiateViewController(withIdentifier: "WishlistViewController") as! WishlistViewController
         self.navigationController?.pushViewController(controller, animated: false)
     }
+
     func loadOrdersVC() {
         let controller = UIStoryboard(name: "Order", bundle: Bundle.main).instantiateViewController(withIdentifier: "OrderViewController") as! OrdersViewController
         self.navigationController?.pushViewController(controller, animated: false)
-        
-        
-        
     }
+
     func loadFirstVC() {
         let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         self.navigationController?.pushViewController(controller, animated: false)
@@ -202,7 +229,4 @@ extension profileTabMenuViewController{
         self.navigationController?.pushViewController(controller, animated: false)
         self.tabBarController?.tabBar.isHidden = true
     }
-    
-  
-    
 }

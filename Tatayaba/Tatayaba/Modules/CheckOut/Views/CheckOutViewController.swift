@@ -58,12 +58,12 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
                     self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
                 } else {
                     print("the error order id == \(placeOrderResult.orderId)")
-                    self.showErrorAlerr(title: "Error".localized(), message: "Placing order failed", handler: nil)
+                    self.showErrorAlerr(title: Constants.Common.error, message: "Placing order failed", handler: nil)
                 }
 
             case .failure(let error):
                 print("the error \(error)")
-                self.showErrorAlerr(title: "Error".localized(), message: error.localizedDescription, handler: nil)
+                self.showErrorAlerr(title: Constants.Common.error, message: error.localizedDescription, handler: nil)
             }
         }
    }
@@ -145,16 +145,12 @@ extension CheckOutViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: CheckoutAddressTableViewCell.identifier, for: indexPath) as! CheckoutAddressTableViewCell
         
         cell.editButton.addTarget(self, action: #selector(EditAddressButton), for: .touchUpInside)
-
 //        cell.configure(payment: viewModel.paymentMethods[indexPath.row])
         return cell
     }
     
-    
-    @objc func EditAddressButton(){
-        
+    @objc func EditAddressButton() {
         let controller = UIStoryboard(name: "Addresses", bundle: Bundle.main).instantiateViewController(withIdentifier: "AddressAddEditViewController") as! AddressAddEditViewController
         self.navigationController?.pushViewController(controller, animated: false)
-    
     }
 }
