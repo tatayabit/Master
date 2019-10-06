@@ -11,12 +11,12 @@ import MOLH
 
 class profileTabMenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var Session1: [String] = ["BRANDS".localized(),"Wish List", "My Orders".localized()]
-    var Session1_img: [String] = ["WISHLIST", "WISHLIST", "MY ORDERS"]
+    var Session1_img: [String] = ["wishlist", "wishlist", "Cart"]
     var Session2: [String] = ["Change Language".localized(), "Live Chat","Notifications"]
-    var Session2_img: [String] = ["Setting", "LIVE CHAT","Notifications"]
+    var Session2_img: [String] = ["settings", "liveChat","Notifiction"]
     var Session3: [String] = ["Delivery and Return Policy", "Privacy Policy".localized(),"Logout".localized()]
     var Session4: [String] = ["Delivery and Return Policy".localized(), "Privacy Policy".localized()]
-    var Session3_img: [String] = ["Delivery and Return Policy", "Privacy Policy","LOGOUT"]
+    var Session3_img: [String] = ["delivery", "privacy","logout"]
     
     private let orderDetailsSegue = "order_details_segue"
 

@@ -77,6 +77,35 @@ extension UIViewController {
         navigationItem.titleView = imageView
 
     }
+    
+    func NavigationBarWithBackButton(){
+        
+        self.navigationItem.hidesBackButton = true
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.navigationBar.barTintColor = UIColor(red: 34.0/255, green: 28.0/255, blue: 53.0/255, alpha: 1.0)
+        navigationController?.hidesBottomBarWhenPushed = false
+        self.tabBarController?.tabBar.isHidden = false
+        let logo = UIImage(named: "barName_Eng")
+        let imageView = UIImageView(image:logo)
+        imageView.contentMode = .scaleAspectFit
+        navigationItem.titleView = imageView
+        
+        let btn2 = UIButton(type: .custom)
+        btn2.setImage(UIImage(named: "BackBar"), for: .normal)
+        btn2.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        btn2.addTarget(self, action: #selector(action), for: .touchUpInside)
+        let item2 = UIBarButtonItem(customView: btn2)
+        
+        self.navigationItem.leftBarButtonItem  = item2
+        
+        
+    }
+    @objc func action(){
+        navigationController?.popViewController(animated: true)
+    
+    }
+    
+    
 }
 
 

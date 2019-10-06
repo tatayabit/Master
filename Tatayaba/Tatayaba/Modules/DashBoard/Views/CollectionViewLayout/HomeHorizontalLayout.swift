@@ -67,7 +67,7 @@ class HomeHorizontalLayout: UICollectionViewLayout {
         var yOffset = [CGFloat]()
 
         for row in 0 ..< numberOfRows {
-            yOffset.append(CGFloat(row) * 113.5)
+            yOffset.append(CGFloat(row) * 101.5)
         }
 
         var row = 0

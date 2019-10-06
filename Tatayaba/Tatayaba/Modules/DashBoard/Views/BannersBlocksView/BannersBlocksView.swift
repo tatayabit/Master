@@ -41,6 +41,7 @@ class BannersBlocksView: UIView, UICollectionViewDelegate, UICollectionViewDataS
         bannersCollectionView.register(BannerBlockCollectionViewCell.nib, forCellWithReuseIdentifier: BannerBlockCollectionViewCell.identifier)
         self.bannersCollectionView.dataSource = self
         self.bannersCollectionView.delegate = self
+       
         
     }
 
@@ -79,7 +80,5 @@ class BannersBlocksView: UIView, UICollectionViewDelegate, UICollectionViewDataS
             delegate.didSelectBannerBlocks(at: indexPath)
         }
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 05, left: 05, bottom: 05, right: 05)
-    }
+   
 }
