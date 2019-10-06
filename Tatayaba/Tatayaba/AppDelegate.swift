@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         IQKeyboardManager.shared.enable = true
         Customer.shared.loadData()
+        CountrySettings.shared.getGeoReversedCountry()
         MOLH.shared.activate(true)
         self.loadRootViewController()
        

@@ -53,5 +53,4 @@ class Customer {
         userData = userDataDecoded
         print("loaded userData: \(String(describing: userData))")
     }
-
 }

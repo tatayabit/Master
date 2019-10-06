@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		053D694C0D5575CB4917A4B5 /* Pods_TatayabaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */; };
+		109D29E3234A64D00052D01B /* ReverseGeoCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D29E2234A64D00052D01B /* ReverseGeoCoder.swift */; };
+		109D29E5234A668F0052D01B /* CountrySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D29E4234A668F0052D01B /* CountrySettings.swift */; };
 		1100421122D4F3520099AE64 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100421022D4F3520099AE64 /* String+Extensions.swift */; };
 		11007BD022DE2DC700AC9957 /* CatProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11007BCF22DE2DC700AC9957 /* CatProductsViewController.swift */; };
 		11007BD222DE2E6600AC9957 /* CatProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11007BD122DE2E6600AC9957 /* CatProductsViewModel.swift */; };
@@ -251,6 +253,8 @@
 /* Begin PBXFileReference section */
 		02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B399FC35D3B3B996D93EC1 /* Pods-TatayabaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaUITests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		109D29E2234A64D00052D01B /* ReverseGeoCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGeoCoder.swift; sourceTree = "<group>"; };
+		109D29E4234A668F0052D01B /* CountrySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySettings.swift; sourceTree = "<group>"; };
 		1100421022D4F3520099AE64 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		11007BCF22DE2DC700AC9957 /* CatProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatProductsViewController.swift; sourceTree = "<group>"; };
 		11007BD122DE2E6600AC9957 /* CatProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatProductsViewModel.swift; sourceTree = "<group>"; };
@@ -518,6 +522,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		109D29E1234A64C60052D01B /* ReverseGeoCoder */ = {
+			isa = PBXGroup;
+			children = (
+				109D29E2234A64D00052D01B /* ReverseGeoCoder.swift */,
+			);
+			path = ReverseGeoCoder;
+			sourceTree = "<group>";
+		};
 		1101C66122E0C8E900416307 /* Options */ = {
 			isa = PBXGroup;
 			children = (
@@ -738,6 +750,7 @@
 			isa = PBXGroup;
 			children = (
 				1137042B22F9E35D00EAFBBD /* Customer.swift */,
+				109D29E4234A668F0052D01B /* CountrySettings.swift */,
 				11C6BF2B23450731000C72F4 /* Constants.swift */,
 			);
 			path = Shared;
@@ -1641,6 +1654,7 @@
 		847CDE7822CA12EC00E67C8C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				109D29E1234A64C60052D01B /* ReverseGeoCoder */,
 				848E89C622CCE520000AA24C /* BaseView */,
 				11D4917822CBCF7A009D8B23 /* Extensions */,
 				847CDE7C22CA19CF00E67C8C /* Font */,
@@ -2117,6 +2131,7 @@
 				114D1A0F22CBB165009205F3 /* CollectionCellConfigurator.swift in Sources */,
 				1101C66422E0C96C00416307 /* OptionCollectionViewCell.swift in Sources */,
 				11A8B15C22D7943D001B2661 /* WishlistCollectionViewCell.swift in Sources */,
+				109D29E3234A64D00052D01B /* ReverseGeoCoder.swift in Sources */,
 				115DC42B2311878B0001EF67 /* BannersBlocksView.swift in Sources */,
 				112654B622D3AE3F00904FB5 /* HomeViewModel.swift in Sources */,
 				114D1A0D22CBB144009205F3 /* TableCellActionProxy.swift in Sources */,
@@ -2174,6 +2189,7 @@
 				11D4E69A2312E14500226A23 /* BannersCarouselView.swift in Sources */,
 				111C8A3C230B1487003F5FDB /* Block.swift in Sources */,
 				11069C3D2323A43A0093D6FF /* SuppliersListViewController.swift in Sources */,
+				109D29E5234A668F0052D01B /* CountrySettings.swift in Sources */,
 				11945BBF22F0B08D000F08DC /* CheckoutCompletedViewModel.swift in Sources */,
 				4C30D9E8232FDD9500629D38 /* WebViewViewController.swift in Sources */,
 				11B0791F233BCB2A003041E8 /* Address.swift in Sources */,
