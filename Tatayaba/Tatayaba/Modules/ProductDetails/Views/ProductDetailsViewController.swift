@@ -25,6 +25,7 @@ class ProductDetailsViewController: BaseViewController,UITableViewDelegate,UITab
         super.viewDidLoad()
         // Do any additional setup after loading the view.
        // addSubViews()
+         self.NavigationBarWithBackButton()
          UserDefaults.standard.set("0", forKey: "Clicked")
         product_Tableview.delegate = self
         product_Tableview.dataSource = self

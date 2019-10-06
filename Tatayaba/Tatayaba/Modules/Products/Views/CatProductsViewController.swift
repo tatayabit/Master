@@ -20,7 +20,7 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.NavigationBarWithBackButton()
 
         setupUI()
         guard let viewModel = viewModel else { return }
@@ -62,6 +62,31 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
 
         cell.configure(viewModel.product(at: indexPath), indexPath: indexPath)
         cell.delegate = self
+        
+        if indexPath.row == viewModel.productsCount - 1 { // last cell
+           
+            self.showLoadingIndicator(to: self.view)
+            
+            viewModel.getProductsOfCategory { result in
+                self.hideLoadingIndicator(from: self.view)
+                switch result {
+                case .success:
+                    
+                    //self.productsCollectionView.reloadData()
+                    self.hideLoadingIndicator(from: self.view)
+                case .failure(let error):
+                    print("the error \(error)")
+                    self.showErrorAlerr(title: "Error".localized(), message: error.localizedDescription, handler: nil)
+                }
+                
+                
+            }
+            
+            
+        }
+        
+        
+        
         return cell
     }
 

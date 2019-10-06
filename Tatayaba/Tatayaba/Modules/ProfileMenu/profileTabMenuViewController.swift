@@ -9,6 +9,8 @@
 import UIKit
 import MOLH
 
+// <<<<<<< FT_DesignChnages_Issues
+// =======
 extension Constants {
     struct Profile {
         static let brands = "BRANDS".localized()
@@ -26,6 +28,17 @@ extension Constants {
 }
 
 class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+  
+  /*
+      var Session1: [String] = ["BRANDS".localized(),"Wish List", "My Orders".localized()]
+    var Session1_img: [String] = ["wishlist", "wishlist", "Cart"]
+    var Session2: [String] = ["Change Language".localized(), "Live Chat","Notifications"]
+    var Session2_img: [String] = ["settings", "liveChat","Notifiction"]
+    var Session3: [String] = ["Delivery and Return Policy", "Privacy Policy".localized(),"Logout".localized()]
+    var Session4: [String] = ["Delivery and Return Policy".localized(), "Privacy Policy".localized()]
+    var Session3_img: [String] = ["delivery", "privacy","logout"]
+  */
+  
     var Session1: [String] = [Constants.Profile.brands, Constants.Profile.wishlist, Constants.Profile.myOrders]
     var Session1_img: [String] = ["WISHLIST", "WISHLIST", "MY ORDERS"]
     var Session2: [String] = [Constants.Profile.changeLanguage, Constants.Profile.liveChat, Constants.Profile.notifications]
@@ -33,6 +46,7 @@ class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITab
     var Session3: [String] = [Constants.Profile.deliveryAndReturnPolicy, Constants.Profile.privacyPolicy,Constants.Profile.logout]
     var Session4: [String] = [Constants.Profile.deliveryAndReturnPolicy, Constants.Profile.privacyPolicy]
     var Session3_img: [String] = ["Delivery and Return Policy", "Privacy Policy","LOGOUT"]
+// >>>>>>> develop
     
     private let orderDetailsSegue = "order_details_segue"
 

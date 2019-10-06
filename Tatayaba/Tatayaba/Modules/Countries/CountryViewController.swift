@@ -15,7 +15,8 @@ let ListCountrys = CountriesManager.loadCountriesList()
         super.viewDidLoad()
 
         print(ListCountrys)
-        self.NavigationBarWithOutBackButton()
+        
+        self.NavigationBarWithBackButton()
     }
 
 
