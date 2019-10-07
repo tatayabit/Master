@@ -43,7 +43,7 @@ extension ImagePicker {
                 message: "Please provide access to your \(targetName)",
                 preferredStyle: .alert)
             alertVC.addAction(UIAlertAction(title: "Settings", style: .default, handler: { action in
-                guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString),
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
                     UIApplication.shared.canOpenURL(settingsUrl) else { completion(false); return }
                 UIApplication.shared.open(settingsUrl, options: [:]) {
                     [weak self] _ in self?.showAlert(targetName: targetName, completion: completion)
@@ -89,9 +89,11 @@ extension ImagePicker {
 }
 
 extension ImagePicker: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+//    }
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[.originalImage] as? UIImage {
             if let delegate = delegate {
                 delegate.imagePickerDelegate(didSelect: image, delegatedForm: self)
             }

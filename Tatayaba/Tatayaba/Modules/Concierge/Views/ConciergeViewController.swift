@@ -58,14 +58,14 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    func getImage(fromSourceType sourceType: UIImagePickerControllerSourceType) {
+    func getImage(fromSourceType sourceType: UIImagePickerController.SourceType) {
    let imagePickerController = UIImagePickerController()
         
-        if imagePickerController.sourceType == UIImagePickerControllerSourceType.camera
+        if imagePickerController.sourceType == UIImagePickerController.SourceType.camera
     {
         imagePicker.cameraAsscessRequest()
         
-    }else if imagePickerController.sourceType == UIImagePickerControllerSourceType.photoLibrary{
+        }else if imagePickerController.sourceType == UIImagePickerController.SourceType.photoLibrary{
         imagePicker.photoGalleryAsscessRequest()
         }
         

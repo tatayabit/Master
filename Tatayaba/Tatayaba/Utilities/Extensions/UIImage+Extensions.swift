@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImage {
     func toBase64() -> String {
-        guard let imageData = UIImagePNGRepresentation(self) else { return "" }
+        guard let imageData = self.pngData() else { return "" }
         return imageData.base64EncodedString(options: Data.Base64EncodingOptions.lineLength64Characters)
     }
 }

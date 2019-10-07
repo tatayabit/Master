@@ -41,14 +41,19 @@ class CatProductsViewModel {
             completion(result)
         }
     }
+    
+    // MARK:- filter Products Options
+    func filterOptions(products: [Product]) {
+        
+    }
 
-    //MARK:- Product data
+    // MARK:- Product data
     func product(at indexPath: IndexPath) -> Product {
         guard productsList.count > 0 else { return Product() }
         return productsList[indexPath.row]
     }
 
-    //MARK:- ProductDetails ViewModel
+    // MARK:- ProductDetails ViewModel
     func productDetailsViewModel(at indexPath: IndexPath) -> ProductDetailsViewModel {
         let productViewModel = ProductDetailsViewModel(product: product(at: indexPath))
         return productViewModel

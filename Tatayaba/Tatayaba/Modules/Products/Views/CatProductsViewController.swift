@@ -117,3 +117,21 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
     }
 
 }
+
+//private extension CatProductsViewController: UITableViewDataSourcePrefetching {
+//    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+//        if indexPaths.contains(where: isLoadingCell) {
+//            viewModel.fetchModerators()
+//        }
+//    }
+//    
+//    func isLoadingCell(for indexPath: IndexPath) -> Bool {
+//        return indexPath.row >= viewModel.currentCount
+//    }
+//    
+//    func visibleIndexPathsToReload(intersecting indexPaths: [IndexPath]) -> [IndexPath] {
+//        let indexPathsForVisibleRows = tableView.indexPathsForVisibleRows ?? []
+//        let indexPathsIntersection = Set(indexPathsForVisibleRows).intersection(indexPaths)
+//        return Array(indexPathsIntersection)
+//    }
+//}

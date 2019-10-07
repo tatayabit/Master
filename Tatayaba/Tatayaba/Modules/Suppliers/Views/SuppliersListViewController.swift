@@ -36,7 +36,7 @@ class SuppliersListViewController: BaseViewController, UICollectionViewDelegate,
     fileprivate func setupSearchButton() {
         self.addSearchBarButton()
         searchBar.isHidden = true
-        searchBar.searchBarStyle = UISearchBarStyle.prominent
+        searchBar.searchBarStyle = UISearchBar.Style.prominent
         searchBar.placeholder = " Search..."
         searchBar.sizeToFit()
         searchBar.delegate = self

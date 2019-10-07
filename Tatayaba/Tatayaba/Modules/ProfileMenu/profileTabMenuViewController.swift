@@ -120,7 +120,7 @@ extension profileTabMenuViewController{
             } else {
                 cell.title_lbl.isHidden = true
                 cell.title_img.isHidden = true
-                cell.accessoryType = UITableViewCellAccessoryType.none
+                cell.accessoryType = UITableViewCell.AccessoryType.none
                 let sign_button = UIButton(frame: CGRect(x: UIScreen.main.bounds.size.width/2-70, y: 25, width: 150, height: 50))
                 sign_button.setTitle(Constants.Profile.login, for: .normal)
                 sign_button.addTarget(self, action: #selector(sign_buttonAction), for: .touchUpInside)

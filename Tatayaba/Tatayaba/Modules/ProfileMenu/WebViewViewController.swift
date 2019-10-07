@@ -20,7 +20,7 @@ class WebViewViewController: UIViewController {
         let WebURL = UserDefaults.standard.value(forKey: "Privacy") as! String
                navigationController?.navigationBar.backItem?.title = ""
         navigationController!.navigationBar.tintColor = UIColor.white
-        let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         
      //   self.NavigationBarWithOutBackButton()
