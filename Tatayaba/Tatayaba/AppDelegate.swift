@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import MOLH
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,23 +17,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        
-   
+        IQKeyboardManager.shared.enable = true
         Customer.shared.loadData()
+        CountrySettings.shared.getGeoReversedCountry()
+        MOLH.shared.activate(true)
         self.loadRootViewController()
        
-        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "didUpdateLanguage"), object: nil, queue: OperationQueue.main) { (_ Notification) in
+            self.loadRootViewController()
+        }
         
         // Override point for customization after application launch.
         return true
     }
     
     func loadRootViewController() {
-        let controller = ContainerViewController.sharedInstance
-        self.window?.rootViewController = controller
-        self.window?.makeKeyAndVisible()
+//        let controller = ContainerViewController.sharedInstance
+//        self.window?.rootViewController = controller
+//        self.window?.makeKeyAndVisible()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -103,5 +108,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    // MARK:- ChangeLanguage
+    func changeLang() {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        loadRootViewController()
+    }
+    
 }
 
+//#pragma mark - ChangeLanguage
+//-(void)changeLang {
+//
+//
+//    UIStoryboard * storyboard = [UIStoryboard  storyboardWithName:@"Main" bundle:nil];
+//
+//
+//    //    if ([LanguageManager isArabicLanguage]){
+//    //        storyboard = [UIStoryboard  storyboardWithName:kArabicStoryBoard bundle:nil];
+//    //    }
+//
+//    UIViewController * initialViewController = [storyboard instantiateViewControllerWithIdentifier:@"CharitiesViewController"];
+//
+//
+//
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.window.rootViewController = [storyboard instantiateInitialViewController];
+//
+//    UINavigationController *navController =
+//        (UINavigationController *)self.window.rootViewController;
+//    //[navController pushViewController:initialViewController animated:NO];
+//    navController.viewControllers = @[initialViewController];
+//    [self.window makeKeyAndVisible];
+//
+//}
+
+extension AppDelegate {
+    static var shared: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+    var rootViewController: UITabBarController {
+        return window!.rootViewController as! UITabBarController
+    }
+}

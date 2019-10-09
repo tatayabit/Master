@@ -48,8 +48,8 @@ class CategoriesViewModel {
 
 
     //MARK:- ProductsListViewModel
-    func productsListViewModel(indexPath: IndexPath) -> ProductsListViewModel {
+    func productsListViewModel(indexPath: IndexPath) -> CatProductsViewModel {
         let category = categoriesList[indexPath.row]
-        return ProductsListViewModel(category: category)
+        return CatProductsViewModel(category: category)
     }
 }

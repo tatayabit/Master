@@ -39,8 +39,10 @@ class BannersBlocksView: UIView, UICollectionViewDelegate, UICollectionViewDataS
 
     private func setupUI() {
         bannersCollectionView.register(BannerBlockCollectionViewCell.nib, forCellWithReuseIdentifier: BannerBlockCollectionViewCell.identifier)
-        bannersCollectionView.dataSource = self
-        bannersCollectionView.delegate = self
+        self.bannersCollectionView.dataSource = self
+        self.bannersCollectionView.delegate = self
+       
+        
     }
 
     //MARK:- Load Data
@@ -78,4 +80,5 @@ class BannersBlocksView: UIView, UICollectionViewDelegate, UICollectionViewDataS
             delegate.didSelectBannerBlocks(at: indexPath)
         }
     }
+   
 }

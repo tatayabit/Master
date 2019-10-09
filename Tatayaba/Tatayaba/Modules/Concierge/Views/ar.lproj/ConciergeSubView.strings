@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "مرحباً بكم في تطيب كونسيرج..\\nأول كونسيرج الكتروني في العالم متخصص في العطور..\\nالان يمكنكم الحصول على أي عطر في العالم خلال خطوات بسيطه!"; ObjectID = "66O-IQ-2gc"; */
+"66O-IQ-2gc.text" = "مرحباً بكم في تطيب كونسيرج..\\nأول كونسيرج الكتروني في العالم متخصص في العطور..\\nالان يمكنكم الحصول على أي عطر في العالم خلال خطوات بسيطه!";
+
+/* Class = "UIButton"; normalTitle = "إرسال الطلب"; ObjectID = "QOy-jO-bT9"; */
+"QOy-jO-bT9.normalTitle" = "إرسال الطلب";
+
+/* Class = "UIButton"; normalTitle = "الدولة"; ObjectID = "SVF-cJ-Lsi"; */
+"SVF-cJ-Lsi.normalTitle" = "الدولة";
+
+/* Class = "UIButton"; normalTitle = "تحميل الصور"; ObjectID = "brQ-wk-eWl"; */
+"brQ-wk-eWl.normalTitle" = "تحميل الصور";

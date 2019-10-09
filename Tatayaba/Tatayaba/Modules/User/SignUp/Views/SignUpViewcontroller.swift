@@ -94,4 +94,8 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
         validator.validate(self)
     }
 
+    @IBAction func signInAction(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+
 }

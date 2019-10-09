@@ -17,31 +17,33 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckoutAddressTableViewCell" rowHeight="116" id="KGk-i7-Jjw" customClass="CheckoutAddressTableViewCell" customModule="Tatayaba" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="395" height="116"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CheckoutAddressTableViewCell" rowHeight="116" id="KGk-i7-Jjw" customClass="CheckoutAddressTableViewCell" customModule="Tatayaba" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="395" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="395" height="115.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="395" height="99.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fi-dS-Gi4">
-                        <rect key="frame" x="339" y="38" width="40" height="40"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fi-dS-Gi4">
+                        <rect key="frame" x="339" y="43.5" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="Sga-hi-JQf"/>
                             <constraint firstAttribute="width" constant="40" id="dRU-u6-TFG"/>
                         </constraints>
                         <state key="normal" backgroundImage="Edit"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Ship to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaL-fn-Fjl">
-                        <rect key="frame" x="16" y="16" width="363" height="25"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHIP TO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaL-fn-Fjl">
+                        <rect key="frame" x="16" y="16" width="363" height="25.5"/>
                         <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="25"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OJ-90-UEl">
-                        <rect key="frame" x="16" y="64" width="311" height="30"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OJ-90-UEl">
+                        <rect key="frame" x="16" y="43.5" width="311" height="40"/>
+                        <string key="text">2948 Cambridge Court , Indian Trail,
+San Francisco, CA, 10063, USA</string>
+                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="11"/>
+                        <color key="textColor" red="0.54117647058823526" green="0.58431372549019611" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -50,8 +52,9 @@
                     <constraint firstItem="9fi-dS-Gi4" firstAttribute="centerY" secondItem="3OJ-90-UEl" secondAttribute="centerY" id="G0A-Vn-Lbp"/>
                     <constraint firstItem="aaL-fn-Fjl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Ku9-rG-u0t"/>
                     <constraint firstAttribute="trailing" secondItem="9fi-dS-Gi4" secondAttribute="trailing" constant="16" id="OOk-Bo-OC2"/>
+                    <constraint firstItem="3OJ-90-UEl" firstAttribute="top" secondItem="9fi-dS-Gi4" secondAttribute="top" id="Tr7-IX-dM2"/>
                     <constraint firstAttribute="bottom" secondItem="3OJ-90-UEl" secondAttribute="bottom" constant="16" id="a1w-7a-QV8"/>
-                    <constraint firstItem="3OJ-90-UEl" firstAttribute="top" secondItem="aaL-fn-Fjl" secondAttribute="bottom" constant="10" id="hV4-AR-7Y0"/>
+                    <constraint firstItem="3OJ-90-UEl" firstAttribute="top" secondItem="aaL-fn-Fjl" secondAttribute="bottom" constant="2" id="hV4-AR-7Y0"/>
                     <constraint firstAttribute="trailing" secondItem="aaL-fn-Fjl" secondAttribute="trailing" constant="16" id="l4n-gB-5vd"/>
                     <constraint firstItem="aaL-fn-Fjl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="pwb-RG-jcO"/>
                     <constraint firstItem="9fi-dS-Gi4" firstAttribute="leading" secondItem="3OJ-90-UEl" secondAttribute="trailing" constant="12" id="ukP-ag-Wol"/>

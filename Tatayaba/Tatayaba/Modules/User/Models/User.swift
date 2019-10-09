@@ -16,14 +16,32 @@ struct User {
     var password: String
     var phone: String
 
+    var billingAddress: String
+    var billingCity: String
+    var billingCountry: String
+    var billingPhone: String
+    var shippingCity: String
+    var shippingCountry: String
+    var shippingPhone: String
+    var shippingAddress: String
 
-    init(email: String, firstname: String = "", lastname: String = "", password: String, identifier: String = "", phone: String = "" ) {
+
+    init(email: String, firstname: String = "", lastname: String = "", password: String, identifier: String = "", phone: String = "", billingAddress: String = "", billingCity: String = "", billingCountry: String = "", billingPhone: String = "", shippingCity: String = "", shippingCountry: String = "", shippingPhone: String = "", shippingAddress: String = "") {
         self.email = email
         self.firstname = firstname
         self.lastname = lastname
         self.password = password
         self.identifier = identifier
         self.phone = phone
+
+        self.billingAddress = billingAddress
+        self.billingCity = billingCity
+        self.billingCountry = billingCountry
+        self.billingPhone = billingPhone
+        self.shippingCity = shippingCity
+        self.shippingCountry = shippingCountry
+        self.shippingPhone = shippingPhone
+        self.shippingAddress = shippingAddress
     }
 }
 
@@ -36,6 +54,15 @@ extension User: Codable {
         case password
         case identifier = "user_id"
         case phone
+
+        case billingAddress = "b_address"
+        case billingCity = "b_city"
+        case billingCountry = "b_county"
+        case billingPhone = "b_phone"
+        case shippingCity = "s_city"
+        case shippingCountry = "s_county"
+        case shippingPhone = "s_phone"
+        case shippingAddress = "s_address"
     }
 
 
@@ -48,6 +75,16 @@ extension User: Codable {
         lastname = try container.decodeIfPresent(String.self, forKey: .lastname) ?? ""
         password = try container.decodeIfPresent(String.self, forKey: .password) ?? ""
         phone = try container.decodeIfPresent(String.self, forKey: .phone) ?? ""
+
+        billingAddress = try container.decodeIfPresent(String.self, forKey: .billingAddress) ?? ""
+        billingCity = try container.decodeIfPresent(String.self, forKey: .billingCity) ?? ""
+        billingCountry = try container.decodeIfPresent(String.self, forKey: .billingCountry) ?? ""
+        billingPhone = try container.decodeIfPresent(String.self, forKey: .billingPhone) ?? ""
+        shippingCity = try container.decodeIfPresent(String.self, forKey: .shippingCity) ?? ""
+        shippingCountry = try container.decodeIfPresent(String.self, forKey: .shippingCountry) ?? ""
+        shippingPhone = try container.decodeIfPresent(String.self, forKey: .shippingPhone) ?? ""
+        shippingAddress = try container.decodeIfPresent(String.self, forKey: .shippingAddress) ?? ""
+
     }
 
     func encode(to encoder: Encoder) throws {
@@ -59,5 +96,15 @@ extension User: Codable {
         try container.encodeIfPresent(lastname, forKey: .lastname)
         try container.encodeIfPresent(password, forKey: .password)
         try container.encodeIfPresent(phone, forKey: .phone)
+
+        try container.encodeIfPresent(billingAddress, forKey: .billingAddress)
+        try container.encodeIfPresent(billingCity, forKey: .billingCity)
+        try container.encodeIfPresent(billingCountry, forKey: .billingCountry)
+        try container.encodeIfPresent(billingPhone, forKey: .billingPhone)
+        try container.encodeIfPresent(shippingCity, forKey: .shippingCity)
+        try container.encodeIfPresent(shippingCountry, forKey: .shippingCountry)
+        try container.encodeIfPresent(shippingPhone, forKey: .shippingPhone)
+        try container.encodeIfPresent(shippingAddress, forKey: .shippingAddress)
+
     }
 }

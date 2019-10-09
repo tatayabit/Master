@@ -22,15 +22,21 @@ class LoginViewController: BaseViewController, ValidationDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-     navigationController?.isNavigationBarHidden = true
-       self.tabBarController?.tabBar.isHidden = false
+        navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = true
         registerValidator()
+      
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated) // No need for semicolon
+          self.tabBarController?.tabBar.isHidden = true
     }
 
     //MARK:- Swift Validator
     func registerValidator() {
         validator.registerField(emailTextField, rules: [RequiredRule(message: "Email is required!"), EmailRule(message: "Invalid email")])
-        validator.registerField(passwordTextField, rules: [RequiredRule(message: "Password is required!"), PasswordRule(regex: "^(?=(.*\\d){8})[a-zA-Z\\d]{8,20}$", message: "Invalid password")])
+        validator.registerField(passwordTextField, rules: [RequiredRule(message: "Password is required!"), PasswordRule(regex: "^.{6,20}$", message: "Invalid password")])
         emailTextField.becomeFirstResponder()
     }
 
@@ -42,17 +48,27 @@ class LoginViewController: BaseViewController, ValidationDelegate {
         guard let password = passwordTextField.text else { return }
 
         let user = User(email: email, password: password)//User(email: email, firstname: firstname, lastname: firstname, password: password)
+        showLoadingIndicator(to: self.view)
 
         viewModel.login(user: user) { result in
-
+            self.hideLoadingIndicator(from: self.view)
+            switch result {
+            case .success(let loginResult):
+                print(loginResult!)
+                self.performSegue(withIdentifier: self.homeSegue, sender: nil)
+            case .failure(let error):
+                print("the error \(error)")
+                self.showErrorAlerr(title: Constants.Common.error, message: "Username or password are invalid".localized(), handler: nil)
+            }
         }
-
-//        performSegue(withIdentifier: homeSegue, sender: nil)
-
     }
 
     func validationFailed(_ errors: [(Validatable, ValidationError)]) {
         print("Validation FAILED!")
+        if errors.count > 0 {
+            self.showErrorAlerr(title: Constants.Common.error, message: errors[0].1.errorMessage, handler: nil)
+        }
+
         for error in errors {
             print("errors:::: \(String(describing: error.1.errorMessage))")
         }
@@ -77,15 +93,17 @@ class LoginViewController: BaseViewController, ValidationDelegate {
         emailTextField.updateColors()
         passwordTextField.updateColors()
         validator.validate(self)
-    
-       
-        performSegue(withIdentifier: homeSegue, sender: nil)
+//        UserDefaults.standard.set("1", forKey: "UserID") // Need to give userid
+
+//        performSegue(withIdentifier: homeSegue, sender: nil)
 
     }
 
     
     @IBAction func skipAction(_ sender: UIButton) {
-        performSegue(withIdentifier: homeSegue, sender: nil)
+//         UserDefaults.standard.set("0", forKey: "UserID")
+//        performSegue(withIdentifier: homeSegue, sender: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     

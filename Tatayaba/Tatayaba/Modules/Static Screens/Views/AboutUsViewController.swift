@@ -23,7 +23,6 @@ class AboutUsViewController: BaseViewController, AACarouselDelegate {
 
     // MARK:- SetupUI
     func setupUI() {
-        self.addLeftBarButton()
         self.NavigationBarWithOutBackButton()
         carousel()
     }

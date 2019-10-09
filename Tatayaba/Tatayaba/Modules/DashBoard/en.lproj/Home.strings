@@ -1,0 +1,18 @@
+
+/* Class = "UITabBarItem"; title = "HOME"; ObjectID = "0RQ-oJ-4UF"; */
+"0RQ-oJ-4UF.title" = "HOME";
+
+/* Class = "UINavigationItem"; title = "TATAYAB"; ObjectID = "2gg-SA-nQx"; */
+"2gg-SA-nQx.title" = "TATAYAB";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "2s8-cd-8yZ"; */
+"2s8-cd-8yZ.title" = "Profile";
+
+/* Class = "UITabBarItem"; title = "Concierge"; ObjectID = "dad-sI-laG"; */
+"dad-sI-laG.title" = "Concierge";
+
+/* Class = "UITabBarItem"; title = "CATEGORIES"; ObjectID = "hj0-Yf-ojD"; */
+"hj0-Yf-ojD.title" = "CATEGORIES";
+
+/* Class = "UITabBarItem"; title = "Cart"; ObjectID = "yGl-X9-zVs"; */
+"yGl-X9-zVs.title" = "Cart";

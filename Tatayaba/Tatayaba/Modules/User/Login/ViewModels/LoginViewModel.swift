@@ -28,6 +28,7 @@ struct LoginViewModel {
                 //                completion(error)
 
             }
+            completion(result)
         }
     }
 

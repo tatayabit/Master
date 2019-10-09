@@ -31,12 +31,12 @@ class CartViewController: BaseViewController,UITableViewDataSource,UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         cart_Tableview.reloadData()
+        cart_Tableview.separatorColor = .clear
         //totalButton.setTitle(cart.subtotalPrice, for: .normal)
     }
 
     func setupUI() {
          self.NavigationBarWithOutBackButton()
-         self.addLeftBarButton()
     }
 
     //MARK:- IBActions

@@ -14,6 +14,8 @@ class CheckOutViewModel {
 
     let cart = Cart.shared
 
+    let kuwaitPaymentIds = ["12", "16", "1", "6"]
+
 
     var subTotalValue: String { return cart.subtotalPrice }
     var shippingValue: String { return "1.000".formattedPrice }
@@ -50,8 +52,12 @@ class CheckOutViewModel {
             case .success(let response):
                 guard let paymentResult = response else { return }
                 guard let methods = paymentResult.paymentMethods else { return }
-                self.paymentMethods = methods
+                self.paymentMethods = methods.filter({ self.kuwaitPaymentIds.contains($0.paymentId) })
+
                 print(self.paymentMethods)
+                if self.paymentMethods.count > 0 {
+                    self.cart.paymentMethod = self.paymentMethods[0]
+                }
 
                 if let newPaymentsArrived = self.onPaymentMethodsListLoad {
                     newPaymentsArrived()
@@ -63,13 +69,24 @@ class CheckOutViewModel {
         }
     }
 
+    // MARK:- Payment Method
+    func selectPaymentMethod(at indexPath: IndexPath) {
+        let payment = paymentMethods[indexPath.row]
+        cart.paymentMethod = payment
+    }
+
+    func isDefaultPaymentMethod(at indexPath: IndexPath) -> Bool {
+        return cart.paymentMethod?.paymentId == self.paymentMethods[indexPath.row].paymentId
+    }
+
     //MARK:- Placing Order
     func placeOrder(completion: @escaping (APIResult<PlaceOrderResult?, MoyaError>) -> Void) {
 
         let userId = getUserId()
         let userData = userId == "0" ? getUserDataModel() : nil
+        let paymentId = cart.paymentMethod?.paymentId ?? "0"
 
-        ordersApiClient.CreateOrder(products: getProductsModel(), userId: userId, userData: userData) { result in
+        ordersApiClient.CreateOrder(products: getProductsModel(), userId: userId, userData: userData, paymentId: paymentId) { result in
             switch result {
             case .success(let response):
                 guard let placeOrderResult = response else { return }

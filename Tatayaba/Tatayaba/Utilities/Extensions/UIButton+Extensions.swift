@@ -23,7 +23,7 @@ extension UIButton {
         self.actionHandleBlock()
     }
 
-    func actionHandle(controlEvents control :UIControlEvents, ForAction action:@escaping () -> Void) {
+    func actionHandle(controlEvents control :UIControl.Event, ForAction action:@escaping () -> Void) {
         self.actionHandleBlock(action: action)
         self.addTarget(self, action: #selector(UIButton.triggerActionHandleBlock), for: control)
     }

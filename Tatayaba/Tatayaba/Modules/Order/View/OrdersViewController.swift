@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrdersViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
+class OrdersViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, OrderTableViewCellDelegate {
 
     private let viewModel = OrdersViewModel()
     private let orderDetailsSegue = "order_details_segue"
@@ -23,10 +23,17 @@ class OrdersViewController: BaseViewController,UITableViewDelegate,UITableViewDa
 
     func setupListners() {
 
+        self.showLoadingIndicator(to: self.view)
         viewModel.onOrdersListLoad = {
+            self.hideLoadingIndicator(from: self.view)
             self.tableView.delegate = self
             self.tableView.dataSource = self
             self.tableView.reloadData()
+        }
+
+        viewModel.onOrdersListLoadFailed = { error in
+            self.hideLoadingIndicator(from: self.view)
+            self.showErrorAlerr(title: Constants.Common.error, message: error.localizedDescription, handler: nil)
         }
     }
 
@@ -37,7 +44,6 @@ class OrdersViewController: BaseViewController,UITableViewDelegate,UITableViewDa
     
     func setupUI() {
         self.NavigationBarWithOutBackButton()
-        self.addLeftBarButton()
     }
 }
 
@@ -58,13 +64,18 @@ extension OrdersViewController{
         let cellIdentifier = "OrderTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! OrderTableViewCell
 
-        cell.configure(order: viewModel.order(at: indexPath))
+        cell.configure(order: viewModel.order(at: indexPath), indexPath: indexPath)
 
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+//        performSegue(withIdentifier: orderDetailsSegue, sender: indexPath)
+    }
+
+    // MARK:- OrderTableViewCellDelegate
+    func didSelectViewOrder(at indexPath: IndexPath) {
         performSegue(withIdentifier: orderDetailsSegue, sender: indexPath)
     }
 
