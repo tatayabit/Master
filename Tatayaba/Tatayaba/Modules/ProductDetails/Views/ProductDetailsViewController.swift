@@ -88,6 +88,17 @@ class ProductDetailsViewController: BaseViewController,UITableViewDelegate,UITab
         let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewCartViewController") as! NewCartViewController
         self.navigationController?.pushViewController(controller, animated: false)
     }
+    
+    @IBAction func oneClickBuyBtnClicked(_ sender: Any) {
+        if Customer.shared.loggedin {
+            print("user is logined")
+        } else {
+            let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "SignUpView") as! SignUpViewcontroller
+            tabBarController?.tabBar.isHidden = true
+            navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    
     //MARK:- IBActions
     func addToCartAction() {
         guard let viewModel = viewModel else { return }

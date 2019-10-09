@@ -30,7 +30,8 @@ class LoginViewController: BaseViewController, ValidationDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated) // No need for semicolon
-          self.tabBarController?.tabBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = true
+        navigationController?.isNavigationBarHidden = true
     }
 
     //MARK:- Swift Validator
