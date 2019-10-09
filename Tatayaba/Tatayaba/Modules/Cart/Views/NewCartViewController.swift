@@ -18,7 +18,9 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
 
     let cart = Cart.shared
     let viewModel = CartViewModel()
-
+    // let we say until now (One_Click_Buy = 1 & Default_Way = 0)
+    var buyingWayType: Int = 0
+    
     private let checkoutSegue = "checkout_segue"
 
     enum sectionType: Int {
