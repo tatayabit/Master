@@ -108,6 +108,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kTb-40-w61" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="HOME" image="home_unselected" selectedImage="home_selected" id="0RQ-oJ-4UF">
+                        <inset key="imageInsets" minX="-2" minY="-2" maxX="-2" maxY="-2"/>
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -158,7 +159,9 @@
         <scene sceneID="HYp-Pu-Y1X">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J1J-Na-IoS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="CATEGORIES" image="category_unselected" id="hj0-Yf-ojD"/>
+                    <tabBarItem key="tabBarItem" title="CATEGORIES" image="category_unselected" id="hj0-Yf-ojD">
+                        <inset key="imageInsets" minX="-2" minY="-2" maxX="-2" maxY="-2"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WIr-Ad-Ke2">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -178,6 +181,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g5t-26-yVe" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Concierge" image="concierge_selected" selectedImage="concierge_selected" id="dad-sI-laG">
+                        <inset key="imageInsets" minX="-2" minY="-2" maxX="-2" maxY="-2"/>
                         <color key="badgeColor" red="0.87564182280000002" green="0.63852697609999998" blue="0.61103826760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
@@ -199,7 +203,9 @@
         <scene sceneID="lXd-T9-9hX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dvx-nP-vye" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="ProfileMenu" id="2s8-cd-8yZ"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="ProfileMenu" id="2s8-cd-8yZ">
+                        <inset key="imageInsets" minX="-5" minY="-5" maxX="-5" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jL9-yH-NeR">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -218,7 +224,9 @@
         <scene sceneID="bTk-yj-2Ei">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ghk-TS-HUY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cart" image="cart_unselected" id="yGl-X9-zVs"/>
+                    <tabBarItem key="tabBarItem" title="Cart" image="cart_unselected" id="yGl-X9-zVs">
+                        <inset key="imageInsets" minX="-2" minY="-2" maxX="-2" maxY="-2"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r4R-aK-XXV">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
