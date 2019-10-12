@@ -30,7 +30,6 @@ class CategoriesViewController: BaseViewController, UICollectionViewDelegate, UI
     }
 
     func setupUI() {
-        self.addLeftBarButton()
         self.NavigationBarWithOutBackButton()
         categoriesCollectionView.register(CategoryCollectionViewCell.nib, forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
     }
@@ -64,7 +63,7 @@ class CategoriesViewController: BaseViewController, UICollectionViewDelegate, UI
     //MARK:- Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == productsListSegue {
-            let productsListVC = segue.destination as! ProductsListViewController
+            let productsListVC = segue.destination as! CatProductsViewController
             if let indexPath = sender as? IndexPath {
                 productsListVC.viewModel = viewModel.productsListViewModel(indexPath: indexPath)
             }

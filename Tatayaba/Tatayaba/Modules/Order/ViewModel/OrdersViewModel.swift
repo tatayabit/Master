@@ -19,6 +19,9 @@ class OrdersViewModel {
     /// This closure is being called once the categories api fetch
     var onOrdersListLoad: (() -> ())?
 
+    /// This closure is being called once the categories api fetch on fails
+    var onOrdersListLoadFailed: ((Error) -> ())?
+
     //MARK:- Init
     init() {
         getAllOrders()
@@ -41,6 +44,9 @@ class OrdersViewModel {
                 }
             case .failure(let error):
                 print("the error \(error)")
+                if let newOrdersArrived = self.onOrdersListLoadFailed {
+                    newOrdersArrived(error)
+                }
             }
         }
     }

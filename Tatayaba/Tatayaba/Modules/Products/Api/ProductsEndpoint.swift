@@ -19,7 +19,7 @@ enum ProductsEndpoint {
 extension ProductsEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
-        case .production: return "http://dev2%40tatayab.com:89IO39N3ZJMTJI70yGF9PjB99D8U5729@dev2.tatayab.com/api/"
+        case .production: return "http://dev2%40tatayab.com:gsh34ps0N2DX5qS3y0P09U220h15HM8T@dev2.tatayab.com/api/"
         case .qa: return "http://localhost:3000/"
         case .staging: return "http://localhost:3000/"
         }
@@ -38,9 +38,9 @@ extension ProductsEndpoint: TargetType {
         case .getAllCategories:
             let version = "4.0"
             return "\(version.urlEscaped)/TtmCategories"
-        case .getProductsOfCategory(let categoryId, _):
+        case .getProductsOfCategory:
             let version = "4.0"
-            return "\(version.urlEscaped)/TtmCategories/\(categoryId.urlEscaped)/products"
+            return "\(version.urlEscaped)/TtmProducts"
         case .getProductFeatures:
             return "TtmCategories/268/products"
         }
@@ -68,12 +68,15 @@ extension ProductsEndpoint: TargetType {
             return .requestPlain
         case .getAllCategories:
             return .requestParameters(parameters: [ "items_per_page": 0,
-                                                    "status": "A"
+                                                    "status": "A",
+                                                    "lang_code": LanguageManager.getLanguage()
                 ], encoding: URLEncoding.default)
 
-        case .getProductsOfCategory(_, let page):
-            return .requestParameters(parameters: [ "items_per_page": 20,
-                                                    "page": page.urlEscaped
+        case .getProductsOfCategory(let category, let page):
+            return .requestParameters(parameters: [ "items_per_page": 100,
+                                                    "cid": category,
+                                                    "page": page.urlEscaped,
+                                                    "lang_code": LanguageManager.getLanguage()
                 ], encoding: URLEncoding.default)
 
         case .getProductFeatures:

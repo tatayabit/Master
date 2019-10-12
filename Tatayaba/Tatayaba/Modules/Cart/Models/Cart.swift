@@ -14,9 +14,13 @@ class Cart {
     private var productsArr = [Product]()
 
     var defaultShipping: ShippingMethod?
+    var paymentMethod: Payment?
 
     var productsCount: Int { return cartItemsArr.count }
     var subtotalPrice: String { return String(calculateSubTotal()).formattedPrice }
+    var shippingFormatedPrice: String { return String(shipping).formattedPrice }
+    var shipping: Float = 1
+    var totalPrice: String { return String(calculateTotal()).formattedPrice }
 
     //MARK:- Operational functions
     func addProduct(product: Product) {
@@ -28,6 +32,7 @@ class Cart {
             cartItemsArr.append(productModel)
             productsArr.append(product)
         }
+        updateTabBarCount()
     }
 
     func cartItem(for product: Product) -> CartItem {
@@ -35,17 +40,19 @@ class Cart {
     }
 
     func removeProduct(at indexPath: IndexPath) {
-        let cartProduct = product(at: indexPath)
         cartItemsArr.remove(at: indexPath.row)
         productsArr.remove(at: indexPath.row)
+        updateTabBarCount()
     }
 
     func increaseCount(cartItem: CartItem) {
         cartItem.increaseCount(by: 1)
+        updateTabBarCount()
     }
 
     func decreaseCount(cartItem: CartItem) {
         cartItem.decreaseCount(by: 1)
+        updateTabBarCount()
     }
 
     func product(at indexPath: IndexPath) -> (Product, CartItem) {
@@ -53,21 +60,36 @@ class Cart {
         return (productsArr[indexPath.row], cartItemsArr[indexPath.row])
     }
 
+    // MARK:- UpdateCartCount
+    func updateTabBarCount() {
+        if productsCount > 0 {
+            AppDelegate.shared.rootViewController.tabBar.items?[4].badgeValue = String(productsCount)
+        } else {
+            AppDelegate.shared.rootViewController.tabBar.items?[4].badgeValue = nil
+        }
+    }
+    
+    //MARK:- Calculate Price
     func calculateSubTotal() -> Float {
         var total: Float = 0
         if productsArr.count > 0 {
-        for i in 0...productsArr.count - 1 {
-            let productItem = productsArr[i]
-            let cartItem = cartItemsArr[i]
-            let price = (productItem.price as NSString).floatValue//Float(productItem.price) ?? 0.0
-            let quantity = Float(cartItem.count)
-            total += (quantity * price)
-        }
+            for i in 0...productsArr.count - 1 {
+                let productItem = productsArr[i]
+                let cartItem = cartItemsArr[i]
+                let price = (productItem.price as NSString).floatValue//Float(productItem.price) ?? 0.0
+                let quantity = Float(cartItem.count)
+                total += (quantity * price)
+            }
         }
         return total
         
     }
 
+    func calculateTotal() -> Float {
+        return calculateSubTotal() + shipping
+    }
+
+    //MARK:- Get Cart Item / Product
     func cartItemsList() -> [CartItem] {
         return self.cartItemsArr
     }

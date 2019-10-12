@@ -28,18 +28,20 @@ extension ShippingMethodResult: Codable {
 
 
 struct ShippingMethod {
-    var shippingId: String = ""
-    var position: String = ""
-    var status: String = ""
-    var name: String = ""
-    var deliveryTime: String = ""
+    var shippingId: String
+    var position: String
+    var status: String
+    var name: String
+    var deliveryTime: String
+    var rate: [ShippingRate]
 
-    init(shippingId: String = "", position: String = "", status: String = "", name: String = "", deliveryTime: String = "") {
+    init(shippingId: String = "", position: String = "", status: String = "", name: String = "", deliveryTime: String = "", rate: [ShippingRate] = [ShippingRate]()) {
         self.shippingId = shippingId
         self.position = position
         self.status = status
         self.name = name
         self.deliveryTime = deliveryTime
+        self.rate = rate
     }
 }
 
@@ -50,6 +52,7 @@ extension ShippingMethod: Codable {
         case status
         case name = "shipping"
         case deliveryTime = "delivery_time"
+        case rate
     }
 
 
@@ -61,6 +64,7 @@ extension ShippingMethod: Codable {
         status = try container.decodeIfPresent(String.self, forKey: .status) ?? ""
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
         deliveryTime = try container.decodeIfPresent(String.self, forKey: .deliveryTime) ?? ""
+        rate = try container.decodeIfPresent([ShippingRate].self, forKey: .rate) ?? [ShippingRate]()
     }
 
     func encode(to encoder: Encoder) throws {
@@ -71,5 +75,6 @@ extension ShippingMethod: Codable {
         try container.encodeIfPresent(status, forKey: .status)
         try container.encodeIfPresent(name, forKey: .name)
         try container.encodeIfPresent(deliveryTime, forKey: .deliveryTime)
+        try container.encodeIfPresent(rate, forKey: .rate)
     }
 }

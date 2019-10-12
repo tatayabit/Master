@@ -11,7 +11,10 @@ target 'Tatayaba' do
   pod 'SwiftValidator', :git => 'https://github.com/jpotts18/SwiftValidator.git', :tag => '4.2.0'
   pod 'SDWebImage', '~> 5.0'
   pod 'SwiftKeychainWrapper', '~> 3.2.0'
-
+  pod 'MOLH'
+  pod 'MBProgressHUD', '~> 1.1.0'
+  pod 'IQKeyboardManagerSwift'
+  
   target 'TatayabaTests' do
     inherit! :search_paths
     # Pods for testing

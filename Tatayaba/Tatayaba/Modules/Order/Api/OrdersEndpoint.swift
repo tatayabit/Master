@@ -9,7 +9,7 @@
 import Moya
 
 enum OrdersEndpoint {
-    case create(products: [String: Any], userId: String, userData: [String: Any]?)
+    case create(products: [String: Any], userId: String, userData: [String: Any]?, paymentId: String)
     case getAllOrders(page: Int)
     case getOrder(orderId: String)
 }
@@ -18,7 +18,7 @@ enum OrdersEndpoint {
 extension OrdersEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
-        case .production: return "http://dev2%40tatayab.com:89IO39N3ZJMTJI70yGF9PjB99D8U5729@dev2.tatayab.com/api/"
+        case .production: return "http://dev2%40tatayab.com:gsh34ps0N2DX5qS3y0P09U220h15HM8T@dev2.tatayab.com/api/"
         case .qa: return "http://localhost:3000/"
         case .staging: return "http://localhost:3000/"
         }
@@ -35,7 +35,7 @@ extension OrdersEndpoint: TargetType {
         case .create:
             return "stores/1/orders/"
         case .getAllOrders:
-            return "orders/"
+            return "4.0/orders"
         case .getOrder(let orderId):
             return "orders/\(orderId.urlEscaped)"
         }
@@ -61,10 +61,10 @@ extension OrdersEndpoint: TargetType {
 
     var task: Task {
         switch self {
-        case .create(let products, let userId, let userData):
+        case .create(let products, let userId, let userData, let paymentId):
             var params = [
                 "user_id": userId,
-                "payment_id": "2",
+                "payment_id": paymentId,
                 "shipping_id": "9",
                 "products": products
                 ] as [String : Any]

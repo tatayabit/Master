@@ -39,9 +39,10 @@ struct Product {
     var selectedQuantity = 0
     var status: String
     var mainPair: ProductMainPair
+    var supplierName: String
 
 
-    init(name: String = "" , description: String = "", offerPrices: Float = 0.00, price: String = "", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair()) {
+    init(name: String = "", supplierName: String = "", description: String = "", offerPrices: Float = 0.00, price: String = "", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair()) {
         self.name = name
         self.description = description
 //        self.imageUrl = imageUrl
@@ -51,6 +52,7 @@ struct Product {
         self.identifier = identifier
         self.status = status
         self.mainPair = mainPair
+        self.supplierName = supplierName
     }
 }
 
@@ -65,6 +67,7 @@ extension Product: Codable {
         case identifier = "product_id"
         case status = "status"
         case mainPair = "main_pair"
+        case supplierName = "supplier_name"
     }
 
     init(from decoder: Decoder) throws {
@@ -79,6 +82,8 @@ extension Product: Codable {
 //        identifier = try container.decodeIfPresent(String.self, forKey: .identifier) ?? ""
         status = try container.decodeIfPresent(String.self, forKey: .status) ?? "H"
         mainPair = try container.decodeIfPresent(ProductMainPair.self, forKey: .mainPair) ?? ProductMainPair()
+
+        supplierName = try container.decodeIfPresent(String.self, forKey: .supplierName) ?? ""
 
         var idVal = ""
         if let identifierString = try? container.decode(String.self, forKey: .identifier) {
@@ -102,5 +107,6 @@ extension Product: Codable {
         try container.encodeIfPresent(identifier, forKey: .identifier)
         try container.encodeIfPresent(status, forKey: .status)
         try container.encodeIfPresent(mainPair, forKey: .mainPair)
+        try container.encodeIfPresent(supplierName, forKey: .supplierName)
     }
 }

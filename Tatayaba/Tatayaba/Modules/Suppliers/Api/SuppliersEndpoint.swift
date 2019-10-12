@@ -10,14 +10,14 @@ import Moya
 
 enum SuppliersEndpoint {
     case getSuppliers()
-    case getProductsOfSupplier(supplierId: String)
+    case getSupplierDetails(supplierId: String)
 }
 
 
 extension SuppliersEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
-        case .production: return "http://dev2%40tatayab.com:89IO39N3ZJMTJI70yGF9PjB99D8U5729@dev2.tatayab.com/api/"
+        case .production: return "http://dev2%40tatayab.com:gsh34ps0N2DX5qS3y0P09U220h15HM8T@dev2.tatayab.com/api/"
         case .qa: return "http://localhost:3000/"
         case .staging: return "http://localhost:3000/"
         }
@@ -34,7 +34,7 @@ extension SuppliersEndpoint: TargetType {
         case .getSuppliers:
             let version = "4.0"
             return "\(version.urlEscaped)/TtmSuppliers/"
-        case .getProductsOfSupplier(let supplierId):
+        case .getSupplierDetails(let supplierId):
             let version = "4.0"
             return "\(version.urlEscaped)/TtmSuppliers/\(supplierId.urlEscaped)"
         }
@@ -42,7 +42,7 @@ extension SuppliersEndpoint: TargetType {
 
     var method: Moya.Method {
         switch self {
-        case .getSuppliers, .getProductsOfSupplier:
+        case .getSuppliers, .getSupplierDetails:
             return .get
         }
     }
@@ -58,7 +58,7 @@ extension SuppliersEndpoint: TargetType {
 
     var task: Task {
         switch self {
-        case .getSuppliers, .getProductsOfSupplier:
+        case .getSuppliers, .getSupplierDetails:
             return .requestPlain
         }
     }

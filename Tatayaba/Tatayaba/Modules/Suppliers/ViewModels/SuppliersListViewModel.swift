@@ -44,6 +44,12 @@ class SuppliersListViewModel {
         return suppliersList[indexPath.row]
     }
 
+    //MARK:- SupplierProductsViewModel
+    func supplierProductsViewModel(indexPath: IndexPath) -> SupplierProductsViewModel {
+        let supplier = suppliersList[indexPath.row]
+        return SupplierProductsViewModel(supplier: supplier)
+    }
+
     //MARK:- ProductDetails ViewModel
 //    func productDetailsViewModel(at indexPath: IndexPath) -> ProductDetailsViewModel {
 //        let productViewModel = ProductDetailsViewModel(product: product(at: indexPath))

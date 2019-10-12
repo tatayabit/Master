@@ -31,8 +31,8 @@ class StackedScrollView: UIScrollView {
         // 2. Content is a stack view
         stackView.axis = .vertical
         stackView.alignment = .fill
-        stackView.spacing = 400
-        stackView.distribution = .fill
+        stackView.spacing = 0.0
+       stackView.distribution = .fill
         addSubview(stackView)
 
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -44,6 +44,7 @@ class StackedScrollView: UIScrollView {
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
 
             // Satisfying size constraints
+            stackView.widthAnchor.constraint(equalTo: heightAnchor ),
             stackView.widthAnchor.constraint(equalTo: widthAnchor)
             ])
     }

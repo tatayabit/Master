@@ -32,12 +32,14 @@ struct Supplier {
     var status: String = ""
     var name: String = ""
     var logo: SupplierLogo
+    var products: [Product]
 
-    init(supplierId: String = "", status: String = "", name: String = "", logo: SupplierLogo = SupplierLogo()) {
+    init(supplierId: String = "", status: String = "", name: String = "", logo: SupplierLogo = SupplierLogo(), products: [Product] = [Product]()) {
         self.supplierId = supplierId
         self.status = status
         self.name = name
         self.logo = logo
+        self.products = products
     }
 }
 
@@ -47,6 +49,7 @@ extension Supplier: Codable {
         case status
         case name
         case logo
+        case products
     }
 
 
@@ -57,6 +60,7 @@ extension Supplier: Codable {
         status = try container.decodeIfPresent(String.self, forKey: .status) ?? ""
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
         logo = try container.decodeIfPresent(SupplierLogo.self, forKey: .logo) ?? SupplierLogo()
+        products = try container.decodeIfPresent([Product].self, forKey: .products) ?? [Product]()
     }
 
     func encode(to encoder: Encoder) throws {
@@ -66,6 +70,7 @@ extension Supplier: Codable {
         try container.encodeIfPresent(status, forKey: .status)
         try container.encodeIfPresent(name, forKey: .name)
         try container.encodeIfPresent(logo, forKey: .logo)
+        try container.encodeIfPresent(products, forKey: .products)
     }
 }
 

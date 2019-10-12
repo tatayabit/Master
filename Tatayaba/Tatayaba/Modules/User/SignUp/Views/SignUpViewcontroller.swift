@@ -28,6 +28,12 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
         setupUI()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated) // No need for semicolon
+        self.tabBarController?.tabBar.isHidden = true
+        NavigationBarWithBackButton()
+    }
+    
     //MARK:- setupUI
     func setupUI() {
         let logo = kLogoColor()
@@ -40,7 +46,7 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
     func registerValidator() {
         validator.registerField(emailTextField, rules: [RequiredRule(message: "Email is required!"), EmailRule(message: "Invalid email")])
         validator.registerField(passwordTextField, rules: [RequiredRule(message: "Password is required!"), PasswordRule(regex: "^(?=(.*\\d){8})[a-zA-Z\\d]{8,20}$", message: "Invalid password")])
-        emailTextField.becomeFirstResponder()
+        fullNameTextField.becomeFirstResponder()
     }
 
     //MARK:- Validation Delegate
@@ -92,6 +98,12 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
     //MARK:- IBActions
     @IBAction func signUpAction(_ sender: UIButton) {
         validator.validate(self)
+    }
+
+    @IBAction func signInAction(_ sender: UIButton) {
+        let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        navigationController?.pushViewController(controller, animated: false)
+        tabBarController?.tabBar.isHidden = true
     }
 
 }

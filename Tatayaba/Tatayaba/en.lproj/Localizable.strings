@@ -1,0 +1,44 @@
+/* 
+  Localizable.strings
+  Tatayaba
+
+  Created by Kareem Kareem on 9/17/19.
+  Copyright © 2019 Shaik. All rights reserved.
+*/
+
+// Tab Bar Titles
+"Change Language"="Change Language";
+"Subtotal"="Subtotal";
+"Shipping"="Shipping";
+"items"="items";
+"Cart Total"="Cart Total";
+
+
+// Login
+"Email"="Email";
+"Passwrod"="Passwrod";
+"LOG IN"="LOG IN";
+"Forgot Password?"="Forgot Password?";
+"OR"="OR";
+"Already have an Account?"="Already have an Account?";
+"Sign Up"="Sign Up";
+"Skip"="Skip";
+"Username or password are invalid"="Username or password are invalid";
+
+// Error
+"Error"="Error";
+
+// Profile
+"My Orders"="My Orders";
+"Wish List"="Wish List";
+"Privacy Policy"="Privacy Policy";
+"BRANDS"="Brands";
+"Logout"="Logout";
+"Delivery and Return Policy"="Delivery and Return Policy";
+
+// Concierge
+"Something went wrong while submitting your concierge!"="Something went wrong while submitting your concierge!";
+
+
+// Cart
+"Your Cart is Empty!"="Your Cart is Empty!";

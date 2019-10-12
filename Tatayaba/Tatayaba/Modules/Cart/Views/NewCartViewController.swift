@@ -13,10 +13,14 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     @IBOutlet var cartTableview: UITableView!
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var totalTitleLabel: UILabel!
+    @IBOutlet weak var checkoutContainerView: UIView!
+
 
     let cart = Cart.shared
     let viewModel = CartViewModel()
-
+    // let we say until now (One_Click_Buy = 1 & Default_Way = 0)
+    var buyingWayType: Int = 0
+    
     private let checkoutSegue = "checkout_segue"
 
     enum sectionType: Int {
@@ -28,29 +32,30 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
         // Do any additional setup after loading the view.
         setupUI()
         viewModel.delegate = self
+        cartTableview.separatorColor = .clear
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         calculateTotal()
+        self.tabBarController?.tabBar.isHidden = false
     }
 
     // MARK:- setupUI
     func setupUI() {
         cartTableview.register(PriceTableViewCell.nib, forCellReuseIdentifier: PriceTableViewCell.identifier)
         self.NavigationBarWithOutBackButton()
-        self.addLeftBarButton()
     }
 
     func calculateTotal() {
-        totalPriceLabel.text = cart.subtotalPrice
+        totalPriceLabel.text = cart.totalPrice
         viewModel.loadPricingListContent()
-        let totalItemsText = "(" + String(cart.productsCount) + " items)"
+        let totalItemsText = "(" + String(cart.productsCount) + " " + Constants.Cart.items + ")"
         totalTitleLabel.attributedText = attributedTotalTitle(text: totalItemsText)
     }
 
     func attributedTotalTitle(text: String) -> NSAttributedString {
-        let textVal = "Cart Total " + text
+        let textVal = Constants.Cart.cartTotal + " " + text
 
         let strokeTextAttributes = [
             NSAttributedString.Key.foregroundColor : UIColor(hexString: "221C35"),
@@ -80,6 +85,15 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
+        if cart.productsCount > 0 {
+            self.cartTableview.restore()
+            checkoutContainerView.isHidden = false
+        } else {
+            self.cartTableview.setEmptyMessage(Constants.Cart.cartEmpty)
+            checkoutContainerView.isHidden = true
+            return 0
+        }
+
         if viewModel.pricingList.count > 0 {
             return 2
         }

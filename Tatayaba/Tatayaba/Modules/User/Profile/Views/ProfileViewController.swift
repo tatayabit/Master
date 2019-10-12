@@ -23,7 +23,7 @@ class ProfileViewController: BaseViewController {
 
     func setupUI() {
         self.NavigationBarWithOutBackButton()
-        self.addLeftBarButton()
+        
     }
 
     func addSubViews() {

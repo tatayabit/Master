@@ -1,0 +1,43 @@
+/* 
+  Localizable.strings
+  Tatayaba
+
+  Created by Kareem Kareem on 9/17/19.
+  Copyright © 2019 Shaik. All rights reserved.
+*/
+
+// Tab Bar Titles
+"Change Language"="تغيير اللغة";
+"Subtotal"="المجموع";
+"Shipping"="الشحن";
+"items"="أصناف";
+"Cart Total"="المجموع الكلي";
+
+// Login
+"Email"="البريد الالكتروني";
+"Passwrod"="كلمة المرور";
+"LOG IN"="تسجيل الدخول";
+"Forgot Password?"="نسيت كلمة المرور؟";
+"OR"="أو";
+"Already have an Account?"="لديك حساب؟";
+"Sign Up"="إنشاء حساب";
+"Skip"="تخطي";
+"Username or password are invalid"="البريد الالكتروني أو كلمة المرور غير صحيحة";
+
+
+// Error
+"Error"="خطأ";
+
+// Profile
+"My Orders"="طلباتي";
+"Wish List"="Wish List";
+"Privacy Policy"="سياسة الخصوصية";
+"BRANDS"="العلامات التجارية";
+"Logout"="تسجيل الخروج";
+"Delivery and Return Policy"="سياسة الاستبدال والاسترجاع";
+
+// Concierge
+"Something went wrong while submitting your concierge!"="حدث خطأ أثناء تقديم الكونسيرج!";
+
+// Cart
+"Your Cart is Empty!"="السلة فارغة!";

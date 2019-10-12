@@ -7,64 +7,53 @@
 //
 
 import UIKit
+import MBProgressHUD
+
+extension Constants {
+    struct Common {
+        static let ok = "OK".localized()
+        static let error = "Error".localized()
+    }
+}
 
 class BaseViewController: UIViewController {
+    var loadingArr = [UIView]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
     }
-    func configureSliderOptions() {
-        switch  sliderMenuType {
-        case .leftOnly:
-            self.addLeftBarButton()
-            break
-        case .rightOnly:
-            self.addRightBarButton()
-            break
-        case .leftAndRight:
-            self.addLeftBarButton()
-            self.addRightBarButton()
-            break
-        }
-    }
-    
-    func addLeftBarButton() {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 19, height: 13))
-        button.setBackgroundImage(UIImage(named: leftMenuImage), for: .normal)
-        button.addTarget(self, action: #selector(self.leftMenuButtonAction), for: .touchUpInside)
-        
-        let barbutton = UIBarButtonItem(customView: button)
-        self.navigationItem.leftBarButtonItem = barbutton
-    }
-    
-    func addRightBarButton() {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 19, height: 13))
-        button.setBackgroundImage(UIImage(named: rightMenuImage), for: .normal)
-        button.addTarget(self, action: #selector(self.rightMenuButtonAction), for: .touchUpInside)
-        
-        let barbutton = UIBarButtonItem(customView: button)
-        self.navigationItem.rightBarButtonItem = barbutton
-    }
-    
-    /// registers for pan gesture recognition to toggle the slide menu
-    func registerForPanGestures() {
-        let leftPan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(self.handlePan(sender:)))
-        leftPan.edges = .left
-        self.view.addGestureRecognizer(leftPan)
-        
-        let rightPan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(self.handlePan(sender:)))
-        rightPan.edges = .right
-        self.view.addGestureRecognizer(rightPan)
-    }
-    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+
+
+    // MARK:- Error Alert
+    func showErrorAlerr(title: String?, message: String?, handler: ((UIAlertAction) -> Void)?) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: Constants.Common.ok, style: .cancel, handler: handler)
+        alert.addAction(action)
+
+        self.present(alert, animated: true) {
+            print("completion block alert")
+        }
+    }
     
-    
+    // MARK:- MBProgressHUD
+    func showLoadingIndicator(to containerView: UIView) {
+        MBProgressHUD.showAdded(to: containerView, animated: true)
+        loadingArr.append(containerView)
+    }
+
+    func hideLoadingIndicator(from containerView: UIView) {
+        MBProgressHUD.hide(for: containerView, animated: true)
+        if loadingArr.contains(containerView) {
+            loadingArr.removeAll(where: { $0 == containerView })
+        }
+    }
     
 
 }
@@ -86,24 +75,57 @@ extension UIViewController {
        
         self.navigationItem.hidesBackButton = true
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = UIColor(red: 34.0/255, green: 28.0/255, blue: 53.0/255, alpha: 1.0)
         navigationController?.hidesBottomBarWhenPushed = false
         self.tabBarController?.tabBar.isHidden = false
-      //  let navBackgroundImage:UIImage! = UIImage(named:" ")
-    self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "Header")?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .stretch), for: .default)
+       let logo = UIImage(named: "barName_Eng")
+        let imageView = UIImageView(image:logo)
+        imageView.contentMode = .scaleAspectFit
+        navigationItem.titleView = imageView
+
     }
+    
+    func NavigationBarWithBackButton(){
+        
+        self.navigationItem.hidesBackButton = true
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.navigationBar.barTintColor = UIColor(red: 34.0/255, green: 28.0/255, blue: 53.0/255, alpha: 1.0)
+        navigationController?.hidesBottomBarWhenPushed = false
+        self.tabBarController?.tabBar.isHidden = false
+        let logo = UIImage(named: "barName_Eng")
+        let imageView = UIImageView(image:logo)
+        imageView.contentMode = .scaleAspectFit
+        navigationItem.titleView = imageView
+        
+        let btn2 = UIButton(type: .custom)
+        btn2.setImage(UIImage(named: "BackBar"), for: .normal)
+        btn2.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        btn2.addTarget(self, action: #selector(action), for: .touchUpInside)
+        let item2 = UIBarButtonItem(customView: btn2)
+        
+        self.navigationItem.leftBarButtonItem  = item2
+        
+        
+    }
+    @objc func action(){
+        navigationController?.popViewController(animated: true)
+    
+    }
+    
+    
 }
-extension BaseViewController {
-    
-    @objc func leftMenuButtonAction () {
-        ContainerViewController.sharedInstance.toggleLeftSlider()
+
+
+extension UIViewController {
+    func setupNavigationBar(image: UIImage) {
+        //set your image navigation bar center
+        //set titile
+        //self.navigationItem.title =  title
+        //set image in the center
+        self.navigationItem.titleView = UIImageView(image: image)
     }
-    
-    @objc func rightMenuButtonAction () {
-        ContainerViewController.sharedInstance.toggleRightSlider()
-    }
-    
-    @objc func handlePan(sender: UIScreenEdgePanGestureRecognizer) {
-        ContainerViewController.sharedInstance.handlePanGesture(recognizer: sender)
+
+    func setupNavBarLogo() {
+        self.setupNavigationBar(image:UIImage(named: "log_nav")!)
     }
 }
