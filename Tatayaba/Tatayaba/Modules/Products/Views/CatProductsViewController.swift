@@ -23,21 +23,29 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
         self.NavigationBarWithBackButton()
 
         setupUI()
+        self.productsCollectionView.dataSource = self
+        self.productsCollectionView.delegate = self
+//        self.productsCollectionView.prefetchDataSource = self
+
+        
         guard let viewModel = viewModel else { return }
         self.showLoadingIndicator(to: self.view)
-        viewModel.getProductsOfCategory { result in
-            self.hideLoadingIndicator(from: self.view)
-            switch result {
-            case .success:
+        viewModel.setDelegate(self)
+        viewModel.fetchModerators()
 
-                self.productsCollectionView.dataSource = self
-                self.productsCollectionView.delegate = self
-
-            case .failure(let error):
-                print("the error \(error)")
-                self.showErrorAlerr(title: Constants.Common.error, message: error.localizedDescription, handler: nil)
-            }
-        }
+//        viewModel.getProductsOfCategory { result in
+//            self.hideLoadingIndicator(from: self.view)
+//            switch result {
+//            case .success:
+//
+//                self.productsCollectionView.dataSource = self
+//                self.productsCollectionView.delegate = self
+//
+//            case .failure(let error):
+//                print("the error \(error)")
+//                self.showErrorAlerr(title: Constants.Common.error, message: error.localizedDescription, handler: nil)
+//            }
+//        }
 
     }
 
@@ -50,7 +58,7 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         guard let viewModel = viewModel else { return 0 }
-        return viewModel.productsCount
+        return viewModel.totalCount
     }
 
 
@@ -63,33 +71,39 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
         cell.configure(viewModel.product(at: indexPath), indexPath: indexPath)
         cell.delegate = self
         
-        if indexPath.row == viewModel.productsCount - 1 { // last cell
-           
-            self.showLoadingIndicator(to: self.view)
-            
-            viewModel.getProductsOfCategory { result in
-                self.hideLoadingIndicator(from: self.view)
-                switch result {
-                case .success:
-                    
-                    //self.productsCollectionView.reloadData()
-                    self.hideLoadingIndicator(from: self.view)
-                case .failure(let error):
-                    print("the error \(error)")
-                    self.showErrorAlerr(title: "Error".localized(), message: error.localizedDescription, handler: nil)
-                }
-                
-                
-            }
-            
-            
-        }
+//        if indexPath.row == viewModel.productsCount - 1 { // last cell
+//
+//            self.showLoadingIndicator(to: self.view)
+//
+//            viewModel.getProductsOfCategory { result in
+//                self.hideLoadingIndicator(from: self.view)
+//                switch result {
+//                case .success:
+//                    
+//                    //self.productsCollectionView.reloadData()
+//                    self.hideLoadingIndicator(from: self.view)
+//                case .failure(let error):
+//                    print("the error \(error)")
+//                    self.showErrorAlerr(title: "Error".localized(), message: error.localizedDescription, handler: nil)
+//                }
+//
+//
+//            }
+//
+//
+//        }
         
         
         
         return cell
     }
 
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let viewModel = viewModel else { return }
+        if indexPath.row == viewModel.currentCount - 4 {  //numberofitem count
+            viewModel.fetchModerators()
+        }
+    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
     }
@@ -115,23 +129,38 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
     func didSelectAddToCartCell(indexPath: IndexPath) {
         viewModel?.addToCart(at: indexPath)
     }
+    
+    func didSelectOneClickBuy(indexPath: IndexPath) {
+        
+    }
 
 }
 
-//private extension CatProductsViewController: UITableViewDataSourcePrefetching {
-//    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-//        if indexPaths.contains(where: isLoadingCell) {
-//            viewModel.fetchModerators()
-//        }
-//    }
-//    
-//    func isLoadingCell(for indexPath: IndexPath) -> Bool {
-//        return indexPath.row >= viewModel.currentCount
-//    }
-//    
-//    func visibleIndexPathsToReload(intersecting indexPaths: [IndexPath]) -> [IndexPath] {
-//        let indexPathsForVisibleRows = tableView.indexPathsForVisibleRows ?? []
-//        let indexPathsIntersection = Set(indexPathsForVisibleRows).intersection(indexPaths)
-//        return Array(indexPathsIntersection)
-//    }
-//}
+
+
+extension CatProductsViewController: CatProductsViewModelDelegate {
+    func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
+        // 1
+        self.hideLoadingIndicator(from: self.view)
+
+        guard newIndexPathsToReload != nil else {
+//            indicatorView.stopAnimating()
+//            productsCollectionView.isHidden = false
+            productsCollectionView.reloadData()
+            return
+        }
+        // 2
+//        let indexPathsToReload = visibleIndexPathsToReload(intersecting: newIndexPathsToReload)
+//        productsCollectionView.reloadItems(at: indexPathsToReload)
+//        tableView.reloadRows(at: indexPathsToReload, with: .automatic)
+    }
+    
+    func onFetchFailed(with reason: String) {
+        self.hideLoadingIndicator(from: self.view)
+//        indicatorView.stopAnimating()
+        
+//        let title = "Warning".localizedString
+//        let action = UIAlertAction(title: "OK".localizedString, style: .default)
+//        displayAlert(with: title , message: reason, actions: [action])
+    }
+}

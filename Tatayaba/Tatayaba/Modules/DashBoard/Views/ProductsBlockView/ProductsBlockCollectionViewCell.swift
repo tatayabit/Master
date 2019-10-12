@@ -10,6 +10,7 @@ import UIKit
 
 protocol ProductsBlockCollectionViewCellDelegate: class {
     func didSelectAddToCartCell(indexPath: IndexPath)
+    func didSelectOneClickBuy(indexPath: IndexPath)
 }
 
 class ProductsBlockCollectionViewCell: UICollectionViewCell {
@@ -39,6 +40,12 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
     @IBAction func addToCartAction(_ sender: UIButton) {
         if let delegate = delegate {
             delegate.didSelectAddToCartCell(indexPath: self.indexPath)
+        }
+    }
+    
+    @IBAction func oneClickBuyAction(_ sender: UIButton) {
+        if let delegate = delegate {
+            delegate.didSelectOneClickBuy(indexPath: self.indexPath)
         }
     }
 }

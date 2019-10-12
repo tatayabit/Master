@@ -88,5 +88,9 @@ class SupplierProductsViewController: BaseViewController, UICollectionViewDelega
     func didSelectAddToCartCell(indexPath: IndexPath) {
         viewModel?.addToCart(at: indexPath)
     }
+    
+    func didSelectOneClickBuy(indexPath: IndexPath) {
+        
+    }
 
 }
