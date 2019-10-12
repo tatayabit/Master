@@ -14,7 +14,9 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var totalTitleLabel: UILabel!
     @IBOutlet weak var checkoutContainerView: UIView!
-
+    @IBOutlet weak var couponContainerView: UIView!
+    @IBOutlet weak var couponTextField: UITextField!
+    
 
     let cart = Cart.shared
     let viewModel = CartViewModel()
@@ -88,9 +90,11 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
         if cart.productsCount > 0 {
             self.cartTableview.restore()
             checkoutContainerView.isHidden = false
+            couponContainerView.isHidden = false
         } else {
             self.cartTableview.setEmptyMessage(Constants.Cart.cartEmpty)
             checkoutContainerView.isHidden = true
+            couponContainerView.isHidden = true
             return 0
         }
 
@@ -166,5 +170,7 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     //MARK:- IBActions
     @IBAction func checkoutAction(_ sender: Any) {
         performSegue(withIdentifier: checkoutSegue, sender: nil)
+    }
+    @IBAction func applyCouponAction(_ sender: UIButton) {
     }
 }
