@@ -5,8 +5,12 @@
 //  Created by Kareem Kareem on 7/10/19.
 //  Copyright © 2019 Shaik. All rights reserved.
 //
+import Moya
 
 class ProductDetailsViewModel {
+
+    let apiClient = ProductsAPIClient()
+
     private var product: Product
     private var recommendedList = [Product]()
 
@@ -25,6 +29,26 @@ class ProductDetailsViewModel {
     init(product: Product) {
         self.product = product
         self.selectedQuantity = 1
+    }
+    
+    //MARK:- Api
+    func getProductDetails(completion: @escaping (APIResult<Product?, MoyaError>) -> Void) {
+        
+        apiClient.getProductDetails(productId: product.identifier) { result in
+            switch result {
+                
+            case .success(let response):
+                guard let productResult = response else { return }
+                //                guard let products = supplier.products else { return }
+                
+                self.product = productResult
+                print(self.product)
+                
+            case .failure(let error):
+                print("the error \(error)")
+            }
+            completion(result)
+        }
     }
 
     //MARK:- Product Details

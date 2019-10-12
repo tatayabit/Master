@@ -29,6 +29,21 @@ class ProductDetailsViewController: BaseViewController,UITableViewDelegate,UITab
          UserDefaults.standard.set("0", forKey: "Clicked")
         product_Tableview.delegate = self
         product_Tableview.dataSource = self
+        self.showLoadingIndicator(to: self.view)
+        self.viewModel?.getProductDetails(completion: { result in
+            self.hideLoadingIndicator(from: self.view)
+            switch result {
+                
+            case .success:
+                self.product_Tableview.reloadData()
+                
+            case .failure(let error):
+                print("the error \(error)")
+                self.showErrorAlerr(title: "Error", message: "not able to fetch the product", handler: { _ in
+                    self.navigationController?.popViewController(animated: true)
+                })
+            }
+        })
     }
 
     //MARK:- Setup StackedScrollView
