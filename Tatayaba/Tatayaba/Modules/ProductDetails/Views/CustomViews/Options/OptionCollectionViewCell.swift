@@ -8,11 +8,15 @@
 
 import UIKit
 
-class OptionCollectionViewCell: UICollectionViewCell {
+class OptionCollectionViewCell: UITableViewCell {
 
     @IBOutlet weak var iconImageView: UIImageView!
-    @IBOutlet weak var selectionView: UIView!
-    @IBOutlet weak var countLabel: UILabel!
+//    @IBOutlet weak var selectionView: UIView!
+//    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var removeButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,15 +25,16 @@ class OptionCollectionViewCell: UICollectionViewCell {
     }
 
     private func setupUI() {
-        selectionView.isHidden = true
+//        selectionView.isHidden = true
     }
 
-    func configure(imageName: String) {
+    func configure(option: ProductOption) {
+        self.titleLabel.text = option.name
         //        productImageView.image = UIImage(named: imageName)
     }
 
     func updateCount(count: Int) {
-        selectionView.isHidden = count <= 0
-        countLabel.text = String(count)
+//        selectionView.isHidden = count <= 0
+//        countLabel.text = String(count)
     }
 }

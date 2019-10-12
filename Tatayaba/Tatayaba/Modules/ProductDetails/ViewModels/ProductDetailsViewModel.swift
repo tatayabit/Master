@@ -24,6 +24,7 @@ class ProductDetailsViewModel {
     var imageUrl: String { return product.mainPair.detailedPair.imageUrl }
 
     var selectedQuantity: Int
+    var optionsCount: Int { return self.product.productOptions.count }
 
     //MARK:- Init
     init(product: Product) {
@@ -39,8 +40,6 @@ class ProductDetailsViewModel {
                 
             case .success(let response):
                 guard let productResult = response else { return }
-                //                guard let products = supplier.products else { return }
-                
                 self.product = productResult
                 print(self.product)
                 
@@ -70,5 +69,7 @@ class ProductDetailsViewModel {
     }
 
     //MARK:- Product Options
-    
+    func option(at indexPath: IndexPath) -> ProductOption {
+        return self.product.productOptions[indexPath.row]
+    }
 }
