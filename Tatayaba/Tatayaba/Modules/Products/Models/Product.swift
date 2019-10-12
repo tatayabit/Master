@@ -40,9 +40,9 @@ struct Product {
     var status: String
     var mainPair: ProductMainPair
     var supplierName: String
+    var productOptions: [ProductOption]
 
-
-    init(name: String = "", supplierName: String = "", description: String = "", offerPrices: Float = 0.00, price: String = "", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair()) {
+    init(name: String = "", supplierName: String = "", description: String = "", offerPrices: Float = 0.00, price: String = "", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair(), productOptions: [ProductOption] = [ProductOption]()) {
         self.name = name
         self.description = description
 //        self.imageUrl = imageUrl
@@ -53,6 +53,7 @@ struct Product {
         self.status = status
         self.mainPair = mainPair
         self.supplierName = supplierName
+        self.productOptions = productOptions
     }
 }
 
@@ -68,6 +69,7 @@ extension Product: Codable {
         case status = "status"
         case mainPair = "main_pair"
         case supplierName = "supplier_name"
+        case productOptions = "product_options"
     }
 
     init(from decoder: Decoder) throws {
@@ -84,6 +86,7 @@ extension Product: Codable {
         mainPair = try container.decodeIfPresent(ProductMainPair.self, forKey: .mainPair) ?? ProductMainPair()
 
         supplierName = try container.decodeIfPresent(String.self, forKey: .supplierName) ?? ""
+        productOptions = try container.decodeIfPresent([ProductOption].self, forKey: .productOptions) ?? [ProductOption]()
 
         var idVal = ""
         if let identifierString = try? container.decode(String.self, forKey: .identifier) {

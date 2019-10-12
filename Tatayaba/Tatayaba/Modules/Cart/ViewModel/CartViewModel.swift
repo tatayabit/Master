@@ -19,6 +19,8 @@ class CartViewModel {
 
     var pricingList = [CartPricingModel]()
     let cart = Cart.shared
+    
+    private let cartApiClient = CartAPIClient()
 
     weak var delegate: CartViewModelDelegate?
 
@@ -36,6 +38,11 @@ class CartViewModel {
         if let delegate = delegate {
             delegate.didFinishLoadingPricing()
         }
+    }
+    
+    //MARK:- Api
+    func applyCoupon(couponCode: String) {
+//        cartApiClient.applyCoupon(couponCode: <#T##String#>, completion: <#T##(APIResult<PlaceOrderResult?, MoyaError>) -> Void#>)
     }
 }
 
