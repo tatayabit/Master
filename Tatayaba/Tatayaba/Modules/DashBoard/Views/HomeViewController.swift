@@ -164,6 +164,18 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         // addProdcut to cart
         viewModel.addToCart(product: product)
     }
+    
+    func didSelectOneClick(product: Product) {
+        if Customer.shared.loggedin {
+            let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewCartViewController") as! NewCartViewController
+            controller.buyingWayType = 0
+            self.navigationController?.pushViewController(controller, animated: false)
+        } else {
+            let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "GuestSignUpViewcontroller") as! GuestSignUpViewcontroller
+            tabBarController?.tabBar.isHidden = true
+            navigationController?.pushViewController(controller, animated: true)
+        }
+    }
 
     //MARK:- SuppliersBlockViewProtocol
     func didSelectSupplier(at indexPath: IndexPath) {

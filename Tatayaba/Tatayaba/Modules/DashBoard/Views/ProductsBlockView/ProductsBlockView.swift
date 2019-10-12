@@ -11,10 +11,11 @@ import UIKit
 protocol ProductsBlockViewProtocol: class {
     func didSelectProduct(at indexPath: IndexPath)
     func didAddToCart(product: Product)
+    func didSelectOneClick(product: Product)
 }
 
 class ProductsBlockView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ProductsBlockCollectionViewCellDelegate {
-
+    
     @IBOutlet weak var bannersCollectionView: UICollectionView!
 
     @IBOutlet weak var titleLabel: UILabel!
@@ -85,6 +86,14 @@ class ProductsBlockView: UIView, UICollectionViewDelegate, UICollectionViewDataS
             guard let block = block else { return }
             let product = block.products[indexPath.row].fullDetails
             delegate.didAddToCart(product: product)
+        }
+    }
+    
+    func didSelectOneClickBuy(indexPath: IndexPath) {
+        if let delegate = delegate {
+            guard let block = block else { return }
+            let product = block.products[indexPath.row].fullDetails
+            delegate.didSelectOneClick(product: product)
         }
     }
 }
