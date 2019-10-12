@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sab-ra-ANU">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,7 +20,7 @@
             <objects>
                 <viewController storyboardIdentifier="ProductDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sab-ra-ANU" customClass="ProductDetailsViewController" customModule="Tatayaba" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iB0-e7-ZzJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJB-7f-aos" customClass="StackedScrollView" customModule="Tatayaba" customModuleProvider="target">
@@ -28,7 +28,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scC-D0-zMw">
-                                <rect key="frame" x="259" y="561" width="100" height="50"/>
+                                <rect key="frame" x="298" y="756" width="100" height="50"/>
                                 <color key="backgroundColor" red="0.87564182281494141" green="0.63852697610855103" blue="0.61103826761245728" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="ewM-HK-736"/>
@@ -42,9 +42,12 @@
                                         <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="oneClickBuyBtnClicked:" destination="sab-ra-ANU" eventType="touchUpInside" id="H9d-7X-obo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDx-B2-sDF">
-                                <rect key="frame" x="16" y="561" width="239" height="50"/>
+                                <rect key="frame" x="16" y="756" width="278" height="50"/>
                                 <color key="backgroundColor" red="0.13354238869999999" green="0.1071816161" blue="0.2066496015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="JY7-Sp-eqv"/>
@@ -63,14 +66,14 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A4h-HP-wvh">
-                                <rect key="frame" x="0.0" y="20" width="375" height="533"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="704"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="productDeatailsTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="productDeatailsTableViewCell" rowHeight="226" id="Mlu-K9-C5A" customClass="productDeatailsTableViewCell" customModule="Tatayaba" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="226"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="226"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mlu-K9-C5A" id="L6q-L8-rvC">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="225.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="225.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
