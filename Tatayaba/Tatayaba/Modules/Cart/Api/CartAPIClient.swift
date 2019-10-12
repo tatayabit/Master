@@ -16,7 +16,7 @@ struct CartAPIClient: APIClient {
     
     static let environment: APIEnvironment = .production
     
-    func applyCoupon(couponCode: String, completion: @escaping (APIResult<PlaceOrderResult?, MoyaError>) -> Void) {
-//        fetch(with: OrdersEndpoint.create(products: products, userId: userId, userData: userData, paymentId: paymentId), completion: completion)
+    func applyCoupon(couponCode: String, completion: @escaping (APIResult<couponResponse?, MoyaError>) -> Void) {
+        fetch(with: CartEndpoint.applyCoupon(code: couponCode), completion: completion)
     }
 }

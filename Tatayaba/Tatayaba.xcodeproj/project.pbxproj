@@ -12,7 +12,6 @@
 		109D29E5234A668F0052D01B /* CountrySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D29E4234A668F0052D01B /* CountrySettings.swift */; };
 		10B08375234CF41800DCE773 /* CartAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B08374234CF41800DCE773 /* CartAPIClient.swift */; };
 		10B08377234CF92C00DCE773 /* CartEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B08376234CF92C00DCE773 /* CartEndpoint.swift */; };
-		10B08379234CFA8C00DCE773 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B08378234CFA8C00DCE773 /* Coupon.swift */; };
 		10FC8517234E372800D13C34 /* ProductVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FC8516234E372800D13C34 /* ProductVariant.swift */; };
 		10FC8519234E373F00D13C34 /* ProductOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FC8518234E373F00D13C34 /* ProductOption.swift */; };
 		1100421122D4F3520099AE64 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100421022D4F3520099AE64 /* String+Extensions.swift */; };
@@ -182,6 +181,7 @@
 		11FEB4E122DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FEB4DF22DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib */; };
 		27497C53234E4EF600D84690 /* GuestSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27497C50234E4EF500D84690 /* GuestSignUpViewModel.swift */; };
 		27497C54234E4EF600D84690 /* GuestSignUpViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27497C52234E4EF500D84690 /* GuestSignUpViewcontroller.swift */; };
+		27A9088F235264240032DA41 /* couponResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A90875235264230032DA41 /* couponResponse.swift */; };
 		4C2007A723313FB50090658A /* productDeatailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2007A623313FB50090658A /* productDeatailsTableViewCell.swift */; };
 		4C2007A923320DE40090658A /* SelectOptionProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2007A823320DE40090658A /* SelectOptionProduct.swift */; };
 		4C2007AB23320E150090658A /* SelectOptionProduct.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C2007AA23320E150090658A /* SelectOptionProduct.xib */; };
@@ -264,7 +264,6 @@
 		109D29E4234A668F0052D01B /* CountrySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySettings.swift; sourceTree = "<group>"; };
 		10B08374234CF41800DCE773 /* CartAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartAPIClient.swift; sourceTree = "<group>"; };
 		10B08376234CF92C00DCE773 /* CartEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartEndpoint.swift; sourceTree = "<group>"; };
-		10B08378234CFA8C00DCE773 /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		10FC8516234E372800D13C34 /* ProductVariant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVariant.swift; sourceTree = "<group>"; };
 		10FC8518234E373F00D13C34 /* ProductOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductOption.swift; sourceTree = "<group>"; };
 		1100421022D4F3520099AE64 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -441,6 +440,7 @@
 		22CC9CEE04574A387EDF22EE /* Pods-TatayabaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.release.xcconfig"; sourceTree = "<group>"; };
 		27497C50234E4EF500D84690 /* GuestSignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestSignUpViewModel.swift; sourceTree = "<group>"; };
 		27497C52234E4EF500D84690 /* GuestSignUpViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestSignUpViewcontroller.swift; sourceTree = "<group>"; };
+		27A90875235264230032DA41 /* couponResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = couponResponse.swift; sourceTree = "<group>"; };
 		2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3521A060629ED90EC6114BA5 /* Pods-TatayabaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.debug.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C2007A623313FB50090658A /* productDeatailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productDeatailsTableViewCell.swift; sourceTree = "<group>"; };
@@ -1524,6 +1524,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		27A9085C235264230032DA41 /* CouponModels */ = {
+			isa = PBXGroup;
+			children = (
+				27A90875235264230032DA41 /* couponResponse.swift */,
+			);
+			path = CouponModels;
+			sourceTree = "<group>";
+		};
 		4C2007A523313F5E0090658A /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1827,9 +1835,9 @@
 		84BC08A022DC934A00C6180E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				27A9085C235264230032DA41 /* CouponModels */,
 				84BC089B22DC7D4900C6180E /* Cart.swift */,
 				1120C45C22E613FD00F99B60 /* CartItem.swift */,
-				10B08378234CFA8C00DCE773 /* Coupon.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2200,7 +2208,6 @@
 				112654AC22D2691400904FB5 /* ProductsAPIClient.swift in Sources */,
 				114D1A1822CBB33E009205F3 /* Product.swift in Sources */,
 				11B07919233BAF31003041E8 /* UITableView+Extensions.swift in Sources */,
-				10B08379234CFA8C00DCE773 /* Coupon.swift in Sources */,
 				1120C45F22E6184600F99B60 /* UIButton+Extensions.swift in Sources */,
 				117AC9F82314444200EFCE25 /* DeeplinkHandler.swift in Sources */,
 				84BC089C22DC7D4900C6180E /* Cart.swift in Sources */,
@@ -2240,6 +2247,7 @@
 				848E89CC22CCEAAC000AA24C /* FeatureProductCollectionViewCell.swift in Sources */,
 				116C938F22F0954500921893 /* PaymentAPIClient.swift in Sources */,
 				11624ED1230C464800E81ABD /* BlockImagePair.swift in Sources */,
+				27A9088F235264240032DA41 /* couponResponse.swift in Sources */,
 				11E8A679232816730091BD11 /* PriceTableViewCell.swift in Sources */,
 				11D4E69A2312E14500226A23 /* BannersCarouselView.swift in Sources */,
 				111C8A3C230B1487003F5FDB /* Block.swift in Sources */,

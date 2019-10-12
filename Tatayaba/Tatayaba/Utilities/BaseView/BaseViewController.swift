@@ -13,6 +13,7 @@ extension Constants {
     struct Common {
         static let ok = "OK".localized()
         static let error = "Error".localized()
+        static let success = "Success".localized()
     }
 }
 

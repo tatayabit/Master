@@ -22,7 +22,7 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     let viewModel = CartViewModel()
     // let we say until now (One_Click_Buy = 1 & Default_Way = 0)
     var buyingWayType: Int = 0
-    
+    var couponValue: String = "0"
     private let checkoutSegue = "checkout_segue"
 
     enum sectionType: Int {
@@ -50,8 +50,9 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     }
 
     func calculateTotal() {
-        totalPriceLabel.text = cart.totalPrice
-        viewModel.loadPricingListContent()
+        let totalPriceValue = (cart.totalPrice as NSString).integerValue + (couponValue as NSString).integerValue
+        totalPriceLabel.text = "\(totalPriceValue)"
+        viewModel.loadPricingListContent(couponValue: couponValue)
         let totalItemsText = "(" + String(cart.productsCount) + " " + Constants.Cart.items + ")"
         totalTitleLabel.attributedText = attributedTotalTitle(text: totalItemsText)
     }
@@ -99,7 +100,7 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
         }
 
         if viewModel.pricingList.count > 0 {
-            return 2
+            return 3
         }
         return 1
     }
@@ -172,5 +173,27 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
         performSegue(withIdentifier: checkoutSegue, sender: nil)
     }
     @IBAction func applyCouponAction(_ sender: UIButton) {
+        if let couponValue = couponTextField.text, couponValue != "" {
+            showLoadingIndicator(to: self.view)
+            viewModel.applyCoupon(couponCode: couponValue) { result in
+                self.hideLoadingIndicator(from: self.view)
+                switch result {
+                case .success(let couponResult):
+                    if let couponDiscound = couponResult?.total {
+                        print(couponDiscound)
+                        self.couponValue = "\(couponDiscound)"
+                        self.calculateTotal()
+                        self.couponTextField.text = ""
+                        self.showErrorAlerr(title: Constants.Common.success, message: "CouponAddedSuccessfully".localized(), handler: nil)
+                    } else {
+                        print("no coupon discound parsed")
+                    }
+                case .failure(let error):
+                    print("the error \(error)")
+                }
+            }
+        } else {
+            showErrorAlerr(title: Constants.Common.error, message: "Please enter coupon value!".localized(), handler: nil)
+        }
     }
 }
