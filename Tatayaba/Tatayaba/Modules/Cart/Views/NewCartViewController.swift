@@ -14,8 +14,9 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var totalTitleLabel: UILabel!
     @IBOutlet weak var checkoutContainerView: UIView!
-    @IBOutlet weak var couponContainerView: UIView!
+    @IBOutlet weak var couponContainerView: UIStackView!
     @IBOutlet weak var couponTextField: UITextField!
+    @IBOutlet weak var removeDiscountButton: UIButton!
     
 
     let cart = Cart.shared
@@ -47,6 +48,7 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     func setupUI() {
         cartTableview.register(PriceTableViewCell.nib, forCellReuseIdentifier: PriceTableViewCell.identifier)
         self.NavigationBarWithOutBackButton()
+        removeDiscountButton.isHidden = true
     }
 
     func calculateTotal() {
@@ -172,6 +174,14 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     @IBAction func checkoutAction(_ sender: Any) {
         performSegue(withIdentifier: checkoutSegue, sender: nil)
     }
+    
+    @IBAction func removeCouponAction(_ sender: UIButton) {
+        couponValue = "0"
+        calculateTotal()
+        self.setButton(button: removeDiscountButton, hidden: true)
+        self.showErrorAlerr(title: Constants.Common.success, message: "CouponRemovedSuccessfully".localized(), handler: nil)
+    }
+    
     @IBAction func applyCouponAction(_ sender: UIButton) {
         if let couponValue = couponTextField.text, couponValue != "" {
             showLoadingIndicator(to: self.view)
@@ -184,6 +194,7 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
                         self.couponValue = "\(couponDiscound)"
                         self.calculateTotal()
                         self.couponTextField.text = ""
+                        self.setButton(button: self.removeDiscountButton, hidden: false)
                         self.showErrorAlerr(title: Constants.Common.success, message: "CouponAddedSuccessfully".localized(), handler: nil)
                     } else {
                         print("no coupon discound parsed")
