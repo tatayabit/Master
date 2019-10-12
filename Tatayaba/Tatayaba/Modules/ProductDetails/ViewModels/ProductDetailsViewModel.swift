@@ -72,4 +72,8 @@ class ProductDetailsViewModel {
     func option(at indexPath: IndexPath) -> ProductOption {
         return self.product.productOptions[indexPath.row]
     }
+    
+    func numberOfRows(at section: Int) -> Int {
+        return self.product.productOptions[section].variants.count
+    }
 }

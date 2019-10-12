@@ -11,16 +11,15 @@ import UIKit
 class ProductDetailsViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var product_Tableview: UITableView!
-    let productDetailsView: ProductDetailsView = .fromNib()
-    let productOptionsView: ProductOptionsView = .fromNib()
-    let SelectOptionProductView: SelectOptionProduct = .fromNib()
     
     enum sectionType: Int {
         case details = 0, options
     }
     
     var viewModel: ProductDetailsViewModel?
-
+    var headerItems = [HeaderItem]()
+    var reloadSections: ((_ section: Int) -> Void)?
+    
     //MARK:- Init
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +34,20 @@ class ProductDetailsViewController: BaseViewController,UITableViewDelegate,UITab
         product_Tableview.register(OptionCollectionViewCell.nib, forCellReuseIdentifier: OptionCollectionViewCell.identifier)
     }
     
+    // MARK:- Load sections
+    func initSections() {
+        guard let viewModel = viewModel else { return }
+        let item = HeaderItem(rowCount: 1, collapsed: true, isCollapsible: false)
+        headerItems.append(item)
+
+        for i in 1..<(viewModel.optionsCount + 1) {
+            let numberOfRows = viewModel.numberOfRows(at: i)
+            let item = HeaderItem(rowCount: numberOfRows, collapsed: true, isCollapsible: numberOfRows > 0)
+            headerItems.append(item)
+        }
+    }
+    
+    // MARK:- Api
     func callDetailsApi() {
         product_Tableview.delegate = self
         product_Tableview.dataSource = self
@@ -45,6 +58,7 @@ class ProductDetailsViewController: BaseViewController,UITableViewDelegate,UITab
             switch result {
                 
             case .success:
+                self.initSections()
                 self.product_Tableview.reloadData()
                 
             case .failure(let error):
@@ -81,7 +95,7 @@ class ProductDetailsViewController: BaseViewController,UITableViewDelegate,UITab
     }
 
 }
-extension ProductDetailsViewController{
+extension ProductDetailsViewController: OptionsHeaderDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         guard let viewModel = viewModel else { return 1 }
@@ -94,7 +108,20 @@ extension ProductDetailsViewController{
             return 1
         default:
             // need to check if section oppened or no
-            return 1
+            if headerItems.count > 0 {
+                let item = headerItems[section]
+                guard item.isCollapsible else {
+                    return item.rowCount
+                }
+                
+                if item.collapsed {
+                    return 0
+                } else {
+                    return item.rowCount
+                }
+            }
+            
+            return 0
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -160,6 +187,46 @@ extension ProductDetailsViewController{
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 10
     }
+    
+    // MARK:- Header
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch section {
+        case sectionType.details.rawValue:
+            return 0
+        default:
+            return 0
+        }
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: OptionsHeader.identifier) as? OptionsHeader {
+            let item = headerItems[section]
+            
+//            headerView.configure(titleObj: <#T##String?#>, itemObj: <#T##HeaderItem#>, sectionObj: <#T##Int#>)
+            
+            headerView.delegate = self
+            return headerView
+        }
+        
+        return UIView()
+    }
+    
+    func toggleSection(header: OptionsHeader, section: Int) {
+        let item = headerItems[section]
+        if item.isCollapsible {
+            
+            // Toggle collapse
+            let collapsed = !item.collapsed
+            item.collapsed = collapsed
+//            header.setCollapsed(collapsed: collapsed)
+            headerItems[section] = item
+            // Adjust the number of the rows inside the section
+            if let block = reloadSections {
+                block(section)
+            }
+//            delegate?.didExpand(at: section, expanded: !collapsed)
+        }
+    }
+
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             tableView.deselectRow(at: indexPath, animated: true)
