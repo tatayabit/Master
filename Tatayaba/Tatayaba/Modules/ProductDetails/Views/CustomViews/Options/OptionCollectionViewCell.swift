@@ -25,12 +25,16 @@ class OptionCollectionViewCell: UITableViewCell {
     }
 
     private func setupUI() {
-//        selectionView.isHidden = true
+        removeButton.isHidden = true
     }
 
-    func configure(option: ProductOption) {
+    func configure(option: ProductVariant, selected: Bool) {
         self.titleLabel.text = option.name
-        //        productImageView.image = UIImage(named: imageName)
+//        productImageView.image = UIImage(named: imageName)
+    }
+    
+    func updateRemoveButton(hide: Bool) {
+        self.removeButton.isHidden = hide
     }
 
     func updateCount(count: Int) {

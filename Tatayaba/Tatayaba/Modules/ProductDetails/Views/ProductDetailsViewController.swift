@@ -32,6 +32,7 @@ class ProductDetailsViewController: BaseViewController,UITableViewDelegate,UITab
     
     func setupUI() {
         product_Tableview.register(OptionCollectionViewCell.nib, forCellReuseIdentifier: OptionCollectionViewCell.identifier)
+        product_Tableview.register(OptionsHeader.nib, forHeaderFooterViewReuseIdentifier: OptionsHeader.identifier)
     }
     
     // MARK:- Load sections
@@ -40,10 +41,17 @@ class ProductDetailsViewController: BaseViewController,UITableViewDelegate,UITab
         let item = HeaderItem(rowCount: 1, collapsed: true, isCollapsible: false)
         headerItems.append(item)
 
-        for i in 1..<(viewModel.optionsCount + 1) {
-            let numberOfRows = viewModel.numberOfRows(at: i)
-            let item = HeaderItem(rowCount: numberOfRows, collapsed: true, isCollapsible: numberOfRows > 0)
-            headerItems.append(item)
+        if viewModel.optionsCount > 0 {
+            for i in 1..<(viewModel.optionsCount + 1) {
+                let numberOfRows = viewModel.numberOfVariants(at: i)
+                let item = HeaderItem(rowCount: numberOfRows, collapsed: true, isCollapsible: numberOfRows > 0)
+                headerItems.append(item)
+            }
+            
+            reloadSections = { section in
+                let indexSet = IndexSet(integer: section)
+                self.product_Tableview.reloadSections(indexSet, with: .automatic)
+            }
         }
     }
     
@@ -108,18 +116,16 @@ extension ProductDetailsViewController: OptionsHeaderDelegate {
             return 1
         default:
             // need to check if section oppened or no
-            if headerItems.count > 0 {
+//            if headerItems.count > 0 {
                 let item = headerItems[section]
                 guard item.isCollapsible else {
                     return item.rowCount
                 }
                 
-                if item.collapsed {
-                    return 0
-                } else {
+                if !item.collapsed {
                     return item.rowCount
                 }
-            }
+//            }
             
             return 0
         }
@@ -131,61 +137,38 @@ extension ProductDetailsViewController: OptionsHeaderDelegate {
         default:
             return 60
         }
-        
-//        if indexPath.section == 0{
-//               return 407
-//        }
-//        if indexPath.section == 1{
-//            return 60
-//        }
-//        if indexPath.section == 2{
-//              return 200
-//
-//        }else{
-//            return 0
-//        }
-        
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch indexPath.section {
         case sectionType.details.rawValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: productDeatailsTableViewCell.identifier, for: indexPath) as! productDeatailsTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: ProductDeatailsTableViewCell.identifier, for: indexPath) as! ProductDeatailsTableViewCell
+            if let viewModel = viewModel {
+                cell.configure(viewModel: viewModel.detailsCellVM())
+            }
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: OptionCollectionViewCell.identifier) as! OptionCollectionViewCell
-//            cell.configure(option: <#T##ProductOption#>)
+            if let viewModel = viewModel {
+                cell.configure(option: viewModel.optionVariant(at: indexPath), selected: viewModel.selected(at: indexPath))
+            }
             return cell
         }
-//        if  indexPath.section == 0 {
-//
-//            self.productDetailsView.viewModel = viewModel
-//            self.productDetailsView.loadData()
-//            cell.addSubview(self.productDetailsView)
-//
-//        }
-//        if  indexPath.section == 1 {
-//                if indexPath.row == 0{
-//                    productOptionsView.viewModel = viewModel
-//                    cell.addSubview(productOptionsView)
-//                }else {
-//                      let SelectOptionProductView: SelectOptionProduct = .fromNib()
-//                      cell.addSubview(SelectOptionProductView)
-//                }
-//            }
-//        if  indexPath.section == 2
-//            {
-//                
-//            }
-  
-        
-        
     }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 10
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case sectionType.details.rawValue: break
+        default:
+            tableView.deselectRow(at: indexPath, animated: true)
+            guard let viewModel = viewModel else { return }
+            viewModel.didSelectOption(at: indexPath)
+            let cell = tableView.cellForRow(at: indexPath) as! OptionCollectionViewCell
+            cell.updateRemoveButton(hide: !viewModel.selected(at: indexPath))
+            
+//            product_Tableview.reloadData()
+        }
     }
     
     // MARK:- Header
@@ -194,17 +177,19 @@ extension ProductDetailsViewController: OptionsHeaderDelegate {
         case sectionType.details.rawValue:
             return 0
         default:
-            return 0
+            return 60
         }
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: OptionsHeader.identifier) as? OptionsHeader {
-            let item = headerItems[section]
-            
-//            headerView.configure(titleObj: <#T##String?#>, itemObj: <#T##HeaderItem#>, sectionObj: <#T##Int#>)
-            
-            headerView.delegate = self
-            return headerView
+            if section > 0 {
+                let item = headerItems[section]
+                guard let viewModel = viewModel else { return UIView() }
+                headerView.configure(titleObj: viewModel.optionHeader(at: section).name, itemObj: item, sectionObj: section)
+                headerView.backgroundColor = .white
+                headerView.delegate = self
+                return headerView
+            }
         }
         
         return UIView()
@@ -222,16 +207,15 @@ extension ProductDetailsViewController: OptionsHeaderDelegate {
             // Adjust the number of the rows inside the section
             if let block = reloadSections {
                 block(section)
+                if !collapsed {
+                    product_Tableview.scrollToRow(at: IndexPath(row: 0, section: section), at: .top, animated: true)
+                }
             }
-//            delegate?.didExpand(at: section, expanded: !collapsed)
         }
     }
-
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            tableView.deselectRow(at: indexPath, animated: true)
-          product_Tableview.reloadData()
-    }
     
-  
+    // MARK:- Footer
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
+    }
 }
