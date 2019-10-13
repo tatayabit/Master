@@ -38,7 +38,7 @@ extension CartEndpoint: TargetType {
     var method: Moya.Method {
         switch self {
         case .applyCoupon:
-            return .post
+            return .get
         }
     }
     

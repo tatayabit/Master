@@ -13,6 +13,7 @@ extension Constants {
     struct Common {
         static let ok = "OK".localized()
         static let error = "Error".localized()
+        static let success = "Success".localized()
     }
 }
 
@@ -127,5 +128,11 @@ extension UIViewController {
 
     func setupNavBarLogo() {
         self.setupNavigationBar(image:UIImage(named: "log_nav")!)
+    }
+    
+    func setButton(button: UIButton, hidden: Bool) {
+        UIView.transition(with: button, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            button.isHidden = hidden
+        })
     }
 }

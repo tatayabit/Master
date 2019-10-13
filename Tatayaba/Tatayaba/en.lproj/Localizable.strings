@@ -10,6 +10,7 @@
 "Change Language"="Change Language";
 "Subtotal"="Subtotal";
 "Shipping"="Shipping";
+"Coupon"="Discount";
 "items"="items";
 "Cart Total"="Cart Total";
 
@@ -27,7 +28,7 @@
 
 // Error
 "Error"="Error";
-
+"Success" = "Success";
 // Profile
 "My Orders"="My Orders";
 "Wish List"="Wish List";
@@ -42,3 +43,6 @@
 
 // Cart
 "Your Cart is Empty!"="Your Cart is Empty!";
+"Please enter coupon value!" = "Please enter coupon value!";
+"CouponAddedSuccessfully" = "Coupon Added Successfully";
+"CouponRemovedSuccessfully" = "Coupon Removed Successfully";

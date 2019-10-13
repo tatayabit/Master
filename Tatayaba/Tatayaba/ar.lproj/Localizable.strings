@@ -10,6 +10,7 @@
 "Change Language"="تغيير اللغة";
 "Subtotal"="المجموع";
 "Shipping"="الشحن";
+"Coupon"="خصم";
 "items"="أصناف";
 "Cart Total"="المجموع الكلي";
 
@@ -27,7 +28,7 @@
 
 // Error
 "Error"="خطأ";
-
+"Success" = "حسنا";
 // Profile
 "My Orders"="طلباتي";
 "Wish List"="Wish List";
@@ -41,3 +42,6 @@
 
 // Cart
 "Your Cart is Empty!"="السلة فارغة!";
+"Please enter coupon value!" = "من فضلك ادخل الكوبون الصحيح !";
+"CouponAddedSuccessfully" = "تم اضافه الخصم بنجاح";
+"CouponRemovedSuccessfully" = "تم حذف الخصم بنجاح";

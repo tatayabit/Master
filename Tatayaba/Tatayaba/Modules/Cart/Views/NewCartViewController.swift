@@ -14,13 +14,16 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var totalTitleLabel: UILabel!
     @IBOutlet weak var checkoutContainerView: UIView!
-
+    @IBOutlet weak var couponContainerView: UIStackView!
+    @IBOutlet weak var couponTextField: UITextField!
+    @IBOutlet weak var removeDiscountButton: UIButton!
+    
 
     let cart = Cart.shared
     let viewModel = CartViewModel()
     // let we say until now (One_Click_Buy = 1 & Default_Way = 0)
     var buyingWayType: Int = 0
-    
+    var couponValue: String = "0"
     private let checkoutSegue = "checkout_segue"
 
     enum sectionType: Int {
@@ -45,11 +48,13 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     func setupUI() {
         cartTableview.register(PriceTableViewCell.nib, forCellReuseIdentifier: PriceTableViewCell.identifier)
         self.NavigationBarWithOutBackButton()
+        removeDiscountButton.isHidden = true
     }
 
     func calculateTotal() {
-        totalPriceLabel.text = cart.totalPrice
-        viewModel.loadPricingListContent()
+        let totalPriceValue = (cart.totalPrice as NSString).integerValue + (couponValue as NSString).integerValue
+        totalPriceLabel.text = "\(totalPriceValue)"
+        viewModel.loadPricingListContent(couponValue: couponValue)
         let totalItemsText = "(" + String(cart.productsCount) + " " + Constants.Cart.items + ")"
         totalTitleLabel.attributedText = attributedTotalTitle(text: totalItemsText)
     }
@@ -88,14 +93,16 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
         if cart.productsCount > 0 {
             self.cartTableview.restore()
             checkoutContainerView.isHidden = false
+            couponContainerView.isHidden = false
         } else {
             self.cartTableview.setEmptyMessage(Constants.Cart.cartEmpty)
             checkoutContainerView.isHidden = true
+            couponContainerView.isHidden = true
             return 0
         }
 
         if viewModel.pricingList.count > 0 {
-            return 2
+            return (couponValue as NSString).integerValue > 0 ? 3 : 2
         }
         return 1
     }
@@ -117,7 +124,8 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
         case sectionType.item.rawValue:
             return cart.productsCount
         case sectionType.pricing.rawValue:
-            return viewModel.pricingList.count
+            let pricingCount = viewModel.pricingList.count
+            return (couponValue as NSString).integerValue > 0 ? pricingCount : pricingCount - 1 
         default: return 0
         }
     }
@@ -166,5 +174,38 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     //MARK:- IBActions
     @IBAction func checkoutAction(_ sender: Any) {
         performSegue(withIdentifier: checkoutSegue, sender: nil)
+    }
+    
+    @IBAction func removeCouponAction(_ sender: UIButton) {
+        couponValue = "0"
+        calculateTotal()
+        self.setButton(button: removeDiscountButton, hidden: true)
+        self.showErrorAlerr(title: Constants.Common.success, message: "CouponRemovedSuccessfully".localized(), handler: nil)
+    }
+    
+    @IBAction func applyCouponAction(_ sender: UIButton) {
+        if let couponValue = couponTextField.text, couponValue != "" {
+            showLoadingIndicator(to: self.view)
+            viewModel.applyCoupon(couponCode: couponValue) { result in
+                self.hideLoadingIndicator(from: self.view)
+                switch result {
+                case .success(let couponResult):
+                    if let couponDiscound = couponResult?.total {
+                        print(couponDiscound)
+                        self.couponValue = "\(couponDiscound)"
+                        self.calculateTotal()
+                        self.couponTextField.text = ""
+                        self.setButton(button: self.removeDiscountButton, hidden: false)
+                        self.showErrorAlerr(title: Constants.Common.success, message: "CouponAddedSuccessfully".localized(), handler: nil)
+                    } else {
+                        print("no coupon discound parsed")
+                    }
+                case .failure(let error):
+                    print("the error \(error)")
+                }
+            }
+        } else {
+            showErrorAlerr(title: Constants.Common.error, message: "Please enter coupon value!".localized(), handler: nil)
+        }
     }
 }

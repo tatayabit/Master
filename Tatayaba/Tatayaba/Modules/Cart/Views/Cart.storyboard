@@ -21,327 +21,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--CART-->
-        <scene sceneID="5Tk-1E-S66">
-            <objects>
-                <viewController storyboardIdentifier="CartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EFf-bZ-G4f" customClass="CartViewController" customModule="Tatayaba" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hfg-r0-u4D">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18m-HN-A5Z">
-                                <rect key="frame" x="0.0" y="20" width="375" height="680"/>
-                                <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EgH-bz-rDy">
-                                        <rect key="frame" x="10" y="10" width="355" height="216"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="216" id="27W-zM-Irc"/>
-                                        </constraints>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartCellIdentifier" rowHeight="106" id="0JF-oX-Cgy" customClass="CartTableViewCell" customModule="Tatayaba" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="355" height="106"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0JF-oX-Cgy" id="1R7-rG-3Kr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="105.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHs-0i-b0U">
-                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="111"/>
-                                                            <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CartImage" translatesAutoresizingMaskIntoConstraints="NO" id="WKS-SU-I9L">
-                                                                    <rect key="frame" x="16" y="16" width="60" height="60"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="60" id="YgF-gW-EGN"/>
-                                                                        <constraint firstAttribute="width" constant="60" id="eS9-V2-dvx"/>
-                                                                    </constraints>
-                                                                </imageView>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOg-Ss-NGy">
-                                                                    <rect key="frame" x="314" y="58" width="15" height="18"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="15" id="JRQ-jK-p4u"/>
-                                                                    </constraints>
-                                                                    <state key="normal" backgroundImage="delete"/>
-                                                                    <connections>
-                                                                        <action selector="removeItemAction:" destination="0JF-oX-Cgy" eventType="touchUpInside" id="eCs-hi-Deq"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Bi4-CK-inz">
-                                                                    <rect key="frame" x="90" y="16" width="204" height="66.5"/>
-                                                                    <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intash- 500ml" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4O-o1-m9A">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="204" height="17.5"/>
-                                                                            <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.00 KWD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcr-Ih-tIj">
-                                                                            <rect key="frame" x="0.0" y="24.5" width="204" height="17.5"/>
-                                                                            <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QTY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vM3-WI-CgY">
-                                                                            <rect key="frame" x="0.0" y="49" width="204" height="17.5"/>
-                                                                            <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                </stackView>
-                                                            </subviews>
-                                                            <color key="backgroundColor" red="0.97244364023208618" green="0.97260981798171997" blue="0.97243314981460571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstItem="WKS-SU-I9L" firstAttribute="top" secondItem="Bi4-CK-inz" secondAttribute="top" id="3u2-p2-eV0"/>
-                                                                <constraint firstItem="MOg-Ss-NGy" firstAttribute="top" secondItem="eHs-0i-b0U" secondAttribute="top" constant="58" id="8uc-oW-H8n"/>
-                                                                <constraint firstItem="WKS-SU-I9L" firstAttribute="top" secondItem="eHs-0i-b0U" secondAttribute="top" constant="16" id="9Wq-to-4xX"/>
-                                                                <constraint firstItem="MOg-Ss-NGy" firstAttribute="leading" secondItem="Bi4-CK-inz" secondAttribute="trailing" constant="20" id="DAA-U9-YIS"/>
-                                                                <constraint firstItem="WKS-SU-I9L" firstAttribute="leading" secondItem="eHs-0i-b0U" secondAttribute="leading" constant="16" id="is5-3N-dWe"/>
-                                                                <constraint firstItem="Bi4-CK-inz" firstAttribute="leading" secondItem="WKS-SU-I9L" secondAttribute="trailing" constant="14" id="nlH-go-fPg"/>
-                                                                <constraint firstAttribute="trailing" secondItem="MOg-Ss-NGy" secondAttribute="trailing" constant="26" id="sAk-BO-XLl"/>
-                                                            </constraints>
-                                                        </view>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="bottomMargin" secondItem="eHs-0i-b0U" secondAttribute="bottom" constant="-16" id="H4V-DJ-hRp"/>
-                                                        <constraint firstItem="eHs-0i-b0U" firstAttribute="leading" secondItem="1R7-rG-3Kr" secondAttribute="leading" id="NMq-Dr-RCq"/>
-                                                        <constraint firstAttribute="trailing" secondItem="eHs-0i-b0U" secondAttribute="trailing" id="Ony-oP-sEr"/>
-                                                        <constraint firstItem="eHs-0i-b0U" firstAttribute="top" secondItem="1R7-rG-3Kr" secondAttribute="top" id="WvA-ua-rZy"/>
-                                                    </constraints>
-                                                </tableViewCellContentView>
-                                                <connections>
-                                                    <outlet property="nameLabel" destination="i4O-o1-m9A" id="gWW-70-Cw1"/>
-                                                    <outlet property="priceLabel" destination="Vcr-Ih-tIj" id="Hfx-kM-Ih0"/>
-                                                    <outlet property="productImageView" destination="WKS-SU-I9L" id="mcM-LZ-tf5"/>
-                                                    <outlet property="quantityLabel" destination="vM3-WI-CgY" id="0U2-0l-h0R"/>
-                                                    <outlet property="removeItem" destination="MOg-Ss-NGy" id="hv3-H2-TZ1"/>
-                                                </connections>
-                                            </tableViewCell>
-                                        </prototypes>
-                                        <connections>
-                                            <outlet property="dataSource" destination="EFf-bZ-G4f" id="3an-Ar-myH"/>
-                                            <outlet property="delegate" destination="EFf-bZ-G4f" id="ZtA-VP-ERd"/>
-                                        </connections>
-                                    </tableView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6a2-Cs-sQR">
-                                        <rect key="frame" x="10" y="234" width="355" height="218"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cart total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENx-yA-7bQ">
-                                                <rect key="frame" x="18" y="18" width="95" height="25"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
-                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10.000 KWD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIN-NL-Yyh">
-                                                <rect key="frame" x="216" y="18" width="124" height="25"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Discount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dG5-Hw-Oa5">
-                                                <rect key="frame" x="18" y="65" width="95" height="25"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
-                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-2.000 KWD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWW-ej-dCu">
-                                                <rect key="frame" x="216" y="65" width="124" height="25"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
-                                                <color key="textColor" red="0.80784313730000001" green="0.039215686270000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shipping cost" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GX8-Su-GXQ">
-                                                <rect key="frame" x="18" y="117" width="128" height="25"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
-                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2.500 KWD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S24-bA-zBx">
-                                                <rect key="frame" x="216" y="117" width="124" height="25"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1.750 KWD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLB-dZ-AIJ">
-                                                <rect key="frame" x="216" y="167" width="124" height="25"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VAT &amp; Custom duties" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWT-BZ-ZQC">
-                                                <rect key="frame" x="18" y="167" width="177" height="25"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="17"/>
-                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="218" id="WEZ-Hd-2OM"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O1m-mK-KNy">
-                                        <rect key="frame" x="10" y="462" width="355" height="90"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="offer_icon_percentage" translatesAutoresizingMaskIntoConstraints="NO" id="dGc-FT-kS0">
-                                                <rect key="frame" x="12" y="33.5" width="28" height="23"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="23" id="3Fe-1F-4Ur"/>
-                                                    <constraint firstAttribute="width" constant="28" id="OoC-KZ-gnf"/>
-                                                </constraints>
-                                            </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Enter Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P7i-6T-TQ7">
-                                                <rect key="frame" x="44" y="25" width="195" height="40"/>
-                                                <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="CRV-rK-IGR"/>
-                                                </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9HG-Oz-QDr">
-                                                <rect key="frame" x="243" y="30" width="97" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="97" id="68h-Yu-j11"/>
-                                                    <constraint firstAttribute="height" constant="30" id="VWE-Ar-Oc4"/>
-                                                </constraints>
-                                                <state key="normal" title="Apply Coupon">
-                                                    <color key="titleColor" red="0.19607843137254902" green="0.22745098039215686" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="90" id="0G0-dW-EIr"/>
-                                            <constraint firstItem="dGc-FT-kS0" firstAttribute="centerY" secondItem="O1m-mK-KNy" secondAttribute="centerY" id="5Px-pb-57p"/>
-                                            <constraint firstItem="P7i-6T-TQ7" firstAttribute="leading" secondItem="dGc-FT-kS0" secondAttribute="trailing" constant="4" id="JvQ-o9-CRS"/>
-                                            <constraint firstItem="9HG-Oz-QDr" firstAttribute="centerY" secondItem="dGc-FT-kS0" secondAttribute="centerY" id="Nl2-Hl-NaM"/>
-                                            <constraint firstItem="9HG-Oz-QDr" firstAttribute="leading" secondItem="P7i-6T-TQ7" secondAttribute="trailing" constant="4" id="OfY-Ov-Xwy"/>
-                                            <constraint firstAttribute="trailing" secondItem="9HG-Oz-QDr" secondAttribute="trailing" constant="15" id="pMW-FD-b7n"/>
-                                            <constraint firstItem="dGc-FT-kS0" firstAttribute="leading" secondItem="O1m-mK-KNy" secondAttribute="leading" constant="12" id="tvZ-Yw-YYB"/>
-                                            <constraint firstItem="P7i-6T-TQ7" firstAttribute="centerY" secondItem="dGc-FT-kS0" secondAttribute="centerY" id="ybx-Vp-Vnj"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="6a2-Cs-sQR" firstAttribute="top" secondItem="EgH-bz-rDy" secondAttribute="bottom" constant="8" id="13Y-qf-6on"/>
-                                    <constraint firstAttribute="trailing" secondItem="O1m-mK-KNy" secondAttribute="trailing" constant="10" id="Cbw-eW-tJt"/>
-                                    <constraint firstAttribute="trailing" secondItem="6a2-Cs-sQR" secondAttribute="trailing" constant="10" id="I9D-r9-Gou"/>
-                                    <constraint firstItem="O1m-mK-KNy" firstAttribute="leading" secondItem="18m-HN-A5Z" secondAttribute="leading" constant="10" id="QqA-QP-YdY"/>
-                                    <constraint firstItem="EgH-bz-rDy" firstAttribute="leading" secondItem="18m-HN-A5Z" secondAttribute="leading" constant="10" id="Rhk-tF-lBY"/>
-                                    <constraint firstAttribute="trailing" secondItem="EgH-bz-rDy" secondAttribute="trailing" constant="10" id="T8d-Iw-KRL"/>
-                                    <constraint firstAttribute="bottom" secondItem="O1m-mK-KNy" secondAttribute="bottom" constant="184" id="cMt-qy-S3s"/>
-                                    <constraint firstItem="EgH-bz-rDy" firstAttribute="top" secondItem="18m-HN-A5Z" secondAttribute="top" constant="10" id="fjV-EF-bKz"/>
-                                    <constraint firstItem="O1m-mK-KNy" firstAttribute="top" secondItem="6a2-Cs-sQR" secondAttribute="bottom" constant="10" id="jTK-Pn-gJt"/>
-                                    <constraint firstItem="6a2-Cs-sQR" firstAttribute="leading" secondItem="18m-HN-A5Z" secondAttribute="leading" constant="10" id="lSf-au-Jh2"/>
-                                    <constraint firstItem="EgH-bz-rDy" firstAttribute="centerX" secondItem="18m-HN-A5Z" secondAttribute="centerX" id="qGb-JO-eAO"/>
-                                </constraints>
-                            </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NOZ-d3-9Iv">
-                                <rect key="frame" x="0.0" y="629" width="375" height="71"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cart total " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1z-pB-ohZ">
-                                        <rect key="frame" x="8" y="5" width="62" height="15"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(2 items)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThO-2X-Otf">
-                                        <rect key="frame" x="74" y="5" width="54" height="15"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="14.200 KWD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osK-8Z-wQW">
-                                        <rect key="frame" x="279" y="5" width="76" height="15"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3q-Y3-AxZ">
-                                        <rect key="frame" x="8" y="25" width="359" height="40"/>
-                                        <color key="backgroundColor" red="0.13354238867759705" green="0.107181616127491" blue="0.20664960145950317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="3ad-ri-2jr"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
-                                        <state key="normal" title="CHECKOUT NOW">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="checkoutAction:" destination="EFf-bZ-G4f" eventType="touchUpInside" id="Jvf-C0-tjP"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="S3q-Y3-AxZ" secondAttribute="trailing" constant="8" id="RmI-9V-ixq"/>
-                                    <constraint firstItem="S3q-Y3-AxZ" firstAttribute="leading" secondItem="NOZ-d3-9Iv" secondAttribute="leading" constant="8" id="WFv-XA-mgR"/>
-                                    <constraint firstAttribute="height" constant="71" id="ZTM-5a-Rau"/>
-                                    <constraint firstAttribute="bottom" secondItem="S3q-Y3-AxZ" secondAttribute="bottom" constant="6" id="fCI-6L-ya6"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="18m-HN-A5Z" firstAttribute="bottom" secondItem="scu-WO-tSO" secondAttribute="bottom" id="785-2b-SQw"/>
-                            <constraint firstItem="18m-HN-A5Z" firstAttribute="trailing" secondItem="scu-WO-tSO" secondAttribute="trailing" id="Dbb-fB-P4m"/>
-                            <constraint firstItem="18m-HN-A5Z" firstAttribute="top" secondItem="scu-WO-tSO" secondAttribute="top" id="PJE-EH-4bv"/>
-                            <constraint firstItem="18m-HN-A5Z" firstAttribute="leading" secondItem="scu-WO-tSO" secondAttribute="leading" id="a7h-tM-ZRl"/>
-                            <constraint firstItem="NOZ-d3-9Iv" firstAttribute="bottom" secondItem="scu-WO-tSO" secondAttribute="bottom" id="agW-G4-jhc"/>
-                            <constraint firstItem="NOZ-d3-9Iv" firstAttribute="trailing" secondItem="scu-WO-tSO" secondAttribute="trailing" id="eRE-Bp-IoK"/>
-                            <constraint firstItem="NOZ-d3-9Iv" firstAttribute="leading" secondItem="scu-WO-tSO" secondAttribute="leading" id="oeD-HJ-Nou"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="scu-WO-tSO"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="CART" id="dfG-Hb-cyf"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="700"/>
-                    <connections>
-                        <outlet property="cart_Tableview" destination="EgH-bz-rDy" id="9wX-gU-SSI"/>
-                        <outlet property="subtotalPriceLabel" destination="ZIN-NL-Yyh" id="Mjk-Qw-CUr"/>
-                        <outlet property="totalPriceLabel" destination="osK-8Z-wQW" id="EgM-XL-YP4"/>
-                        <segue destination="WJK-Ai-eAw" kind="show" identifier="checkout_segue" id="7Oz-XM-C63"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mR7-fh-ReS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="844" y="152.02398800599701"/>
-        </scene>
         <!--CheckOut-->
         <scene sceneID="aJb-kV-sC4">
             <objects>
@@ -368,7 +47,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8i6-2A-QXN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="120" y="153.82308845577214"/>
+            <point key="canvasLocation" x="524" y="146"/>
         </scene>
         <!--CART-->
         <scene sceneID="WlR-5y-WeC">
@@ -422,7 +101,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sdk-r7-OJA">
-                                <rect key="frame" x="0.0" y="64" width="375" height="516"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="381"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CartTableViewCell" rowHeight="106" id="QE9-ah-kei" customClass="CartTableViewCell" customModule="Tatayaba" customModuleProvider="target">
@@ -436,7 +115,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="111"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CartImage" translatesAutoresizingMaskIntoConstraints="NO" id="rhL-QG-rQF">
-                                                            <rect key="frame" x="16" y="16" width="60" height="60"/>
+                                                            <rect key="frame" x="15.999999999999996" y="16" width="60" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="QaV-HQ-vZ6"/>
                                                                 <constraint firstAttribute="height" constant="60" id="Qca-7x-61t"/>
@@ -453,22 +132,22 @@
                                                             </connections>
                                                         </button>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="cnR-Pl-RzP">
-                                                            <rect key="frame" x="90" y="16" width="224" height="66.5"/>
+                                                            <rect key="frame" x="90" y="16" width="224" height="59"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intash- 500ml" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzI-9s-7db">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="224" height="17.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="224" height="15"/>
                                                                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.00 KWD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1N5-Qh-0zj">
-                                                                    <rect key="frame" x="0.0" y="24.5" width="224" height="17.5"/>
+                                                                    <rect key="frame" x="0.0" y="22" width="224" height="15"/>
                                                                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QTY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sh4-ce-mNU">
-                                                                    <rect key="frame" x="0.0" y="49" width="224" height="17.5"/>
+                                                                    <rect key="frame" x="0.0" y="44" width="224" height="15"/>
                                                                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -512,15 +191,88 @@
                                     <outlet property="delegate" destination="Jjl-9Q-NrU" id="vEk-kM-pXe"/>
                                 </connections>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KSg-wN-SYh">
+                                <rect key="frame" x="0.0" y="445" width="375" height="130"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SkB-UI-5FE">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="offer_icon_percentage" translatesAutoresizingMaskIntoConstraints="NO" id="db6-Zk-alU">
+                                                <rect key="frame" x="12" y="33.5" width="28" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="23" id="AdY-FY-OXu"/>
+                                                    <constraint firstAttribute="width" constant="28" id="PSB-PS-cyN"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Enter Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I2x-iQ-D9j">
+                                                <rect key="frame" x="44" y="25" width="215" height="40"/>
+                                                <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Q8b-xO-oPY"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLa-W9-b4k">
+                                                <rect key="frame" x="263" y="30" width="97" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="87V-iL-cbt"/>
+                                                    <constraint firstAttribute="width" constant="97" id="hHa-pJ-tY0"/>
+                                                </constraints>
+                                                <state key="normal" title="Apply Coupon">
+                                                    <color key="titleColor" red="0.1960784314" green="0.2274509804" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="applyCouponAction:" destination="Jjl-9Q-NrU" eventType="touchUpInside" id="rmR-7a-pty"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="XLa-W9-b4k" firstAttribute="centerY" secondItem="db6-Zk-alU" secondAttribute="centerY" id="G5s-3e-fih"/>
+                                            <constraint firstAttribute="trailing" secondItem="XLa-W9-b4k" secondAttribute="trailing" constant="15" id="JBT-rF-8O6"/>
+                                            <constraint firstItem="XLa-W9-b4k" firstAttribute="leading" secondItem="I2x-iQ-D9j" secondAttribute="trailing" constant="4" id="VHK-dM-kga"/>
+                                            <constraint firstItem="db6-Zk-alU" firstAttribute="centerY" secondItem="SkB-UI-5FE" secondAttribute="centerY" id="YUU-tL-Tfr"/>
+                                            <constraint firstItem="I2x-iQ-D9j" firstAttribute="leading" secondItem="db6-Zk-alU" secondAttribute="trailing" constant="4" id="cWg-8x-LD8"/>
+                                            <constraint firstAttribute="height" constant="90" id="d8O-lA-tW5"/>
+                                            <constraint firstItem="I2x-iQ-D9j" firstAttribute="centerY" secondItem="db6-Zk-alU" secondAttribute="centerY" id="evL-ed-QvJ"/>
+                                            <constraint firstItem="db6-Zk-alU" firstAttribute="leading" secondItem="SkB-UI-5FE" secondAttribute="leading" constant="12" id="v9O-ja-i5g"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNj-tF-UM1">
+                                        <rect key="frame" x="0.0" y="90" width="375" height="40"/>
+                                        <color key="backgroundColor" red="0.5560434083520549" green="0.0" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="4qn-8q-CkC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
+                                        <state key="normal" title="REMOVE DISOUNT">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="removeCouponAction:" destination="Jjl-9Q-NrU" eventType="touchUpInside" id="v5N-4C-QRZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="sdk-r7-OJA" firstAttribute="leading" secondItem="6fX-3b-IIb" secondAttribute="leading" id="1Eo-3l-heT"/>
                             <constraint firstItem="93f-4v-x2G" firstAttribute="trailing" secondItem="6fX-3b-IIb" secondAttribute="trailing" id="9nl-LC-VPo"/>
                             <constraint firstItem="93f-4v-x2G" firstAttribute="bottom" secondItem="6fX-3b-IIb" secondAttribute="bottom" id="CTo-Zv-Hqv"/>
-                            <constraint firstItem="93f-4v-x2G" firstAttribute="top" secondItem="sdk-r7-OJA" secondAttribute="bottom" id="Gd6-ID-IpY"/>
+                            <constraint firstItem="6fX-3b-IIb" firstAttribute="trailing" secondItem="KSg-wN-SYh" secondAttribute="trailing" id="MND-GQ-54Q"/>
                             <constraint firstItem="93f-4v-x2G" firstAttribute="leading" secondItem="6fX-3b-IIb" secondAttribute="leading" id="X7Z-hR-3zk"/>
+                            <constraint firstItem="KSg-wN-SYh" firstAttribute="top" secondItem="sdk-r7-OJA" secondAttribute="bottom" id="ec1-yH-3Es"/>
+                            <constraint firstItem="KSg-wN-SYh" firstAttribute="leading" secondItem="6fX-3b-IIb" secondAttribute="leading" id="fWf-kG-Z4L"/>
                             <constraint firstItem="sdk-r7-OJA" firstAttribute="top" secondItem="6fX-3b-IIb" secondAttribute="top" id="mpW-DT-wDl"/>
+                            <constraint firstItem="93f-4v-x2G" firstAttribute="top" secondItem="KSg-wN-SYh" secondAttribute="bottom" constant="5" id="qfr-NG-ABU"/>
                             <constraint firstItem="6fX-3b-IIb" firstAttribute="trailing" secondItem="sdk-r7-OJA" secondAttribute="trailing" id="ugU-Yn-yMg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6fX-3b-IIb"/>
@@ -533,6 +285,9 @@
                     <connections>
                         <outlet property="cartTableview" destination="sdk-r7-OJA" id="rqQ-t2-OWM"/>
                         <outlet property="checkoutContainerView" destination="93f-4v-x2G" id="jjc-RO-msW"/>
+                        <outlet property="couponContainerView" destination="KSg-wN-SYh" id="g31-r4-KBq"/>
+                        <outlet property="couponTextField" destination="I2x-iQ-D9j" id="QSk-gZ-XC1"/>
+                        <outlet property="removeDiscountButton" destination="aNj-tF-UM1" id="0pL-5v-nhv"/>
                         <outlet property="totalPriceLabel" destination="r3s-NS-Zlb" id="JNh-Ry-dZq"/>
                         <outlet property="totalTitleLabel" destination="zzS-WW-8Am" id="pcZ-bk-a2q"/>
                         <segue destination="WJK-Ai-eAw" kind="show" identifier="checkout_segue" id="Rn2-Wi-Ytg"/>
@@ -548,7 +303,4 @@
         <image name="delete" width="8.5" height="10.5"/>
         <image name="offer_icon_percentage" width="16.5" height="14"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Rn2-Wi-Ytg"/>
-    </inferredMetricsTieBreakers>
 </document>
