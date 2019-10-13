@@ -102,7 +102,7 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
         }
 
         if viewModel.pricingList.count > 0 {
-            return 3
+            return (couponValue as NSString).integerValue > 0 ? 3 : 2
         }
         return 1
     }
@@ -124,7 +124,8 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
         case sectionType.item.rawValue:
             return cart.productsCount
         case sectionType.pricing.rawValue:
-            return viewModel.pricingList.count
+            let pricingCount = viewModel.pricingList.count
+            return (couponValue as NSString).integerValue > 0 ? pricingCount : pricingCount - 1 
         default: return 0
         }
     }
