@@ -8,6 +8,7 @@
 
 import AVFoundation
 import Photos
+import UIKit
 
 protocol ImagePickerDelegate: class {
     func imagePickerDelegate(canUseCamera accessIsAllowed: Bool, delegatedForm: ImagePicker)

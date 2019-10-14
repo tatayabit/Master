@@ -21,11 +21,13 @@ class ProductDetailsViewModel {
 
     var optionsCount: Int { return self.product.productOptions.count }
     private var selectedOptions = [OptionsSelection]()
-    
+    private var selectedQuantity: Int
+
     
     //MARK:- Init
     init(product: Product) {
         self.product = product
+        self.selectedQuantity = 1
     }
     
     //MARK:- Api
@@ -49,7 +51,20 @@ class ProductDetailsViewModel {
     //MARK:- Product Details
     func addToCart()  {
         let cart = Cart.shared
-        cart.addProduct(product: product)
+        cart.addProduct(product: product, quantity: selectedQuantity)
+    }
+    
+    //MARK:- Product Details
+    func increase() {
+        if self.selectedQuantity < 100 {
+            self.selectedQuantity += 1
+        }
+    }
+    
+    func decrease() {
+        if self.selectedQuantity > 1 {
+            self.selectedQuantity -= 1
+        }
     }
 
     //MARK:- Product Options Header
@@ -81,6 +96,11 @@ class ProductDetailsViewModel {
     // MARK:- Options Selections
     func selected(at indexPath: IndexPath) -> Bool {
         let variant = optionVariant(at: indexPath)
+        if variant.identifier == "400" {
+            print("variant: \(variant)")
+            print("section: \(indexPath.section)")
+        }
+       
         let foundOptions = self.selectedOptions.filter{ $0.section == indexPath.section && $0.selectedVariant == variant.identifier }
         return foundOptions.count > 0
     }

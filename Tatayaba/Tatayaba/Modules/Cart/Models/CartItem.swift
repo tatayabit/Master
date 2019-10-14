@@ -14,10 +14,10 @@ class CartItem {
     private let maxCount = 99
     private let minCount = 0
 
-    init(productId: String = "" , productName: String = "") {
+    init(productId: String = "" , productName: String = "", quantity: Int = 1) {
         self.productId = productId
         self.productName = productName
-        self.increaseCount(by: 1)
+        self.increaseCount(by: quantity)
     }
 
     func increaseCount(by value: Int) {

@@ -23,12 +23,12 @@ class Cart {
     var totalPrice: String { return String(calculateTotal()).formattedPrice }
 
     //MARK:- Operational functions
-    func addProduct(product: Product) {
+    func addProduct(product: Product, quantity: Int = 1) {
         if productExistedInCart(product: product) {
             let cartItem = self.cartItem(for: product)
             increaseCount(cartItem: cartItem)
         } else {
-            let productModel = CartItem(productId: String(product.identifier), productName: product.name)
+            let productModel = CartItem(productId: String(product.identifier), productName: product.name, quantity: quantity)
             cartItemsArr.append(productModel)
             productsArr.append(product)
         }

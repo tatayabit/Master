@@ -15,7 +15,11 @@ class OptionCollectionViewCell: UITableViewCell {
 //    @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var removeButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
-
+    var choose: Bool = false {
+        didSet {
+            self.removeButton.isHidden = !choose
+        }
+    }
 
 
     override func awakeFromNib() {
@@ -25,16 +29,17 @@ class OptionCollectionViewCell: UITableViewCell {
     }
 
     private func setupUI() {
-        removeButton.isHidden = true
+        self.choose = false
     }
 
-    func configure(option: ProductVariant, selected: Bool) {
+    func configure(option: ProductVariant) {
         self.titleLabel.text = option.name
+        updateRemoveButton(hide: !choose)
 //        productImageView.image = UIImage(named: imageName)
     }
     
     func updateRemoveButton(hide: Bool) {
-        self.removeButton.isHidden = hide
+        choose = !hide
     }
 
     func updateCount(count: Int) {

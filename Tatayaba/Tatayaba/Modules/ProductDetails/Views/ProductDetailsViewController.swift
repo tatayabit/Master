@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProductDetailsViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
+class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var product_Tableview: UITableView!
     
@@ -78,6 +78,7 @@ class ProductDetailsViewController: BaseViewController,UITableViewDelegate,UITab
         })
     }
 
+    //MARK:- IBActions
     @IBAction func Add_Cart(_ sender: Any) {
         addToCartAction()
         let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewCartViewController") as! NewCartViewController
@@ -96,14 +97,13 @@ class ProductDetailsViewController: BaseViewController,UITableViewDelegate,UITab
         }
     }
     
-    //MARK:- IBActions
     func addToCartAction() {
         guard let viewModel = viewModel else { return }
         viewModel.addToCart()
     }
 
 }
-extension ProductDetailsViewController: OptionsHeaderDelegate {
+extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTableViewCellDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         guard let viewModel = viewModel else { return 1 }
@@ -145,13 +145,14 @@ extension ProductDetailsViewController: OptionsHeaderDelegate {
         case sectionType.details.rawValue:
             let cell = tableView.dequeueReusableCell(withIdentifier: ProductDeatailsTableViewCell.identifier, for: indexPath) as! ProductDeatailsTableViewCell
             if let viewModel = viewModel {
-                cell.configure(viewModel: viewModel.detailsCellVM())
+                cell.configure(productVM: viewModel.detailsCellVM())
             }
+            cell.delegate = self
             return cell
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: OptionCollectionViewCell.identifier) as! OptionCollectionViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: OptionCollectionViewCell.identifier, for: indexPath) as! OptionCollectionViewCell
             if let viewModel = viewModel {
-                cell.configure(option: viewModel.optionVariant(at: indexPath), selected: viewModel.selected(at: indexPath))
+                cell.configure(option: viewModel.optionVariant(at: indexPath))
             }
             return cell
         }
@@ -186,7 +187,6 @@ extension ProductDetailsViewController: OptionsHeaderDelegate {
                 let item = headerItems[section]
                 guard let viewModel = viewModel else { return UIView() }
                 headerView.configure(titleObj: viewModel.optionHeader(at: section).name, itemObj: item, sectionObj: section)
-                headerView.backgroundColor = .white
                 headerView.delegate = self
                 return headerView
             }
@@ -217,5 +217,16 @@ extension ProductDetailsViewController: OptionsHeaderDelegate {
     // MARK:- Footer
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 10
+    }
+    
+    // MARK:- ProductDeatailsTableViewCellDelegate
+    func didIncreaseQuantity() {
+        guard let viewModel = viewModel else { return }
+        viewModel.increase()
+    }
+      
+    func didDecreaseQuantity() {
+        guard let viewModel = viewModel else { return }
+        viewModel.decrease()
     }
 }

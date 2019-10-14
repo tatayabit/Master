@@ -2631,7 +2631,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BVM8GR9MVP;
+				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = TatayabaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tatayaba.TatayabaTests;
@@ -2649,7 +2649,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BVM8GR9MVP;
+				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = TatayabaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tatayaba.TatayabaTests;
@@ -2666,7 +2666,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BVM8GR9MVP;
+				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = TatayabaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tatayaba.TatayabaUITests;
@@ -2683,7 +2683,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BVM8GR9MVP;
+				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = TatayabaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tatayaba.TatayabaUITests;

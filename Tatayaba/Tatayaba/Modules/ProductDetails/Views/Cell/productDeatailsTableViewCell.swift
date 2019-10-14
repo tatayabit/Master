@@ -8,7 +8,12 @@
 
 import UIKit
 
-class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
+protocol ProductDeatailsTableViewCellDelegate: class {
+    func didIncreaseQuantity()
+    func didDecreaseQuantity()
+}
+
+class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var productCollectionView: UICollectionView!
     
@@ -21,8 +26,8 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
-    var viewModel:
-    
+    var viewModel: ProductDeatailsTableViewCellViewModel?
+    weak var delegate: ProductDeatailsTableViewCellDelegate?
     
     //MARK:- Init
     override func awakeFromNib() {
@@ -41,8 +46,11 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
         productCollectionView.delegate = self
     }
     
-    func configure(product: Product) {
-        
+    func configure(productVM: ProductDeatailsTableViewCellViewModel) {
+        self.viewModel = productVM
+        self.nameLabel.text = productVM.name
+        self.descriptionLabel.text = productVM.description
+        self.quantityLabel.text = String(productVM.selectedQuantity)
     }
     
     
@@ -72,11 +80,17 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
         guard let viewModel = viewModel else { return }
         viewModel.increase()
         quantityLabel.text = String(viewModel.selectedQuantity)
+        if let delegate = delegate {
+            delegate.didIncreaseQuantity()
+        }
     }
     
     @IBAction func decreaseQuantity(_ sender: UIButton) {
         guard let viewModel = viewModel else { return }
         viewModel.decrease()
         quantityLabel.text = String(viewModel.selectedQuantity)
+        if let delegate = delegate {
+            delegate.didDecreaseQuantity()
+        }
     }
 }
