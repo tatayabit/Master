@@ -175,7 +175,7 @@ class HomeViewModel {
     }
 
     //MARK:- Parsing Deeplink
-    func parseDeeplink(at indexPath: IndexPath) -> DeepLinkModel {
+    func parseSquareBlockDeeplink(at indexPath: IndexPath) -> DeepLinkModel {
         guard squareBlock.banners.count > 0 else { return DeepLinkModel(type: .unknown, id: "") }
         let banner = squareBlock.banners[indexPath.row]
 
@@ -183,6 +183,15 @@ class HomeViewModel {
         let result = deeplink.parse()
         return result
     }
+    
+    func parsetopBannersBlockDeeplink(at indexPath: IndexPath) -> DeepLinkModel {
+           guard topBannersBlock.banners.count > 0 else { return DeepLinkModel(type: .unknown, id: "") }
+           let banner = topBannersBlock.banners[indexPath.row]
+
+           let deeplink = DeeplinkHandler(urlString: banner.url)
+           let result = deeplink.parse()
+           return result
+       }
 
 
     // MARK:- AddToCart
