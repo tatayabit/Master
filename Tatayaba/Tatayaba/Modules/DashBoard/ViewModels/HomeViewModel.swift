@@ -176,11 +176,12 @@ class HomeViewModel {
 
     //MARK:- Parsing Deeplink
     func parseDeeplink(at indexPath: IndexPath) {
-//        guard topBannersBlock.banners.count > 0 else { return }
-//        let banner = topBannersBlock.banners[indexPath.row]
-//
-//        let deeplink = DeeplinkHandler(urlString: banner.url, type: .category)
-//        deeplink.parse()
+        guard topBannersBlock.banners.count > 0 else { return }
+        let banner = topBannersBlock.banners[indexPath.row]
+
+        let deeplink = DeeplinkHandler(urlString: banner.url)
+        let result = deeplink.parse()
+        
     }
 
 
