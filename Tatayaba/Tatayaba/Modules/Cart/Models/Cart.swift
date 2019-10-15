@@ -23,20 +23,20 @@ class Cart {
     var totalPrice: String { return String(calculateTotal()).formattedPrice }
 
     //MARK:- Operational functions
-    func addProduct(product: Product, quantity: Int = 1) {
+    func addProduct(product: Product, quantity: Int = 1, options: [CartItemOptions]? = nil) {
         if productExistedInCart(product: product) {
-            let cartItem = self.cartItem(for: product)
+            let cartItem = self.cartItem(for: product, options: options)
             increaseCount(cartItem: cartItem)
         } else {
-            let productModel = CartItem(productId: String(product.identifier), productName: product.name, quantity: quantity)
+            let productModel = CartItem(productId: String(product.identifier), productName: product.name, quantity: quantity, options: options)
             cartItemsArr.append(productModel)
             productsArr.append(product)
         }
         updateTabBarCount()
     }
 
-    func cartItem(for product: Product) -> CartItem {
-        return cartItemsArr.filter({ $0.productId == String(product.identifier) }).first ?? CartItem(productId: String(product.identifier), productName: product.name)
+    func cartItem(for product: Product, options: [CartItemOptions]?) -> CartItem {
+        return cartItemsArr.filter({ $0.productId == String(product.identifier) }).first ?? CartItem(productId: String(product.identifier), productName: product.name, options: options)
     }
 
     func removeProduct(at indexPath: IndexPath) {

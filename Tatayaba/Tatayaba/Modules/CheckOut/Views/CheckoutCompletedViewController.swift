@@ -17,6 +17,7 @@ class CheckoutCompletedViewController: BaseViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupUI()
+        self.navigationController?.isNavigationBarHidden = true
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -27,7 +28,6 @@ class CheckoutCompletedViewController: BaseViewController {
     func setupUI() {
         guard let viewModel = viewModel else { return }
         orderIdLabel.text = viewModel.orderIdText
-        self.navigationController?.isNavigationBarHidden = true
     }
 
 

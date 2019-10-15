@@ -51,7 +51,21 @@ class ProductDetailsViewModel {
     //MARK:- Product Details
     func addToCart()  {
         let cart = Cart.shared
-        cart.addProduct(product: product, quantity: selectedQuantity)
+        cart.addProduct(product: product, quantity: selectedQuantity, options: productOptionsCartFormat())
+    }
+    
+    func productOptionsCartFormat() -> [CartItemOptions]? {
+        var cartOptions = [CartItemOptions]()
+        for selection in selectedOptions {
+            let option = self.optionHeader(at: selection.section)
+            let variant = self.product.productOptions[selection.section - 1].variants.first {
+                $0.identifier == selection.selectedVariant
+            }
+            let singleCartOption = CartItemOptions(optionId: option.identifier, variantId: variant!.identifier)
+            cartOptions.append(singleCartOption)
+        }
+        
+        return cartOptions
     }
     
     //MARK:- Product Details
