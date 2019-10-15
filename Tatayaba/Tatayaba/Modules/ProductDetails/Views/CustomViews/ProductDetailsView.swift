@@ -52,11 +52,11 @@ class ProductDetailsView: UIView, UICollectionViewDelegate, UICollectionViewData
 
     //MARK:- Load Data
     func loadData() {
-        guard let viewModel = viewModel else { return }
-        descriptionLabel.text = viewModel.description
-        quantityLabel.text = String(viewModel.selectedQuantity)
-        nameLabel.text = viewModel.name
-        priceLabel.text = viewModel.price
+//        guard let viewModel = viewModel else { return }
+//        descriptionLabel.text = viewModel.description
+//        quantityLabel.text = String(viewModel.selectedQuantity)
+//        nameLabel.text = viewModel.name
+//        priceLabel.text = viewModel.price
         
     }
 
@@ -72,8 +72,8 @@ class ProductDetailsView: UIView, UICollectionViewDelegate, UICollectionViewData
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductImageCarouselCollectionViewCell.identifier, for: indexPath) as! ProductImageCarouselCollectionViewCell
-        guard let viewModel = viewModel else { return cell }
-        cell.configure(imageUrl: viewModel.imageUrl)
+//        guard let viewModel = viewModel else { return cell }
+//        cell.configure(imageUrl: viewModel.imageUrl)
         return cell
     }
 
@@ -84,14 +84,14 @@ class ProductDetailsView: UIView, UICollectionViewDelegate, UICollectionViewData
 
     //MARK:- IBActions
     @IBAction func increaseQuantity(_ sender: UIButton) {
-        guard let viewModel = viewModel else { return }
-        viewModel.increase()
-        quantityLabel.text = String(viewModel.selectedQuantity)
+//        guard let viewModel = viewModel else { return }
+//        viewModel.increase()
+//        quantityLabel.text = String(viewModel.selectedQuantity)
     }
 
     @IBAction func decreaseQuantity(_ sender: UIButton) {
-        guard let viewModel = viewModel else { return }
-        viewModel.decrease()
-        quantityLabel.text = String(viewModel.selectedQuantity)
+//        guard let viewModel = viewModel else { return }
+//        viewModel.decrease()
+//        quantityLabel.text = String(viewModel.selectedQuantity)
     }
 }

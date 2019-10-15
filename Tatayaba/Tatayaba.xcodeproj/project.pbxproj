@@ -8,10 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		053D694C0D5575CB4917A4B5 /* Pods_TatayabaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */; };
+		10645967235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10645966235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift */; };
+		10998ED62354F01F00906084 /* ProductDeatailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10998ED52354F01F00906084 /* ProductDeatailsTableViewCell.swift */; };
 		109D29E3234A64D00052D01B /* ReverseGeoCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D29E2234A64D00052D01B /* ReverseGeoCoder.swift */; };
 		109D29E5234A668F0052D01B /* CountrySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D29E4234A668F0052D01B /* CountrySettings.swift */; };
 		10B08375234CF41800DCE773 /* CartAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B08374234CF41800DCE773 /* CartAPIClient.swift */; };
 		10B08377234CF92C00DCE773 /* CartEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B08376234CF92C00DCE773 /* CartEndpoint.swift */; };
+		10DFE45023525D9C00AAB780 /* HeaderViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DFE44F23525D9C00AAB780 /* HeaderViewItem.swift */; };
+		10DFE4542352619000AAB780 /* OptionsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DFE4532352619000AAB780 /* OptionsHeader.swift */; };
+		10DFE456235262E100AAB780 /* OptionsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10DFE455235262E100AAB780 /* OptionsHeader.xib */; };
 		10FC8517234E372800D13C34 /* ProductVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FC8516234E372800D13C34 /* ProductVariant.swift */; };
 		10FC8519234E373F00D13C34 /* ProductOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FC8518234E373F00D13C34 /* ProductOption.swift */; };
 		1100421122D4F3520099AE64 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100421022D4F3520099AE64 /* String+Extensions.swift */; };
@@ -182,7 +187,6 @@
 		27497C53234E4EF600D84690 /* GuestSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27497C50234E4EF500D84690 /* GuestSignUpViewModel.swift */; };
 		27497C54234E4EF600D84690 /* GuestSignUpViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27497C52234E4EF500D84690 /* GuestSignUpViewcontroller.swift */; };
 		27A9088F235264240032DA41 /* couponResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A90875235264230032DA41 /* couponResponse.swift */; };
-		4C2007A723313FB50090658A /* productDeatailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2007A623313FB50090658A /* productDeatailsTableViewCell.swift */; };
 		4C2007A923320DE40090658A /* SelectOptionProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2007A823320DE40090658A /* SelectOptionProduct.swift */; };
 		4C2007AB23320E150090658A /* SelectOptionProduct.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C2007AA23320E150090658A /* SelectOptionProduct.xib */; };
 		4C219865233BBAA000DE40FA /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C219864233BBAA000DE40FA /* CountryViewController.swift */; };
@@ -259,10 +263,15 @@
 /* Begin PBXFileReference section */
 		02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B399FC35D3B3B996D93EC1 /* Pods-TatayabaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaUITests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		10645966235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDeatailsTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		10998ED52354F01F00906084 /* ProductDeatailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDeatailsTableViewCell.swift; sourceTree = "<group>"; };
 		109D29E2234A64D00052D01B /* ReverseGeoCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGeoCoder.swift; sourceTree = "<group>"; };
 		109D29E4234A668F0052D01B /* CountrySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySettings.swift; sourceTree = "<group>"; };
 		10B08374234CF41800DCE773 /* CartAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartAPIClient.swift; sourceTree = "<group>"; };
 		10B08376234CF92C00DCE773 /* CartEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartEndpoint.swift; sourceTree = "<group>"; };
+		10DFE44F23525D9C00AAB780 /* HeaderViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewItem.swift; sourceTree = "<group>"; };
+		10DFE4532352619000AAB780 /* OptionsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsHeader.swift; sourceTree = "<group>"; };
+		10DFE455235262E100AAB780 /* OptionsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionsHeader.xib; sourceTree = "<group>"; };
 		10FC8516234E372800D13C34 /* ProductVariant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVariant.swift; sourceTree = "<group>"; };
 		10FC8518234E373F00D13C34 /* ProductOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductOption.swift; sourceTree = "<group>"; };
 		1100421022D4F3520099AE64 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -442,7 +451,6 @@
 		27A90875235264230032DA41 /* couponResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = couponResponse.swift; sourceTree = "<group>"; };
 		2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3521A060629ED90EC6114BA5 /* Pods-TatayabaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.debug.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.debug.xcconfig"; sourceTree = "<group>"; };
-		4C2007A623313FB50090658A /* productDeatailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productDeatailsTableViewCell.swift; sourceTree = "<group>"; };
 		4C2007A823320DE40090658A /* SelectOptionProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionProduct.swift; sourceTree = "<group>"; };
 		4C2007AA23320E150090658A /* SelectOptionProduct.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectOptionProduct.xib; sourceTree = "<group>"; };
 		4C219864233BBAA000DE40FA /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
@@ -549,6 +557,15 @@
 				10B08376234CF92C00DCE773 /* CartEndpoint.swift */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		10DFE4512352616000AAB780 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				10DFE4532352619000AAB780 /* OptionsHeader.swift */,
+				10DFE455235262E100AAB780 /* OptionsHeader.xib */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		1101C66122E0C8E900416307 /* Options */ = {
@@ -888,6 +905,7 @@
 				114D1A0422CBB0C1009205F3 /* CollectionCellConfigurator */,
 				114D1A0322CBB0AE009205F3 /* TableCellConfigutator */,
 				11069C3E2323DB4E0093D6FF /* TITextField.swift */,
+				10DFE44F23525D9C00AAB780 /* HeaderViewItem.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1188,6 +1206,7 @@
 			isa = PBXGroup;
 			children = (
 				11B2C41B22D64F0A00EAD9C6 /* ProductDetailsViewModel.swift */,
+				10645966235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1533,7 +1552,7 @@
 		4C2007A523313F5E0090658A /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				4C2007A623313FB50090658A /* productDeatailsTableViewCell.swift */,
+				10998ED52354F01F00906084 /* ProductDeatailsTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1801,6 +1820,7 @@
 		84B819DD22D1D6D5000DD69A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				10DFE4512352616000AAB780 /* Headers */,
 				4C2007A523313F5E0090658A /* Cell */,
 				11FEB4D922DF838500F2E9B8 /* CustomViews */,
 				11FEB4D722DF822A00F2E9B8 /* ProductDetailsViewController.swift */,
@@ -2007,6 +2027,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11945BBC22F0B08D000F08DC /* CheckOut.storyboard in Resources */,
+				10DFE456235262E100AAB780 /* OptionsHeader.xib in Resources */,
 				847CDE4E22C9EE2300E67C8C /* LaunchScreen.storyboard in Resources */,
 				847CDE8922CA19EE00E67C8C /* ProximaNovaT-Thin.ttf in Resources */,
 				4CEDFF3F231A69DD001385DD /* Myriad Pro Regular.ttf in Resources */,
@@ -2200,6 +2221,7 @@
 				11FB586F231D5EFF005DA4F0 /* SuppliersBlockCollectionViewCell.swift in Sources */,
 				11FB585F231C3E17005DA4F0 /* SupplierLogo.swift in Sources */,
 				11FB5861231C3EA7005DA4F0 /* SupplierIcon.swift in Sources */,
+				10645967235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift in Sources */,
 				115795C4233001E70002075E /* SupplierProductsViewController.swift in Sources */,
 				84BC089A22DC7D3400C6180E /* CartViewModel.swift in Sources */,
 				112654AC22D2691400904FB5 /* ProductsAPIClient.swift in Sources */,
@@ -2228,6 +2250,7 @@
 				1100421122D4F3520099AE64 /* String+Extensions.swift in Sources */,
 				11453952232A8CF700EDC908 /* ConciergeViewController.swift in Sources */,
 				11B0791C233BCA25003041E8 /* AddressAddEditViewModel.swift in Sources */,
+				10DFE45023525D9C00AAB780 /* HeaderViewItem.swift in Sources */,
 				11F52FBA22CA7D92000F0D85 /* LoginViewController.swift in Sources */,
 				11A09F3C22FB255700C3E5B8 /* OrderDetailsViewController.swift in Sources */,
 				11D4917A22CBCF8B009D8B23 /* UIView+Extensions.swift in Sources */,
@@ -2240,6 +2263,7 @@
 				11945BBE22F0B08D000F08DC /* CheckOutViewModel.swift in Sources */,
 				11007BD222DE2E6600AC9957 /* CatProductsViewModel.swift in Sources */,
 				11FEB4E022DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.swift in Sources */,
+				10DFE4542352619000AAB780 /* OptionsHeader.swift in Sources */,
 				1101C66D22E0D75500416307 /* HProductCollectionViewCell.swift in Sources */,
 				848E89CC22CCEAAC000AA24C /* FeatureProductCollectionViewCell.swift in Sources */,
 				116C938F22F0954500921893 /* PaymentAPIClient.swift in Sources */,
@@ -2269,7 +2293,6 @@
 				11081EFB22DB8F4900B68EA5 /* ProfileDetailsView.swift in Sources */,
 				847CDE4922C9EE2300E67C8C /* Tatayaba.xcdatamodeld in Sources */,
 				8407BABF22E8623E001F2C2A /* OrderModel.swift in Sources */,
-				4C2007A723313FB50090658A /* productDeatailsTableViewCell.swift in Sources */,
 				11007BD022DE2DC700AC9957 /* CatProductsViewController.swift in Sources */,
 				8407BAC222E869A8001F2C2A /* OrderTableViewCell.swift in Sources */,
 				115DC43023118A500001EF67 /* BannerBlockCollectionViewCell.swift in Sources */,
@@ -2347,6 +2370,7 @@
 				11FB5859231C3B18005DA4F0 /* SuppliersAPIClient.swift in Sources */,
 				11FB585B231C3B26005DA4F0 /* SuppliersEndpoint.swift in Sources */,
 				111C8A36230B1123003F5FDB /* BlocksAPIClient.swift in Sources */,
+				10998ED62354F01F00906084 /* ProductDeatailsTableViewCell.swift in Sources */,
 				27497C53234E4EF600D84690 /* GuestSignUpViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2576,7 +2600,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F5Q4UK5489;
+				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2593,7 +2617,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F5Q4UK5489;
+				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2611,7 +2635,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BVM8GR9MVP;
+				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = TatayabaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tatayaba.TatayabaTests;
@@ -2629,7 +2653,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BVM8GR9MVP;
+				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = TatayabaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tatayaba.TatayabaTests;
@@ -2645,12 +2669,16 @@
 			baseConfigurationReference = B55E5C982ED14B5FEE4DCD1D /* Pods-TatayabaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BVM8GR9MVP;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TatayabaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tatayaba.TatayabaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Tatayaba;
@@ -2662,12 +2690,16 @@
 			baseConfigurationReference = 04B399FC35D3B3B996D93EC1 /* Pods-TatayabaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BVM8GR9MVP;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TatayabaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tatayaba.TatayabaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Tatayaba;

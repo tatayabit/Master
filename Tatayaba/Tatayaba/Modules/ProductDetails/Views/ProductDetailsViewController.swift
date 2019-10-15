@@ -8,80 +8,77 @@
 
 import UIKit
 
-class ProductDetailsViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
+class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var product_Tableview: UITableView!
-    @IBOutlet weak var scrollView: StackedScrollView!
-    let productDetailsView: ProductDetailsView = .fromNib()
-    let productOptionsView: ProductOptionsView = .fromNib()
-    let SelectOptionProductView: SelectOptionProduct = .fromNib()
     
-    var priceButton: UIButton = UIButton(type: .custom)
-    var productOptionCellNUmber:Int = 1
+    enum sectionType: Int {
+        case details = 0, options
+    }
+    
     var viewModel: ProductDetailsViewModel?
-
+    var headerItems = [HeaderItem]()
+    var reloadSections: ((_ section: Int) -> Void)?
+    
     //MARK:- Init
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-       // addSubViews()
-         self.NavigationBarWithBackButton()
-         UserDefaults.standard.set("0", forKey: "Clicked")
-        product_Tableview.delegate = self
-        product_Tableview.dataSource = self
+        
+        self.NavigationBarWithBackButton()
+        setupUI()
+        callDetailsApi()
     }
-
-    //MARK:- Setup StackedScrollView
-    func addSubViews() {
-        scrollView.backgroundColor = UIColor(hexString: "#E9EBEC")
-        scrollView.stackView.backgroundColor = UIColor(hexString: "#E9EBEC")
-        setupProductDetailsView()
-        setupOptionsView()
-       // setupPriceButton()
+    
+    func setupUI() {
+        product_Tableview.register(OptionCollectionViewCell.nib, forCellReuseIdentifier: OptionCollectionViewCell.identifier)
+        product_Tableview.register(OptionsHeader.nib, forHeaderFooterViewReuseIdentifier: OptionsHeader.identifier)
     }
-
-
-
-    fileprivate func setupProductDetailsView() {
-        productDetailsView.viewModel = viewModel
-        productDetailsView.loadData()
-        scrollView.stackView.addArrangedSubview(productDetailsView)
-        productDetailsView.translatesAutoresizingMaskIntoConstraints = false
-        productDetailsView.heightAnchor.constraint(equalToConstant: 415).isActive = true
-    }
-
-    fileprivate func setupOptionsView() {
-        productOptionsView.viewModel = viewModel
-       scrollView.stackView.addArrangedSubview(productOptionsView)
-        productOptionsView.translatesAutoresizingMaskIntoConstraints = false
-        productOptionsView.heightAnchor.constraint(equalToConstant: 54).isActive = true
-    }
-
-    fileprivate func setupPriceButton() {
+    
+    // MARK:- Load sections
+    func initSections() {
         guard let viewModel = viewModel else { return }
+        let item = HeaderItem(rowCount: 1, collapsed: true, isCollapsible: false)
+        headerItems.append(item)
 
-        let containerView = UIView()
-        scrollView.stackView.addArrangedSubview(containerView)
-
-        priceButton.setBackgroundImage(UIImage(named: "price _rounded_rectangle"), for: .normal)
-        priceButton.setTitleColor(.brandDarkBlue, for: .normal)
-        priceButton.setTitle(viewModel.price, for: .normal)
-
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        containerView.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        containerView.centerXAnchor.constraint(equalTo: scrollView.stackView.centerXAnchor).isActive = true
-
-        containerView.addSubview(priceButton)
-
-        priceButton.translatesAutoresizingMaskIntoConstraints = false
-        priceButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
-//        priceButton.widthAnchor.constraint(equalToConstant: 120).isActive = true
-        priceButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
-        priceButton.actionHandle(controlEvents: .touchUpInside) {
-            self.addToCartAction()
+        if viewModel.optionsCount > 0 {
+            for i in 1..<(viewModel.optionsCount + 1) {
+                let numberOfRows = viewModel.numberOfVariants(at: i)
+                let item = HeaderItem(rowCount: numberOfRows, collapsed: true, isCollapsible: numberOfRows > 0)
+                headerItems.append(item)
+            }
+            
+            reloadSections = { section in
+                let indexSet = IndexSet(integer: section)
+                self.product_Tableview.reloadSections(indexSet, with: .automatic)
+            }
         }
     }
+    
+    // MARK:- Api
+    func callDetailsApi() {
+        product_Tableview.delegate = self
+        product_Tableview.dataSource = self
+        
+        self.showLoadingIndicator(to: self.view)
+        self.viewModel?.getProductDetails(completion: { result in
+            self.hideLoadingIndicator(from: self.view)
+            switch result {
+                
+            case .success:
+                self.initSections()
+                self.product_Tableview.reloadData()
+                
+            case .failure(let error):
+                print("the error \(error)")
+                self.showErrorAlerr(title: "Error", message: "not able to fetch the product", handler: { _ in
+                    self.navigationController?.popViewController(animated: true)
+                })
+            }
+        })
+    }
 
+    //MARK:- IBActions
     @IBAction func Add_Cart(_ sender: Any) {
         addToCartAction()
         let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewCartViewController") as! NewCartViewController
@@ -100,103 +97,136 @@ class ProductDetailsViewController: BaseViewController,UITableViewDelegate,UITab
         }
     }
     
-    //MARK:- IBActions
     func addToCartAction() {
         guard let viewModel = viewModel else { return }
         viewModel.addToCart()
     }
 
 }
-extension ProductDetailsViewController{
+extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTableViewCellDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        guard let viewModel = viewModel else { return 1 }
+        return viewModel.optionsCount + 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-  
-        if section == 0 {
+        switch section {
+        case sectionType.details.rawValue:
             return 1
-        }
-        if section == 1 {
-            return productOptionCellNUmber
-        }
-        if section == 2 {
-            return 1
-        }else{
+        default:
+            // need to check if section oppened or no
+//            if headerItems.count > 0 {
+                let item = headerItems[section]
+                guard item.isCollapsible else {
+                    return item.rowCount
+                }
+                
+                if !item.collapsed {
+                    return item.rowCount
+                }
+//            }
+            
             return 0
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        if indexPath.section == 0{
-               return 407
-        }
-        if indexPath.section == 1{
+        switch indexPath.section {
+        case sectionType.details.rawValue:
+            return 407
+        default:
             return 60
         }
-        if indexPath.section == 2{
-              return 200
-            
-        }else{
-            return 0
-        }
-        
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "productDeatailsTableViewCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! productDeatailsTableViewCell
         
-        if  indexPath.section == 0 {
-
-            self.productDetailsView.viewModel = viewModel
-            self.productDetailsView.loadData()
-            cell.addSubview(self.productDetailsView)
-
+        switch indexPath.section {
+        case sectionType.details.rawValue:
+            let cell = tableView.dequeueReusableCell(withIdentifier: ProductDeatailsTableViewCell.identifier, for: indexPath) as! ProductDeatailsTableViewCell
+            if let viewModel = viewModel {
+                cell.configure(productVM: viewModel.detailsCellVM())
+            }
+            cell.delegate = self
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: OptionCollectionViewCell.identifier, for: indexPath) as! OptionCollectionViewCell
+            if let viewModel = viewModel {
+                cell.configure(option: viewModel.optionVariant(at: indexPath))
+            }
+            return cell
         }
-        if  indexPath.section == 1 {
-                if indexPath.row == 0{
-                    productOptionsView.viewModel = viewModel
-                    cell.addSubview(productOptionsView)
-                }else {
-                      let SelectOptionProductView: SelectOptionProduct = .fromNib()
-                      cell.addSubview(SelectOptionProductView)
-                }
-            }
-        if  indexPath.section == 2
-            {
-                
-            }
-  
-        
-        return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case sectionType.details.rawValue: break
+        default:
+            tableView.deselectRow(at: indexPath, animated: true)
+            guard let viewModel = viewModel else { return }
+            viewModel.didSelectOption(at: indexPath)
+            let cell = tableView.cellForRow(at: indexPath) as! OptionCollectionViewCell
+            cell.updateRemoveButton(hide: !viewModel.selected(at: indexPath))
+            
+//            product_Tableview.reloadData()
+        }
+    }
+    
+    // MARK:- Header
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch section {
+        case sectionType.details.rawValue:
+            return 0
+        default:
+            return 60
+        }
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: OptionsHeader.identifier) as? OptionsHeader {
+            if section > 0 {
+                let item = headerItems[section]
+                guard let viewModel = viewModel else { return UIView() }
+                headerView.configure(titleObj: viewModel.optionHeader(at: section).name, itemObj: item, sectionObj: section)
+                headerView.delegate = self
+                return headerView
+            }
+        }
+        
+        return UIView()
+    }
+    
+    func toggleSection(header: OptionsHeader, section: Int) {
+        let item = headerItems[section]
+        if item.isCollapsible {
+            
+            // Toggle collapse
+            let collapsed = !item.collapsed
+            item.collapsed = collapsed
+//            header.setCollapsed(collapsed: collapsed)
+            headerItems[section] = item
+            // Adjust the number of the rows inside the section
+            if let block = reloadSections {
+                block(section)
+                if !collapsed {
+                    product_Tableview.scrollToRow(at: IndexPath(row: 0, section: section), at: .top, animated: true)
+                }
+            }
+        }
+    }
+    
+    // MARK:- Footer
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 10
     }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            tableView.deselectRow(at: indexPath, animated: true)
-            if  indexPath.section == 1 {
-                let clciked =  UserDefaults.standard.value(forKey: "Clicked") as! String
-                if clciked == "1"{
-                    productOptionCellNUmber = 1
-                     UserDefaults.standard.set("0", forKey: "Clicked")
-                    
-                }else{
-                    UserDefaults.standard.set("1", forKey: "Clicked")
-                    productOptionCellNUmber = 3
-                  
-                }
-                
-      
-            }
-        
-          product_Tableview.reloadData()
-    }
     
-  
+    // MARK:- ProductDeatailsTableViewCellDelegate
+    func didIncreaseQuantity() {
+        guard let viewModel = viewModel else { return }
+        viewModel.increase()
+    }
+      
+    func didDecreaseQuantity() {
+        guard let viewModel = viewModel else { return }
+        viewModel.decrease()
+    }
 }

@@ -60,7 +60,7 @@ struct Product {
 extension Product: Codable {
     enum ProductCodingKeys: String, CodingKey {
         case name = "product"
-        case description
+        case description = "meta_description"
         case imageUrl = "https_image_path"
         case offerPrices = ""
         case price
@@ -79,7 +79,7 @@ extension Product: Codable {
         description = try container.decodeIfPresent(String.self, forKey: .description) ?? ""
 //        imageUrl = try container.decodeIfPresent(String.self, forKey: .imageUrl) ?? ""
         offerPrices = try container.decodeIfPresent(Float.self, forKey: .offerPrices) ?? 0.00
-        price = try container.decodeIfPresent(String.self, forKey: .price) ?? ""
+//        price = try container.decodeIfPresent(String.self, forKey: .price) ?? ""
         inWishlist = try container.decodeIfPresent(Bool.self, forKey: .inWishlist) ?? false
 //        identifier = try container.decodeIfPresent(String.self, forKey: .identifier) ?? ""
         status = try container.decodeIfPresent(String.self, forKey: .status) ?? "H"
@@ -95,6 +95,15 @@ extension Product: Codable {
             idVal = "\(identifierInt)"
         }
         identifier = idVal
+        
+        
+        var priceVal = ""
+        if let priceValString = try? container.decode(String.self, forKey: .price) {
+            priceVal = priceValString
+        } else if let priceValInt = try? container.decode(Int.self, forKey: .price) {
+            priceVal = "\(priceValInt)"
+        }
+        price = priceVal
         
     }
 
