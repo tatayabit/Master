@@ -8,6 +8,11 @@
 
 import Foundation
 
+struct DeepLinkModel {
+    var type: DeeplinkHandler.DlType
+    var id: String
+}
+
 struct DeeplinkHandler {
 
     enum DlType: String {
@@ -15,7 +20,6 @@ struct DeeplinkHandler {
     }
 
     var url: String
-    var type: DlType?
 
     //MARK:- Init
     init(urlString: String) {
@@ -23,7 +27,7 @@ struct DeeplinkHandler {
     }
 
     //MARK:- Parsing
-    func parse() -> (DlType, String) {
+    func parse() -> DeepLinkModel {
 
         if !url.isEmpty {
             let components = url.components(separatedBy: "/")
@@ -34,15 +38,15 @@ struct DeeplinkHandler {
                 switch firstPath {
                 case DlType.category.rawValue:
                     print("type: \(DlType.category.rawValue)")
-                    return (.category, id)
+                    return DeepLinkModel(type: .category, id: id)
                 case DlType.product.rawValue:
                     print("type: \(DlType.product.rawValue)")
-                    return (.product, id)
+                    return DeepLinkModel(type: .product, id: id)
                 default:
                     print("type: unknown")
                 }
             }
         }
-        return (.unknown, "")
+        return DeepLinkModel(type: .unknown, id: "")
     }
 }

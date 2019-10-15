@@ -152,7 +152,10 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     }
     
     func didSelectBannerBlocks(at indexPath: IndexPath) {
-        viewModel.parseDeeplink(at: indexPath)
+        let result = viewModel.parseDeeplink(at: indexPath)
+        if result.type == .category {
+            performSegue(withIdentifier: categoryProductsSegue, sender: result)
+        }
     }
 
     //MARK:- ProductsBlockViewProtocol
@@ -199,6 +202,10 @@ extension HomeViewController {
             if let indexPath = sender as? IndexPath {
                 productsListVC.viewModel = viewModel.catProductsListViewModel(indexPath: indexPath)
             }
+            
+            if let deeplink = sender as? DeepLinkModel {
+                productsListVC.viewModel = viewModel.catProductsListViewModel(with: deeplink.id)
+            }
         }
 
         if segue.identifier == supplierProductsSegue {
@@ -207,10 +214,6 @@ extension HomeViewController {
                 productsListVC.viewModel = viewModel.supplierProductsViewModel(indexPath: indexPath)
             }
         }
-
-
-
     }
-
 }
 
