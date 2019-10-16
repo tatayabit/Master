@@ -115,12 +115,30 @@ class CheckOutViewModel {
         for i in 0...cartItems.count - 1 {
             let cartItemX = cartItems[i]
 
+            var optionsParms = [[String: String]]()
+            if let options = cartItemX.options {
+                if options.count > 0 {
+                   optionsParms = getProductOptions(cartOptions: options)
+                }
+            }
+            
             productsParms["\(i)"] = [
                 "product_id": cartItemX.productId,
-                "amount": "\(cartItemX.count)"
+                "amount": "\(cartItemX.count)",
+                "product_options": optionsParms
             ]
+            
+            
         }
         return productsParms
+    }
+    
+    func getProductOptions(cartOptions: [CartItemOptions]) -> [[String: String]] {
+        var optionsParms = [[String: String]]()
+        for optionSection in cartOptions {
+            optionsParms.append([optionSection.optionId: optionSection.variantId])
+        }
+        return optionsParms
     }
 
     func getUserDataModel() -> [String: Any] {

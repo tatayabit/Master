@@ -13,7 +13,7 @@ enum BannerType {
 }
 
 protocol FullScreenBannersViewProtocol: class {
-    func didSelectBanner(at indexPath: IndexPath)
+    func didSelectFullScreenBanner(at indexPath: IndexPath)
 }
 
 class FullScreenBannersView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -83,7 +83,7 @@ class FullScreenBannersView: UIView, UICollectionViewDelegate, UICollectionViewD
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let delegate = delegate {
-            delegate.didSelectBanner(at: indexPath)
+            delegate.didSelectFullScreenBanner(at: indexPath)
         }
     }
 }

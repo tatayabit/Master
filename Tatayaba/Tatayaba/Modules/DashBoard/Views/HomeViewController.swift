@@ -8,8 +8,8 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController, BannersBlocksViewProtocol, CategoriesBlockViewProtocol, ProductsBlockViewProtocol, SuppliersBlockViewProtocol {
-
+class HomeViewController: BaseViewController, BannersBlocksViewProtocol, CategoriesBlockViewProtocol, ProductsBlockViewProtocol, SuppliersBlockViewProtocol, FullScreenBannersViewProtocol {
+   
     private let productDetailsSegue = "product_details_segue"
     private let categoryProductsSegue = "category_products_segue"
     private let supplierProductsSegue = "supplier_products_segue"
@@ -37,6 +37,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     }
 
     fileprivate func addBannersSubView() {
+        fullScreenBannersView.delegate = self
         scrollView.stackView.addArrangedSubview(fullScreenBannersView)
         fullScreenBannersView.translatesAutoresizingMaskIntoConstraints = false
         fullScreenBannersView.heightAnchor.constraint(equalToConstant: 150).isActive = true
@@ -152,7 +153,18 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     }
     
     func didSelectBannerBlocks(at indexPath: IndexPath) {
-        viewModel.parseDeeplink(at: indexPath)
+        let result = viewModel.parseSquareBlockDeeplink(at: indexPath)
+        if result.type == .category {
+            performSegue(withIdentifier: categoryProductsSegue, sender: result)
+        }
+    }
+    
+    // MARK:- SuppliersBlockViewProtocol delegate
+    func didSelectFullScreenBanner(at indexPath: IndexPath) {
+        let result = viewModel.parsetopBannersBlockDeeplink(at: indexPath)
+        if result.type == .category {
+            performSegue(withIdentifier: categoryProductsSegue, sender: result)
+        }
     }
 
     //MARK:- ProductsBlockViewProtocol
@@ -199,6 +211,10 @@ extension HomeViewController {
             if let indexPath = sender as? IndexPath {
                 productsListVC.viewModel = viewModel.catProductsListViewModel(indexPath: indexPath)
             }
+            
+            if let deeplink = sender as? DeepLinkModel {
+                productsListVC.viewModel = viewModel.catProductsListViewModel(with: deeplink.id)
+            }
         }
 
         if segue.identifier == supplierProductsSegue {
@@ -207,10 +223,6 @@ extension HomeViewController {
                 productsListVC.viewModel = viewModel.supplierProductsViewModel(indexPath: indexPath)
             }
         }
-
-
-
     }
-
 }
 
