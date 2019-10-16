@@ -10,6 +10,7 @@ import Moya
 
 enum CartEndpoint {
     case applyCoupon(code: String)
+    case getTaxAndShipping(countryCode: String)
 }
 
 
@@ -32,12 +33,16 @@ extension CartEndpoint: TargetType {
         switch self {
         case .applyCoupon:
             return "4.0/SraCartContent"
+        case .getTaxAndShipping:
+            return "4.0/TtmCartConfigData"
         }
     }
     
     var method: Moya.Method {
         switch self {
         case .applyCoupon:
+            return .get
+        case .getTaxAndShipping:
             return .get
         }
     }
@@ -55,6 +60,9 @@ extension CartEndpoint: TargetType {
         switch self {
         case .applyCoupon(let code):
             return .requestParameters(parameters: [ "coupon_codes": code
+                ], encoding: URLEncoding.queryString)
+        case .getTaxAndShipping(let countryCode):
+            return .requestParameters(parameters: [ "country_code": countryCode
                 ], encoding: URLEncoding.queryString)
         }
     }

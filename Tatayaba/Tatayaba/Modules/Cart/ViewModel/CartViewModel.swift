@@ -26,10 +26,10 @@ class CartViewModel {
     weak var delegate: CartViewModelDelegate?
 
     init() {
-        loadPricingListContent(couponValue: "0")
+        loadPricingListContent(couponValue: "0", taxValue: "0", shippingValue: "0")
     }
 
-    func loadPricingListContent(couponValue: String) {
+    func loadPricingListContent(couponValue: String, taxValue: String, shippingValue: String) {
         pricingList.removeAll()
         var model = CartPricingModel(title: Constants.Cart.subtotal, value: cart.subtotalPrice)
         pricingList.append(model)
@@ -37,8 +37,15 @@ class CartViewModel {
         model = CartPricingModel(title: Constants.Cart.shipping, value: cart.shippingFormatedPrice)
         pricingList.append(model)
         
-        model = CartPricingModel(title: Constants.Cart.coupon, value: couponValue + " KD")
+        model = CartPricingModel(title: Constants.Cart.shipping, value: shippingValue.formattedPrice)
         pricingList.append(model)
+        
+        model = CartPricingModel(title: Constants.Cart.tax, value: taxValue.formattedPrice)
+        pricingList.append(model)
+        
+        model = CartPricingModel(title: Constants.Cart.coupon, value: couponValue.formattedPrice)
+        pricingList.append(model)
+        
         if let delegate = delegate {
             delegate.didFinishLoadingPricing()
         }
@@ -58,12 +65,27 @@ class CartViewModel {
             completion(result)
         }
     }
+    
+    func getTaxAndShipping(countryCode: String, completion: @escaping (APIResult<TaxAndShippingResponse?, MoyaError>) -> Void) {
+        cartApiClient.getTaxAndShipping(countryCode: countryCode) { result in
+            switch result {
+            case .success(let taxAndShippingResult):
+                if let taxAndShipping = taxAndShippingResult {
+                    print(taxAndShipping)
+                }
+            case .failure(let error):
+                print("the error \(error)")
+            }
+            completion(result)
+        }
+    }
 }
 
 extension Constants {
     struct Cart {
         static let subtotal = "Subtotal".localized()
         static let shipping = "Shipping".localized()
+        static let tax = "Tax".localized()
         static let coupon = "Coupon".localized()
         static let items = "items".localized()
         static let cartTotal = "Cart Total".localized()
