@@ -37,13 +37,13 @@ class CartViewModel {
         model = CartPricingModel(title: Constants.Cart.shipping, value: cart.shippingFormatedPrice)
         pricingList.append(model)
         
-        model = CartPricingModel(title: Constants.Cart.shipping, value: shippingValue + " KD")
+        model = CartPricingModel(title: Constants.Cart.shipping, value: shippingValue.formattedPrice)
         pricingList.append(model)
         
-        model = CartPricingModel(title: Constants.Cart.tax, value: taxValue + " KD")
+        model = CartPricingModel(title: Constants.Cart.tax, value: taxValue.formattedPrice)
         pricingList.append(model)
         
-        model = CartPricingModel(title: Constants.Cart.coupon, value: couponValue + " KD")
+        model = CartPricingModel(title: Constants.Cart.coupon, value: couponValue.formattedPrice)
         pricingList.append(model)
         
         if let delegate = delegate {
