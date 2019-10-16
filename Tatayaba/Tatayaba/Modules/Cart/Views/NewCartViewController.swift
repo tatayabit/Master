@@ -24,6 +24,8 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     // let we say until now (One_Click_Buy = 1 & Default_Way = 0)
     var buyingWayType: Int = 0
     var couponValue: String = "0"
+    var taxValue: String = "0"
+    var shippingValue: String = "0"
     private let checkoutSegue = "checkout_segue"
 
     enum sectionType: Int {
@@ -41,6 +43,7 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         calculateTotal()
+        loadTaxAndShipping()
         self.tabBarController?.tabBar.isHidden = false
     }
 
@@ -52,9 +55,9 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     }
 
     func calculateTotal() {
-        let totalPriceValue = (cart.totalPrice as NSString).integerValue + (couponValue as NSString).integerValue
+        let totalPriceValue = (cart.totalPrice as NSString).integerValue + (couponValue as NSString).integerValue + (taxValue as NSString).integerValue + (shippingValue as NSString).integerValue
         totalPriceLabel.text = "\(totalPriceValue)"
-        viewModel.loadPricingListContent(couponValue: couponValue)
+        viewModel.loadPricingListContent(couponValue: couponValue, taxValue: taxValue, shippingValue: shippingValue)
         let totalItemsText = "(" + String(cart.productsCount) + " " + Constants.Cart.items + ")"
         totalTitleLabel.attributedText = attributedTotalTitle(text: totalItemsText)
     }
@@ -203,6 +206,29 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
         calculateTotal()
         self.setButton(button: removeDiscountButton, hidden: true)
         self.showErrorAlerr(title: Constants.Common.success, message: "CouponRemovedSuccessfully".localized(), handler: nil)
+    }
+    
+    func loadTaxAndShipping() {
+        showLoadingIndicator(to: self.view)
+        viewModel.getTaxAndShipping(countryCode: "KW") { result in
+            self.hideLoadingIndicator(from: self.view)
+            switch result {
+            case .success(let taxAndShippingResponse):
+                if let taxValue = taxAndShippingResponse?.tax?.vat?.value {
+                    print(taxValue)
+                    self.taxValue = "\(taxValue)"
+                    self.calculateTotal()
+                }
+                if let shippingValue = taxAndShippingResponse?.shipping?.rateValue {
+                    print(shippingValue)
+                    self.shippingValue = "\(shippingValue)"
+                    self.calculateTotal()
+                }
+                
+            case .failure(let error):
+                print("the error \(error)")
+            }
+        }
     }
     
     @IBAction func applyCouponAction(_ sender: UIButton) {
