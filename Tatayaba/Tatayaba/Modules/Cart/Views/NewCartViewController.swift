@@ -72,6 +72,18 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
         return newStr
     }
 
+    func addOneMoreAction(indexPath: IndexPath) {
+        let cartProduct = cart.product(at: indexPath)
+        cart.increaseCount(cartItem: cartProduct.1)
+        calculateTotal()
+    }
+    
+    func removeOneAction(indexPath: IndexPath) {
+        let cartProduct = cart.product(at: indexPath)
+        cart.decreaseCount(cartItem: cartProduct.1)
+        calculateTotal()
+    }
+    
     func removeItemAction(indexPath: IndexPath) {
         cart.removeProduct(at: indexPath)
         calculateTotal()
@@ -150,6 +162,16 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
         let cartProduct = cart.product(at: indexPath)
         cell.configure(product: cartProduct.0, cartItem: cartProduct.1)
 
+        cell.onAddMoreClick = {
+            self.addOneMoreAction(indexPath: indexPath)
+            cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
+        }
+        
+        cell.onRemoveOneCountClick = {
+            self.removeOneAction(indexPath: indexPath)
+            cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
+        }
+        
         cell.onRemoveItemClick = {
             self.removeItemAction(indexPath: indexPath)
             cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
