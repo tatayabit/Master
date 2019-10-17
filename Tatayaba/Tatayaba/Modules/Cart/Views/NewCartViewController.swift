@@ -169,7 +169,7 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
             let maxQuantity = cartProduct.0.maxQuantity
             let currentQuantity = cell.quantityCoutLabel.text ?? "0"
             if let max = Int(maxQuantity), max <= Int(currentQuantity) ?? 0 {
-                self.showErrorAlerr(title: Constants.Common.error, message: String(format: "MaxQuantityReached".localized(), "\(max)"), handler: nil)
+                // max reached
             } else {
                 self.addOneMoreAction(indexPath: indexPath)
                 cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
