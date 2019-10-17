@@ -33,7 +33,16 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate {
 
     //MARK:- setupUI
     func setupUI() {
-
+        NavigationBarWithBackButton()
+        if Customer.shared.loggedin {
+            if let currentUser = Customer.shared.user{
+                fullNameTextField.text = currentUser.firstname + currentUser.lastname
+                addressLine1TextField.text = currentUser.shippingAddress
+                cityTextField.text = currentUser.shippingCity
+                countryTextField.text = currentUser.shippingCountry
+                phoneNumberTextField.text = currentUser.shippingPhone
+            }
+        }
     }
 
     //MARK:- Swift Validator

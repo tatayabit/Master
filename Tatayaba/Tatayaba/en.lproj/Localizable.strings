@@ -46,3 +46,6 @@
 "Please enter coupon value!" = "Please enter coupon value!";
 "CouponAddedSuccessfully" = "Coupon Added Successfully";
 "CouponRemovedSuccessfully" = "Coupon Removed Successfully";
+
+// CheckOut
+"EnterAddress" = "Please Enter Your Shipping Address";

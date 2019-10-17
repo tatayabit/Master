@@ -143,9 +143,12 @@ extension CheckOutViewController {
     // MARK:- CheckoutAddressTableViewCell
     func getAddressCell(tableView: UITableView, indexPath: IndexPath) -> CheckoutAddressTableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CheckoutAddressTableViewCell.identifier, for: indexPath) as! CheckoutAddressTableViewCell
-        
         cell.editButton.addTarget(self, action: #selector(EditAddressButton), for: .touchUpInside)
-//        cell.configure(payment: viewModel.paymentMethods[indexPath.row])
+        if Customer.shared.loggedin {
+            if let currentUser = Customer.shared.user{
+                cell.configure(user: currentUser)
+            }
+        }
         return cell
     }
     
