@@ -16,8 +16,8 @@ struct OrdersAPIClient: APIClient {
 
     static let environment: APIEnvironment = .production
 
-    func CreateOrder(products: [String: Any], userId: String, userData: [String: Any]?, paymentId: String, completion: @escaping (APIResult<PlaceOrderResult?, MoyaError>) -> Void) {
-        fetch(with: OrdersEndpoint.create(products: products, userId: userId, userData: userData, paymentId: paymentId), completion: completion)
+    func CreateOrder(products: [String: Any], userId: String, userData: [String: Any]?, paymentId: String, oneClickBuy: Bool, completion: @escaping (APIResult<PlaceOrderResult?, MoyaError>) -> Void) {
+        fetch(with: OrdersEndpoint.create(products: products, userId: userId, userData: userData, paymentId: paymentId, oneClickBuy: oneClickBuy), completion: completion)
     }
 
     func getAllOrders(page: Int, completion: @escaping (APIResult<OrdersResult?, MoyaError>) -> Void) {
