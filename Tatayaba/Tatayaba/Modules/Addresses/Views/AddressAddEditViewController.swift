@@ -24,7 +24,7 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate {
     @IBOutlet var phoneNumberTextField: SkyFloatingLabelTextField!
 
     private let validator = Validator()
-
+    private var user: User?
     override func viewDidLoad() {
         super.viewDidLoad()
         registerValidator()
@@ -35,12 +35,13 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate {
     func setupUI() {
         NavigationBarWithBackButton()
         if Customer.shared.loggedin {
-            if let currentUser = Customer.shared.user{
+            if let currentUser = Customer.shared.user {
                 fullNameTextField.text = currentUser.firstname
                 addressLine1TextField.text = currentUser.shippingAddress
                 cityTextField.text = currentUser.shippingCity
                 countryTextField.text = currentUser.shippingCountry
                 phoneNumberTextField.text = currentUser.shippingPhone
+                user = currentUser
             }
         }
     }
@@ -58,7 +59,17 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate {
     //MARK:- Validation Delegate
     func validationSuccessful() {
         print("Validation Success!")
-
+        user?.shippingAddress = addressLine1TextField.text ?? ""
+        user?.shippingCity = cityTextField.text ?? ""
+        user?.shippingCountry = countryTextField.text ?? ""
+        user?.shippingPhone = phoneNumberTextField.text ?? ""
+        if let user = user {
+            Customer.shared.setUser(user)
+            navigationController?.popViewController(animated: true)
+        } else {
+            Customer.shared.setUser(user ?? User(email: "", firstname: fullNameTextField.text ?? "", password: "",shippingCity: cityTextField.text ?? "",shippingCountry: countryTextField.text ?? "",shippingPhone: phoneNumberTextField.text ?? "",shippingAddress: addressLine1TextField.text ?? ""))
+            navigationController?.popViewController(animated: true)
+        }
     }
 
     func validationFailed(_ errors: [(Validatable, ValidationError)]) {
