@@ -195,7 +195,6 @@
 		27A9089F2357906C0032DA41 /* TaxAndShippingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A908972357906C0032DA41 /* TaxAndShippingResponse.swift */; };
 		27A908A02357906C0032DA41 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A908982357906C0032DA41 /* Tax.swift */; };
 		27A908A12357906C0032DA41 /* Shipping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A908992357906C0032DA41 /* Shipping.swift */; };
-		4C2007A723313FB50090658A /* productDeatailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2007A623313FB50090658A /* productDeatailsTableViewCell.swift */; };
 		4C2007A923320DE40090658A /* SelectOptionProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2007A823320DE40090658A /* SelectOptionProduct.swift */; };
 		4C2007AB23320E150090658A /* SelectOptionProduct.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C2007AA23320E150090658A /* SelectOptionProduct.xib */; };
 		4C219865233BBAA000DE40FA /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C219864233BBAA000DE40FA /* CountryViewController.swift */; };
@@ -2642,7 +2641,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.6;
-				DEVELOPMENT_TEAM = 74YH76FB8C;
+				DEVELOPMENT_TEAM = F5Q4UK5489;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2660,7 +2659,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.6;
-				DEVELOPMENT_TEAM = 74YH76FB8C;
+				DEVELOPMENT_TEAM = F5Q4UK5489;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
