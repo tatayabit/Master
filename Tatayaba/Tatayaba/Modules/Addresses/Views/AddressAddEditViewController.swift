@@ -66,6 +66,9 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate {
         if let user = user {
             Customer.shared.setUser(user)
             navigationController?.popViewController(animated: true)
+        } else {
+            Customer.shared.setUser(user ?? User(email: "", firstname: fullNameTextField.text ?? "", password: "",shippingCity: cityTextField.text ?? "",shippingCountry: countryTextField.text ?? "",shippingPhone: phoneNumberTextField.text ?? "",shippingAddress: addressLine1TextField.text ?? ""))
+            navigationController?.popViewController(animated: true)
         }
     }
 

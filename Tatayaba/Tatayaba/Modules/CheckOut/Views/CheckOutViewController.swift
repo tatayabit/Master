@@ -9,35 +9,41 @@
 import UIKit
 
 class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var paymentTableView: UITableView!
-
+    
     private let viewModel = CheckOutViewModel()
-
+    
     let checkoutCompletedSegue = "checkout_completed_segue"
-
+    
     enum sectionType: Int {
         case payment = 0, address
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
-       // self.updateData()
+        // self.updateData()
         viewModel.onPaymentMethodsListLoad = {
             self.paymentTableView.reloadData()
         }
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         paymentTableView.reloadData()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if ((Customer.shared.user?.email) == "") {
+            Customer.shared.logout()
+        }
+    }
     func updateData() {
-//        subTotalValueLabel.text = viewModel.subTotalValue
-//        totalPriceButton.setTitle(viewModel.totalValue, for: .normal)
-//        shippingValueLabel.text = viewModel.shippingValue
+        //        subTotalValueLabel.text = viewModel.subTotalValue
+        //        totalPriceButton.setTitle(viewModel.totalValue, for: .normal)
+        //        shippingValueLabel.text = viewModel.shippingValue
     }
     
     
@@ -47,11 +53,11 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
         self.paymentTableView.register(PaymentMethodTableViewCell.nib, forCellReuseIdentifier: PaymentMethodTableViewCell.identifier)
         self.paymentTableView.register(CheckoutAddressTableViewCell.nib, forCellReuseIdentifier: CheckoutAddressTableViewCell.identifier)
     }
-
+    
     //MARK:- IBActions
     @IBAction func placeOrderAction(_ sender: Any) {
         
-//         self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
+        //         self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
         self.showLoadingIndicator(to: self.view)
         viewModel.placeOrder { result in
             self.hideLoadingIndicator(from: self.view)
@@ -65,26 +71,26 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
                     print("the error order id == \(placeOrderResult.orderId)")
                     self.showErrorAlerr(title: Constants.Common.error, message: "Placing order failed", handler: nil)
                 }
-
+                
             case .failure(let error):
                 print("the error \(error)")
                 self.showErrorAlerr(title: Constants.Common.error, message: error.localizedDescription, handler: nil)
             }
         }
-   }
+    }
 }
 
 //Tableview
 extension CheckOutViewController {
-
+    
     // MARK:- UITableView - Header
     func numberOfSections(in tableView: UITableView) -> Int {
-//        if viewModel.pricingList.count > 0 {
-//            return 2
-//        }
+        //        if viewModel.pricingList.count > 0 {
+        //            return 2
+        //        }
         return 2
     }
-
+    
     // MARK:- UITableViewDelegate - Cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
@@ -94,14 +100,14 @@ extension CheckOutViewController {
         default: break
         }
     }
-
+    
     // MARK:- UITableViewDataSource - Cell
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 10
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
+        
         switch indexPath.section {
         case sectionType.payment.rawValue:
             return 60
@@ -110,7 +116,7 @@ extension CheckOutViewController {
         default: return 0
         }
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case sectionType.payment.rawValue:
@@ -120,12 +126,12 @@ extension CheckOutViewController {
         default: return 0
         }
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case sectionType.payment.rawValue:
             return getPaymentCell(tableView: tableView, indexPath: indexPath)
-
+            
         case sectionType.address.rawValue:
             return getAddressCell(tableView: tableView, indexPath: indexPath)
         default:
@@ -133,24 +139,26 @@ extension CheckOutViewController {
             return cell
         }
     }
-
+    
     // MARK:- PaymentSelectionViewCell
     func getPaymentCell(tableView: UITableView, indexPath: IndexPath) -> PaymentMethodTableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PaymentMethodTableViewCell.identifier, for: indexPath) as! PaymentMethodTableViewCell
-
+        
         cell.configure(payment: viewModel.paymentMethods[indexPath.row])
         return cell
     }
-
+    
     // MARK:- CheckoutAddressTableViewCell
     func getAddressCell(tableView: UITableView, indexPath: IndexPath) -> CheckoutAddressTableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CheckoutAddressTableViewCell.identifier, for: indexPath) as! CheckoutAddressTableViewCell
         cell.editButton.addTarget(self, action: #selector(EditAddressButton), for: .touchUpInside)
-        if Customer.shared.loggedin {
-            if let currentUser = Customer.shared.user{
-                cell.configure(user: currentUser)
-            }
+        if let currentUser = Customer.shared.user {
+            cell.configure(user: currentUser)
+        }else {
+            let guestUser = User(email: "", password: "")
+            cell.configure(user: guestUser)
         }
+        
         return cell
     }
     
