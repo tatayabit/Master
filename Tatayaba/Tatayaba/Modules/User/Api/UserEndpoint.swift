@@ -69,7 +69,7 @@ extension UserEndpoint: TargetType {
         case .signUp(let user):
             
             return .requestParameters(parameters: [ "email": user.email ,
-                                                    "first_name": user.firstname ,
+                                                    "firstname": user.firstname ,
                                                     "password": user.password ,
                                                     "user_type": "C",
                                                     "company_id": 1,
@@ -78,7 +78,7 @@ extension UserEndpoint: TargetType {
         case .gusetSignUp(let user):
             
             return .requestParameters(parameters: [ "email": user.email ,
-                                                    "first_name": user.firstname ,
+                                                    "firstname": user.firstname ,
                                                     "password": user.password ,
                                                     "user_type": "C",
                                                     "company_id": 1,

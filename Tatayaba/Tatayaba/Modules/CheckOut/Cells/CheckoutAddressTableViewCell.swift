@@ -25,11 +25,11 @@ class CheckoutAddressTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func configure(user: User) {
+        detailsLabel.text = user.shippingAddress == "" ? "EnterAddress".localized() : user.shippingAddress
+    }
+    
     @IBAction func editButton_Action(_ sender: Any) {
         //AddressAddEditViewController
-        
-        
-        
-        
     }
 }

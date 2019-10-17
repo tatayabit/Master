@@ -10,11 +10,13 @@ struct ProductOption {
     var identifier: String
     var name: String
     var variants: [ProductVariant]
+    var required: String
     
-    init(identifier: String = "", name: String = "", variants: [ProductVariant] = [ProductVariant]()) {
+    init(identifier: String = "", name: String = "", variants: [ProductVariant] = [ProductVariant](), required: String = "") {
         self.identifier = identifier
         self.name = name
         self.variants = variants
+        self.required = required
     }
 }
 
@@ -23,12 +25,15 @@ extension ProductOption: Codable {
         case identifier = "option_id"
         case name = "option_name"
         case variants
+        case required
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: ProductOptionCodingKeys.self)
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
         variants = try container.decodeIfPresent([ProductVariant].self, forKey: .variants) ?? [ProductVariant]()
+        
+        required = try container.decodeIfPresent(String.self, forKey: .required) ?? ""
 
         var idVal = ""
         if let identifierString = try? container.decode(String.self, forKey: .identifier) {
@@ -44,5 +49,6 @@ extension ProductOption: Codable {
         try container.encodeIfPresent(identifier, forKey: .identifier)
         try container.encodeIfPresent(name, forKey: .name)
         try container.encodeIfPresent(variants, forKey: .variants)
+        try container.encodeIfPresent(required, forKey: .required)
     }
 }
