@@ -38,7 +38,7 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
     
     func setupUI() {
         self.tabBarController?.tabBar.isHidden = true
-//        self.NavigationBarWithOutBackButton()
+        NavigationBarWithBackButton()
         self.paymentTableView.register(PaymentMethodTableViewCell.nib, forCellReuseIdentifier: PaymentMethodTableViewCell.identifier)
         self.paymentTableView.register(CheckoutAddressTableViewCell.nib, forCellReuseIdentifier: CheckoutAddressTableViewCell.identifier)
     }
