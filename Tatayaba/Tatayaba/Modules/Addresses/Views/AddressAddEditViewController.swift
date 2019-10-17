@@ -47,17 +47,17 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate {
 
     //MARK:- Swift Validator
     func registerValidator() {
-        validator.registerField(fullNameTextField, rules: [RequiredRule(message: "Email is required!")])
+        validator.registerField(fullNameTextField, rules: [RequiredRule(message: "Full Name is required!")])
+        validator.registerField(addressLine1TextField, rules: [RequiredRule(message: "Address is required!")])
+        validator.registerField(cityTextField, rules: [RequiredRule(message: "City is required!")])
+        validator.registerField(countryTextField, rules: [RequiredRule(message: "Country is required!")])
+        validator.registerField(phoneNumberTextField, rules: [RequiredRule(message: "Phone is required!")])
+        fullNameTextField.becomeFirstResponder()
     }
 
     //MARK:- Validation Delegate
     func validationSuccessful() {
         print("Validation Success!")
-
-//        guard let email = emailTextField.text else { return }
-//        guard let password = passwordTextField.text else { return }
-//        guard let firstname = fullNameTextField.text else { return }
-
 
     }
 
@@ -65,24 +65,10 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate {
         print("Validation FAILED!")
         for error in errors {
             print("errors:::: \(String(describing: error.1.errorMessage))")
+            showErrorAlerr(title: Constants.Common.error, message: "\(String(describing: error.1.errorMessage))", handler: nil)
         }
 
     }
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        validator.validateField(textField){ error in
-            if error == nil {
-                // Field validation was successful
-            } else {
-                // Validation error occurred
-                //                let textFieldX = textField as? SkyFloatingLabelTextField
-                //                textFieldX?.updateColors()
-            }
-        }
-        return true
-    }
-
-
     //MARK:- IBActions
     @IBAction func saveContinueAction(_ sender: UIButton) {
         validator.validate(self)
