@@ -36,7 +36,7 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate {
         NavigationBarWithBackButton()
         if Customer.shared.loggedin {
             if let currentUser = Customer.shared.user{
-                fullNameTextField.text = currentUser.firstname + currentUser.lastname
+                fullNameTextField.text = currentUser.firstname
                 addressLine1TextField.text = currentUser.shippingAddress
                 cityTextField.text = currentUser.shippingCity
                 countryTextField.text = currentUser.shippingCountry
