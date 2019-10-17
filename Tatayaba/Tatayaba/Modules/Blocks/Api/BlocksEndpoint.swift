@@ -10,7 +10,6 @@ import Moya
 
 enum BlocksEndpoint {
     case getBlock(blockId: String)
-
 }
 
 

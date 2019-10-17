@@ -86,7 +86,7 @@ class CheckOutViewModel {
         let userData = userId == "0" ? getUserDataModel() : nil
         let paymentId = cart.paymentMethod?.paymentId ?? "0"
 
-        ordersApiClient.CreateOrder(products: getProductsModel(), userId: userId, userData: userData, paymentId: paymentId) { result in
+        ordersApiClient.CreateOrder(products: getProductsModel(), userId: userId, userData: userData, paymentId: paymentId, oneClickBuy: cart.isOneClickBuy) { result in
             switch result {
             case .success(let response):
                 guard let placeOrderResult = response else { return }

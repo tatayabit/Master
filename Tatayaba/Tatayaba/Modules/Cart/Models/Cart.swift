@@ -21,6 +21,8 @@ class Cart {
     var shippingFormatedPrice: String { return String(shipping).formattedPrice }
     var shipping: Float = 1
     var totalPrice: String { return String(calculateTotal()).formattedPrice }
+    
+    var isOneClickBuy: Bool = false
 
     //MARK:- Operational functions
     func addProduct(product: Product, quantity: Int = 1, options: [CartItemOptions]? = nil) {
