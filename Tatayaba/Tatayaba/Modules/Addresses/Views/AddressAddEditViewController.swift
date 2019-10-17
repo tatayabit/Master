@@ -63,6 +63,10 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate {
         user?.shippingCity = cityTextField.text ?? ""
         user?.shippingCountry = countryTextField.text ?? ""
         user?.shippingPhone = phoneNumberTextField.text ?? ""
+        if let user = user {
+            Customer.shared.setUser(user)
+            navigationController?.popViewController(animated: true)
+        }
     }
 
     func validationFailed(_ errors: [(Validatable, ValidationError)]) {

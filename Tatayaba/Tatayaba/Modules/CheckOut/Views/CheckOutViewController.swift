@@ -29,6 +29,11 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        paymentTableView.reloadData()
+    }
+    
     func updateData() {
 //        subTotalValueLabel.text = viewModel.subTotalValue
 //        totalPriceButton.setTitle(viewModel.totalValue, for: .normal)
@@ -125,9 +130,6 @@ extension CheckOutViewController {
             return getAddressCell(tableView: tableView, indexPath: indexPath)
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: PaymentMethodTableViewCell.identifier, for: indexPath) as! PaymentMethodTableViewCell
-            
-      
-            
             return cell
         }
     }
