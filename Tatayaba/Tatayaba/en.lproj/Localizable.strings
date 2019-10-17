@@ -14,7 +14,7 @@
 "Coupon"="Discount";
 "items"="items";
 "Cart Total"="Cart Total";
-
+"MaxQuantityReached"="Sorry Maximum number of products is %@";
 
 // Login
 "Email"="Email";

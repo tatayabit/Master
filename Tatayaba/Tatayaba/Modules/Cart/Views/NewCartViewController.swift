@@ -9,7 +9,7 @@
 import UIKit
 
 class NewCartViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, CartViewModelDelegate {
-
+    
     @IBOutlet var cartTableview: UITableView!
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var totalTitleLabel: UILabel!
@@ -18,7 +18,7 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var couponTextField: UITextField!
     @IBOutlet weak var removeDiscountButton: UIButton!
     
-
+    
     let cart = Cart.shared
     let viewModel = CartViewModel()
     // let we say until now (One_Click_Buy = 1 & Default_Way = 0)
@@ -27,11 +27,11 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     var taxValue: String = "0"
     var shippingValue: String = "0"
     private let checkoutSegue = "checkout_segue"
-
+    
     enum sectionType: Int {
         case item = 0, pricing
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -39,21 +39,21 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
         viewModel.delegate = self
         cartTableview.separatorColor = .clear
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         calculateTotal()
         loadTaxAndShipping()
         self.tabBarController?.tabBar.isHidden = false
     }
-
+    
     // MARK:- setupUI
     func setupUI() {
         cartTableview.register(PriceTableViewCell.nib, forCellReuseIdentifier: PriceTableViewCell.identifier)
         self.NavigationBarWithOutBackButton()
         removeDiscountButton.isHidden = true
     }
-
+    
     func calculateTotal() {
         let totalPriceValue = (cart.totalPrice as NSString).integerValue + (couponValue as NSString).integerValue + (taxValue as NSString).integerValue + (shippingValue as NSString).integerValue
         totalPriceLabel.text = "\(totalPriceValue)"
@@ -61,20 +61,20 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
         let totalItemsText = "(" + String(cart.productsCount) + " " + Constants.Cart.items + ")"
         totalTitleLabel.attributedText = attributedTotalTitle(text: totalItemsText)
     }
-
+    
     func attributedTotalTitle(text: String) -> NSAttributedString {
         let textVal = Constants.Cart.cartTotal + " " + text
-
+        
         let strokeTextAttributes = [
             NSAttributedString.Key.foregroundColor : UIColor(hexString: "221C35"),
             NSAttributedString.Key.font : UIFont.lightGotham(size: 11)
             ] as [NSAttributedString.Key : Any]
-
+        
         let newStr = NSMutableAttributedString(string: textVal)
         newStr.addAttributes(strokeTextAttributes, range: (textVal as NSString).range(of: text))
         return newStr
     }
-
+    
     func addOneMoreAction(indexPath: IndexPath) {
         let cartProduct = cart.product(at: indexPath)
         cart.increaseCount(cartItem: cartProduct.1)
@@ -91,19 +91,19 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
         cart.removeProduct(at: indexPath)
         calculateTotal()
     }
-
+    
     // MARK:- UITableView - Header
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
         case sectionType.pricing.rawValue:
-//            let pricingCount = viewModel.pricingList.count
-//            let height = pricingCount > 0 ? 8 : 0
-//            return CGFloat(height)
+            //            let pricingCount = viewModel.pricingList.count
+            //            let height = pricingCount > 0 ? 8 : 0
+            //            return CGFloat(height)
             return 0
         default: return 0
         }
     }
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         if cart.productsCount > 0 {
             self.cartTableview.restore()
@@ -115,16 +115,16 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
             couponContainerView.isHidden = true
             return 0
         }
-
+        
         if viewModel.pricingList.count > 0 {
             return (couponValue as NSString).integerValue > 0 ? 3 : 2
         }
         return 1
     }
-
+    
     // MARK:- UITableViewDataSource - Cell
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
+        
         switch indexPath.section {
         case sectionType.item.rawValue:
             return 100
@@ -133,23 +133,23 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
         default: return 0
         }
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case sectionType.item.rawValue:
             return cart.productsCount
         case sectionType.pricing.rawValue:
             let pricingCount = viewModel.pricingList.count
-            return (couponValue as NSString).integerValue > 0 ? pricingCount : pricingCount - 1 
+            return (couponValue as NSString).integerValue > 0 ? pricingCount : pricingCount - 1
         default: return 0
         }
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case sectionType.item.rawValue:
             return getItemCell(tableView: tableView, indexPath: indexPath)
-
+            
         case sectionType.pricing.rawValue:
             return getPricingCell(tableView:tableView, indexPath: indexPath)
         default:
@@ -157,17 +157,23 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
             return cell
         }
     }
-
+    
     // MARK:- CartTableViewCell
     func getItemCell(tableView: UITableView, indexPath: IndexPath) -> CartTableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CartTableViewCell.identifier, for: indexPath) as! CartTableViewCell
-
+        
         let cartProduct = cart.product(at: indexPath)
         cell.configure(product: cartProduct.0, cartItem: cartProduct.1)
-
+        
         cell.onAddMoreClick = {
-            self.addOneMoreAction(indexPath: indexPath)
-            cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
+            let maxQuantity = cartProduct.0.maxQuantity
+            let currentQuantity = cell.quantityCoutLabel.text ?? "0"
+            if let max = Int(maxQuantity), max <= Int(currentQuantity) ?? 0 {
+                self.showErrorAlerr(title: Constants.Common.error, message: String(format: "MaxQuantityReached".localized(), "\(max)"), handler: nil)
+            } else {
+                self.addOneMoreAction(indexPath: indexPath)
+                cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
+            }
         }
         
         cell.onRemoveOneCountClick = {
@@ -179,23 +185,23 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
             self.removeItemAction(indexPath: indexPath)
             cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
         }
-
+        
         return cell
     }
-
+    
     func getPricingCell(tableView: UITableView, indexPath: IndexPath) -> PriceTableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PriceTableViewCell.identifier, for: indexPath) as! PriceTableViewCell
-
+        
         let pricingModel = viewModel.pricingList[indexPath.row]
         cell.configure(title: pricingModel.title, value: pricingModel.value)
         return cell
     }
-
+    
     // MARK:- CartViewModelDelegate
     func didFinishLoadingPricing() {
         cartTableview.reloadData()
     }
-
+    
     //MARK:- IBActions
     @IBAction func checkoutAction(_ sender: Any) {
         performSegue(withIdentifier: checkoutSegue, sender: nil)
