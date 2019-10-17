@@ -14,7 +14,7 @@
 "Coupon"="خصم";
 "items"="أصناف";
 "Cart Total"="المجموع الكلي";
-
+"MaxQuantityReached"="عفوا اقصي عدد للمنتج %@";
 // Login
 "Email"="البريد الالكتروني";
 "Passwrod"="كلمة المرور";
