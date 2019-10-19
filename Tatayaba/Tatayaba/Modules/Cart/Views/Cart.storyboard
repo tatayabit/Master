@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sVk-iS-5R8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sVk-iS-5R8">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,7 +37,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sVk-iS-5R8" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Pg-PR-Tku">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -48,22 +52,22 @@
         <!--CART-->
         <scene sceneID="WlR-5y-WeC">
             <objects>
-                <viewController storyboardIdentifier="NewCartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jjl-9Q-NrU" customClass="CartViewController" customModule="Tatayaba" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewCartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jjl-9Q-NrU" customClass="CartViewController" customModule="Tatayab___Testing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zkh-rZ-djh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93f-4v-x2G">
-                                <rect key="frame" x="0.0" y="580" width="375" height="71"/>
+                                <rect key="frame" x="0.0" y="546" width="375" height="71"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cart total " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzS-WW-8Am">
-                                        <rect key="frame" x="8" y="0.0" width="49" height="25"/>
+                                        <rect key="frame" x="8" y="0.0" width="55.5" height="25"/>
                                         <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14.200 KWD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3s-NS-Zlb">
-                                        <rect key="frame" x="305" y="7" width="62" height="13"/>
+                                        <rect key="frame" x="297" y="10" width="70" height="10"/>
                                         <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -97,10 +101,10 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sdk-r7-OJA">
-                                <rect key="frame" x="0.0" y="44" width="375" height="401"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="323"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CartTableViewCell" rowHeight="106" id="QE9-ah-kei" customClass="CartTableViewCell" customModule="Tatayaba" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CartTableViewCell" rowHeight="106" id="QE9-ah-kei" customClass="CartTableViewCell" customModule="Tatayab___Testing" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QE9-ah-kei" id="j07-hG-qqI">
@@ -111,14 +115,14 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="111"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CartImage" translatesAutoresizingMaskIntoConstraints="NO" id="rhL-QG-rQF">
-                                                            <rect key="frame" x="16" y="16" width="60" height="60"/>
+                                                            <rect key="frame" x="15.999999999999996" y="16" width="60" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="QaV-HQ-vZ6"/>
                                                                 <constraint firstAttribute="height" constant="60" id="Qca-7x-61t"/>
                                                             </constraints>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Jv-Ca-kv8">
-                                                            <rect key="frame" x="334" y="58" width="15" height="21"/>
+                                                            <rect key="frame" x="334" y="58" width="15" height="18"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="15" id="rcs-q1-RrP"/>
                                                             </constraints>
@@ -128,22 +132,22 @@
                                                             </connections>
                                                         </button>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="cnR-Pl-RzP">
-                                                            <rect key="frame" x="90" y="16" width="224" height="79"/>
+                                                            <rect key="frame" x="90" y="16" width="224" height="74"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intash- 500ml" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzI-9s-7db">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="92" height="17.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="85.5" height="15"/>
                                                                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.00 KWD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1N5-Qh-0zj">
-                                                                    <rect key="frame" x="0.0" y="24.5" width="68" height="17.5"/>
+                                                                    <rect key="frame" x="0.0" y="22" width="60.5" height="15"/>
                                                                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="DUX-fs-ahU">
-                                                                    <rect key="frame" x="0.0" y="49" width="140" height="30"/>
+                                                                    <rect key="frame" x="0.0" y="44" width="140" height="30"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="251" text="QTY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sh4-ce-mNU">
                                                                             <rect key="frame" x="0.0" y="0.0" width="51" height="30"/>
@@ -248,7 +252,7 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KSg-wN-SYh">
-                                <rect key="frame" x="0.0" y="445" width="375" height="130"/>
+                                <rect key="frame" x="0.0" y="411" width="375" height="130"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SkB-UI-5FE">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>

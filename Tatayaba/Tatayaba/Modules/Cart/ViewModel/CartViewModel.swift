@@ -34,8 +34,8 @@ class CartViewModel {
         var model = CartPricingModel(title: Constants.Cart.subtotal, value: cart.subtotalPrice)
         pricingList.append(model)
 
-        model = CartPricingModel(title: Constants.Cart.shipping, value: cart.shippingFormatedPrice)
-        pricingList.append(model)
+//        model = CartPricingModel(title: Constants.Cart.shipping, value: cart.shippingFormatedPrice)
+//        pricingList.append(model)
         
         model = CartPricingModel(title: Constants.Cart.shipping, value: shippingValue.formattedPrice)
         pricingList.append(model)
