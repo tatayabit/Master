@@ -15,7 +15,7 @@ class Customer {
     static let shared = Customer()
     private var userData: User?
 
-    var loggedin: Bool { return userData != nil }
+    var loggedin: Bool { return userData != nil && hasUserId() }
 
     var user: User? { return userData }
 
@@ -34,6 +34,10 @@ class Customer {
         userData = nil
         print("loggedOut: \(String(describing: userData))")
         KeychainWrapper.standard.removeObject(forKey: userDataKey)
+    }
+    
+    func hasUserId() -> Bool {
+        return userData?.identifier != "" && userData?.identifier != nil
     }
 
     //MARK:- UserData KeyChain
