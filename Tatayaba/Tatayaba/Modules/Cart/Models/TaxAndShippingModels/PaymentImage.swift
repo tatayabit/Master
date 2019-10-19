@@ -4,10 +4,10 @@
 
 import Foundation
 
-struct Image : Codable {
+struct PaymentImage : Codable {
 
 	let detailedId : String?
-	let icon : Icon?
+	let icon : PaymentIcon?
 	let imageId : String?
 	let pairId : String?
 	let position : String?
@@ -23,7 +23,7 @@ struct Image : Codable {
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		detailedId = try values.decodeIfPresent(String.self, forKey: .detailedId)
-		icon = try Icon(from: decoder)
+		icon = try PaymentIcon(from: decoder)
 		imageId = try values.decodeIfPresent(String.self, forKey: .imageId)
 		pairId = try values.decodeIfPresent(String.self, forKey: .pairId)
 		position = try values.decodeIfPresent(String.self, forKey: .position)

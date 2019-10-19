@@ -179,7 +179,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     
     func didSelectOneClick(product: Product) {
         if Customer.shared.loggedin {
-            let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewCartViewController") as! NewCartViewController
+            let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewCartViewController") as! CartViewController
             controller.buyingWayType = 0
             self.navigationController?.pushViewController(controller, animated: false)
         } else {

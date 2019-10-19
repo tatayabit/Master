@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct Icon : Codable {
+struct PaymentIcon : Codable {
 
 	let absolutePath : String?
 	let alt : String?
