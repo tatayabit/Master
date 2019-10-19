@@ -123,11 +123,20 @@ class CheckOutViewModel {
                 }
             }
             
-            productsParms["\(i)"] = [
-                "product_id": cartItemX.productId,
-                "amount": "\(cartItemX.count)",
-                "product_options": optionsParms
-            ]
+            var productPP = [String: Any]()
+            productPP["product_id"] = cartItemX.productId
+            productPP["amount"] = "\(cartItemX.count)"
+            
+            if optionsParms.count > 0 {
+                productPP["product_options"] = optionsParms
+
+            }
+            productsParms["\(i)"] = productPP
+//                [
+//                "product_id": cartItemX.productId,
+//                "amount": "\(cartItemX.count)",
+//                "product_options": optionsParms
+//            ]
             
             
         }
