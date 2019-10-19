@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewCartViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, CartViewModelDelegate {
+class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, CartViewModelDelegate {
     
     @IBOutlet var cartTableview: UITableView!
     @IBOutlet weak var totalPriceLabel: UILabel!
@@ -55,7 +55,7 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
     }
     
     func calculateTotal() {
-        let totalPriceValue = (cart.totalPrice as NSString).integerValue + (couponValue as NSString).integerValue + (taxValue as NSString).integerValue + (shippingValue as NSString).integerValue
+        let totalPriceValue = (cart.totalPrice as NSString).floatValue + (couponValue as NSString).floatValue + (taxValue as NSString).floatValue + (shippingValue as NSString).floatValue
         totalPriceLabel.text = "\(totalPriceValue)"
         viewModel.loadPricingListContent(couponValue: couponValue, taxValue: taxValue, shippingValue: shippingValue)
         let totalItemsText = "(" + String(cart.productsCount) + " " + Constants.Cart.items + ")"
@@ -169,7 +169,7 @@ class NewCartViewController: BaseViewController, UITableViewDelegate, UITableVie
             let maxQuantity = cartProduct.0.maxQuantity
             let currentQuantity = cell.quantityCoutLabel.text ?? "0"
             if let max = Int(maxQuantity), max <= Int(currentQuantity) ?? 0 {
-                self.showErrorAlerr(title: Constants.Common.error, message: String(format: "MaxQuantityReached".localized(), "\(max)"), handler: nil)
+                // max reached
             } else {
                 self.addOneMoreAction(indexPath: indexPath)
                 cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)

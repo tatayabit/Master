@@ -63,9 +63,11 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
 
         viewModel.signUp(user: user) { result in
             switch result {
-            case .success(let loginResult):
-                print(loginResult!)
-                self.pushToNextViewController(storyboardName: "Home", segueName: "HomeViewController")
+            case .success(let signUpResult):
+                if let user = signUpResult {
+                    print(user)
+                    self.pushToNextViewController(storyboardName: "Home", segueName: "HomeViewController")
+                }
             case .failure(let error):
                 print("the error \(error)")
                 // should show error alert

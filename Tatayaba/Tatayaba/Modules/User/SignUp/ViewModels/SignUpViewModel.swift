@@ -26,7 +26,6 @@ struct SignUpViewModel {
                     switch profileResult {
                     case .success(let profileResponse):
                         guard let userResponse = profileResponse else { return }
-
                         print(userResponse)
                     case .failure(let profileError):
                         print("the profile error \(profileError)")

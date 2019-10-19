@@ -61,7 +61,9 @@ class GuestSignUpViewcontroller: BaseViewController, ValidationDelegate {
             switch result {
             case .success(let loginResult):
                 print(loginResult!)
-                self.pushToNextViewController(storyboardName: "Home", segueName: "HomeViewController")
+                let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewCartViewController") as! CartViewController
+                controller.buyingWayType = 1
+                self.navigationController?.pushViewController(controller, animated: false)
             case .failure(let error):
                 print("the error \(error)")
                 // should show error alert

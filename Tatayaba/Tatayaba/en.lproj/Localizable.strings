@@ -14,7 +14,6 @@
 "Coupon"="Discount";
 "items"="items";
 "Cart Total"="Cart Total";
-"MaxQuantityReached"="Sorry Maximum number of products is %@";
 
 // Login
 "Email"="Email";
@@ -47,3 +46,6 @@
 "Please enter coupon value!" = "Please enter coupon value!";
 "CouponAddedSuccessfully" = "Coupon Added Successfully";
 "CouponRemovedSuccessfully" = "Coupon Removed Successfully";
+
+// CheckOut
+"EnterAddress" = "Please Enter Your Shipping Address";
