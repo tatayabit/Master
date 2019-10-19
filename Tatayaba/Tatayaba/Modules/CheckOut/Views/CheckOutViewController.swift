@@ -10,15 +10,11 @@ import UIKit
 import SkyFloatingLabelTextField
 import SwiftValidator
 
-class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource,ValidationDelegate{
+class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var paymentTableView: UITableView!
-    @IBOutlet weak var guestCompletDataView: UIView!
-    @IBOutlet weak private var emailTextField: SkyFloatingLabelTextField!
-    @IBOutlet weak private var passwordTextField: SkyFloatingLabelTextField!
+
     private let viewModel = CheckOutViewModel()
-    private let validator = Validator()
-    private var user: User?
     
     let checkoutCompletedSegue = "checkout_completed_segue"
     enum sectionType: Int {
@@ -32,7 +28,6 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
         viewModel.onPaymentMethodsListLoad = {
             self.paymentTableView.reloadData()
         }
-        formValidator()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,14 +37,13 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if ((Customer.shared.user?.email) == "") {
+        if ((Customer.shared.user?.identifier) == "") {
             Customer.shared.logout()
         }
     }
     
     func formValidator() {
-        validator.registerField(emailTextField, rules: [RequiredRule(message: "Email is required!"), EmailRule(message: "Invalid email")])
-        validator.registerField(passwordTextField, rules: [RequiredRule(message: "Password is required!"), PasswordRule(regex: "^.{6,20}$", message: "Invalid password")])
+        
     }
     
     func updateData() {
@@ -66,20 +60,6 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
         self.paymentTableView.register(CheckoutAddressTableViewCell.nib, forCellReuseIdentifier: CheckoutAddressTableViewCell.identifier)
     }
     
-    //MARK:- Validation Delegate
-    func validationSuccessful() {
-        print("Validation Success!")
-        guard let email = emailTextField.text else { return }
-        guard let password = passwordTextField.text else { return }
-        if var guestUser = Customer.shared.user {
-            guestUser.email = email
-            guestUser.password = password
-            user = guestUser
-            Customer.shared.setUser(guestUser)
-            setView(view: guestCompletDataView, hidden: true)
-        }
-    }
-    
     func validationFailed(_ errors: [(Validatable, ValidationError)]) {
         print("Validation FAILED!")
         if errors.count > 0 {
@@ -92,18 +72,10 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
         
     }
     
-    @IBAction func saveDataBtnAction(_ sender: Any) {
-        emailTextField.updateColors()
-        passwordTextField.updateColors()
-        validator.validate(self)
-    }
-    
     //MARK:- IBActions
     @IBAction func placeOrderAction(_ sender: Any) {
-        if Customer.shared.user?.email == nil {
+        if Customer.shared.user?.email == nil && !Cart.shared.isOneClickBuy {
             showErrorAlerr(title: Constants.Common.error, message: "Please Enter Adderess", handler: nil)
-        } else if Customer.shared.user?.email == "" {
-            setView(view: guestCompletDataView, hidden: false)
         } else {
             //         self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
             self.showLoadingIndicator(to: self.view)

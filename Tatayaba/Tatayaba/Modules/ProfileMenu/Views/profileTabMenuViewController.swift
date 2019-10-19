@@ -49,7 +49,7 @@ class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITab
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
         self.tabBarController?.tabBar.isHidden = false
-        if Customer.shared.loggedin && Customer.shared.user?.email != "" {
+        if Customer.shared.loggedin && Customer.shared.user?.identifier != "" {
             self.navigationItem.title = "\(Constants.Profile.welcome) \(Customer.shared.user?.firstname ?? "")"
         }
         self.profileMenu_tableView.reloadData()
@@ -71,7 +71,7 @@ extension profileTabMenuViewController{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            if Customer.shared.loggedin && Customer.shared.user?.email != "" {
+            if Customer.shared.loggedin && Customer.shared.user?.identifier != "" {
                  return Session1.count
             }
             return 1
@@ -79,7 +79,7 @@ extension profileTabMenuViewController{
             return Session2.count
         }
 
-        if Customer.shared.loggedin && Customer.shared.user?.email != "" {
+        if Customer.shared.loggedin && Customer.shared.user?.identifier != "" {
             return Session3.count
         }
         return Session4.count
@@ -92,7 +92,7 @@ extension profileTabMenuViewController{
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            if Customer.shared.loggedin && Customer.shared.user?.email != "" {
+            if Customer.shared.loggedin && Customer.shared.user?.identifier != "" {
                 return 60
             }
             return 100
@@ -105,7 +105,7 @@ extension profileTabMenuViewController{
         let cellIdentifier = "ProfileMenuTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ProfileMenuTableViewCell
         if  indexPath.section == 0 {
-            if Customer.shared.loggedin && Customer.shared.user?.email != "" {
+            if Customer.shared.loggedin && Customer.shared.user?.identifier != "" {
                 cell.title_lbl.text = self.Session1[indexPath.row]
                 cell.title_img.image = UIImage(named: self.Session1_img[indexPath.row])
             } else {
@@ -126,7 +126,7 @@ extension profileTabMenuViewController{
             cell.title_img.image = UIImage(named: self.Session2_img[indexPath.row])
         } else if  indexPath.section == 2 {
 
-            if Customer.shared.loggedin && Customer.shared.user?.email != "" {
+            if Customer.shared.loggedin && Customer.shared.user?.identifier != "" {
                 cell.title_lbl.text = self.Session3[indexPath.row]
             } else {
                 cell.title_lbl.text = self.Session4[indexPath.row]
