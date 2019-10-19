@@ -19,7 +19,9 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate {
     @IBOutlet var stateTextField: SkyFloatingLabelTextField!
     @IBOutlet var zipCodeTextField: SkyFloatingLabelTextField!
     @IBOutlet var countryTextField: SkyFloatingLabelTextField!
-
+    @IBOutlet weak var guestCompletDataView: UIView!
+    @IBOutlet weak private var emailTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak private var passwordTextField: SkyFloatingLabelTextField!
 
     @IBOutlet var phoneNumberTextField: SkyFloatingLabelTextField!
 
@@ -42,7 +44,10 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate {
                 countryTextField.text = currentUser.shippingCountry
                 phoneNumberTextField.text = currentUser.shippingPhone
                 user = currentUser
+                guestCompletDataView.isHidden = true
             }
+        } else if Customer.shared.user?.identifier == "" || Customer.shared.user?.identifier == nil {
+            guestCompletDataView.isHidden = false
         }
     }
 
@@ -53,6 +58,10 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate {
         validator.registerField(cityTextField, rules: [RequiredRule(message: "City is required!")])
         validator.registerField(countryTextField, rules: [RequiredRule(message: "Country is required!")])
         validator.registerField(phoneNumberTextField, rules: [RequiredRule(message: "Phone is required!")])
+        if Customer.shared.user?.identifier == "" || Customer.shared.user?.identifier == nil {
+            validator.registerField(emailTextField, rules: [RequiredRule(message: "Email is required!"), EmailRule(message: "Invalid email")])
+            validator.registerField(passwordTextField, rules: [RequiredRule(message: "Password is required!"), PasswordRule(regex: "^.{6,20}$", message: "Invalid password")])
+        }
         fullNameTextField.becomeFirstResponder()
     }
 
@@ -67,7 +76,7 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate {
             Customer.shared.setUser(user)
             navigationController?.popViewController(animated: true)
         } else {
-            Customer.shared.setUser(user ?? User(email: "", firstname: fullNameTextField.text ?? "", password: "",shippingCity: cityTextField.text ?? "",shippingCountry: countryTextField.text ?? "",shippingPhone: phoneNumberTextField.text ?? "",shippingAddress: addressLine1TextField.text ?? ""))
+            Customer.shared.setUser(user ?? User(email: emailTextField.text ?? "", firstname: fullNameTextField.text ?? "", password: passwordTextField.text ?? "",shippingCity: cityTextField.text ?? "",shippingCountry: countryTextField.text ?? "",shippingPhone: phoneNumberTextField.text ?? "",shippingAddress: addressLine1TextField.text ?? ""))
             navigationController?.popViewController(animated: true)
         }
     }
