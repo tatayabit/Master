@@ -84,6 +84,7 @@ class CheckOutViewModel {
 
         let userId = getUserId()
         let userData = userId == "0" ? getUserDataModel(user: userData) : nil
+
         let paymentId = cart.paymentMethod?.paymentId ?? "0"
 
         ordersApiClient.CreateOrder(products: getProductsModel(), userId: userId, userData: userData, paymentId: paymentId, oneClickBuy: cart.isOneClickBuy) { result in
@@ -142,6 +143,7 @@ class CheckOutViewModel {
     }
 
     func getUserDataModel(user: User) -> [String: Any] {
+
         let dict = [
             "email":user.email,
             "firstname": user.firstname,

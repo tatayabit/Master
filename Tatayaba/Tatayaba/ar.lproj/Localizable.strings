@@ -46,6 +46,7 @@
 "Please enter coupon value!" = "من فضلك ادخل الكوبون الصحيح !";
 "CouponAddedSuccessfully" = "تم اضافه الخصم بنجاح";
 "CouponRemovedSuccessfully" = "تم حذف الخصم بنجاح";
+"Quantity"="الكمية";
 
 // CheckOut
 "EnterAddress" = "من فضلك ادخل عنوانك";

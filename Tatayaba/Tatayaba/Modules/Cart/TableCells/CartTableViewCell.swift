@@ -40,7 +40,7 @@ class CartTableViewCell: UITableViewCell {
     }
     
     func updatePrice(product: Product, cartItem: CartItem) {
-        self.quantityLabel.text = "QTY "
+        self.quantityLabel.text = "\(Constants.Cart.Quantity) "
         quantityCoutLabel.text = String(cartItem.count)
         
         if let price = Float(product.price) {

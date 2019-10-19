@@ -27,24 +27,15 @@ extension Constants {
 
 class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
-  
     var Session1: [String] = [Constants.Profile.wishlist, Constants.Profile.myOrders]
     var Session1_img: [String] = ["wishlist", "wishlist", "Cart"]
     var Session2: [String] = [Constants.Profile.changeLanguage, Constants.Profile.liveChat, Constants.Profile.notifications]
     var Session2_img: [String] = ["settings", "liveChat","Notifiction"]
+    
     var Session3: [String] = [Constants.Profile.deliveryAndReturnPolicy, Constants.Profile.privacyPolicy,Constants.Profile.logout]
     var Session4: [String] = [Constants.Profile.deliveryAndReturnPolicy, Constants.Profile.privacyPolicy]
     var Session3_img: [String] = ["delivery", "privacy","logout"]
  
-  
-//    var Session1: [String] = [Constants.Profile.brands, Constants.Profile.wishlist, Constants.Profile.myOrders]
-//    var Session1_img: [String] = ["WISHLIST", "WISHLIST", "MY ORDERS"]
-//    var Session2: [String] = [Constants.Profile.changeLanguage, Constants.Profile.liveChat, Constants.Profile.notifications]
-//    var Session2_img: [String] = ["Setting", "LIVE CHAT","Notifications"]
-//    var Session3: [String] = [Constants.Profile.deliveryAndReturnPolicy, Constants.Profile.privacyPolicy,Constants.Profile.logout]
-//    var Session4: [String] = [Constants.Profile.deliveryAndReturnPolicy, Constants.Profile.privacyPolicy]
-//    var Session3_img: [String] = ["Delivery and Return Policy", "Privacy Policy","LOGOUT"]
-// >>>>>>> develop
     
     private let orderDetailsSegue = "order_details_segue"
 
@@ -162,6 +153,9 @@ extension profileTabMenuViewController{
                 //setting page
                 self.changeLanguege()
             }
+            if indextitle == Constants.Profile.liveChat {
+                self.loadLiveChat()
+            }
             
         }else if  indexPath.section == 2 {
             let indextitle = self.Session3[indexPath.row]
@@ -224,6 +218,12 @@ extension profileTabMenuViewController{
 
     func loadBrands() {
         let controller = UIStoryboard(name: "Suppliers", bundle: Bundle.main).instantiateViewController(withIdentifier: "SuppliersViewController") as! SuppliersListViewController
+        self.navigationController?.pushViewController(controller, animated: false)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    func loadLiveChat() {
+        let controller = self.storyboard!.instantiateViewController(withIdentifier: "LiveChatViewController") as! LiveChatViewController
         self.navigationController?.pushViewController(controller, animated: false)
         self.tabBarController?.tabBar.isHidden = true
     }

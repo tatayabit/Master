@@ -105,4 +105,13 @@ class Cart {
         let existed = cartItemsArr.contains(where: { $0.productId == String(product.identifier) })
         return existed
     }
+    
+    // MARK:- Reset
+    func reset() {
+        self.productsArr.removeAll()
+        self.cartItemsArr.removeAll()
+        self.isOneClickBuy = false
+        self.defaultShipping = nil
+        self.paymentMethod = nil
+    }
 }
