@@ -83,7 +83,7 @@ class CheckOutViewModel {
     func placeOrder(completion: @escaping (APIResult<PlaceOrderResult?, MoyaError>) -> Void) {
 
         let userId = getUserId()
-        let userData = userId == "0" ? getUserDataModel() : nil
+        let userData = userId == "0" ? getTempUserDataModel() : nil
         let paymentId = cart.paymentMethod?.paymentId ?? "0"
 
         ordersApiClient.CreateOrder(products: getProductsModel(), userId: userId, userData: userData, paymentId: paymentId, oneClickBuy: cart.isOneClickBuy) { result in
@@ -141,7 +141,7 @@ class CheckOutViewModel {
         return optionsParms
     }
 
-    func getUserDataModel() -> [String: Any] {
+    func getTempUserDataModel() -> [String: Any] {
         let dict = [
             "email":"guest48@example.com",
             "firstname": "Kareem",

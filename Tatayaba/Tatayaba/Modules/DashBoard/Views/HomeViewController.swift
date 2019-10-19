@@ -178,9 +178,11 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     }
     
     func didSelectOneClick(product: Product) {
+        didAddToCart(product: product)
+        
         if Customer.shared.loggedin {
             let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewCartViewController") as! CartViewController
-            controller.buyingWayType = 0
+            controller.buyingWayType = 1
             self.navigationController?.pushViewController(controller, animated: false)
         } else {
             let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "GuestSignUpViewcontroller") as! GuestSignUpViewcontroller
