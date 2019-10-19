@@ -80,10 +80,10 @@ class CheckOutViewModel {
     }
 
     //MARK:- Placing Order
-    func placeOrder(completion: @escaping (APIResult<PlaceOrderResult?, MoyaError>) -> Void) {
+    func placeOrder(userData: User, completion: @escaping (APIResult<PlaceOrderResult?, MoyaError>) -> Void) {
 
         let userId = getUserId()
-        let userData = userId == "0" ? getUserDataModel() : nil
+        let userData = userId == "0" ? getUserDataModel(user: userData) : nil
         let paymentId = cart.paymentMethod?.paymentId ?? "0"
 
         ordersApiClient.CreateOrder(products: getProductsModel(), userId: userId, userData: userData, paymentId: paymentId, oneClickBuy: cart.isOneClickBuy) { result in
@@ -141,25 +141,25 @@ class CheckOutViewModel {
         return optionsParms
     }
 
-    func getUserDataModel() -> [String: Any] {
+    func getUserDataModel(user: User) -> [String: Any] {
         let dict = [
-            "email":"guest48@example.com",
-            "firstname": "Kareem",
-            "lastname": "Test",
-            "s_firstname": "S_Kareem",
-            "s_lastname": "S_Test",
+            "email":user.email,
+            "firstname": user.firstname,
+            "lastname": user.firstname,
+            "s_firstname": "S_\(user.firstname)",
+            "s_lastname": "S_\(user.firstname)",
             "s_country": "KW",
-            "s_city": "Kuwait",
+            "s_city": user.shippingCity,
             "s_state": "City",
             "s_zipcode": "80005",
-            "s_address": "22 Main street",
-            "b_firstname": "B_Kareem",
-            "b_lastname": "B_Test",
+            "s_address": user.shippingAddress,
+            "b_firstname": "B_\(user.firstname)",
+            "b_lastname": "B_\(user.firstname)",
             "b_country":"KW",
-            "b_city": "Kuwait",
+            "b_city": user.shippingCity,
             "b_state": "City",
             "b_zipcode":"80005",
-            "b_address": "22 Main street"
+            "b_address": user.shippingAddress
         ]
         return dict
     }
