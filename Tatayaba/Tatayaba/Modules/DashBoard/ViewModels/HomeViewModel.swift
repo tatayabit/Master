@@ -103,7 +103,7 @@ class HomeViewModel {
 
     func loadTopBannerApi() {
         // topBannerApi
-        blocksApiClient.getBlock(blockId: "259") { result in
+        blocksApiClient.getBlock(blockId: "242") { result in
             switch result {
             case .success(let responseB58):
                 guard let block = responseB58 else { return }

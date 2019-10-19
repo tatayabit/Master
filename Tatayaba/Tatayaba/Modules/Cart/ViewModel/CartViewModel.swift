@@ -95,5 +95,6 @@ extension Constants {
         static let items = "items".localized()
         static let cartTotal = "Cart Total".localized()
         static let cartEmpty = "Your Cart is Empty!".localized()
+        static let Quantity = "Quantity".localized()
     }
 }

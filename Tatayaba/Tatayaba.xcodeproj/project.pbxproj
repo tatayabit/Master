@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		053D694C0D5575CB4917A4B5 /* Pods_TatayabaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */; };
 		10645967235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10645966235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift */; };
+		1083BFFD235B355600360E78 /* LiveChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1083BFFC235B355600360E78 /* LiveChatViewController.swift */; };
 		10998ED62354F01F00906084 /* ProductDeatailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10998ED52354F01F00906084 /* ProductDeatailsTableViewCell.swift */; };
 		109D29E3234A64D00052D01B /* ReverseGeoCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D29E2234A64D00052D01B /* ReverseGeoCoder.swift */; };
 		109D29E5234A668F0052D01B /* CountrySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D29E4234A668F0052D01B /* CountrySettings.swift */; };
@@ -272,6 +273,7 @@
 		02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B399FC35D3B3B996D93EC1 /* Pods-TatayabaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaUITests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		10645966235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDeatailsTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		1083BFFC235B355600360E78 /* LiveChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChatViewController.swift; sourceTree = "<group>"; };
 		10998ED52354F01F00906084 /* ProductDeatailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDeatailsTableViewCell.swift; sourceTree = "<group>"; };
 		109D29E2234A64D00052D01B /* ReverseGeoCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGeoCoder.swift; sourceTree = "<group>"; };
 		109D29E4234A668F0052D01B /* CountrySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySettings.swift; sourceTree = "<group>"; };
@@ -558,6 +560,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1083BFFB235B350F00360E78 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4CC343A3232F96A6005BA810 /* ProfileTab.storyboard */,
+				4CC343A5232F96C2005BA810 /* profileTabMenuViewController.swift */,
+				4CC343A7232F9FAF005BA810 /* ProfileMenuTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		109D29E1234A64C60052D01B /* ReverseGeoCoder */ = {
 			isa = PBXGroup;
 			children = (
@@ -1591,10 +1603,9 @@
 		4CC343A2232F9683005BA810 /* ProfileMenu */ = {
 			isa = PBXGroup;
 			children = (
-				4CC343A3232F96A6005BA810 /* ProfileTab.storyboard */,
-				4CC343A5232F96C2005BA810 /* profileTabMenuViewController.swift */,
-				4CC343A7232F9FAF005BA810 /* ProfileMenuTableViewCell.swift */,
+				1083BFFB235B350F00360E78 /* Views */,
 				4C30D9E7232FDD9500629D38 /* WebViewViewController.swift */,
+				1083BFFC235B355600360E78 /* LiveChatViewController.swift */,
 			);
 			path = ProfileMenu;
 			sourceTree = "<group>";
@@ -2292,6 +2303,7 @@
 				841CE30A22DCC2B300A47FA0 /* MessagesViewController.swift in Sources */,
 				848E89C122CC99AC000AA24C /* AACarousel.swift in Sources */,
 				11C271B622F20E24004613E3 /* AddressTableViewCell.swift in Sources */,
+				1083BFFD235B355600360E78 /* LiveChatViewController.swift in Sources */,
 				11FB584D231C2DBB005DA4F0 /* ProductsBlockView.swift in Sources */,
 				4C219865233BBAA000DE40FA /* CountryViewController.swift in Sources */,
 				11945BBE22F0B08D000F08DC /* CheckOutViewModel.swift in Sources */,

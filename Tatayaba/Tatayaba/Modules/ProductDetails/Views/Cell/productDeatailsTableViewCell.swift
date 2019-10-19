@@ -51,6 +51,7 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
         self.nameLabel.text = productVM.name
         self.descriptionLabel.text = productVM.description
         self.quantityLabel.text = String(productVM.selectedQuantity)
+        self.priceLabel.text = productVM.price
     }
     
     
