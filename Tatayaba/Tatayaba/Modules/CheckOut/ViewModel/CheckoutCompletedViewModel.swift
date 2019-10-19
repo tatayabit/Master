@@ -12,5 +12,10 @@ struct CheckoutCompletedViewModel {
 
     init(orderId: String) {
         self.orderId = orderId
+        self.clearCart()
+    }
+    
+    func clearCart() {
+        Cart.shared.reset()
     }
 }

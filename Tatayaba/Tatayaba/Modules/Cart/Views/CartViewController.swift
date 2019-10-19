@@ -42,6 +42,8 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        viewModel.setOneClickBuy(isOneClickBuy: (buyingWayType > 0))
+        
         calculateTotal()
         loadTaxAndShipping()
         self.tabBarController?.tabBar.isHidden = false

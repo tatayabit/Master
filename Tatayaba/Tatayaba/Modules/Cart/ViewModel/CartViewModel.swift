@@ -51,6 +51,11 @@ class CartViewModel {
         }
     }
     
+    // MARK:- One Click Buy
+    func setOneClickBuy(isOneClickBuy: Bool) {
+        cart.isOneClickBuy = isOneClickBuy
+    }
+    
     //MARK:- Api
     func applyCoupon(couponCode: String, completion: @escaping (APIResult<couponResponse?, MoyaError>) -> Void) {
         cartApiClient.applyCoupon(couponCode: couponCode) { result in
@@ -90,5 +95,6 @@ extension Constants {
         static let items = "items".localized()
         static let cartTotal = "Cart Total".localized()
         static let cartEmpty = "Your Cart is Empty!".localized()
+        static let Quantity = "Quantity".localized()
     }
 }
