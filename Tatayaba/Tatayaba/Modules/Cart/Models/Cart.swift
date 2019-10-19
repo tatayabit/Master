@@ -88,7 +88,7 @@ class Cart {
     }
 
     func calculateTotal() -> Float {
-        return calculateSubTotal() + shipping
+        return calculateSubTotal()
     }
 
     //MARK:- Get Cart Item / Product

@@ -26,7 +26,7 @@ class CheckoutAddressTableViewCell: UITableViewCell {
     }
     
     func configure(user: User) {
-        detailsLabel.text = user.shippingAddress == "" ? "EnterAddress".localized() : user.shippingAddress
+        detailsLabel.text = user.shippingAddress == "" ? "EnterAddress".localized() : user.shippingAddress + ", " + user.shippingCity + ", " + user.shippingCountry
     }
     
     @IBAction func editButton_Action(_ sender: Any) {
