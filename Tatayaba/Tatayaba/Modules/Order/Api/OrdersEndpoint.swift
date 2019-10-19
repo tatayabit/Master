@@ -12,6 +12,7 @@ enum OrdersEndpoint {
     case create(products: [String: Any], userId: String, userData: [String: Any]?, paymentId: String, oneClickBuy: Bool)
     case getAllOrders(page: Int)
     case getOrder(orderId: String)
+
 }
 
 
@@ -38,6 +39,8 @@ extension OrdersEndpoint: TargetType {
             return "4.0/orders"
         case .getOrder(let orderId):
             return "orders/\(orderId.urlEscaped)"
+        case .getPaymentUrl(let orderId):
+            return "4.0/TtmPayments/\(orderId.urlEscaped)"
         }
     }
 
@@ -45,7 +48,7 @@ extension OrdersEndpoint: TargetType {
         switch self {
         case .create:
             return .post
-        case .getAllOrders, .getOrder:
+        case .getAllOrders, .getOrder, .getPaymentUrl:
             return .get
         }
     }
@@ -91,6 +94,8 @@ extension OrdersEndpoint: TargetType {
             }
             return .requestParameters(parameters: [ "user_id": userId
                 ], encoding: URLEncoding.queryString)
+        case .getPaymentUrl:
+            return .requestPlain
         }
     }
 
