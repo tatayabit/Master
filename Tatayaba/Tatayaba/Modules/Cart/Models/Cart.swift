@@ -10,7 +10,7 @@ import UIKit
 
 class Cart {
     static let shared = Cart()
-    private var cartItemsArr = [CartItem]()
+    var cartItemsArr = [CartItem]()
     private var productsArr = [Product]()
 
     var defaultShipping: ShippingMethod?
@@ -32,7 +32,7 @@ class Cart {
             if let max = Int(maxQuantity), max <= cartItem.count {
                 // max reached
             } else {
-                increaseCount(cartItem: cartItem)
+                increaseCount(cartItem: cartItem, quantity: quantity)
             }
         } else {
             let productModel = CartItem(productId: String(product.identifier), productName: product.name, quantity: quantity, options: options)
@@ -52,8 +52,8 @@ class Cart {
         updateTabBarCount()
     }
 
-    func increaseCount(cartItem: CartItem) {
-        cartItem.increaseCount(by: 1)
+    func increaseCount(cartItem: CartItem, quantity: Int) {
+        cartItem.increaseCount(by: quantity)
         updateTabBarCount()
     }
 

@@ -79,7 +79,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     func addOneMoreAction(indexPath: IndexPath) {
         let cartProduct = cart.product(at: indexPath)
-        cart.increaseCount(cartItem: cartProduct.1)
+        cart.increaseCount(cartItem: cartProduct.1,quantity: 1)
         calculateTotal()
     }
     
