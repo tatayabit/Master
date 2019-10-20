@@ -26,6 +26,8 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     var couponValue: String = "0"
     var taxValue: Tax?
     var shippingValue: String = "0"
+    var maxValueToShowTax: Float = 200
+    var totalPriceValue: Float = 0
     private let checkoutSegue = "checkout_segue"
     
     enum sectionType: Int {
@@ -43,7 +45,6 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.setOneClickBuy(isOneClickBuy: (buyingWayType > 0))
-        
         calculateTotal()
         loadTaxAndShipping()
         self.tabBarController?.tabBar.isHidden = false
@@ -57,10 +58,10 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     }
     
     func calculateTotal() {
-        var totalPriceValue = (cart.totalPrice as NSString).floatValue + (couponValue as NSString).floatValue  + (shippingValue as NSString).floatValue
-        if let taxStringValue = taxValue?.vat?.value {
+        totalPriceValue = (cart.totalPrice as NSString).floatValue + (couponValue as NSString).floatValue  + (shippingValue as NSString).floatValue
+        if let taxStringValue = taxValue?.vat?.value, totalPriceValue >= maxValueToShowTax {
             if taxValue?.vat?.type == "P" {
-                totalPriceValue = (totalPriceValue * (Float(taxStringValue)!)) / 100
+                totalPriceValue += (totalPriceValue * (Float(taxStringValue)!)) / 100
             } else {
                 totalPriceValue += Float(taxStringValue) ?? 0.0
             }
@@ -149,6 +150,9 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         case sectionType.item.rawValue:
             return cart.productsCount
         case sectionType.pricing.rawValue:
+            if totalPriceValue < maxValueToShowTax {
+                viewModel.pricingList.remove(at: 2)
+            }
             let pricingCount = viewModel.pricingList.count
             return (couponValue as NSString).integerValue > 0 ? pricingCount : pricingCount - 1
         default: return 0
