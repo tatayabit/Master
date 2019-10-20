@@ -133,6 +133,10 @@ class ProductDetailsViewModel {
         }
     }
     
+    func unselectAll(at section: Int) {
+        
+    }
+    
     // MARK:- ProductDeatailsTableViewCellViewModel
     func detailsCellVM() -> ProductDeatailsTableViewCellViewModel {
         return ProductDeatailsTableViewCellViewModel(product: self.product)
