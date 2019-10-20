@@ -26,10 +26,10 @@ class CartViewModel {
     weak var delegate: CartViewModelDelegate?
 
     init() {
-        loadPricingListContent(couponValue: "0", taxValue: "0", shippingValue: "0")
+        loadPricingListContent(couponValue: "0", taxValue: nil, shippingValue: "0")
     }
 
-    func loadPricingListContent(couponValue: String, taxValue: String, shippingValue: String) {
+    func loadPricingListContent(couponValue: String, taxValue: Tax?, shippingValue: String) {
         pricingList.removeAll()
         var model = CartPricingModel(title: Constants.Cart.subtotal, value: cart.subtotalPrice)
         pricingList.append(model)
@@ -40,7 +40,12 @@ class CartViewModel {
         model = CartPricingModel(title: Constants.Cart.shipping, value: shippingValue.formattedPrice)
         pricingList.append(model)
         
-        model = CartPricingModel(title: Constants.Cart.tax, value: taxValue.formattedPrice)
+        if taxValue?.vat?.type == "P" {
+            model = CartPricingModel(title: Constants.Cart.tax, value: "\(taxValue?.vat?.value ?? "0")%")
+        }else {
+            model = CartPricingModel(title: Constants.Cart.tax, value: taxValue?.vat?.value?.formattedPrice ?? "0")
+        }
+        
         pricingList.append(model)
         
         model = CartPricingModel(title: Constants.Cart.coupon, value: couponValue.formattedPrice)

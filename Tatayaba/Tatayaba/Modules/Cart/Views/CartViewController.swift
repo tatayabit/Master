@@ -24,7 +24,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     // let we say until now (One_Click_Buy = 1 & Default_Way = 0)
     var buyingWayType: Int = 0
     var couponValue: String = "0"
-    var taxValue: String = "0"
+    var taxValue: Tax?
     var shippingValue: String = "0"
     private let checkoutSegue = "checkout_segue"
     
@@ -57,7 +57,15 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     }
     
     func calculateTotal() {
-        let totalPriceValue = (cart.totalPrice as NSString).floatValue + (couponValue as NSString).floatValue + (taxValue as NSString).floatValue + (shippingValue as NSString).floatValue
+        var totalPriceValue = (cart.totalPrice as NSString).floatValue + (couponValue as NSString).floatValue  + (shippingValue as NSString).floatValue
+        if let taxStringValue = taxValue?.vat?.value {
+            if taxValue?.vat?.type == "P" {
+                totalPriceValue = (totalPriceValue * (Float(taxStringValue)!)) / 100
+            } else {
+                totalPriceValue += Float(taxStringValue) ?? 0.0
+            }
+        }
+        
         totalPriceLabel.text = "\(totalPriceValue)"
         viewModel.loadPricingListContent(couponValue: couponValue, taxValue: taxValue, shippingValue: shippingValue)
         let totalItemsText = "(" + String(cart.productsCount) + " " + Constants.Cart.items + ")"
@@ -222,9 +230,9 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             self.hideLoadingIndicator(from: self.view)
             switch result {
             case .success(let taxAndShippingResponse):
-                if let taxValue = taxAndShippingResponse?.tax?.vat?.value {
+                if let taxValue = taxAndShippingResponse?.tax {
                     print(taxValue)
-                    self.taxValue = "\(taxValue)"
+                    self.taxValue = taxValue
                     self.calculateTotal()
                 }
                 if let shippingValue = taxAndShippingResponse?.shipping?.rateValue {
