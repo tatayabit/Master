@@ -12,6 +12,7 @@ enum OrdersEndpoint {
     case create(products: [String: Any], userId: String, userData: [String: Any]?, paymentId: String, oneClickBuy: Bool)
     case getAllOrders(page: Int)
     case getOrder(orderId: String)
+
 }
 
 
@@ -33,7 +34,8 @@ extension OrdersEndpoint: TargetType {
     var path: String {
         switch self {
         case .create:
-            return "stores/1/orders/"
+            return "4.0/stores/1/TtmOrders/"
+//            api/4.0/stores/1/TtmOrders/
         case .getAllOrders:
             return "4.0/orders"
         case .getOrder(let orderId):
@@ -65,7 +67,7 @@ extension OrdersEndpoint: TargetType {
             var params = [
                 "user_id": userId,
                 "payment_id": paymentId,
-                "shipping_id": "9",
+                "shipping_id": "7",
                 "products": products
                 ] as [String : Any]
 
