@@ -29,6 +29,6 @@ struct OrdersAPIClient: APIClient {
     }
     
     func getPaymentUrl(orderId: String, completion: @escaping (APIResult<OrderModel?, MoyaError>) -> Void) {
-        fetch(with: OrdersEndpoint.getPaymentUrl(orderId: orderId), completion: completion)
+//        fetch(with: OrdersEndpoint.getPaymentUrl(orderId: orderId), completion: completion)
     }
 }

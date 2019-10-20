@@ -17,6 +17,8 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
     private let viewModel = CheckOutViewModel()
     
     let checkoutCompletedSegue = "checkout_completed_segue"
+    let paymentWebViewSegue = "payment_web_view_segue"
+    
     enum sectionType: Int {
         case payment = 0, address
     }
@@ -87,7 +89,8 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
                         guard let placeOrderResult = response else { return }
                         print(placeOrderResult)
                         if placeOrderResult.orderId > 0 {
-                            self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
+                            
+                            self.orderSuccessFlow(result: placeOrderResult)
                         } else {
                             print("the error order id == \(placeOrderResult.orderId)")
                             self.showErrorAlerr(title: Constants.Common.error, message: "Placing order failed", handler: nil)
@@ -99,6 +102,16 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
                     }
                 }
             }
+        }
+    }
+    
+    
+    // MARK: - Placing Order Success Flow
+    func orderSuccessFlow(result: PlaceOrderResult) {
+        if viewModel.paymentId == "12" {
+            self.performSegue(withIdentifier: self.paymentWebViewSegue, sender: result)
+        } else {
+            self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
         }
     }
 }
@@ -188,5 +201,16 @@ extension CheckOutViewController {
     @objc func EditAddressButton() {
         let controller = UIStoryboard(name: "Addresses", bundle: Bundle.main).instantiateViewController(withIdentifier: "AddressAddEditViewController") as! AddressAddEditViewController
         self.navigationController?.pushViewController(controller, animated: false)
+    }
+    
+    
+    //MARK:- Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == paymentWebViewSegue {
+            let productDetailsVC = segue.destination as! PaymentWebViewController
+            if let ordeResult = sender as? PlaceOrderResult {
+                productDetailsVC.viewModel = viewModel.paymentWebViewModel(orderResult: ordeResult)
+            }
+        }
     }
 }

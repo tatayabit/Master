@@ -21,6 +21,11 @@ class CheckOutViewModel {
     var shippingValue: String { return "1.000".formattedPrice }
     var totalValue: String { return String(cart.calculateSubTotal() + 1.000 + 0.500).formattedPrice }
     var paymentMethods = [Payment]()
+    
+    var paymentId: String {
+        let paymentId = cart.paymentMethod?.paymentId ?? "0"
+        return paymentId
+    }
 
     /// This closure is being called once the payement methods api fetch
     var onPaymentMethodsListLoad: (() -> ())?
@@ -131,13 +136,7 @@ class CheckOutViewModel {
                 productPP["product_options"] = optionsParms
 
             }
-            productsParms["\(i)"] = productPP
-//                [
-//                "product_id": cartItemX.productId,
-//                "amount": "\(cartItemX.count)",
-//                "product_options": optionsParms
-//            ]
-            
+            productsParms["\(cartItemX.productId)"] = productPP
             
         }
         return productsParms
@@ -178,5 +177,9 @@ class CheckOutViewModel {
     //MARK:- CheckoutCompletedViewModel
     func checkoutCompletedViewModel(orderId: String) -> CheckoutCompletedViewModel {
         return CheckoutCompletedViewModel(orderId: orderId)
+    }
+    
+    func paymentWebViewModel(orderResult: PlaceOrderResult) -> PaymentWebViewModel {
+        return PaymentWebViewModel(orderResult: orderResult)
     }
 }

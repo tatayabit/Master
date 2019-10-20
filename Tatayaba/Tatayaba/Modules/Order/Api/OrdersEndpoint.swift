@@ -34,13 +34,12 @@ extension OrdersEndpoint: TargetType {
     var path: String {
         switch self {
         case .create:
-            return "stores/1/orders/"
+            return "4.0/stores/1/TtmOrders/"
+//            api/4.0/stores/1/TtmOrders/
         case .getAllOrders:
             return "4.0/orders"
         case .getOrder(let orderId):
             return "orders/\(orderId.urlEscaped)"
-        case .getPaymentUrl(let orderId):
-            return "4.0/TtmPayments/\(orderId.urlEscaped)"
         }
     }
 
@@ -48,7 +47,7 @@ extension OrdersEndpoint: TargetType {
         switch self {
         case .create:
             return .post
-        case .getAllOrders, .getOrder, .getPaymentUrl:
+        case .getAllOrders, .getOrder:
             return .get
         }
     }
@@ -68,7 +67,7 @@ extension OrdersEndpoint: TargetType {
             var params = [
                 "user_id": userId,
                 "payment_id": paymentId,
-                "shipping_id": "9",
+                "shipping_id": "7",
                 "products": products
                 ] as [String : Any]
 
@@ -94,8 +93,6 @@ extension OrdersEndpoint: TargetType {
             }
             return .requestParameters(parameters: [ "user_id": userId
                 ], encoding: URLEncoding.queryString)
-        case .getPaymentUrl:
-            return .requestPlain
         }
     }
 
