@@ -28,8 +28,12 @@ class Cart {
     func addProduct(product: Product, quantity: Int = 1, options: [CartItemOptions]? = nil) {
         if productExistedInCart(product: product) {
             let cartItem = self.cartItem(for: product, options: options)
-            
-            increaseCount(cartItem: cartItem)
+            let maxQuantity = product.maxQuantity
+            if let max = Int(maxQuantity), max <= cartItem.count {
+                // max reached
+            } else {
+                increaseCount(cartItem: cartItem)
+            }
         } else {
             let productModel = CartItem(productId: String(product.identifier), productName: product.name, quantity: quantity, options: options)
             cartItemsArr.append(productModel)
