@@ -70,9 +70,21 @@ class ProductDetailsViewModel {
     
     //MARK:- Product Details
     func increase() {
-        if self.selectedQuantity < 100 {
-            self.selectedQuantity += 1
+        let maxQuantity = product.maxQuantity
+        if let cartItem = Cart.shared.cartItemsArr.filter({ $0.productId == String(product.identifier) }).first {
+            if let max = Int(maxQuantity), max <= cartItem.count + selectedQuantity {
+                // max reached
+            } else {
+                self.selectedQuantity += 1
+            }
+        } else {
+            if let max = Int(maxQuantity), max <= selectedQuantity {
+                // max reached
+            } else {
+                self.selectedQuantity += 1
+            }
         }
+        
     }
     
     func decrease() {

@@ -24,8 +24,10 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     // let we say until now (One_Click_Buy = 1 & Default_Way = 0)
     var buyingWayType: Int = 0
     var couponValue: String = "0"
-    var taxValue: String = "0"
+    var taxValue: Tax?
     var shippingValue: String = "0"
+    var maxValueToShowTax: Float = 200
+    var totalPriceValue: Float = 0
     private let checkoutSegue = "checkout_segue"
     
     enum sectionType: Int {
@@ -43,7 +45,6 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.setOneClickBuy(isOneClickBuy: (buyingWayType > 0))
-        
         calculateTotal()
         loadTaxAndShipping()
         self.tabBarController?.tabBar.isHidden = false
@@ -57,7 +58,15 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     }
     
     func calculateTotal() {
-        let totalPriceValue = (cart.totalPrice as NSString).floatValue + (couponValue as NSString).floatValue + (taxValue as NSString).floatValue + (shippingValue as NSString).floatValue
+        totalPriceValue = (cart.totalPrice as NSString).floatValue + (couponValue as NSString).floatValue  + (shippingValue as NSString).floatValue
+        if let taxStringValue = taxValue?.vat?.value, totalPriceValue >= maxValueToShowTax {
+            if taxValue?.vat?.type == "P" {
+                totalPriceValue += (totalPriceValue * (Float(taxStringValue)!)) / 100
+            } else {
+                totalPriceValue += Float(taxStringValue) ?? 0.0
+            }
+        }
+        
         totalPriceLabel.text = "\(totalPriceValue)"
         viewModel.loadPricingListContent(couponValue: couponValue, taxValue: taxValue, shippingValue: shippingValue)
         let totalItemsText = "(" + String(cart.productsCount) + " " + Constants.Cart.items + ")"
@@ -79,7 +88,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     func addOneMoreAction(indexPath: IndexPath) {
         let cartProduct = cart.product(at: indexPath)
-        cart.increaseCount(cartItem: cartProduct.1)
+        cart.increaseCount(cartItem: cartProduct.1,quantity: 1)
         calculateTotal()
     }
     
@@ -141,6 +150,9 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         case sectionType.item.rawValue:
             return cart.productsCount
         case sectionType.pricing.rawValue:
+            if totalPriceValue < maxValueToShowTax {
+                viewModel.pricingList.remove(at: 2)
+            }
             let pricingCount = viewModel.pricingList.count
             return (couponValue as NSString).integerValue > 0 ? pricingCount : pricingCount - 1
         default: return 0
@@ -222,9 +234,9 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             self.hideLoadingIndicator(from: self.view)
             switch result {
             case .success(let taxAndShippingResponse):
-                if let taxValue = taxAndShippingResponse?.tax?.vat?.value {
+                if let taxValue = taxAndShippingResponse?.tax {
                     print(taxValue)
-                    self.taxValue = "\(taxValue)"
+                    self.taxValue = taxValue
                     self.calculateTotal()
                 }
                 if let shippingValue = taxAndShippingResponse?.shipping?.rateValue {
