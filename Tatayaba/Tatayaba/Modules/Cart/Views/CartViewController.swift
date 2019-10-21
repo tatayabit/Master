@@ -151,7 +151,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             return cart.productsCount
         case sectionType.pricing.rawValue:
             if totalPriceValue < maxValueToShowTax {
-                viewModel.pricingList.remove(at: 2)
+                viewModel.pricingList.removeAll(where: {$0.title == "Tax"})
             }
             let pricingCount = viewModel.pricingList.count
             return (couponValue as NSString).integerValue > 0 ? pricingCount : pricingCount - 1
