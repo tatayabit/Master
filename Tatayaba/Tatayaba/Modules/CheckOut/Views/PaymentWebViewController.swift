@@ -19,6 +19,8 @@ class PaymentWebViewController: BaseViewController, WKUIDelegate, WKNavigationDe
     override func loadView() {
         super.loadView()
         let webConfiguration = WKWebViewConfiguration()
+        webConfiguration.preferences.javaScriptEnabled = true
+
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
         webView.uiDelegate = self
         webView.navigationDelegate = self

@@ -14,6 +14,10 @@ target 'Tatayaba' do
   pod 'MOLH'
   pod 'MBProgressHUD', '~> 1.1.0'
   pod 'IQKeyboardManagerSwift'
+  pod 'Firebase/Analytics'
+  pod 'Fabric', '~> 1.10.2'
+  pod 'Crashlytics', '~> 3.14.0'
+  
   
   target 'TatayabaTests' do
     inherit! :search_paths
