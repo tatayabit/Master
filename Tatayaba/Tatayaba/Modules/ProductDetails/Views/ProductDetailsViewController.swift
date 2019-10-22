@@ -155,7 +155,7 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: OptionCollectionViewCell.identifier, for: indexPath) as! OptionCollectionViewCell
             if let viewModel = viewModel {
-                cell.configure(option: viewModel.optionVariant(at: indexPath))
+                cell.configure(option: viewModel.optionVariant(at: indexPath), selected: viewModel.selected(at: indexPath))
             }
             return cell
         }
@@ -168,10 +168,10 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
             tableView.deselectRow(at: indexPath, animated: true)
             guard let viewModel = viewModel else { return }
             viewModel.didSelectOption(at: indexPath)
-            let cell = tableView.cellForRow(at: indexPath) as! OptionCollectionViewCell
-            cell.updateRemoveButton(hide: !viewModel.selected(at: indexPath))
+//            let cell = tableView.cellForRow(at: indexPath) as! OptionCollectionViewCell
+//            cell.updateRemoveButton(hide: !viewModel.selected(at: indexPath))
             
-//            product_Tableview.reloadData()
+            product_Tableview.reloadData()
         }
     }
     

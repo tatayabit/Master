@@ -20,6 +20,8 @@ class ProductDetailsViewModel {
     private var recommendedList = [Product]()
 
     var optionsCount: Int { return self.product.productOptions.count }
+    
+    // Selection part
     private var selectedOptions = [OptionsSelection]()
     private var selectedQuantity: Int
 
@@ -110,11 +112,6 @@ class ProductDetailsViewModel {
     // MARK:- Options Selections
     func selected(at indexPath: IndexPath) -> Bool {
         let variant = optionVariant(at: indexPath)
-        if variant.identifier == "400" {
-            print("variant: \(variant)")
-            print("section: \(indexPath.section)")
-        }
-       
         let foundOptions = self.selectedOptions.filter{ $0.section == indexPath.section && $0.selectedVariant == variant.identifier }
         return foundOptions.count > 0
     }
@@ -122,7 +119,11 @@ class ProductDetailsViewModel {
     func selectOption(at indexPath: IndexPath) {
         let variant = optionVariant(at: indexPath)
         let option = OptionsSelection(section: indexPath.section, selectedVariant: variant.identifier)
+        unselectAllIfFound(at: indexPath.section)
         self.selectedOptions.append(option)
+        print("variant: \(variant)")
+        print("section: \(indexPath.section)")
+        print("selectedOptions: \(selectedOptions)")
     }
     
     func unselectOption(at indexPath: IndexPath) {
@@ -133,8 +134,11 @@ class ProductDetailsViewModel {
         }
     }
     
-    func unselectAll(at section: Int) {
-        
+    func unselectAllIfFound(at section: Int) {
+        let foundOptions = self.selectedOptions.filter{ $0.section == section }
+        if foundOptions.count > 0 {
+            self.selectedOptions.removeAll(where: { $0.section == section })
+        }
     }
     
     // MARK:- ProductDeatailsTableViewCellViewModel
