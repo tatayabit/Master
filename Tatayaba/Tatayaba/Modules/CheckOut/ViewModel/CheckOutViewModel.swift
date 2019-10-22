@@ -90,7 +90,7 @@ class CheckOutViewModel {
         let userId = getUserId()
         let userData = userId == "0" ? getUserDataModel(user: userData) : nil
 
-        let paymentId = cart.paymentMethod?.paymentId ?? "0"
+        let paymentId = "13"//cart.paymentMethod?.paymentId ?? "0"
 
         ordersApiClient.CreateOrder(products: getProductsModel(), userId: userId, userData: userData, paymentId: paymentId, oneClickBuy: cart.isOneClickBuy) { result in
             switch result {
