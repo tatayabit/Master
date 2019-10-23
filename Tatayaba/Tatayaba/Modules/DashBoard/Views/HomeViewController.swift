@@ -14,6 +14,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     private let categoryProductsSegue = "category_products_segue"
     private let supplierProductsSegue = "supplier_products_segue"
     private let allCategoriesSegue = "all_categories_segue"
+    private let allSuppliersSegue = "all_supplier_segue"
 
     @IBOutlet weak var scrollView: StackedScrollView!
      var tabbar:UITabBar?
@@ -77,7 +78,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         self.hideLoadingIndicator(from: squaredBlockView)
         squaredBlockView.block = viewModel.squareBlock
         squaredBlockView.loadData()
-        squaredBlockView.titleLabel.text = "Trending on Tatayab"
+//        squaredBlockView.titleLabel.text = "Trending on Tatayab"
         squaredBlockView.viewAllButton.isHidden = true
     }
 
@@ -194,6 +195,10 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     //MARK:- SuppliersBlockViewProtocol
     func didSelectSupplier(at indexPath: IndexPath) {
         performSegue(withIdentifier: supplierProductsSegue, sender: indexPath)
+    }
+    
+    func didSelectViewAllSuppliers() {
+        performSegue(withIdentifier: allSuppliersSegue, sender: nil)
     }
 }
 
