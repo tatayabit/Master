@@ -10,6 +10,7 @@ import UIKit
 
 protocol SuppliersBlockViewProtocol: class {
     func didSelectSupplier(at indexPath: IndexPath)
+    func didSelectViewAllSuppliers()
 }
 
 class SuppliersBlockView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -73,6 +74,12 @@ class SuppliersBlockView: UIView, UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let delegate = delegate {
             delegate.didSelectSupplier(at: indexPath)
+        }
+    }
+    
+    @IBAction func viewAllAction(_ sender: UIButton) {
+        if let delegate = delegate {
+            delegate.didSelectViewAllSuppliers()
         }
     }
 }

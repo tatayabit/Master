@@ -26,9 +26,9 @@ class SuppliersListViewController: BaseViewController, UICollectionViewDelegate,
     }
 
     func setupUI() {
-        self.NavigationBarWithOutBackButton()
+        self.NavigationBarWithBackButton()
         supplierCollection_View.register(SuppliersCollectionViewCell.nib, forCellWithReuseIdentifier: SuppliersCollectionViewCell.identifier)
-        setupSearchButton()
+//        setupSearchButton()
             
     }
     
