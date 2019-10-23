@@ -56,7 +56,7 @@ class LoginViewController: BaseViewController, ValidationDelegate {
             switch result {
             case .success(let loginResult):
                 print(loginResult!)
-                self.performSegue(withIdentifier: self.homeSegue, sender: nil)
+                self.navigateToHome()
             case .failure(let error):
                 print("the error \(error)")
                 self.showErrorAlerr(title: Constants.Common.error, message: "Username or password are invalid".localized(), handler: nil)
@@ -64,6 +64,15 @@ class LoginViewController: BaseViewController, ValidationDelegate {
         }
     }
 
+    func navigateToHome() {
+        // to solve problem of navigation bar and badge showing
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeTabBar") as! UITabBarController
+        let window = UIApplication.shared.keyWindow
+        window?.rootViewController = homeVC
+        window?.makeKeyAndVisible()
+    }
+    
     func validationFailed(_ errors: [(Validatable, ValidationError)]) {
         print("Validation FAILED!")
         if errors.count > 0 {
