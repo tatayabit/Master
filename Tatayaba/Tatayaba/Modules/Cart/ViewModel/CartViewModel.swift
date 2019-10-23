@@ -31,6 +31,7 @@ class CartViewModel {
 
     func loadPricingListContent(couponValue: String, taxValue: Tax?, shippingValue: String) {
         pricingList.removeAll()
+        
         var model = CartPricingModel(title: Constants.Cart.subtotal, value: cart.subtotalPrice)
         pricingList.append(model)
 
@@ -38,6 +39,14 @@ class CartViewModel {
 //        pricingList.append(model)
         
         model = CartPricingModel(title: Constants.Cart.shipping, value: shippingValue.formattedPrice)
+        pricingList.append(model)
+        
+        if taxValue?.customDuties?.type == "P" {
+            model = CartPricingModel(title: Constants.Cart.customDuties, value: "\(taxValue?.customDuties?.value ?? "0")%")
+        }else {
+            model = CartPricingModel(title: Constants.Cart.customDuties, value: taxValue?.customDuties?.value?.formattedPrice ?? "0")
+        }
+        
         pricingList.append(model)
         
         if taxValue?.vat?.type == "P" {
@@ -96,6 +105,7 @@ extension Constants {
         static let subtotal = "Subtotal".localized()
         static let shipping = "Shipping".localized()
         static let tax = "Tax".localized()
+        static let customDuties = "CustomDuties".localized()
         static let coupon = "Coupon".localized()
         static let items = "items".localized()
         static let cartTotal = "Cart Total".localized()
