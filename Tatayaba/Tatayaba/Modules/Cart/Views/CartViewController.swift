@@ -234,16 +234,28 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             self.hideLoadingIndicator(from: self.view)
             switch result {
             case .success(let taxAndShippingResponse):
-                if let taxValue = taxAndShippingResponse?.tax {
-                    print(taxValue)
-                    self.taxValue = taxValue
-                    self.calculateTotal()
+                if let taxAndShippingResponse = taxAndShippingResponse {
+                    if let taxValue = taxAndShippingResponse.tax {
+                        print(taxValue)
+                        self.taxValue = taxValue
+                        self.calculateTotal()
+                        CountrySettings.shared.updateTax(taxValue: taxValue)
+                    }
+                    
+                    if let shipping = taxAndShippingResponse.shipping {
+                        if let shippingValue = shipping.rateValue {
+                            print(shippingValue)
+                            self.shippingValue = "\(shippingValue)"
+                            self.calculateTotal()
+                            CountrySettings.shared.updateShipping(shippingValue: shipping)
+                        }
+                    }
+                    
+                    if let paymentMethods = taxAndShippingResponse.paymentMethods {
+                        CountrySettings.shared.updatePaymentsMethods(list: paymentMethods)
+                    }
                 }
-                if let shippingValue = taxAndShippingResponse?.shipping?.rateValue {
-                    print(shippingValue)
-                    self.shippingValue = "\(shippingValue)"
-                    self.calculateTotal()
-                }
+                
                 
             case .failure(let error):
                 print("the error \(error)")

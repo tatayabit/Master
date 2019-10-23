@@ -14,13 +14,13 @@ class CheckOutViewModel {
 
     let cart = Cart.shared
 
-    let kuwaitPaymentIds = ["12", "16", "1", "6"]
+//    let kuwaitPaymentIds = ["12", "16", "1", "6"]
 
 
     var subTotalValue: String { return cart.subtotalPrice }
     var shippingValue: String { return "1.000".formattedPrice }
     var totalValue: String { return String(cart.calculateSubTotal() + 1.000 + 0.500).formattedPrice }
-    var paymentMethods = [Payment]()
+    var paymentMethods = [PaymentMethod]()
     
     var paymentId: String {
         let paymentId = cart.paymentMethod?.paymentId ?? "0"
@@ -52,26 +52,31 @@ class CheckOutViewModel {
     }
 
     func getPaymentMethods() {
-        paymentApiClient.getPayments { result in
-            switch result {
-            case .success(let response):
-                guard let paymentResult = response else { return }
-                guard let methods = paymentResult.paymentMethods else { return }
-                self.paymentMethods = methods.filter({ self.kuwaitPaymentIds.contains($0.paymentId) })
+//        paymentApiClient.getPayments { result in
+//            switch result {
+//            case .success(let response):
+//                guard let paymentResult = response else { return }
+//                guard let methods = paymentResult.paymentMethods else { return }
+//                self.paymentMethods = methods.filter({ self.kuwaitPaymentIds.contains($0.paymentId) })
 
-                print(self.paymentMethods)
-                if self.paymentMethods.count > 0 {
-                    self.cart.paymentMethod = self.paymentMethods[0]
-                }
-
-                if let newPaymentsArrived = self.onPaymentMethodsListLoad {
-                    newPaymentsArrived()
-                }
-
-            case .failure(let error):
-                print("the error \(error)")
+        if let methods = CountrySettings.shared.paymentMethods {
+            self.paymentMethods = methods
+            print(self.paymentMethods)
+                       
+            if self.paymentMethods.count > 0 {
+                self.cart.paymentMethod = self.paymentMethods[0]
             }
+
+           if let newPaymentsArrived = self.onPaymentMethodsListLoad {
+               newPaymentsArrived()
+           }
         }
+               
+
+//            case .failure(let error):
+//                print("the error \(error)")
+//            }
+//        }
     }
 
     // MARK:- Payment Method
@@ -90,7 +95,7 @@ class CheckOutViewModel {
         let userId = getUserId()
         let userData = userId == "0" ? getUserDataModel(user: userData) : nil
 
-        let paymentId = "13"//cart.paymentMethod?.paymentId ?? "0"
+        let paymentId = cart.paymentMethod?.paymentId ?? "0"
 
         ordersApiClient.CreateOrder(products: getProductsModel(), userId: userId, userData: userData, paymentId: paymentId, oneClickBuy: cart.isOneClickBuy) { result in
             switch result {

@@ -20,8 +20,10 @@ class PaymentMethodTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    func configure(payment: Payment) {
-        nameLabel.text = payment.name
+    func configure(payment: PaymentMethod) {
+        nameLabel.text = payment.payment
         selectionImageView.isHidden = payment.paymentId != Cart.shared.paymentMethod?.paymentId
+//        iconImageView.sd_setImage(with: URL(string: payment.image.icon.httpsImagePath), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
+
     }
 }

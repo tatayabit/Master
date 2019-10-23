@@ -9,6 +9,10 @@
 class CountrySettings {
     static let shared = CountrySettings()
     var reversedCountryName: String?
+    var paymentMethods: [PaymentMethod]?
+    var shipping : Shipping?
+    var tax : Tax?
+    
     
     func getGeoReversedCountry() {
         let geoCoder = ReverseGeoCoder()
@@ -19,5 +23,17 @@ class CountrySettings {
             }
             self.reversedCountryName = countryName
         }
+    }
+    
+    func updatePaymentsMethods(list: [PaymentMethod]) {
+        self.paymentMethods = list
+    }
+    
+    func updateShipping(shippingValue: Shipping) {
+        self.shipping = shippingValue
+    }
+    
+    func updateTax(taxValue: Tax) {
+        self.tax = taxValue
     }
 }
