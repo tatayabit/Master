@@ -78,7 +78,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             }
         }
         
-        totalPriceLabel.text = "\(totalPriceValue)"
+        totalPriceLabel.text = "\(totalPriceValue)".formattedPrice
         viewModel.loadPricingListContent(couponValue: couponValue, taxValue: taxValue, shippingValue: shippingValue)
         let totalItemsText = "(" + String(cart.productsCount) + " " + Constants.Cart.items + ")"
         totalTitleLabel.attributedText = attributedTotalTitle(text: totalItemsText)
