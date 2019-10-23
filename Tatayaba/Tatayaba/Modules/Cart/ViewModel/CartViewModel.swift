@@ -91,6 +91,7 @@ class CartViewModel {
             case .success(let taxAndShippingResult):
                 if let taxAndShipping = taxAndShippingResult {
                     print(taxAndShipping)
+                    
                 }
             case .failure(let error):
                 print("the error \(error)")

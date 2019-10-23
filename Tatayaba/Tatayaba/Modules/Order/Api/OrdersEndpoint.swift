@@ -67,7 +67,7 @@ extension OrdersEndpoint: TargetType {
             var params = [
                 "user_id": userId,
                 "payment_id": paymentId,
-                "shipping_id": "7",
+                "shipping_id": CountrySettings.shared.shipping?.shippingId ?? "7",
                 "products": products
                 ] as [String : Any]
 

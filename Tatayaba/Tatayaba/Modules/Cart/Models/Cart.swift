@@ -14,7 +14,7 @@ class Cart {
     private var productsArr = [Product]()
 
     var defaultShipping: ShippingMethod?
-    var paymentMethod: Payment?
+    var paymentMethod: PaymentMethod?
 
     var productsCount: Int { return cartItemsArr.count }
     var subtotalPrice: String { return String(calculateSubTotal()).formattedPrice }
