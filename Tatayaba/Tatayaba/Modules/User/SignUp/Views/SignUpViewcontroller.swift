@@ -66,7 +66,7 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
             case .success(let signUpResult):
                 if let user = signUpResult {
                     print(user)
-                    self.pushToNextViewController(storyboardName: "Home", segueName: "HomeViewController")
+                    self.navigateToHome()
                 }
             case .failure(let error):
                 print("the error \(error)")
