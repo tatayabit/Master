@@ -10,8 +10,7 @@ import UIKit
 import SkyFloatingLabelTextField
 import SwiftValidator
 
-class AddressAddEditViewController: BaseViewController, ValidationDelegate {
-
+class AddressAddEditViewController: BaseViewController, ValidationDelegate, CountryViewDelegate {
     @IBOutlet var fullNameTextField: SkyFloatingLabelTextField!
     @IBOutlet var addressLine1TextField: SkyFloatingLabelTextField!
     @IBOutlet var addressLine2TextField: SkyFloatingLabelTextField!
@@ -27,6 +26,7 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate {
 
     private let validator = Validator()
     private var user: User?
+    private var country: Country?
     override func viewDidLoad() {
         super.viewDidLoad()
         registerValidator()
@@ -80,7 +80,18 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate {
             navigationController?.popViewController(animated: true)
         }
     }
-
+    
+    @IBAction func selectCountryBtnClicked(_ sender: Any) {
+        let controller = UIStoryboard(name: "Country", bundle: Bundle.main).instantiateViewController(withIdentifier: "CountryViewController") as! CountryViewController
+        controller.delegate = self
+        navigationController?.pushViewController(controller, animated: false)
+    }
+    
+    func countrySelected(selectedCountry: Country) {
+        country = selectedCountry
+        countryTextField.text = country?.name
+    }
+    
     func validationFailed(_ errors: [(Validatable, ValidationError)]) {
         print("Validation FAILED!")
         for error in errors {

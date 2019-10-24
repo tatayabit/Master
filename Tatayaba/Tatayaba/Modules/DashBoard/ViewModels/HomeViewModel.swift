@@ -153,7 +153,9 @@ class HomeViewModel {
             switch result {
             case .success(let responseB44):
                 guard let block = responseB44 else { return }
-                self.productsBlock = block
+                var sortedBlock = block
+                sortedBlock.products = block.products.sorted(by: { $0.fullDetails.position < $1.fullDetails.position })
+                self.productsBlock = sortedBlock
                 print(block)
 
                 if let newProductsArrived = self.onProductsBlockLoad {

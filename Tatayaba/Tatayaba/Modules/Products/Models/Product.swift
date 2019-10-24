@@ -42,9 +42,9 @@ struct Product {
     var supplierName: String
     var productOptions: [ProductOption]
     var maxQuantity: String
-//    var position: Int
+    var position: String
     
-    init(name: String = "", supplierName: String = "", description: String = "", offerPrices: Float = 0.00, price: String = "", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair(), productOptions: [ProductOption] = [ProductOption](), maxQuantity: String = "0") {
+    init(name: String = "", supplierName: String = "", description: String = "", offerPrices: Float = 0.00, price: String = "", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair(), productOptions: [ProductOption] = [ProductOption](), maxQuantity: String = "0", position: String = "") {
         self.name = name
         self.description = description
 //        self.imageUrl = imageUrl
@@ -57,7 +57,7 @@ struct Product {
         self.supplierName = supplierName
         self.productOptions = productOptions
         self.maxQuantity = maxQuantity
-//        self.position = position
+        self.position = position
     }
 }
 
@@ -75,7 +75,7 @@ extension Product: Codable {
         case supplierName = "supplier_name"
         case productOptions = "product_options"
         case maxQuantity = "max_qty"
-//        case position = "featured_position"
+        case position = "featured_position"
     }
 
     init(from decoder: Decoder) throws {
@@ -94,7 +94,7 @@ extension Product: Codable {
         supplierName = try container.decodeIfPresent(String.self, forKey: .supplierName) ?? ""
         productOptions = try container.decodeIfPresent([ProductOption].self, forKey: .productOptions) ?? [ProductOption]()
         maxQuantity = try container.decodeIfPresent(String.self, forKey: .maxQuantity) ?? "0"
-//        position = try container.decodeIfPresent(Int.self, forKey: .position) ?? 0
+        position = try container.decodeIfPresent(String.self, forKey: .position) ?? ""
 
         var idVal = ""
         if let identifierString = try? container.decode(String.self, forKey: .identifier) {
@@ -129,7 +129,7 @@ extension Product: Codable {
         try container.encodeIfPresent(mainPair, forKey: .mainPair)
         try container.encodeIfPresent(supplierName, forKey: .supplierName)
         try container.encodeIfPresent(maxQuantity, forKey: .maxQuantity)
-//        try container.encodeIfPresent(position, forKey: .position)
+        try container.encodeIfPresent(position, forKey: .position)
 
     }
 }
