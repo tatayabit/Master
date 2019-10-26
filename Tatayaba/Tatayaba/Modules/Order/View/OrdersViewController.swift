@@ -71,7 +71,7 @@ extension OrdersViewController{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-//        performSegue(withIdentifier: orderDetailsSegue, sender: indexPath)
+        performSegue(withIdentifier: orderDetailsSegue, sender: indexPath)
     }
 
     // MARK:- OrderTableViewCellDelegate

@@ -14,16 +14,18 @@ class OrderDetailsViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        setuprUI()
         setupListeners()
     }
 
-    func setuprUI() {
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NavigationBarWithBackButton()
     }
 
     func setupListeners() {
-        
+        self.showLoadingIndicator(to: self.view)
+        viewModel?.onOrderLoad = {
+            self.hideLoadingIndicator(from: self.view)
+        }
     }
 }
