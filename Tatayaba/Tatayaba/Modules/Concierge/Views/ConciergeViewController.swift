@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, ImagePickerDelegate {
+class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, ImagePickerDelegate, CountryViewDelegate {
+    
+    
 
     @IBOutlet weak var scrollView: StackedScrollView!
 
@@ -73,11 +75,16 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
        
     }
 
+    func countrySelected(selectedCountry: Country) {
+        conciergeSubView.countryButton.setTitle(selectedCountry.name, for: .normal)
+        conciergeSubView.country = selectedCountry
+    }
+    
     func didSelectCounty()
     {
         let controller = UIStoryboard(name: "Country", bundle: Bundle.main).instantiateViewController(withIdentifier: "CountryViewController") as! CountryViewController
+        controller.delegate = self
         self.navigationController?.pushViewController(controller, animated: false)
-        
     }
     
 
