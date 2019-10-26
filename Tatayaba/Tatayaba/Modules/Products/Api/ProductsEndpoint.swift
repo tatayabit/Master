@@ -78,6 +78,7 @@ extension ProductsEndpoint: TargetType {
             
         case .getProductsOfCategory(let category, let page):
             return .requestParameters(parameters: [ "items_per_page": 100,
+                                                    "status": "A",
                                                     "cid": category,
                                                     "page": page.urlEscaped,
                                                     "lang_code": LanguageManager.getLanguage()
