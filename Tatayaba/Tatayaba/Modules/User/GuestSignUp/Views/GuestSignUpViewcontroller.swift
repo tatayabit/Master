@@ -77,6 +77,9 @@ class GuestSignUpViewcontroller: BaseViewController, ValidationDelegate {
             print("errors:::: \(String(describing: error.1.errorMessage))")
         }
         
+        if errors.count > 0 {
+            showErrorAlerr(title: Constants.Common.error, message: "\(String(describing: errors[0].1.errorMessage))", handler: nil)
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
