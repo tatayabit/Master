@@ -28,6 +28,7 @@ class CheckoutCompletedViewController: BaseViewController {
     func setupUI() {
         guard let viewModel = viewModel else { return }
         orderIdLabel.text = viewModel.orderIdText
+        viewModel.clearCart()
     }
 
 

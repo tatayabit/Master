@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class PaymentWebViewController: BaseViewController, WKUIDelegate, WKNavigationDelegate {
+class PaymentWebViewController: BaseViewController, WKUIDelegate, WKNavigationDelegate, UIScrollViewDelegate {
 
     var webView: WKWebView!
     
@@ -24,6 +24,9 @@ class PaymentWebViewController: BaseViewController, WKUIDelegate, WKNavigationDe
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
         webView.uiDelegate = self
         webView.navigationDelegate = self
+        webView.scrollView.delegate = self
+        webView.scrollView.minimumZoomScale = 1.0;
+        webView.scrollView.maximumZoomScale = 1.0;
         view = webView
     }
     
@@ -32,6 +35,11 @@ class PaymentWebViewController: BaseViewController, WKUIDelegate, WKNavigationDe
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         sendRequest()
+    }
+    
+    deinit {
+        // Without this, it'll crash when your MyClass instance is deinit'd
+        webView.scrollView.delegate = nil
     }
     
     
@@ -57,6 +65,10 @@ class PaymentWebViewController: BaseViewController, WKUIDelegate, WKNavigationDe
             }
         }
         decisionHandler(.allow)
+    }
+    
+    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+       scrollView.pinchGestureRecognizer?.isEnabled = false
     }
     
     // MARK: - Success Flow

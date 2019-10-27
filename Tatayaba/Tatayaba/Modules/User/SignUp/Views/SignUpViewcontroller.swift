@@ -45,7 +45,7 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
     //MARK:- Swift Validator
     func registerValidator() {
         validator.registerField(emailTextField, rules: [RequiredRule(message: "Email is required!"), EmailRule(message: "Invalid email")])
-        validator.registerField(passwordTextField, rules: [RequiredRule(message: "Password is required!"), PasswordRule(regex: "^(?=(.*\\d){8})[a-zA-Z\\d]{8,20}$", message: "Invalid password")])
+        validator.registerField(passwordTextField, rules: [RequiredRule(message: "Password is required!"), PasswordRule(regex: "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,20}$", message: "Invalid password")])
         fullNameTextField.becomeFirstResponder()
     }
 
@@ -66,7 +66,7 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
             case .success(let signUpResult):
                 if let user = signUpResult {
                     print(user)
-                    self.pushToNextViewController(storyboardName: "Home", segueName: "HomeViewController")
+                    self.navigateToHome()
                 }
             case .failure(let error):
                 print("the error \(error)")
@@ -81,6 +81,9 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
             print("errors:::: \(String(describing: error.1.errorMessage))")
         }
 
+        if errors.count > 0 {
+            showErrorAlerr(title: Constants.Common.error, message: "\(String(describing: errors[0].1.errorMessage))", handler: nil)
+        }
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

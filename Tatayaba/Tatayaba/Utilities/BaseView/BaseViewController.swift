@@ -65,11 +65,15 @@ extension UIViewController {
     {
         let viewController: UIViewController? = UIStoryboard(name:storyboardName!, bundle: nil).instantiateViewController(withIdentifier: segueName!)
         self.navigationController?.pushViewController(viewController!, animated: true)
-        
-  
-       
-    
-        
+    }
+
+    func navigateToHome() {
+        // to solve problem of navigation bar and badge showing
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeTabBar") as! UITabBarController
+        let window = UIApplication.shared.keyWindow
+        window?.rootViewController = homeVC
+        window?.makeKeyAndVisible()
     }
     
     func NavigationBarWithOutBackButton(){

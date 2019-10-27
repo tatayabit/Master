@@ -187,6 +187,11 @@
 		11FEB4E122DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FEB4DF22DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib */; };
 		27497C53234E4EF600D84690 /* GuestSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27497C50234E4EF500D84690 /* GuestSignUpViewModel.swift */; };
 		27497C54234E4EF600D84690 /* GuestSignUpViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27497C52234E4EF500D84690 /* GuestSignUpViewcontroller.swift */; };
+		2767CB8F236471BC0042F533 /* OrderMainInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767CB8E236471BC0042F533 /* OrderMainInfoCell.swift */; };
+		2767CB94236472290042F533 /* OrderDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767CB90236472280042F533 /* OrderDetailsCell.swift */; };
+		2767CB95236472290042F533 /* OrderAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767CB91236472280042F533 /* OrderAddressCell.swift */; };
+		2767CB96236472290042F533 /* OrderTrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767CB92236472280042F533 /* OrderTrackCell.swift */; };
+		2767CB97236472290042F533 /* OrderProductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767CB93236472280042F533 /* OrderProductsCell.swift */; };
 		27A9088F235264240032DA41 /* couponResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A90875235264230032DA41 /* couponResponse.swift */; };
 		27A9089A2357906C0032DA41 /* PaymentIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A908922357906C0032DA41 /* PaymentIcon.swift */; };
 		27A9089B2357906C0032DA41 /* CustomDuty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A908932357906C0032DA41 /* CustomDuty.swift */; };
@@ -456,6 +461,11 @@
 		22CC9CEE04574A387EDF22EE /* Pods-TatayabaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.release.xcconfig"; sourceTree = "<group>"; };
 		27497C50234E4EF500D84690 /* GuestSignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestSignUpViewModel.swift; sourceTree = "<group>"; };
 		27497C52234E4EF500D84690 /* GuestSignUpViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestSignUpViewcontroller.swift; sourceTree = "<group>"; };
+		2767CB8E236471BC0042F533 /* OrderMainInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderMainInfoCell.swift; sourceTree = "<group>"; };
+		2767CB90236472280042F533 /* OrderDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailsCell.swift; sourceTree = "<group>"; };
+		2767CB91236472280042F533 /* OrderAddressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderAddressCell.swift; sourceTree = "<group>"; };
+		2767CB92236472280042F533 /* OrderTrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTrackCell.swift; sourceTree = "<group>"; };
+		2767CB93236472280042F533 /* OrderProductsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderProductsCell.swift; sourceTree = "<group>"; };
 		27A90875235264230032DA41 /* couponResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = couponResponse.swift; sourceTree = "<group>"; };
 		27A908922357906C0032DA41 /* PaymentIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentIcon.swift; sourceTree = "<group>"; };
 		27A908932357906C0032DA41 /* CustomDuty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDuty.swift; sourceTree = "<group>"; };
@@ -1656,6 +1666,11 @@
 			isa = PBXGroup;
 			children = (
 				8407BAC122E869A8001F2C2A /* OrderTableViewCell.swift */,
+				2767CB8E236471BC0042F533 /* OrderMainInfoCell.swift */,
+				2767CB92236472280042F533 /* OrderTrackCell.swift */,
+				2767CB90236472280042F533 /* OrderDetailsCell.swift */,
+				2767CB91236472280042F533 /* OrderAddressCell.swift */,
+				2767CB93236472280042F533 /* OrderProductsCell.swift */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -2327,6 +2342,7 @@
 				11FEB4E022DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.swift in Sources */,
 				10DFE4542352619000AAB780 /* OptionsHeader.swift in Sources */,
 				1101C66D22E0D75500416307 /* HProductCollectionViewCell.swift in Sources */,
+				2767CB94236472290042F533 /* OrderDetailsCell.swift in Sources */,
 				848E89CC22CCEAAC000AA24C /* FeatureProductCollectionViewCell.swift in Sources */,
 				116C938F22F0954500921893 /* PaymentAPIClient.swift in Sources */,
 				11624ED1230C464800E81ABD /* BlockImagePair.swift in Sources */,
@@ -2387,6 +2403,7 @@
 				11FB585D231C3C3C005DA4F0 /* Supplier.swift in Sources */,
 				114D1A0B22CBB12B009205F3 /* CellActionHandler.swift in Sources */,
 				84BC089E22DC84A900C6180E /* CartTableViewCell.swift in Sources */,
+				2767CB95236472290042F533 /* OrderAddressCell.swift in Sources */,
 				11B07910233A7661003041E8 /* UIImage+Extensions.swift in Sources */,
 				113647FA2316FF090097FDB3 /* CategoriesBlockView.swift in Sources */,
 				11B07915233A780D003041E8 /* ConciergeAPIClient.swift in Sources */,
@@ -2424,10 +2441,13 @@
 				27A908A12357906C0032DA41 /* Shipping.swift in Sources */,
 				1101C66822E0D6E300416307 /* HProductsListView.swift in Sources */,
 				116C938E22F0954500921893 /* Payment.swift in Sources */,
+				2767CB96236472290042F533 /* OrderTrackCell.swift in Sources */,
+				2767CB97236472290042F533 /* OrderProductsCell.swift in Sources */,
 				11FB5849231C2147005DA4F0 /* CategoriesBlockCollectionViewCell.swift in Sources */,
 				8407BAB922E86205001F2C2A /* OrdersViewController.swift in Sources */,
 				116C937022F0949B00921893 /* CartItem.swift in Sources */,
 				4CC343A8232F9FAF005BA810 /* ProfileMenuTableViewCell.swift in Sources */,
+				2767CB8F236471BC0042F533 /* OrderMainInfoCell.swift in Sources */,
 				112654B022D3A2B900904FB5 /* Category.swift in Sources */,
 				11A8B15822D793AC001B2661 /* WishlistViewController.swift in Sources */,
 				11624EDB230C6C1800E81ABD /* BlockBgImageIcon.swift in Sources */,
@@ -2666,7 +2686,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.9;
+				CURRENT_PROJECT_VERSION = 1.0.11;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
@@ -2685,7 +2705,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.9;
+				CURRENT_PROJECT_VERSION = 1.0.11;
 				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

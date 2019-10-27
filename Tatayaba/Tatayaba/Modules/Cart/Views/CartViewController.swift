@@ -59,15 +59,26 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     func calculateTotal() {
         totalPriceValue = (cart.totalPrice as NSString).floatValue + (couponValue as NSString).floatValue  + (shippingValue as NSString).floatValue
-        if let taxStringValue = taxValue?.vat?.value, totalPriceValue >= maxValueToShowTax {
-            if taxValue?.vat?.type == "P" {
-                totalPriceValue += (totalPriceValue * (Float(taxStringValue)!)) / 100
-            } else {
-                totalPriceValue += Float(taxStringValue) ?? 0.0
+        
+        if totalPriceValue >= maxValueToShowTax {
+            if let taxStringValue = taxValue?.vat?.value {
+                if taxValue?.vat?.type == "P" {
+                    totalPriceValue += (totalPriceValue * (Float(taxStringValue)!)) / 100
+                } else {
+                    totalPriceValue += Float(taxStringValue) ?? 0.0
+                }
+            }
+            
+            if let customDutiesStringValue = taxValue?.customDuties?.value {
+                if taxValue?.customDuties?.type == "P" {
+                    totalPriceValue += (totalPriceValue * (Float(customDutiesStringValue)!)) / 100
+                } else {
+                    totalPriceValue += Float(customDutiesStringValue) ?? 0.0
+                }
             }
         }
         
-        totalPriceLabel.text = "\(totalPriceValue)"
+        totalPriceLabel.text = "\(totalPriceValue)".formattedPrice
         viewModel.loadPricingListContent(couponValue: couponValue, taxValue: taxValue, shippingValue: shippingValue)
         let totalItemsText = "(" + String(cart.productsCount) + " " + Constants.Cart.items + ")"
         totalTitleLabel.attributedText = attributedTotalTitle(text: totalItemsText)
@@ -151,7 +162,8 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             return cart.productsCount
         case sectionType.pricing.rawValue:
             if totalPriceValue < maxValueToShowTax {
-                viewModel.pricingList.removeAll(where: {$0.title == "Tax"})
+                viewModel.pricingList.removeAll(where: {$0.title == "Tax".localized()})
+                viewModel.pricingList.removeAll(where: {$0.title == "CustomDuties".localized()})
             }
             let pricingCount = viewModel.pricingList.count
             return (couponValue as NSString).integerValue > 0 ? pricingCount : pricingCount - 1
