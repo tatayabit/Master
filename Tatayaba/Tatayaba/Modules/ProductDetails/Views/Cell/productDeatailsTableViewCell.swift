@@ -49,7 +49,7 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
     func configure(productVM: ProductDeatailsTableViewCellViewModel) {
         self.viewModel = productVM
         self.nameLabel.text = productVM.name
-        self.descriptionLabel.text = productVM.description
+        self.descriptionLabel.text = productVM.description.stripOutHtml()
         self.quantityLabel.text = String(productVM.selectedQuantity)
         self.priceLabel.text = productVM.price
     }

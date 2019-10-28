@@ -33,6 +33,7 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
     func setupUI() {
         product_Tableview.register(OptionCollectionViewCell.nib, forCellReuseIdentifier: OptionCollectionViewCell.identifier)
         product_Tableview.register(OptionsHeader.nib, forHeaderFooterViewReuseIdentifier: OptionsHeader.identifier)
+        
     }
     
     // MARK:- Load sections
@@ -136,7 +137,7 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case sectionType.details.rawValue:
-            return 407
+            return UITableView.automaticDimension
         default:
             return 60
         }

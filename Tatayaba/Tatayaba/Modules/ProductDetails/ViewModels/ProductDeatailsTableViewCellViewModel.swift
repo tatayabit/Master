@@ -13,7 +13,7 @@ class ProductDeatailsTableViewCellViewModel {
         if product.description.isEmpty {
             return "This is product is one of our best sellers"
         }
-        return product.description }
+        return product.description.stripOutHtml() }
     var price: String { return product.price.formattedPrice }
     var imageUrl: String { return product.mainPair.detailedPair.imageUrl }
     
