@@ -148,7 +148,7 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
         switch indexPath.section {
         case sectionType.details.rawValue:
             let cell = tableView.dequeueReusableCell(withIdentifier: ProductDeatailsTableViewCell.identifier, for: indexPath) as! ProductDeatailsTableViewCell
-            cell.viewController = self
+//            cell.viewController = self
             if let viewModel = viewModel {
                 cell.configure(productVM: viewModel.detailsCellVM())
             }

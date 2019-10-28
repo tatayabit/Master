@@ -60,20 +60,11 @@
                         <viewLayoutGuide key="safeArea" id="UXE-jj-ANe"/>
                     </view>
                     <connections>
-                        <outlet property="searchDisplayController" destination="7Ri-Xl-BEv" id="Oqf-bx-sce"/>
                         <outlet property="supplierCollection_View" destination="88h-Dv-iTC" id="fFk-da-5b0"/>
                         <segue destination="7ts-ut-Jvw" kind="show" identifier="supplier_products_segue" id="7za-aB-ZZC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cp8-68-2jf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="7Ri-Xl-BEv">
-                    <connections>
-                        <outlet property="delegate" destination="0xq-fk-tAf" id="Qad-0v-CGL"/>
-                        <outlet property="searchContentsController" destination="0xq-fk-tAf" id="YV5-Aj-eCa"/>
-                        <outlet property="searchResultsDataSource" destination="0xq-fk-tAf" id="q0o-h2-ZkG"/>
-                        <outlet property="searchResultsDelegate" destination="0xq-fk-tAf" id="WPJ-gq-Khp"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-143.47826086956522" y="96.195652173913047"/>
         </scene>

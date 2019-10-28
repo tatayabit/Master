@@ -16,7 +16,7 @@ struct SuppliersAPIClient: APIClient {
 
     static let environment: APIEnvironment = .production
 
-    func getSuppliers(completion: @escaping (APIResult<SuppliersResult?, MoyaError>) -> Void) {
+    func getSuppliers(completion: @escaping (APIResult<[Supplier]?, MoyaError>) -> Void) {
         fetch(with: SuppliersEndpoint.getSuppliers(), completion: completion)
     }
 

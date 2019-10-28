@@ -32,7 +32,7 @@ struct Product {
     var name: String = ""
     var description: String = ""
 //    var imageUrl: String
-    var offerPrices: Float = 0.00
+    var listPrice: String
     var price: String = ""
     var inWishlist: Bool = false
     var identifier: String
@@ -45,11 +45,11 @@ struct Product {
     var position: String
     var amount: Int
     
-    init(name: String = "", supplierName: String = "", description: String = "", offerPrices: Float = 0.00, price: String = "", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair(), productOptions: [ProductOption] = [ProductOption](), maxQuantity: String = "0", position: String = "", amount: Int = 0) {
+    init(name: String = "", supplierName: String = "", description: String = "", listPrice: String = "", price: String = "", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair(), productOptions: [ProductOption] = [ProductOption](), maxQuantity: String = "0", position: String = "", amount: Int = 0) {
         self.name = name
         self.description = description
 //        self.imageUrl = imageUrl
-        self.offerPrices = offerPrices
+        self.listPrice = listPrice
         self.price = price
         self.inWishlist = inWishlist
         self.identifier = identifier
@@ -68,7 +68,7 @@ extension Product: Codable {
         case name = "product"
         case description = "full_description"//"meta_description"
         case imageUrl = "https_image_path"
-        case offerPrices = ""
+        case listPrice = "list_price"
         case price
         case inWishlist
         case identifier = "product_id"
@@ -87,7 +87,6 @@ extension Product: Codable {
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
         description = try container.decodeIfPresent(String.self, forKey: .description) ?? ""
 //        imageUrl = try container.decodeIfPresent(String.self, forKey: .imageUrl) ?? ""
-        offerPrices = try container.decodeIfPresent(Float.self, forKey: .offerPrices) ?? 0.00
 //        price = try container.decodeIfPresent(String.self, forKey: .price) ?? ""
         inWishlist = try container.decodeIfPresent(Bool.self, forKey: .inWishlist) ?? false
 //        identifier = try container.decodeIfPresent(String.self, forKey: .identifier) ?? ""
@@ -125,6 +124,14 @@ extension Product: Codable {
         }
         price = priceVal
         
+        var listPriceVal = ""
+        if let listPriceValString = try? container.decode(String.self, forKey: .listPrice) {
+            listPriceVal = listPriceValString
+        } else if let listPriceValInt = try? container.decode(Int.self, forKey: .listPrice) {
+            listPriceVal = "\(listPriceValInt)"
+        }
+        listPrice = listPriceVal
+        
     }
 
     func encode(to encoder: Encoder) throws {
@@ -133,7 +140,7 @@ extension Product: Codable {
         try container.encodeIfPresent(name, forKey: .name)
         try container.encodeIfPresent(description, forKey: .description)
 //        try container.encodeIfPresent(imageUrl, forKey: .imageUrl)
-        try container.encodeIfPresent(offerPrices, forKey: .offerPrices)
+        try container.encodeIfPresent(listPrice, forKey: .listPrice)
         try container.encodeIfPresent(price, forKey: .price)
         try container.encodeIfPresent(inWishlist, forKey: .inWishlist)
         try container.encodeIfPresent(identifier, forKey: .identifier)
