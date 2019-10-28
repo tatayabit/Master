@@ -201,6 +201,7 @@
 		27A9089F2357906C0032DA41 /* TaxAndShippingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A908972357906C0032DA41 /* TaxAndShippingResponse.swift */; };
 		27A908A02357906C0032DA41 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A908982357906C0032DA41 /* Tax.swift */; };
 		27A908A12357906C0032DA41 /* Shipping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A908992357906C0032DA41 /* Shipping.swift */; };
+		27AB3009236710AC00CFBF59 /* ImageZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB3008236710AC00CFBF59 /* ImageZoomViewController.swift */; };
 		4C219865233BBAA000DE40FA /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C219864233BBAA000DE40FA /* CountryViewController.swift */; };
 		4C219867233BBB6900DE40FA /* Country.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C219866233BBB6900DE40FA /* Country.storyboard */; };
 		4C219869233BBBE800DE40FA /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C219868233BBBE800DE40FA /* CountryTableViewCell.swift */; };
@@ -475,6 +476,7 @@
 		27A908972357906C0032DA41 /* TaxAndShippingResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxAndShippingResponse.swift; sourceTree = "<group>"; };
 		27A908982357906C0032DA41 /* Tax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
 		27A908992357906C0032DA41 /* Shipping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shipping.swift; sourceTree = "<group>"; };
+		27AB3008236710AC00CFBF59 /* ImageZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageZoomViewController.swift; sourceTree = "<group>"; };
 		2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3521A060629ED90EC6114BA5 /* Pods-TatayabaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.debug.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C219864233BBAA000DE40FA /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
@@ -1875,6 +1877,7 @@
 				4C2007A523313F5E0090658A /* Cell */,
 				11FEB4D922DF838500F2E9B8 /* CustomViews */,
 				11FEB4D722DF822A00F2E9B8 /* ProductDetailsViewController.swift */,
+				27AB3008236710AC00CFBF59 /* ImageZoomViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2447,6 +2450,7 @@
 				8407BAB922E86205001F2C2A /* OrdersViewController.swift in Sources */,
 				116C937022F0949B00921893 /* CartItem.swift in Sources */,
 				4CC343A8232F9FAF005BA810 /* ProfileMenuTableViewCell.swift in Sources */,
+				27AB3009236710AC00CFBF59 /* ImageZoomViewController.swift in Sources */,
 				2767CB8F236471BC0042F533 /* OrderMainInfoCell.swift in Sources */,
 				112654B022D3A2B900904FB5 /* Category.swift in Sources */,
 				11A8B15822D793AC001B2661 /* WishlistViewController.swift in Sources */,
