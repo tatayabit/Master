@@ -15,6 +15,9 @@ class ProductDeatailsTableViewCellViewModel {
         }
         return product.description }
     var price: String { return product.price.formattedPrice }
+    var discountPercentage: String { return product.listPrice }
+    var discountPrice: String { return product.listPrice }
+
     var imageUrl: String { return product.mainPair.detailedPair.imageUrl }
     
     var selectedQuantity: Int
