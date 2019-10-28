@@ -43,8 +43,9 @@ struct Product {
     var productOptions: [ProductOption]
     var maxQuantity: String
     var position: String
+    var amount: Int
     
-    init(name: String = "", supplierName: String = "", description: String = "", offerPrices: Float = 0.00, price: String = "", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair(), productOptions: [ProductOption] = [ProductOption](), maxQuantity: String = "0", position: String = "") {
+    init(name: String = "", supplierName: String = "", description: String = "", offerPrices: Float = 0.00, price: String = "", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair(), productOptions: [ProductOption] = [ProductOption](), maxQuantity: String = "0", position: String = "", amount: Int = 0) {
         self.name = name
         self.description = description
 //        self.imageUrl = imageUrl
@@ -58,6 +59,7 @@ struct Product {
         self.productOptions = productOptions
         self.maxQuantity = maxQuantity
         self.position = position
+        self.amount = amount
     }
 }
 
@@ -76,6 +78,7 @@ extension Product: Codable {
         case productOptions = "product_options"
         case maxQuantity = "max_qty"
         case position = "featured_position"
+        case amount
     }
 
     init(from decoder: Decoder) throws {
@@ -95,7 +98,16 @@ extension Product: Codable {
         productOptions = try container.decodeIfPresent([ProductOption].self, forKey: .productOptions) ?? [ProductOption]()
         maxQuantity = try container.decodeIfPresent(String.self, forKey: .maxQuantity) ?? "0"
         position = try container.decodeIfPresent(String.self, forKey: .position) ?? ""
-
+        
+        var amountVal = 0
+        if let amountString = try container.decodeIfPresent(String.self, forKey: .amount) {
+            amountVal = Int(amountString) ?? 0
+        } else if let amountInt = try container.decodeIfPresent(Int.self, forKey: .amount) {
+            amountVal = Int(amountInt)
+        }
+        
+        amount = amountVal
+        
         var idVal = ""
         if let identifierString = try? container.decode(String.self, forKey: .identifier) {
             idVal = identifierString
@@ -130,6 +142,7 @@ extension Product: Codable {
         try container.encodeIfPresent(supplierName, forKey: .supplierName)
         try container.encodeIfPresent(maxQuantity, forKey: .maxQuantity)
         try container.encodeIfPresent(position, forKey: .position)
+        try container.encodeIfPresent(amount, forKey: .amount)
 
     }
 }

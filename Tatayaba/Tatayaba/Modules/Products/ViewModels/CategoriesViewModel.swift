@@ -26,7 +26,7 @@ class CategoriesViewModel {
                 guard let categoriesResult = response else { return }
                 guard let categories = categoriesResult.categories else { return }
 
-                self.categoriesList = categories//.filter({ $0.parentId == "0" })
+                self.categoriesList = categories.sorted(by: { Int($0.position) ?? 0 < Int($1.position) ?? 0 })
                 print(self.categoriesList)
 
 

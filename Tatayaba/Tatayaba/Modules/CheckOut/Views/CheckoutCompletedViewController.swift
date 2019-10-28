@@ -12,6 +12,7 @@ class CheckoutCompletedViewController: BaseViewController {
 
     var viewModel: CheckoutCompletedViewModel?
     @IBOutlet weak var orderIdLabel: UILabel!
+    @IBOutlet weak var orderDateLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ class CheckoutCompletedViewController: BaseViewController {
     func setupUI() {
         guard let viewModel = viewModel else { return }
         orderIdLabel.text = viewModel.orderIdText
-        viewModel.clearCart()
+        orderDateLabel.text = viewModel.orderDate
     }
 
 

@@ -117,7 +117,7 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
             }
             self.performSegue(withIdentifier: self.paymentWebViewSegue, sender: result)
         } else {
-            self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
+            self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: result)
         }
     }
 }
@@ -214,8 +214,15 @@ extension CheckOutViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == paymentWebViewSegue {
             let productDetailsVC = segue.destination as! PaymentWebViewController
-            if let ordeResult = sender as? PlaceOrderResult {
-                productDetailsVC.viewModel = viewModel.paymentWebViewModel(orderResult: ordeResult)
+            if let orderResult = sender as? PlaceOrderResult {
+                productDetailsVC.viewModel = viewModel.paymentWebViewModel(orderResult: orderResult)
+            }
+        }
+        
+        if segue.identifier == checkoutCompletedSegue {
+            let completedCheckoutVC = segue.destination as! CheckoutCompletedViewController
+            if let orderResult = sender as? PlaceOrderResult {
+                completedCheckoutVC.viewModel = viewModel.checkoutCompletedViewModel(orderId: "\(orderResult.orderId)")
             }
         }
     }
