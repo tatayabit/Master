@@ -8,6 +8,7 @@
 
 import UIKit
 import MBProgressHUD
+import MOLH
 
 extension Constants {
     struct Common {
@@ -83,7 +84,12 @@ extension UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor(red: 34.0/255, green: 28.0/255, blue: 53.0/255, alpha: 1.0)
         navigationController?.hidesBottomBarWhenPushed = false
         self.tabBarController?.tabBar.isHidden = false
-       let logo = UIImage(named: "barName_Eng")
+        var logo: UIImage = UIImage()
+        if MOLHLanguage.currentAppleLanguage() == "en" {
+            logo = UIImage(named: "barName_Eng") ?? UIImage()
+        } else {
+            logo = UIImage(named: "barName_ar") ?? UIImage()
+        }
         let imageView = UIImageView(image:logo)
         imageView.contentMode = .scaleAspectFit
         navigationItem.titleView = imageView
@@ -97,7 +103,12 @@ extension UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor(red: 34.0/255, green: 28.0/255, blue: 53.0/255, alpha: 1.0)
         navigationController?.hidesBottomBarWhenPushed = false
         self.tabBarController?.tabBar.isHidden = false
-        let logo = UIImage(named: "barName_Eng")
+        var logo: UIImage = UIImage()
+        if MOLHLanguage.currentAppleLanguage() == "en" {
+            logo = UIImage(named: "barName_Eng") ?? UIImage()
+        } else {
+            logo = UIImage(named: "barName_ar") ?? UIImage()
+        }
         let imageView = UIImageView(image:logo)
         imageView.contentMode = .scaleAspectFit
         navigationItem.titleView = imageView
