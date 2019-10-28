@@ -27,8 +27,8 @@ extension Constants {
 
 class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
-    var Session1: [String] = [Constants.Profile.wishlist, Constants.Profile.myOrders]
-    var Session1_img: [String] = ["wishlist", "wishlist", "Cart"]
+    var Session1: [String] = [Constants.Profile.myOrders]
+    var Session1_img: [String] = ["Cart"]
     var Session2: [String] = [Constants.Profile.changeLanguage, Constants.Profile.liveChat, Constants.Profile.notifications]
     var Session2_img: [String] = ["settings", "liveChat","Notifiction"]
     
