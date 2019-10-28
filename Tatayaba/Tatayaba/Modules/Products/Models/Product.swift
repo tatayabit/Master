@@ -66,7 +66,7 @@ struct Product {
 extension Product: Codable {
     enum ProductCodingKeys: String, CodingKey {
         case name = "product"
-        case description = "meta_description"
+        case description = "full_description"//"meta_description"
         case imageUrl = "https_image_path"
         case listPrice = "list_price"
         case price

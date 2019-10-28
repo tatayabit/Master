@@ -121,7 +121,6 @@ public extension MoyaProvider {
                 self.cancelCompletion(completion, target: target)
                 return
             }
-
             let validate = { (response: Moya.Response) -> Result<Moya.Response, MoyaError> in
                 let validCodes = target.validationType.statusCodes
                 guard !validCodes.isEmpty else { return .success(response) }
