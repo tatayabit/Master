@@ -13,7 +13,7 @@ import SwiftValidator
 class AddressAddEditViewController: BaseViewController, ValidationDelegate, CountryViewDelegate {
     @IBOutlet var fullNameTextField: SkyFloatingLabelTextField!
     @IBOutlet var addressLine1TextField: SkyFloatingLabelTextField!
-    @IBOutlet var addressLine2TextField: SkyFloatingLabelTextField!
+    @IBOutlet var blockTextField: SkyFloatingLabelTextField!
     @IBOutlet var cityTextField: SkyFloatingLabelTextField!
     @IBOutlet var stateTextField: SkyFloatingLabelTextField!
     @IBOutlet var zipCodeTextField: SkyFloatingLabelTextField!
