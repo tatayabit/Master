@@ -118,5 +118,6 @@ class Cart {
         self.isOneClickBuy = false
         self.defaultShipping = nil
         self.paymentMethod = nil
+        updateTabBarCount()
     }
 }

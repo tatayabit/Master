@@ -6,8 +6,11 @@
 //  Copyright © 2019 Shaik. All rights reserved.
 //
 
+import Foundation
+
 struct CheckoutCompletedViewModel {
     var orderIdText: String { return "ORDER # \(orderId)" }
+    var orderDate: String { return Date.orderFormattedDate() }
     private var orderId: String
 
     init(orderId: String) {
