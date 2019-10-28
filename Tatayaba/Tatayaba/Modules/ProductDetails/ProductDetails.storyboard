@@ -75,15 +75,14 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="415"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mlu-K9-C5A" id="L6q-L8-rvC">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="414.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="415"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="srS-AW-ThR" userLabel="DescriptionView">
                                                     <rect key="frame" x="12" y="307" width="333" height="96"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Tatayab - Where there's a scent for every mood. Your online platform for perfume, home fragrances, bukhour and more." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alu-3v-FxI">
-                                                            <rect key="frame" x="8" y="6" width="267" height="82"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Tatayab - Where there's a scent for every mood. Your online platform for perfume, home fragrances, bukhour and more." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alu-3v-FxI">
+                                                            <rect key="frame" x="8" y="8" width="317" height="80"/>
                                                             <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -91,7 +90,11 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.91372549020000005" green="0.92156862750000001" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="96" id="eX6-17-cP7"/>
+                                                        <constraint firstItem="alu-3v-FxI" firstAttribute="leading" secondItem="srS-AW-ThR" secondAttribute="leading" constant="8" id="6eE-FC-Ous"/>
+                                                        <constraint firstAttribute="bottom" secondItem="alu-3v-FxI" secondAttribute="bottom" constant="8" id="Klr-yh-Ddf"/>
+                                                        <constraint firstAttribute="trailing" secondItem="alu-3v-FxI" secondAttribute="trailing" constant="8" id="RMo-BY-dms"/>
+                                                        <constraint firstItem="alu-3v-FxI" firstAttribute="top" secondItem="srS-AW-ThR" secondAttribute="top" constant="8" id="Ymj-8b-Hyr"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="96" id="eX6-17-cP7"/>
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loP-HZ-eFk">
@@ -143,7 +146,6 @@
                                                         <constraint firstAttribute="trailing" secondItem="tyR-gg-KHo" secondAttribute="trailing" constant="4" id="3Uh-eD-2kU"/>
                                                         <constraint firstItem="tef-yc-INp" firstAttribute="centerX" secondItem="hrW-AT-q23" secondAttribute="centerX" id="4Js-ES-YC2"/>
                                                         <constraint firstAttribute="bottom" secondItem="tef-yc-INp" secondAttribute="bottom" constant="11" id="COi-Q0-usO"/>
-                                                        <constraint firstAttribute="height" constant="96" id="NBI-HB-F4V"/>
                                                         <constraint firstItem="Z8W-ap-nbR" firstAttribute="centerX" secondItem="tef-yc-INp" secondAttribute="centerX" id="TmW-FE-b4e"/>
                                                         <constraint firstItem="tef-yc-INp" firstAttribute="top" secondItem="Z8W-ap-nbR" secondAttribute="bottom" constant="7" id="X97-fH-42r"/>
                                                         <constraint firstAttribute="width" constant="50" id="p8I-nx-0BW"/>
@@ -190,6 +192,7 @@
                                                 <constraint firstItem="Hs9-cS-nTL" firstAttribute="leading" secondItem="L6q-L8-rvC" secondAttribute="leading" constant="12" id="MDw-Ob-gQg"/>
                                                 <constraint firstItem="Hs9-cS-nTL" firstAttribute="trailing" secondItem="hTl-HN-FIy" secondAttribute="trailing" id="MGh-SJ-xQr"/>
                                                 <constraint firstItem="hTl-HN-FIy" firstAttribute="top" secondItem="WxN-4G-hCE" secondAttribute="bottom" constant="8" id="Q6q-AV-hoa"/>
+                                                <constraint firstItem="hrW-AT-q23" firstAttribute="height" secondItem="srS-AW-ThR" secondAttribute="height" id="REo-N7-8pd"/>
                                                 <constraint firstItem="srS-AW-ThR" firstAttribute="leading" secondItem="WxN-4G-hCE" secondAttribute="leading" constant="12" id="bif-dZ-zI4"/>
                                                 <constraint firstItem="WxN-4G-hCE" firstAttribute="top" secondItem="L6q-L8-rvC" secondAttribute="top" id="iYP-TA-KA6"/>
                                                 <constraint firstItem="Hs9-cS-nTL" firstAttribute="top" secondItem="hTl-HN-FIy" secondAttribute="bottom" constant="6" id="kJe-DC-7x0"/>
@@ -197,6 +200,7 @@
                                                 <constraint firstItem="hrW-AT-q23" firstAttribute="leading" secondItem="srS-AW-ThR" secondAttribute="trailing" constant="9" id="oMC-WN-PQg"/>
                                                 <constraint firstItem="loP-HZ-eFk" firstAttribute="top" secondItem="L6q-L8-rvC" secondAttribute="top" constant="10" id="rW9-kt-P0M"/>
                                                 <constraint firstItem="srS-AW-ThR" firstAttribute="top" secondItem="Hs9-cS-nTL" secondAttribute="bottom" constant="10" id="uQu-A8-SDY"/>
+                                                <constraint firstAttribute="bottom" secondItem="srS-AW-ThR" secondAttribute="bottom" constant="12" id="vVL-5l-We8"/>
                                                 <constraint firstAttribute="trailing" secondItem="loP-HZ-eFk" secondAttribute="trailing" constant="15" id="xF6-5b-WXh"/>
                                             </constraints>
                                         </tableViewCellContentView>
