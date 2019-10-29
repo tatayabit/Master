@@ -22,8 +22,8 @@ class SuppliersListViewModel {
             switch result {
             case .success(let response):
                 guard let suppliersResult = response else { return }
-                //                self.squareBlock = block
-                let suppliers = suppliersResult
+//                                self.squareBlock = block
+                guard let suppliers = suppliersResult.suppliers else { return }
 
                 self.suppliersList = suppliers
 //                print(suppliersList)

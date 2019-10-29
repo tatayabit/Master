@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
-
+class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, AlsoBoughtProductsTableViewCellDelegate {
+    
     @IBOutlet weak var product_Tableview: UITableView!
     
     enum sectionType: Int {
@@ -27,11 +27,12 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
         
         self.NavigationBarWithBackButton()
         setupUI()
-        callDetailsApi()
+        callAlsoBoughtProductsApi()
     }
     
     func setupUI() {
         product_Tableview.register(OptionCollectionViewCell.nib, forCellReuseIdentifier: OptionCollectionViewCell.identifier)
+        product_Tableview.register(AlsoBoughtProductsTableViewCell.nib, forCellReuseIdentifier: AlsoBoughtProductsTableViewCell.identifier)
         product_Tableview.register(OptionsHeader.nib, forHeaderFooterViewReuseIdentifier: OptionsHeader.identifier)
         
     }
@@ -49,6 +50,10 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
                 headerItems.append(item)
             }
             
+            if viewModel.numberOfAlsoBoughtProducts > 0 {
+                let item = HeaderItem(rowCount: 0, collapsed: true, isCollapsible: false)
+                headerItems.append(item)
+            }
             reloadSections = { section in
                 let indexSet = IndexSet(integer: section)
                 self.product_Tableview.reloadSections(indexSet, with: .automatic)
@@ -78,6 +83,24 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
             }
         })
     }
+    
+    func callAlsoBoughtProductsApi() {
+        guard let viewModel = viewModel else { return }
+        viewModel.getAlsoBoughtProducts(completion: { result in
+
+            switch result {
+                
+            case .success:
+//                self.initSections()
+//                self.product_Tableview.reloadData()
+                print("success")
+                self.callDetailsApi()
+            case .failure(let error):
+                print("the error \(error)")
+                self.showErrorAlerr(title: "Error", message: "not able to fetch the product", handler: nil)
+            }
+        })
+    }
 
     //MARK:- IBActions
     @IBAction func Add_Cart(_ sender: Any) {
@@ -90,6 +113,7 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
         if let viewModel = viewModel {
             viewModel.addToCart()
         }
+        
         if Customer.shared.loggedin {
             let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewCartViewController") as! CartViewController
             controller.buyingWayType = 0
@@ -109,18 +133,19 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
 }
 extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTableViewCellDelegate {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        guard let viewModel = viewModel else { return 1 }
-        return viewModel.optionsCount + 1
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if let viewModel = viewModel {
+            if viewModel.isAlsoBoughtSection(section: section) {
+                return 1
+            }
+        }
+        
         switch section {
         case sectionType.details.rawValue:
             return 1
         default:
             // need to check if section oppened or no
-//            if headerItems.count > 0 {
                 let item = headerItems[section]
                 guard item.isCollapsible else {
                     return item.rowCount
@@ -129,12 +154,16 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
                 if !item.collapsed {
                     return item.rowCount
                 }
-//            }
-            
             return 0
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if let viewModel = viewModel {
+            if viewModel.isAlsoBoughtSection(section: indexPath.section) {
+                return 260
+            }
+        }
+        
         switch indexPath.section {
         case sectionType.details.rawValue:
             return UITableView.automaticDimension
@@ -144,6 +173,15 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if let viewModel = viewModel {
+            if viewModel.isAlsoBoughtSection(section: indexPath.section) {
+                let cell = tableView.dequeueReusableCell(withIdentifier: AlsoBoughtProductsTableViewCell.identifier, for: indexPath) as! AlsoBoughtProductsTableViewCell
+                cell.configure(with: viewModel.alsoBoughtProductsBlock)
+                cell.delegate = self
+                return cell
+            }
+        }
         
         switch indexPath.section {
         case sectionType.details.rawValue:
@@ -170,15 +208,24 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
             tableView.deselectRow(at: indexPath, animated: true)
             guard let viewModel = viewModel else { return }
             viewModel.didSelectOption(at: indexPath)
-//            let cell = tableView.cellForRow(at: indexPath) as! OptionCollectionViewCell
-//            cell.updateRemoveButton(hide: !viewModel.selected(at: indexPath))
-            
             product_Tableview.reloadData()
         }
     }
     
     // MARK:- Header
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+           guard let viewModel = viewModel else { return 1 }
+           return viewModel.numberOfSections
+       }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if let viewModel = viewModel {
+            if viewModel.isAlsoBoughtSection(section: section) {
+                return 0
+            }
+        }
+        
         switch section {
         case sectionType.details.rawValue:
             return 0
@@ -186,6 +233,7 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
             return 60
         }
     }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: OptionsHeader.identifier) as? OptionsHeader {
             if section > 0 {
@@ -234,4 +282,33 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
         guard let viewModel = viewModel else { return }
         viewModel.decrease()
     }
+    
+    //MARK:- AlsoBoughtProductsTableViewCellDelegate
+       func didSelectProduct(at indexPath: IndexPath) {
+//           performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
+        guard let storyboard = self.storyboard else { return }
+        let controller = storyboard.instantiateViewController(withIdentifier: "ProductDetailsViewController") as! ProductDetailsViewController
+        controller.viewModel = viewModel?.alsoBoughtProductDetailsViewModel(at: indexPath)
+        self.navigationController?.pushViewController(controller, animated: false)
+       }
+
+       func didAddToCart(product: Product) {
+           // addProdcut to cart
+        guard let viewModel = viewModel else { return }
+           viewModel.addToCartAlsoBoughtProduct(product: product)
+       }
+       
+       func didSelectOneClick(product: Product) {
+           didAddToCart(product: product)
+           
+           if Customer.shared.loggedin {
+               let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewCartViewController") as! CartViewController
+               controller.buyingWayType = 1
+               self.navigationController?.pushViewController(controller, animated: false)
+           } else {
+               let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "GuestSignUpViewcontroller") as! GuestSignUpViewcontroller
+               tabBarController?.tabBar.isHidden = true
+               navigationController?.pushViewController(controller, animated: true)
+           }
+       }
 }
