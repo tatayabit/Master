@@ -28,7 +28,7 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
     
     var viewModel: ProductDeatailsTableViewCellViewModel?
     weak var delegate: ProductDeatailsTableViewCellDelegate?
-    
+    weak var viewController: ProductDetailsViewController?
     //MARK:- Init
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -74,6 +74,12 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: self.bounds.width, height: 255)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = UIStoryboard(name: "ProductDetails", bundle: Bundle.main).instantiateViewController(withIdentifier: "ImageZoomViewController") as! ImageZoomViewController
+        controller.productImage = viewModel?.imageUrl ?? ""
+        viewController?.navigationController?.pushViewController(controller, animated: true)
     }
     
     //MARK:- IBActions

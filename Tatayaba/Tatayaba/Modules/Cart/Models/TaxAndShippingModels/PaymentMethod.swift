@@ -28,7 +28,7 @@ struct PaymentMethod : Codable {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		descriptionField = try values.decodeIfPresent(String.self, forKey: .descriptionField)
 		fSurcharge = try values.decodeIfPresent(String.self, forKey: .fSurcharge)
-		image = try PaymentImage(from: decoder)
+		image = try values.decodeIfPresent(PaymentImage.self, forKey: .image)
 		pSurcharge = try values.decodeIfPresent(String.self, forKey: .pSurcharge)
 		payment = try values.decodeIfPresent(String.self, forKey: .payment)
 		paymentId = try values.decodeIfPresent(String.self, forKey: .paymentId)

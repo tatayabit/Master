@@ -23,7 +23,7 @@ struct PaymentImage : Codable {
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		detailedId = try values.decodeIfPresent(String.self, forKey: .detailedId)
-		icon = try PaymentIcon(from: decoder)
+		icon = try values.decodeIfPresent(PaymentIcon.self, forKey: .icon)
 		imageId = try values.decodeIfPresent(String.self, forKey: .imageId)
 		pairId = try values.decodeIfPresent(String.self, forKey: .pairId)
 		position = try values.decodeIfPresent(String.self, forKey: .position)
