@@ -18,8 +18,15 @@ class ProductDetailsViewModel {
 
     private var product: Product
     private var recommendedList = [Product]()
+    var alsoBoughtProductsBlock: Block = Block()
 
     var optionsCount: Int { return self.product.productOptions.count }
+    var numberOfAlsoBoughtProducts: Int { return self.alsoBoughtProductsBlock.products.count }
+    
+    var numberOfSections: Int {
+        let numberOfAlsoBoughtSection = self.numberOfAlsoBoughtProducts > 0 ? 1: 0
+        return optionsCount + numberOfAlsoBoughtSection + 1
+    }
     
     // Selection part
     private var selectedOptions = [OptionsSelection]()
@@ -43,6 +50,25 @@ class ProductDetailsViewModel {
                 self.product = productResult
                 print(self.product)
                 
+            case .failure(let error):
+                print("the error \(error)")
+            }
+            completion(result)
+        }
+    }
+    
+    func getAlsoBoughtProducts(completion: @escaping (APIResult<Block?, MoyaError>) -> Void) {
+        
+        apiClient.getAlsoBoughtProducts(productId: product.identifier) { result in
+            switch result {
+            case .success(let responseB44):
+                guard let block = responseB44 else { return }
+                var sortedBlock = block
+                sortedBlock.products = block.products.sorted(by: { $0.fullDetails.position < $1.fullDetails.position })
+                sortedBlock.products = sortedBlock.products.filter({ $0.fullDetails.amount > 0 })
+                self.alsoBoughtProductsBlock = sortedBlock
+                print(block)
+        
             case .failure(let error):
                 print("the error \(error)")
             }
@@ -151,6 +177,26 @@ class ProductDetailsViewModel {
         if foundOptions.count > 0 {
             self.selectedOptions.removeAll(where: { $0.section == section })
         }
+    }
+    
+    // MARK:- AlsoBoughtSection
+    func isAlsoBoughtSection(section: Int) -> Bool {
+        if numberOfAlsoBoughtProducts == 0 {
+            return false
+        }
+        return section == numberOfSections - 1
+    }
+    
+      
+    func addToCartAlsoBoughtProduct(product: Product)  {
+        let cart = Cart.shared
+        cart.addProduct(product: product)
+    }
+    
+    //MARK:- ProductDetails ViewModel
+    func alsoBoughtProductDetailsViewModel(at indexPath: IndexPath) -> ProductDetailsViewModel {
+        let productViewModel = ProductDetailsViewModel(product:self.alsoBoughtProductsBlock.products[indexPath.row].fullDetails)
+        return productViewModel
     }
     
     // MARK:- ProductDeatailsTableViewCellViewModel

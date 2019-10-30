@@ -14,6 +14,7 @@ enum ProductsEndpoint {
     case getProductsOfCategory(categoryId: String, page: String)
     case getProductFeatures
     case getProductDetails(productId: String)
+    case getAlsoBoughtProducts(productId: String)
 }
 
 
@@ -47,12 +48,15 @@ extension ProductsEndpoint: TargetType {
         case .getProductDetails(let productId):
             let version = "4.0"
             return "\(version.urlEscaped)/TtmProducts/\(productId.urlEscaped)"
+        case .getAlsoBoughtProducts:
+            let version = "4.0"
+            return "\(version.urlEscaped)/TtmBlocks/77"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getProducts, .getAllCategories, .getProductsOfCategory, .getProductFeatures, .getProductDetails:
+        case .getProducts, .getAllCategories, .getProductsOfCategory, .getProductFeatures, .getProductDetails, .getAlsoBoughtProducts:
             return .get
         }
     }
@@ -87,6 +91,9 @@ extension ProductsEndpoint: TargetType {
         case .getProductFeatures:
             return .requestParameters(parameters: [ "items_per_page": 10
                 ], encoding: URLEncoding.default)
+        case .getAlsoBoughtProducts(let productId):
+            return .requestParameters(parameters: [ "also_bought_for_product_id": productId
+            ], encoding: URLEncoding.default)
         }
     }
     

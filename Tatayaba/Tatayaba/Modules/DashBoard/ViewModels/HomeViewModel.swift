@@ -81,7 +81,7 @@ class HomeViewModel {
             switch result {
             case .success(let response):
                 guard let suppliersResult = response else { return }
-                let suppliers = suppliersResult
+                guard let suppliers = suppliersResult.suppliers else { return }
 
                 self.suppliersList = suppliers
                 print("suppliers: \(suppliers)")
