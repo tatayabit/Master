@@ -27,7 +27,16 @@ extension APIClient {
                 do {
                     print("response: \(response)")
                     if response.statusCode >= 400 {
-                        throw APIError.requestFailed
+                        let errorMessage = try response.map(ErrorMessage.self)
+                        print("errorMessage: \(errorMessage)")
+                        
+                        if errorMessage.message.count > 0 {
+                            throw APIError.errorMessage(message: errorMessage.message)
+                        } else {
+                            throw APIError.requestFailed
+                        }
+//                        completion(APIResult.success(result))
+                        
                         //completion(APIResult.failure(APIError.requestFailed))
                     } else {
                         let result = try JSONDecoder().decode(T.self, from: response.data)

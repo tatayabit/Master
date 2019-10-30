@@ -16,7 +16,15 @@ class ProductDeatailsTableViewCellViewModel {
         return product.description.stripOutHtml() }
     var price: String { return product.price.formattedPrice }
     var discountPercentage: String { return product.listPrice }
-    var discountPrice: String { return product.listPrice }
+    var discountPrice: String {
+        if let percentage = Float(product.listPrice), let priceFloat = Float(product.price) {
+            if percentage > 0 {
+                let discountValue = (percentage / 100) * priceFloat
+                
+                return String(priceFloat - discountValue).formattedPrice
+            }
+        }
+        return "" }
 
     var imageUrl: String { return product.mainPair.detailedPair.imageUrl }
     

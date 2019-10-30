@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		053D694C0D5575CB4917A4B5 /* Pods_TatayabaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */; };
 		10181CB8235F655300220439 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10181CB7235F655300220439 /* GoogleService-Info.plist */; };
+		10244C592369F6F8004E65F9 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10244C582369F6F8004E65F9 /* ErrorMessage.swift */; };
 		10616751235CB06A00F4A3A0 /* PaymentWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10616750235CB06A00F4A3A0 /* PaymentWebViewController.swift */; };
 		10616753235CBE9C00F4A3A0 /* PaymentWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10616752235CBE9C00F4A3A0 /* PaymentWebViewModel.swift */; };
 		10645967235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10645966235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift */; };
@@ -279,6 +280,7 @@
 		02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B399FC35D3B3B996D93EC1 /* Pods-TatayabaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaUITests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		10181CB7235F655300220439 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		10244C582369F6F8004E65F9 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		10616750235CB06A00F4A3A0 /* PaymentWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewController.swift; sourceTree = "<group>"; };
 		10616752235CBE9C00F4A3A0 /* PaymentWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewModel.swift; sourceTree = "<group>"; };
 		10645966235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDeatailsTableViewCellViewModel.swift; sourceTree = "<group>"; };
@@ -572,6 +574,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10244C562369F6DF004E65F9 /* ErrorMessage */ = {
+			isa = PBXGroup;
+			children = (
+				10244C572369F6E6004E65F9 /* Models */,
+			);
+			path = ErrorMessage;
+			sourceTree = "<group>";
+		};
+		10244C572369F6E6004E65F9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				10244C582369F6F8004E65F9 /* ErrorMessage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1083BFFB235B350F00360E78 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1377,6 +1395,7 @@
 		11F52FA522CA7D92000F0D85 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				10244C562369F6DF004E65F9 /* ErrorMessage */,
 				11089C0523328AFB00BE9B78 /* Countries */,
 				4CC343A2232F9683005BA810 /* ProfileMenu */,
 				1145394D232A8B9600EDC908 /* Concierge */,
@@ -2363,6 +2382,7 @@
 				11069C3D2323A43A0093D6FF /* SuppliersListViewController.swift in Sources */,
 				109D29E5234A668F0052D01B /* CountrySettings.swift in Sources */,
 				11945BBF22F0B08D000F08DC /* CheckoutCompletedViewModel.swift in Sources */,
+				10244C592369F6F8004E65F9 /* ErrorMessage.swift in Sources */,
 				4C30D9E8232FDD9500629D38 /* WebViewViewController.swift in Sources */,
 				11B0791F233BCB2A003041E8 /* Address.swift in Sources */,
 				11A09F3E22FB44AA00C3E5B8 /* OrderDetailsViewModel.swift in Sources */,
