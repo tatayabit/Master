@@ -51,7 +51,11 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
         self.nameLabel.text = productVM.name
         self.descriptionLabel.text = productVM.description.stripOutHtml()
         self.quantityLabel.text = String(productVM.selectedQuantity)
-        self.priceLabel.text = productVM.price
+        
+        let attributedString = NSMutableAttributedString(string: productVM.price + "    ")
+        let priceAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.brandDarkGray]
+        attributedString.append(NSMutableAttributedString(string: productVM.discountPrice, attributes: priceAttributes))
+        self.priceLabel.attributedText = attributedString
     }
     
     
