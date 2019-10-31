@@ -53,5 +53,10 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Cairo-Regular.ttf</string>
+		<string>GothamHTF-Book.ttf</string>
+	</array>
 </dict>
 </plist>

@@ -205,6 +205,7 @@
 		27A908A12357906C0032DA41 /* Shipping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A908992357906C0032DA41 /* Shipping.swift */; };
 		27AB3009236710AC00CFBF59 /* ImageZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB3008236710AC00CFBF59 /* ImageZoomViewController.swift */; };
 		27AB300B23685E0B00CFBF59 /* productDeatailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB300A23685E0A00CFBF59 /* productDeatailsTableViewCell.swift */; };
+		27AB3014236AD40300CFBF59 /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27AB3013236AD40300CFBF59 /* Cairo-Regular.ttf */; };
 		4C219865233BBAA000DE40FA /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C219864233BBAA000DE40FA /* CountryViewController.swift */; };
 		4C219867233BBB6900DE40FA /* Country.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C219866233BBB6900DE40FA /* Country.storyboard */; };
 		4C219869233BBBE800DE40FA /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C219868233BBBE800DE40FA /* CountryTableViewCell.swift */; };
@@ -483,6 +484,7 @@
 		27A908992357906C0032DA41 /* Shipping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shipping.swift; sourceTree = "<group>"; };
 		27AB3008236710AC00CFBF59 /* ImageZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageZoomViewController.swift; sourceTree = "<group>"; };
 		27AB300A23685E0A00CFBF59 /* productDeatailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = productDeatailsTableViewCell.swift; sourceTree = "<group>"; };
+		27AB3013236AD40300CFBF59 /* Cairo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Regular.ttf"; sourceTree = "<group>"; };
 		2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3521A060629ED90EC6114BA5 /* Pods-TatayabaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.debug.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C219864233BBAA000DE40FA /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
@@ -1829,6 +1831,7 @@
 		847CDE7C22CA19CF00E67C8C /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				27AB3013236AD40300CFBF59 /* Cairo-Regular.ttf */,
 				4CC28C6F2327F961003EAEA6 /* GOTHAM-MEDIUM.TTF */,
 				4CC28C4C2327F1CE003EAEA6 /* Gotham-Light.otf */,
 				4CEDFF3E231A69DD001385DD /* Myriad Pro Regular.ttf */,
@@ -2110,6 +2113,7 @@
 				11945BBC22F0B08D000F08DC /* CheckOut.storyboard in Resources */,
 				10DFE456235262E100AAB780 /* OptionsHeader.xib in Resources */,
 				847CDE4E22C9EE2300E67C8C /* LaunchScreen.storyboard in Resources */,
+				27AB3014236AD40300CFBF59 /* Cairo-Regular.ttf in Resources */,
 				847CDE8922CA19EE00E67C8C /* ProximaNovaT-Thin.ttf in Resources */,
 				4CEDFF3F231A69DD001385DD /* Myriad Pro Regular.ttf in Resources */,
 				11257433233159B20015C3AD /* Concierge.storyboard in Resources */,
@@ -2720,7 +2724,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.14;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 74YH76FB8C;
+				DEVELOPMENT_TEAM = F5Q4UK5489;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2738,7 +2742,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.14;
-				DEVELOPMENT_TEAM = 74YH76FB8C;
+				DEVELOPMENT_TEAM = F5Q4UK5489;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
