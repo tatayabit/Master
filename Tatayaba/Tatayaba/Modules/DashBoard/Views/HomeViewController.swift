@@ -34,6 +34,8 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         setupListners()
         setupUI()
         viewModel.loadAPIs()
+        let cart = Cart.shared
+        cart.updateTabBarCount()
         CountriesManager.loadCountriesList()
     }
 

@@ -88,8 +88,8 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         let textVal = Constants.Cart.cartTotal + " " + text
         
         let strokeTextAttributes = [
-            NSAttributedString.Key.foregroundColor : UIColor(hexString: "221C35"),
-            NSAttributedString.Key.font : UIFont.lightGotham(size: 11)
+            NSAttributedString.Key.foregroundColor : UIColor(hexString: "221C35")
+//            ,NSAttributedString.Key.font : UIFont.lightGotham(size: 11)
             ] as [NSAttributedString.Key : Any]
         
         let newStr = NSMutableAttributedString(string: textVal)
