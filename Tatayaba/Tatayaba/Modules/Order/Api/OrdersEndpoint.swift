@@ -37,7 +37,7 @@ extension OrdersEndpoint: TargetType {
             return "4.0/stores/1/TtmOrders/"
 //            api/4.0/stores/1/TtmOrders/
         case .getAllOrders:
-            return "4.0/orders"
+            return "4.0/orders/"
         case .getOrder(let orderId):
             return "orders/\(orderId.urlEscaped)"
         }
