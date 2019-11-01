@@ -36,7 +36,17 @@ class BaseViewController: UIViewController {
     // MARK:- Error Alert
     func showErrorAlerr(title: String?, message: String?, handler: ((UIAlertAction) -> Void)?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let htmlData = NSString(string: message ?? "").data(using: String.Encoding.unicode.rawValue)
+        let options = [NSAttributedString.DocumentReadingOptionKey.documentType:
+            NSAttributedString.DocumentType.html]
+        let attributedString = try? NSMutableAttributedString(data: htmlData ?? Data(),
+                                                              options: options,
+                                                              documentAttributes: nil)
+        alert.setValue(attributedString, forKey: "attributedMessage")
+        alert.view.traverseRadius(4)
+        alert.view.backgroundColor = .white
         let action = UIAlertAction(title: Constants.Common.ok, style: .cancel, handler: handler)
+        action.setValue(UIColor.black, forKey: "titleTextColor")
         alert.addAction(action)
 
         self.present(alert, animated: true) {
@@ -155,5 +165,15 @@ extension UIViewController {
         UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
             view.isHidden = hidden
         })
+    }
+}
+
+extension UIView {
+    func traverseRadius(_ radius: Float) {
+        layer.cornerRadius = CGFloat(radius)
+        
+        for subview: UIView in subviews {
+            subview.traverseRadius(radius)
+        }
     }
 }

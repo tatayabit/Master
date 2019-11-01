@@ -26,7 +26,8 @@
 "Sign Up"="إنشاء حساب";
 "Skip"="تخطي";
 "Username or password are invalid"="البريد الالكتروني أو كلمة المرور غير صحيحة";
-
+"LoginFailed"= "خطا في الدخول";
+"AcceessDenied"= "الدخول ممنوع";
 
 // Error
 "Error"="خطأ";

@@ -72,7 +72,7 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
                 print("the error \(error)")
                 do {
                     if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
-                        self.showErrorAlerr(title: Constants.Common.error, message: errorMessage, handler: nil)
+                        self.showErrorAlerr(title: "AcceessDenied".localized(), message: errorMessage, handler: nil)
                     }
                 }
                 catch{
