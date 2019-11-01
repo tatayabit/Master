@@ -60,7 +60,14 @@ class LoginViewController: BaseViewController, ValidationDelegate {
                 self.navigateToHome()
             case .failure(let error):
                 print("the error \(error)")
-                self.showErrorAlerr(title: Constants.Common.error, message: "Username or password are invalid".localized(), handler: nil)
+                do {
+                    if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
+                        self.showErrorAlerr(title: "LoginFailed".localized(), message: errorMessage, handler: nil)
+                    }
+                }
+                catch{
+                }
+//                self.showErrorAlerr(title: Constants.Common.error, message: "Username or password are invalid".localized(), handler: nil)
             }
         }
     }

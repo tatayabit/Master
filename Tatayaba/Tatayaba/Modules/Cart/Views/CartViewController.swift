@@ -29,6 +29,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     var maxValueToShowTax: Float = 200
     var totalPriceValue: Float = 0
     private let checkoutSegue = "checkout_segue"
+    let cartClass: CartPricingItems = CartPricingItems()
     
     enum sectionType: Int {
         case item = 0, pricing
@@ -80,16 +81,16 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         
         totalPriceLabel.text = "\(totalPriceValue)".formattedPrice
         viewModel.loadPricingListContent(couponValue: couponValue, taxValue: taxValue, shippingValue: shippingValue)
-        let totalItemsText = "(" + String(cart.productsCount) + " " + Constants.Cart.items + ")"
+        let totalItemsText = "(" + String(cart.productsCount) + " " + cartClass.items + ")"
         totalTitleLabel.attributedText = attributedTotalTitle(text: totalItemsText)
     }
     
     func attributedTotalTitle(text: String) -> NSAttributedString {
-        let textVal = Constants.Cart.cartTotal + " " + text
+        let textVal = cartClass.cartTotal + " " + text
         
         let strokeTextAttributes = [
-            NSAttributedString.Key.foregroundColor : UIColor(hexString: "221C35"),
-            NSAttributedString.Key.font : UIFont.lightGotham(size: 11)
+            NSAttributedString.Key.foregroundColor : UIColor(hexString: "221C35")
+//            ,NSAttributedString.Key.font : UIFont.lightGotham(size: 11)
             ] as [NSAttributedString.Key : Any]
         
         let newStr = NSMutableAttributedString(string: textVal)
@@ -132,7 +133,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             checkoutContainerView.isHidden = false
             couponContainerView.isHidden = false
         } else {
-            self.cartTableview.setEmptyMessage(Constants.Cart.cartEmpty)
+            self.cartTableview.setEmptyMessage(cartClass.cartEmpty)
             checkoutContainerView.isHidden = true
             couponContainerView.isHidden = true
             return 0

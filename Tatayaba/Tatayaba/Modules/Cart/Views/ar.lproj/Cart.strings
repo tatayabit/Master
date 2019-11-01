@@ -1,0 +1,42 @@
+
+/* Class = "UILabel"; text = "4.00 KWD"; ObjectID = "1N5-Qh-0zj"; */
+"1N5-Qh-0zj.text" = "4.00 KWD";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "8Da-gx-MAe"; */
+"8Da-gx-MAe.normalTitle" = "+";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "F9x-Dw-1gW"; */
+"F9x-Dw-1gW.text" = "0";
+
+/* Class = "UITextField"; placeholder = "Enter Code"; ObjectID = "I2x-iQ-D9j"; */
+"I2x-iQ-D9j.placeholder" = "ادخل الكود";
+
+/* Class = "UINavigationItem"; title = "CART"; ObjectID = "Pgx-AB-vCh"; */
+"Pgx-AB-vCh.title" = "CART";
+
+/* Class = "UILabel"; text = "QTY"; ObjectID = "Sh4-ce-mNU"; */
+"Sh4-ce-mNU.text" = "QTY";
+
+/* Class = "UIButton"; normalTitle = "Apply Coupon"; ObjectID = "XLa-W9-b4k"; */
+"XLa-W9-b4k.normalTitle" = "طبق الكوبون";
+
+/* Class = "UIButton"; normalTitle = "REMOVE DISOUNT"; ObjectID = "aNj-tF-UM1"; */
+"aNj-tF-UM1.normalTitle" = "اخدف الكوبون";
+
+/* Class = "UIButton"; normalTitle = "CHECKOUT NOW"; ObjectID = "eDu-Kn-4cr"; */
+"eDu-Kn-4cr.normalTitle" = "الدفع الان";
+
+/* Class = "UILabel"; text = "Intash- 500ml"; ObjectID = "gzI-9s-7db"; */
+"gzI-9s-7db.text" = "Intash- 500ml";
+
+/* Class = "UIButton"; normalTitle = "-"; ObjectID = "jKa-wf-2PT"; */
+"jKa-wf-2PT.normalTitle" = "-";
+
+/* Class = "UILabel"; text = "14.200 KWD"; ObjectID = "r3s-NS-Zlb"; */
+"r3s-NS-Zlb.text" = "14.200 KWD";
+
+/* Class = "UITabBarItem"; title = "CART"; ObjectID = "y53-pj-g9s"; */
+"y53-pj-g9s.title" = "CART";
+
+/* Class = "UILabel"; text = "Cart total "; ObjectID = "zzS-WW-8Am"; */
+"zzS-WW-8Am.text" = "Cart total ";
