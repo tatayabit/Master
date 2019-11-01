@@ -185,11 +185,7 @@ extension profileTabMenuViewController{
 
     func reloadUI() {
         AppDelegate.shared.setupGlobalAppearance()
-        let storyboard = UIStoryboard(name: "Home", bundle: nil)
-        let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeTabBar") as! UITabBarController
-        let window = UIApplication.shared.keyWindow
-        window?.rootViewController = homeVC
-        window?.makeKeyAndVisible()
+        self.navigateToHome()
     }
 
     // MARK:- Actions
