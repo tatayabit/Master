@@ -60,13 +60,13 @@
                                 <rect key="frame" x="0.0" y="546" width="375" height="71"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cart total " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzS-WW-8Am">
-                                        <rect key="frame" x="8" y="0.0" width="55.5" height="25"/>
+                                        <rect key="frame" x="8" y="0.0" width="49" height="25"/>
                                         <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14.200 KWD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3s-NS-Zlb">
-                                        <rect key="frame" x="297" y="10" width="70" height="10"/>
+                                        <rect key="frame" x="305" y="7" width="62" height="13"/>
                                         <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
