@@ -44,8 +44,9 @@ struct Product {
     var maxQuantity: String
     var position: String
     var amount: Int
+    var outOfStockActions: String
     
-    init(name: String = "", supplierName: String = "", description: String = "", listPrice: String = "", price: String = "", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair(), productOptions: [ProductOption] = [ProductOption](), maxQuantity: String = "0", position: String = "", amount: Int = 0) {
+    init(name: String = "", supplierName: String = "", description: String = "", listPrice: String = "", price: String = "", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair(), productOptions: [ProductOption] = [ProductOption](), maxQuantity: String = "0", position: String = "", amount: Int = 0, outOfStockActions: String = "") {
         self.name = name
         self.description = description
 //        self.imageUrl = imageUrl
@@ -60,6 +61,7 @@ struct Product {
         self.maxQuantity = maxQuantity
         self.position = position
         self.amount = amount
+        self.outOfStockActions = outOfStockActions
     }
 }
 
@@ -79,6 +81,7 @@ extension Product: Codable {
         case maxQuantity = "max_qty"
         case position = "featured_position"
         case amount
+        case outOfStockActions = "out_of_stock_actions"
     }
 
     init(from decoder: Decoder) throws {
@@ -97,7 +100,8 @@ extension Product: Codable {
         productOptions = try container.decodeIfPresent([ProductOption].self, forKey: .productOptions) ?? [ProductOption]()
         maxQuantity = try container.decodeIfPresent(String.self, forKey: .maxQuantity) ?? "0"
         position = try container.decodeIfPresent(String.self, forKey: .position) ?? ""
-        
+        outOfStockActions = try container.decodeIfPresent(String.self, forKey: .outOfStockActions) ?? ""
+
         var amountVal = 0
         if let amountString = try container.decodeIfPresent(String.self, forKey: .amount) {
             amountVal = Int(amountString) ?? 0
@@ -151,5 +155,16 @@ extension Product: Codable {
         try container.encodeIfPresent(position, forKey: .position)
         try container.encodeIfPresent(amount, forKey: .amount)
 
+    }
+}
+
+
+extension Product {
+    var isInStock: Bool {
+        if self.amount > 0 { return true }
+        if self.outOfStockActions.lowercased() == "b" {
+            return true
+        }
+        return false
     }
 }

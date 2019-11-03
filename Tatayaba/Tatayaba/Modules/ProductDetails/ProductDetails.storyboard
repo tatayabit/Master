@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sab-ra-ANU">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sab-ra-ANU">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="GOTHAM-MEDIUM.TTF">
             <string>GothamMedium</string>
+        </array>
+        <array key="GothamHTF-Book.ttf">
+            <string>GothamHTF-Book</string>
         </array>
         <array key="Myriad Pro Regular.ttf">
             <string>MyriadPro-Regular</string>
@@ -181,9 +182,21 @@
                                                     <color key="textColor" red="0.1960784314" green="0.2274509804" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Out of stock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdA-1N-V75">
+                                                    <rect key="frame" x="22" y="229" width="110" height="22"/>
+                                                    <color key="backgroundColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="0.41177926939999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="8MS-jn-xBK"/>
+                                                        <constraint firstAttribute="width" constant="110" id="mW8-fJ-chu"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="WxN-4G-hCE" secondAttribute="trailing" id="1ze-OK-OJG"/>
+                                                <constraint firstItem="cdA-1N-V75" firstAttribute="bottom" secondItem="WxN-4G-hCE" secondAttribute="bottom" constant="-4" id="6bf-Ly-IS7"/>
                                                 <constraint firstAttribute="trailing" secondItem="Hs9-cS-nTL" secondAttribute="trailing" constant="12" id="Epx-N3-j9X"/>
                                                 <constraint firstItem="srS-AW-ThR" firstAttribute="top" secondItem="hrW-AT-q23" secondAttribute="top" id="Ez5-Uv-w2d"/>
                                                 <constraint firstItem="srS-AW-ThR" firstAttribute="bottom" secondItem="hrW-AT-q23" secondAttribute="bottom" id="Gya-pl-2fo"/>
@@ -193,6 +206,7 @@
                                                 <constraint firstItem="Hs9-cS-nTL" firstAttribute="trailing" secondItem="hTl-HN-FIy" secondAttribute="trailing" id="MGh-SJ-xQr"/>
                                                 <constraint firstItem="hTl-HN-FIy" firstAttribute="top" secondItem="WxN-4G-hCE" secondAttribute="bottom" constant="8" id="Q6q-AV-hoa"/>
                                                 <constraint firstItem="hrW-AT-q23" firstAttribute="height" secondItem="srS-AW-ThR" secondAttribute="height" id="REo-N7-8pd"/>
+                                                <constraint firstItem="cdA-1N-V75" firstAttribute="leading" secondItem="L6q-L8-rvC" secondAttribute="leading" constant="22" id="YIn-fK-Tmi"/>
                                                 <constraint firstItem="srS-AW-ThR" firstAttribute="leading" secondItem="WxN-4G-hCE" secondAttribute="leading" constant="12" id="bif-dZ-zI4"/>
                                                 <constraint firstItem="WxN-4G-hCE" firstAttribute="top" secondItem="L6q-L8-rvC" secondAttribute="top" id="iYP-TA-KA6"/>
                                                 <constraint firstItem="Hs9-cS-nTL" firstAttribute="top" secondItem="hTl-HN-FIy" secondAttribute="bottom" constant="6" id="kJe-DC-7x0"/>
@@ -209,6 +223,7 @@
                                             <outlet property="downButton" destination="tef-yc-INp" id="NKD-DJ-Tas"/>
                                             <outlet property="favoriteButton" destination="loP-HZ-eFk" id="LIY-52-WA9"/>
                                             <outlet property="nameLabel" destination="hTl-HN-FIy" id="Cry-au-YEq"/>
+                                            <outlet property="outOfStockLabel" destination="cdA-1N-V75" id="X9C-hj-3rW"/>
                                             <outlet property="priceLabel" destination="Hs9-cS-nTL" id="mxs-K8-db2"/>
                                             <outlet property="productCollectionView" destination="WxN-4G-hCE" id="t2w-z5-M2l"/>
                                             <outlet property="quantityLabel" destination="tyR-gg-KHo" id="jAj-WS-j6E"/>

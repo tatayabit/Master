@@ -6,6 +6,4 @@
 //  Copyright © 2019 Shaik. All rights reserved.
 //
 
-struct Constants {
-    
-}
+struct Constants {}
