@@ -30,7 +30,7 @@ class ProductDeatailsTableViewCellViewModel {
     
     var selectedQuantity: Int
     var optionsCount: Int { return self.product.productOptions.count }
-    
+    var isInStock: Bool { return self.product.isInStock }
     
     // MARK:- Init
     init(product: Product) {

@@ -36,7 +36,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         viewModel.loadAPIs()
         let cart = Cart.shared
         cart.updateTabBarCount()
-        CountriesManager.loadCountriesList()
+        CountriesManager.shared.loadCountriesList()
     }
 
     fileprivate func addBannersSubView() {

@@ -19,6 +19,7 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var outOfStockLabel: UILabel!
 
     var indexPath: IndexPath = IndexPath(item: 0, section: 0)
     weak var delegate: ProductsBlockCollectionViewCellDelegate?
@@ -26,6 +27,7 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        outOfStockLabel.text = "Out of stock"        
     }
 
     func configure(_ product: Product, indexPath: IndexPath) {
@@ -34,6 +36,7 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         nameLabel.text = product.supplierName == "None" ? "" : product.supplierName
         descriptionLabel.text = product.name
         priceLabel.text = product.price.formattedPrice
+        outOfStockLabel.isHidden = product.isInStock
         self.indexPath = indexPath
     }
 

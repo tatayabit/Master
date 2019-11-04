@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		053D694C0D5575CB4917A4B5 /* Pods_TatayabaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */; };
+		100B8D5F236F2F52000E11E8 /* CountriesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100B8D5E236F2F52000E11E8 /* CountriesAPIClient.swift */; };
+		100B8D61236F2F6E000E11E8 /* CountriesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100B8D60236F2F6E000E11E8 /* CountriesEndpoint.swift */; };
 		10181CB8235F655300220439 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10181CB7235F655300220439 /* GoogleService-Info.plist */; };
 		10244C592369F6F8004E65F9 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10244C582369F6F8004E65F9 /* ErrorMessage.swift */; };
 		10616751235CB06A00F4A3A0 /* PaymentWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10616750235CB06A00F4A3A0 /* PaymentWebViewController.swift */; };
@@ -52,7 +54,6 @@
 		11081EF822DB8CD800B68EA5 /* StackedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11081EF722DB8CD800B68EA5 /* StackedScrollView.swift */; };
 		11081EFB22DB8F4900B68EA5 /* ProfileDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11081EFA22DB8F4900B68EA5 /* ProfileDetailsView.swift */; };
 		11081EFD22DB8F5500B68EA5 /* ProfileDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11081EFC22DB8F5500B68EA5 /* ProfileDetailsView.xib */; };
-		11089C0423328ADD00BE9B78 /* countries_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 11089C0323328ADD00BE9B78 /* countries_list.json */; };
 		11089C0A23328B2200BE9B78 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11089C0923328B2200BE9B78 /* Country.swift */; };
 		11089C0C23328CFD00BE9B78 /* CountriesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11089C0B23328CFD00BE9B78 /* CountriesManager.swift */; };
 		11089C172333E8A600BE9B78 /* ShippingRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11089C162333E8A600BE9B78 /* ShippingRate.swift */; };
@@ -280,6 +281,8 @@
 /* Begin PBXFileReference section */
 		02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B399FC35D3B3B996D93EC1 /* Pods-TatayabaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaUITests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		100B8D5E236F2F52000E11E8 /* CountriesAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesAPIClient.swift; sourceTree = "<group>"; };
+		100B8D60236F2F6E000E11E8 /* CountriesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesEndpoint.swift; sourceTree = "<group>"; };
 		10181CB7235F655300220439 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		10244C582369F6F8004E65F9 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		10616750235CB06A00F4A3A0 /* PaymentWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewController.swift; sourceTree = "<group>"; };
@@ -324,7 +327,6 @@
 		11081EF722DB8CD800B68EA5 /* StackedScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackedScrollView.swift; sourceTree = "<group>"; };
 		11081EFA22DB8F4900B68EA5 /* ProfileDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsView.swift; sourceTree = "<group>"; };
 		11081EFC22DB8F5500B68EA5 /* ProfileDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileDetailsView.xib; sourceTree = "<group>"; };
-		11089C0323328ADD00BE9B78 /* countries_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries_list.json; sourceTree = "<group>"; };
 		11089C0923328B2200BE9B78 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		11089C0B23328CFD00BE9B78 /* CountriesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesManager.swift; sourceTree = "<group>"; };
 		11089C162333E8A600BE9B78 /* ShippingRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingRate.swift; sourceTree = "<group>"; };
@@ -577,6 +579,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		100B8D5D236F2F23000E11E8 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				100B8D5E236F2F52000E11E8 /* CountriesAPIClient.swift */,
+				100B8D60236F2F6E000E11E8 /* CountriesEndpoint.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
 		10244C562369F6DF004E65F9 /* ErrorMessage */ = {
 			isa = PBXGroup;
 			children = (
@@ -732,9 +743,7 @@
 				11089C0823328B1100BE9B78 /* Models */,
 				11089C0723328B0900BE9B78 /* ViewModels */,
 				11089C0623328B0400BE9B78 /* Views */,
-				4C219864233BBAA000DE40FA /* CountryViewController.swift */,
-				4C219868233BBBE800DE40FA /* CountryTableViewCell.swift */,
-				4C219866233BBB6900DE40FA /* Country.storyboard */,
+				100B8D5D236F2F23000E11E8 /* Api */,
 			);
 			path = Countries;
 			sourceTree = "<group>";
@@ -742,6 +751,9 @@
 		11089C0623328B0400BE9B78 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4C219864233BBAA000DE40FA /* CountryViewController.swift */,
+				4C219868233BBBE800DE40FA /* CountryTableViewCell.swift */,
+				4C219866233BBB6900DE40FA /* Country.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1783,7 +1795,6 @@
 				847CDE4C22C9EE2300E67C8C /* LaunchScreen.storyboard */,
 				847CDE4F22C9EE2300E67C8C /* Info.plist */,
 				115795CF23314CB00002075E /* Localizable.strings */,
-				11089C0323328ADD00BE9B78 /* countries_list.json */,
 				10181CB7235F655300220439 /* GoogleService-Info.plist */,
 				847CDE4722C9EE2300E67C8C /* Tatayaba.xcdatamodeld */,
 			);
@@ -2141,7 +2152,6 @@
 				10181CB8235F655300220439 /* GoogleService-Info.plist in Resources */,
 				11FEB4E122DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib in Resources */,
 				4C219867233BBB6900DE40FA /* Country.storyboard in Resources */,
-				11089C0423328ADD00BE9B78 /* countries_list.json in Resources */,
 				115DC42D231187950001EF67 /* BannersBlocksView.xib in Resources */,
 				8407BABB22E86213001F2C2A /* Order.storyboard in Resources */,
 				114D1A0022CBAAE2009205F3 /* Products.storyboard in Resources */,
@@ -2322,6 +2332,7 @@
 				114D1A0D22CBB144009205F3 /* TableCellActionProxy.swift in Sources */,
 				10FC8517234E372800D13C34 /* ProductVariant.swift in Sources */,
 				84BC08A422DC94AA00C6180E /* RecommendedCollectionViewCell.swift in Sources */,
+				100B8D61236F2F6E000E11E8 /* CountriesEndpoint.swift in Sources */,
 				11E8512922F7332900E80DF6 /* LoginResult.swift in Sources */,
 				11E8A6762327FE070091BD11 /* CartViewController.swift in Sources */,
 				11FB586F231D5EFF005DA4F0 /* SuppliersBlockCollectionViewCell.swift in Sources */,
@@ -2482,6 +2493,7 @@
 				2767CB97236472290042F533 /* OrderProductsCell.swift in Sources */,
 				11FB5849231C2147005DA4F0 /* CategoriesBlockCollectionViewCell.swift in Sources */,
 				8407BAB922E86205001F2C2A /* OrdersViewController.swift in Sources */,
+				100B8D5F236F2F52000E11E8 /* CountriesAPIClient.swift in Sources */,
 				116C937022F0949B00921893 /* CartItem.swift in Sources */,
 				4CC343A8232F9FAF005BA810 /* ProfileMenuTableViewCell.swift in Sources */,
 				27AB3009236710AC00CFBF59 /* ImageZoomViewController.swift in Sources */,

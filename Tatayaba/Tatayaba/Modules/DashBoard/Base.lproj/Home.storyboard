@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GId-Xi-OOd">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GId-Xi-OOd">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZ2-A0-U7k" customClass="StackedScrollView" customModule="Tatayab___Testing" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
                         </subviews>
@@ -114,17 +112,16 @@
             </objects>
             <point key="canvasLocation" x="-23" y="-251"/>
         </scene>
-        <!--HOME-->
+        <!--Home-->
         <scene sceneID="vG3-VF-qNM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kTb-40-w61" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="HOME" image="home_unselected" selectedImage="home_selected" id="0RQ-oJ-4UF">
-                        <inset key="imageInsets" minX="-2" minY="-2" maxX="-2" maxY="-2"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home_unselected" id="0RQ-oJ-4UF">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cvG-7L-mCz">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -166,16 +163,14 @@
             </objects>
             <point key="canvasLocation" x="1311" y="1039"/>
         </scene>
-        <!--CATEGORIES-->
+        <!--Categories-->
         <scene sceneID="HYp-Pu-Y1X">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J1J-Na-IoS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="CATEGORIES" image="category_unselected" id="hj0-Yf-ojD">
-                        <inset key="imageInsets" minX="-2" minY="-2" maxX="-2" maxY="-2"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Categories" image="category_unselected" id="hj0-Yf-ojD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WIr-Ad-Ke2">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -192,13 +187,12 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g5t-26-yVe" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Concierge" image="concierge_selected" selectedImage="concierge_selected" id="dad-sI-laG">
-                        <inset key="imageInsets" minX="-2" minY="-2" maxX="-2" maxY="-2"/>
                         <color key="badgeColor" red="0.87564182280000002" green="0.63852697609999998" blue="0.61103826760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wgg-Gr-lMd">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -214,12 +208,10 @@
         <scene sceneID="lXd-T9-9hX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dvx-nP-vye" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="ProfileMenu" id="2s8-cd-8yZ">
-                        <inset key="imageInsets" minX="-5" minY="-5" maxX="-5" maxY="-5"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Profile" image="ProfileMenu" id="2s8-cd-8yZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jL9-yH-NeR">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -235,12 +227,10 @@
         <scene sceneID="bTk-yj-2Ei">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ghk-TS-HUY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cart" image="cart_unselected" id="yGl-X9-zVs">
-                        <inset key="imageInsets" minX="-2" minY="-2" maxX="-2" maxY="-2"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Cart" image="cart_unselected" id="yGl-X9-zVs"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r4R-aK-XXV">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -254,11 +244,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ProfileMenu" width="20" height="20"/>
-        <image name="cart_unselected" width="20" height="20"/>
-        <image name="category_unselected" width="20" height="20"/>
-        <image name="concierge_selected" width="20" height="20"/>
-        <image name="home_selected" width="20" height="20"/>
-        <image name="home_unselected" width="20" height="20"/>
+        <image name="ProfileMenu" width="25" height="25"/>
+        <image name="cart_unselected" width="25" height="25"/>
+        <image name="category_unselected" width="25" height="25"/>
+        <image name="concierge_selected" width="25" height="25"/>
+        <image name="home_unselected" width="25" height="25"/>
     </resources>
 </document>

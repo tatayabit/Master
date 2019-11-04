@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +21,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductsBlockCollectionViewCell" id="gTV-IL-0wX" customClass="ProductsBlockCollectionViewCell" customModule="Tatayaba" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductsBlockCollectionViewCell" id="gTV-IL-0wX" customClass="ProductsBlockCollectionViewCell" customModule="Tatayab___Testing" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="168" height="205"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -119,6 +117,17 @@
                         <color key="textColor" red="0.67843137254901964" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Out of stock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5I-jM-puR">
+                        <rect key="frame" x="22" y="108" width="55" height="14"/>
+                        <color key="backgroundColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="0.41177926936619719" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="55" id="CnT-Xf-1Pp"/>
+                            <constraint firstAttribute="height" constant="14" id="ZXa-Go-3Ce"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="8"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -126,12 +135,14 @@
                 <constraint firstItem="lJx-Wu-3a2" firstAttribute="bottom" secondItem="Ndg-qA-zgg" secondAttribute="bottom" id="0yt-mV-nYP"/>
                 <constraint firstItem="lJx-Wu-3a2" firstAttribute="top" secondItem="H7V-tf-fQL" secondAttribute="bottom" constant="2" id="ENE-ld-QZz"/>
                 <constraint firstAttribute="trailing" secondItem="H7V-tf-fQL" secondAttribute="trailing" constant="7" id="FYb-J2-8ch"/>
+                <constraint firstItem="P5I-jM-puR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="22" id="Ljt-Oo-7wO"/>
                 <constraint firstItem="5M2-iy-DXo" firstAttribute="centerX" secondItem="Ndg-qA-zgg" secondAttribute="centerX" id="Lq7-VC-hd2"/>
                 <constraint firstItem="5M2-iy-DXo" firstAttribute="centerY" secondItem="Ndg-qA-zgg" secondAttribute="centerY" id="M7s-I7-EFc"/>
                 <constraint firstItem="hOq-pl-Bgm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="Mg1-U9-yWw"/>
                 <constraint firstAttribute="trailing" secondItem="hOq-pl-Bgm" secondAttribute="trailing" constant="7" id="OKf-Xh-7TN"/>
                 <constraint firstItem="Ndg-qA-zgg" firstAttribute="bottom" secondItem="rcq-m0-cLY" secondAttribute="bottom" constant="-2" id="OMH-P7-s7A"/>
                 <constraint firstItem="rcq-m0-cLY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="3" id="Op9-JS-iAF"/>
+                <constraint firstItem="uau-dH-D7f" firstAttribute="top" secondItem="P5I-jM-puR" secondAttribute="bottom" constant="4" id="SUx-eF-Bex"/>
                 <constraint firstItem="Ndg-qA-zgg" firstAttribute="trailing" secondItem="rcq-m0-cLY" secondAttribute="trailing" constant="-2" id="UFt-wk-jrL"/>
                 <constraint firstItem="5bD-Qe-4T2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="UUM-bL-YAH"/>
                 <constraint firstItem="Ndg-qA-zgg" firstAttribute="height" secondItem="lJx-Wu-3a2" secondAttribute="height" id="VWq-nx-8Gf"/>
@@ -156,6 +167,7 @@
                 <outlet property="bannerImageView" destination="5bD-Qe-4T2" id="NYL-dp-Rqe"/>
                 <outlet property="descriptionLabel" destination="hOq-pl-Bgm" id="4XB-we-cX1"/>
                 <outlet property="nameLabel" destination="uau-dH-D7f" id="GJL-t7-xm9"/>
+                <outlet property="outOfStockLabel" destination="P5I-jM-puR" id="ssG-c6-gTi"/>
                 <outlet property="priceLabel" destination="H7V-tf-fQL" id="1mc-QD-9uN"/>
             </connections>
             <point key="canvasLocation" x="265.60000000000002" y="192.95352323838082"/>

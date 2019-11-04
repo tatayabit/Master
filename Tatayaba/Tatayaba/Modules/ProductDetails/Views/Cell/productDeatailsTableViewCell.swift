@@ -25,6 +25,8 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var outOfStockLabel: UILabel!
+
     
     var viewModel: ProductDeatailsTableViewCellViewModel?
     weak var delegate: ProductDeatailsTableViewCellDelegate?
@@ -42,6 +44,7 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
     
     private func setupUI() {
         productCollectionView.register(ProductImageCarouselCollectionViewCell.nib, forCellWithReuseIdentifier: ProductImageCarouselCollectionViewCell.identifier)
+        self.outOfStockLabel.text = "Out of stock"
         productCollectionView.dataSource = self
         productCollectionView.delegate = self
     }
@@ -51,6 +54,8 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
         self.nameLabel.text = productVM.name
         self.descriptionLabel.text = productVM.description.stripOutHtml()
         self.quantityLabel.text = String(productVM.selectedQuantity)
+        self.outOfStockLabel.isHidden = productVM.isInStock
+
         
         let attributedString = NSMutableAttributedString(string: productVM.price + "    ")
         let priceAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.brandDarkGray]
