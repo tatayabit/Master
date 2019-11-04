@@ -17,47 +17,47 @@ protocol CartViewModelDelegate: class {
 }
 
 class CartViewModel {
-
+    
     var pricingList = [CartPricingModel]()
     let cart = Cart.shared
     
     private let cartApiClient = CartAPIClient()
-
+    
     weak var delegate: CartViewModelDelegate?
-
+    
     init() {
         loadPricingListContent(couponValue: "0", taxValue: nil, shippingValue: "0")
     }
-
+    
     func loadPricingListContent(couponValue: String, taxValue: Tax?, shippingValue: String) {
         pricingList.removeAll()
-        
-        var model = CartPricingModel(title: Constants.Cart.subtotal, value: cart.subtotalPrice)
+        let cartClass: CartPricingItems = CartPricingItems()
+        var model = CartPricingModel(title: cartClass.subtotal, value: cart.subtotalPrice)
         pricingList.append(model)
-
-//        model = CartPricingModel(title: Constants.Cart.shipping, value: cart.shippingFormatedPrice)
-//        pricingList.append(model)
         
-        model = CartPricingModel(title: Constants.Cart.shipping, value: shippingValue.formattedPrice)
+        //        model = CartPricingModel(title: Constants.Cart.shipping, value: cart.shippingFormatedPrice)
+        //        pricingList.append(model)
+        
+        model = CartPricingModel(title: cartClass.shipping, value: shippingValue.formattedPrice)
         pricingList.append(model)
         
         if taxValue?.customDuties?.type == "P" {
-            model = CartPricingModel(title: Constants.Cart.customDuties, value: "\(taxValue?.customDuties?.value ?? "0")%")
+            model = CartPricingModel(title: cartClass.customDuties, value: "\(taxValue?.customDuties?.value ?? "0")%")
         }else {
-            model = CartPricingModel(title: Constants.Cart.customDuties, value: taxValue?.customDuties?.value?.formattedPrice ?? "0")
+            model = CartPricingModel(title: cartClass.customDuties, value: taxValue?.customDuties?.value?.formattedPrice ?? "0")
         }
         
         pricingList.append(model)
         
         if taxValue?.vat?.type == "P" {
-            model = CartPricingModel(title: Constants.Cart.tax, value: "\(taxValue?.vat?.value ?? "0")%")
+            model = CartPricingModel(title: cartClass.tax, value: "\(taxValue?.vat?.value ?? "0")%")
         }else {
-            model = CartPricingModel(title: Constants.Cart.tax, value: taxValue?.vat?.value?.formattedPrice ?? "0")
+            model = CartPricingModel(title: cartClass.tax, value: taxValue?.vat?.value?.formattedPrice ?? "0")
         }
         
         pricingList.append(model)
         
-        model = CartPricingModel(title: Constants.Cart.coupon, value: couponValue.formattedPrice)
+        model = CartPricingModel(title: cartClass.coupon, value: couponValue.formattedPrice)
         pricingList.append(model)
         
         if let delegate = delegate {
@@ -101,16 +101,16 @@ class CartViewModel {
     }
 }
 
-extension Constants {
-    struct Cart {
-        static let subtotal = "Subtotal".localized()
-        static let shipping = "Shipping".localized()
-        static let tax = "Tax".localized()
-        static let customDuties = "CustomDuties".localized()
-        static let coupon = "Coupon".localized()
-        static let items = "items".localized()
-        static let cartTotal = "Cart Total".localized()
-        static let cartEmpty = "Your Cart is Empty!".localized()
-        static let Quantity = "Quantity".localized()
-    }
+
+class CartPricingItems {
+    var subtotal = "Subtotal".localized()
+    var shipping = "Shipping".localized()
+    var tax = "Tax".localized()
+    var customDuties = "CustomDuties".localized()
+    var coupon = "Coupon".localized()
+    var items = "items".localized()
+    var cartTotal = "Cart Total".localized()
+    var cartEmpty = "Your Cart is Empty!".localized()
+    var Quantity = "Quantity".localized()
 }
+

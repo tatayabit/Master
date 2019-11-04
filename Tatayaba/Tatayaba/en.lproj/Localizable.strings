@@ -26,6 +26,8 @@
 "Sign Up"="Sign Up";
 "Skip"="Skip";
 "Username or password are invalid"="Username or password are invalid";
+"LoginFailed"= "Login Failed";
+"AcceessDenied"= "Acceess Denied";
 
 // Error
 "Error"="Error";
