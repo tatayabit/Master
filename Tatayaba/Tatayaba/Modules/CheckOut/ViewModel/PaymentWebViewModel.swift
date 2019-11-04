@@ -42,6 +42,11 @@ struct PaymentWebViewModel {
             return false
         }
     
+    //MARK:- CheckoutCompletedViewModel
+    func checkoutCompletedViewModel() -> CheckoutCompletedViewModel {
+        return CheckoutCompletedViewModel(orderId: "\(self.orderResult.orderId)")
+    }
+    
     // MARK :- Cart
     func clearCart() {
         Cart.shared.reset()

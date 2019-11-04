@@ -12,7 +12,6 @@ import WebKit
 class PaymentWebViewController: BaseViewController, WKUIDelegate, WKNavigationDelegate, UIScrollViewDelegate {
 
     var webView: WKWebView!
-    
     let checkoutCompletedSegue = "checkout_completed_segue"
     var viewModel: PaymentWebViewModel?
     
@@ -30,7 +29,6 @@ class PaymentWebViewController: BaseViewController, WKUIDelegate, WKNavigationDe
         view = webView
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -41,7 +39,6 @@ class PaymentWebViewController: BaseViewController, WKUIDelegate, WKNavigationDe
         // Without this, it'll crash when your MyClass instance is deinit'd
         webView.scrollView.delegate = nil
     }
-    
     
     // MARK: - Load Url
      private func sendRequest() {
@@ -84,7 +81,14 @@ class PaymentWebViewController: BaseViewController, WKUIDelegate, WKNavigationDe
         self.webView.navigationDelegate = nil
         showErrorAlerr(title: "Error", message: "Payment Failed. Try again later.") { action in
             self.navigationController?.popViewController(animated: true)
-            
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == checkoutCompletedSegue {
+            let completedCheckoutVC = segue.destination as! CheckoutCompletedViewController
+            guard let viewModel = viewModel else { return }
+            completedCheckoutVC.viewModel = viewModel.checkoutCompletedViewModel()
         }
     }
 }
