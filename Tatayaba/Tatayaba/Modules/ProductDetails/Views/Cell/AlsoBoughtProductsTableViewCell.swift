@@ -76,7 +76,11 @@ class AlsoBoughtProductsTableViewCell: UITableViewCell, UICollectionViewDelegate
         if let delegate = delegate {
             guard let block = block else { return }
             let product = block.products[indexPath.row].fullDetails
-            delegate.didAddToCart(product: product)
+            if product.productOptions.filter({ $0.required == "Y" }).count > 0 {
+                delegate.didSelectProduct(at: indexPath)
+            } else {
+                delegate.didAddToCart(product: product)
+            }
         }
     }
     

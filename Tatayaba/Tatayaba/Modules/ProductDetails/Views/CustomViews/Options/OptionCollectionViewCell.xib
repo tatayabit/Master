@@ -28,30 +28,29 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFb-Mh-geU">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete_icon" translatesAutoresizingMaskIntoConstraints="NO" id="wO1-gK-zqV">
                         <rect key="frame" x="323" y="10" width="40" height="40"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="40" id="8l6-SW-phN"/>
-                            <constraint firstAttribute="height" constant="40" id="Ako-3L-etj"/>
+                            <constraint firstAttribute="height" constant="40" id="cxu-tP-Eob"/>
+                            <constraint firstAttribute="width" constant="40" id="f0T-VX-HLB"/>
                         </constraints>
-                        <state key="normal" image="delete_icon"/>
-                    </button>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="g9X-yk-B8a" firstAttribute="top" secondItem="Gu7-Pj-M2B" secondAttribute="top" constant="8" id="0W8-nB-BKY"/>
-                    <constraint firstAttribute="trailing" secondItem="MFb-Mh-geU" secondAttribute="trailing" constant="12" id="2TH-vx-gv7"/>
+                    <constraint firstAttribute="trailing" secondItem="wO1-gK-zqV" secondAttribute="trailing" constant="12" id="7JL-w6-AJH"/>
+                    <constraint firstItem="wO1-gK-zqV" firstAttribute="leading" secondItem="g9X-yk-B8a" secondAttribute="trailing" constant="30" id="9r0-mW-fO6"/>
                     <constraint firstItem="ONz-cy-8Q8" firstAttribute="leading" secondItem="Gu7-Pj-M2B" secondAttribute="leading" constant="6" id="bI6-lB-FGE"/>
                     <constraint firstAttribute="bottom" secondItem="g9X-yk-B8a" secondAttribute="bottom" constant="8" id="dkh-Lr-Du7"/>
                     <constraint firstItem="g9X-yk-B8a" firstAttribute="leading" secondItem="ONz-cy-8Q8" secondAttribute="trailing" constant="8" id="eXt-DJ-AKv"/>
-                    <constraint firstItem="MFb-Mh-geU" firstAttribute="centerY" secondItem="Gu7-Pj-M2B" secondAttribute="centerY" id="j9g-4R-QH7"/>
                     <constraint firstItem="ONz-cy-8Q8" firstAttribute="top" secondItem="Gu7-Pj-M2B" secondAttribute="top" constant="3" id="kfs-yv-iW8"/>
-                    <constraint firstItem="MFb-Mh-geU" firstAttribute="leading" secondItem="g9X-yk-B8a" secondAttribute="trailing" constant="30" id="rMa-0N-rUQ"/>
+                    <constraint firstItem="wO1-gK-zqV" firstAttribute="centerY" secondItem="Gu7-Pj-M2B" secondAttribute="centerY" id="ysq-4P-vyh"/>
                     <constraint firstAttribute="bottom" secondItem="ONz-cy-8Q8" secondAttribute="bottom" constant="3" id="zJO-hr-tyw"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="iconImageView" destination="ONz-cy-8Q8" id="wJX-M6-uSO"/>
-                <outlet property="removeButton" destination="MFb-Mh-geU" id="Peo-Ug-cqy"/>
+                <outlet property="removeIcon" destination="wO1-gK-zqV" id="toV-gt-FbN"/>
                 <outlet property="titleLabel" destination="g9X-yk-B8a" id="LcR-j2-Lt3"/>
             </connections>
             <point key="canvasLocation" x="53.600000000000001" y="176.31184407796104"/>
