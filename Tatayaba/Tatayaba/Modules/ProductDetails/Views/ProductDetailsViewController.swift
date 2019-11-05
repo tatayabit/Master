@@ -97,7 +97,7 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
                 self.callDetailsApi()
             case .failure(let error):
                 print("the error \(error)")
-                self.showErrorAlerr(title: "Error", message: "not able to fetch the product", handler: nil)
+                self.showErrorAlerr(title: "Error", message: "not able to fetch the also bought products", handler: nil)
             }
         })
     }

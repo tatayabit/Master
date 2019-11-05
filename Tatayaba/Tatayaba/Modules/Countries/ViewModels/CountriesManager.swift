@@ -35,4 +35,12 @@ class CountriesManager {
         guard countriesList.count > 0 else { return Country() }
         return countriesList[indexPath.row]
     }
+    
+    func country(with name: String) -> Country? {
+        let foundCountries = self.countriesList.filter({ $0.name == name })
+        if foundCountries.count > 0 {
+            return foundCountries.first
+        }
+        return nil
+    }
 }

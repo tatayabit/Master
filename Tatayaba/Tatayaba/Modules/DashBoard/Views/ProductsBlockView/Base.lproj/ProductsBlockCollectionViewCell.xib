@@ -46,6 +46,22 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5bD-Qe-4T2">
                         <rect key="frame" x="20" y="5" width="128" height="119"/>
                     </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdI-c6-iOC">
+                        <rect key="frame" x="12" y="13" width="40" height="40"/>
+                        <color key="backgroundColor" red="0.87450980389999999" green="0.63921568630000003" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="faQ-pZ-zOp"/>
+                            <constraint firstAttribute="width" constant="40" id="sao-PQ-Bp6"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="7"/>
+                        <color key="textColor" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJx-Wu-3a2">
                         <rect key="frame" x="5" y="170" width="116" height="30"/>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.10980392156862745" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
@@ -147,8 +163,10 @@
                 <constraint firstItem="5bD-Qe-4T2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="UUM-bL-YAH"/>
                 <constraint firstItem="Ndg-qA-zgg" firstAttribute="height" secondItem="lJx-Wu-3a2" secondAttribute="height" id="VWq-nx-8Gf"/>
                 <constraint firstItem="H7V-tf-fQL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="X16-db-Jsv"/>
+                <constraint firstItem="wdI-c6-iOC" firstAttribute="top" secondItem="5bD-Qe-4T2" secondAttribute="top" constant="8" id="Yqz-gI-bLp"/>
                 <constraint firstItem="lJx-Wu-3a2" firstAttribute="leading" secondItem="rcq-m0-cLY" secondAttribute="leading" constant="2" id="Zx0-MJ-vTp"/>
                 <constraint firstAttribute="trailing" secondItem="5bD-Qe-4T2" secondAttribute="trailing" constant="20" id="a2P-P0-0sN"/>
+                <constraint firstItem="wdI-c6-iOC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="aa0-yB-cde"/>
                 <constraint firstItem="uau-dH-D7f" firstAttribute="top" secondItem="5bD-Qe-4T2" secondAttribute="bottom" constant="2" id="axW-Mw-URh"/>
                 <constraint firstAttribute="trailing" secondItem="rcq-m0-cLY" secondAttribute="trailing" constant="3" id="cyn-YO-cEo"/>
                 <constraint firstItem="hOq-pl-Bgm" firstAttribute="top" secondItem="uau-dH-D7f" secondAttribute="bottom" constant="3" id="fKV-ii-AH0"/>
@@ -164,8 +182,10 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="210" height="245"/>
             <connections>
+                <outlet property="addToCartButton" destination="lJx-Wu-3a2" id="awd-0H-nYd"/>
                 <outlet property="bannerImageView" destination="5bD-Qe-4T2" id="NYL-dp-Rqe"/>
                 <outlet property="descriptionLabel" destination="hOq-pl-Bgm" id="4XB-we-cX1"/>
+                <outlet property="discountPercentageLabel" destination="wdI-c6-iOC" id="NaZ-d9-6le"/>
                 <outlet property="nameLabel" destination="uau-dH-D7f" id="GJL-t7-xm9"/>
                 <outlet property="outOfStockLabel" destination="P5I-jM-puR" id="ssG-c6-gTi"/>
                 <outlet property="priceLabel" destination="H7V-tf-fQL" id="1mc-QD-9uN"/>

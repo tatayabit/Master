@@ -52,3 +52,7 @@
 
 // CheckOut
 "EnterAddress" = "من فضلك ادخل عنوانك";
+
+// Product
+"OPTIONS..." = "الاختيارات...";
+"ADD TO CART" = "أضف إلى السلة";
