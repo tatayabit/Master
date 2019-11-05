@@ -54,3 +54,5 @@
 
 // CheckOut
 "EnterAddress" = "Please Enter Your Shipping Address";
+"ForgetFailed" = "Forget Password Failed";
+"ForgetSuccess" = "Ok";
