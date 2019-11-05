@@ -23,7 +23,7 @@ struct OrderModel {
     var timestamp: String
     var paymentInfo : PaymentInfo?
     var paymentMethod: PaymentMethod?
-//    var products: [Product]
+    var products: [Product]
     init() {
         self.identifier = ""
         self.status = ""
@@ -38,7 +38,7 @@ struct OrderModel {
         self.billingCountry = ""
         self.shippingPhone = ""
         self.timestamp = ""
-//        self.products = [Product]()
+        self.products = [Product]()
     }
 
 }
@@ -60,7 +60,7 @@ extension OrderModel: Codable {
         case timestamp = "timestamp"
         case paymentInfo = "payment_info"
         case paymentMethod = "payment_method"
-//        case products
+        case products
     }
 
     init(from decoder: Decoder) throws {
@@ -80,7 +80,7 @@ extension OrderModel: Codable {
         timestamp = try container.decodeIfPresent(String.self, forKey: .timestamp) ?? ""
         paymentInfo = try container.decodeIfPresent(PaymentInfo.self, forKey: .paymentInfo)
         paymentMethod = try container.decodeIfPresent(PaymentMethod.self, forKey: .paymentMethod)
-//        products = try container.decodeIfPresent([Product].self, forKey: .products) ?? [Product]()
+        products = try container.decodeIfPresent([Product].self, forKey: .products) ?? [Product]()
     }
 
     func encode(to encoder: Encoder) throws {
@@ -100,7 +100,7 @@ extension OrderModel: Codable {
         try container.encodeIfPresent(timestamp, forKey: .timestamp)
         try container.encodeIfPresent(paymentInfo, forKey: .paymentInfo)
         try container.encodeIfPresent(paymentMethod, forKey: .paymentMethod)
-//        try container.encodeIfPresent(products, forKey: .products)
+        try container.encodeIfPresent(products, forKey: .products)
     }
 }
 

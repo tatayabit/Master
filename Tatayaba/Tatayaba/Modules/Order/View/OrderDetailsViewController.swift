@@ -33,8 +33,7 @@ class OrderDetailsViewController: BaseViewController {
             self.hideLoadingIndicator(from: self.view)
             if let currentOrder = self.viewModel?.order {
                 self.order = currentOrder
-//                self.cellsCount = 4 + self.order.products.count
-                self.cellsCount = 5
+                self.cellsCount = 4 + self.order.products.count
                 self.orderDetailstableView.reloadData()
             }
         }
@@ -78,6 +77,7 @@ extension OrderDetailsViewController: UITableViewDataSource, UITableViewDelegate
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "OrderProductsCell") as! OrderProductsCell
+            cell.configCell(product: order.products[indexPath.row - 4])
             return cell
         }
     }
