@@ -15,6 +15,7 @@ extension Constants {
         static let wishlist = "Wish List".localized()
         static let myOrders = "My Orders".localized()
         static let changeLanguage = "Change Language".localized()
+        static let currencies = "Currencies".localized()
         static let privacyPolicy = "Privacy Policy".localized()
         static let logout = "Logout".localized()
         static let deliveryAndReturnPolicy = "Delivery and Return Policy".localized()
@@ -25,12 +26,12 @@ extension Constants {
     }
 }
 
-class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CountryViewDelegate {
   
     var Session1: [String] = [Constants.Profile.myOrders]
     var Session1_img: [String] = ["Cart"]
-    var Session2: [String] = [Constants.Profile.changeLanguage, Constants.Profile.liveChat, Constants.Profile.notifications]
-    var Session2_img: [String] = ["settings", "liveChat","Notifiction"]
+    var Session2: [String] = [Constants.Profile.changeLanguage, Constants.Profile.currencies, Constants.Profile.liveChat, Constants.Profile.notifications]
+    var Session2_img: [String] = ["settings", "settings", "liveChat", "Notifiction"]
     
     var Session3: [String] = [Constants.Profile.deliveryAndReturnPolicy, Constants.Profile.privacyPolicy,Constants.Profile.logout]
     var Session4: [String] = [Constants.Profile.deliveryAndReturnPolicy, Constants.Profile.privacyPolicy]
@@ -151,10 +152,13 @@ extension profileTabMenuViewController{
             let indextitle = self.Session2[indexPath.row]
             if indextitle  == Constants.Profile.changeLanguage {
                 //setting page
-                self.changeLanguege()
+                changeLanguege()
+            }
+            if indextitle  == Constants.Profile.currencies {
+                loadCurrenciesVC()
             }
             if indextitle == Constants.Profile.liveChat {
-                self.loadLiveChat()
+                loadLiveChat()
             }
             
         }else if  indexPath.section == 2 {
@@ -173,6 +177,10 @@ extension profileTabMenuViewController{
             }
         }
   
+        
+    }
+    
+    func countrySelected(selectedCountry: Country) {
         
     }
     
@@ -197,6 +205,12 @@ extension profileTabMenuViewController{
     func loadOrdersVC() {
         let controller = UIStoryboard(name: "Order", bundle: Bundle.main).instantiateViewController(withIdentifier: "OrderViewController") as! OrdersViewController
         self.navigationController?.pushViewController(controller, animated: false)
+    }
+    
+    func loadCurrenciesVC() {
+        let controller = UIStoryboard(name: "Country", bundle: Bundle.main).instantiateViewController(withIdentifier: "CountryViewController") as! CountryViewController
+        controller.delegate = self
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 
     func loadFirstVC() {
