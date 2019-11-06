@@ -53,6 +53,10 @@
 // CheckOut
 "EnterAddress" = "من فضلك ادخل عنوانك";
 
+"ForgetFailed" = "خطا في استرجاع الرقم السري";
+"ForgetSuccess" = "حسنا";
+
 // Product
 "OPTIONS..." = "الاختيارات...";
 "ADD TO CART" = "أضف إلى السلة";
+

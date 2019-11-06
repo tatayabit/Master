@@ -208,6 +208,9 @@
 		27AB300B23685E0B00CFBF59 /* productDeatailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB300A23685E0A00CFBF59 /* productDeatailsTableViewCell.swift */; };
 		27AB3014236AD40300CFBF59 /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27AB3013236AD40300CFBF59 /* Cairo-Regular.ttf */; };
 		27AB3017236C3A8C00CFBF59 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27AB3019236C3A8C00CFBF59 /* Cart.storyboard */; };
+		27F32DC32371F657000F7758 /* ForgetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F32DC02371F656000F7758 /* ForgetPasswordViewModel.swift */; };
+		27F32DC42371F657000F7758 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F32DC22371F656000F7758 /* ForgetPasswordViewController.swift */; };
+		27F32DC62371FCCA000F7758 /* ForgetPasswordResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F32DC52371FCCA000F7758 /* ForgetPasswordResult.swift */; };
 		4C219865233BBAA000DE40FA /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C219864233BBAA000DE40FA /* CountryViewController.swift */; };
 		4C219867233BBB6900DE40FA /* Country.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C219866233BBB6900DE40FA /* Country.storyboard */; };
 		4C219869233BBBE800DE40FA /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C219868233BBBE800DE40FA /* CountryTableViewCell.swift */; };
@@ -489,6 +492,9 @@
 		27AB3013236AD40300CFBF59 /* Cairo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Regular.ttf"; sourceTree = "<group>"; };
 		27AB3018236C3A8C00CFBF59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Cart.storyboard; sourceTree = "<group>"; };
 		27AB301B236C3A9200CFBF59 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Cart.strings; sourceTree = "<group>"; };
+		27F32DC02371F656000F7758 /* ForgetPasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewModel.swift; sourceTree = "<group>"; };
+		27F32DC22371F656000F7758 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		27F32DC52371FCCA000F7758 /* ForgetPasswordResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordResult.swift; sourceTree = "<group>"; };
 		2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3521A060629ED90EC6114BA5 /* Pods-TatayabaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.debug.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C219864233BBAA000DE40FA /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
@@ -1401,6 +1407,7 @@
 			isa = PBXGroup;
 			children = (
 				11D612AB22CE4A05000D42C3 /* User.swift */,
+				27F32DC52371FCCA000F7758 /* ForgetPasswordResult.swift */,
 				11E8512822F7332900E80DF6 /* LoginResult.swift */,
 				112654A822D25E5B00904FB5 /* SignUpResponse.swift */,
 			);
@@ -1475,6 +1482,7 @@
 				11F52FAD22CA7D92000F0D85 /* SignUp */,
 				27497C4E234E4EF500D84690 /* GuestSignUp */,
 				11F52FB222CA7D92000F0D85 /* Login */,
+				27F32DBE2371F656000F7758 /* ForgetPassword */,
 				11D612AA22CE49EC000D42C3 /* Models */,
 				11D612A522CE49D1000D42C3 /* Api */,
 			);
@@ -1633,6 +1641,31 @@
 				27A908992357906C0032DA41 /* Shipping.swift */,
 			);
 			path = TaxAndShippingModels;
+			sourceTree = "<group>";
+		};
+		27F32DBE2371F656000F7758 /* ForgetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				27F32DBF2371F656000F7758 /* ViewModels */,
+				27F32DC12371F656000F7758 /* Views */,
+			);
+			path = ForgetPassword;
+			sourceTree = "<group>";
+		};
+		27F32DBF2371F656000F7758 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				27F32DC02371F656000F7758 /* ForgetPasswordViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		27F32DC12371F656000F7758 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				27F32DC22371F656000F7758 /* ForgetPasswordViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		4C2007A523313F5E0090658A /* Cell */ = {
@@ -2364,6 +2397,7 @@
 				27A908A02357906C0032DA41 /* Tax.swift in Sources */,
 				11C271B922F5CB59004613E3 /* LoginViewModel.swift in Sources */,
 				11081EF622DB8A1600B68EA5 /* ProfileViewModel.swift in Sources */,
+				27F32DC62371FCCA000F7758 /* ForgetPasswordResult.swift in Sources */,
 				11453954232A8D2900EDC908 /* ConciergeViewModel.swift in Sources */,
 				848E89C822CCE53E000AA24C /* BaseViewController.swift in Sources */,
 				111C8A38230B1135003F5FDB /* BlocksEndpoint.swift in Sources */,
@@ -2450,10 +2484,12 @@
 				11FB585D231C3C3C005DA4F0 /* Supplier.swift in Sources */,
 				114D1A0B22CBB12B009205F3 /* CellActionHandler.swift in Sources */,
 				84BC089E22DC84A900C6180E /* CartTableViewCell.swift in Sources */,
+				27F32DC42371F657000F7758 /* ForgetPasswordViewController.swift in Sources */,
 				2767CB95236472290042F533 /* OrderAddressCell.swift in Sources */,
 				11B07910233A7661003041E8 /* UIImage+Extensions.swift in Sources */,
 				113647FA2316FF090097FDB3 /* CategoriesBlockView.swift in Sources */,
 				11B07915233A780D003041E8 /* ConciergeAPIClient.swift in Sources */,
+				27F32DC32371F657000F7758 /* ForgetPasswordViewModel.swift in Sources */,
 				847CDE4122C9EE2300E67C8C /* AppDelegate.swift in Sources */,
 				115795C6233001F60002075E /* SupplierProductsViewModel.swift in Sources */,
 				4CC343A6232F96C2005BA810 /* profileTabMenuViewController.swift in Sources */,
@@ -2744,7 +2780,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.14;
+				CURRENT_PROJECT_VERSION = 1.0.18;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
@@ -2763,7 +2799,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.14;
+				CURRENT_PROJECT_VERSION = 1.0.18;
 				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

@@ -12,6 +12,7 @@ enum UserEndpoint {
     case signUp(user: User)
     case gusetSignUp(user: User)
     case login(user: User)
+    case forgetPassword(email: String)
     case getProfile(userId: Int)
     
 }
@@ -43,6 +44,8 @@ extension UserEndpoint: TargetType {
             return "\(version.urlEscaped)/TtmUsers/\(userId)"
         case .login:
             return "4.0/TtmAuth"
+        case .forgetPassword:
+            return "40/TtmForgetPass"
         }
     }
     
@@ -50,7 +53,7 @@ extension UserEndpoint: TargetType {
         switch self {
         case .signUp,.gusetSignUp, .login:
             return .post
-        case .getProfile:
+        case .getProfile, .forgetPassword:
             return .get
         }
     }
@@ -86,6 +89,9 @@ extension UserEndpoint: TargetType {
                 ], encoding: JSONEncoding.default)
         case .getProfile:
             return .requestPlain
+        case .forgetPassword(let email):
+            return .requestParameters(parameters: [ "email": email
+            ], encoding: URLEncoding.queryString)
         case .login(let user):
             return .requestParameters(parameters: [ "email": user.email ,
                                                     "password": user.password

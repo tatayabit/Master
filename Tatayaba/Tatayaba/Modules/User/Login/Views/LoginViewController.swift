@@ -99,14 +99,20 @@ class LoginViewController: BaseViewController, ValidationDelegate {
 
     //MARK:- IBActions
     @IBAction func loginAction(_ sender: UIButton) {
-        emailTextField.updateColors()
-        passwordTextField.updateColors()
-        validator.validate(self)
-//        UserDefaults.standard.set("1", forKey: "UserID") // Need to give userid
+            emailTextField.updateColors()
+            passwordTextField.updateColors()
+            validator.validate(self)
+    //        UserDefaults.standard.set("1", forKey: "UserID") // Need to give userid
 
-//        performSegue(withIdentifier: homeSegue, sender: nil)
+    //        performSegue(withIdentifier: homeSegue, sender: nil)
 
-    }
+        }
+    
+    @IBAction func forgetPasswordAction(_ sender: UIButton) {
+        let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "ForgetPasswordViewController") as! ForgetPasswordViewController
+        controller.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.pushViewController(controller, animated: true)
+        }
 
     
     @IBAction func skipAction(_ sender: UIButton) {
