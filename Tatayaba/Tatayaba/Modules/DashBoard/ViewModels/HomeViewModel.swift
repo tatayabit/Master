@@ -196,7 +196,12 @@ class HomeViewModel {
            return result
        }
 
-
+    // MARK:- HasRequiredOptions
+    func hasRequiredOptions(at indexPath: IndexPath) -> Bool {
+        let product = productsBlock.products[indexPath.row].fullDetails
+        return product.productOptions.filter({ $0.required == "Y" }).count > 0
+    }
+    
     // MARK:- AddToCart
     func addToCart(product: Product)  {
         let cart = Cart.shared

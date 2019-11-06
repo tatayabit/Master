@@ -54,3 +54,8 @@
 
 // CheckOut
 "EnterAddress" = "Please Enter Your Shipping Address";
+
+
+// Product
+"OPTIONS..." = "OPTIONS...";
+"ADD TO CART" = "ADD TO CART";

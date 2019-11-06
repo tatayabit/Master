@@ -167,6 +167,22 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                 </collectionView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGx-ef-rdJ">
+                                                    <rect key="frame" x="13" y="8" width="50" height="50"/>
+                                                    <color key="backgroundColor" red="0.87450980392156863" green="0.63921568627450975" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="c6B-v7-Vch"/>
+                                                        <constraint firstAttribute="width" constant="50" id="n6L-cY-yfA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="10"/>
+                                                    <color key="textColor" red="0.13333333333333333" green="0.10980392156862745" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="25"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom box - Tatera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTl-HN-FIy">
                                                     <rect key="frame" x="12" y="263" width="390" height="13"/>
                                                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
@@ -207,11 +223,13 @@
                                                 <constraint firstItem="hTl-HN-FIy" firstAttribute="top" secondItem="WxN-4G-hCE" secondAttribute="bottom" constant="8" id="Q6q-AV-hoa"/>
                                                 <constraint firstItem="hrW-AT-q23" firstAttribute="height" secondItem="srS-AW-ThR" secondAttribute="height" id="REo-N7-8pd"/>
                                                 <constraint firstItem="cdA-1N-V75" firstAttribute="leading" secondItem="L6q-L8-rvC" secondAttribute="leading" constant="22" id="YIn-fK-Tmi"/>
+                                                <constraint firstItem="mGx-ef-rdJ" firstAttribute="top" secondItem="L6q-L8-rvC" secondAttribute="top" constant="8" id="aZO-dX-P60"/>
                                                 <constraint firstItem="srS-AW-ThR" firstAttribute="leading" secondItem="WxN-4G-hCE" secondAttribute="leading" constant="12" id="bif-dZ-zI4"/>
                                                 <constraint firstItem="WxN-4G-hCE" firstAttribute="top" secondItem="L6q-L8-rvC" secondAttribute="top" id="iYP-TA-KA6"/>
                                                 <constraint firstItem="Hs9-cS-nTL" firstAttribute="top" secondItem="hTl-HN-FIy" secondAttribute="bottom" constant="6" id="kJe-DC-7x0"/>
                                                 <constraint firstItem="WxN-4G-hCE" firstAttribute="leading" secondItem="L6q-L8-rvC" secondAttribute="leading" id="o1Y-CO-FXE"/>
                                                 <constraint firstItem="hrW-AT-q23" firstAttribute="leading" secondItem="srS-AW-ThR" secondAttribute="trailing" constant="9" id="oMC-WN-PQg"/>
+                                                <constraint firstItem="mGx-ef-rdJ" firstAttribute="leading" secondItem="L6q-L8-rvC" secondAttribute="leading" constant="13" id="rGH-Sl-5xk"/>
                                                 <constraint firstItem="loP-HZ-eFk" firstAttribute="top" secondItem="L6q-L8-rvC" secondAttribute="top" constant="10" id="rW9-kt-P0M"/>
                                                 <constraint firstItem="srS-AW-ThR" firstAttribute="top" secondItem="Hs9-cS-nTL" secondAttribute="bottom" constant="10" id="uQu-A8-SDY"/>
                                                 <constraint firstAttribute="bottom" secondItem="srS-AW-ThR" secondAttribute="bottom" constant="12" id="vVL-5l-We8"/>
@@ -220,6 +238,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="descriptionLabel" destination="alu-3v-FxI" id="fMf-m2-fTS"/>
+                                            <outlet property="discountPercentageLabel" destination="mGx-ef-rdJ" id="W5g-cL-MIc"/>
                                             <outlet property="downButton" destination="tef-yc-INp" id="NKD-DJ-Tas"/>
                                             <outlet property="favoriteButton" destination="loP-HZ-eFk" id="LIY-52-WA9"/>
                                             <outlet property="nameLabel" destination="hTl-HN-FIy" id="Cry-au-YEq"/>

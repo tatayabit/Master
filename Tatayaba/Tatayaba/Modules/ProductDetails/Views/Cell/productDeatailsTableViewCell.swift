@@ -26,7 +26,7 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var outOfStockLabel: UILabel!
-
+    @IBOutlet weak var discountPercentageLabel: UILabel!
     
     var viewModel: ProductDeatailsTableViewCellViewModel?
     weak var delegate: ProductDeatailsTableViewCellDelegate?
@@ -55,9 +55,16 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
         self.descriptionLabel.text = productVM.description.stripOutHtml()
         self.quantityLabel.text = String(productVM.selectedQuantity)
         self.outOfStockLabel.isHidden = productVM.isInStock
+        self.discountPercentageLabel.text = productVM.discountPercentage + "%\nOFF"
+        self.discountPercentageLabel.isHidden = !productVM.hasDiscount
 
+        let originalPriceStrikeAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.thick.rawValue]
+
+        let originalPriceAttr = productVM.hasDiscount ? originalPriceStrikeAttributes : nil
+        let attributedString = NSMutableAttributedString(string: productVM.price, attributes: originalPriceAttr)
+        attributedString.append(NSAttributedString(string: "    "))
         
-        let attributedString = NSMutableAttributedString(string: productVM.price + "    ")
+        
         let priceAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.brandDarkGray]
         attributedString.append(NSMutableAttributedString(string: productVM.discountPrice, attributes: priceAttributes))
         self.priceLabel.attributedText = attributedString
