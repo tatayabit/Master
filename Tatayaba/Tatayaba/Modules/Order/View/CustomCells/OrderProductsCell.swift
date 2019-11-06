@@ -10,6 +10,12 @@ import UIKit
 
 class OrderProductsCell: UITableViewCell {
 
+    @IBOutlet weak var productName: UILabel!
+    @IBOutlet weak var companyName: UILabel!
+    @IBOutlet weak var productPrice: UILabel!
+    @IBOutlet weak var paidPrice: UILabel!
+    @IBOutlet weak var productStatus: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +27,11 @@ class OrderProductsCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func configCell(product: Product) {
+        productName.text = product.name
+        companyName.text = product.supplierName
+        productPrice.text = product.price
+        paidPrice.text = product.price
+        productStatus.text = product.productStatus
+    }
 }
