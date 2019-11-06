@@ -8,7 +8,7 @@
 
 class CountrySettings {
     static let shared = CountrySettings()
-    var reversedCountryName: String?
+    var currentCountry: Country?
     var paymentMethods: [PaymentMethod]?
     var shipping : Shipping?
     var tax : Tax?
@@ -18,10 +18,10 @@ class CountrySettings {
         let geoCoder = ReverseGeoCoder()
         geoCoder.getCountry(lat: 29.3571553, lng: 47.9945803) { (countryName, error) in
             if error != nil {
-                self.reversedCountryName = "Kuwait"
+                self.currentCountry = CountriesManager.shared.country(with: countryName)//"Kuwait"
                 return
             }
-            self.reversedCountryName = countryName
+            self.currentCountry = CountriesManager.shared.country(with: countryName)
         }
     }
     

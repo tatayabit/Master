@@ -97,7 +97,7 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
                 self.callDetailsApi()
             case .failure(let error):
                 print("the error \(error)")
-                self.showErrorAlerr(title: "Error", message: "not able to fetch the product", handler: nil)
+                self.showErrorAlerr(title: "Error", message: "not able to fetch the also bought products", handler: nil)
             }
         })
     }
@@ -127,7 +127,15 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
     
     func addToCartAction() {
         guard let viewModel = viewModel else { return }
-        viewModel.addToCart()
+        if viewModel.hasRequiredOptions {
+            if viewModel.isAllRequiredOptionsSelected() {
+                viewModel.addToCart()
+            } else {
+                showErrorAlerr(title: "Error", message: "please choose the required options.", handler: nil)
+            }
+        } else {
+            viewModel.addToCart()
+        }
     }
 
 }
@@ -239,7 +247,9 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
             if section > 0 {
                 let item = headerItems[section]
                 guard let viewModel = viewModel else { return UIView() }
-                headerView.configure(titleObj: viewModel.optionHeader(at: section).name, itemObj: item, sectionObj: section)
+                let option = viewModel.optionHeader(at: section)
+                let required = option.required == "Y"
+                headerView.configure(titleObj: option.name, itemObj: item, sectionObj: section, required: required)
                 headerView.delegate = self
                 return headerView
             }
@@ -295,7 +305,7 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
        func didAddToCart(product: Product) {
            // addProdcut to cart
         guard let viewModel = viewModel else { return }
-           viewModel.addToCartAlsoBoughtProduct(product: product)
+        viewModel.addToCartAlsoBoughtProduct(product: product)
        }
        
        func didSelectOneClick(product: Product) {

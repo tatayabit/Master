@@ -20,6 +20,8 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var outOfStockLabel: UILabel!
+    @IBOutlet weak var discountPercentageLabel: UILabel!
+    @IBOutlet weak var addToCartButton: UIButton!
 
     var indexPath: IndexPath = IndexPath(item: 0, section: 0)
     weak var delegate: ProductsBlockCollectionViewCellDelegate?
@@ -27,7 +29,8 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        outOfStockLabel.text = "Out of stock"        
+        outOfStockLabel.text = "Out of stock"
+        self.discountPercentageLabel.isHidden = true
     }
 
     func configure(_ product: Product, indexPath: IndexPath) {
@@ -37,7 +40,22 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         descriptionLabel.text = product.name
         priceLabel.text = product.price.formattedPrice
         outOfStockLabel.isHidden = product.isInStock
+        self.discountPercentageLabel.text = product.listPrice + "%\nOFF"
+        
+        
+        if let percentage = Float(product.listPrice) {
+            self.discountPercentageLabel.isHidden = !(percentage > 0)
+        } else {
+            self.discountPercentageLabel.isHidden = true
+        }
+        
         self.indexPath = indexPath
+        
+        if product.productOptions.filter({ $0.required == "Y" }).count > 0 {
+            addToCartButton.setTitle(Constants.ProductDetails.options, for: .normal)
+        } else {
+            addToCartButton.setTitle(Constants.ProductDetails.addToCart, for: .normal)
+        }
     }
 
     @IBAction func addToCartAction(_ sender: UIButton) {
@@ -50,5 +68,12 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         if let delegate = delegate {
             delegate.didSelectOneClickBuy(indexPath: self.indexPath)
         }
+    }
+}
+
+extension Constants {
+    struct ProductDetails {
+        static let options = "OPTIONS..."
+        static let addToCart = "ADD TO CART"
     }
 }

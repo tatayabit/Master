@@ -47,7 +47,8 @@ struct Product {
     var outOfStockActions: String
     var productStatus: String?
     
-    init(name: String = "", supplierName: String = "", description: String = "", listPrice: String = "", price: String = "", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair(), productOptions: [ProductOption] = [ProductOption](), maxQuantity: String = "0", position: String = "", amount: Int = 0, outOfStockActions: String = "", productStatus: String = "") {
+    init(name: String = "", supplierName: String = "", description: String = "", listPrice: String = "", price: String = "0.00", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair(), productOptions: [ProductOption] = [ProductOption](), maxQuantity: String = "0", position: String = "", amount: Int = 0, outOfStockActions: String = "", productStatus: String = "") {
+
         self.name = name
         self.description = description
 //        self.imageUrl = imageUrl
@@ -126,7 +127,7 @@ extension Product: Codable {
         var priceVal = ""
         if let priceValString = try? container.decode(String.self, forKey: .price) {
             priceVal = priceValString
-        } else if let priceValInt = try? container.decode(Int.self, forKey: .price) {
+        } else if let priceValInt = try? container.decode(Float.self, forKey: .price) {
             priceVal = "\(priceValInt)"
         }
         price = priceVal
@@ -134,7 +135,7 @@ extension Product: Codable {
         var listPriceVal = ""
         if let listPriceValString = try? container.decode(String.self, forKey: .listPrice) {
             listPriceVal = listPriceValString
-        } else if let listPriceValInt = try? container.decode(Int.self, forKey: .listPrice) {
+        } else if let listPriceValInt = try? container.decode(Float.self, forKey: .listPrice) {
             listPriceVal = "\(listPriceValInt)"
         }
         listPrice = listPriceVal

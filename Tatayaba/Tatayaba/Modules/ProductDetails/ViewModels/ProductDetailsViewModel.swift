@@ -28,6 +28,10 @@ class ProductDetailsViewModel {
         return optionsCount + numberOfAlsoBoughtSection + 1
     }
     
+    var hasRequiredOptions: Bool {
+        return product.productOptions.filter({ $0.required == "Y" }).count > 0
+    }
+    
     // Selection part
     private var selectedOptions = [OptionsSelection]()
     private var selectedQuantity: Int
@@ -159,9 +163,6 @@ class ProductDetailsViewModel {
         let option = OptionsSelection(section: indexPath.section, selectedVariant: variant.identifier)
         unselectAllIfFound(at: indexPath.section)
         self.selectedOptions.append(option)
-        print("variant: \(variant)")
-        print("section: \(indexPath.section)")
-        print("selectedOptions: \(selectedOptions)")
     }
     
     func unselectOption(at indexPath: IndexPath) {
@@ -177,6 +178,20 @@ class ProductDetailsViewModel {
         if foundOptions.count > 0 {
             self.selectedOptions.removeAll(where: { $0.section == section })
         }
+    }
+    
+    func isAllRequiredOptionsSelected() -> Bool {
+        if hasRequiredOptions {
+            for section in 1..<optionsCount + 1 {
+                let option = optionHeader(at: section)
+                if option.required == "Y" {
+                    if self.selectedOptions.filter({ $0.section == section }).count == 0 {
+                        return false
+                    }
+                }
+            }
+        }
+        return true
     }
     
     // MARK:- AlsoBoughtSection

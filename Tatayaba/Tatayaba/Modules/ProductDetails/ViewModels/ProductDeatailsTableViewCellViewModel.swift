@@ -26,6 +26,12 @@ class ProductDeatailsTableViewCellViewModel {
         }
         return "" }
 
+    var hasDiscount: Bool {
+        if let percentage = Float(discountPercentage) {
+            return percentage > 0
+        }
+        return false }
+    
     var imageUrl: String { return product.mainPair.detailedPair.imageUrl }
     
     var selectedQuantity: Int

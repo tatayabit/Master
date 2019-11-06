@@ -59,7 +59,11 @@ extension SuppliersEndpoint: TargetType {
     var task: Task {
         switch self {
         case .getSuppliers, .getSupplierDetails:
-            return .requestPlain
+//            return .requestPlain
+            return .requestParameters(parameters: [
+                                                "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw"
+            ], encoding: URLEncoding.default)
+//            "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
         }
     }
 

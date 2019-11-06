@@ -77,6 +77,7 @@ extension ProductsEndpoint: TargetType {
         case .getAllCategories:
             return .requestParameters(parameters: [ "items_per_page": 0,
                                                     "status": "A",
+                                                    "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
                                                     "lang_code": LanguageManager.getLanguage()
                 ], encoding: URLEncoding.default)
             
@@ -85,6 +86,7 @@ extension ProductsEndpoint: TargetType {
                                                     "status": "A",
                                                     "cid": category,
                                                     "page": page.urlEscaped,
+                                                    "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
                                                     "lang_code": LanguageManager.getLanguage()
                 ], encoding: URLEncoding.default)
             
