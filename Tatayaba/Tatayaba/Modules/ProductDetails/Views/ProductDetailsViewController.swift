@@ -130,6 +130,11 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
     
     func addToCartAction() {
         guard let viewModel = viewModel else { return }
+        if !viewModel.inStock {
+            showErrorAlerr(title: "Error", message: "This item is out of stock!", handler: nil)
+            return
+        }
+        
         if viewModel.hasRequiredOptions {
             if viewModel.isAllRequiredOptionsSelected() {
                 viewModel.addToCart()
@@ -307,6 +312,10 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
 
        func didAddToCart(product: Product) {
            // addProdcut to cart
+        if !product.isInStock {
+            showErrorAlerr(title: "Error", message: "This item is out of stock!", handler: nil)
+            return
+        }
         guard let viewModel = viewModel else { return }
         viewModel.addToCartAlsoBoughtProduct(product: product)
        }

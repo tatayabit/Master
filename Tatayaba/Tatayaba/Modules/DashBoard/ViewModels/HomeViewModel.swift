@@ -207,6 +207,10 @@ class HomeViewModel {
         let cart = Cart.shared
         cart.addProduct(product: product)
     }
+    
+    func productInStock(at product: Product) -> Bool {
+        return product.isInStock
+    }
 
     //MARK:- ProductDetails ViewModel
     func productDetailsViewModel(at indexPath: IndexPath) -> ProductDetailsViewModel {

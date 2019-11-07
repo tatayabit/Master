@@ -177,6 +177,10 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
 
     func didAddToCart(product: Product) {
         // addProdcut to cart
+        if !product.isInStock {
+            showErrorAlerr(title: "Error", message: "This item is out of stock!", handler: nil)
+            return
+        }
         viewModel.addToCart(product: product)
     }
     

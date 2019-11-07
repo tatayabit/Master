@@ -139,4 +139,8 @@ class CatProductsViewModel {
         let cart = Cart.shared
         cart.addProduct(product: product(at: indexPath))
     }
+    
+    func productInStock(at indexPath: IndexPath) -> Bool {
+        return product(at: indexPath).isInStock
+    }
 }
