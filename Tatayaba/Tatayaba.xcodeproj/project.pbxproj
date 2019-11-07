@@ -21,6 +21,7 @@
 		109D29E5234A668F0052D01B /* CountrySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D29E4234A668F0052D01B /* CountrySettings.swift */; };
 		10B08375234CF41800DCE773 /* CartAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B08374234CF41800DCE773 /* CartAPIClient.swift */; };
 		10B08377234CF92C00DCE773 /* CartEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B08376234CF92C00DCE773 /* CartEndpoint.swift */; };
+		10B4CBCB237336ED0065918D /* DataBase64Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B4CBCA237336ED0065918D /* DataBase64Decodable.swift */; };
 		10DFE45023525D9C00AAB780 /* HeaderViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DFE44F23525D9C00AAB780 /* HeaderViewItem.swift */; };
 		10DFE4542352619000AAB780 /* OptionsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DFE4532352619000AAB780 /* OptionsHeader.swift */; };
 		10DFE456235262E100AAB780 /* OptionsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10DFE455235262E100AAB780 /* OptionsHeader.xib */; };
@@ -297,6 +298,7 @@
 		109D29E4234A668F0052D01B /* CountrySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySettings.swift; sourceTree = "<group>"; };
 		10B08374234CF41800DCE773 /* CartAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartAPIClient.swift; sourceTree = "<group>"; };
 		10B08376234CF92C00DCE773 /* CartEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartEndpoint.swift; sourceTree = "<group>"; };
+		10B4CBCA237336ED0065918D /* DataBase64Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase64Decodable.swift; sourceTree = "<group>"; };
 		10DFE44F23525D9C00AAB780 /* HeaderViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewItem.swift; sourceTree = "<group>"; };
 		10DFE4532352619000AAB780 /* OptionsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsHeader.swift; sourceTree = "<group>"; };
 		10DFE455235262E100AAB780 /* OptionsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionsHeader.xib; sourceTree = "<group>"; };
@@ -635,6 +637,14 @@
 				10B08376234CF92C00DCE773 /* CartEndpoint.swift */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		10B4CBC9237336CE0065918D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				10B4CBCA237336ED0065918D /* DataBase64Decodable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		10DFE4512352616000AAB780 /* Headers */ = {
@@ -1855,6 +1865,7 @@
 		847CDE7822CA12EC00E67C8C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				10B4CBC9237336CE0065918D /* Protocols */,
 				109D29E1234A64C60052D01B /* ReverseGeoCoder */,
 				848E89C622CCE520000AA24C /* BaseView */,
 				11D4917822CBCF7A009D8B23 /* Extensions */,
@@ -2473,6 +2484,7 @@
 				11081EEC22DB824600B68EA5 /* AboutUsViewController.swift in Sources */,
 				1145395D232CDC7C00EDC908 /* ImagePicker.swift in Sources */,
 				10616753235CBE9C00F4A3A0 /* PaymentWebViewModel.swift in Sources */,
+				10B4CBCB237336ED0065918D /* DataBase64Decodable.swift in Sources */,
 				10FC8519234E373F00D13C34 /* ProductOption.swift in Sources */,
 				11007BD522DE2F2E00AC9957 /* NewProductCollectionViewCell.swift in Sources */,
 				10F8530E2368B75500DD9EF8 /* AlsoBoughtProductsTableViewCell.swift in Sources */,
@@ -2780,7 +2792,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.18;
+				CURRENT_PROJECT_VERSION = 1.0.19;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
@@ -2799,7 +2811,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.18;
+				CURRENT_PROJECT_VERSION = 1.0.19;
 				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

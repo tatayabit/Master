@@ -59,12 +59,15 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
                 self.product_Tableview.reloadSections(indexSet, with: .automatic)
             }
         }
+        product_Tableview.delegate = self
+        product_Tableview.dataSource = self
+        product_Tableview.reloadData()
     }
     
     // MARK:- Api
     func callDetailsApi() {
-        product_Tableview.delegate = self
-        product_Tableview.dataSource = self
+//        product_Tableview.delegate = self
+//        product_Tableview.dataSource = self
         
         self.showLoadingIndicator(to: self.view)
         self.viewModel?.getProductDetails(completion: { result in
@@ -73,7 +76,7 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
                 
             case .success:
                 self.initSections()
-                self.product_Tableview.reloadData()
+//                self.product_Tableview.reloadData()
                 
             case .failure(let error):
                 print("the error \(error)")
@@ -127,6 +130,11 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
     
     func addToCartAction() {
         guard let viewModel = viewModel else { return }
+        if !viewModel.inStock {
+            showErrorAlerr(title: "Error", message: "This item is out of stock!", handler: nil)
+            return
+        }
+        
         if viewModel.hasRequiredOptions {
             if viewModel.isAllRequiredOptionsSelected() {
                 viewModel.addToCart()
@@ -223,8 +231,8 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
     // MARK:- Header
     
     func numberOfSections(in tableView: UITableView) -> Int {
-           guard let viewModel = viewModel else { return 1 }
-           return viewModel.numberOfSections
+//           guard let viewModel = viewModel else { return 1 }
+        return headerItems.count//viewModel.numberOfSections
        }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -304,6 +312,10 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
 
        func didAddToCart(product: Product) {
            // addProdcut to cart
+        if !product.isInStock {
+            showErrorAlerr(title: "Error", message: "This item is out of stock!", handler: nil)
+            return
+        }
         guard let viewModel = viewModel else { return }
         viewModel.addToCartAlsoBoughtProduct(product: product)
        }

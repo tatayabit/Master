@@ -76,6 +76,7 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - NewRelicAgent (6.9.0)
   - Result (4.1.0)
   - SDWebImage (5.0.6):
     - SDWebImage/Core (= 5.0.6)
@@ -92,13 +93,14 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.1.0)
   - MOLH
   - Moya (~> 12.0)
+  - NewRelicAgent
   - SDWebImage (~> 5.0)
   - SkyFloatingLabelTextField (~> 3.0)
   - SwiftKeychainWrapper (~> 3.2.0)
   - SwiftValidator (from `https://github.com/jpotts18/SwiftValidator.git`, tag `4.2.0`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - Crashlytics
     - Fabric
@@ -117,6 +119,7 @@ SPEC REPOS:
     - MOLH
     - Moya
     - nanopb
+    - NewRelicAgent
     - Result
     - SDWebImage
     - SkyFloatingLabelTextField
@@ -151,12 +154,13 @@ SPEC CHECKSUMS:
   MOLH: 2492e7f8fe3400580832312dc0fb9e05d7e92726
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  NewRelicAgent: 53086dc2e077da434f477c700cc1f1a9caea2513
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
   SwiftKeychainWrapper: 82c4c02cdc36f9a24f7edfcaab3e336401caa1a1
   SwiftValidator: 58c155c8ae8421ef716a96e52a49984dd54c700c
 
-PODFILE CHECKSUM: 024e3381a73f532b5e4e6fd0c932d20cf8b48771
+PODFILE CHECKSUM: 47cf677a6c3f5e671758e8fbc95d998fae07a031
 
 COCOAPODS: 1.7.5

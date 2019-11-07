@@ -163,6 +163,12 @@
                                     <action selector="viewOrdersAction:" destination="i39-8c-VeR" eventType="touchUpInside" id="Li0-lU-1uh"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Number: # 50001" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyx-15-Bth">
+                                <rect key="frame" x="30" y="440" width="315" height="21"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
+                                <color key="textColor" red="0.50982971970000002" green="0.51673860620000001" blue="0.55210499260000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99997597932815552" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -173,6 +179,7 @@
                             <constraint firstItem="3sH-Xv-YsG" firstAttribute="top" secondItem="9Zx-z2-ysY" secondAttribute="bottom" constant="8" id="Dqy-Ih-mXs"/>
                             <constraint firstItem="9Zx-z2-ysY" firstAttribute="top" secondItem="OlL-hE-wLq" secondAttribute="bottom" constant="8" id="EIQ-pn-zSe"/>
                             <constraint firstItem="OlL-hE-wLq" firstAttribute="top" secondItem="CQT-5h-nwp" secondAttribute="bottom" constant="2.5" id="Rpy-wn-ukm"/>
+                            <constraint firstItem="pyx-15-Bth" firstAttribute="leading" secondItem="aZE-1Y-6gd" secondAttribute="leading" constant="30" id="WvU-jj-fiQ"/>
                             <constraint firstItem="aZE-1Y-6gd" firstAttribute="trailing" secondItem="3sH-Xv-YsG" secondAttribute="trailing" constant="30" id="cV4-oN-MN1"/>
                             <constraint firstItem="aZE-1Y-6gd" firstAttribute="trailing" secondItem="fL2-6x-DVA" secondAttribute="trailing" constant="8" id="dv5-6J-e45"/>
                             <constraint firstItem="aZE-1Y-6gd" firstAttribute="trailing" secondItem="9Zx-z2-ysY" secondAttribute="trailing" constant="20" id="ejv-es-UJZ"/>
@@ -181,8 +188,10 @@
                             <constraint firstItem="gzj-a1-yeI" firstAttribute="top" secondItem="aZE-1Y-6gd" secondAttribute="top" constant="60" id="kcs-Rd-Q1k"/>
                             <constraint firstItem="CQT-5h-nwp" firstAttribute="top" secondItem="gzj-a1-yeI" secondAttribute="bottom" constant="19.5" id="lU8-Wb-CVB"/>
                             <constraint firstItem="3sH-Xv-YsG" firstAttribute="leading" secondItem="aZE-1Y-6gd" secondAttribute="leading" constant="30" id="nYA-Lh-KHr"/>
+                            <constraint firstItem="pyx-15-Bth" firstAttribute="top" secondItem="3sH-Xv-YsG" secondAttribute="bottom" constant="8" id="oXX-c5-6Pg"/>
                             <constraint firstItem="aZE-1Y-6gd" firstAttribute="bottom" secondItem="fL2-6x-DVA" secondAttribute="bottom" constant="6" id="ogL-eY-axP"/>
                             <constraint firstItem="9Zx-z2-ysY" firstAttribute="leading" secondItem="aZE-1Y-6gd" secondAttribute="leading" constant="20" id="rVC-TI-DrV"/>
+                            <constraint firstItem="aZE-1Y-6gd" firstAttribute="trailing" secondItem="pyx-15-Bth" secondAttribute="trailing" constant="30" id="tbn-b0-ZfH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aZE-1Y-6gd"/>
                     </view>
@@ -194,6 +203,7 @@
                     <connections>
                         <outlet property="orderDateLabel" destination="9Zx-z2-ysY" id="Zj7-TU-NiO"/>
                         <outlet property="orderIdLabel" destination="3sH-Xv-YsG" id="gLT-ug-n4u"/>
+                        <outlet property="paymentDataLabel" destination="pyx-15-Bth" id="Stz-1B-m4u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Rb-H5-PfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
