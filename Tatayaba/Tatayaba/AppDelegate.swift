@@ -19,25 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        FirebaseApp.configure()
-        IQKeyboardManager.shared.enable = true
-        Customer.shared.loadData()
-        CountrySettings.shared.getGeoReversedCountry()
-        MOLH.shared.activate(true)
-        self.loadRootViewController()
-        setupGlobalAppearance()
-        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "didUpdateLanguage"), object: nil, queue: OperationQueue.main) { (_ Notification) in
-            self.loadRootViewController()
-        }
+        loadAppConfigurations()
         
         // Override point for customization after application launch.
         return true
-    }
-    
-    func loadRootViewController() {
-        //        let controller = ContainerViewController.sharedInstance
-        //        self.window?.rootViewController = controller
-        //        self.window?.makeKeyAndVisible()
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -109,11 +94,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    // MARK:- ChangeLanguage
-    func changeLang() {
-        loadRootViewController()
-    }
-    
     // MARK: - Appearance.
     func setupGlobalAppearance(){
         //global Appearance settings
@@ -127,6 +107,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIButton.appearance().substituteFontName = fontName
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: fontName, size: 9.5)!], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: fontName, size: 9.5)!], for: .selected)
+    }
+    
+    // MARK:- App Configurations
+    func loadAppConfigurations() {
+        FirebaseApp.configure()
+        IQKeyboardManager.shared.enable = true
+        Customer.shared.loadData()
+        CountrySettings.shared.loadData()
+//        CountrySettings.shared.getGeoReversedCountry()
+        MOLH.shared.activate(true)
+        setupGlobalAppearance()
     }
 }
 

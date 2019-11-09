@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, CartViewModelDelegate {
+class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, CartViewModelDelegate, CountrySettingsDelegate {
     
     @IBOutlet var cartTableview: UITableView!
     @IBOutlet weak var totalPriceLabel: UILabel!
@@ -39,17 +39,23 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupUI()
+        CountrySettings.shared.addDelegate(delegate: self)
         viewModel.delegate = self
         cartTableview.separatorColor = .clear
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        reloadUIData()
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    func reloadUIData() {
         viewModel.setOneClickBuy(isOneClickBuy: (buyingWayType > 0))
         calculateTotal()
         loadTaxAndShipping()
-        self.tabBarController?.tabBar.isHidden = false
     }
+
     
     // MARK:- setupUI
     func setupUI() {
@@ -89,7 +95,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         let textVal = cartClass.cartTotal + " " + text
         
         let strokeTextAttributes = [
-            NSAttributedString.Key.foregroundColor : UIColor(hexString: "221C35")
+            NSAttributedString.Key.foregroundColor : UIColor.brandDarkBlue
 //            ,NSAttributedString.Key.font : UIFont.lightGotham(size: 11)
             ] as [NSAttributedString.Key : Any]
         
@@ -228,6 +234,13 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     func didFinishLoadingPricing() {
         cartTableview.reloadData()
     }
+    // MARK:- COuntrySettingsDelegate
+    func countryDidChange(to country: Country) {
+        print("country changes!!!")
+        print("CartViewController")
+//        viewModel.clearCart()
+        reloadUIData()
+     }
     
     //MARK:- IBActions
     @IBAction func checkoutAction(_ sender: Any) {

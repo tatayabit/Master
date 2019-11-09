@@ -19,7 +19,15 @@ class CountryTableViewCell: UITableViewCell {
     
     func configure(country: Country) {
         self.country_lbl.text = country.name
-        
+        if let selectedCountry = CountrySettings.shared.currentCountry {
+            if selectedCountry.name.lowercased() == country.name.lowercased() {
+                self.country_lbl.font = UIFont.boldSystemFont(ofSize: 18)
+            } else {
+                self.country_lbl.font = UIFont.systemFont(ofSize: 17)
+            }
+        } else {
+            self.country_lbl.font = UIFont.systemFont(ofSize: 17)
+        }
     }
     
     

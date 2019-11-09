@@ -15,6 +15,7 @@ extension Constants {
         static let wishlist = "Wish List".localized()
         static let myOrders = "My Orders".localized()
         static let changeLanguage = "Change Language".localized()
+        static let changeCountry = "Change Country".localized()
         static let privacyPolicy = "Privacy Policy".localized()
         static let logout = "Logout".localized()
         static let deliveryAndReturnPolicy = "Delivery and Return Policy".localized()
@@ -25,12 +26,12 @@ extension Constants {
     }
 }
 
-class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CountryViewDelegate {
   
     var Session1: [String] = [Constants.Profile.myOrders]
     var Session1_img: [String] = ["Cart"]
-    var Session2: [String] = [Constants.Profile.changeLanguage, Constants.Profile.liveChat, Constants.Profile.notifications]
-    var Session2_img: [String] = ["settings", "liveChat","Notifiction"]
+    var Session2: [String] = [Constants.Profile.changeLanguage, Constants.Profile.changeCountry, Constants.Profile.liveChat, Constants.Profile.notifications]
+    var Session2_img: [String] = ["settings", "settings", "liveChat","Notifiction"]
     
     var Session3: [String] = [Constants.Profile.deliveryAndReturnPolicy, Constants.Profile.privacyPolicy,Constants.Profile.logout]
     var Session4: [String] = [Constants.Profile.deliveryAndReturnPolicy, Constants.Profile.privacyPolicy]
@@ -153,6 +154,10 @@ extension profileTabMenuViewController{
                 //setting page
                 self.changeLanguege()
             }
+            
+            if indextitle == Constants.Profile.changeCountry {
+                self.loadCountries()
+            }
             if indextitle == Constants.Profile.liveChat {
                 self.loadLiveChat()
             }
@@ -222,4 +227,15 @@ extension profileTabMenuViewController{
         self.navigationController?.pushViewController(controller, animated: false)
         self.tabBarController?.tabBar.isHidden = true
     }
+    
+    func loadCountries() {
+        let controller = UIStoryboard(name: "Country", bundle: Bundle.main).instantiateViewController(withIdentifier: "CountryViewController") as! CountryViewController
+        controller.delegate = self
+        navigationController?.pushViewController(controller, animated: false)
+    }
+    
+    func countrySelected(selectedCountry: Country) {
+        CountrySettings.shared.currentCountry = selectedCountry
+    }
 }
+
