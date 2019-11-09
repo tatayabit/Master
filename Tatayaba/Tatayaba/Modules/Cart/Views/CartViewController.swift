@@ -38,7 +38,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     var couponTitleValue: String = "0"
     var taxValue: Tax?
     var shippingValue: String = "0"
-    var maxValueToShowTax: Float = 200
+    var maxValueToShowTax: Float = 0
     var totalPriceValue: Float = 0
     private let checkoutSegue = "checkout_segue"
     let cartClass: CartPricingItems = CartPricingItems()
@@ -82,20 +82,20 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         
         totalPriceValue = (cart.totalPrice as NSString).floatValue + (shippingValue as NSString).floatValue
         
-        if totalPriceValue >= maxValueToShowTax {
-            if let taxStringValue = taxValue?.vat?.value {
-                if taxValue?.vat?.type == "P" {
-                    totalPriceValue += (totalPriceValue * (Float(taxStringValue)!)) / 100
-                } else {
-                    totalPriceValue += Float(taxStringValue) ?? 0.0
-                }
-            }
-            
+        if totalPriceValue >= maxValueToShowTax && maxValueToShowTax != 0 {
             if let customDutiesStringValue = taxValue?.customDuties?.value {
                 if taxValue?.customDuties?.type == "P" {
                     totalPriceValue += (totalPriceValue * (Float(customDutiesStringValue)!)) / 100
                 } else {
                     totalPriceValue += Float(customDutiesStringValue) ?? 0.0
+                }
+            }
+            
+            if let taxStringValue = taxValue?.vat?.value {
+                if taxValue?.vat?.type == "P" {
+                    totalPriceValue += (totalPriceValue * (Float(taxStringValue)!)) / 100
+                } else {
+                    totalPriceValue += Float(taxStringValue) ?? 0.0
                 }
             }
         }
@@ -209,7 +209,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         case sectionType.item.rawValue:
             return cart.productsCount
         case sectionType.pricing.rawValue:
-            if totalPriceValue < maxValueToShowTax {
+            if totalPriceValue < maxValueToShowTax || maxValueToShowTax == 0 {
                 viewModel.pricingList.removeAll(where: {$0.title == "Tax".localized()})
                 viewModel.pricingList.removeAll(where: {$0.title == "CustomDuties".localized()})
             }

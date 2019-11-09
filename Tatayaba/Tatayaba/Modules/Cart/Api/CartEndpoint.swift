@@ -34,7 +34,7 @@ extension CartEndpoint: TargetType {
         case .applyCoupon:
             return "4.0/TtmOrders"
         case .getTaxAndShipping:
-            return "4.0/TtmCartConfigData"
+            return "4.0/TtmCartConfigData/"
         }
     }
     
