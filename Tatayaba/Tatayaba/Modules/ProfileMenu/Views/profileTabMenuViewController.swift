@@ -27,7 +27,7 @@ extension Constants {
     }
 }
 
-class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CountryViewDelegate {
+class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CountryViewDelegate, CurrencyViewDelegate {
 
     var Session1: [String] = [Constants.Profile.myOrders]
     var Session1_img: [String] = ["Cart"]
@@ -187,10 +187,6 @@ extension profileTabMenuViewController{
 
     }
 
-    func countrySelected(selectedCountry: Country) {
-
-    }
-
     // MARK:- Change Language
     func changeLanguege() {
         MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
@@ -216,7 +212,8 @@ extension profileTabMenuViewController{
 
     func loadCurrenciesVC() {
         let controller = UIStoryboard(name: "Country", bundle: Bundle.main).instantiateViewController(withIdentifier: "CountryViewController") as! CountryViewController
-        controller.delegate = self
+        controller.currencyDelegate = self
+        controller.viewType = 1
         self.navigationController?.pushViewController(controller, animated: true)
     }
 
@@ -252,5 +249,9 @@ extension profileTabMenuViewController{
 
     func countrySelected(selectedCountry: Country) {
         CountrySettings.shared.currentCountry = selectedCountry
+    }
+    
+    func currencySelected(selectedCurrency: Country) {
+        
     }
 }
