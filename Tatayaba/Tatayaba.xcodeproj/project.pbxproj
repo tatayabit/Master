@@ -196,7 +196,6 @@
 		2767CB95236472290042F533 /* OrderAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767CB91236472280042F533 /* OrderAddressCell.swift */; };
 		2767CB96236472290042F533 /* OrderTrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767CB92236472280042F533 /* OrderTrackCell.swift */; };
 		2767CB97236472290042F533 /* OrderProductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767CB93236472280042F533 /* OrderProductsCell.swift */; };
-		27A9088F235264240032DA41 /* CouponResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A90875235264230032DA41 /* CouponResponse.swift */; };
 		27A9089A2357906C0032DA41 /* PaymentIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A908922357906C0032DA41 /* PaymentIcon.swift */; };
 		27A9089B2357906C0032DA41 /* CustomDuty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A908932357906C0032DA41 /* CustomDuty.swift */; };
 		27A9089C2357906C0032DA41 /* PaymentImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A908942357906C0032DA41 /* PaymentImage.swift */; };
@@ -483,7 +482,6 @@
 		2767CB91236472280042F533 /* OrderAddressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderAddressCell.swift; sourceTree = "<group>"; };
 		2767CB92236472280042F533 /* OrderTrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTrackCell.swift; sourceTree = "<group>"; };
 		2767CB93236472280042F533 /* OrderProductsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderProductsCell.swift; sourceTree = "<group>"; };
-		27A90875235264230032DA41 /* CouponResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponResponse.swift; sourceTree = "<group>"; };
 		27A908922357906C0032DA41 /* PaymentIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentIcon.swift; sourceTree = "<group>"; };
 		27A908932357906C0032DA41 /* CustomDuty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDuty.swift; sourceTree = "<group>"; };
 		27A908942357906C0032DA41 /* PaymentImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentImage.swift; sourceTree = "<group>"; };
@@ -1639,7 +1637,6 @@
 		27A9085C235264230032DA41 /* CouponModels */ = {
 			isa = PBXGroup;
 			children = (
-				27A90875235264230032DA41 /* CouponResponse.swift */,
 				27E8533B2376B703002649BE /* Bonuse.swift */,
 				27E853392376B703002649BE /* Condition.swift */,
 				27E8533A2376B703002649BE /* PromotionData.swift */,
@@ -2446,7 +2443,6 @@
 				848E89CC22CCEAAC000AA24C /* FeatureProductCollectionViewCell.swift in Sources */,
 				116C938F22F0954500921893 /* PaymentAPIClient.swift in Sources */,
 				11624ED1230C464800E81ABD /* BlockImagePair.swift in Sources */,
-				27A9088F235264240032DA41 /* CouponResponse.swift in Sources */,
 				11E8A679232816730091BD11 /* PriceTableViewCell.swift in Sources */,
 				11D4E69A2312E14500226A23 /* BannersCarouselView.swift in Sources */,
 				111C8A3C230B1487003F5FDB /* Block.swift in Sources */,
