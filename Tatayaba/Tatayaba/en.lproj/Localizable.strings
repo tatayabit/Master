@@ -65,3 +65,6 @@
 "Currencies" = "Currencies";
 // Settings
 "Change Country"="Change Country";
+"active" = "Active";
+"hidden" = "Hidden";
+"disabled" = "Disabled";

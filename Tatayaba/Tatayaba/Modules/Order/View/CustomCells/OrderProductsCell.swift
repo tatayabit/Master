@@ -8,6 +8,11 @@
 
 import UIKit
 
+private enum ProductStatus: String, CaseIterable {
+    case activeProduct = "A"
+    case hiddenProduct = "H"
+    case deletedProduct = "D"
+}
 class OrderProductsCell: UITableViewCell {
 
     @IBOutlet weak var productName: UILabel!
@@ -30,8 +35,16 @@ class OrderProductsCell: UITableViewCell {
     func configCell(product: Product) {
         productName.text = product.name
         companyName.text = product.supplierName
-        productPrice.text = product.price
-        paidPrice.text = product.price
-        productStatus.text = product.productStatus
+        productPrice.text = product.price.formattedPrice
+        paidPrice.text = product.price.formattedPrice
+        var productStatusTitle: String = ""
+        if product.productStatus == ProductStatus.activeProduct.rawValue {
+            productStatusTitle = "active".localized()
+        } else if product.productStatus == ProductStatus.hiddenProduct.rawValue {
+            productStatusTitle = "hidden".localized()
+        } else if product.productStatus == ProductStatus.deletedProduct.rawValue {
+            productStatusTitle = "disabled".localized()
+        }
+        productStatus.text = productStatusTitle
     }
 }

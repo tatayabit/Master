@@ -63,3 +63,6 @@
 "Currencies" = "العملات";
 // Settings
 "Change Country"="تغيير الدولة";
+"active" = "متاح";
+"hidden" = "مخفي";
+"disabled" = "غير مفعل";
