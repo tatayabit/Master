@@ -343,6 +343,7 @@
                         <outlet property="checkoutContainerView" destination="93f-4v-x2G" id="jjc-RO-msW"/>
                         <outlet property="couponContainerView" destination="KSg-wN-SYh" id="g31-r4-KBq"/>
                         <outlet property="couponTextField" destination="I2x-iQ-D9j" id="QSk-gZ-XC1"/>
+                        <outlet property="couponTextFieldView" destination="SkB-UI-5FE" id="rOX-N4-Quz"/>
                         <outlet property="removeDiscountButton" destination="aNj-tF-UM1" id="0pL-5v-nhv"/>
                         <outlet property="totalPriceLabel" destination="r3s-NS-Zlb" id="JNh-Ry-dZq"/>
                         <outlet property="totalTitleLabel" destination="zzS-WW-8Am" id="pcZ-bk-a2q"/>

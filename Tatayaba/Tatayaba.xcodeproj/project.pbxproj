@@ -196,7 +196,7 @@
 		2767CB95236472290042F533 /* OrderAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767CB91236472280042F533 /* OrderAddressCell.swift */; };
 		2767CB96236472290042F533 /* OrderTrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767CB92236472280042F533 /* OrderTrackCell.swift */; };
 		2767CB97236472290042F533 /* OrderProductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767CB93236472280042F533 /* OrderProductsCell.swift */; };
-		27A9088F235264240032DA41 /* couponResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A90875235264230032DA41 /* couponResponse.swift */; };
+		27A9088F235264240032DA41 /* CouponResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A90875235264230032DA41 /* CouponResponse.swift */; };
 		27A9089A2357906C0032DA41 /* PaymentIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A908922357906C0032DA41 /* PaymentIcon.swift */; };
 		27A9089B2357906C0032DA41 /* CustomDuty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A908932357906C0032DA41 /* CustomDuty.swift */; };
 		27A9089C2357906C0032DA41 /* PaymentImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A908942357906C0032DA41 /* PaymentImage.swift */; };
@@ -209,6 +209,9 @@
 		27AB300B23685E0B00CFBF59 /* productDeatailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB300A23685E0A00CFBF59 /* productDeatailsTableViewCell.swift */; };
 		27AB3014236AD40300CFBF59 /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27AB3013236AD40300CFBF59 /* Cairo-Regular.ttf */; };
 		27AB3017236C3A8C00CFBF59 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27AB3019236C3A8C00CFBF59 /* Cart.storyboard */; };
+		27E8533C2376B703002649BE /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E853392376B703002649BE /* Condition.swift */; };
+		27E8533D2376B703002649BE /* PromotionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E8533A2376B703002649BE /* PromotionData.swift */; };
+		27E8533E2376B703002649BE /* Bonuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E8533B2376B703002649BE /* Bonuse.swift */; };
 		27F32DC32371F657000F7758 /* ForgetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F32DC02371F656000F7758 /* ForgetPasswordViewModel.swift */; };
 		27F32DC42371F657000F7758 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F32DC22371F656000F7758 /* ForgetPasswordViewController.swift */; };
 		27F32DC62371FCCA000F7758 /* ForgetPasswordResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F32DC52371FCCA000F7758 /* ForgetPasswordResult.swift */; };
@@ -480,7 +483,7 @@
 		2767CB91236472280042F533 /* OrderAddressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderAddressCell.swift; sourceTree = "<group>"; };
 		2767CB92236472280042F533 /* OrderTrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTrackCell.swift; sourceTree = "<group>"; };
 		2767CB93236472280042F533 /* OrderProductsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderProductsCell.swift; sourceTree = "<group>"; };
-		27A90875235264230032DA41 /* couponResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = couponResponse.swift; sourceTree = "<group>"; };
+		27A90875235264230032DA41 /* CouponResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponResponse.swift; sourceTree = "<group>"; };
 		27A908922357906C0032DA41 /* PaymentIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentIcon.swift; sourceTree = "<group>"; };
 		27A908932357906C0032DA41 /* CustomDuty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDuty.swift; sourceTree = "<group>"; };
 		27A908942357906C0032DA41 /* PaymentImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentImage.swift; sourceTree = "<group>"; };
@@ -494,6 +497,9 @@
 		27AB3013236AD40300CFBF59 /* Cairo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Regular.ttf"; sourceTree = "<group>"; };
 		27AB3018236C3A8C00CFBF59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Cart.storyboard; sourceTree = "<group>"; };
 		27AB301B236C3A9200CFBF59 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Cart.strings; sourceTree = "<group>"; };
+		27E853392376B703002649BE /* Condition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
+		27E8533A2376B703002649BE /* PromotionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionData.swift; sourceTree = "<group>"; };
+		27E8533B2376B703002649BE /* Bonuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bonuse.swift; sourceTree = "<group>"; };
 		27F32DC02371F656000F7758 /* ForgetPasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewModel.swift; sourceTree = "<group>"; };
 		27F32DC22371F656000F7758 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		27F32DC52371FCCA000F7758 /* ForgetPasswordResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordResult.swift; sourceTree = "<group>"; };
@@ -1633,7 +1639,10 @@
 		27A9085C235264230032DA41 /* CouponModels */ = {
 			isa = PBXGroup;
 			children = (
-				27A90875235264230032DA41 /* couponResponse.swift */,
+				27A90875235264230032DA41 /* CouponResponse.swift */,
+				27E8533B2376B703002649BE /* Bonuse.swift */,
+				27E853392376B703002649BE /* Condition.swift */,
+				27E8533A2376B703002649BE /* PromotionData.swift */,
 			);
 			path = CouponModels;
 			sourceTree = "<group>";
@@ -2432,11 +2441,12 @@
 				11FEB4E022DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.swift in Sources */,
 				10DFE4542352619000AAB780 /* OptionsHeader.swift in Sources */,
 				1101C66D22E0D75500416307 /* HProductCollectionViewCell.swift in Sources */,
+				27E8533D2376B703002649BE /* PromotionData.swift in Sources */,
 				2767CB94236472290042F533 /* OrderDetailsCell.swift in Sources */,
 				848E89CC22CCEAAC000AA24C /* FeatureProductCollectionViewCell.swift in Sources */,
 				116C938F22F0954500921893 /* PaymentAPIClient.swift in Sources */,
 				11624ED1230C464800E81ABD /* BlockImagePair.swift in Sources */,
-				27A9088F235264240032DA41 /* couponResponse.swift in Sources */,
+				27A9088F235264240032DA41 /* CouponResponse.swift in Sources */,
 				11E8A679232816730091BD11 /* PriceTableViewCell.swift in Sources */,
 				11D4E69A2312E14500226A23 /* BannersCarouselView.swift in Sources */,
 				111C8A3C230B1487003F5FDB /* Block.swift in Sources */,
@@ -2509,6 +2519,7 @@
 				1113A79B2329698200FAAC7F /* CheckoutAddressTableViewCell.swift in Sources */,
 				1137042922F9C79200EAFBBD /* OrdersViewModel.swift in Sources */,
 				27A9089A2357906C0032DA41 /* PaymentIcon.swift in Sources */,
+				27E8533C2376B703002649BE /* Condition.swift in Sources */,
 				848E89C522CCDDBB000AA24C /* HomeViewController.swift in Sources */,
 				27A9089F2357906C0032DA41 /* TaxAndShippingResponse.swift in Sources */,
 				11B07917233A781F003041E8 /* ConciergeEndpoint.swift in Sources */,
@@ -2535,6 +2546,7 @@
 				10B08375234CF41800DCE773 /* CartAPIClient.swift in Sources */,
 				11069C3B2323A35F0093D6FF /* SuppliersListViewModel.swift in Sources */,
 				27A908A12357906C0032DA41 /* Shipping.swift in Sources */,
+				27E8533E2376B703002649BE /* Bonuse.swift in Sources */,
 				1101C66822E0D6E300416307 /* HProductsListView.swift in Sources */,
 				116C938E22F0954500921893 /* Payment.swift in Sources */,
 				2767CB96236472290042F533 /* OrderTrackCell.swift in Sources */,
@@ -2794,7 +2806,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.20;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 74YH76FB8C;
+				DEVELOPMENT_TEAM = F5Q4UK5489;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2812,7 +2824,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.20;
-				DEVELOPMENT_TEAM = 74YH76FB8C;
+				DEVELOPMENT_TEAM = F5Q4UK5489;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
