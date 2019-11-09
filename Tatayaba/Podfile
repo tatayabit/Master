@@ -6,11 +6,11 @@ target 'Tatayaba' do
   use_frameworks!
 
   # Pods for Tatayaba
-  pod 'Moya', '~> 12.0'
-  pod 'SkyFloatingLabelTextField', '~> 3.0'
+  pod 'Moya'
+  pod 'SkyFloatingLabelTextField'
   pod 'SwiftValidator', :git => 'https://github.com/jpotts18/SwiftValidator.git', :tag => '4.2.0'
-  pod 'SDWebImage', '~> 5.0'
-  pod 'SwiftKeychainWrapper', '~> 3.2.0'
+  pod 'SDWebImage'
+  pod 'SwiftKeychainWrapper'
   pod 'MOLH'
   pod 'MBProgressHUD', '~> 1.1.0'
   pod 'IQKeyboardManagerSwift'

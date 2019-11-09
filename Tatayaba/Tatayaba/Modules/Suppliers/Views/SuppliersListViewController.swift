@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SuppliersListViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class SuppliersListViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CountrySettingsDelegate {
 
     @IBOutlet weak var supplierCollection_View: UICollectionView!
 //    lazy var searchBar:UISearchBar = UISearchBar()
@@ -19,10 +19,11 @@ class SuppliersListViewController: BaseViewController, UICollectionViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
+        CountrySettings.shared.addDelegate(delegate: self)
         viewModel.onsuppliersListLoad = {
             self.supplierCollection_View.reloadData()
         }
-        viewModel.getSuppliersList()
+        reloadData()
     }
 
     func setupUI() {
@@ -31,6 +32,17 @@ class SuppliersListViewController: BaseViewController, UICollectionViewDelegate,
 //        setupSearchButton()
             
     }
+    
+    func countryDidChange(to country: Country) {
+        print("country changes!!!")
+        print("SuppliersListViewController")
+        reloadData()
+    }
+    
+    func reloadData() {
+        viewModel.getSuppliersList()
+    }
+
     
     // MARK:- SetupSearch Button
 //    fileprivate func setupSearchButton() {

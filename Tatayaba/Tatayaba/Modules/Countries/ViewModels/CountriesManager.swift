@@ -23,7 +23,7 @@ class CountriesManager {
             switch result {
             case .success(let response):
                 guard let countriesResult = response else { return }
-                self.countriesList = countriesResult
+                self.countriesList = countriesResult.sorted(by: { $0.name < $1.name })
             
             case .failure(let error):
                 print("the error \(error)")
