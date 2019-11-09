@@ -136,9 +136,10 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
     }
     
     func didSelectOneClickBuy(indexPath: IndexPath) {
-        guard let viewModel = viewModel else { return }
-        viewModel.addToCart(at: indexPath)
-
+//        guard let viewModel = viewModel else { return }
+//        viewModel.addToCart(at: indexPath)
+        didSelectAddToCartCell(indexPath: indexPath)
+        
         if Customer.shared.loggedin {
             let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewCartViewController") as! CartViewController
             controller.buyingWayType = 1
