@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   Tatayaba
 
@@ -62,7 +62,9 @@
 // Product
 "OPTIONS..." = "OPTIONS...";
 "ADD TO CART" = "ADD TO CART";
-
-
+"Currencies" = "Currencies";
 // Settings
 "Change Country"="Change Country";
+"active" = "Active";
+"hidden" = "Hidden";
+"disabled" = "Disabled";

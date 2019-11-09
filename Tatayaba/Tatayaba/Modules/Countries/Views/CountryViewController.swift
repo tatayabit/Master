@@ -12,16 +12,26 @@ protocol CountryViewDelegate: class {
     func countrySelected(selectedCountry: Country)
 }
 
+protocol CurrencyViewDelegate: class {
+    func currencySelected(selectedCurrency: Currency)
+}
+
 class CountryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     private let viewModel = CountriesManager()
+    private let currencyViewModel = CurrenciesManager()
     let countriesList = CountriesManager.shared.countriesList
+    let currenciesList = CurrenciesManager.shared.currenciesList
     weak var delegate: CountryViewDelegate?
+    weak var currencyDelegate: CurrencyViewDelegate?
+    var viewType: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print(countriesList)
-        
-        self.NavigationBarWithBackButton()
+        if viewType == 0 {
+            print(countriesList)
+        } else {
+            print(currenciesList)
+        }
+        NavigationBarWithBackButton()
     }
     
     
@@ -29,13 +39,14 @@ class CountryViewController: UIViewController,UITableViewDelegate,UITableViewDat
 extension CountryViewController{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        
-        return self.countriesList.count
+        if viewType == 0 {
+            return countriesList.count
+        } else {
+            return currenciesList.count
+        }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,13 +54,21 @@ extension CountryViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CountryTableViewCell
 //        cell.country_lbl.text = countriesList[indexPath.row].name
         //  cell.code_lbl.text = ListCountrys[indexPath.row].code
-        cell.configure(country: countriesList[indexPath.row])
+        if viewType == 0 {
+            cell.configure(country: countriesList[indexPath.row])
+        } else {
+            cell.configureCurrency(currency: currenciesList[indexPath.row])
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        delegate?.countrySelected(selectedCountry: countriesList[indexPath.row])
+        if viewType == 0 {
+            delegate?.countrySelected(selectedCountry: countriesList[indexPath.row])
+        } else {
+            currencyDelegate?.currencySelected(selectedCurrency: currenciesList[indexPath.row])
+        }
         navigationController?.popViewController(animated: true)
     }
 }

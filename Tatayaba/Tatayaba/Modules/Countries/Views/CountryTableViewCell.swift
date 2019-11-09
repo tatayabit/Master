@@ -30,6 +30,19 @@ class CountryTableViewCell: UITableViewCell {
         }
     }
     
+    func configureCurrency(currency: Currency) {
+        self.country_lbl.text = currency.descriptionField
+        if let selectedCurrency = CurrencySettings.shared.currentCurrency {
+            if selectedCurrency.descriptionField?.lowercased() == currency.descriptionField?.lowercased() {
+                self.country_lbl.font = UIFont.boldSystemFont(ofSize: 18)
+            } else {
+                self.country_lbl.font = UIFont.systemFont(ofSize: 17)
+            }
+        } else {
+            self.country_lbl.font = UIFont.systemFont(ofSize: 17)
+        }
+    }
+    
     
 
     override func setSelected(_ selected: Bool, animated: Bool) {
