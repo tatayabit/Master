@@ -17,7 +17,13 @@ struct Vat : Codable {
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		type = try values.decodeIfPresent(String.self, forKey: .type)
-		value = try values.decodeIfPresent(String.self, forKey: .value)
+        var vatValue = ""
+        if let vatValueString = try? values.decode(String.self, forKey: .value) {
+            vatValue = vatValueString
+        } else if let vatValueInt = try? values.decode(Int.self, forKey: .value) {
+            vatValue = "\(vatValueInt)"
+        }
+        value = vatValue
 	}
 
 

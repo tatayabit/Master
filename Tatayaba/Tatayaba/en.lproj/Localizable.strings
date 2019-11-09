@@ -49,6 +49,7 @@
 "Please enter coupon value!" = "Please enter coupon value!";
 "CouponAddedSuccessfully" = "Coupon Added Successfully";
 "CouponRemovedSuccessfully" = "Coupon Removed Successfully";
+"couponTypeNotImplemented" = "Can not add promotions on that type";
 "Quantity"="Quantity";
 
 
