@@ -35,6 +35,7 @@ class ProductDetailsViewModel {
     // Selection part
     private var selectedOptions = [OptionsSelection]()
     private var selectedQuantity: Int
+    var inStock: Bool { return product.isInStock }
 
     
     //MARK:- Init

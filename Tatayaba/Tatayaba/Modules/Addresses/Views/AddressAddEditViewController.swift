@@ -32,6 +32,12 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
         registerValidator()
         setupUI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        countryTextField.text = CountrySettings.shared.currentCountry?.name
+
+    }
 
     //MARK:- setupUI
     func setupUI() {
@@ -41,7 +47,7 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
                 fullNameTextField.text = currentUser.firstname
                 addressLine1TextField.text = currentUser.shippingAddress
                 cityTextField.text = currentUser.shippingCity
-                countryTextField.text = currentUser.shippingCountry
+//                countryTextField.text = currentUser.shippingCountry
                 phoneNumberTextField.text = currentUser.shippingPhone
                 user = currentUser
                 guestCompletDataView.isHidden = true

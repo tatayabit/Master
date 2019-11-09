@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class PaymentWebViewController: BaseViewController, WKUIDelegate, WKNavigationDelegate, UIScrollViewDelegate {
+class PaymentWebViewController: BaseViewController, WKUIDelegate, WKNavigationDelegate, UIScrollViewDelegate, CountrySettingsDelegate {
 
     var webView: WKWebView!
     let checkoutCompletedSegue = "checkout_completed_segue"
@@ -32,6 +32,7 @@ class PaymentWebViewController: BaseViewController, WKUIDelegate, WKNavigationDe
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        CountrySettings.shared.addDelegate(delegate: self)
         sendRequest()
     }
     
@@ -67,6 +68,13 @@ class PaymentWebViewController: BaseViewController, WKUIDelegate, WKNavigationDe
     func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
        scrollView.pinchGestureRecognizer?.isEnabled = false
     }
+    
+    // MARK:- CountrySettingsDelegate
+      func countryDidChange(to country: Country) {
+          print("country changes!!!")
+          print("PaymentWebViewController")
+          self.navigationController?.popToRootViewController(animated: false)
+      }
     
     // MARK: - Success Flow
     func paymentSuccess() {

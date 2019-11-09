@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   Tatayaba
 
@@ -48,6 +48,7 @@
 "Please enter coupon value!" = "من فضلك ادخل الكوبون الصحيح !";
 "CouponAddedSuccessfully" = "تم اضافه الخصم بنجاح";
 "CouponRemovedSuccessfully" = "تم حذف الخصم بنجاح";
+"couponTypeNotImplemented" = "لا يمكن اضافه الخصم لذلك النوع";
 "Quantity"="الكمية";
 
 // CheckOut
@@ -60,3 +61,5 @@
 "OPTIONS..." = "الاختيارات...";
 "ADD TO CART" = "أضف إلى السلة";
 "Currencies" = "العملات";
+// Settings
+"Change Country"="تغيير الدولة";

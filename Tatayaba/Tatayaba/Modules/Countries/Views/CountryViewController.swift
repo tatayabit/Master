@@ -41,9 +41,9 @@ extension CountryViewController{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "CountryTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CountryTableViewCell
-        cell.country_lbl.text = countriesList[indexPath.row].name
+//        cell.country_lbl.text = countriesList[indexPath.row].name
         //  cell.code_lbl.text = ListCountrys[indexPath.row].code
-        
+        cell.configure(country: countriesList[indexPath.row])
         return cell
     }
     

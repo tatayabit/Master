@@ -13,6 +13,7 @@ class CheckoutCompletedViewController: BaseViewController {
     var viewModel: CheckoutCompletedViewModel?
     @IBOutlet weak var orderIdLabel: UILabel!
     @IBOutlet weak var orderDateLabel: UILabel!
+    @IBOutlet weak var paymentDataLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,7 @@ class CheckoutCompletedViewController: BaseViewController {
         guard let viewModel = viewModel else { return }
         orderIdLabel.text = viewModel.orderIdText
         orderDateLabel.text = viewModel.orderDate
+        paymentDataLabel.text = viewModel.paymentDetails
     }
 
 

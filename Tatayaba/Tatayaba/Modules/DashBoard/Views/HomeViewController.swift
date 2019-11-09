@@ -8,7 +8,12 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController, BannersBlocksViewProtocol, CategoriesBlockViewProtocol, ProductsBlockViewProtocol, SuppliersBlockViewProtocol, FullScreenBannersViewProtocol {
+class HomeViewController: BaseViewController, BannersBlocksViewProtocol, CategoriesBlockViewProtocol, ProductsBlockViewProtocol, SuppliersBlockViewProtocol, FullScreenBannersViewProtocol, CountrySettingsDelegate {
+    func countryDidChange(to country: Country) {
+        print("country changes!!!")
+        print("HomeViewController")
+    }
+    
    
     private let productDetailsSegue = "product_details_segue"
     private let categoryProductsSegue = "category_products_segue"
@@ -37,6 +42,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         let cart = Cart.shared
         cart.updateTabBarCount()
         CountriesManager.shared.loadCountriesList()
+        CountrySettings.shared.addDelegate(delegate: self)
     }
 
     fileprivate func addBannersSubView() {
@@ -177,6 +183,10 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
 
     func didAddToCart(product: Product) {
         // addProdcut to cart
+        if !product.isInStock {
+            showErrorAlerr(title: "Error", message: "This item is out of stock!", handler: nil)
+            return
+        }
         viewModel.addToCart(product: product)
     }
     

@@ -32,9 +32,9 @@ extension CartEndpoint: TargetType {
     var path: String {
         switch self {
         case .applyCoupon:
-            return "4.0/SraCartContent"
+            return "4.0/TtmOrders"
         case .getTaxAndShipping:
-            return "4.0/TtmCartConfigData"
+            return "4.0/TtmCartConfigData/"
         }
     }
     
@@ -59,10 +59,10 @@ extension CartEndpoint: TargetType {
     var task: Task {
         switch self {
         case .applyCoupon(let code):
-            return .requestParameters(parameters: [ "coupon_codes": code
+            return .requestParameters(parameters: [ "coupon_code": code
                 ], encoding: URLEncoding.queryString)
-        case .getTaxAndShipping(let countryCode):
-            return .requestParameters(parameters: [ "country_code": countryCode
+        case .getTaxAndShipping(let _):
+            return .requestParameters(parameters: [ "country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw"
                 ], encoding: URLEncoding.queryString)
         }
     }

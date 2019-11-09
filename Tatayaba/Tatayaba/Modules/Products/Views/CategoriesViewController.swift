@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CategoriesViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class CategoriesViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CountrySettingsDelegate {
 
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
 
@@ -19,14 +19,18 @@ class CategoriesViewController: BaseViewController, UICollectionViewDelegate, UI
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-
         setupUI()
+        CountrySettings.shared.addDelegate(delegate: self)
+        self.categoriesCollectionView.dataSource = self
+        self.categoriesCollectionView.delegate = self
+        reloadData()
+    }
+    
+    func reloadData() {
         viewModel.getAllCategories()
         viewModel.onCategoriesListLoad = {
-            self.categoriesCollectionView.dataSource = self
-            self.categoriesCollectionView.delegate = self
+            self.categoriesCollectionView.reloadData()
         }
-
     }
 
     func setupUI() {
@@ -60,6 +64,13 @@ class CategoriesViewController: BaseViewController, UICollectionViewDelegate, UI
       
     }
 
+    // MARK:- CountrySettingsDelegate
+    func countryDidChange(to country: Country) {
+        print("country changes!!!")
+        print("CategoriesViewController")
+        reloadData()
+    }
+    
     //MARK:- Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == productsListSegue {

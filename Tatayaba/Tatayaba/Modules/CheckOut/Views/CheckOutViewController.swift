@@ -10,7 +10,7 @@ import UIKit
 import SkyFloatingLabelTextField
 import SwiftValidator
 
-class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource{
+class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, CountrySettingsDelegate {
     
     @IBOutlet weak var paymentTableView: UITableView!
 
@@ -27,6 +27,7 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         self.setupUI()
         // self.updateData()
+        CountrySettings.shared.addDelegate(delegate: self)
         viewModel.onPaymentMethodsListLoad = {
             self.paymentTableView.reloadData()
         }
@@ -209,7 +210,13 @@ extension CheckOutViewController {
         self.navigationController?.pushViewController(controller, animated: false)
     }
     
-    
+    // MARK:- CountrySettingsDelegate
+    func countryDidChange(to country: Country) {
+        print("country changes!!!")
+        print("CheckOutViewController")
+        self.navigationController?.popToRootViewController(animated: false)
+    }
+
     //MARK:- Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == paymentWebViewSegue {

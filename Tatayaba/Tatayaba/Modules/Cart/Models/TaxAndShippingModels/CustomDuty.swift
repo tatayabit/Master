@@ -18,9 +18,22 @@ struct CustomDuty : Codable {
 	}
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		cartTotalThreshold = try values.decodeIfPresent(String.self, forKey: .cartTotalThreshold)
+        var cartTotalThresholdValue = ""
+        if let cartTotalThresholdValueString = try? values.decode(String.self, forKey: .cartTotalThreshold) {
+            cartTotalThresholdValue = cartTotalThresholdValueString
+        } else if let cartTotalThresholdValueInt = try? values.decode(Int.self, forKey: .cartTotalThreshold) {
+            cartTotalThresholdValue = "\(cartTotalThresholdValueInt)"
+        }
+        cartTotalThreshold = cartTotalThresholdValue
+        
 		type = try values.decodeIfPresent(String.self, forKey: .type)
-		value = try values.decodeIfPresent(String.self, forKey: .value)
+		var customDutiesValue = ""
+        if let customDutiesValueString = try? values.decode(String.self, forKey: .value) {
+            customDutiesValue = customDutiesValueString
+        } else if let customDutiesValueInt = try? values.decode(Int.self, forKey: .value) {
+            customDutiesValue = "\(customDutiesValueInt)"
+        }
+        value = customDutiesValue
 	}
 
 

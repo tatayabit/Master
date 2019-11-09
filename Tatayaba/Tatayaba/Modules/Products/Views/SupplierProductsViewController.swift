@@ -86,11 +86,27 @@ class SupplierProductsViewController: BaseViewController, UICollectionViewDelega
 
     // MARK:- ProductsBlockCollectionViewCellDelegate
     func didSelectAddToCartCell(indexPath: IndexPath) {
-        viewModel?.addToCart(at: indexPath)
+        guard let viewModel = viewModel else { return }
+        if !viewModel.productInStock(at: indexPath) {
+            showErrorAlerr(title: "Error", message: "This item is out of stock!", handler: nil)
+            return
+        }
+        viewModel.addToCart(at: indexPath)
     }
     
     func didSelectOneClickBuy(indexPath: IndexPath) {
-        
+        guard let viewModel = viewModel else { return }
+        viewModel.addToCart(at: indexPath)
+
+         if Customer.shared.loggedin {
+             let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewCartViewController") as! CartViewController
+             controller.buyingWayType = 1
+             self.navigationController?.pushViewController(controller, animated: false)
+         } else {
+             let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "GuestSignUpViewcontroller") as! GuestSignUpViewcontroller
+             tabBarController?.tabBar.isHidden = true
+             navigationController?.pushViewController(controller, animated: true)
+         }
     }
 
 }
