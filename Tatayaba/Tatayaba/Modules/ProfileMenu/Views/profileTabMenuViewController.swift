@@ -251,7 +251,7 @@ extension profileTabMenuViewController{
         CountrySettings.shared.currentCountry = selectedCountry
     }
     
-    func currencySelected(selectedCurrency: Country) {
-        
+    func currencySelected(selectedCurrency: Currency) {
+        CurrencySettings.shared.currentCurrency = selectedCurrency
     }
 }

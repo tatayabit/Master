@@ -212,6 +212,11 @@
 		27E8533D2376B703002649BE /* PromotionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E8533A2376B703002649BE /* PromotionData.swift */; };
 		27E8533E2376B703002649BE /* Bonuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E8533B2376B703002649BE /* Bonuse.swift */; };
 		27E853402376EC5C002649BE /* CouponResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E8533F2376EC5C002649BE /* CouponResponse.swift */; };
+		27E8534223775F00002649BE /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E8534123775EFF002649BE /* Currency.swift */; };
+		27E8534523775F50002649BE /* CurrencyAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E8534323775F4F002649BE /* CurrencyAPIClient.swift */; };
+		27E8534623775F50002649BE /* CurrencyEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E8534423775F4F002649BE /* CurrencyEndpoint.swift */; };
+		27E85348237760F2002649BE /* CurrenciesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E85347237760F2002649BE /* CurrenciesManager.swift */; };
+		27E8534A237763C3002649BE /* CurrencySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E85349237763C3002649BE /* CurrencySettings.swift */; };
 		27F32DC32371F657000F7758 /* ForgetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F32DC02371F656000F7758 /* ForgetPasswordViewModel.swift */; };
 		27F32DC42371F657000F7758 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F32DC22371F656000F7758 /* ForgetPasswordViewController.swift */; };
 		27F32DC62371FCCA000F7758 /* ForgetPasswordResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F32DC52371FCCA000F7758 /* ForgetPasswordResult.swift */; };
@@ -500,6 +505,11 @@
 		27E8533A2376B703002649BE /* PromotionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionData.swift; sourceTree = "<group>"; };
 		27E8533B2376B703002649BE /* Bonuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bonuse.swift; sourceTree = "<group>"; };
 		27E8533F2376EC5C002649BE /* CouponResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponResponse.swift; sourceTree = "<group>"; };
+		27E8534123775EFF002649BE /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		27E8534323775F4F002649BE /* CurrencyAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyAPIClient.swift; sourceTree = "<group>"; };
+		27E8534423775F4F002649BE /* CurrencyEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyEndpoint.swift; sourceTree = "<group>"; };
+		27E85347237760F2002649BE /* CurrenciesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrenciesManager.swift; sourceTree = "<group>"; };
+		27E85349237763C3002649BE /* CurrencySettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencySettings.swift; sourceTree = "<group>"; };
 		27F32DC02371F656000F7758 /* ForgetPasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewModel.swift; sourceTree = "<group>"; };
 		27F32DC22371F656000F7758 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		27F32DC52371FCCA000F7758 /* ForgetPasswordResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordResult.swift; sourceTree = "<group>"; };
@@ -596,6 +606,8 @@
 		100B8D5D236F2F23000E11E8 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				27E8534323775F4F002649BE /* CurrencyAPIClient.swift */,
+				27E8534423775F4F002649BE /* CurrencyEndpoint.swift */,
 				100B8D5E236F2F52000E11E8 /* CountriesAPIClient.swift */,
 				100B8D60236F2F6E000E11E8 /* CountriesEndpoint.swift */,
 			);
@@ -783,6 +795,7 @@
 		11089C0723328B0900BE9B78 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				27E85347237760F2002649BE /* CurrenciesManager.swift */,
 				11089C0B23328CFD00BE9B78 /* CountriesManager.swift */,
 			);
 			path = ViewModels;
@@ -791,6 +804,7 @@
 		11089C0823328B1100BE9B78 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				27E8534123775EFF002649BE /* Currency.swift */,
 				11089C0923328B2200BE9B78 /* Country.swift */,
 			);
 			path = Models;
@@ -882,6 +896,7 @@
 			children = (
 				1137042B22F9E35D00EAFBBD /* Customer.swift */,
 				109D29E4234A668F0052D01B /* CountrySettings.swift */,
+				27E85349237763C3002649BE /* CurrencySettings.swift */,
 				11C6BF2B23450731000C72F4 /* Constants.swift */,
 			);
 			path = Shared;
@@ -2394,6 +2409,7 @@
 				11FB5861231C3EA7005DA4F0 /* SupplierIcon.swift in Sources */,
 				106751DD235B7A590031F3E7 /* PaymentRedirectResult.swift in Sources */,
 				10645967235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift in Sources */,
+				27E8534223775F00002649BE /* Currency.swift in Sources */,
 				115795C4233001E70002075E /* SupplierProductsViewController.swift in Sources */,
 				84BC089A22DC7D3400C6180E /* CartViewModel.swift in Sources */,
 				112654AC22D2691400904FB5 /* ProductsAPIClient.swift in Sources */,
@@ -2410,6 +2426,7 @@
 				11081EF422DB89F600B68EA5 /* ProfileViewController.swift in Sources */,
 				4C219869233BBBE800DE40FA /* CountryTableViewCell.swift in Sources */,
 				11945BCB22F0B0C6000F08DC /* ShippingEndpoint.swift in Sources */,
+				27E85348237760F2002649BE /* CurrenciesManager.swift in Sources */,
 				11081EF822DB8CD800B68EA5 /* StackedScrollView.swift in Sources */,
 				11D842592336A86200F732F9 /* PaymentMethodTableViewCell.swift in Sources */,
 				11D612A822CE49D1000D42C3 /* UserAPIClient.swift in Sources */,
@@ -2502,6 +2519,7 @@
 				27E853402376EC5C002649BE /* CouponResponse.swift in Sources */,
 				11069C432323FFD70093D6FF /* ProductDetailedPair.swift in Sources */,
 				116C939022F0954500921893 /* PaymentEndpoint.swift in Sources */,
+				27E8534523775F50002649BE /* CurrencyAPIClient.swift in Sources */,
 				112654AE22D2693600904FB5 /* ProductsEndpoint.swift in Sources */,
 				11FB585D231C3C3C005DA4F0 /* Supplier.swift in Sources */,
 				114D1A0B22CBB12B009205F3 /* CellActionHandler.swift in Sources */,
@@ -2548,6 +2566,7 @@
 				27A908A12357906C0032DA41 /* Shipping.swift in Sources */,
 				27E8533E2376B703002649BE /* Bonuse.swift in Sources */,
 				1101C66822E0D6E300416307 /* HProductsListView.swift in Sources */,
+				27E8534A237763C3002649BE /* CurrencySettings.swift in Sources */,
 				116C938E22F0954500921893 /* Payment.swift in Sources */,
 				2767CB96236472290042F533 /* OrderTrackCell.swift in Sources */,
 				2767CB97236472290042F533 /* OrderProductsCell.swift in Sources */,
@@ -2562,6 +2581,7 @@
 				11A8B15822D793AC001B2661 /* WishlistViewController.swift in Sources */,
 				11624EDB230C6C1800E81ABD /* BlockBgImageIcon.swift in Sources */,
 				11945BC922F0B0C6000F08DC /* ShippingMethod.swift in Sources */,
+				27E8534623775F50002649BE /* CurrencyEndpoint.swift in Sources */,
 				27A9089D2357906C0032DA41 /* Vat.swift in Sources */,
 				11FB5859231C3B18005DA4F0 /* SuppliersAPIClient.swift in Sources */,
 				11FB585B231C3B26005DA4F0 /* SuppliersEndpoint.swift in Sources */,

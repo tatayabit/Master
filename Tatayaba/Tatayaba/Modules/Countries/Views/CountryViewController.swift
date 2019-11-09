@@ -13,12 +13,14 @@ protocol CountryViewDelegate: class {
 }
 
 protocol CurrencyViewDelegate: class {
-    func currencySelected(selectedCurrency: Country)
+    func currencySelected(selectedCurrency: Currency)
 }
 
 class CountryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     private let viewModel = CountriesManager()
+    private let currencyViewModel = CurrenciesManager()
     let countriesList = CountriesManager.shared.countriesList
+    let currenciesList = CurrenciesManager.shared.currenciesList
     weak var delegate: CountryViewDelegate?
     weak var currencyDelegate: CurrencyViewDelegate?
     var viewType: Int = 0
@@ -27,7 +29,7 @@ class CountryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         if viewType == 0 {
             print(countriesList)
         } else {
-            
+            print(currenciesList)
         }
         NavigationBarWithBackButton()
     }
@@ -40,7 +42,7 @@ extension CountryViewController{
         if viewType == 0 {
             return countriesList.count
         } else {
-            return countriesList.count
+            return currenciesList.count
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -55,7 +57,7 @@ extension CountryViewController{
         if viewType == 0 {
             cell.configure(country: countriesList[indexPath.row])
         } else {
-            
+            cell.configureCurrency(currency: currenciesList[indexPath.row])
         }
         return cell
     }
@@ -65,7 +67,7 @@ extension CountryViewController{
         if viewType == 0 {
             delegate?.countrySelected(selectedCountry: countriesList[indexPath.row])
         } else {
-            currencyDelegate?.currencySelected(selectedCurrency: countriesList[indexPath.row])
+            currencyDelegate?.currencySelected(selectedCurrency: currenciesList[indexPath.row])
         }
         navigationController?.popViewController(animated: true)
     }

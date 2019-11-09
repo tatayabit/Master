@@ -6,7 +6,7 @@ import Foundation
 
 struct PaymentMethod : Codable {
 
-	let descriptionField : String?
+	let descriptionField : String
 	let fSurcharge : String?
 	let image : PaymentImage?
 	let pSurcharge : String?
@@ -26,7 +26,7 @@ struct PaymentMethod : Codable {
 	}
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		descriptionField = try values.decodeIfPresent(String.self, forKey: .descriptionField)
+		descriptionField = try values.decodeIfPresent(String.self, forKey: .descriptionField) ?? ""
 		fSurcharge = try values.decodeIfPresent(String.self, forKey: .fSurcharge)
 		image = try values.decodeIfPresent(PaymentImage.self, forKey: .image)
 		pSurcharge = try values.decodeIfPresent(String.self, forKey: .pSurcharge)

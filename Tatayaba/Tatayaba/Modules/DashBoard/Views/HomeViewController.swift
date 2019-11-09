@@ -42,6 +42,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         let cart = Cart.shared
         cart.updateTabBarCount()
         CountriesManager.shared.loadCountriesList()
+        CurrenciesManager.shared.loadCurrenciesList()
         CountrySettings.shared.addDelegate(delegate: self)
     }
 
