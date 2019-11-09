@@ -209,8 +209,10 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         case sectionType.item.rawValue:
             return cart.productsCount
         case sectionType.pricing.rawValue:
-            if totalPriceValue < maxValueToShowTax || maxValueToShowTax == 0 {
+            if ("\(taxValue?.vat?.value ?? "0")" as NSString).floatValue == 0 {
                 viewModel.pricingList.removeAll(where: {$0.title == "Tax".localized()})
+            }
+            if totalPriceValue < maxValueToShowTax || maxValueToShowTax == 0 {
                 viewModel.pricingList.removeAll(where: {$0.title == "CustomDuties".localized()})
             }
             let pricingCount = viewModel.pricingList.count
