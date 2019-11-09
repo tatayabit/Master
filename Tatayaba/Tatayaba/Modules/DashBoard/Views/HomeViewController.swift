@@ -8,9 +8,14 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController, BannersBlocksViewProtocol, CategoriesBlockViewProtocol, ProductsBlockViewProtocol, SuppliersBlockViewProtocol, FullScreenBannersViewProtocol, CountrySettingsDelegate {
+class HomeViewController: BaseViewController, BannersBlocksViewProtocol, CategoriesBlockViewProtocol, ProductsBlockViewProtocol, SuppliersBlockViewProtocol, FullScreenBannersViewProtocol, CountrySettingsDelegate, CurrencySettingsDelegate {
     func countryDidChange(to country: Country) {
         print("country changes!!!")
+        print("HomeViewController")
+    }
+    
+    func currencyDidChange(to currency: Currency) {
+        print("currency changes!!!")
         print("HomeViewController")
     }
     
@@ -44,6 +49,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         CountriesManager.shared.loadCountriesList()
         CurrenciesManager.shared.loadCurrenciesList()
         CountrySettings.shared.addDelegate(delegate: self)
+        CurrencySettings.shared.addCurrencyDelegate(delegate: self)
     }
 
     fileprivate func addBannersSubView() {

@@ -31,7 +31,7 @@ class CurrencySettings {
     private var delegates = [CurrencySettingsDelegate]()
     
     // MARK:- Delegate
-    func addDelegate(delegate: CurrencySettingsDelegate) {
+    func addCurrencyDelegate(delegate: CurrencySettingsDelegate) {
         self.delegates.append(delegate)
     }
     

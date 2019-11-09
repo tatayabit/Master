@@ -115,6 +115,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         Customer.shared.loadData()
         CountrySettings.shared.loadData()
+        CurrencySettings.shared.loadData()
 //        CountrySettings.shared.getGeoReversedCountry()
         MOLH.shared.activate(true)
         setupGlobalAppearance()

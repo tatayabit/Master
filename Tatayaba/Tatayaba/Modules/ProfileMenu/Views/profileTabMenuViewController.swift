@@ -46,7 +46,7 @@ class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var profileMenu_tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.NavigationBarWithOutBackButton()
+         NavigationBarWithOutBackButton()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -55,6 +55,12 @@ class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITab
         self.tabBarController?.tabBar.isHidden = false
         if Customer.shared.loggedin && Customer.shared.user?.identifier != "" {
             self.navigationItem.title = "\(Constants.Profile.welcome) \(Customer.shared.user?.firstname ?? "")"
+        }
+        if CurrencySettings.shared.currentCurrency != nil {
+            Session2[1] = CurrencySettings.shared.currentCurrency?.descriptionField ?? Constants.Profile.currencies
+        }
+        if CountrySettings.shared.currentCountry != nil {
+            Session2[2] = CountrySettings.shared.currentCountry?.name ?? Constants.Profile.changeCountry
         }
         self.profileMenu_tableView.reloadData()
     }
@@ -157,11 +163,11 @@ extension profileTabMenuViewController{
                 //setting page
                 changeLanguege()
             }
-            if indextitle  == Constants.Profile.currencies {
+            if indextitle  == Constants.Profile.currencies || indextitle  == CurrencySettings.shared.currentCurrency?.descriptionField {
                 loadCurrenciesVC()
             }
 
-            if indextitle == Constants.Profile.changeCountry {
+            if indextitle == Constants.Profile.changeCountry || indextitle  == CountrySettings.shared.currentCountry?.name {
                 self.loadCountries()
             }
             if indextitle == Constants.Profile.liveChat {
