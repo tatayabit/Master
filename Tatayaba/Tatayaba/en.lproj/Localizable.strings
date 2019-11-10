@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   Tatayaba
 
@@ -49,6 +49,7 @@
 "Please enter coupon value!" = "Please enter coupon value!";
 "CouponAddedSuccessfully" = "Coupon Added Successfully";
 "CouponRemovedSuccessfully" = "Coupon Removed Successfully";
+"couponTypeNotImplemented" = "Can not add promotions on that type";
 "Quantity"="Quantity";
 
 
@@ -61,7 +62,9 @@
 // Product
 "OPTIONS..." = "OPTIONS...";
 "ADD TO CART" = "ADD TO CART";
-
-
+"Currencies" = "Currencies";
 // Settings
 "Change Country"="Change Country";
+"active" = "Active";
+"hidden" = "Hidden";
+"disabled" = "Disabled";

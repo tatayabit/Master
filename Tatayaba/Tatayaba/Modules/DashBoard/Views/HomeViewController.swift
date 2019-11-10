@@ -8,7 +8,12 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController, BannersBlocksViewProtocol, CategoriesBlockViewProtocol, ProductsBlockViewProtocol, SuppliersBlockViewProtocol, FullScreenBannersViewProtocol, CountrySettingsDelegate {
+class HomeViewController: BaseViewController, BannersBlocksViewProtocol, CategoriesBlockViewProtocol, ProductsBlockViewProtocol, SuppliersBlockViewProtocol, FullScreenBannersViewProtocol, CountrySettingsDelegate, CurrencySettingsDelegate {
+    
+    func currencyDidChange(to currency: Currency) {
+        print("currency changes!!!")
+        print("HomeViewController")
+    }
    
     private let productDetailsSegue = "product_details_segue"
     private let categoryProductsSegue = "category_products_segue"
@@ -37,7 +42,9 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         let cart = Cart.shared
         cart.updateTabBarCount()
         CountriesManager.shared.loadCountriesList()
+        CurrenciesManager.shared.loadCurrenciesList()
         CountrySettings.shared.addDelegate(delegate: self)
+        CurrencySettings.shared.addCurrencyDelegate(delegate: self)
     }
 
     fileprivate func addBannersSubView() {

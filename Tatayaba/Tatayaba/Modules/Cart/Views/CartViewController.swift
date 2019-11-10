@@ -8,6 +8,17 @@
 
 import UIKit
 
+private enum BonusTypes: String, CaseIterable {
+    case orderDiscount = "order_discount"
+}
+
+private enum DiscountBonusTypes: String, CaseIterable {
+    case toPercentage = "to_percentage"
+    case byPercentage = "by_percentage"
+    case toFixed = "to_fixed"
+    case byFixed = "by_fixed"
+}
+
 class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, CartViewModelDelegate, CountrySettingsDelegate {
     
     @IBOutlet var cartTableview: UITableView!
@@ -17,19 +28,21 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var couponContainerView: UIStackView!
     @IBOutlet weak var couponTextField: UITextField!
     @IBOutlet weak var removeDiscountButton: UIButton!
+    @IBOutlet weak var couponTextFieldView: UIView!
     
     
     let cart = Cart.shared
     let viewModel = CartViewModel()
     // let we say until now (One_Click_Buy = 1 & Default_Way = 0)
     var buyingWayType: Int = 0
-    var couponValue: String = "0"
+    var couponTitleValue: String = "0"
     var taxValue: Tax?
     var shippingValue: String = "0"
-    var maxValueToShowTax: Float = 200
+    var maxValueToShowTax: Float = 0
     var totalPriceValue: Float = 0
     private let checkoutSegue = "checkout_segue"
     let cartClass: CartPricingItems = CartPricingItems()
+    var promotionData : PromotionData?
     
     enum sectionType: Int {
         case item = 0, pricing
@@ -62,20 +75,14 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         cartTableview.register(PriceTableViewCell.nib, forCellReuseIdentifier: PriceTableViewCell.identifier)
         self.NavigationBarWithOutBackButton()
         removeDiscountButton.isHidden = true
+        couponTextFieldView.isHidden = false
     }
     
     func calculateTotal() {
-        totalPriceValue = (cart.totalPrice as NSString).floatValue + (couponValue as NSString).floatValue  + (shippingValue as NSString).floatValue
         
-        if totalPriceValue >= maxValueToShowTax {
-            if let taxStringValue = taxValue?.vat?.value {
-                if taxValue?.vat?.type == "P" {
-                    totalPriceValue += (totalPriceValue * (Float(taxStringValue)!)) / 100
-                } else {
-                    totalPriceValue += Float(taxStringValue) ?? 0.0
-                }
-            }
-            
+        totalPriceValue = (cart.totalPrice as NSString).floatValue + (shippingValue as NSString).floatValue
+        
+        if totalPriceValue >= maxValueToShowTax && maxValueToShowTax != 0 {
             if let customDutiesStringValue = taxValue?.customDuties?.value {
                 if taxValue?.customDuties?.type == "P" {
                     totalPriceValue += (totalPriceValue * (Float(customDutiesStringValue)!)) / 100
@@ -83,10 +90,40 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                     totalPriceValue += Float(customDutiesStringValue) ?? 0.0
                 }
             }
+            
+            if let taxStringValue = taxValue?.vat?.value {
+                if taxValue?.vat?.type == "P" {
+                    totalPriceValue += (totalPriceValue * (Float(taxStringValue)!)) / 100
+                } else {
+                    totalPriceValue += Float(taxStringValue) ?? 0.0
+                }
+            }
+        }
+        
+        if promotionData != nil {
+            let discountItem = promotionData?.bonuses?.first
+            let currentTotal = totalPriceValue
+            if discountItem?.discountBonus == DiscountBonusTypes.byPercentage.rawValue {
+                let discountValueFromTotal = (currentTotal * ("\(discountItem?.discountValue ?? "0")" as NSString).floatValue) / 100
+                totalPriceValue = currentTotal - discountValueFromTotal
+                couponTitleValue = "by \(discountItem?.discountValue ?? "0")%"
+            } else if discountItem?.discountBonus == DiscountBonusTypes.toPercentage.rawValue {
+                let discountValueFromTotal = (currentTotal * ("\(discountItem?.discountValue ?? "0")" as NSString).floatValue) / 100
+                totalPriceValue = discountValueFromTotal
+                couponTitleValue = "to \(discountItem?.discountValue ?? "0")%"
+            } else if discountItem?.discountBonus == DiscountBonusTypes.byFixed.rawValue {
+                let discountValueFromTotal = currentTotal - ("\(discountItem?.discountValue ?? "0")" as NSString).floatValue
+                totalPriceValue = currentTotal - discountValueFromTotal
+                couponTitleValue = "by \((discountItem?.discountValue ?? "0").formattedPrice)"
+            } else if discountItem?.discountBonus == DiscountBonusTypes.toFixed.rawValue {
+                let discountValueFromTotal = currentTotal - ("\(discountItem?.discountValue ?? "0")" as NSString).floatValue
+                totalPriceValue = discountValueFromTotal
+                couponTitleValue = "to \((discountItem?.discountValue ?? "0").formattedPrice)"
+            }
         }
         
         totalPriceLabel.text = "\(totalPriceValue)".formattedPrice
-        viewModel.loadPricingListContent(couponValue: couponValue, taxValue: taxValue, shippingValue: shippingValue)
+        viewModel.loadPricingListContent(couponValue: couponTitleValue, taxValue: taxValue, shippingValue: shippingValue)
         let totalItemsText = "(" + String(cart.productsCount) + " " + cartClass.items + ")"
         totalTitleLabel.attributedText = attributedTotalTitle(text: totalItemsText)
     }
@@ -146,7 +183,11 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         }
         
         if viewModel.pricingList.count > 0 {
-            return (couponValue as NSString).integerValue > 0 ? 3 : 2
+            if promotionData != nil {
+               return 3
+            } else {
+                return 2
+            }
         }
         return 1
     }
@@ -168,12 +209,18 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         case sectionType.item.rawValue:
             return cart.productsCount
         case sectionType.pricing.rawValue:
-            if totalPriceValue < maxValueToShowTax {
+            if ("\(taxValue?.vat?.value ?? "0")" as NSString).floatValue == 0 {
                 viewModel.pricingList.removeAll(where: {$0.title == "Tax".localized()})
+            }
+            if totalPriceValue < maxValueToShowTax || maxValueToShowTax == 0 {
                 viewModel.pricingList.removeAll(where: {$0.title == "CustomDuties".localized()})
             }
             let pricingCount = viewModel.pricingList.count
-            return (couponValue as NSString).integerValue > 0 ? pricingCount : pricingCount - 1
+            if promotionData != nil {
+                return pricingCount
+            } else {
+                return pricingCount - 1
+            }
         default: return 0
         }
     }
@@ -248,9 +295,11 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     }
     
     @IBAction func removeCouponAction(_ sender: UIButton) {
-        couponValue = "0"
+        couponTitleValue = "0"
+        promotionData = nil
         calculateTotal()
         self.setButton(button: removeDiscountButton, hidden: true)
+        self.setView(view: couponTextFieldView, hidden: false)
         self.showErrorAlerr(title: Constants.Common.success, message: "CouponRemovedSuccessfully".localized(), handler: nil)
     }
     
@@ -264,6 +313,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                     if let taxValue = taxAndShippingResponse.tax {
                         print(taxValue)
                         self.taxValue = taxValue
+                        self.maxValueToShowTax = ("\(taxValue.customDuties?.cartTotalThreshold ?? "0")" as NSString).floatValue
                         self.calculateTotal()
                         CountrySettings.shared.updateTax(taxValue: taxValue)
                     }
@@ -296,13 +346,27 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                 self.hideLoadingIndicator(from: self.view)
                 switch result {
                 case .success(let couponResult):
-                    if let couponDiscound = couponResult?.total {
-                        print(couponDiscound)
-                        self.couponValue = "\(couponDiscound)"
-                        self.calculateTotal()
-                        self.couponTextField.text = ""
-                        self.setButton(button: self.removeDiscountButton, hidden: false)
-                        self.showErrorAlerr(title: Constants.Common.success, message: "CouponAddedSuccessfully".localized(), handler: nil)
+                    if let promotionValue = couponResult?.promotionData {
+                        print(promotionValue)
+                        if promotionValue.errorMessage == nil {
+                            if promotionValue.bonuses?.first?.bonus == BonusTypes.orderDiscount.rawValue {
+                                self.promotionData = promotionValue
+                                self.calculateTotal()
+                                self.couponTextField.text = ""
+                                self.couponTextFieldView.endEditing(true)
+                                self.setView(view: self.couponTextFieldView, hidden: true)
+                                self.setButton(button: self.removeDiscountButton, hidden: false)
+                                self.showErrorAlerr(title: Constants.Common.success, message: "CouponAddedSuccessfully".localized(), handler: nil)
+                            } else {
+                                self.showErrorAlerr(title: Constants.Common.success, message: "couponTypeNotImplemented".localized(), handler: nil)
+                            }
+                            
+                        } else {
+                            self.couponTextField.text = ""
+                            self.couponTextFieldView.endEditing(true)
+                            self.showErrorAlerr(title: Constants.Common.error, message: promotionValue.errorMessage, handler: nil)
+                        }
+                        
                     } else {
                         print("no coupon discound parsed")
                     }

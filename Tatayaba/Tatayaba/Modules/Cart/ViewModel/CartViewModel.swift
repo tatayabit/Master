@@ -57,7 +57,7 @@ class CartViewModel {
         
         pricingList.append(model)
         
-        model = CartPricingModel(title: cartClass.coupon, value: couponValue.formattedPrice)
+        model = CartPricingModel(title: cartClass.coupon, value: couponValue)
         pricingList.append(model)
         
         if let delegate = delegate {
@@ -71,7 +71,7 @@ class CartViewModel {
     }
     
     //MARK:- Api
-    func applyCoupon(couponCode: String, completion: @escaping (APIResult<couponResponse?, MoyaError>) -> Void) {
+    func applyCoupon(couponCode: String, completion: @escaping (APIResult<CouponResponse?, MoyaError>) -> Void) {
         cartApiClient.applyCoupon(couponCode: couponCode) { result in
             switch result {
             case .success(let couponResult):
