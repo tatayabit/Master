@@ -17,6 +17,6 @@ struct CountriesAPIClient: APIClient {
     static let environment: APIEnvironment = .production
 
     func getCountries(completion: @escaping (APIResult<[Country]?, MoyaError>) -> Void) {
-        fetch(with: CountriesEndpoint.getCountries(), completion: completion)
+        fetch(with: CountriesEndpoint.getCountries, completion: completion)
     }
 }

@@ -9,16 +9,11 @@
 import UIKit
 
 class HomeViewController: BaseViewController, BannersBlocksViewProtocol, CategoriesBlockViewProtocol, ProductsBlockViewProtocol, SuppliersBlockViewProtocol, FullScreenBannersViewProtocol, CountrySettingsDelegate, CurrencySettingsDelegate {
-    func countryDidChange(to country: Country) {
-        print("country changes!!!")
-        print("HomeViewController")
-    }
     
     func currencyDidChange(to currency: Currency) {
         print("currency changes!!!")
         print("HomeViewController")
     }
-    
    
     private let productDetailsSegue = "product_details_segue"
     private let categoryProductsSegue = "category_products_segue"
@@ -218,6 +213,12 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     
     func didSelectViewAllSuppliers() {
         performSegue(withIdentifier: allSuppliersSegue, sender: nil)
+    }
+    
+    // MARK:- CountrySettingsDelegate
+    func countryDidChange(to country: Country) {
+        print("country changes!!!")
+        print("HomeViewController")
     }
 }
 

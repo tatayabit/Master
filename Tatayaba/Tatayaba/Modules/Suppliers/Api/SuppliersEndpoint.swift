@@ -9,7 +9,7 @@
 import Moya
 
 enum SuppliersEndpoint {
-    case getSuppliers()
+    case getSuppliers(page: String)
     case getSupplierDetails(supplierId: String)
 }
 
@@ -58,7 +58,13 @@ extension SuppliersEndpoint: TargetType {
 
     var task: Task {
         switch self {
-        case .getSuppliers, .getSupplierDetails:
+        case .getSuppliers(let page):
+            return .requestParameters(parameters: [
+                                                "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
+                                                "items_per_page": 20,
+                                                "page": page.urlEscaped
+            ], encoding: URLEncoding.default)
+        case .getSupplierDetails:
 //            return .requestPlain
             return .requestParameters(parameters: [
                                                 "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw"

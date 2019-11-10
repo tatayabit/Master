@@ -113,10 +113,13 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
     }
     
     @IBAction func oneClickBuyBtnClicked(_ sender: Any) {
-        if let viewModel = viewModel {
-            viewModel.addToCart()
+        guard let viewModel = viewModel else { return }
+        if !viewModel.inStock {
+            showErrorAlerr(title: "Error", message: "This item is out of stock!", handler: nil)
+            return
         }
         
+        viewModel.addToCart()
         if Customer.shared.loggedin {
             let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewCartViewController") as! CartViewController
             controller.buyingWayType = 0

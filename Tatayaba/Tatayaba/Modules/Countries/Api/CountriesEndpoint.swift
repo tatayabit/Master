@@ -9,9 +9,8 @@
 import Moya
 
 enum CountriesEndpoint {
-    case getCountries()
+    case getCountries
 }
-
 
 extension CountriesEndpoint: TargetType {
     var environmentBaseURL: String {

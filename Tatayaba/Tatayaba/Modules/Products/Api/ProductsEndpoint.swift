@@ -82,7 +82,7 @@ extension ProductsEndpoint: TargetType {
                 ], encoding: URLEncoding.default)
             
         case .getProductsOfCategory(let category, let page):
-            return .requestParameters(parameters: [ "items_per_page": 100,
+            return .requestParameters(parameters: [ "items_per_page": 20,
                                                     "status": "A",
                                                     "cid": category,
                                                     "page": page.urlEscaped,
