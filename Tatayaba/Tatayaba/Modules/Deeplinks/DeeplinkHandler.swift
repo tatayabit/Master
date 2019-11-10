@@ -11,6 +11,7 @@ import Foundation
 struct DeepLinkModel {
     var type: DeeplinkHandler.DlType
     var id: String
+    var title: String
 }
 
 struct DeeplinkHandler {
@@ -35,18 +36,30 @@ struct DeeplinkHandler {
             if components.count > 2 {
                 let firstPath = components[1]
                 let id = components[2]
+                let title = self.getUrlTitle(components: components)
+                
                 switch firstPath {
                 case DlType.category.rawValue:
                     print("type: \(DlType.category.rawValue)")
-                    return DeepLinkModel(type: .category, id: id)
+                    return DeepLinkModel(type: .category, id: id, title: title)
                 case DlType.product.rawValue:
                     print("type: \(DlType.product.rawValue)")
-                    return DeepLinkModel(type: .product, id: id)
+                    return DeepLinkModel(type: .product, id: id, title: title)
                 default:
                     print("type: unknown")
                 }
             }
         }
-        return DeepLinkModel(type: .unknown, id: "")
+        return DeepLinkModel(type: .unknown, id: "", title: "")
+    }
+    
+    func getUrlTitle(components: [String]) -> String {
+        var title = ""
+        if components.count > 3 {
+            if components[3].count > 0 {
+                title = components[3]
+            }
+        }
+        return title
     }
 }

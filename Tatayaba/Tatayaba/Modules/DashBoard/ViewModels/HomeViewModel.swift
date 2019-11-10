@@ -179,7 +179,7 @@ class HomeViewModel {
 
     //MARK:- Parsing Deeplink
     func parseSquareBlockDeeplink(at indexPath: IndexPath) -> DeepLinkModel {
-        guard squareBlock.banners.count > 0 else { return DeepLinkModel(type: .unknown, id: "") }
+        guard squareBlock.banners.count > 0 else { return DeepLinkModel(type: .unknown, id: "", title: "") }
         let banner = squareBlock.banners[indexPath.row]
 
         let deeplink = DeeplinkHandler(urlString: banner.url)
@@ -188,7 +188,7 @@ class HomeViewModel {
     }
     
     func parsetopBannersBlockDeeplink(at indexPath: IndexPath) -> DeepLinkModel {
-           guard topBannersBlock.banners.count > 0 else { return DeepLinkModel(type: .unknown, id: "") }
+        guard topBannersBlock.banners.count > 0 else { return DeepLinkModel(type: .unknown, id: "", title: "") }
            let banner = topBannersBlock.banners[indexPath.row]
 
            let deeplink = DeeplinkHandler(urlString: banner.url)
@@ -224,8 +224,9 @@ class HomeViewModel {
         return CatProductsViewModel(category: category)
     }
     
-    func catProductsListViewModel(with id: String) -> CatProductsViewModel {
-        let category = Category(identifier: id)
+    func catProductsListViewModel(with id: String, title: String) -> CatProductsViewModel {
+        var category = Category(identifier: id)
+        category.name = title
         return CatProductsViewModel(category: category)
     }
 

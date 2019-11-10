@@ -61,7 +61,7 @@ extension CartEndpoint: TargetType {
         case .applyCoupon(let code):
             return .requestParameters(parameters: [ "coupon_code": code
                 ], encoding: URLEncoding.queryString)
-        case .getTaxAndShipping(let _):
+        case .getTaxAndShipping:
             return .requestParameters(parameters: [ "country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw"
                 ], encoding: URLEncoding.queryString)
         }
