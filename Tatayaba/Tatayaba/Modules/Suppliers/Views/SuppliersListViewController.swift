@@ -13,16 +13,17 @@ class SuppliersListViewController: BaseViewController, UICollectionViewDelegate,
     @IBOutlet weak var supplierCollection_View: UICollectionView!
 //    lazy var searchBar:UISearchBar = UISearchBar()
     let viewModel = SuppliersListViewModel()
-
+    
     private let supplierProductsSegue = "supplier_products_segue"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
         CountrySettings.shared.addDelegate(delegate: self)
-        viewModel.onsuppliersListLoad = {
-            self.supplierCollection_View.reloadData()
-        }
+        viewModel.setDelegate(self)
+//        viewModel.onsuppliersListLoad = {
+//            self.supplierCollection_View.reloadData()
+//        }
         reloadData()
     }
 
@@ -40,7 +41,7 @@ class SuppliersListViewController: BaseViewController, UICollectionViewDelegate,
     }
     
     func reloadData() {
-        viewModel.getSuppliersList()
+        viewModel.reset()
     }
 
     
@@ -89,7 +90,7 @@ class SuppliersListViewController: BaseViewController, UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return viewModel.suppliersList.count
+        return viewModel.totalCount
     }
     
     
@@ -100,6 +101,14 @@ class SuppliersListViewController: BaseViewController, UICollectionViewDelegate,
             cell.configure(supplier: viewModel.supplier(at: indexPath))
         
         return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == viewModel.currentCount - 12 {  //numberofitem count
+            viewModel.fetchModerators()
+            print("reached last cell!")
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -121,4 +130,28 @@ class SuppliersListViewController: BaseViewController, UICollectionViewDelegate,
             }
         }
     }
+}
+
+
+extension SuppliersListViewController: SuppliersListViewModelDelegate {
+    func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
+        // 1
+        self.hideLoadingIndicator(from: self.view)
+
+        guard newIndexPathsToReload != nil else {
+            self.supplierCollection_View.reloadData()
+            return
+        }
+        // 2
+        if let newIndexPathsToReload = newIndexPathsToReload {
+            self.supplierCollection_View.insertItems(at: newIndexPathsToReload)
+        }
+    }
+    
+    func onFetchFailed(with reason: String) {
+        self.hideLoadingIndicator(from: self.view)
+        self.supplierCollection_View.reloadData()
+    }
+    
+    
 }

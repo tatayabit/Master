@@ -21,8 +21,11 @@ class SupplierProductsViewController: BaseViewController, UICollectionViewDelega
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-
         setupUI()
+        loadData()
+    }
+    
+    func loadData() {
         guard let viewModel = viewModel else { return }
         self.showLoadingIndicator(to: self.view)
         viewModel.getSupplierDetails { result in
@@ -95,8 +98,12 @@ class SupplierProductsViewController: BaseViewController, UICollectionViewDelega
     }
     
     func didSelectOneClickBuy(indexPath: IndexPath) {
-//        guard let viewModel = viewModel else { return }
-//        viewModel.addToCart(at: indexPath)
+
+        guard let viewModel = viewModel else { return }
+        if !viewModel.productInStock(at: indexPath) {
+            showErrorAlerr(title: "Error", message: "This item is out of stock!", handler: nil)
+            return
+        }
         
         didSelectAddToCartCell(indexPath: indexPath)
          if Customer.shared.loggedin {

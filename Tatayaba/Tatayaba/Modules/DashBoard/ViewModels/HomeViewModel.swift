@@ -77,7 +77,7 @@ class HomeViewModel {
     }
 
     func getAllSuppliers() {
-        suppliersApiClient.getSuppliers { result in
+        suppliersApiClient.getSuppliers(page: 0) { result in
             switch result {
             case .success(let response):
                 guard let suppliersResult = response else { return }

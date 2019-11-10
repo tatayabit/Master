@@ -114,7 +114,6 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
     
     @IBAction func oneClickBuyBtnClicked(_ sender: Any) {
         guard let viewModel = viewModel else { return }
-
         if !viewModel.inStock {
             showErrorAlerr(title: "Error", message: "This item is out of stock!", handler: nil)
             return
