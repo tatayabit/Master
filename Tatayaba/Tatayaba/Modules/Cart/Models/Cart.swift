@@ -23,7 +23,8 @@ class Cart {
     var totalPrice: String { return String(calculateTotal()).formattedPrice }
     
     var isOneClickBuy: Bool = false
-
+    var code: String = ""
+    
     //MARK:- Operational functions
     func addProduct(product: Product, quantity: Int = 1, options: [CartItemOptions]? = nil) {
         if productExistedInCart(product: product) {
@@ -118,6 +119,7 @@ class Cart {
         self.isOneClickBuy = false
         self.defaultShipping = nil
         self.paymentMethod = nil
+        self.code = ""
         updateTabBarCount()
     }
 }

@@ -351,6 +351,9 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                         if promotionValue.errorMessage == nil {
                             if promotionValue.bonuses?.first?.bonus == BonusTypes.orderDiscount.rawValue {
                                 self.promotionData = promotionValue
+                                let trimmedCodeString = (self.couponTextField.text)?.trimmingCharacters(in: .whitespaces)
+
+                                self.cart.code = trimmedCodeString ?? ""
                                 self.calculateTotal()
                                 self.couponTextField.text = ""
                                 self.couponTextFieldView.endEditing(true)
