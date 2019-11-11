@@ -90,13 +90,13 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                     totalPriceValue += Float(customDutiesStringValue) ?? 0.0
                 }
             }
-            
-            if let taxStringValue = taxValue?.vat?.value {
-                if taxValue?.vat?.type == "P" {
-                    totalPriceValue += (totalPriceValue * (Float(taxStringValue)!)) / 100
-                } else {
-                    totalPriceValue += Float(taxStringValue) ?? 0.0
-                }
+        }
+        
+        if let taxStringValue = taxValue?.vat?.value {
+            if taxValue?.vat?.type == "P" {
+                totalPriceValue += (totalPriceValue * (Float(taxStringValue)!)) / 100
+            } else {
+                totalPriceValue += Float(taxStringValue) ?? 0.0
             }
         }
         
