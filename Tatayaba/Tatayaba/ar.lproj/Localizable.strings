@@ -38,6 +38,8 @@
 "Privacy Policy"="سياسة الخصوصية";
 "BRANDS"="العلامات التجارية";
 "Logout"="تسجيل الخروج";
+"Live Chat" = "دردشه";
+"Notifications" = "التنبيهات";
 "Delivery and Return Policy"="سياسة الاستبدال والاسترجاع";
 
 // Concierge
@@ -60,9 +62,27 @@
 // Product
 "OPTIONS..." = "الاختيارات...";
 "ADD TO CART" = "أضف إلى السلة";
+"one click buy" = "شراء سريع";
 "Currencies" = "العملات";
 // Settings
 "Change Country"="تغيير الدولة";
 "active" = "متاح";
 "hidden" = "مخفي";
 "disabled" = "غير مفعل";
+"Brands" = "العلامات التجاريه";
+"seeMore" = "المزيد";
+"Perfume Name" = "اسم العطر";
+"Comment" = "تعليق";
+"Phone" = "رقم الجوال";
+"Name" = "الاسم";
+"Tracking #:" = "تتبع #:";
+"Order Value:" = "قيمه الطلب:";
+"Track Order" = "تتبع الطلب";
+"View invoice" = "عرض الفاتوره";
+"Shipping" = "الشحن:";
+"Order date" = "تاريخ الطلب:";
+"Payment Method" = "طريقه الدفع:";
+"Shipping Address" = "عنوان الشحن:";
+"Billing Address" = "عنوان وصول الفواتير:";
+"Item Price" = "سعر المنتج:";
+"Paid Price" = "السعر المدفوع:";

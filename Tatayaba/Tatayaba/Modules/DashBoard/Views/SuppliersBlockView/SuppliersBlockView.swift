@@ -46,7 +46,7 @@ class SuppliersBlockView: UIView, UICollectionViewDelegate, UICollectionViewData
     //MARK:- Load Data
     func loadData() {
         setupUI()
-        titleLabel.text = "Brands"
+        titleLabel.text = "Brands".localized()
     }
 
     //MARK:- CollectionViewDelegate

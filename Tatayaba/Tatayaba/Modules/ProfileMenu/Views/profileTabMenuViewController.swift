@@ -9,35 +9,36 @@
 import UIKit
 import MOLH
 
-extension Constants {
-    struct Profile {
-        static let brands = "BRANDS".localized()
-        static let wishlist = "Wish List".localized()
-        static let myOrders = "My Orders".localized()
-        static let changeLanguage = "Change Language".localized()
-        static let currencies = "Currencies".localized()
-        static let changeCountry = "Change Country".localized()
-        static let privacyPolicy = "Privacy Policy".localized()
-        static let logout = "Logout".localized()
-        static let deliveryAndReturnPolicy = "Delivery and Return Policy".localized()
-        static let liveChat = "Live Chat".localized()
-        static let notifications = "Notifications".localized()
-        static let welcome = "Welcome".localized()
-        static let login = "LOG IN".localized()
-    }
+
+class Profile {
+    var brands = "BRANDS".localized()
+    var wishlist = "Wish List".localized()
+    var myOrders = "My Orders".localized()
+    var changeLanguage = "Change Language".localized()
+    var currencies = "Currencies".localized()
+    var changeCountry = "Change Country".localized()
+    var privacyPolicy = "Privacy Policy".localized()
+    var logout = "Logout".localized()
+    var deliveryAndReturnPolicy = "Delivery and Return Policy".localized()
+    var liveChat = "Live Chat".localized()
+    var notifications = "Notifications".localized()
+    var welcome = "Welcome".localized()
+    var login = "LOG IN".localized()
 }
+
 
 class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CountryViewDelegate, CurrencyViewDelegate {
 
-    var Session1: [String] = [Constants.Profile.myOrders]
+    let profile: Profile = Profile()
+    var Session1 = [String]()
     var Session1_img: [String] = ["Cart"]
 
-    var Session2: [String] = [Constants.Profile.changeLanguage, Constants.Profile.currencies, Constants.Profile.changeCountry, Constants.Profile.liveChat, Constants.Profile.notifications]
+    var Session2 = [String]()
     var Session2_img: [String] = ["settings", "settings", "settings", "liveChat", "Notifiction"]
 
 
-    var Session3: [String] = [Constants.Profile.deliveryAndReturnPolicy, Constants.Profile.privacyPolicy,Constants.Profile.logout]
-    var Session4: [String] = [Constants.Profile.deliveryAndReturnPolicy, Constants.Profile.privacyPolicy]
+    var Session3 = [String]()
+    var Session4 = [String]()
     var Session3_img: [String] = ["delivery", "privacy","logout"]
 
 
@@ -46,6 +47,10 @@ class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var profileMenu_tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        Session1 = [profile.myOrders]
+        Session2 = [profile.changeLanguage, profile.currencies, profile.changeCountry, profile.liveChat, profile.notifications]
+        Session3 = [profile.deliveryAndReturnPolicy, profile.privacyPolicy,profile.logout]
+        Session4 = [profile.deliveryAndReturnPolicy, profile.privacyPolicy]
          NavigationBarWithOutBackButton()
     }
 
@@ -54,13 +59,13 @@ class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITab
         navigationController?.isNavigationBarHidden = false
         self.tabBarController?.tabBar.isHidden = false
         if Customer.shared.loggedin && Customer.shared.user?.identifier != "" {
-            self.navigationItem.title = "\(Constants.Profile.welcome) \(Customer.shared.user?.firstname ?? "")"
+            self.navigationItem.title = "\(profile.welcome) \(Customer.shared.user?.firstname ?? "")"
         }
         if CurrencySettings.shared.currentCurrency != nil {
-            Session2[1] = CurrencySettings.shared.currentCurrency?.descriptionField ?? Constants.Profile.currencies
+            Session2[1] = CurrencySettings.shared.currentCurrency?.descriptionField ?? profile.currencies
         }
         if CountrySettings.shared.currentCountry != nil {
-            Session2[2] = CountrySettings.shared.currentCountry?.name ?? Constants.Profile.changeCountry
+            Session2[2] = CountrySettings.shared.currentCountry?.name ?? profile.changeCountry
         }
         self.profileMenu_tableView.reloadData()
     }
@@ -123,7 +128,7 @@ extension profileTabMenuViewController{
                 cell.title_img.isHidden = true
                 cell.accessoryType = UITableViewCell.AccessoryType.none
                 let sign_button = UIButton(frame: CGRect(x: UIScreen.main.bounds.size.width/2-70, y: 25, width: 150, height: 50))
-                sign_button.setTitle(Constants.Profile.login, for: .normal)
+                sign_button.setTitle(profile.login, for: .normal)
                 sign_button.addTarget(self, action: #selector(sign_buttonAction), for: .touchUpInside)
                 sign_button.setTitleColor(UIColor.black, for: .normal)
                 sign_button.layer.borderWidth = 1
@@ -151,39 +156,39 @@ extension profileTabMenuViewController{
         tableView.deselectRow(at: indexPath, animated: true)
         if  indexPath.section == 0 {
        let indextitle = self.Session1[indexPath.row]
-            if indextitle  == Constants.Profile.wishlist {
+            if indextitle  == profile.wishlist {
                 self.loadWishList()
-            } else if indextitle  == Constants.Profile.myOrders {
+            } else if indextitle  == profile.myOrders {
                 self.loadOrdersVC()
             }
 
         }else if  indexPath.section == 1 {
             let indextitle = self.Session2[indexPath.row]
-            if indextitle  == Constants.Profile.changeLanguage {
+            if indextitle  == profile.changeLanguage {
                 //setting page
                 changeLanguege()
             }
-            if indextitle  == Constants.Profile.currencies || indextitle  == CurrencySettings.shared.currentCurrency?.descriptionField {
+            if indextitle  == profile.currencies || indextitle  == CurrencySettings.shared.currentCurrency?.descriptionField {
                 loadCurrenciesVC()
             }
 
-            if indextitle == Constants.Profile.changeCountry || indextitle  == CountrySettings.shared.currentCountry?.name {
+            if indextitle == profile.changeCountry || indextitle  == CountrySettings.shared.currentCountry?.name {
                 self.loadCountries()
             }
-            if indextitle == Constants.Profile.liveChat {
+            if indextitle == profile.liveChat {
                 loadLiveChat()
             }
 
         }else if  indexPath.section == 2 {
             let indextitle = self.Session3[indexPath.row]
-            if indextitle  == Constants.Profile.privacyPolicy {
+            if indextitle  == profile.privacyPolicy {
             UserDefaults.standard.set("Privacy", forKey: "Privacy")
                 self.PrivacyView()
-            } else if indextitle  == Constants.Profile.deliveryAndReturnPolicy {
+            } else if indextitle  == profile.deliveryAndReturnPolicy {
             UserDefaults.standard.set("Delivery", forKey: "Privacy")
 
                  self.PrivacyView()
-            }else  if indextitle  == Constants.Profile.logout {
+            }else  if indextitle  == profile.logout {
                 Customer.shared.logout()
             self.loadFirstVC()
 
