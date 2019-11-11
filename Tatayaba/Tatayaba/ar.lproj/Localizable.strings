@@ -63,6 +63,7 @@
 "OPTIONS..." = "الاختيارات...";
 "ADD TO CART" = "أضف إلى السلة";
 "one click buy" = "شراء سريع";
+"ONE CLICK BUY" = "شراء سريع";
 "Currencies" = "العملات";
 // Settings
 "Change Country"="تغيير الدولة";
@@ -75,8 +76,8 @@
 "Comment" = "تعليق";
 "Phone" = "رقم الجوال";
 "Name" = "الاسم";
-"Tracking #:" = "تتبع #:";
-"Order Value:" = "قيمه الطلب:";
+"Tracking" = "تتبع #:";
+"Order Value" = "قيمه الطلب:";
 "Track Order" = "تتبع الطلب";
 "View invoice" = "عرض الفاتوره";
 "Shipping" = "الشحن:";
