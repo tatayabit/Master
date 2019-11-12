@@ -120,9 +120,16 @@ extension profileTabMenuViewController{
         let cellIdentifier = "ProfileMenuTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ProfileMenuTableViewCell
         if  indexPath.section == 0 {
+            
             if Customer.shared.loggedin && Customer.shared.user?.identifier != "" {
+                cell.title_lbl.isHidden = false
+                cell.title_img.isHidden = false
                 cell.title_lbl.text = self.Session1[indexPath.row]
                 cell.title_img.image = UIImage(named: self.Session1_img[indexPath.row])
+                for button in cell.subviews  where button is UIButton {
+                    button.removeFromSuperview()
+                }
+
             } else {
                 cell.title_lbl.isHidden = true
                 cell.title_img.isHidden = true

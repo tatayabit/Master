@@ -26,8 +26,8 @@ struct GuestSignUpViewModel {
                     switch profileResult {
                     case .success(let profileResponse):
                         guard let userResponse = profileResponse else { return }
-
                         print(userResponse)
+                        Customer.shared.setUser(userResponse)
                     case .failure(let profileError):
                         print("the profile error \(profileError)")
                     }
