@@ -91,3 +91,5 @@
 
 // Products list
 "No Products found!"= "لا يوجد منتجات!";
+"SECURE CHECKOUT" = "الدفع بامان";
+"SHIP TO" = "عنوان التوصيل";

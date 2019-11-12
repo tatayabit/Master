@@ -11,6 +11,7 @@ import Moya
 enum UserEndpoint {
     case signUp(user: User)
     case gusetSignUp(user: User)
+    case updateProfile(user: User)
     case login(user: User)
     case forgetPassword(email: String)
     case getProfile(userId: Int)
@@ -39,9 +40,11 @@ extension UserEndpoint: TargetType {
             return "users"
         case .gusetSignUp:
             return "users"
+        case .updateProfile:
+            return "4.0/TtmUsers"
         case .getProfile(let userId):
             let version = "4.0"
-            return "\(version.urlEscaped)/TtmUsers/\(userId)"
+            return "\(version.urlEscaped)/TtmUsers/\(userId)/"
         case .login:
             return "4.0/TtmAuth"
         case .forgetPassword:
@@ -51,7 +54,7 @@ extension UserEndpoint: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .signUp,.gusetSignUp, .login:
+        case .signUp,.gusetSignUp, .login, .updateProfile:
             return .post
         case .getProfile, .forgetPassword:
             return .get
@@ -70,7 +73,7 @@ extension UserEndpoint: TargetType {
     var task: Task {
         switch self {
         case .signUp(let user):
-            
+        
             return .requestParameters(parameters: [ "email": user.email ,
                                                     "firstname": user.firstname ,
                                                     "password": user.password ,
@@ -86,6 +89,19 @@ extension UserEndpoint: TargetType {
                                                     "user_type": "C",
                                                     "company_id": 1,
                                                     "status": "A"
+                ], encoding: JSONEncoding.default)
+        case .updateProfile(let user):
+            return .requestParameters(parameters: [ "update": "Y",
+                                                    "user_id" : user.identifier,
+                                                    "firstname": user.firstname,
+                                                    "b_firstname": user.firstname,
+                                                    "b_address": user.billingAddress,
+                                                    "b_city": user.billingCity,
+                                                    "b_county": user.billingCountry,
+                                                    "b_state": user.state,
+                                                    "b_country": user.billingCountry,
+                                                    "b_zipcode": user.zipCode,
+                                                    "b_phone": user.billingPhone
                 ], encoding: JSONEncoding.default)
         case .getProfile:
             return .requestPlain
