@@ -47,6 +47,7 @@ class SupplierProductsViewController: BaseViewController, UICollectionViewDelega
     }
 
     func setupUI() {
+        NavigationBarWithBackButton()
         productsCollectionView.register(ProductsBlockCollectionViewCell.nib, forCellWithReuseIdentifier: ProductsBlockCollectionViewCell.identifier)
         self.supplierNameLabel.text = viewModel?.supplier.name
     }
