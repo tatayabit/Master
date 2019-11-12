@@ -25,6 +25,8 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
     @IBOutlet var phoneNumberTextField: SkyFloatingLabelTextField!
 
     private let viewModel = UpdateProfileViewModel()
+    private let guestViewModel = GuestSignUpViewModel()
+    
     private let validator = Validator()
     private var user: User?
     private var country: Country?
@@ -84,7 +86,9 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
         user?.state = stateTextField.text ?? ""
         user?.zipCode = zipCodeTextField.text ?? ""
         if let user = user {
+            showLoadingIndicator(to: self.view)
             viewModel.updateProfile(user: user) { result in
+                self.hideLoadingIndicator(from: self.view)
                 switch result {
                 case .success(let updateProfileResult):
                     if let user = updateProfileResult {
@@ -103,8 +107,38 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
                 }
             }
         } else {
-            Customer.shared.setUser(user ?? User(email: emailTextField.text ?? "", firstname: fullNameTextField.text ?? "", password: passwordTextField.text ?? "",shippingCity: cityTextField.text ?? "",shippingCountry: countryTextField.text ?? "",shippingPhone: phoneNumberTextField.text ?? "",shippingAddress: addressLine1TextField.text ?? "",state: stateTextField.text ?? "",zipCode: zipCodeTextField.text ?? ""))
-            navigationController?.popViewController(animated: true)
+            showLoadingIndicator(to: self.view)
+            guard let email = emailTextField.text else { return }
+            guard let password = passwordTextField.text else { return }
+            guard let firstname = fullNameTextField.text else { return }
+            guard let billingAddress = addressLine1TextField.text else { return }
+            guard let billingCity = cityTextField.text else { return }
+            guard let billingCountry = countryTextField.text else { return }
+            guard let billingPhone = phoneNumberTextField.text else { return }
+            guard let state = stateTextField.text else { return }
+            guard let zipCode = zipCodeTextField.text else { return }
+            
+            let user = User(email: email, firstname: firstname, lastname: firstname, password: password, billingAddress: billingAddress,billingCity: billingCity,billingCountry: billingCountry,billingPhone: billingPhone,state: state,zipCode: zipCode)
+            
+            guestViewModel.guestSignUp(user: user) { result in
+                self.hideLoadingIndicator(from: self.view)
+                switch result {
+                case .success(let guestSignUpResult):
+                    if let user = guestSignUpResult {
+                        print(user)
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                case .failure(let error):
+                    print("the error \(error)")
+                    do {
+                        if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
+                            self.showErrorAlerr(title: "AcceessDenied".localized(), message: errorMessage, handler: nil)
+                        }
+                    }
+                    catch{
+                    }
+                }
+            }
         }
     }
     
