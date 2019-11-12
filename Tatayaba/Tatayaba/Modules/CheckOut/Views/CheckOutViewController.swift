@@ -99,7 +99,21 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
                         
                     case .failure(let error):
                         print("the error \(error)")
-                        self.showErrorAlerr(title: Constants.Common.error, message: error.localizedDescription, handler: nil)
+
+                        if let response = error.response {
+                            do {
+                                
+                                let decoder = JSONDecoder()
+                                let errorMessage = try decoder.decode(ErrorMessage.self, from: response.data)
+                                  print(errorMessage)
+                                self.showErrorAlerr(title: Constants.Common.error, message: errorMessage.message, handler: nil)
+                            } catch let errX {
+                                print("errX: ", errX)
+                            }
+                        } else {
+                            self.showErrorAlerr(title: Constants.Common.error, message: error.localizedDescription, handler: nil)
+
+                        }
                     }
                 }
             }
