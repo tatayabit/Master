@@ -20,7 +20,7 @@ struct SuppliersAPIClient: APIClient {
         fetch(with: SuppliersEndpoint.getSuppliers(page: String(page)), completion: completion)
     }
 
-    func getSupplierDetails(supplierId: String, completion: @escaping (APIResult<Supplier?, MoyaError>) -> Void) {
-        fetch(with: SuppliersEndpoint.getSupplierDetails(supplierId: supplierId), completion: completion)
+    func getSupplierDetails(supplierId: String, page: Int, completion: @escaping (APIResult<Supplier?, MoyaError>) -> Void) {
+        fetch(with: SuppliersEndpoint.getSupplierDetails(supplierId: supplierId, page: String(page)), completion: completion)
     }
 }

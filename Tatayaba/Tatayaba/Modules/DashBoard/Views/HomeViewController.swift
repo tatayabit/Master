@@ -240,7 +240,7 @@ extension HomeViewController {
             }
             
             if let deeplink = sender as? DeepLinkModel {
-                productsListVC.viewModel = viewModel.catProductsListViewModel(with: deeplink.id)
+                productsListVC.viewModel = viewModel.catProductsListViewModel(with: deeplink.id, title: deeplink.title)
             }
         }
 

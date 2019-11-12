@@ -140,6 +140,11 @@ extension SuppliersListViewController: SuppliersListViewModelDelegate {
 
         guard newIndexPathsToReload != nil else {
             self.supplierCollection_View.reloadData()
+            if viewModel.totalCount == 0 {
+                showErrorAlerr(title: "", message: Constants.Products.noProductsFound) { _ in
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
             return
         }
         // 2

@@ -87,3 +87,7 @@
 "Billing Address" = "عنوان وصول الفواتير:";
 "Item Price" = "سعر المنتج:";
 "Paid Price" = "السعر المدفوع:";
+
+
+// Products list
+"No Products found!"= "لا يوجد منتجات!";

@@ -10,7 +10,7 @@ import Moya
 
 enum SuppliersEndpoint {
     case getSuppliers(page: String)
-    case getSupplierDetails(supplierId: String)
+    case getSupplierDetails(supplierId: String, page: String)
 }
 
 
@@ -34,7 +34,7 @@ extension SuppliersEndpoint: TargetType {
         case .getSuppliers:
             let version = "4.0"
             return "\(version.urlEscaped)/TtmSuppliers/"
-        case .getSupplierDetails(let supplierId):
+        case .getSupplierDetails(let supplierId, _):
             let version = "4.0"
             return "\(version.urlEscaped)/TtmSuppliers/\(supplierId.urlEscaped)"
         }
@@ -64,10 +64,11 @@ extension SuppliersEndpoint: TargetType {
                                                 "items_per_page": 20,
                                                 "page": page.urlEscaped
             ], encoding: URLEncoding.default)
-        case .getSupplierDetails:
-//            return .requestPlain
+        case .getSupplierDetails(_, let page):
             return .requestParameters(parameters: [
-                                                "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw"
+                                                "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
+                                                "items_per_page": 20,
+                                                "page": page.urlEscaped
             ], encoding: URLEncoding.default)
 //            "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
         }
