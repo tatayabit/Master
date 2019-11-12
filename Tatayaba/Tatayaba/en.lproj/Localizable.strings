@@ -38,6 +38,8 @@
 "Privacy Policy"="Privacy Policy";
 "BRANDS"="Brands";
 "Logout"="Logout";
+"Live Chat" = "Live Chat";
+"Notifications" = "Notifications";
 "Delivery and Return Policy"="Delivery and Return Policy";
 
 // Concierge
@@ -62,9 +64,28 @@
 // Product
 "OPTIONS..." = "OPTIONS...";
 "ADD TO CART" = "ADD TO CART";
+"one click buy" = "one click buy";
+"ONE CLICK BUY" = "ONE CLICK BUY";
 "Currencies" = "Currencies";
 // Settings
 "Change Country"="Change Country";
 "active" = "Active";
 "hidden" = "Hidden";
 "disabled" = "Disabled";
+"Brands" = "Brands";
+"seeMore" = "See More";
+"Perfume Name" = "Perfume Name";
+"Comment" = "Comment";
+"Phone" = "Phone";
+"Name" = "Name";
+"Tracking" = "Tracking #:";
+"Order Value" = "Order Value:";
+"Track Order" = "Track Order";
+"View invoice" = "View invoice";
+"Shipping" = "Shipping:";
+"Order date" = "Order date:";
+"Payment Method" = "Payment Method:";
+"Shipping Address" = "Shipping Address:";
+"Billing Address" = "Billing Address:";
+"Item Price" = "Item Price:";
+"Paid Price" = "Paid Price:";

@@ -90,13 +90,13 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                     totalPriceValue += Float(customDutiesStringValue) ?? 0.0
                 }
             }
-            
-            if let taxStringValue = taxValue?.vat?.value {
-                if taxValue?.vat?.type == "P" {
-                    totalPriceValue += (totalPriceValue * (Float(taxStringValue)!)) / 100
-                } else {
-                    totalPriceValue += Float(taxStringValue) ?? 0.0
-                }
+        }
+        
+        if let taxStringValue = taxValue?.vat?.value {
+            if taxValue?.vat?.type == "P" {
+                totalPriceValue += (totalPriceValue * (Float(taxStringValue)!)) / 100
+            } else {
+                totalPriceValue += Float(taxStringValue) ?? 0.0
             }
         }
         
@@ -351,6 +351,9 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                         if promotionValue.errorMessage == nil {
                             if promotionValue.bonuses?.first?.bonus == BonusTypes.orderDiscount.rawValue {
                                 self.promotionData = promotionValue
+                                let trimmedCodeString = (self.couponTextField.text)?.trimmingCharacters(in: .whitespaces)
+
+                                self.cart.code = trimmedCodeString ?? ""
                                 self.calculateTotal()
                                 self.couponTextField.text = ""
                                 self.couponTextFieldView.endEditing(true)

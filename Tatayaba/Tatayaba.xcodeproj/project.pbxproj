@@ -189,6 +189,7 @@
 		11FEB4D822DF822A00F2E9B8 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FEB4D722DF822A00F2E9B8 /* ProductDetailsViewController.swift */; };
 		11FEB4E022DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FEB4DE22DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.swift */; };
 		11FEB4E122DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FEB4DF22DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib */; };
+		274291882379B73D00B413BA /* IBDesignable+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274291872379B73C00B413BA /* IBDesignable+Localize.swift */; };
 		27497C53234E4EF600D84690 /* GuestSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27497C50234E4EF500D84690 /* GuestSignUpViewModel.swift */; };
 		27497C54234E4EF600D84690 /* GuestSignUpViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27497C52234E4EF500D84690 /* GuestSignUpViewcontroller.swift */; };
 		2767CB8F236471BC0042F533 /* OrderMainInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767CB8E236471BC0042F533 /* OrderMainInfoCell.swift */; };
@@ -481,6 +482,7 @@
 		11FEB4DF22DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductImageCarouselCollectionViewCell.xib; sourceTree = "<group>"; };
 		20779A04B1BCECF103C599EE /* Pods-Tatayaba.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tatayaba.release.xcconfig"; path = "Target Support Files/Pods-Tatayaba/Pods-Tatayaba.release.xcconfig"; sourceTree = "<group>"; };
 		22CC9CEE04574A387EDF22EE /* Pods-TatayabaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.release.xcconfig"; sourceTree = "<group>"; };
+		274291872379B73C00B413BA /* IBDesignable+Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IBDesignable+Localize.swift"; sourceTree = "<group>"; };
 		27497C50234E4EF500D84690 /* GuestSignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestSignUpViewModel.swift; sourceTree = "<group>"; };
 		27497C52234E4EF500D84690 /* GuestSignUpViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestSignUpViewcontroller.swift; sourceTree = "<group>"; };
 		2767CB8E236471BC0042F533 /* OrderMainInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderMainInfoCell.swift; sourceTree = "<group>"; };
@@ -1379,6 +1381,7 @@
 		11D4917822CBCF7A009D8B23 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				274291872379B73C00B413BA /* IBDesignable+Localize.swift */,
 				11D4917922CBCF8B009D8B23 /* UIView+Extensions.swift */,
 				11B07918233BAF31003041E8 /* UITableView+Extensions.swift */,
 				11B0790F233A7661003041E8 /* UIImage+Extensions.swift */,
@@ -2409,6 +2412,7 @@
 				11FB5861231C3EA7005DA4F0 /* SupplierIcon.swift in Sources */,
 				106751DD235B7A590031F3E7 /* PaymentRedirectResult.swift in Sources */,
 				10645967235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift in Sources */,
+				274291882379B73D00B413BA /* IBDesignable+Localize.swift in Sources */,
 				27E8534223775F00002649BE /* Currency.swift in Sources */,
 				115795C4233001E70002075E /* SupplierProductsViewController.swift in Sources */,
 				84BC089A22DC7D3400C6180E /* CartViewModel.swift in Sources */,

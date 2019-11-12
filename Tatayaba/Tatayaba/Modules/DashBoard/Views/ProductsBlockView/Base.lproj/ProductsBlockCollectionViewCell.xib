@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -51,7 +51,7 @@
                         <color key="backgroundColor" red="0.87450980389999999" green="0.63921568630000003" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="faQ-pZ-zOp"/>
-                            <constraint firstAttribute="width" constant="40" id="sao-PQ-Bp6"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="sao-PQ-Bp6"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="7"/>
                         <color key="textColor" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -73,6 +73,7 @@
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="3"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="ADD TO CART"/>
                         </userDefinedRuntimeAttributes>
                         <connections>
                             <action selector="addToCartAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="lbX-Hp-acW"/>
@@ -104,6 +105,9 @@
                         <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="8"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="one click buy"/>
+                        </userDefinedRuntimeAttributes>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14.500 KWD" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="none" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7V-tf-fQL">
                         <rect key="frame" x="7" y="155" width="154" height="13"/>
@@ -137,7 +141,7 @@
                         <rect key="frame" x="22" y="108" width="55" height="14"/>
                         <color key="backgroundColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="0.41177926936619719" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="55" id="CnT-Xf-1Pp"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="CnT-Xf-1Pp"/>
                             <constraint firstAttribute="height" constant="14" id="ZXa-Go-3Ce"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="8"/>
@@ -151,7 +155,7 @@
                 <constraint firstItem="lJx-Wu-3a2" firstAttribute="bottom" secondItem="Ndg-qA-zgg" secondAttribute="bottom" id="0yt-mV-nYP"/>
                 <constraint firstItem="lJx-Wu-3a2" firstAttribute="top" secondItem="H7V-tf-fQL" secondAttribute="bottom" constant="2" id="ENE-ld-QZz"/>
                 <constraint firstAttribute="trailing" secondItem="H7V-tf-fQL" secondAttribute="trailing" constant="7" id="FYb-J2-8ch"/>
-                <constraint firstItem="P5I-jM-puR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="22" id="Ljt-Oo-7wO"/>
+                <constraint firstItem="P5I-jM-puR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ljt-Oo-7wO"/>
                 <constraint firstItem="5M2-iy-DXo" firstAttribute="centerX" secondItem="Ndg-qA-zgg" secondAttribute="centerX" id="Lq7-VC-hd2"/>
                 <constraint firstItem="5M2-iy-DXo" firstAttribute="centerY" secondItem="Ndg-qA-zgg" secondAttribute="centerY" id="M7s-I7-EFc"/>
                 <constraint firstItem="hOq-pl-Bgm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="Mg1-U9-yWw"/>
@@ -166,10 +170,11 @@
                 <constraint firstItem="wdI-c6-iOC" firstAttribute="top" secondItem="5bD-Qe-4T2" secondAttribute="top" constant="8" id="Yqz-gI-bLp"/>
                 <constraint firstItem="lJx-Wu-3a2" firstAttribute="leading" secondItem="rcq-m0-cLY" secondAttribute="leading" constant="2" id="Zx0-MJ-vTp"/>
                 <constraint firstAttribute="trailing" secondItem="5bD-Qe-4T2" secondAttribute="trailing" constant="20" id="a2P-P0-0sN"/>
-                <constraint firstItem="wdI-c6-iOC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="aa0-yB-cde"/>
+                <constraint firstItem="wdI-c6-iOC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" id="aa0-yB-cde"/>
                 <constraint firstItem="uau-dH-D7f" firstAttribute="top" secondItem="5bD-Qe-4T2" secondAttribute="bottom" constant="2" id="axW-Mw-URh"/>
                 <constraint firstAttribute="trailing" secondItem="rcq-m0-cLY" secondAttribute="trailing" constant="3" id="cyn-YO-cEo"/>
                 <constraint firstItem="hOq-pl-Bgm" firstAttribute="top" secondItem="uau-dH-D7f" secondAttribute="bottom" constant="3" id="fKV-ii-AH0"/>
+                <constraint firstAttribute="trailing" secondItem="wdI-c6-iOC" secondAttribute="trailing" constant="116" id="frM-dT-9rM"/>
                 <constraint firstItem="lJx-Wu-3a2" firstAttribute="top" secondItem="Ndg-qA-zgg" secondAttribute="top" id="iJo-54-CIy"/>
                 <constraint firstAttribute="bottom" secondItem="rcq-m0-cLY" secondAttribute="bottom" constant="3" id="kKf-np-foP"/>
                 <constraint firstItem="Ndg-qA-zgg" firstAttribute="leading" secondItem="lJx-Wu-3a2" secondAttribute="trailing" constant="2" id="plK-Ct-Fkb"/>
@@ -178,6 +183,7 @@
                 <constraint firstItem="5bD-Qe-4T2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="toG-Fh-NLP"/>
                 <constraint firstAttribute="trailing" secondItem="uau-dH-D7f" secondAttribute="trailing" constant="7" id="ug3-uc-Wle"/>
                 <constraint firstItem="uau-dH-D7f" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="wGS-W7-ss6"/>
+                <constraint firstAttribute="trailing" secondItem="P5I-jM-puR" secondAttribute="trailing" constant="91" id="wKv-Va-LaU"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="210" height="245"/>
