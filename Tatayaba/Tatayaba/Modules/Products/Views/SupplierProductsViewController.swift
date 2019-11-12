@@ -140,12 +140,20 @@ extension SupplierProductsViewController: SupplierProductsViewModelDelegate {
 
         guard newIndexPathsToReload != nil else {
             productsCollectionView.reloadData()
+            guard let viewModel = viewModel else { return }
+            if viewModel.totalCount == 0 {
+                showErrorAlerr(title: "", message: Constants.Products.noProductsFound) { _ in
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
             return
         }
         // 2
         if let newIndexPathsToReload = newIndexPathsToReload {
             productsCollectionView.insertItems(at: newIndexPathsToReload)
         }
+        
+        
     }
     
     func onFetchFailed(with reason: String) {

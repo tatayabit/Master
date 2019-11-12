@@ -144,3 +144,9 @@ class CatProductsViewModel {
         return product(at: indexPath).isInStock
     }
 }
+
+extension Constants {
+    struct Products {
+        static let noProductsFound = "No Products found!".localized()
+    }
+}
