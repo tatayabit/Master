@@ -15,7 +15,7 @@ extension String {
 
     var formattedPrice: String {
         let priceFloat = Float(self)
-        return String(format: "%.3f KD", priceFloat ?? "0.000 KD")
+        return String(format: "%.3f \(CurrencySettings.shared.currentCurrency?.currencyCode ?? "KD")", priceFloat ?? "0.000 \(CurrencySettings.shared.currentCurrency?.currencyCode ?? "KD")")
     }
     
     func stripOutHtml() -> String {

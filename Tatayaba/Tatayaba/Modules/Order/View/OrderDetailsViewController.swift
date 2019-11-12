@@ -33,7 +33,7 @@ class OrderDetailsViewController: BaseViewController {
             self.hideLoadingIndicator(from: self.view)
             if let currentOrder = self.viewModel?.order {
                 self.order = currentOrder
-                self.cellsCount = 4 + self.order.products.count
+                self.cellsCount = 3 + self.order.products.count
                 self.orderDetailstableView.reloadData()
             }
         }
@@ -57,10 +57,12 @@ extension OrderDetailsViewController: UITableViewDataSource, UITableViewDelegate
             cell.trackingID.text = order.paymentInfo?.trackId
             cell.orderValue.text = "\(order.totalPrice)".formattedPrice
             return cell
-        } else if indexPath.row == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "OrderTrackCell") as! OrderTrackCell
-            return cell
-        } else if indexPath.row == 2 {
+        }
+//        else if indexPath.row == 1 {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "OrderTrackCell") as! OrderTrackCell
+//            return cell
+//        }
+        else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "OrderDetailsCell") as! OrderDetailsCell
             cell.shippingValue.text = order.shippingCost
             if let timeStampDouble = Double(order.timestamp) {
@@ -69,7 +71,7 @@ extension OrderDetailsViewController: UITableViewDataSource, UITableViewDelegate
             }
             cell.paymentMethod.text = order.paymentMethod?.payment
             return cell
-        } else if indexPath.row == 3 {
+        } else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "OrderAddressCell") as! OrderAddressCell
             cell.shippingAddress.text = order.shippingCity + ", " + order.shippingCountry
             
@@ -77,7 +79,7 @@ extension OrderDetailsViewController: UITableViewDataSource, UITableViewDelegate
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "OrderProductsCell") as! OrderProductsCell
-            cell.configCell(product: order.products[indexPath.row - 4])
+            cell.configCell(product: order.products[indexPath.row - 3])
             return cell
         }
     }
@@ -85,11 +87,13 @@ extension OrderDetailsViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return 150
-        } else if indexPath.row == 1 {
-            return 70
-        } else if indexPath.row == 2 {
+        }
+//        else if indexPath.row == 1 {
+//            return 70
+//        }
+        else if indexPath.row == 1 {
             return 100
-        } else if indexPath.row == 3 {
+        } else if indexPath.row == 2 {
             return UITableView.automaticDimension
         } else {
             return 170

@@ -47,16 +47,18 @@ class ProductDeatailsTableViewCellViewModel {
     //MARK:- Product Details
     func increase() {
         let maxQuantity = product.maxQuantity
+        let stockQuantity = product.amount
+        let max = Int(maxQuantity) ?? 0
         if let cartItem = Cart.shared.cartItemsArr.filter({ $0.productId == String(product.identifier) }).first {
-            if let max = Int(maxQuantity), max <= cartItem.count + selectedQuantity {
+            if max <= cartItem.count + selectedQuantity {
                 // max reached
-            } else {
+            } else if stockQuantity > max {
                 self.selectedQuantity += 1
             }
         } else {
-            if let max = Int(maxQuantity), max <= selectedQuantity {
+            if max <= selectedQuantity {
                 // max reached
-            } else {
+            } else if stockQuantity > max {
                 self.selectedQuantity += 1
             }
         }

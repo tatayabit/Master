@@ -26,6 +26,10 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
         
         addconciergeSubView()
         imagePicker.delegate = self
+        if let country = CountrySettings.shared.currentCountry {
+            conciergeSubView.countryButton.setTitle(country.name, for: .normal)
+            conciergeSubView.country = country
+        }
         self.NavigationBarWithOutBackButton()
         
     }
