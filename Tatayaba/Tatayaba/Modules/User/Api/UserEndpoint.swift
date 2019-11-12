@@ -44,7 +44,7 @@ extension UserEndpoint: TargetType {
             return "4.0/TtmUsers"
         case .getProfile(let userId):
             let version = "4.0"
-            return "\(version.urlEscaped)/TtmUsers/\(userId)/"
+            return "\(version.urlEscaped)/TtmUsers/\(userId)"
         case .login:
             return "4.0/TtmAuth"
         case .forgetPassword:
