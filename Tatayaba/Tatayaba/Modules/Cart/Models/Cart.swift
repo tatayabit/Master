@@ -30,9 +30,11 @@ class Cart {
         if productExistedInCart(product: product) {
             let cartItem = self.cartItem(for: product, options: options)
             let maxQuantity = product.maxQuantity
-            if let max = Int(maxQuantity), max <= cartItem.count {
+            let stockQuantity = product.amount
+            let max = Int(maxQuantity) ?? 0
+            if max <= cartItem.count {
                 // max reached
-            } else {
+            } else if stockQuantity > max {
                 increaseCount(cartItem: cartItem, quantity: quantity)
             }
         } else {
