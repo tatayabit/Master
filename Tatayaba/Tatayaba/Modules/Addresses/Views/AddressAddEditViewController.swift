@@ -24,6 +24,7 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
 
     @IBOutlet var phoneNumberTextField: SkyFloatingLabelTextField!
 
+    private let viewModel = UpdateProfileViewModel()
     private let validator = Validator()
     private var user: User?
     private var country: Country?
@@ -45,10 +46,12 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
         if Customer.shared.loggedin {
             if let currentUser = Customer.shared.user {
                 fullNameTextField.text = currentUser.firstname
-                addressLine1TextField.text = currentUser.shippingAddress
-                cityTextField.text = currentUser.shippingCity
+                addressLine1TextField.text = currentUser.billingAddress
+                cityTextField.text = currentUser.billingCity
 //                countryTextField.text = currentUser.shippingCountry
-                phoneNumberTextField.text = currentUser.shippingPhone
+                phoneNumberTextField.text = currentUser.billingPhone
+                stateTextField.text = currentUser.state
+                zipCodeTextField.text = currentUser.zipCode
                 user = currentUser
                 guestCompletDataView.isHidden = true
             }
@@ -74,15 +77,33 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
     //MARK:- Validation Delegate
     func validationSuccessful() {
         print("Validation Success!")
-        user?.shippingAddress = addressLine1TextField.text ?? ""
-        user?.shippingCity = cityTextField.text ?? ""
-        user?.shippingCountry = countryTextField.text ?? ""
-        user?.shippingPhone = phoneNumberTextField.text ?? ""
+        user?.billingAddress = addressLine1TextField.text ?? ""
+        user?.billingCity = cityTextField.text ?? ""
+        user?.billingCountry = countryTextField.text ?? ""
+        user?.billingPhone = phoneNumberTextField.text ?? ""
+        user?.state = stateTextField.text ?? ""
+        user?.zipCode = zipCodeTextField.text ?? ""
         if let user = user {
-            Customer.shared.setUser(user)
-            navigationController?.popViewController(animated: true)
+            viewModel.updateProfile(user: user) { result in
+                switch result {
+                case .success(let updateProfileResult):
+                    if let user = updateProfileResult {
+                        print(user)
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                case .failure(let error):
+                    print("the error \(error)")
+                    do {
+                        if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
+                            self.showErrorAlerr(title: "AcceessDenied".localized(), message: errorMessage, handler: nil)
+                        }
+                    }
+                    catch{
+                    }
+                }
+            }
         } else {
-            Customer.shared.setUser(user ?? User(email: emailTextField.text ?? "", firstname: fullNameTextField.text ?? "", password: passwordTextField.text ?? "",shippingCity: cityTextField.text ?? "",shippingCountry: countryTextField.text ?? "",shippingPhone: phoneNumberTextField.text ?? "",shippingAddress: addressLine1TextField.text ?? ""))
+            Customer.shared.setUser(user ?? User(email: emailTextField.text ?? "", firstname: fullNameTextField.text ?? "", password: passwordTextField.text ?? "",shippingCity: cityTextField.text ?? "",shippingCountry: countryTextField.text ?? "",shippingPhone: phoneNumberTextField.text ?? "",shippingAddress: addressLine1TextField.text ?? "",state: stateTextField.text ?? "",zipCode: zipCodeTextField.text ?? ""))
             navigationController?.popViewController(animated: true)
         }
     }

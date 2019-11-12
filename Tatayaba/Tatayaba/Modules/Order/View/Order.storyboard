@@ -648,6 +648,7 @@
                                         <connections>
                                             <outlet property="companyName" destination="zhc-2p-N9S" id="B1M-6l-4vg"/>
                                             <outlet property="paidPrice" destination="oL3-SL-c0K" id="vGw-dy-siC"/>
+                                            <outlet property="productImage" destination="4Rm-OU-HSa" id="Zsw-xj-u2e"/>
                                             <outlet property="productName" destination="5rO-Dh-hoy" id="gcr-ze-Fz0"/>
                                             <outlet property="productPrice" destination="KHg-86-7zX" id="1tm-5r-Sbk"/>
                                             <outlet property="productStatus" destination="7ky-Gy-Uku" id="vh0-Nd-94z"/>

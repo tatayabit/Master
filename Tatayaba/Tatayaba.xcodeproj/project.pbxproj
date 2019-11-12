@@ -190,6 +190,7 @@
 		11FEB4E022DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FEB4DE22DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.swift */; };
 		11FEB4E122DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FEB4DF22DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib */; };
 		274291882379B73D00B413BA /* IBDesignable+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274291872379B73C00B413BA /* IBDesignable+Localize.swift */; };
+		2742918A237AB3A400B413BA /* UpdateProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27429189237AB3A400B413BA /* UpdateProfileViewModel.swift */; };
 		27497C53234E4EF600D84690 /* GuestSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27497C50234E4EF500D84690 /* GuestSignUpViewModel.swift */; };
 		27497C54234E4EF600D84690 /* GuestSignUpViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27497C52234E4EF500D84690 /* GuestSignUpViewcontroller.swift */; };
 		2767CB8F236471BC0042F533 /* OrderMainInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767CB8E236471BC0042F533 /* OrderMainInfoCell.swift */; };
@@ -483,6 +484,7 @@
 		20779A04B1BCECF103C599EE /* Pods-Tatayaba.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tatayaba.release.xcconfig"; path = "Target Support Files/Pods-Tatayaba/Pods-Tatayaba.release.xcconfig"; sourceTree = "<group>"; };
 		22CC9CEE04574A387EDF22EE /* Pods-TatayabaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.release.xcconfig"; sourceTree = "<group>"; };
 		274291872379B73C00B413BA /* IBDesignable+Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IBDesignable+Localize.swift"; sourceTree = "<group>"; };
+		27429189237AB3A400B413BA /* UpdateProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewModel.swift; sourceTree = "<group>"; };
 		27497C50234E4EF500D84690 /* GuestSignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestSignUpViewModel.swift; sourceTree = "<group>"; };
 		27497C52234E4EF500D84690 /* GuestSignUpViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestSignUpViewcontroller.swift; sourceTree = "<group>"; };
 		2767CB8E236471BC0042F533 /* OrderMainInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderMainInfoCell.swift; sourceTree = "<group>"; };
@@ -1424,6 +1426,7 @@
 			isa = PBXGroup;
 			children = (
 				11D612A222CE4978000D42C3 /* SignUpViewModel.swift */,
+				27429189237AB3A400B413BA /* UpdateProfileViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -2578,6 +2581,7 @@
 				8407BAB922E86205001F2C2A /* OrdersViewController.swift in Sources */,
 				100B8D5F236F2F52000E11E8 /* CountriesAPIClient.swift in Sources */,
 				116C937022F0949B00921893 /* CartItem.swift in Sources */,
+				2742918A237AB3A400B413BA /* UpdateProfileViewModel.swift in Sources */,
 				4CC343A8232F9FAF005BA810 /* ProfileMenuTableViewCell.swift in Sources */,
 				27AB3009236710AC00CFBF59 /* ImageZoomViewController.swift in Sources */,
 				2767CB8F236471BC0042F533 /* OrderMainInfoCell.swift in Sources */,

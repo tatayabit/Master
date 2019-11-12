@@ -66,9 +66,10 @@ extension CountryViewController{
         tableView.deselectRow(at: indexPath, animated: true)
         if viewType == 0 {
             delegate?.countrySelected(selectedCountry: countriesList[indexPath.row])
+            navigationController?.popViewController(animated: true)
         } else {
-            currencyDelegate?.currencySelected(selectedCurrency: currenciesList[indexPath.row])
+            CurrencySettings.shared.currentCurrency = currenciesList[indexPath.row]
+            navigateToHome()
         }
-        navigationController?.popViewController(animated: true)
     }
 }

@@ -490,6 +490,7 @@
                         <outlet property="passwordTextField" destination="p4T-4J-99g" id="LPn-RY-0GO"/>
                         <outlet property="phoneNumberTextField" destination="ryv-qA-Mc2" id="DLA-Q8-zUG"/>
                         <outlet property="stateTextField" destination="o3g-aX-PWs" id="f4O-PL-E7t"/>
+                        <outlet property="zipCodeTextField" destination="qYu-Vn-F1T" id="gwE-jP-p7b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xGC-fd-N1p" userLabel="First Responder" sceneMemberID="firstResponder"/>

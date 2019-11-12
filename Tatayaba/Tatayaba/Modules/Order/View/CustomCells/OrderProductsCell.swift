@@ -15,6 +15,7 @@ private enum ProductStatus: String, CaseIterable {
 }
 class OrderProductsCell: UITableViewCell {
 
+    @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var companyName: UILabel!
     @IBOutlet weak var productPrice: UILabel!
@@ -33,6 +34,7 @@ class OrderProductsCell: UITableViewCell {
     }
 
     func configCell(product: Product) {
+        productImage.sd_setImage(with: URL(string: product.mainPair.detailedPair.imageUrl), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
         productName.text = product.name
         companyName.text = product.supplierName
         productPrice.text = product.price.formattedPrice
