@@ -43,7 +43,7 @@ extension UserEndpoint: TargetType {
         case .updateProfile:
             return "4.0/TtmUsers"
         case .getProfile:
-            return "4.0/TtmUser"
+            return "4.0/TtmUsers"
         case .login:
             return "4.0/TtmAuth"
         case .forgetPassword:
