@@ -93,6 +93,7 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
                 case .success(let updateProfileResult):
                     if let user = updateProfileResult {
                         print(user)
+                        Customer.shared.setUser(user)
                         self.navigationController?.popViewController(animated: true)
                     }
                 case .failure(let error):
@@ -126,6 +127,7 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
                 case .success(let guestSignUpResult):
                     if let user = guestSignUpResult {
                         print(user)
+                         Customer.shared.setUser(user)
                         self.navigationController?.popViewController(animated: true)
                     }
                 case .failure(let error):

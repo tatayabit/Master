@@ -42,9 +42,8 @@ extension UserEndpoint: TargetType {
             return "users"
         case .updateProfile:
             return "4.0/TtmUsers"
-        case .getProfile(let userId):
-            let version = "4.0"
-            return "\(version.urlEscaped)/TtmUsers/\(userId)"
+        case .getProfile:
+            return "4.0/TtmUser"
         case .login:
             return "4.0/TtmAuth"
         case .forgetPassword:
@@ -88,7 +87,15 @@ extension UserEndpoint: TargetType {
                                                     "password": user.password ,
                                                     "user_type": "C",
                                                     "company_id": 1,
-                                                    "status": "A"
+                                                    "status": "A",
+                                                    "b_firstname": user.firstname,
+                                                    "b_address": user.billingAddress,
+                                                    "b_city": user.billingCity,
+                                                    "b_county": user.billingCountry,
+                                                    "b_state": user.state,
+                                                    "b_country": user.billingCountry,
+                                                    "b_zipcode": user.zipCode,
+                                                    "b_phone": user.billingPhone
                 ], encoding: JSONEncoding.default)
         case .updateProfile(let user):
             return .requestParameters(parameters: [ "update": "Y",
@@ -103,8 +110,9 @@ extension UserEndpoint: TargetType {
                                                     "b_zipcode": user.zipCode,
                                                     "b_phone": user.billingPhone
                 ], encoding: JSONEncoding.default)
-        case .getProfile:
-            return .requestPlain
+        case .getProfile(let userId):
+            return .requestParameters(parameters: [ "id": userId
+            ], encoding: URLEncoding.queryString)
         case .forgetPassword(let email):
             return .requestParameters(parameters: [ "email": email
             ], encoding: URLEncoding.queryString)
