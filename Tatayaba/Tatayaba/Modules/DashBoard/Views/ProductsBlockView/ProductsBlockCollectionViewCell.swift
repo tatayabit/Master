@@ -51,7 +51,7 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         
         self.indexPath = indexPath
         
-        if product.productOptions.filter({ $0.required == "Y" }).count > 0 {
+        if product.hasOptions {
             addToCartButton.setTitle(Constants.ProductDetails.options, for: .normal)
         } else {
             addToCartButton.setTitle(Constants.ProductDetails.addToCart, for: .normal)
