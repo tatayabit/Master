@@ -197,9 +197,9 @@ class HomeViewModel {
        }
 
     // MARK:- HasRequiredOptions
-    func hasRequiredOptions(at indexPath: IndexPath) -> Bool {
+    func hasOptions(at indexPath: IndexPath) -> Bool {
         let product = productsBlock.products[indexPath.row].fullDetails
-        return product.productOptions.filter({ $0.required == "Y" }).count > 0
+        return product.hasOptions
     }
     
     // MARK:- AddToCart
