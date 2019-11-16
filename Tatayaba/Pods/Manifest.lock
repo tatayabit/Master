@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.8.2)
+  - Alamofire (4.9.1)
   - Crashlytics (3.14.0):
     - Fabric (~> 1.10.2)
   - Fabric (1.10.2)
@@ -66,11 +66,11 @@ PODS:
   - IQKeyboardManagerSwift (6.4.0)
   - MBProgressHUD (1.1.0)
   - MOLH (1.0)
-  - Moya (12.0.1):
-    - Moya/Core (= 12.0.1)
-  - Moya/Core (12.0.1):
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
-    - Result (~> 4.0)
+    - Result (~> 4.1)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -100,8 +100,7 @@ DEPENDENCIES:
   - SwiftValidator (from `https://github.com/jpotts18/SwiftValidator.git`, tag `4.2.0`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - Alamofire
+  https://github.com/CocoaPods/Specs.git:
     - Crashlytics
     - Fabric
     - Firebase
@@ -117,13 +116,15 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - MBProgressHUD
     - MOLH
-    - Moya
     - nanopb
     - NewRelicAgent
-    - Result
     - SDWebImage
     - SkyFloatingLabelTextField
     - SwiftKeychainWrapper
+  trunk:
+    - Alamofire
+    - Moya
+    - Result
 
 EXTERNAL SOURCES:
   SwiftValidator:
@@ -136,7 +137,7 @@ CHECKOUT OPTIONS:
     :tag: 4.2.0
 
 SPEC CHECKSUMS:
-  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   Firebase: 5e6b7b12bf9adb90986688edc06b156c37e109cd
@@ -152,7 +153,7 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: ed9b04ee0e3067ffba543283462d619f944b05e5
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MOLH: 2492e7f8fe3400580832312dc0fb9e05d7e92726
-  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   NewRelicAgent: 53086dc2e077da434f477c700cc1f1a9caea2513
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
@@ -163,4 +164,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: dbae8e285a0fb76fb54b850f92a754a0817af3b0
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4
