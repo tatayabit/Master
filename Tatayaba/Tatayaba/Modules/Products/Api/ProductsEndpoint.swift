@@ -72,29 +72,54 @@ extension ProductsEndpoint: TargetType {
     
     var task: Task {
         switch self {
-        case .getProducts, .getProductDetails:
+        case .getProducts:
             return .requestPlain
+            
+        case .getProductDetails:
+            var currencyId = "4"
+
+            if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
+                currencyId = countryCurrency
+            }
+            return .requestParameters(parameters: ["currency_id": currencyId.urlEscaped
+            ], encoding: URLEncoding.default)
+            
         case .getAllCategories:
+            var currencyId = "4"
+            if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
+                currencyId = countryCurrency
+            }
             return .requestParameters(parameters: [ "items_per_page": 0,
                                                     "status": "A",
                                                     "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
-                                                    "lang_code": LanguageManager.getLanguage()
+                                                    "lang_code": LanguageManager.getLanguage(),
+                                                    "currency_id": currencyId.urlEscaped
                 ], encoding: URLEncoding.default)
             
         case .getProductsOfCategory(let category, let page):
+            var currencyId = "4"
+            if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
+                currencyId = countryCurrency
+            }
             return .requestParameters(parameters: [ "items_per_page": 20,
                                                     "status": "A",
                                                     "cid": category,
                                                     "page": page.urlEscaped,
                                                     "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
-                                                    "lang_code": LanguageManager.getLanguage()
+                                                    "lang_code": LanguageManager.getLanguage(),
+                                                    "currency_id": currencyId.urlEscaped
                 ], encoding: URLEncoding.default)
             
         case .getProductFeatures:
             return .requestParameters(parameters: [ "items_per_page": 10
                 ], encoding: URLEncoding.default)
         case .getAlsoBoughtProducts(let productId):
-            return .requestParameters(parameters: [ "also_bought_for_product_id": productId
+            var currencyId = "4"
+            if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
+                currencyId = countryCurrency
+            }
+            return .requestParameters(parameters: [ "also_bought_for_product_id": productId,
+                                                    "currency_id": currencyId.urlEscaped
             ], encoding: URLEncoding.default)
         }
     }

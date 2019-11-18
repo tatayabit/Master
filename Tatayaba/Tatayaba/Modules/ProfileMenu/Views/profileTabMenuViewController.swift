@@ -175,11 +175,11 @@ extension profileTabMenuViewController{
                 //setting page
                 changeLanguege()
             }
-            if indextitle  == profile.currencies || indextitle  == CurrencySettings.shared.currentCurrency?.descriptionField {
+            if (indextitle  == profile.currencies || indextitle  == CurrencySettings.shared.currentCurrency?.descriptionField) && indexPath.row == 1 {
                 loadCurrenciesVC()
             }
 
-            if indextitle == profile.changeCountry || indextitle  == CountrySettings.shared.currentCountry?.name {
+            if (indextitle == profile.changeCountry || indextitle  == CountrySettings.shared.currentCountry?.name) && indexPath.row == 2 {
                 self.loadCountries()
             }
             if indextitle == profile.liveChat {

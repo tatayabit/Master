@@ -24,7 +24,6 @@ class CurrencySettings {
                     delegate.currencyDidChange(to: currentCurrency)
                 }
             }
-            
         }
     }
     
@@ -38,6 +37,9 @@ class CurrencySettings {
     //MARK:- Load Data From KeyChain
     func loadData() {
         loadCurrencySettingsDataFromKeyChain()
+        if currentCurrency == nil {
+            CurrenciesManager.shared.loadCurrenciesList()
+        }
     }
     
     //MARK:- UserData KeyChain

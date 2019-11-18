@@ -24,6 +24,12 @@ class CurrenciesManager {
             case .success(let response):
                 guard let currenciesResult = response else { return }
                 self.currenciesList = currenciesResult
+                
+//                if CurrencySettings.shared.currentCurrency?.currencyId == nil {
+//                    if self.currenciesList.count > 0 {
+//                        CurrencySettings.shared.currentCurrency = self.currenciesList[0]
+//                    }
+//                }
             
             case .failure(let error):
                 print("the error \(error)")
