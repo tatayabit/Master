@@ -93,7 +93,7 @@ extension UserEndpoint: TargetType {
                                                     "b_city": user.billingCity,
                                                     "b_county": CountrySettings.shared.currentCountry?.code ?? "kw",
                                                     "b_state": user.state,
-                                                    "b_country": user.billingCountry,
+                                                    "b_country": CountrySettings.shared.currentCountry?.code ?? "kw",
                                                     "b_zipcode": user.zipCode,
                                                     "b_phone": user.billingPhone
                 ], encoding: JSONEncoding.default)
@@ -106,7 +106,7 @@ extension UserEndpoint: TargetType {
                                                     "b_city": user.billingCity,
                                                     "b_county": CountrySettings.shared.currentCountry?.code ?? "kw",
                                                     "b_state": user.state,
-                                                    "b_country": user.billingCountry,
+                                                    "b_country": CountrySettings.shared.currentCountry?.code ?? "kw",
                                                     "b_zipcode": user.zipCode,
                                                     "b_phone": user.billingPhone
                 ], encoding: JSONEncoding.default)

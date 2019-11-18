@@ -57,7 +57,12 @@ extension BlocksEndpoint: TargetType {
         case .getBlock:
 //            "lang_code": LanguageManager.getLanguage()
 //            return .requestPlain
-            return .requestParameters(parameters: ["lang_code": LanguageManager.getLanguage()
+            var currencyId = "4"
+                       if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
+                           currencyId = countryCurrency
+                       }
+            return .requestParameters(parameters: ["lang_code": LanguageManager.getLanguage(),
+                                                   "currency_id": currencyId.urlEscaped
                 ], encoding: URLEncoding.default)
         }
     }
