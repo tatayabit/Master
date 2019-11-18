@@ -140,4 +140,8 @@ class SupplierProductsViewModel {
     func productInStock(at indexPath: IndexPath) -> Bool {
         return product(at: indexPath).isInStock
     }
+    
+    func productHasOptions(at indexPath: IndexPath) -> Bool {
+        return product(at: indexPath).hasOptions
+    }
 }

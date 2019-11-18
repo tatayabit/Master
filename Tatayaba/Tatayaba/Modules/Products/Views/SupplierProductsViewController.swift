@@ -108,6 +108,11 @@ class SupplierProductsViewController: BaseViewController, UICollectionViewDelega
             showErrorAlerr(title: "Error", message: "This item is out of stock!", handler: nil)
             return
         }
+        if viewModel.productHasOptions(at: indexPath) {
+            performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
+        } else {
+            viewModel.addToCart(at: indexPath)
+        }
         viewModel.addToCart(at: indexPath)
     }
     
