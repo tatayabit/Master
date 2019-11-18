@@ -93,7 +93,11 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
             showErrorAlerr(title: "Error", message: "This item is out of stock!", handler: nil)
             return
         }
-        viewModel.addToCart(at: indexPath)
+        if viewModel.productHasOptions(at: indexPath) {
+            performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
+        } else {
+            viewModel.addToCart(at: indexPath)
+        }
     }
     
     func didSelectOneClickBuy(indexPath: IndexPath) {

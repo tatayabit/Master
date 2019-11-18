@@ -71,7 +71,8 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
         validator.registerField(phoneNumberTextField, rules: [RequiredRule(message: "Phone is required!")])
         if Customer.shared.user?.identifier == "" || Customer.shared.user?.identifier == nil {
             validator.registerField(emailTextField, rules: [RequiredRule(message: "Email is required!"), EmailRule(message: "Invalid email")])
-            validator.registerField(passwordTextField, rules: [RequiredRule(message: "Password is required!"), PasswordRule(regex: "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,20}$", message: "Invalid password")])
+            validator.registerField(passwordTextField, rules: [RequiredRule(message: "Password is required!"), PasswordRule(regex: "^.{6,20}$", message: "Invalid password")])
+//            "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,20}$"
         }
         fullNameTextField.becomeFirstResponder()
     }
