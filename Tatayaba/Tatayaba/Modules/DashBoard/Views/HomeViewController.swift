@@ -31,6 +31,10 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     let categoriesBlockView: CategoriesBlockView = .fromNib()
     let suppliersBlockView: SuppliersBlockView = .fromNib()
 
+    // Duplicated Products (Will be removed  later)
+    let productsBlocklViewCopyX: ProductsBlockView = .fromNib()
+    let productsBlocklViewCopyXX: ProductsBlockView = .fromNib()
+
 
     //MARK:- Life Cycle
     override func viewDidLoad() {
@@ -81,6 +85,8 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         suppliersBlockView.translatesAutoresizingMaskIntoConstraints = false
         suppliersBlockView.heightAnchor.constraint(equalToConstant: 145).isActive = true
         self.showLoadingIndicator(to: suppliersBlockView)
+        
+        self.addDupplicatedProducts()
 
     }
 
@@ -97,6 +103,16 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         self.hideLoadingIndicator(from: productsBlocklView)
         productsBlocklView.block = viewModel.productsBlock
         productsBlocklView.loadData()
+        
+        // Will be removed later
+        self.hideLoadingIndicator(from: productsBlocklViewCopyX)
+        productsBlocklViewCopyX.block = viewModel.productsBlock
+        productsBlocklViewCopyX.loadData()
+        
+        self.hideLoadingIndicator(from: productsBlocklViewCopyXX)
+        productsBlocklViewCopyXX.block = viewModel.productsBlock
+        productsBlocklViewCopyXX.loadData()
+        
     }
 
     fileprivate func loadFullScreenBannersViewData() {
@@ -141,6 +157,24 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         viewModel.onProductsBlockLoad = {
             self.loadProductsBlockViewData()
         }
+    }
+    
+    // MARK:- Duplicated Products (Will be removed later)
+    func addDupplicatedProducts() {
+        productsBlocklViewCopyX.delegate = self
+        scrollView.stackView.addArrangedSubview(productsBlocklViewCopyX)
+        productsBlocklViewCopyX.translatesAutoresizingMaskIntoConstraints = false
+        productsBlocklViewCopyX.heightAnchor.constraint(equalToConstant: 260).isActive = true
+        productsBlocklViewCopyX.titleLabel.text = "PERSONAL CARE".localized()
+        self.showLoadingIndicator(to: productsBlocklViewCopyX)
+        
+        
+        productsBlocklViewCopyXX.delegate = self
+        scrollView.stackView.addArrangedSubview(productsBlocklViewCopyXX)
+        productsBlocklViewCopyXX.translatesAutoresizingMaskIntoConstraints = false
+        productsBlocklViewCopyXX.heightAnchor.constraint(equalToConstant: 260).isActive = true
+        productsBlocklViewCopyX.titleLabel.text = "OIL".localized()
+        self.showLoadingIndicator(to: productsBlocklViewCopyXX)
     }
 
     // MARK:- SetupUI

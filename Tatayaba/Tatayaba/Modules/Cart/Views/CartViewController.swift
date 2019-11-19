@@ -122,7 +122,9 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             }
         }
         
-        totalPriceLabel.text = "\(totalPriceValue)".formattedPrice
+        let totalPriceValueRounded = (totalPriceValue * 100).rounded() / 100
+        
+        totalPriceLabel.text = "\(totalPriceValueRounded)".formattedPrice
         viewModel.loadPricingListContent(couponValue: couponTitleValue, taxValue: taxValue, shippingValue: shippingValue)
         let totalItemsText = "(" + String(cart.productsCount) + " " + cartClass.items + ")"
         totalTitleLabel.attributedText = attributedTotalTitle(text: totalItemsText)
