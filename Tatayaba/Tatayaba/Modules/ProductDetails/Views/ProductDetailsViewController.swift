@@ -50,14 +50,15 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
                 headerItems.append(item)
             }
             
-            if viewModel.numberOfAlsoBoughtProducts > 0 {
-                let item = HeaderItem(rowCount: 0, collapsed: true, isCollapsible: false)
-                headerItems.append(item)
-            }
+            
             reloadSections = { section in
                 let indexSet = IndexSet(integer: section)
                 self.product_Tableview.reloadSections(indexSet, with: .automatic)
             }
+        }
+        if viewModel.numberOfAlsoBoughtProducts > 0 {
+            let item = HeaderItem(rowCount: 0, collapsed: true, isCollapsible: false)
+            headerItems.append(item)
         }
         product_Tableview.delegate = self
         product_Tableview.dataSource = self

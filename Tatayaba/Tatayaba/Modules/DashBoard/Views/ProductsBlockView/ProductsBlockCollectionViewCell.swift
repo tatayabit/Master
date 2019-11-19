@@ -33,6 +33,10 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         self.discountPercentageLabel.isHidden = true
     }
 
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        self.layoutIfNeeded()
+    }
     func configure(_ product: Product, indexPath: IndexPath) {
         bannerImageView.sd_setImage(with: URL(string: product.mainPair.detailedPair.imageUrl), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
 
@@ -56,6 +60,8 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         } else {
             addToCartButton.setTitle(Constants.ProductDetails.addToCart, for: .normal)
         }
+        
+        self.layoutIfNeeded()
     }
 
     @IBAction func addToCartAction(_ sender: UIButton) {
@@ -73,7 +79,7 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
 
 extension Constants {
     struct ProductDetails {
-        static let options = "OPTIONS..."
-        static let addToCart = "ADD TO CART"
+        static let options = "OPTIONS...".localized()
+        static let addToCart = "ADD TO CART".localized()
     }
 }

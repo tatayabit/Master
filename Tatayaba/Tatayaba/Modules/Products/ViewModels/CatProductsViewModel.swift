@@ -42,25 +42,6 @@ class CatProductsViewModel {
         return productsList.count
     }
 
-
-//    //MARK:- Api
-//    func getProductsOfCategory(completion: @escaping (APIResult<ProductsResult?, MoyaError>) -> Void) {
-//        let categoryId = Int(category.identifier) ?? 0
-//        apiClient.getProductOf(categoryId: categoryId, page: currentPage) { result in
-//            switch result {
-//            case .success(let response):
-//                guard let productResult = response else { return }
-//                guard let products = productResult.products else { return }
-//
-//                self.productsList = products
-//                print(productResult)
-//
-//            case .failure(let error):
-//                print("the error \(error)")
-//            }
-//            completion(result)
-//        }
-//    }
     
     // MARK:- fetch more Api
     func fetchModerators() {
@@ -142,6 +123,10 @@ class CatProductsViewModel {
     
     func productInStock(at indexPath: IndexPath) -> Bool {
         return product(at: indexPath).isInStock
+    }
+    
+    func productHasOptions(at indexPath: IndexPath) -> Bool {
+        return product(at: indexPath).hasOptions
     }
 }
 
