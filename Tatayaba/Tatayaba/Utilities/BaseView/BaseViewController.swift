@@ -91,8 +91,9 @@ extension UIViewController {
        
         self.navigationItem.hidesBackButton = true
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationController?.navigationBar.barTintColor = UIColor(red: 34.0/255, green: 28.0/255, blue: 53.0/255, alpha: 1.0)
-        navigationController?.hidesBottomBarWhenPushed = false
+        self.navigationController?.navigationBar.barTintColor = .brandDarkBlue//UIColor(red: 34.0/255, green: 28.0/255, blue: 53.0/255, alpha: 1.0)
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.hidesBottomBarWhenPushed = false
         self.tabBarController?.tabBar.isHidden = false
         var logo: UIImage = UIImage()
         if MOLHLanguage.currentAppleLanguage() == "en" {
@@ -110,8 +111,9 @@ extension UIViewController {
         
         self.navigationItem.hidesBackButton = true
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationController?.navigationBar.barTintColor = UIColor(red: 34.0/255, green: 28.0/255, blue: 53.0/255, alpha: 1.0)
-        navigationController?.hidesBottomBarWhenPushed = false
+        self.navigationController?.navigationBar.barTintColor = .brandDarkBlue//UIColor(red: 34.0/255, green: 28.0/255, blue: 53.0/255, alpha: 1.0)
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.hidesBottomBarWhenPushed = false
         self.tabBarController?.tabBar.isHidden = false
         var logo: UIImage = UIImage()
         if MOLHLanguage.currentAppleLanguage() == "en" {
@@ -135,7 +137,6 @@ extension UIViewController {
     }
     @objc func action(){
         navigationController?.popViewController(animated: true)
-    
     }
     
     
