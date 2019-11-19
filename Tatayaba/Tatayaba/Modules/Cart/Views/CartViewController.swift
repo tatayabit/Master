@@ -60,7 +60,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         reloadUIData()
-        self.tabBarController?.tabBar.isHidden = false
+        setupTabBar()
     }
     
     func reloadUIData() {
@@ -68,12 +68,21 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         calculateTotal()
         loadTaxAndShipping()
     }
+    
+    func setupTabBar() {
+//        if AppDelegate.shared.rootViewController.selectedIndex == 4 {
+            self.NavigationBarWithOutBackButton()
+//            AppDelegate.shared.rootViewController.tabBar.isHidden = false
+//        } else {
+//            self.NavigationBarWithBackButton()
+//            AppDelegate.shared.rootViewController.tabBar.isHidden = true
+//        }
+    }
 
     
     // MARK:- setupUI
     func setupUI() {
         cartTableview.register(PriceTableViewCell.nib, forCellReuseIdentifier: PriceTableViewCell.identifier)
-        self.NavigationBarWithOutBackButton()
         removeDiscountButton.isHidden = true
         couponTextFieldView.isHidden = false
     }
