@@ -124,7 +124,7 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
     // MARK: - Placing Order Success Flow
     func orderSuccessFlow(result: PlaceOrderResult) {
         // need to be updated to not COD
-        if viewModel.paymentId != "6" {
+        if !viewModel.isCashOnDelivery {
             if result.redirectUrl.count == 0 {
                 print("the error order id == \(result.orderId)")
                 self.showErrorAlerr(title: Constants.Common.error, message: "Couldn't get the payment URL", handler: nil)

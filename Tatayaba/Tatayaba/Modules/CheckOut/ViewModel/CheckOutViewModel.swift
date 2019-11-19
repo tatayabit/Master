@@ -26,6 +26,11 @@ class CheckOutViewModel {
         let paymentId = cart.paymentMethod?.paymentId ?? "0"
         return paymentId
     }
+    
+    var isCashOnDelivery: Bool {
+        return self.paymentId == Constants.PaymentTypes.cashOnDeliveryKuwait ||
+        self.paymentId == Constants.PaymentTypes.cashOnDeliveryInternational
+    }
 
     /// This closure is being called once the payement methods api fetch
     var onPaymentMethodsListLoad: (() -> ())?
@@ -186,5 +191,12 @@ class CheckOutViewModel {
     
     func paymentWebViewModel(orderResult: PlaceOrderResult) -> PaymentWebViewModel {
         return PaymentWebViewModel(orderResult: orderResult)
+    }
+}
+
+extension Constants {
+    struct PaymentTypes {
+        static let cashOnDeliveryKuwait = "6"
+        static let cashOnDeliveryInternational = "14"
     }
 }

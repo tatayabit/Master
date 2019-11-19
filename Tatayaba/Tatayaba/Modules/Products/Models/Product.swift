@@ -31,8 +31,8 @@ extension ProductsResult: Codable {
 struct Product {
     var name: String = ""
     var description: String = ""
-//    var imageUrl: String
-    var listPrice: String
+    var priceBeforeDiscount: String
+    var discountPercentage: String
     var price: String = ""
     var inWishlist: Bool = false
     var identifier: String
@@ -48,12 +48,12 @@ struct Product {
     var productStatus: String?
     var hasOptions: Bool
     
-    init(name: String = "", supplierName: String = "", description: String = "", listPrice: String = "", price: String = "0.00", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair(), productOptions: [ProductOption] = [ProductOption](), maxQuantity: String = "0", position: String = "", amount: Int = 0, outOfStockActions: String = "", productStatus: String = "", hasOptions: Bool = false) {
+    init(name: String = "", supplierName: String = "", description: String = "", priceBeforeDiscount: String = "", discountPercentage: String = "", price: String = "0.00", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair(), productOptions: [ProductOption] = [ProductOption](), maxQuantity: String = "0", position: String = "", amount: Int = 0, outOfStockActions: String = "", productStatus: String = "", hasOptions: Bool = false) {
 
         self.name = name
         self.description = description
-//        self.imageUrl = imageUrl
-        self.listPrice = listPrice
+        self.priceBeforeDiscount = priceBeforeDiscount
+        self.discountPercentage = discountPercentage
         self.price = price
         self.inWishlist = inWishlist
         self.identifier = identifier
@@ -75,7 +75,8 @@ extension Product: Codable {
         case name = "product"
         case description = "full_description"//"meta_description"
         case imageUrl = "https_image_path"
-        case listPrice = "list_price"
+        case priceBeforeDiscount = "list_price"
+        case discountPercentage = "list_discount_prc"
         case price
         case inWishlist
         case identifier = "product_id"
@@ -137,13 +138,21 @@ extension Product: Codable {
         }
         price = priceVal
         
-        var listPriceVal = ""
-        if let listPriceValString = try? container.decode(String.self, forKey: .listPrice) {
-            listPriceVal = listPriceValString
-        } else if let listPriceValInt = try? container.decode(Float.self, forKey: .listPrice) {
-            listPriceVal = "\(listPriceValInt)"
+        var priceBeforeDiscountVal = ""
+        if let priceBeforeDiscountValString = try? container.decode(String.self, forKey: .priceBeforeDiscount) {
+            priceBeforeDiscountVal = priceBeforeDiscountValString
+        } else if let priceBeforeDiscountValInt = try? container.decode(Float.self, forKey: .priceBeforeDiscount) {
+            priceBeforeDiscountVal = "\(priceBeforeDiscountValInt)"
         }
-        listPrice = listPriceVal
+        priceBeforeDiscount = priceBeforeDiscountVal
+        
+        var discountPercentageVal = ""
+        if let discountPercentageValString = try? container.decode(String.self, forKey: .discountPercentage) {
+            discountPercentageVal = discountPercentageValString
+        } else if let discountPercentageValInt = try? container.decode(Float.self, forKey: .discountPercentage) {
+            discountPercentageVal = "\(discountPercentageValInt)"
+        }
+        discountPercentage = discountPercentageVal
         
     }
 
@@ -152,8 +161,8 @@ extension Product: Codable {
         
         try container.encodeIfPresent(name, forKey: .name)
         try container.encodeIfPresent(description, forKey: .description)
-//        try container.encodeIfPresent(imageUrl, forKey: .imageUrl)
-        try container.encodeIfPresent(listPrice, forKey: .listPrice)
+        try container.encodeIfPresent(priceBeforeDiscount, forKey: .priceBeforeDiscount)
+        try container.encodeIfPresent(discountPercentage, forKey: .discountPercentage)
         try container.encodeIfPresent(price, forKey: .price)
         try container.encodeIfPresent(inWishlist, forKey: .inWishlist)
         try container.encodeIfPresent(identifier, forKey: .identifier)

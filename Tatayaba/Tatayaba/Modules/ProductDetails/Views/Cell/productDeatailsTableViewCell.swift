@@ -61,12 +61,12 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
         let originalPriceStrikeAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.thick.rawValue]
 
         let originalPriceAttr = productVM.hasDiscount ? originalPriceStrikeAttributes : nil
-        let attributedString = NSMutableAttributedString(string: productVM.price, attributes: originalPriceAttr)
+        let attributedString = NSMutableAttributedString(string: productVM.priceBeforeDiscount, attributes: originalPriceAttr)
         attributedString.append(NSAttributedString(string: "    "))
         
         
         let priceAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.brandDarkGray]
-        attributedString.append(NSMutableAttributedString(string: productVM.discountPrice, attributes: priceAttributes))
+        attributedString.append(NSMutableAttributedString(string: productVM.originalPrice, attributes: priceAttributes))
         self.priceLabel.attributedText = attributedString
     }
     
