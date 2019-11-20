@@ -346,7 +346,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     @IBAction func applyCouponAction(_ sender: UIButton) {
         if let couponValue = couponTextField.text, couponValue != "" {
             showLoadingIndicator(to: self.view)
-            viewModel.applyCoupon(couponCode: couponValue) { result in
+            viewModel.applyCoupon(couponCode: couponValue, email: Customer.shared.user?.email ?? "") { result in
                 self.hideLoadingIndicator(from: self.view)
                 switch result {
                 case .success(let couponResult):

@@ -9,7 +9,7 @@
 import Moya
 
 enum CartEndpoint {
-    case applyCoupon(code: String)
+    case applyCoupon(code: String, email:String)
     case getTaxAndShipping(countryCode: String)
 }
 
@@ -58,9 +58,9 @@ extension CartEndpoint: TargetType {
     
     var task: Task {
         switch self {
-        case .applyCoupon(let code):
-            return .requestParameters(parameters: [ "coupon_code": code
-                ], encoding: URLEncoding.queryString)
+        case .applyCoupon(let code,let email):
+        return .requestParameters(parameters: [ "coupon_code": code,"email": email
+            ], encoding: URLEncoding.queryString)
         case .getTaxAndShipping:
             return .requestParameters(parameters: [ "country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw"
                 ], encoding: URLEncoding.queryString)

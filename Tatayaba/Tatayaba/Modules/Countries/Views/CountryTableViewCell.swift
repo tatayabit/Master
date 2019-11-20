@@ -22,6 +22,7 @@ class CountryTableViewCell: UITableViewCell {
         if let selectedCountry = CountrySettings.shared.currentCountry {
             if selectedCountry.name.lowercased() == country.name.lowercased() {
                 self.country_lbl.font = UIFont.boldSystemFont(ofSize: 18)
+                self.isUserInteractionEnabled = false
             } else {
                 self.country_lbl.font = UIFont.systemFont(ofSize: 17)
             }

@@ -71,8 +71,8 @@ class CartViewModel {
     }
     
     //MARK:- Api
-    func applyCoupon(couponCode: String, completion: @escaping (APIResult<CouponResponse?, MoyaError>) -> Void) {
-        cartApiClient.applyCoupon(couponCode: couponCode) { result in
+    func applyCoupon(couponCode: String, email: String, completion: @escaping (APIResult<CouponResponse?, MoyaError>) -> Void) {
+         cartApiClient.applyCoupon(couponCode: couponCode, email: email) { result in
             switch result {
             case .success(let couponResult):
                 if let coupon = couponResult {

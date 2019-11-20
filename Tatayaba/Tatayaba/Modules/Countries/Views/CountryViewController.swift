@@ -66,6 +66,9 @@ extension CountryViewController{
         tableView.deselectRow(at: indexPath, animated: true)
         if viewType == 0 {
             delegate?.countrySelected(selectedCountry: countriesList[indexPath.row])
+            if Customer.shared.loggedin {
+                Customer.shared.removeAddressData()
+            }
             navigationController?.popViewController(animated: true)
         } else {
             CurrencySettings.shared.currentCurrency = currenciesList[indexPath.row]
