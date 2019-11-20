@@ -366,7 +366,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                                 self.promotionData = promotionValue
                                 let trimmedCodeString = (self.couponTextField.text)?.trimmingCharacters(in: .whitespaces)
 
-                                self.cart.code = trimmedCodeString ?? ""
+                                self.cart.couponCode = trimmedCodeString ?? ""
                                 self.calculateTotal()
                                 self.couponTextField.text = ""
                                 self.couponTextFieldView.endEditing(true)

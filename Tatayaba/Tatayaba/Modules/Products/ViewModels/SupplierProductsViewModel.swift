@@ -23,6 +23,8 @@ class SupplierProductsViewModel {
     private var currentPage = 0
     private var total = 0
     private var isFetchInProgress = false
+    private var shouldCallApi: Bool = true
+
     
     private weak var delegate: SupplierProductsViewModelDelegate?
 
@@ -66,9 +68,14 @@ class SupplierProductsViewModel {
     // MARK:- fetch more Api
      func fetchModerators() {
          // 1
-         guard !isFetchInProgress else {
-             return
-         }
+        if !shouldCallApi {
+            return
+        }
+        
+        
+        guard !isFetchInProgress else {
+            return
+        }
          
          // 2
          isFetchInProgress = true
@@ -93,6 +100,10 @@ class SupplierProductsViewModel {
                     self.supplier = supplierResult
                     print(self.supplier)
                      
+                    if supplierResult.products.count < 20 {
+                        self.shouldCallApi = false
+                    }
+                    
                     self.total += supplierResult.products.count
                     self.productsList.append(contentsOf: supplierResult.products)
                      

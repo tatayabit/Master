@@ -37,7 +37,7 @@ class SuppliersListViewModel {
           return suppliersList.count
       }
     
-    var shouldCallApi: Bool = true
+    private var shouldCallApi: Bool = true
     
 
     //MARK:- Api
