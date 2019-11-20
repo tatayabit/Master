@@ -77,7 +77,9 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
     
     //MARK:- IBActions
     @IBAction func placeOrderAction(_ sender: Any) {
-        if Customer.shared.user?.email == nil && !Cart.shared.isOneClickBuy {
+        
+        print((Customer.shared.checkAddressData()) && (Customer.shared.user?.email != nil) && (Cart.shared.isOneClickBuy))
+        if !((Customer.shared.checkAddressData()) && (Customer.shared.user?.email != nil) && (Cart.shared.isOneClickBuy)) {
             showErrorAlerr(title: Constants.Common.error, message: "Please Enter Adderess", handler: nil)
         } else {
             //         self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)

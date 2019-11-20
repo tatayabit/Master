@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "FFCA1A7C-4CB5-491B-8126-8BD504BFF6AE"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24978182-ED25-4478-934C-A24883B33137"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/Addresses/Views/AddressAddEditViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "validationSuccessful()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DAB63CEF-59A1-4888-BFA5-FB6142D35E28"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/Addresses/Views/AddressAddEditViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "validationSuccessful()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DAB63CEF-59A1-4888-BFA5-FB6142D35E28 - b0c13b1b8f9b9275"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tatayab___Testing.AddressAddEditViewController.validationSuccessful() -&gt; ()"
+                  moduleName = "Tatayab - Testing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Tatyab/Master/Tatayaba/Tatayaba/Modules/Addresses/Views/AddressAddEditViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "4992">
+               </Location>
+               <Location
+                  uuid = "DAB63CEF-59A1-4888-BFA5-FB6142D35E28 - 624bf714696ff6c8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Tatayab___Testing.APIResult&lt;Swift.Optional&lt;Tatayab___Testing.User&gt;, Moya.MoyaError&gt;) -&gt; () in Tatayab___Testing.AddressAddEditViewController.validationSuccessful() -&gt; ()"
+                  moduleName = "Tatayab - Testing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Tatyab/Master/Tatayaba/Tatayaba/Modules/Addresses/Views/AddressAddEditViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "167">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F30860A8-2350-4DE4-8DB6-1A14792D4E33"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/User/Api/UserAPIClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "updateProfile(user:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
