@@ -57,4 +57,23 @@ class Customer {
         userData = userDataDecoded
         print("loaded userData: \(String(describing: userData))")
     }
+    
+    //MARK:- UserData check
+     func checkAddressData() -> Bool {
+        if ((userData?.billingAddress.count)! > 0 && (userData?.billingCity.count)! > 0) {
+            return true
+        }
+        else{
+            return false
+        }
+    }
+    
+    
+    //MARK:- UserData remove
+     func removeAddressData() {
+        userData?.billingAddress = ""
+        userData?.billingCity = ""
+        setUser(userData!)
+    }
+
 }

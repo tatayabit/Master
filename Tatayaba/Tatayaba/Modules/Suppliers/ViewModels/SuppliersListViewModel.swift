@@ -37,7 +37,7 @@ class SuppliersListViewModel {
           return suppliersList.count
       }
     
-    var shouldCallApi: Bool = true
+    private var shouldCallApi: Bool = true
     
 
     //MARK:- Api
@@ -75,9 +75,9 @@ class SuppliersListViewModel {
     
     // MARK:- fetch more Api
     func fetchModerators() {
-//        if !shouldCallApi {
-//            return
-//        }
+        if !shouldCallApi {
+            return
+        }
         
         // 1
         guard !isFetchInProgress else {
@@ -106,9 +106,9 @@ class SuppliersListViewModel {
                     guard let suppliers = suppliersResult.suppliers else { return }
                     
                     
-//                    if suppliers.count < 20 {
-//                        self.shouldCallApi = false
-//                    }
+                    if suppliers.count < 20 {
+                        self.shouldCallApi = false
+                    }
                     
                     self.total += suppliers.count
                     self.suppliersList.append(contentsOf: suppliers)

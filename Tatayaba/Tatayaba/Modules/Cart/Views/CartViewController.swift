@@ -60,7 +60,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         reloadUIData()
-        self.tabBarController?.tabBar.isHidden = false
+        setupTabBar()
     }
     
     func reloadUIData() {
@@ -68,12 +68,21 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         calculateTotal()
         loadTaxAndShipping()
     }
+    
+    func setupTabBar() {
+//        if AppDelegate.shared.rootViewController.selectedIndex == 4 {
+            self.NavigationBarWithOutBackButton()
+//            AppDelegate.shared.rootViewController.tabBar.isHidden = false
+//        } else {
+//            self.NavigationBarWithBackButton()
+//            AppDelegate.shared.rootViewController.tabBar.isHidden = true
+//        }
+    }
 
     
     // MARK:- setupUI
     func setupUI() {
         cartTableview.register(PriceTableViewCell.nib, forCellReuseIdentifier: PriceTableViewCell.identifier)
-        self.NavigationBarWithOutBackButton()
         removeDiscountButton.isHidden = true
         couponTextFieldView.isHidden = false
     }
@@ -346,7 +355,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     @IBAction func applyCouponAction(_ sender: UIButton) {
         if let couponValue = couponTextField.text, couponValue != "" {
             showLoadingIndicator(to: self.view)
-            viewModel.applyCoupon(couponCode: couponValue) { result in
+            viewModel.applyCoupon(couponCode: couponValue, email: Customer.shared.user?.email ?? "") { result in
                 self.hideLoadingIndicator(from: self.view)
                 switch result {
                 case .success(let couponResult):
@@ -357,7 +366,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                                 self.promotionData = promotionValue
                                 let trimmedCodeString = (self.couponTextField.text)?.trimmingCharacters(in: .whitespaces)
 
-                                self.cart.code = trimmedCodeString ?? ""
+                                self.cart.couponCode = trimmedCodeString ?? ""
                                 self.calculateTotal()
                                 self.couponTextField.text = ""
                                 self.couponTextFieldView.endEditing(true)

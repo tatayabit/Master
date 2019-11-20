@@ -77,7 +77,9 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
     
     //MARK:- IBActions
     @IBAction func placeOrderAction(_ sender: Any) {
-        if Customer.shared.user?.email == nil && !Cart.shared.isOneClickBuy {
+        
+        print((Customer.shared.checkAddressData()) && (Customer.shared.user?.email != nil) && (Cart.shared.isOneClickBuy))
+        if !((Customer.shared.checkAddressData()) && (Customer.shared.user?.email != nil) && (Cart.shared.isOneClickBuy)) {
             showErrorAlerr(title: Constants.Common.error, message: "Please Enter Adderess", handler: nil)
         } else {
             //         self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
@@ -124,7 +126,7 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
     // MARK: - Placing Order Success Flow
     func orderSuccessFlow(result: PlaceOrderResult) {
         // need to be updated to not COD
-        if viewModel.paymentId != "6" {
+        if !viewModel.isCashOnDelivery {
             if result.redirectUrl.count == 0 {
                 print("the error order id == \(result.orderId)")
                 self.showErrorAlerr(title: Constants.Common.error, message: "Couldn't get the payment URL", handler: nil)

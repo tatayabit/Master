@@ -88,7 +88,11 @@ class AlsoBoughtProductsTableViewCell: UITableViewCell, UICollectionViewDelegate
         if let delegate = delegate {
             guard let block = block else { return }
             let product = block.products[indexPath.row].fullDetails
-            delegate.didSelectOneClick(product: product)
+            if product.hasOptions {
+                delegate.didSelectProduct(at: indexPath)
+            } else {
+                delegate.didSelectOneClick(product: product)
+            }
         }
     }
     
