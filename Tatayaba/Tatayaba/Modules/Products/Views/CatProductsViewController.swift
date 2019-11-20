@@ -109,6 +109,8 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
         
         didSelectAddToCartCell(indexPath: indexPath)
         
+        if viewModel.productHasOptions(at: indexPath) { return }
+        
         if Customer.shared.loggedin {
             let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewCartViewController") as! CartViewController
             controller.buyingWayType = 1

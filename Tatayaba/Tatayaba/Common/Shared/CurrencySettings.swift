@@ -18,6 +18,7 @@ class CurrencySettings {
     static let shared = CurrencySettings()
     var currentCurrency: Currency? {
         willSet {
+            Cart.shared.reset()
             if let currentCurrency = newValue {
                 saveCurrencySettingsDataToKeyChain(currencyObj: currentCurrency)
                 for delegate in delegates {

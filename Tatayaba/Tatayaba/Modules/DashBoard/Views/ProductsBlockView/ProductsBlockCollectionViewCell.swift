@@ -44,10 +44,10 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         descriptionLabel.text = product.name
         priceLabel.text = product.price.formattedPrice
         outOfStockLabel.isHidden = product.isInStock
-        self.discountPercentageLabel.text = product.listPrice + "%\nOFF"
+        self.discountPercentageLabel.text = product.discountPercentage + "%\nOFF"
         
         
-        if let percentage = Float(product.listPrice) {
+        if let percentage = Float(product.priceBeforeDiscount) {
             self.discountPercentageLabel.isHidden = !(percentage > 0)
         } else {
             self.discountPercentageLabel.isHidden = true

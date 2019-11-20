@@ -14,14 +14,12 @@ class ProductDeatailsTableViewCellViewModel {
             return "This is product is one of our best sellers"
         }
         return product.description.stripOutHtml() }
-    var price: String { return product.price.formattedPrice }
-    var discountPercentage: String { return product.listPrice }
-    var discountPrice: String {
-        if let percentage = Float(product.listPrice), let priceFloat = Float(product.price) {
-            if percentage > 0 {
-                let discountValue = (percentage / 100) * priceFloat
-                
-                return String(priceFloat - discountValue).formattedPrice
+    var originalPrice: String { return product.price.formattedPrice }
+    var discountPercentage: String { return product.discountPercentage }
+    var priceBeforeDiscount: String {
+        if let priceBeforeDiscountFloat = Float(product.priceBeforeDiscount) {
+            if priceBeforeDiscountFloat > 0 {
+                return String(priceBeforeDiscountFloat).formattedPrice
             }
         }
         return "" }
