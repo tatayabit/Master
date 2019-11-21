@@ -60,7 +60,7 @@ class Customer {
     
     //MARK:- UserData check
      func checkAddressData() -> Bool {
-        if ((userData?.billingAddress.count)! > 0 && (userData?.billingCity.count)! > 0) {
+        if ((userData?.billingAddress.count) ?? 0 > 0 && (userData?.billingCity.count) ?? 0 > 0) {
             return true
         }
         else{
