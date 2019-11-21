@@ -52,6 +52,11 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         } else {
             self.discountPercentageLabel.isHidden = true
         }
+        if let discountPercentage = Float(product.discountPercentage) {
+            self.discountPercentageLabel.isHidden = !(discountPercentage > 0)
+        } else {
+            self.discountPercentageLabel.isHidden = true
+        }
         
         self.indexPath = indexPath
         
