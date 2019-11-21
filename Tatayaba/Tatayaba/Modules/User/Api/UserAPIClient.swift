@@ -37,6 +37,7 @@ struct UserAPIClient: APIClient {
     }
     
     func updateProfile(user: User, completion: @escaping (APIResult<SignUpResponse?, MoyaError>) -> Void) {
+        print(UserEndpoint.updateProfile(user: user))
         fetch(with: UserEndpoint.updateProfile(user: user), completion: completion)
     }
 

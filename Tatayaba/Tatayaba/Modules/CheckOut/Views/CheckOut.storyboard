@@ -3,7 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -218,6 +218,6 @@
         <image name="Productway" width="242.5" height="207.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2B7-re-64b"/>
+        <segue reference="0fv-lF-Vn0"/>
     </inferredMetricsTieBreakers>
 </document>
