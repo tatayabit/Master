@@ -24,15 +24,19 @@ class CurrenciesManager {
             case .success(let response):
                 guard let currenciesResult = response else { return }
                 self.currenciesList = currenciesResult
-                
-//                if CurrencySettings.shared.currentCurrency?.currencyId == nil {
-//                    if self.currenciesList.count > 0 {
-//                        CurrencySettings.shared.currentCurrency = self.currenciesList[0]
-//                    }
-//                }
+                self.setKuwaitiDinarCurrency()
             
             case .failure(let error):
                 print("the error \(error)")
+            }
+        }
+    }
+    
+    func setKuwaitiDinarCurrency() {
+        for currency in self.currenciesList {
+            if currency.currencyId == Constants.Currency.kuwaitCurrencyId {
+                CurrencySettings.shared.kuwaitiDinarCurrency = currency
+                break
             }
         }
     }

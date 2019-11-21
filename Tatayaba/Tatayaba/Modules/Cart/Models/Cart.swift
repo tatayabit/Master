@@ -17,16 +17,19 @@ class Cart {
     var paymentMethod: PaymentMethod?
 
     var productsCount: Int { return cartItemsArr.count }
-    var subtotalPrice: String { return String(calculateSubTotal()).formattedPrice }
-    var shippingFormatedPrice: String { return String(shipping).formattedPrice }
+    var subtotalPrice: String { return String(self.calculateSubTotal()).formattedPrice }
+    var shippingFormatedPrice: String { return String(self.shipping).formattedPrice }
     var shipping: Float = 1
-    var totalPrice: String { return String(calculateTotal()).formattedPrice }
+    var totalPrice: String { return String(self.calculateTotal()).formattedPrice }
     
     var isOneClickBuy: Bool = false
     var couponCode: String = ""
     
     private var currency: Currency?
     
+    init() {
+        CurrencySettings.shared.addCurrencyDelegate(delegate: self)
+    }
     
     //MARK:- Operational functions
     func addProduct(product: Product, quantity: Int = 1, options: [CartItemOptions]? = nil) {
@@ -90,7 +93,7 @@ class Cart {
             for i in 0...productsArr.count - 1 {
                 let productItem = productsArr[i]
                 let cartItem = cartItemsArr[i]
-                let price = (productItem.price as NSString).floatValue//Float(productItem.price) ?? 0.0
+                let price = (productItem.price as NSString).floatValue
                 let quantity = Float(cartItem.count)
                 total += (quantity * price)
             }
@@ -119,7 +122,7 @@ class Cart {
     }
     
     // MARK:- Update Currency
-    private func updateCurrency() {
+    func updateCurrency() {
         print("updateCurrency::::: \(String(describing: CurrencySettings.shared.currentCurrency))")
         if currency == nil {
 //            self.updatePricesWithCurrency()
@@ -136,21 +139,52 @@ class Cart {
     }
     
     private func updatePricesWithCurrency() {
-//        guard let cartCurrency = currency else { return }
-        
+        self.currency = CurrencySettings.shared.currentCurrency
+//        self.convertPricesToUpdatedCurrency()
     }
     
     private func convertPricesToKD() {
         guard let cartCurrency = currency else { return }
-        if cartCurrency.currencyId == Constants.Currency.kuwaitCurrencyId {
-            return
-        }
+        guard let updatedCurrency = CurrencySettings.shared.currentCurrency else { return }
         
+        // multiply by the currency rate
+        
+        for i in 0...productsArr.count - 1 {
+            var product = productsArr[i]
+
+            print("old price: \(product.price) \(cartCurrency.currencyCode)")
+            let price = Float(product.price) ?? 0.00
+            
+            let rateToKD = (Float(cartCurrency.coefficient) ?? 0.00)
+            let PriceKD  = price * rateToKD
+            print("price in KD: \(PriceKD)")
+            
+            let updatedRate = Float(updatedCurrency.coefficient) ?? 0.00
+            let updatedDecimal = Int(updatedCurrency.decimals) ?? 2
+            let updatedPrice  = (PriceKD / updatedRate).roundedFormat(decimals: updatedDecimal)
+            
+            
+            product.price = "\(updatedPrice)"
+            productsArr[i] = product
+        }
         
     }
     
     private func convertPricesToUpdatedCurrency() {
+        // divide on the currency rate
+        guard let cartCurrency = self.currency else { return }
         
+        for i in 0...productsArr.count - 1 {
+            var product = productsArr[i]
+
+            print("old price: \(product.price)")
+            let price = Float(product.price) ?? 0.00
+            let updatedRate = Float(cartCurrency.coefficient) ?? 0.00
+            let updatedPrice  = ((price / updatedRate) * 100).rounded() / 100
+            print("price in \(cartCurrency.currencyCode): \(updatedPrice)")
+            product.price = "\(updatedPrice)"
+            productsArr[i] = product
+        }
     }
     
     // MARK:- Reset
@@ -163,5 +197,11 @@ class Cart {
         self.currency = nil
         self.couponCode = ""
         updateTabBarCount()
+    }
+}
+
+extension Cart: CurrencySettingsDelegate {
+    func currencyDidChange(to currency: Currency) {
+        self.updateCurrency()
     }
 }

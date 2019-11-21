@@ -14,7 +14,7 @@ struct ProductsAPIClient: APIClient {
     typealias JSONTaskCompletionHandler = (Decodable?, APIError?) -> Void
 
     var provider = MoyaProvider<MultiTarget>(plugins: [NetworkLoggerPlugin(verbose: true)])
-
+    
     static let environment: APIEnvironment = .production
 
 
