@@ -57,7 +57,7 @@ extension BlocksEndpoint: TargetType {
         case .getBlock:
 //            "lang_code": LanguageManager.getLanguage()
 //            return .requestPlain
-            var currencyId = "4"
+            var currencyId = Constants.Currency.kuwaitCurrencyId
                        if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
                            currencyId = countryCurrency
                        }

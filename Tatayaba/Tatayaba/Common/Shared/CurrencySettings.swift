@@ -57,7 +57,13 @@ class CurrencySettings {
         guard let encodedData = NSKeyedUnarchiver.unarchiveObject(with: savedData) as? Data else { return }
 
         let currencySettingsDataDecoded = try? PropertyListDecoder().decode(Currency.self, from: encodedData)
-        currentCurrency = currencySettingsDataDecoded
+        self.currentCurrency = currencySettingsDataDecoded
         print("loaded CurrencySettingsData: \(String(describing: currentCurrency))")
+    }
+}
+
+extension Constants {
+    struct Currency {
+        static let kuwaitCurrencyId = "4"
     }
 }

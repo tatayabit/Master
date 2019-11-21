@@ -25,7 +25,6 @@ class CountrySettings {
                     delegate.countryDidChange(to: currentCountry)
                 }
             }
-            
         }
     }
     
