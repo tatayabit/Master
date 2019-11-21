@@ -10,6 +10,9 @@ import UIKit
 
 class HomeViewController: BaseViewController, BannersBlocksViewProtocol, CategoriesBlockViewProtocol, ProductsBlockViewProtocol, SuppliersBlockViewProtocol, FullScreenBannersViewProtocol, CountrySettingsDelegate, CurrencySettingsDelegate {
     
+    
+    
+    
     func currencyDidChange(to currency: Currency) {
         print("currency changes!!!")
         print("HomeViewController")
@@ -22,20 +25,29 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     private let allSuppliersSegue = "all_supplier_segue"
 
     @IBOutlet weak var scrollView: StackedScrollView!
-     var tabbar:UITabBar?
+    var tabbar:UITabBar?
     private var viewModel = HomeViewModel()
 
     let squaredBlockView: BannersBlocksView = .fromNib()
-    let productsBlocklView: ProductsBlockView = .fromNib()
+    let productsBlocklView: ProductsBlockView = .fromNib()//[UIView?]
     let fullScreenBannersView: FullScreenBannersView = .fromNib()
     let categoriesBlockView: CategoriesBlockView = .fromNib()
     let suppliersBlockView: SuppliersBlockView = .fromNib()
 
-    // Duplicated Products (Will be removed  later)
-    let productsBlocklViewCopyX: ProductsBlockView = .fromNib()
-    let productsBlocklViewCopyXX: ProductsBlockView = .fromNib()
-
-
+//    // Duplicated Products (Will be removed  later)
+//    let productsBlocklViewCopyX: ProductsBlockView = .fromNib()
+//    let productsBlocklViewCopyXX: ProductsBlockView = .fromNib()
+//
+    
+    
+    // Duplicated Products (Will be updated  later)
+    let productsBlocklView270: ProductsBlockView = .fromNib()
+    let productsBlocklView305: ProductsBlockView = .fromNib()
+    let productsBlocklView267: ProductsBlockView = .fromNib()
+    let productsBlocklView297: ProductsBlockView = .fromNib()
+    let productsBlocklView248: ProductsBlockView = .fromNib()
+    let productsBlocklView265: ProductsBlockView = .fromNib()
+    
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,18 +112,43 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
 
 
     fileprivate func loadProductsBlockViewData() {
+        
         self.hideLoadingIndicator(from: productsBlocklView)
-        productsBlocklView.block = viewModel.productsBlock
+        productsBlocklView.block = viewModel.productsBlocks[0]
         productsBlocklView.loadData()
         
-        // Will be removed later
-        self.hideLoadingIndicator(from: productsBlocklViewCopyX)
-        productsBlocklViewCopyX.block = viewModel.productsBlock
-        productsBlocklViewCopyX.loadData()
+        self.hideLoadingIndicator(from: productsBlocklView270)
+        productsBlocklView270.block = viewModel.productsBlocks[1]
+        productsBlocklView270.loadData()
         
-        self.hideLoadingIndicator(from: productsBlocklViewCopyXX)
-        productsBlocklViewCopyXX.block = viewModel.productsBlock
-        productsBlocklViewCopyXX.loadData()
+        self.hideLoadingIndicator(from: productsBlocklView305)
+        productsBlocklView305.block = viewModel.productsBlocks[2]
+        productsBlocklView305.loadData()
+        
+        self.hideLoadingIndicator(from: productsBlocklView267)
+        productsBlocklView267.block = viewModel.productsBlocks[3]
+        productsBlocklView267.loadData()
+        
+        self.hideLoadingIndicator(from: productsBlocklView297)
+        productsBlocklView297.block = viewModel.productsBlocks[4]
+        productsBlocklView297.loadData()
+        
+       self.hideLoadingIndicator(from: productsBlocklView248)
+       productsBlocklView248.block = viewModel.productsBlocks[5]
+        productsBlocklView248.loadData()
+        
+        self.hideLoadingIndicator(from: productsBlocklView265)
+        productsBlocklView265.block = viewModel.productsBlocks[6]
+        productsBlocklView265.loadData()
+//
+//        // Will be removed later
+//        self.hideLoadingIndicator(from: productsBlocklViewCopyX)
+//        productsBlocklViewCopyX.block = viewModel.productsBlock
+//        productsBlocklViewCopyX.loadData()
+//
+//        self.hideLoadingIndicator(from: productsBlocklViewCopyXX)
+//        productsBlocklViewCopyXX.block = viewModel.productsBlock
+//        productsBlocklViewCopyXX.loadData()
         
     }
 
@@ -161,20 +198,48 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     
     // MARK:- Duplicated Products (Will be removed later)
     func addDupplicatedProducts() {
-        productsBlocklViewCopyX.delegate = self
-        scrollView.stackView.addArrangedSubview(productsBlocklViewCopyX)
-        productsBlocklViewCopyX.translatesAutoresizingMaskIntoConstraints = false
-        productsBlocklViewCopyX.heightAnchor.constraint(equalToConstant: 260).isActive = true
-        productsBlocklViewCopyX.titleLabel.text = "PERSONAL CARE".localized()
-        self.showLoadingIndicator(to: productsBlocklViewCopyX)
+        productsBlocklView270.delegate = self
+        scrollView.stackView.addArrangedSubview(productsBlocklView270)
+        productsBlocklView270.translatesAutoresizingMaskIntoConstraints = false
+        productsBlocklView270.heightAnchor.constraint(equalToConstant: 260).isActive = true
+        productsBlocklView270.titleLabel.text = "PERSONAL CARE".localized()
+        self.showLoadingIndicator(to: productsBlocklView270)
         
+        productsBlocklView305.delegate = self
+        scrollView.stackView.addArrangedSubview(productsBlocklView305)
+        productsBlocklView305.translatesAutoresizingMaskIntoConstraints = false
+        productsBlocklView305.heightAnchor.constraint(equalToConstant: 260).isActive = true
+        productsBlocklView305.titleLabel.text = ""
+        self.showLoadingIndicator(to: productsBlocklView305)
         
-        productsBlocklViewCopyXX.delegate = self
-        scrollView.stackView.addArrangedSubview(productsBlocklViewCopyXX)
-        productsBlocklViewCopyXX.translatesAutoresizingMaskIntoConstraints = false
-        productsBlocklViewCopyXX.heightAnchor.constraint(equalToConstant: 260).isActive = true
-        productsBlocklViewCopyX.titleLabel.text = "OIL".localized()
-        self.showLoadingIndicator(to: productsBlocklViewCopyXX)
+        productsBlocklView267.delegate = self
+        scrollView.stackView.addArrangedSubview(productsBlocklView267)
+        productsBlocklView267.translatesAutoresizingMaskIntoConstraints = false
+        productsBlocklView267.heightAnchor.constraint(equalToConstant: 260).isActive = true
+        productsBlocklView267.titleLabel.text = ""
+        self.showLoadingIndicator(to: productsBlocklView267)
+        
+        productsBlocklView297.delegate = self
+        scrollView.stackView.addArrangedSubview(productsBlocklView297)
+        productsBlocklView297.translatesAutoresizingMaskIntoConstraints = false
+        productsBlocklView297.heightAnchor.constraint(equalToConstant: 260).isActive = true
+        productsBlocklView297.titleLabel.text = ""
+        self.showLoadingIndicator(to: productsBlocklView297)
+        
+        productsBlocklView248.delegate = self
+        scrollView.stackView.addArrangedSubview(productsBlocklView248)
+        productsBlocklView248.translatesAutoresizingMaskIntoConstraints = false
+        productsBlocklView248.heightAnchor.constraint(equalToConstant: 260).isActive = true
+        productsBlocklView248.titleLabel.text = ""
+        self.showLoadingIndicator(to: productsBlocklView248)
+        
+        productsBlocklView265.delegate = self
+        scrollView.stackView.addArrangedSubview(productsBlocklView265)
+        productsBlocklView265.translatesAutoresizingMaskIntoConstraints = false
+        productsBlocklView265.heightAnchor.constraint(equalToConstant: 260).isActive = true
+        productsBlocklView265.titleLabel.text = ""
+        self.showLoadingIndicator(to: productsBlocklView265)
+        
     }
 
     // MARK:- SetupUI
@@ -213,7 +278,9 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     }
 
     //MARK:- ProductsBlockViewProtocol
-    func didSelectProduct(at indexPath: IndexPath) {
+    func didSelectProduct(at indexPath: IndexPath, block_Id : String) {
+        print(block_Id)
+        self.viewModel.block_Id = block_Id
         performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
     }
 

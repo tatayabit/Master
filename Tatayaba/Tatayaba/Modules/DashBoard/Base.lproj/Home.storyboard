@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GId-Xi-OOd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GId-Xi-OOd">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -116,7 +116,7 @@
         <scene sceneID="vG3-VF-qNM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kTb-40-w61" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="home_unselected" id="0RQ-oJ-4UF">
+                    <tabBarItem key="tabBarItem" title="Home" image="home_unselected" selectedImage="home_selected" id="0RQ-oJ-4UF">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -167,7 +167,7 @@
         <scene sceneID="HYp-Pu-Y1X">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J1J-Na-IoS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Categories" image="category_unselected" id="hj0-Yf-ojD"/>
+                    <tabBarItem key="tabBarItem" title="Categories" image="category_unselected" selectedImage="category_selected" id="hj0-Yf-ojD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WIr-Ad-Ke2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -186,7 +186,7 @@
         <scene sceneID="2q8-Me-iAx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g5t-26-yVe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Concierge" image="concierge_selected" selectedImage="concierge_selected" id="dad-sI-laG">
+                    <tabBarItem key="tabBarItem" title="Concierge" image="concierge_unselected" selectedImage="concierge_selected" id="dad-sI-laG">
                         <color key="badgeColor" red="0.87564182280000002" green="0.63852697609999998" blue="0.61103826760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
@@ -208,7 +208,7 @@
         <scene sceneID="lXd-T9-9hX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dvx-nP-vye" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="ProfileMenu" id="2s8-cd-8yZ"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile_unselected" selectedImage="Profile_selected" id="2s8-cd-8yZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jL9-yH-NeR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -227,7 +227,7 @@
         <scene sceneID="bTk-yj-2Ei">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ghk-TS-HUY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cart" image="cart_unselected" id="yGl-X9-zVs"/>
+                    <tabBarItem key="tabBarItem" title="Cart" image="cart_unselected" selectedImage="cart_selected" id="yGl-X9-zVs"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r4R-aK-XXV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -244,10 +244,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ProfileMenu" width="25" height="25"/>
-        <image name="cart_unselected" width="25" height="25"/>
-        <image name="category_unselected" width="25" height="25"/>
-        <image name="concierge_selected" width="25" height="25"/>
-        <image name="home_unselected" width="25" height="25"/>
+        <image name="Profile_selected" width="40" height="40"/>
+        <image name="Profile_unselected" width="40" height="40"/>
+        <image name="cart_selected" width="40" height="40"/>
+        <image name="cart_unselected" width="40" height="40"/>
+        <image name="category_selected" width="40" height="40"/>
+        <image name="category_unselected" width="40" height="40"/>
+        <image name="concierge_selected" width="40" height="40"/>
+        <image name="concierge_unselected" width="40" height="40"/>
+        <image name="home_selected" width="40" height="40"/>
+        <image name="home_unselected" width="40" height="40"/>
     </resources>
 </document>

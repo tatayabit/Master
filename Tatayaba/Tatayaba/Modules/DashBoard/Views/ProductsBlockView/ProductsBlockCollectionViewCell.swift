@@ -26,6 +26,8 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
     var indexPath: IndexPath = IndexPath(item: 0, section: 0)
     weak var delegate: ProductsBlockCollectionViewCellDelegate?
     
+    var cellBlockName : String = ""
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -65,6 +67,38 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         } else {
             addToCartButton.setTitle(Constants.ProductDetails.addToCart, for: .normal)
         }
+        
+        self.layoutIfNeeded()
+    }
+    func configureProduct(_ product: Product, indexPath: IndexPath, cellBlockName : String) {
+        bannerImageView.sd_setImage(with: URL(string: product.mainPair.detailedPair.imageUrl), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
+
+        nameLabel.text = product.supplierName == "None" ? "" : product.supplierName
+        descriptionLabel.text = product.name
+        priceLabel.text = product.price.formattedPrice
+        outOfStockLabel.isHidden = product.isInStock
+        self.discountPercentageLabel.text = product.discountPercentage + "%\nOFF"
+        
+        
+        if let percentage = Float(product.priceBeforeDiscount) {
+            self.discountPercentageLabel.isHidden = !(percentage > 0)
+        } else {
+            self.discountPercentageLabel.isHidden = true
+        }
+        if let discountPercentage = Float(product.discountPercentage) {
+            self.discountPercentageLabel.isHidden = !(discountPercentage > 0)
+        } else {
+            self.discountPercentageLabel.isHidden = true
+        }
+        
+        self.indexPath = indexPath
+        
+        if product.hasOptions {
+            addToCartButton.setTitle(Constants.ProductDetails.options, for: .normal)
+        } else {
+            addToCartButton.setTitle(Constants.ProductDetails.addToCart, for: .normal)
+        }
+        self.cellBlockName = cellBlockName
         
         self.layoutIfNeeded()
     }
