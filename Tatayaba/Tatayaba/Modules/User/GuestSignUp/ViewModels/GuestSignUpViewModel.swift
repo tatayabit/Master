@@ -35,8 +35,7 @@ struct GuestSignUpViewModel {
                 })
             case .failure(let error):
                 print("the error \(error)")
-//                completion(error)
-
+                 completion(APIResult.failure(error))
             }
         }
     }
