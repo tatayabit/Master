@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ProductsBlockViewProtocol: class {
-    func didSelectProduct(at indexPath: IndexPath)
+    func didSelectProduct(at indexPath: IndexPath,block_Id:String)
     func didAddToCart(product: Product)
     func didSelectOneClick(product: Product)
 }
@@ -65,7 +65,7 @@ class ProductsBlockView: UIView, UICollectionViewDelegate, UICollectionViewDataS
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductsBlockCollectionViewCell.identifier, for: indexPath) as! ProductsBlockCollectionViewCell
 
         guard let block = block else { return cell }
-        cell.configure(block.products[indexPath.row].fullDetails, indexPath: indexPath)
+        cell.configureProduct(block.products[indexPath.row].fullDetails, indexPath: indexPath, cellBlockName: block.blockId)
         cell.delegate = self
         return cell
     }
@@ -75,8 +75,9 @@ class ProductsBlockView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! ProductsBlockCollectionViewCell
         if let delegate = delegate {
-            delegate.didSelectProduct(at: indexPath)
+            delegate.didSelectProduct(at: indexPath, block_Id: cell.cellBlockName)
         }
     }
 
@@ -86,7 +87,7 @@ class ProductsBlockView: UIView, UICollectionViewDelegate, UICollectionViewDataS
             guard let block = block else { return }
             let product = block.products[indexPath.row].fullDetails
             if product.hasOptions {
-                delegate.didSelectProduct(at: indexPath)
+                delegate.didSelectProduct(at: indexPath, block_Id: "")
             } else {
                 delegate.didAddToCart(product: product)
             }
@@ -98,7 +99,7 @@ class ProductsBlockView: UIView, UICollectionViewDelegate, UICollectionViewDataS
             guard let block = block else { return }
             let product = block.products[indexPath.row].fullDetails
             if product.hasOptions {
-                delegate.didSelectProduct(at: indexPath)
+                delegate.didSelectProduct(at: indexPath, block_Id: "")
             } else {
                 delegate.didSelectOneClick(product: product)
             }
