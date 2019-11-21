@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		053D694C0D5575CB4917A4B5 /* Pods_TatayabaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */; };
+		1005869B23868DA200D6CA76 /* Float+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1005869A23868DA200D6CA76 /* Float+Extension.swift */; };
 		100B8D5F236F2F52000E11E8 /* CountriesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100B8D5E236F2F52000E11E8 /* CountriesAPIClient.swift */; };
 		100B8D61236F2F6E000E11E8 /* CountriesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100B8D60236F2F6E000E11E8 /* CountriesEndpoint.swift */; };
 		10181CB8235F655300220439 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10181CB7235F655300220439 /* GoogleService-Info.plist */; };
@@ -295,6 +296,7 @@
 /* Begin PBXFileReference section */
 		02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B399FC35D3B3B996D93EC1 /* Pods-TatayabaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaUITests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1005869A23868DA200D6CA76 /* Float+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Extension.swift"; sourceTree = "<group>"; };
 		100B8D5E236F2F52000E11E8 /* CountriesAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesAPIClient.swift; sourceTree = "<group>"; };
 		100B8D60236F2F6E000E11E8 /* CountriesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesEndpoint.swift; sourceTree = "<group>"; };
 		10181CB7235F655300220439 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -1391,6 +1393,7 @@
 				1120C45E22E6184600F99B60 /* UIButton+Extensions.swift */,
 				118A10F323294EA9003F86DE /* UIFont+Extensions.swift */,
 				11B07920233BD756003041E8 /* Date+Extensions.swift */,
+				1005869A23868DA200D6CA76 /* Float+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2422,6 +2425,7 @@
 				112654AC22D2691400904FB5 /* ProductsAPIClient.swift in Sources */,
 				114D1A1822CBB33E009205F3 /* Product.swift in Sources */,
 				11B07919233BAF31003041E8 /* UITableView+Extensions.swift in Sources */,
+				1005869B23868DA200D6CA76 /* Float+Extension.swift in Sources */,
 				1120C45F22E6184600F99B60 /* UIButton+Extensions.swift in Sources */,
 				117AC9F82314444200EFCE25 /* DeeplinkHandler.swift in Sources */,
 				84BC089C22DC7D4900C6180E /* Cart.swift in Sources */,

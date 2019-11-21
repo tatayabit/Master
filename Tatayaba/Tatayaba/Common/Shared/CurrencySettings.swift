@@ -18,15 +18,20 @@ class CurrencySettings {
     static let shared = CurrencySettings()
     var currentCurrency: Currency? {
         willSet {
-            Cart.shared.reset()
-            if let currentCurrency = newValue {
-                saveCurrencySettingsDataToKeyChain(currencyObj: currentCurrency)
+            if let updatedCurrency = newValue {
+                saveCurrencySettingsDataToKeyChain(currencyObj: updatedCurrency)
+            }
+        }
+        didSet {
+            if let updatedCurrency = oldValue {
                 for delegate in delegates {
-                    delegate.currencyDidChange(to: currentCurrency)
+                    delegate.currencyDidChange(to: updatedCurrency)
                 }
             }
         }
     }
+    
+    var kuwaitiDinarCurrency: Currency?
     
     private var delegates = [CurrencySettingsDelegate]()
     

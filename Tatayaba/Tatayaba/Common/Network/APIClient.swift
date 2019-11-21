@@ -21,6 +21,7 @@ protocol APIClient {
 
 extension APIClient {
     func fetch<T: Decodable>(with target: TargetType, completion: @escaping (APIResult<T, MoyaError>) -> Void) {
+        provider.manager.session.configuration.urlCache?.removeAllCachedResponses()
         provider.request(MultiTarget(target)) { result in
             switch result {
             case .success(let response):
