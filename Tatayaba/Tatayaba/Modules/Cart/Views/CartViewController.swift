@@ -257,13 +257,14 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         cell.configure(product: cartProduct.0, cartItem: cartProduct.1)
         
         cell.onAddMoreClick = {
-            let maxQuantity = cartProduct.0.maxQuantity
+            let maxQuantity = Int(cartProduct.0.maxQuantity) ?? 0
             let stockQuantity = cartProduct.0.amount
             let currentQuantity = cell.quantityCoutLabel.text ?? "0"
-            let max = Int(maxQuantity) ?? 0
+            let max = (stockQuantity > maxQuantity) ? maxQuantity : stockQuantity
+
             if  max <= Int(currentQuantity) ?? 0 {
                 // max reached
-            } else if stockQuantity > max {
+            } else {
                 self.addOneMoreAction(indexPath: indexPath)
                 cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
             }
