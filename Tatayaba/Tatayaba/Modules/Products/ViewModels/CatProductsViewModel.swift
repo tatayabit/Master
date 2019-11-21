@@ -20,6 +20,8 @@ class CatProductsViewModel {
     private var currentPage = 0
     private var total = 0
     private var isFetchInProgress = false
+    private var shouldCallApi: Bool = true
+
     
     private weak var delegate: CatProductsViewModelDelegate?
     
@@ -72,6 +74,9 @@ class CatProductsViewModel {
                     guard let productResult = response else { return }
                     guard let products = productResult.products else { return }
                     
+                    if products.count < 20 {
+                        self.shouldCallApi = false
+                    }
                     self.total += products.count
                     self.productsList.append(contentsOf: products)
                     
