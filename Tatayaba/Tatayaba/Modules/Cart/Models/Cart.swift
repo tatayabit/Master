@@ -25,6 +25,8 @@ class Cart {
     var isOneClickBuy: Bool = false
     var couponCode: String = ""
     
+    private var currency: Currency?
+    
     
     //MARK:- Operational functions
     func addProduct(product: Product, quantity: Int = 1, options: [CartItemOptions]? = nil) {
@@ -44,6 +46,7 @@ class Cart {
             productsArr.append(product)
         }
         updateTabBarCount()
+        updateCurrency()
     }
 
     func cartItem(for product: Product, options: [CartItemOptions]?) -> CartItem {
@@ -115,6 +118,41 @@ class Cart {
         return existed
     }
     
+    // MARK:- Update Currency
+    private func updateCurrency() {
+        print("updateCurrency::::: \(String(describing: CurrencySettings.shared.currentCurrency))")
+        if currency == nil {
+//            self.updatePricesWithCurrency()
+            self.currency = CurrencySettings.shared.currentCurrency
+            return
+        }
+        
+        if let settingsCurrency = CurrencySettings.shared.currentCurrency, let cartCurrency = currency {
+            if settingsCurrency.currencyId != cartCurrency.currencyId {
+                self.convertPricesToKD()
+                self.updatePricesWithCurrency()
+            }
+        }
+    }
+    
+    private func updatePricesWithCurrency() {
+//        guard let cartCurrency = currency else { return }
+        
+    }
+    
+    private func convertPricesToKD() {
+        guard let cartCurrency = currency else { return }
+        if cartCurrency.currencyId == Constants.Currency.kuwaitCurrencyId {
+            return
+        }
+        
+        
+    }
+    
+    private func convertPricesToUpdatedCurrency() {
+        
+    }
+    
     // MARK:- Reset
     func reset() {
         self.productsArr.removeAll()
@@ -122,6 +160,7 @@ class Cart {
         self.isOneClickBuy = false
         self.defaultShipping = nil
         self.paymentMethod = nil
+        self.currency = nil
         self.couponCode = ""
         updateTabBarCount()
     }

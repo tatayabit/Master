@@ -76,7 +76,7 @@ extension ProductsEndpoint: TargetType {
             return .requestPlain
             
         case .getProductDetails:
-            var currencyId = "4"
+            var currencyId = Constants.Currency.kuwaitCurrencyId
 
             if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
                 currencyId = countryCurrency
@@ -85,7 +85,7 @@ extension ProductsEndpoint: TargetType {
             ], encoding: URLEncoding.default)
             
         case .getAllCategories:
-            var currencyId = "4"
+            var currencyId = Constants.Currency.kuwaitCurrencyId
             if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
                 currencyId = countryCurrency
             }
@@ -97,7 +97,7 @@ extension ProductsEndpoint: TargetType {
                 ], encoding: URLEncoding.default)
             
         case .getProductsOfCategory(let category, let page):
-            var currencyId = "4"
+            var currencyId = Constants.Currency.kuwaitCurrencyId
             if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
                 currencyId = countryCurrency
             }
@@ -114,7 +114,7 @@ extension ProductsEndpoint: TargetType {
             return .requestParameters(parameters: [ "items_per_page": 10
                 ], encoding: URLEncoding.default)
         case .getAlsoBoughtProducts(let productId):
-            var currencyId = "4"
+            var currencyId = Constants.Currency.kuwaitCurrencyId
             if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
                 currencyId = countryCurrency
             }

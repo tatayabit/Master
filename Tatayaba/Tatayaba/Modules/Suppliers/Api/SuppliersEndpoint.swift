@@ -65,7 +65,7 @@ extension SuppliersEndpoint: TargetType {
                                                 "page": page.urlEscaped
             ], encoding: URLEncoding.default)
         case .getSupplierDetails(_, let page):
-            var currencyId = "4"
+            var currencyId = Constants.Currency.kuwaitCurrencyId
             if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
                 currencyId = countryCurrency
             }

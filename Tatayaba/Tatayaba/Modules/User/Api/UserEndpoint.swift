@@ -11,9 +11,9 @@ import Moya
 enum UserEndpoint {
     case signUp(user: User)
     case gusetSignUp(user: User)
-    case updateProfile(user: User)
     case login(user: User)
     case forgetPassword(email: String)
+    case updateProfile(user: User)
     case getProfile(userId: String)
     
 }
@@ -42,8 +42,8 @@ extension UserEndpoint: TargetType {
             return "users"
         case .updateProfile:
             return "4.0/TtmUsers"
-        case .getProfile:
-            return "4.0/TtmUsers"
+        case .getProfile(let userId):
+            return "4.0/TtmUsers/\(userId.urlEscaped)"
         case .login:
             return "4.0/TtmAuth"
         case .forgetPassword:
@@ -53,7 +53,7 @@ extension UserEndpoint: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .signUp,.gusetSignUp, .login, .updateProfile:
+        case .signUp, .gusetSignUp, .login, .updateProfile:
             return .post
         case .getProfile, .forgetPassword:
             return .get
@@ -111,8 +111,8 @@ extension UserEndpoint: TargetType {
                                                     "b_phone": user.billingPhone
                 ], encoding: JSONEncoding.default)
         case .getProfile(let userId):
-            return .requestParameters(parameters: [ "id": userId.urlEscaped
-            ], encoding: URLEncoding.queryString)
+            return .requestPlain//.requestParameters(parameters: [ "id": userId.urlEscaped
+//            ], encoding: URLEncoding.queryString)
         case .forgetPassword(let email):
             return .requestParameters(parameters: [ "email": email
             ], encoding: URLEncoding.queryString)
