@@ -13,13 +13,10 @@ class Cart {
     var cartItemsArr = [CartItem]()
     private var productsArr = [Product]()
 
-    var defaultShipping: ShippingMethod?
     var paymentMethod: PaymentMethod?
 
     var productsCount: Int { return cartItemsArr.count }
     var subtotalPrice: String { return String(self.calculateSubTotal()).formattedPrice }
-    var shippingFormatedPrice: String { return String(self.shipping).formattedPrice }
-    var shipping: Float = 1
     var totalPrice: String { return String(self.calculateTotal()).formattedPrice }
     
     var isOneClickBuy: Bool = false
@@ -142,7 +139,6 @@ class Cart {
         self.productsArr.removeAll()
         self.cartItemsArr.removeAll()
         self.isOneClickBuy = false
-        self.defaultShipping = nil
         self.paymentMethod = nil
         self.couponCode = ""
         updateTabBarCount()

@@ -16,8 +16,8 @@ struct CartAPIClient: APIClient {
     
     static let environment: APIEnvironment = .production
     
-    func applyCoupon(couponCode: String, email: String, completion: @escaping (APIResult<CouponResponse?, MoyaError>) -> Void) {
-           fetch(with: CartEndpoint.applyCoupon(code: couponCode, email: email), completion: completion)
+    func applyCoupon(parameters: [String: Any], completion: @escaping (APIResult<CouponResponse?, MoyaError>) -> Void) {
+           fetch(with: CartEndpoint.applyCoupon(parameters: parameters), completion: completion)
        }
     
     func getTaxAndShipping(countryCode: String, completion: @escaping (APIResult<TaxAndShippingResponse?, MoyaError>) -> Void) {

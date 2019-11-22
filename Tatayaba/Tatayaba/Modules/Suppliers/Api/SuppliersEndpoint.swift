@@ -64,15 +64,15 @@ extension SuppliersEndpoint: TargetType {
                                                 "items_per_page": 20,
                                                 "page": page.urlEscaped
             ], encoding: URLEncoding.default)
-        case .getSupplierDetails(_, let page):
+        case .getSupplierDetails:
             var currencyId = Constants.Currency.kuwaitCurrencyId
             if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
                 currencyId = countryCurrency
             }
             return .requestParameters(parameters: [
                                                 "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
-                                                "items_per_page": 20,
-                                                "page": page.urlEscaped,
+//                                                "items_per_page": 20,
+//                                                "page": page.urlEscaped,
                                                 "currency_id": currencyId.urlEscaped
             ], encoding: URLEncoding.default)
 //            "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
