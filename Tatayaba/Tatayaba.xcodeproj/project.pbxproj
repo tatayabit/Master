@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		053D694C0D5575CB4917A4B5 /* Pods_TatayabaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */; };
 		1005869B23868DA200D6CA76 /* Float+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1005869A23868DA200D6CA76 /* Float+Extension.swift */; };
+		1005869E2386FA4500D6CA76 /* ConvertedCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1005869D2386FA4500D6CA76 /* ConvertedCurrency.swift */; };
+		100586A02386FCEB00D6CA76 /* ConvertedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1005869F2386FCEB00D6CA76 /* ConvertedProduct.swift */; };
 		100B8D5F236F2F52000E11E8 /* CountriesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100B8D5E236F2F52000E11E8 /* CountriesAPIClient.swift */; };
 		100B8D61236F2F6E000E11E8 /* CountriesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100B8D60236F2F6E000E11E8 /* CountriesEndpoint.swift */; };
 		10181CB8235F655300220439 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10181CB7235F655300220439 /* GoogleService-Info.plist */; };
@@ -297,6 +299,8 @@
 		02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B399FC35D3B3B996D93EC1 /* Pods-TatayabaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaUITests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1005869A23868DA200D6CA76 /* Float+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Extension.swift"; sourceTree = "<group>"; };
+		1005869D2386FA4500D6CA76 /* ConvertedCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertedCurrency.swift; sourceTree = "<group>"; };
+		1005869F2386FCEB00D6CA76 /* ConvertedProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertedProduct.swift; sourceTree = "<group>"; };
 		100B8D5E236F2F52000E11E8 /* CountriesAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesAPIClient.swift; sourceTree = "<group>"; };
 		100B8D60236F2F6E000E11E8 /* CountriesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesEndpoint.swift; sourceTree = "<group>"; };
 		10181CB7235F655300220439 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -609,6 +613,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1005869C2386FA1B00D6CA76 /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+				1005869D2386FA4500D6CA76 /* ConvertedCurrency.swift */,
+				1005869F2386FCEB00D6CA76 /* ConvertedProduct.swift */,
+			);
+			path = Currency;
+			sourceTree = "<group>";
+		};
 		100B8D5D236F2F23000E11E8 /* Api */ = {
 			isa = PBXGroup;
 			children = (
@@ -2023,6 +2036,7 @@
 		84BC08A022DC934A00C6180E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1005869C2386FA1B00D6CA76 /* Currency */,
 				27A908912357906C0032DA41 /* TaxAndShippingModels */,
 				27A9085C235264230032DA41 /* CouponModels */,
 				84BC089B22DC7D4900C6180E /* Cart.swift */,
@@ -2489,6 +2503,7 @@
 				27497C54234E4EF600D84690 /* GuestSignUpViewcontroller.swift in Sources */,
 				11069C392323A2EE0093D6FF /* SupplierDetailsViewModel.swift in Sources */,
 				11FB5872231D5F13005DA4F0 /* SuppliersBlockView.swift in Sources */,
+				100586A02386FCEB00D6CA76 /* ConvertedProduct.swift in Sources */,
 				112654A922D25E5B00904FB5 /* SignUpResponse.swift in Sources */,
 				11D4E69F2312FC5500226A23 /* FullScreenBannersView.swift in Sources */,
 				11945BBB22F0B08D000F08DC /* CheckOutViewController.swift in Sources */,
@@ -2503,6 +2518,7 @@
 				115DC43023118A500001EF67 /* BannerBlockCollectionViewCell.swift in Sources */,
 				11C271AE22F20614004613E3 /* AddressesListViewController.swift in Sources */,
 				847CDE7A22CA130F00E67C8C /* ColorDef.swift in Sources */,
+				1005869E2386FA4500D6CA76 /* ConvertedCurrency.swift in Sources */,
 				116C936422F0930300921893 /* OrdersAPIClient.swift in Sources */,
 				11945BCA22F0B0C6000F08DC /* ShippingAPIClient.swift in Sources */,
 				11069C412323FFA60093D6FF /* ProductMainPair.swift in Sources */,

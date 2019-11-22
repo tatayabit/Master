@@ -120,7 +120,17 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
             return
         }
         
-        viewModel.addToCart()
+        if viewModel.hasRequiredOptions {
+                   
+            if viewModel.isAllRequiredOptionsSelected() {
+                viewModel.addToCart()
+            } else {
+                showErrorAlerr(title: "Error", message: "please choose the required options.", handler: nil)
+            }
+        } else {
+            viewModel.addToCart()
+        }
+        
         if Customer.shared.loggedin {
             let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewCartViewController") as! CartViewController
             controller.buyingWayType = 0
