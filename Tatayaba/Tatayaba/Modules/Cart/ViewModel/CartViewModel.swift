@@ -99,7 +99,7 @@ class CartViewModel {
     }
     
     func getPricesWithUpdatedCurrency(to currency: Currency) {
-        
+        if cart.productsList().count == 0 { return }
         cartApiClient.getPricesWithUpdatedCurrency(parameters: self.getConvertingCurrencyJsonString(with: currency.currencyId)) { result in
             switch result {
             case .success(let convertedPricesResult):
@@ -113,8 +113,27 @@ class CartViewModel {
         }
     }
     
+    func getShippingPricesWithUpdatedCurrency(completion: @escaping (APIResult<ConvertedCurrency?, MoyaError>) -> Void) {
+        if cart.productsList().count == 0 { return }
+        cartApiClient.getPricesWithUpdatedCurrency(parameters: self.getShippingConvertingCurrencyJsonString()) { result in
+            switch result {
+            case .success(let convertedPricesResult):
+                if let convertedPrices = convertedPricesResult {
+                    print(convertedPrices)
+                    if var shipping = CountrySettings.shared.shipping {
+                        shipping.rateValue = convertedPrices.shippingCharge
+                        CountrySettings.shared.updateShipping(shippingValue: shipping)
+                    }
+                }
+            case .failure(let error):
+                print("the error \(error)")
+            }
+            completion(result)
+        }
+    }
+    
     // MARK:- Get Apply Coupon format
-    func getApplyCouponJsonString(couponCode: String, email: String) -> [String: Any] {
+    private func getApplyCouponJsonString(couponCode: String, email: String) -> [String: Any] {
         let productsList = cart.productsList()
         var requestJson = [String: Any]()
 
@@ -138,10 +157,9 @@ class CartViewModel {
 
     
     // MARK:- Convert to get currency format
-    func getConvertingCurrencyJsonString(with currencyId: String) -> [String: Any] {
+    private func getConvertingCurrencyJsonString(with currencyId: String) -> [String: Any] {
         let productsList = cart.productsList()
         var requestJson = [String: Any]()
-
         var productsParms = [[String: Any]]()
         
         for product in productsList {
@@ -155,6 +173,24 @@ class CartViewModel {
         requestJson["products"] = productsParms
         requestJson["to_currency_id"] = currencyId
         requestJson["convert_data"] = true
+        
+        return requestJson
+    }
+    
+    private func getShippingConvertingCurrencyJsonString() -> [String: Any] {
+        var shippingRate = "1.00"
+        if let shipping = CountrySettings.shared.shipping {
+            shippingRate = shipping.rateType ?? "1.00"
+        }
+        var requestJson = [String: Any]()
+        
+        requestJson["products"] = []
+        requestJson["shipping_charge"] = shippingRate
+        requestJson["to_currency_id"] = CurrencySettings.shared.currentCurrency?.currencyId//currencyId
+        requestJson["convert_data"] = true
+//        if let tax = CountrySettings.shared.tax {
+//            requestJson["tax"] = tax.
+//        }
         
         return requestJson
     }

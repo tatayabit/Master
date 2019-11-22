@@ -121,7 +121,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                 totalPriceValue = discountValueFromTotal
                 couponTitleValue = "to \(discountItem?.discountValue ?? "0")%"
             } else if discountItem?.discountBonus == DiscountBonusTypes.byFixed.rawValue {
-                let discountValueFromTotal = currentTotal - ("\(discountItem?.discountValue ?? "0")" as NSString).floatValue
+                let discountValueFromTotal = ("\(discountItem?.discountValue ?? "0")" as NSString).floatValue
                 totalPriceValue = currentTotal - discountValueFromTotal
                 couponTitleValue = "by \((discountItem?.discountValue ?? "0").formattedPrice)"
             } else if discountItem?.discountBonus == DiscountBonusTypes.toFixed.rawValue {
@@ -320,7 +320,6 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     func loadTaxAndShipping() {
         showLoadingIndicator(to: self.view)
         viewModel.getTaxAndShipping(countryCode: "KW") { result in
-            self.hideLoadingIndicator(from: self.view)
             switch result {
             case .success(let taxAndShippingResponse):
                 if let taxAndShippingResponse = taxAndShippingResponse {
@@ -344,8 +343,28 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                     if let paymentMethods = taxAndShippingResponse.paymentMethods {
                         CountrySettings.shared.updatePaymentsMethods(list: paymentMethods)
                     }
+                    
+                    self.updateShippingCurrency()
+                    
+                } else {
+                    self.hideLoadingIndicator(from: self.view)
                 }
                 
+                
+            case .failure(let error):
+                self.hideLoadingIndicator(from: self.view)
+                print("the error \(error)")
+            }
+        }
+    }
+    
+    func updateShippingCurrency() {
+        viewModel.getShippingPricesWithUpdatedCurrency { result in
+            self.hideLoadingIndicator(from: self.view)
+
+            switch result {
+            case .success:
+                self.calculateTotal()
                 
             case .failure(let error):
                 print("the error \(error)")

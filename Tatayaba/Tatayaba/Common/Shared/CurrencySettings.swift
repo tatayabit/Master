@@ -20,10 +20,6 @@ class CurrencySettings {
         willSet {
             if let updatedCurrency = newValue {
                 saveCurrencySettingsDataToKeyChain(currencyObj: updatedCurrency)
-            }
-        }
-        didSet {
-            if let updatedCurrency = oldValue {
                 for delegate in delegates {
                     delegate.currencyDidChange(to: updatedCurrency)
                 }
