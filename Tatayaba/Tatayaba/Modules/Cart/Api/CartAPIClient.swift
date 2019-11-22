@@ -16,11 +16,15 @@ struct CartAPIClient: APIClient {
     
     static let environment: APIEnvironment = .production
     
-     func applyCoupon(couponCode: String, email: String, completion: @escaping (APIResult<CouponResponse?, MoyaError>) -> Void) {
+    func applyCoupon(couponCode: String, email: String, completion: @escaping (APIResult<CouponResponse?, MoyaError>) -> Void) {
            fetch(with: CartEndpoint.applyCoupon(code: couponCode, email: email), completion: completion)
        }
     
     func getTaxAndShipping(countryCode: String, completion: @escaping (APIResult<TaxAndShippingResponse?, MoyaError>) -> Void) {
         fetch(with: CartEndpoint.getTaxAndShipping(countryCode: countryCode), completion: completion)
     }
+    
+    func getPricesWithUpdatedCurrency(parameters: [String: Any], completion: @escaping (APIResult<ConvertedCurrency?, MoyaError>) -> Void) {
+        fetch(with: CartEndpoint.getPricesWithUpdatedCurrency(parameters: parameters), completion: completion)
+       }
 }

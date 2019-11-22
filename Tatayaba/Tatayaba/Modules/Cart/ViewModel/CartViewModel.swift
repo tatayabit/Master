@@ -27,6 +27,7 @@ class CartViewModel {
     
     init() {
         loadPricingListContent(couponValue: "0", taxValue: nil, shippingValue: "0")
+        CurrencySettings.shared.addCurrencyDelegate(delegate: self)
     }
     
     func loadPricingListContent(couponValue: String, taxValue: Tax?, shippingValue: String) {
@@ -99,8 +100,50 @@ class CartViewModel {
             completion(result)
         }
     }
+    
+    func getPricesWithUpdatedCurrency(to currency: Currency) {
+        
+        cartApiClient.getPricesWithUpdatedCurrency(parameters: self.getConvertingCurrencyJsonString(with: currency.currencyId)) { result in
+            switch result {
+            case .success(let convertedPricesResult):
+                if let convertedPrices = convertedPricesResult {
+                    print(convertedPrices)
+                    self.cart.updatePricesWithNewCurrency(currencyResponse: convertedPrices)
+                }
+            case .failure(let error):
+                print("the error \(error)")
+            }
+        }
+    }
+    
+    // MARK:- Convert to get currency format
+    func getConvertingCurrencyJsonString(with currencyId: String) -> [String: Any] {
+        let productsList = cart.productsList()
+        var requestJson = [String: Any]()
+
+        var productsParms = [[String: Any]]()
+        
+        for product in productsList {
+            let singleProductDict = [
+                "product_id" : product.identifier,
+                "price" : product.price
+            ]
+            productsParms.append(singleProductDict)
+        }
+        
+        requestJson["products"] = productsParms
+        requestJson["to_currency_id"] = currencyId
+        requestJson["convert_data"] = true
+        
+        return requestJson
+    }
 }
 
+extension CartViewModel: CurrencySettingsDelegate {
+    func currencyDidChange(to currency: Currency) {
+        self.getPricesWithUpdatedCurrency(to: currency)
+    }
+}
 
 class CartPricingItems {
     var subtotal = "Subtotal".localized()
@@ -113,4 +156,3 @@ class CartPricingItems {
     var cartEmpty = "Your Cart is Empty!".localized()
     var Quantity = "Quantity".localized()
 }
-

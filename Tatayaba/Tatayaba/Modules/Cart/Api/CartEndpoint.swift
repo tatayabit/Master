@@ -11,6 +11,7 @@ import Moya
 enum CartEndpoint {
     case applyCoupon(code: String, email:String)
     case getTaxAndShipping(countryCode: String)
+    case getPricesWithUpdatedCurrency(parameters: [String: Any])
 }
 
 
@@ -35,15 +36,17 @@ extension CartEndpoint: TargetType {
             return "4.0/TtmOrders"
         case .getTaxAndShipping:
             return "4.0/TtmCartConfigData/"
+        case .getPricesWithUpdatedCurrency:
+            return "4.0/TtmCurrencies/"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .applyCoupon:
+        case .applyCoupon, .getTaxAndShipping:
             return .get
-        case .getTaxAndShipping:
-            return .get
+        case .getPricesWithUpdatedCurrency:
+            return .post
         }
     }
     
@@ -64,6 +67,8 @@ extension CartEndpoint: TargetType {
         case .getTaxAndShipping:
             return .requestParameters(parameters: [ "country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw"
                 ], encoding: URLEncoding.queryString)
+        case .getPricesWithUpdatedCurrency(let parameters):
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         }
     }
     
