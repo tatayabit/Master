@@ -149,6 +149,7 @@ class CartViewModel {
         requestJson["products"] = productsParms
         requestJson["shipping_id"] = CountrySettings.shared.shipping?.shippingId
         requestJson["coupon_code"] = couponCode
+        requestJson["country_code"] = CountrySettings.shared.currentCountry?.code
         requestJson["email"] = email
         requestJson["coupon_data"] = true
         
@@ -180,7 +181,7 @@ class CartViewModel {
     private func getShippingConvertingCurrencyJsonString() -> [String: Any] {
         var shippingRate = "1.00"
         if let shipping = CountrySettings.shared.shipping {
-            shippingRate = shipping.rateType ?? "1.00"
+            shippingRate = shipping.rateValue ?? "1.00"
         }
         var requestJson = [String: Any]()
         
@@ -188,9 +189,6 @@ class CartViewModel {
         requestJson["shipping_charge"] = shippingRate
         requestJson["to_currency_id"] = CurrencySettings.shared.currentCurrency?.currencyId//currencyId
         requestJson["convert_data"] = true
-//        if let tax = CountrySettings.shared.tax {
-//            requestJson["tax"] = tax.
-//        }
         
         return requestJson
     }

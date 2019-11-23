@@ -343,7 +343,10 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                     if let paymentMethods = taxAndShippingResponse.paymentMethods {
                         CountrySettings.shared.updatePaymentsMethods(list: paymentMethods)
                     }
-                    
+                    if self.cart.productsList().count == 0 {
+                        self.hideLoadingIndicator(from: self.view)
+                        return
+                    }
                     self.updateShippingCurrency()
                     
                 } else {
@@ -364,6 +367,9 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
 
             switch result {
             case .success:
+                if let shippingValue = CountrySettings.shared.shipping?.rateValue {
+                    self.shippingValue = shippingValue
+                }
                 self.calculateTotal()
                 
             case .failure(let error):
