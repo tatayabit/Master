@@ -44,19 +44,41 @@ class ProductDeatailsTableViewCellViewModel {
     
     //MARK:- Product Details
     func increase() {
-        let maxQuantity = product.maxQuantity
+        
+//        let maxQuantity = Int(cartProduct.0.maxQuantity) ?? 0
+//        let stockQuantity = cartProduct.0.amount
+//        let currentQuantity = cell.quantityCoutLabel.text ?? "0"
+//        let max = (stockQuantity > maxQuantity) ? maxQuantity : stockQuantity
+        
+        
+//        if  max <= Int(currentQuantity) ?? 0 {
+//            // max reached
+//        } else {
+//            self.addOneMoreAction(indexPath: indexPath)
+//            cell.updatePrice(product: cartProduct.0, cartItem: cartProduct.1)
+//        }
+        
+        
+        let maxQuantity = Int(product.maxQuantity) ?? 0
         let stockQuantity = product.amount
-        let max = Int(maxQuantity) ?? 0
+        
+        
+//        let max = Int(maxQuantity) ?? 0
+        var max = (stockQuantity > maxQuantity) ? maxQuantity : stockQuantity
+        if product.isOutOfStockActionB {
+            max = maxQuantity
+        }
+        
         if let cartItem = Cart.shared.cartItemsArr.filter({ $0.productId == String(product.identifier) }).first {
             if max <= cartItem.count + selectedQuantity {
                 // max reached
-            } else if stockQuantity > max {
+            } else {
                 self.selectedQuantity += 1
             }
         } else {
             if max <= selectedQuantity {
                 // max reached
-            } else if stockQuantity > max {
+            } else {
                 self.selectedQuantity += 1
             }
         }

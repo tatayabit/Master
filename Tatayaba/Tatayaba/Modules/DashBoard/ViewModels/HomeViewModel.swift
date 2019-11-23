@@ -45,11 +45,13 @@ class HomeViewModel {
 
     //MARK:- Init
     func loadAPIs() {
-        getAllCategories()
-        loadTopBannerApi()
-        getSquaredBlock()
-        getAllSuppliers()
-        getProductBlock()
+        DispatchQueue.background(delay: 0.0, background: {
+            self.getAllCategories()
+            self.loadTopBannerApi()
+            self.getSquaredBlock()
+            self.getAllSuppliers()
+            self.getProductBlock()
+        })
     }
 
     //MARK:- Api

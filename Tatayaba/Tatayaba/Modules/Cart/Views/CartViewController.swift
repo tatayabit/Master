@@ -19,6 +19,7 @@ private enum DiscountBonusTypes: String, CaseIterable {
     case byFixed = "by_fixed"
 }
 
+
 class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, CartViewModelDelegate, CountrySettingsDelegate {
     
     @IBOutlet var cartTableview: UITableView!
@@ -44,6 +45,8 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     let cartClass: CartPricingItems = CartPricingItems()
     var promotionData : PromotionData?
     
+    let resetVCNotification = "resetVCNotification"
+    
     enum sectionType: Int {
         case item = 0, pricing
     }
@@ -55,6 +58,8 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         CountrySettings.shared.addDelegate(delegate: self)
         viewModel.delegate = self
         cartTableview.separatorColor = .clear
+        NotificationCenter.default.addObserver(self, selector: #selector(resetAllData), name: NSNotification.Name(resetVCNotification), object: nil)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -115,19 +120,35 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             if discountItem?.discountBonus == DiscountBonusTypes.byPercentage.rawValue {
                 let discountValueFromTotal = (currentTotal * ("\(discountItem?.discountValue ?? "0")" as NSString).floatValue) / 100
                 totalPriceValue = currentTotal - discountValueFromTotal
-                couponTitleValue = "by \(discountItem?.discountValue ?? "0")%"
+                if let promoName = promotionData?.promoName {
+                    couponTitleValue = promoName
+                } else {
+                    couponTitleValue = "by \(discountItem?.discountValue ?? "0")%"
+                }
             } else if discountItem?.discountBonus == DiscountBonusTypes.toPercentage.rawValue {
                 let discountValueFromTotal = (currentTotal * ("\(discountItem?.discountValue ?? "0")" as NSString).floatValue) / 100
                 totalPriceValue = discountValueFromTotal
-                couponTitleValue = "to \(discountItem?.discountValue ?? "0")%"
+                if let promoName = promotionData?.promoName {
+                    couponTitleValue = promoName
+                } else {
+                    couponTitleValue = "to \(discountItem?.discountValue ?? "0")%"
+                }
             } else if discountItem?.discountBonus == DiscountBonusTypes.byFixed.rawValue {
                 let discountValueFromTotal = ("\(discountItem?.discountValue ?? "0")" as NSString).floatValue
                 totalPriceValue = currentTotal - discountValueFromTotal
-                couponTitleValue = "by \((discountItem?.discountValue ?? "0").formattedPrice)"
+                if let promoName = promotionData?.promoName {
+                    couponTitleValue = promoName
+                } else {
+                    couponTitleValue = "by \((discountItem?.discountValue ?? "0").formattedPrice)"
+                }
             } else if discountItem?.discountBonus == DiscountBonusTypes.toFixed.rawValue {
                 let discountValueFromTotal = currentTotal - ("\(discountItem?.discountValue ?? "0")" as NSString).floatValue
                 totalPriceValue = discountValueFromTotal
-                couponTitleValue = "to \((discountItem?.discountValue ?? "0").formattedPrice)"
+                if let promoName = promotionData?.promoName {
+                    couponTitleValue = promoName
+                } else {
+                    couponTitleValue = "to \((discountItem?.discountValue ?? "0").formattedPrice)"
+                }
             }
         }
         
@@ -260,8 +281,12 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             let maxQuantity = Int(cartProduct.0.maxQuantity) ?? 0
             let stockQuantity = cartProduct.0.amount
             let currentQuantity = cell.quantityCoutLabel.text ?? "0"
-            let max = (stockQuantity > maxQuantity) ? maxQuantity : stockQuantity
+            var max = (stockQuantity > maxQuantity) ? maxQuantity : stockQuantity
 
+            if cartProduct.0.isOutOfStockActionB {
+                max = maxQuantity
+            }
+            
             if  max <= Int(currentQuantity) ?? 0 {
                 // max reached
             } else {
@@ -295,7 +320,19 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     func didFinishLoadingPricing() {
         cartTableview.reloadData()
     }
-    // MARK:- COuntrySettingsDelegate
+    
+    // MARK:- ResetCartViewController
+    @objc func resetAllData() {
+        couponTitleValue = "0"
+        promotionData = nil
+        calculateTotal()
+        self.setButton(button: removeDiscountButton, hidden: true)
+        self.setView(view: couponTextFieldView, hidden: false)
+        self.removeDiscountButton.isHidden = true
+        self.couponTextField.text = ""
+    }
+    
+    // MARK:- CountrySettingsDelegate
     func countryDidChange(to country: Country) {
         print("country changes!!!")
         print("CartViewController")

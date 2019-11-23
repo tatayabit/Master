@@ -181,9 +181,13 @@ extension Product: Codable {
 extension Product {
     var isInStock: Bool {
         if self.amount > 0 { return true }
-        if self.outOfStockActions.lowercased() == "b" {
+        if self.isOutOfStockActionB {
             return true
         }
         return false
+    }
+    
+    var isOutOfStockActionB: Bool {
+        return self.outOfStockActions.lowercased() == "b"
     }
 }

@@ -151,6 +151,7 @@ class CartViewModel {
         requestJson["coupon_code"] = couponCode
         requestJson["country_code"] = CountrySettings.shared.currentCountry?.code
         requestJson["email"] = email
+        requestJson["currency_id"] = CurrencySettings.shared.currentCurrency?.currencyId
         requestJson["coupon_data"] = true
         
         return requestJson

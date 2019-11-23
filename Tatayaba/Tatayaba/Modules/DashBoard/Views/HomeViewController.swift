@@ -103,43 +103,49 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     }
 
     fileprivate func loadSquaredBlockViewData() {
-        self.hideLoadingIndicator(from: squaredBlockView)
-        squaredBlockView.block = viewModel.squareBlock
-        squaredBlockView.loadData()
-//        squaredBlockView.titleLabel.text = "Trending on Tatayab"
-        squaredBlockView.viewAllButton.isHidden = true
+//        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
+//                           completion()
+//                       })
+        DispatchQueue.main.async {
+            self.hideLoadingIndicator(from: self.squaredBlockView)
+            self.squaredBlockView.block = self.viewModel.squareBlock
+            self.squaredBlockView.loadData()
+    //        squaredBlockView.titleLabel.text = "Trending on Tatayab"
+            self.squaredBlockView.viewAllButton.isHidden = true
+        }
     }
 
 
     fileprivate func loadProductsBlockViewData() {
+        DispatchQueue.main.async {
+
+        self.hideLoadingIndicator(from: self.productsBlocklView)
+        self.productsBlocklView.block = self.viewModel.productsBlocks[0]
+        self.productsBlocklView.loadData()
         
-        self.hideLoadingIndicator(from: productsBlocklView)
-        productsBlocklView.block = viewModel.productsBlocks[0]
-        productsBlocklView.loadData()
+        self.hideLoadingIndicator(from: self.productsBlocklView270)
+        self.productsBlocklView270.block = self.viewModel.productsBlocks[1]
+        self.productsBlocklView270.loadData()
         
-        self.hideLoadingIndicator(from: productsBlocklView270)
-        productsBlocklView270.block = viewModel.productsBlocks[1]
-        productsBlocklView270.loadData()
+        self.hideLoadingIndicator(from: self.productsBlocklView305)
+        self.productsBlocklView305.block = self.viewModel.productsBlocks[2]
+        self.productsBlocklView305.loadData()
         
-        self.hideLoadingIndicator(from: productsBlocklView305)
-        productsBlocklView305.block = viewModel.productsBlocks[2]
-        productsBlocklView305.loadData()
+        self.hideLoadingIndicator(from: self.productsBlocklView267)
+        self.productsBlocklView267.block = self.viewModel.productsBlocks[3]
+        self.productsBlocklView267.loadData()
         
-        self.hideLoadingIndicator(from: productsBlocklView267)
-        productsBlocklView267.block = viewModel.productsBlocks[3]
-        productsBlocklView267.loadData()
+        self.hideLoadingIndicator(from: self.productsBlocklView297)
+        self.productsBlocklView297.block = self.viewModel.productsBlocks[4]
+        self.productsBlocklView297.loadData()
         
-        self.hideLoadingIndicator(from: productsBlocklView297)
-        productsBlocklView297.block = viewModel.productsBlocks[4]
-        productsBlocklView297.loadData()
+        self.hideLoadingIndicator(from: self.productsBlocklView248)
+        self.productsBlocklView248.block = self.viewModel.productsBlocks[5]
+        self.productsBlocklView248.loadData()
         
-       self.hideLoadingIndicator(from: productsBlocklView248)
-       productsBlocklView248.block = viewModel.productsBlocks[5]
-        productsBlocklView248.loadData()
-        
-        self.hideLoadingIndicator(from: productsBlocklView265)
-        productsBlocklView265.block = viewModel.productsBlocks[6]
-        productsBlocklView265.loadData()
+        self.hideLoadingIndicator(from: self.productsBlocklView265)
+        self.productsBlocklView265.block = self.viewModel.productsBlocks[6]
+        self.productsBlocklView265.loadData()
 //
 //        // Will be removed later
 //        self.hideLoadingIndicator(from: productsBlocklViewCopyX)
@@ -150,27 +156,34 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
 //        productsBlocklViewCopyXX.block = viewModel.productsBlock
 //        productsBlocklViewCopyXX.loadData()
         
+        }
     }
 
     fileprivate func loadFullScreenBannersViewData() {
-        self.hideLoadingIndicator(from: fullScreenBannersView)
-
-        fullScreenBannersView.block = viewModel.topBannersBlock
-        fullScreenBannersView.loadData()
+        DispatchQueue.main.async {
+            self.hideLoadingIndicator(from: self.fullScreenBannersView)
+            self.fullScreenBannersView.block = self.viewModel.topBannersBlock
+            self.fullScreenBannersView.loadData()
+        }
     }
 
     fileprivate func loadCategoriesBlockViewData() {
-        self.hideLoadingIndicator(from: categoriesBlockView)
+        DispatchQueue.main.async {
 
-        categoriesBlockView.categories = viewModel.categoriesList
-        categoriesBlockView.loadData()
+            self.hideLoadingIndicator(from: self.categoriesBlockView)
+            self.categoriesBlockView.categories = self.viewModel.categoriesList
+            self.categoriesBlockView.loadData()
+        }
     }
 
     fileprivate func loadSuppliersBlockViewData() {
-        self.hideLoadingIndicator(from: suppliersBlockView)
+        DispatchQueue.main.async {
 
-        suppliersBlockView.suppliers = viewModel.suppliersList
-        suppliersBlockView.loadData()
+            self.hideLoadingIndicator(from: self.suppliersBlockView)
+
+            self.suppliersBlockView.suppliers = self.viewModel.suppliersList
+            self.suppliersBlockView.loadData()
+        }
     }
 
 

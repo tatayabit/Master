@@ -103,19 +103,24 @@ class ProductDetailsViewModel {
     
     //MARK:- Product Details
     func increase() {
-        let maxQuantity = product.maxQuantity
+        
+        let maxQuantity = Int(product.maxQuantity) ?? 0
         let stockQuantity = product.amount
-        let max = Int(maxQuantity) ?? 0
+        var max = (stockQuantity > maxQuantity) ? maxQuantity : stockQuantity
+        if product.isOutOfStockActionB {
+            max = maxQuantity
+        }
+        
         if let cartItem = Cart.shared.cartItemsArr.filter({ $0.productId == String(product.identifier) }).first {
             if max <= cartItem.count + selectedQuantity {
                 // max reached
-            } else if stockQuantity > max {
+            } else {
                 self.selectedQuantity += 1
             }
         } else {
             if max <= selectedQuantity {
                 // max reached
-            } else if stockQuantity > max {
+            } else {
                 self.selectedQuantity += 1
             }
         }

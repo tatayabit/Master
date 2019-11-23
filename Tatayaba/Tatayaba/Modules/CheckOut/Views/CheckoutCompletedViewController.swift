@@ -14,12 +14,14 @@ class CheckoutCompletedViewController: BaseViewController {
     @IBOutlet weak var orderIdLabel: UILabel!
     @IBOutlet weak var orderDateLabel: UILabel!
     @IBOutlet weak var paymentDataLabel: UILabel!
+    let resetCartVCNotification = "resetVCNotification"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupUI()
         self.navigationController?.isNavigationBarHidden = true
+        NotificationCenter.default.post(name: Notification.Name(rawValue: resetCartVCNotification), object: nil)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
