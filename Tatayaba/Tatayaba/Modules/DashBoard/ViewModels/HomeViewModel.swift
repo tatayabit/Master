@@ -15,7 +15,8 @@ class HomeViewModel {
     private let suppliersApiClient = SuppliersAPIClient()
 
 
-    let productIdList = ["268","270","305", "267", "297", "248", "265"]
+    //let productIdList = ["268","270","305", "267", "297", "248", "265"]
+    let productIdList = ["314","320","315", "316", "317", "318", "319"]
     var block_Id = ""
     var categoriesList = [Category]()
     var suppliersList = [Supplier]()
@@ -107,7 +108,7 @@ class HomeViewModel {
 
     func loadTopBannerApi() {
         // topBannerApi
-        blocksApiClient.getBlock(blockId: "242") { result in
+        blocksApiClient.getBlock(blockId: "312") { result in      //242
             switch result {
             case .success(let responseB58):
                 guard let block = responseB58 else { return }
@@ -129,7 +130,7 @@ class HomeViewModel {
 
     func getSquaredBlock() {
         // squaredBlock
-        blocksApiClient.getBlock(blockId: "269") { result in
+        blocksApiClient.getBlock(blockId: "313") { result in    //269
             // 259
             switch result {
             case .success(let responseB44):
@@ -164,6 +165,7 @@ class HomeViewModel {
                             self.productsBlocks.append(sortedBlock)
                             print(block)
                             if (self.productsBlocks.count > 6) {
+                                self.productsBlocks = self.arrangeProductsBlocks()
                                 if let newProductsArrived = self.onProductsBlockLoad {
                                     newProductsArrived()
                                 }
@@ -255,6 +257,40 @@ class HomeViewModel {
             }
         }
         return productsBlocks[0]
-        
     }
+    
+    func arrangeProductsBlocks() -> [Block] {
+        var block0 = Block()
+        var block1 = Block()
+        var block2 = Block()
+        var block3 = Block()
+        var block4 = Block()
+        var block5 = Block()
+        var block6 = Block()
+        
+        var tempProductsBlocks = [block0,block1,block2,block3,block4,block5,block6]
+        for block in self.productsBlocks {
+            switch block.blockId {
+            case "314":
+                tempProductsBlocks[0] = block
+            case "320":
+                tempProductsBlocks[1] = block
+            case "315":
+                tempProductsBlocks[2] = block
+            case "316":
+                tempProductsBlocks[3] = block
+            case "317":
+                tempProductsBlocks[4] = block
+            case "318":
+                tempProductsBlocks[5] = block
+            case "319":
+                tempProductsBlocks[6] = block
+            default:
+                print("Error in arrangment of ProductsBlocks")
+            }
+        }
+        return tempProductsBlocks
+    }
+    
+    
 }

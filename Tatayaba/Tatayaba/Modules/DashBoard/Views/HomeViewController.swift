@@ -91,6 +91,8 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         productsBlocklView.heightAnchor.constraint(equalToConstant: 260).isActive = true
         self.showLoadingIndicator(to: productsBlocklView)
 
+        
+        self.addDupplicatedProducts()
 
         suppliersBlockView.delegate = self
         scrollView.stackView.addArrangedSubview(suppliersBlockView)
@@ -98,7 +100,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         suppliersBlockView.heightAnchor.constraint(equalToConstant: 145).isActive = true
         self.showLoadingIndicator(to: suppliersBlockView)
         
-        self.addDupplicatedProducts()
+        
 
     }
 
