@@ -34,7 +34,7 @@ class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITab
     var Session1_img: [String] = ["Cart"]
 
     var Session2 = [String]()
-    var Session2_img: [String] = ["settings", "settings", "settings", "liveChat", "Notifiction"]
+    var Session2_img: [String] = ["language", "currency", "country", "liveChat", "Notifiction"]
 
 
     var Session3 = [String]()
