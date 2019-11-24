@@ -18,7 +18,7 @@ enum CartEndpoint {
 extension CartEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
-        case .production: return "http://dev_ios%40tatayab.com:6337M41B30af4Sh7A6006lSq2jabf3M2@dev2.tatayab.com/api/"
+        case .production: return "http://ios_tt%40tatayab.com:21Ju1619GAbm2u1pu0TP4hjyccAL07WP@dev.tatayab.com/api/"
         case .qa: return "http://localhost:3000/"
         case .staging: return "http://localhost:3000/"
         }
