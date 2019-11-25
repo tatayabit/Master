@@ -13,6 +13,8 @@
 		100586A02386FCEB00D6CA76 /* ConvertedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1005869F2386FCEB00D6CA76 /* ConvertedProduct.swift */; };
 		100B8D5F236F2F52000E11E8 /* CountriesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100B8D5E236F2F52000E11E8 /* CountriesAPIClient.swift */; };
 		100B8D61236F2F6E000E11E8 /* CountriesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100B8D60236F2F6E000E11E8 /* CountriesEndpoint.swift */; };
+		1016C136238AFF6E002D18F3 /* VersionValidationAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1016C135238AFF6E002D18F3 /* VersionValidationAPIClient.swift */; };
+		1016C138238AFF7F002D18F3 /* VersionValidationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1016C137238AFF7F002D18F3 /* VersionValidationEndpoint.swift */; };
 		10181CB8235F655300220439 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10181CB7235F655300220439 /* GoogleService-Info.plist */; };
 		10244C592369F6F8004E65F9 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10244C582369F6F8004E65F9 /* ErrorMessage.swift */; };
 		10616751235CB06A00F4A3A0 /* PaymentWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10616750235CB06A00F4A3A0 /* PaymentWebViewController.swift */; };
@@ -305,6 +307,8 @@
 		1005869F2386FCEB00D6CA76 /* ConvertedProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertedProduct.swift; sourceTree = "<group>"; };
 		100B8D5E236F2F52000E11E8 /* CountriesAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesAPIClient.swift; sourceTree = "<group>"; };
 		100B8D60236F2F6E000E11E8 /* CountriesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesEndpoint.swift; sourceTree = "<group>"; };
+		1016C135238AFF6E002D18F3 /* VersionValidationAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionValidationAPIClient.swift; sourceTree = "<group>"; };
+		1016C137238AFF7F002D18F3 /* VersionValidationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionValidationEndpoint.swift; sourceTree = "<group>"; };
 		10181CB7235F655300220439 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		10244C582369F6F8004E65F9 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		10616750235CB06A00F4A3A0 /* PaymentWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewController.swift; sourceTree = "<group>"; };
@@ -691,6 +695,8 @@
 		1098F1A323890E4600A8D367 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				1016C135238AFF6E002D18F3 /* VersionValidationAPIClient.swift */,
+				1016C137238AFF7F002D18F3 /* VersionValidationEndpoint.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -2565,6 +2571,7 @@
 				115DC43023118A500001EF67 /* BannerBlockCollectionViewCell.swift in Sources */,
 				11C271AE22F20614004613E3 /* AddressesListViewController.swift in Sources */,
 				847CDE7A22CA130F00E67C8C /* ColorDef.swift in Sources */,
+				1016C138238AFF7F002D18F3 /* VersionValidationEndpoint.swift in Sources */,
 				1098F1A62389162B00A8D367 /* ConciergeResponse.swift in Sources */,
 				1005869E2386FA4500D6CA76 /* ConvertedCurrency.swift in Sources */,
 				116C936422F0930300921893 /* OrdersAPIClient.swift in Sources */,
@@ -2645,6 +2652,7 @@
 				116C938E22F0954500921893 /* Payment.swift in Sources */,
 				2767CB96236472290042F533 /* OrderTrackCell.swift in Sources */,
 				2767CB97236472290042F533 /* OrderProductsCell.swift in Sources */,
+				1016C136238AFF6E002D18F3 /* VersionValidationAPIClient.swift in Sources */,
 				11FB5849231C2147005DA4F0 /* CategoriesBlockCollectionViewCell.swift in Sources */,
 				8407BAB922E86205001F2C2A /* OrdersViewController.swift in Sources */,
 				100B8D5F236F2F52000E11E8 /* CountriesAPIClient.swift in Sources */,

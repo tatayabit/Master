@@ -10,6 +10,7 @@ import Moya
 
 enum SuppliersEndpoint {
     case getSuppliers(page: String)
+    case getSuppliersSortedByPosition(page: String)
     case getSupplierDetails(supplierId: String, page: String)
 }
 
@@ -31,7 +32,7 @@ extension SuppliersEndpoint: TargetType {
 
     var path: String {
         switch self {
-        case .getSuppliers:
+        case .getSuppliers, .getSuppliersSortedByPosition:
             let version = "4.0"
             return "\(version.urlEscaped)/TtmSuppliers/"
         case .getSupplierDetails(let supplierId, _):
@@ -42,7 +43,7 @@ extension SuppliersEndpoint: TargetType {
 
     var method: Moya.Method {
         switch self {
-        case .getSuppliers, .getSupplierDetails:
+        case .getSuppliers, .getSupplierDetails, .getSuppliersSortedByPosition:
             return .get
         }
     }
@@ -75,7 +76,15 @@ extension SuppliersEndpoint: TargetType {
 //                                                "page": page.urlEscaped,
                                                 "currency_id": currencyId.urlEscaped
             ], encoding: URLEncoding.default)
-//            "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
+        case .getSuppliersSortedByPosition(let page):
+            return .requestParameters(parameters: [
+                                                "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
+                                                "items_per_page": 20,
+                                                "page": page.urlEscaped,
+                                                "sort_by": "position",
+                                                "sort_order": "asc"
+//                                                sort_by=position&sort_order=
+            ], encoding: URLEncoding.default)
         }
     }
 
