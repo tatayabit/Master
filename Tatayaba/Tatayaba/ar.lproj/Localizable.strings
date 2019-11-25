@@ -98,3 +98,6 @@
 // Will be removed laetr
 "PERSONAL CARE" = "العناية الشخصية";
 "OIL" = "الدهن";
+
+// version  valaidation
+alertValaidationMessage = "يجب عليك الترقية ، الإصدار الخاص بك غير معتمد بعد الآن";

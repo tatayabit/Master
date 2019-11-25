@@ -32,7 +32,7 @@ extension VersionValidationEndpoint: TargetType {
         switch self {
         case .getVersionValidation:
             let version = "4.0"
-            return "\(version.urlEscaped)/TtmMobileUpgradeChecker/"
+            return "\(version.urlEscaped)/TtmMobileUpgradeChecker"
         }
     }
 
@@ -56,7 +56,8 @@ extension VersionValidationEndpoint: TargetType {
         switch self {
         case .getVersionValidation(let version):
             return .requestParameters(parameters: [
-                                                "os": version
+                                                "os": "ios",
+                                                "v" : version
             ], encoding: URLEncoding.default)
         }
     }

@@ -27,7 +27,7 @@ class HomeViewModel {
 
     var productsBlocks = [Block]()
 
-
+    let validApiClient = VersionValidationAPIClient()
     /// This closure is being called once the categories api fetch
     var onCategoriesListLoad: (() -> ())?
 
@@ -292,5 +292,36 @@ class HomeViewModel {
         return tempProductsBlocks
     }
     
+    // validate API version   validApiClient
     
+    func ValidateVersionVersion(completion: @escaping (String) -> ()){
+        let appVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
+        validApiClient.getVersionValidation(version: appVersion ?? "1.0.0"){
+            result in
+            switch result {
+            case .success(let response):
+                print("Sucess")
+                guard let vResponse = response else { return }
+                if let test = vResponse["status"]{
+                    completion(test)
+                }
+
+            case .failure(let error):
+                print("the error \(error)")
+                completion("success")
+            }
+        }
+    }
+    
+    func openStoreURL() {
+        if let url = URL(string: "https://www.apple.com/kw/ios/app-store/"),
+            UIApplication.shared.canOpenURL(url)   //itms-apps://itunes.apple.com/app/id1024941703
+        {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+    }
 }

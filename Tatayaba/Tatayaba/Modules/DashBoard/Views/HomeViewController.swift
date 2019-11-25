@@ -270,6 +270,8 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated) // No need for semicolon
         self.tabBarController?.tabBar.isHidden = false
+        ValidateVersionVersion()
+        
     }
 
     // MARK:- CategoriesBlockView delegate
@@ -335,6 +337,31 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     func countryDidChange(to country: Country) {
         print("country changes!!!")
         print("HomeViewController")
+    }
+    
+    
+    func ValidateVersionVersion(){
+        viewModel.ValidateVersionVersion(){ status in
+            if(status != "success"){}
+            self.showAlert()
+            }
+    }
+    func showAlert()
+    {
+        let alert = UIAlertController(title: "Alert", message: "alertValaidationMessage".localized(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+              switch action.style{
+              case .default:
+                self.viewModel.openStoreURL()
+              case .cancel:
+                    print("cancel")
+
+              case .destructive:
+                    print("destructive")
+
+
+        }}))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

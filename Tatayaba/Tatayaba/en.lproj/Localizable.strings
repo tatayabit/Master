@@ -100,3 +100,6 @@
 // Will be removed laetr
 "PERSONAL CARE" = "PERSONAL CARE";
 "OIL" = "OIL";
+
+// version  valaidation
+alertValaidationMessage = "You have to upgrade , your version is not supported anymore";
