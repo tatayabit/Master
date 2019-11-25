@@ -87,6 +87,7 @@ class PaymentWebViewController: BaseViewController, WKUIDelegate, WKNavigationDe
     func paymentFailed() {
         self.webView.uiDelegate = nil
         self.webView.navigationDelegate = nil
+        self.webView.isHidden = true
         showErrorAlerr(title: "Error", message: "Payment Failed. Try again later.") { action in
             self.navigationController?.popViewController(animated: true)
         }
