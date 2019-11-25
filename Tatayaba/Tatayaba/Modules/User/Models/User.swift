@@ -26,9 +26,9 @@ struct User {
     var shippingAddress: String
     var state: String
     var zipCode: String
-    var block: [String:String]
+    var block: String
 
-    init(email: String, firstname: String = "", lastname: String = "", password: String, identifier: String = "", phone: String = "", billingAddress: String = "", billingCity: String = "", billingCountry: String = "", billingPhone: String = "", shippingCity: String = "", shippingCountry: String = "", shippingPhone: String = "", shippingAddress: String = "",state: String = "",zipCode: String = "",block:[String:String] = ["":""]) {
+    init(email: String, firstname: String = "", lastname: String = "", password: String, identifier: String = "", phone: String = "", billingAddress: String = "", billingCity: String = "", billingCountry: String = "", billingPhone: String = "", shippingCity: String = "", shippingCountry: String = "", shippingPhone: String = "", shippingAddress: String = "",state: String = "",zipCode: String = "", block: String = "") {
         self.email = email
         self.firstname = firstname
         self.lastname = lastname
@@ -70,7 +70,7 @@ extension User: Codable {
         case shippingAddress = "s_address"
         case state = "b_state"
         case zipCode = "b_zipcode"
-        case block = "fields"
+        case block
     }
 
 
@@ -94,7 +94,7 @@ extension User: Codable {
         shippingAddress = try container.decodeIfPresent(String.self, forKey: .shippingAddress) ?? ""
         state = try container.decodeIfPresent(String.self, forKey: .state) ?? ""
         zipCode = try container.decodeIfPresent(String.self, forKey: .zipCode) ?? ""
-        block = try container.decodeIfPresent([String:String].self, forKey: .block) ?? ["":""]
+        block = try container.decodeIfPresent(String.self, forKey: .block) ?? ""
     }
 
     func encode(to encoder: Encoder) throws {

@@ -81,7 +81,8 @@ extension ProductsEndpoint: TargetType {
             if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
                 currencyId = countryCurrency
             }
-            return .requestParameters(parameters: ["currency_id": currencyId.urlEscaped
+            return .requestParameters(parameters: ["currency_id": currencyId.urlEscaped,
+                                                   "lang_code": LanguageManager.getLanguage()
             ], encoding: URLEncoding.default)
             
         case .getAllCategories:
@@ -119,7 +120,8 @@ extension ProductsEndpoint: TargetType {
                 currencyId = countryCurrency
             }
             return .requestParameters(parameters: [ "also_bought_for_product_id": productId,
-                                                    "currency_id": currencyId.urlEscaped
+                                                    "currency_id": currencyId.urlEscaped,
+                                                    "lang_code": LanguageManager.getLanguage()
             ], encoding: URLEncoding.default)
         }
     }

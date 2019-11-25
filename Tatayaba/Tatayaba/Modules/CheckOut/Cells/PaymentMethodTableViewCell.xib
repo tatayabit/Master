@@ -52,11 +52,11 @@
                             <constraint firstAttribute="height" constant="25" id="tTM-Yl-apH"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unselected_radio_button" translatesAutoresizingMaskIntoConstraints="NO" id="7Zt-KN-pvt">
-                        <rect key="frame" x="281" y="25.5" width="9" height="9"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="7Zt-KN-pvt">
+                        <rect key="frame" x="260" y="15" width="30" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="9" id="Mrc-ds-LqR"/>
-                            <constraint firstAttribute="width" constant="9" id="Pt2-US-2Gb"/>
+                            <constraint firstAttribute="height" constant="30" id="Mrc-ds-LqR"/>
+                            <constraint firstAttribute="width" constant="30" id="Pt2-US-2Gb"/>
                         </constraints>
                     </imageView>
                 </subviews>
@@ -91,6 +91,6 @@
     </objects>
     <resources>
         <image name="Visa" width="19" height="19.5"/>
-        <image name="unselected_radio_button" width="9.5" height="9.5"/>
+        <image name="checkmark" width="30" height="30"/>
     </resources>
 </document>
