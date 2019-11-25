@@ -295,8 +295,8 @@ class HomeViewModel {
     // validate API version   validApiClient
     
     func ValidateVersionVersion(completion: @escaping (String) -> ()){
-        let appVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
-        validApiClient.getVersionValidation(version: appVersion ?? "1.0.0"){
+        let appVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String //CFBundleShortVersionString
+        validApiClient.getVersionValidation(version: "4.3.1" ?? "1.0.0"){
             result in
             switch result {
             case .success(let response):

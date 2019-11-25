@@ -183,38 +183,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "895009AF-6E3B-4C32-B88F-C80118912C8A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/DashBoard/ViewModels/HomeViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "256"
-            endingLineNumber = "256"
-            landmarkName = "getSelectedProductBlock()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "01087ECD-C41E-4A6B-A06D-F35D081950D1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/DashBoard/ViewModels/HomeViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
-            landmarkName = "getSelectedProductBlock()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A28ECA3C-9A1A-4411-A12E-7F37C44240E7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -423,20 +391,35 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E5A03640-5EFC-4C29-A41A-8400F7595543"
+            uuid = "32B05A42-F45F-4C5E-907D-F8CA494E6502"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tatayaba/Modules/DashBoard/ViewModels/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "302"
-            endingLineNumber = "302"
+            startingLineNumber = "299"
+            endingLineNumber = "299"
             landmarkName = "ValidateVersionVersion(completion:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "E5A03640-5EFC-4C29-A41A-8400F7595543 - 666a344fc30015b7"
+                  uuid = "32B05A42-F45F-4C5E-907D-F8CA494E6502 - f0fd7ee52befa24e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tatayab___Testing.HomeViewModel.ValidateVersionVersion(completion: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Tatayab - Testing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Tatyab/Master/Tatayaba/Tatayaba/Modules/DashBoard/ViewModels/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "299"
+                  endingLineNumber = "299"
+                  offsetFromSymbolStart = "600">
+               </Location>
+               <Location
+                  uuid = "32B05A42-F45F-4C5E-907D-F8CA494E6502 - 666a344fc30015b7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -450,20 +433,116 @@
                   endingLineNumber = "302"
                   offsetFromSymbolStart = "336">
                </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6AA53CE1-C104-4800-BB8B-983D0D9B9344"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/Cart/ViewModel/CartViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "getPricesWithUpdatedCurrency(to:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "716E0A56-19E8-4BE0-830B-D202946D70BC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/Cart/ViewModel/CartViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "getShippingConvertingCurrencyJsonString()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "408F2209-75F6-430E-A819-1003EFB1D691"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/CheckOut/Cells/PaymentMethodTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "configure(payment:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D4FCE505-85C6-4DCB-A1AE-1CC161E31F97"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/CheckOut/Cells/PaymentMethodTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "configure(payment:)"
+            landmarkType = "7">
+            <Locations>
                <Location
-                  uuid = "E5A03640-5EFC-4C29-A41A-8400F7595543 - 666a344fc30015b7"
+                  uuid = "D4FCE505-85C6-4DCB-A1AE-1CC161E31F97 - b842679fbf68d3cf"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Tatayab___Testing.APIResult&lt;Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, Moya.MoyaError&gt;) -&gt; () in Tatayab___Testing.HomeViewModel.ValidateVersionVersion(completion: (Swift.String) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Tatayab___Testing.APIResult&lt;Swift.Optional&lt;Tatayab___Testing.ConvertedCurrency&gt;, Moya.MoyaError&gt;) -&gt; () in Tatayab___Testing.PaymentMethodTableViewCell.configure(payment: Tatayab___Testing.PaymentMethod) -&gt; ()"
                   moduleName = "Tatayab - Testing"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Tatyab/Master/Tatayaba/Tatayaba/Modules/DashBoard/ViewModels/HomeViewModel.swift"
+                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Tatyab/Master/Tatayaba/Tatayaba/Modules/CheckOut/Cells/PaymentMethodTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "302"
-                  endingLineNumber = "302"
-                  offsetFromSymbolStart = "372">
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "D4FCE505-85C6-4DCB-A1AE-1CC161E31F97 - b842679fbf68d3cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Tatayab___Testing.APIResult&lt;Swift.Optional&lt;Tatayab___Testing.ConvertedCurrency&gt;, Moya.MoyaError&gt;) -&gt; () in Tatayab___Testing.PaymentMethodTableViewCell.configure(payment: Tatayab___Testing.PaymentMethod) -&gt; ()"
+                  moduleName = "Tatayab - Testing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Tatyab/Master/Tatayaba/Tatayaba/Modules/CheckOut/Cells/PaymentMethodTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "D4FCE505-85C6-4DCB-A1AE-1CC161E31F97 - b842679fbf68d3cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Tatayab___Testing.APIResult&lt;Swift.Optional&lt;Tatayab___Testing.ConvertedCurrency&gt;, Moya.MoyaError&gt;) -&gt; () in Tatayab___Testing.PaymentMethodTableViewCell.configure(payment: Tatayab___Testing.PaymentMethod) -&gt; ()"
+                  moduleName = "Tatayab - Testing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Tatyab/Master/Tatayaba/Tatayaba/Modules/CheckOut/Cells/PaymentMethodTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "1044">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -471,16 +550,79 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7674FDF0-5EE1-431F-9650-D03F9DC694DA"
+            uuid = "58F6DE1A-A3DD-4CCF-9010-7E602564425C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/DashBoard/ViewModels/HomeViewModel.swift"
+            filePath = "Tatayaba/Modules/CheckOut/Cells/PaymentMethodTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "306"
-            endingLineNumber = "306"
-            landmarkName = "ValidateVersionVersion(completion:)"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "configure(payment:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "58F6DE1A-A3DD-4CCF-9010-7E602564425C - b842679fbf68d3cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Tatayab___Testing.APIResult&lt;Swift.Optional&lt;Tatayab___Testing.ConvertedCurrency&gt;, Moya.MoyaError&gt;) -&gt; () in Tatayab___Testing.PaymentMethodTableViewCell.configure(payment: Tatayab___Testing.PaymentMethod) -&gt; ()"
+                  moduleName = "Tatayab - Testing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Tatyab/Master/Tatayaba/Tatayaba/Modules/CheckOut/Cells/PaymentMethodTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "58F6DE1A-A3DD-4CCF-9010-7E602564425C - b842679fbf68d3cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Tatayab___Testing.APIResult&lt;Swift.Optional&lt;Tatayab___Testing.ConvertedCurrency&gt;, Moya.MoyaError&gt;) -&gt; () in Tatayab___Testing.PaymentMethodTableViewCell.configure(payment: Tatayab___Testing.PaymentMethod) -&gt; ()"
+                  moduleName = "Tatayab - Testing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Tatyab/Master/Tatayaba/Tatayaba/Modules/CheckOut/Cells/PaymentMethodTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "58F6DE1A-A3DD-4CCF-9010-7E602564425C - b842679fbf68d3cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Tatayab___Testing.APIResult&lt;Swift.Optional&lt;Tatayab___Testing.ConvertedCurrency&gt;, Moya.MoyaError&gt;) -&gt; () in Tatayab___Testing.PaymentMethodTableViewCell.configure(payment: Tatayab___Testing.PaymentMethod) -&gt; ()"
+                  moduleName = "Tatayab - Testing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Tatyab/Master/Tatayaba/Tatayaba/Modules/CheckOut/Cells/PaymentMethodTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "1044">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F14EFB73-4FC7-4109-A1C5-E7F274AA75F0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/CheckOut/Cells/PaymentMethodTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "configure(payment:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

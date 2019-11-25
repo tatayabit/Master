@@ -27,4 +27,7 @@ struct CartAPIClient: APIClient {
     func getPricesWithUpdatedCurrency(parameters: [String: Any], completion: @escaping (APIResult<ConvertedCurrency?, MoyaError>) -> Void) {
         fetch(with: CartEndpoint.getPricesWithUpdatedCurrency(parameters: parameters), completion: completion)
        }
+    func getUpdatedCurrency(parameters: [String: Any], completion: @escaping (APIResult<ConvertedCurrency?, MoyaError>) -> Void) {
+     fetch(with: CartEndpoint.getPricesWithUpdatedCurrency(parameters: parameters), completion: completion)
+    }
 }

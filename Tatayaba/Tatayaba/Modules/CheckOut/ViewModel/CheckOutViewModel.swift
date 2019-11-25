@@ -187,17 +187,13 @@ class CheckOutViewModel {
     }
     
     // MARK:-
-    func getConvertedPricesWithUpdatedCurrency(completion: @escaping (APIResult<ConvertedCurrency?, MoyaError>) -> Void) {
+    func getConvertedPricesWithUpdatedCurrency(value:Double,completion: @escaping (APIResult<ConvertedCurrency?, MoyaError>) -> Void) {
            if cart.productsList().count == 0 { return }
-           cartApiClient.getPricesWithUpdatedCurrency(parameters: self.getConvertingCurrencyJsonString()) { result in
+        cartApiClient.getPricesWithUpdatedCurrency(parameters: self.getConvertingCurrencyJsonString(value: value)) { result in
                switch result {
                case .success(let convertedPricesResult):
                    if let convertedPrices = convertedPricesResult {
                        print(convertedPrices)
-//                       if var shipping = CountrySettings.shared.shipping {
-//                           shipping.rateValue = convertedPrices.shippingCharge
-//                           CountrySettings.shared.updateShipping(shippingValue: shipping)
-//                       }
                    }
                case .failure(let error):
                    print("the error \(error)")
@@ -206,14 +202,11 @@ class CheckOutViewModel {
            }
        }
     
-    private func getConvertingCurrencyJsonString() -> [String: Any] {
-        var shippingRate = "1.00"
-        if let shipping = CountrySettings.shared.shipping {
-            shippingRate = shipping.rateValue ?? "1.00"
-        }
+    private func getConvertingCurrencyJsonString(value : Double) -> [String: Any] {
+        
         var requestJson = [String: Any]()
         
-        requestJson["shipping_charge"] = shippingRate
+        requestJson["shipping_charge"] = value
         requestJson["to_currency_id"] = CurrencySettings.shared.currentCurrency?.currencyId//currencyId
         requestJson["convert_data"] = true
         

@@ -47,11 +47,11 @@
                         <rect key="frame" x="20" y="5" width="128" height="119"/>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdI-c6-iOC">
-                        <rect key="frame" x="12" y="13" width="40" height="40"/>
+                        <rect key="frame" x="10" y="13" width="40" height="40"/>
                         <color key="backgroundColor" red="0.87450980389999999" green="0.63921568630000003" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="faQ-pZ-zOp"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="sao-PQ-Bp6"/>
+                            <constraint firstAttribute="width" constant="40" id="sao-PQ-Bp6"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="7"/>
                         <color key="textColor" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -169,11 +169,10 @@
                 <constraint firstItem="wdI-c6-iOC" firstAttribute="top" secondItem="5bD-Qe-4T2" secondAttribute="top" constant="8" id="Yqz-gI-bLp"/>
                 <constraint firstItem="lJx-Wu-3a2" firstAttribute="leading" secondItem="rcq-m0-cLY" secondAttribute="leading" constant="2" id="Zx0-MJ-vTp"/>
                 <constraint firstAttribute="trailing" secondItem="5bD-Qe-4T2" secondAttribute="trailing" constant="20" id="a2P-P0-0sN"/>
-                <constraint firstItem="wdI-c6-iOC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" id="aa0-yB-cde"/>
+                <constraint firstItem="wdI-c6-iOC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="aa0-yB-cde"/>
                 <constraint firstItem="uau-dH-D7f" firstAttribute="top" secondItem="5bD-Qe-4T2" secondAttribute="bottom" constant="2" id="axW-Mw-URh"/>
                 <constraint firstAttribute="trailing" secondItem="rcq-m0-cLY" secondAttribute="trailing" constant="3" id="cyn-YO-cEo"/>
                 <constraint firstItem="hOq-pl-Bgm" firstAttribute="top" secondItem="uau-dH-D7f" secondAttribute="bottom" constant="3" id="fKV-ii-AH0"/>
-                <constraint firstAttribute="trailing" secondItem="wdI-c6-iOC" secondAttribute="trailing" constant="116" id="frM-dT-9rM"/>
                 <constraint firstItem="lJx-Wu-3a2" firstAttribute="top" secondItem="Ndg-qA-zgg" secondAttribute="top" id="iJo-54-CIy"/>
                 <constraint firstAttribute="bottom" secondItem="rcq-m0-cLY" secondAttribute="bottom" constant="3" id="kKf-np-foP"/>
                 <constraint firstItem="Ndg-qA-zgg" firstAttribute="leading" secondItem="lJx-Wu-3a2" secondAttribute="trailing" constant="2" id="plK-Ct-Fkb"/>
