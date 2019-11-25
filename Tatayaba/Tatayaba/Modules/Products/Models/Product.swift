@@ -132,7 +132,7 @@ extension Product: Codable {
         
         var priceVal = ""
         if let priceValString = try? container.decode(String.self, forKey: .price) {
-            priceVal = priceValString
+            priceVal = priceValString.replacingOccurrences(of: ",", with: "")
         } else if let priceValInt = try? container.decode(Float.self, forKey: .price) {
             priceVal = "\(priceValInt)"
         }
@@ -140,7 +140,7 @@ extension Product: Codable {
         
         var priceBeforeDiscountVal = ""
         if let priceBeforeDiscountValString = try? container.decode(String.self, forKey: .priceBeforeDiscount) {
-            priceBeforeDiscountVal = priceBeforeDiscountValString
+            priceBeforeDiscountVal = priceBeforeDiscountValString.replacingOccurrences(of: ",", with: "")
         } else if let priceBeforeDiscountValInt = try? container.decode(Float.self, forKey: .priceBeforeDiscount) {
             priceBeforeDiscountVal = "\(priceBeforeDiscountValInt)"
         }
@@ -148,7 +148,7 @@ extension Product: Codable {
         
         var discountPercentageVal = ""
         if let discountPercentageValString = try? container.decode(String.self, forKey: .discountPercentage) {
-            discountPercentageVal = discountPercentageValString
+            discountPercentageVal = discountPercentageValString.replacingOccurrences(of: ",", with: "")
         } else if let discountPercentageValInt = try? container.decode(Float.self, forKey: .discountPercentage) {
             discountPercentageVal = "\(discountPercentageValInt)"
         }

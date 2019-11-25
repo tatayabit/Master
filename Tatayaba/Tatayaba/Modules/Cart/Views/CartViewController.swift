@@ -116,10 +116,10 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         
         if promotionData != nil {
             let discountItem = promotionData?.bonuses?.first
-            let currentTotal = totalPriceValue
+            let currentTotal = (cart.totalPrice as NSString).floatValue//totalPriceValue
             if discountItem?.discountBonus == DiscountBonusTypes.byPercentage.rawValue {
                 let discountValueFromTotal = (currentTotal * ("\(discountItem?.discountValue ?? "0")" as NSString).floatValue) / 100
-                totalPriceValue = currentTotal - discountValueFromTotal
+                totalPriceValue = totalPriceValue - discountValueFromTotal
                 if let promoName = promotionData?.promoName {
                     couponTitleValue = promoName
                 } else {
@@ -135,14 +135,14 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                 }
             } else if discountItem?.discountBonus == DiscountBonusTypes.byFixed.rawValue {
                 let discountValueFromTotal = ("\(discountItem?.discountValue ?? "0")" as NSString).floatValue
-                totalPriceValue = currentTotal - discountValueFromTotal
+                totalPriceValue = totalPriceValue - discountValueFromTotal
                 if let promoName = promotionData?.promoName {
                     couponTitleValue = promoName
                 } else {
                     couponTitleValue = "by \((discountItem?.discountValue ?? "0").formattedPrice)"
                 }
             } else if discountItem?.discountBonus == DiscountBonusTypes.toFixed.rawValue {
-                let discountValueFromTotal = currentTotal - ("\(discountItem?.discountValue ?? "0")" as NSString).floatValue
+                let discountValueFromTotal = totalPriceValue - ("\(discountItem?.discountValue ?? "0")" as NSString).floatValue
                 totalPriceValue = discountValueFromTotal
                 if let promoName = promotionData?.promoName {
                     couponTitleValue = promoName
