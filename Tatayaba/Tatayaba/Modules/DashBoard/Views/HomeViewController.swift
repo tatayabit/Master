@@ -342,8 +342,10 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     
     func ValidateVersionVersion(){
         viewModel.ValidateVersionVersion(){ status in
-            if(status != "success"){}
-            self.showAlert()
+            if(status != "success"){
+                self.showAlert()
+            }
+            
             }
     }
     func showAlert()
@@ -353,6 +355,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
               switch action.style{
               case .default:
                 self.viewModel.openStoreURL()
+                self.showAlert()
               case .cancel:
                     print("cancel")
 

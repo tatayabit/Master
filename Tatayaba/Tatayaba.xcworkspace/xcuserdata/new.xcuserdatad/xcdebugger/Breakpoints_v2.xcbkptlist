@@ -382,8 +382,8 @@
             filePath = "Tatayaba/Modules/DashBoard/Views/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "355"
-            endingLineNumber = "355"
+            startingLineNumber = "357"
+            endingLineNumber = "357"
             landmarkName = "showAlert()"
             landmarkType = "7">
          </BreakpointContent>
@@ -417,6 +417,70 @@
             startingLineNumber = "323"
             endingLineNumber = "323"
             landmarkName = "openStoreURL()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E5A03640-5EFC-4C29-A41A-8400F7595543"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/DashBoard/ViewModels/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
+            landmarkName = "ValidateVersionVersion(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E5A03640-5EFC-4C29-A41A-8400F7595543 - 666a344fc30015b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Tatayab___Testing.APIResult&lt;Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, Moya.MoyaError&gt;) -&gt; () in Tatayab___Testing.HomeViewModel.ValidateVersionVersion(completion: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Tatayab - Testing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Tatyab/Master/Tatayaba/Tatayaba/Modules/DashBoard/ViewModels/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "302"
+                  endingLineNumber = "302"
+                  offsetFromSymbolStart = "336">
+               </Location>
+               <Location
+                  uuid = "E5A03640-5EFC-4C29-A41A-8400F7595543 - 666a344fc30015b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Tatayab___Testing.APIResult&lt;Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, Moya.MoyaError&gt;) -&gt; () in Tatayab___Testing.HomeViewModel.ValidateVersionVersion(completion: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Tatayab - Testing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Tatyab/Master/Tatayaba/Tatayaba/Modules/DashBoard/ViewModels/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "302"
+                  endingLineNumber = "302"
+                  offsetFromSymbolStart = "372">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7674FDF0-5EE1-431F-9650-D03F9DC694DA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/DashBoard/ViewModels/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "306"
+            endingLineNumber = "306"
+            landmarkName = "ValidateVersionVersion(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
