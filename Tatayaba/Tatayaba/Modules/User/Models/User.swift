@@ -26,15 +26,16 @@ struct User {
     var shippingAddress: String
     var state: String
     var zipCode: String
+    var block: [String:String]
 
-    init(email: String, firstname: String = "", lastname: String = "", password: String, identifier: String = "", phone: String = "", billingAddress: String = "", billingCity: String = "", billingCountry: String = "", billingPhone: String = "", shippingCity: String = "", shippingCountry: String = "", shippingPhone: String = "", shippingAddress: String = "",state: String = "",zipCode: String = "") {
+    init(email: String, firstname: String = "", lastname: String = "", password: String, identifier: String = "", phone: String = "", billingAddress: String = "", billingCity: String = "", billingCountry: String = "", billingPhone: String = "", shippingCity: String = "", shippingCountry: String = "", shippingPhone: String = "", shippingAddress: String = "",state: String = "",zipCode: String = "",block:[String:String] = ["":""]) {
         self.email = email
         self.firstname = firstname
         self.lastname = lastname
         self.password = password
         self.identifier = identifier
         self.phone = phone
-
+        
         self.billingAddress = billingAddress
         self.billingCity = billingCity
         self.billingCountry = billingCountry
@@ -45,6 +46,7 @@ struct User {
         self.shippingAddress = shippingAddress
         self.state = state
         self.zipCode = zipCode
+        self.block = block
     }
 }
 
@@ -68,6 +70,7 @@ extension User: Codable {
         case shippingAddress = "s_address"
         case state = "b_state"
         case zipCode = "b_zipcode"
+        case block = "fields"
     }
 
 
@@ -91,6 +94,7 @@ extension User: Codable {
         shippingAddress = try container.decodeIfPresent(String.self, forKey: .shippingAddress) ?? ""
         state = try container.decodeIfPresent(String.self, forKey: .state) ?? ""
         zipCode = try container.decodeIfPresent(String.self, forKey: .zipCode) ?? ""
+        block = try container.decodeIfPresent([String:String].self, forKey: .block) ?? ["":""]
     }
 
     func encode(to encoder: Encoder) throws {
@@ -113,6 +117,6 @@ extension User: Codable {
         try container.encodeIfPresent(shippingAddress, forKey: .shippingAddress)
         try container.encodeIfPresent(state, forKey: .state)
         try container.encodeIfPresent(zipCode, forKey: .zipCode)
-
+        try container.encodeIfPresent(block, forKey: .block)
     }
 }

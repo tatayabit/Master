@@ -113,7 +113,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="13" id="CZb-db-p1J"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="8"/>
+                        <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="11"/>
                         <color key="textColor" red="0.13333333333333333" green="0.10980392156862745" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -122,7 +122,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="13" id="Hx5-fq-GcF"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Gotham-Light" family="Gotham" pointSize="8"/>
+                        <fontDescription key="fontDescription" name="Gotham-Light" family="Gotham" pointSize="11"/>
                         <color key="textColor" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <size key="shadowOffset" width="0.0" height="0.0"/>
@@ -132,7 +132,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="10" id="sID-J8-HTH"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="8"/>
+                        <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="11"/>
                         <color key="textColor" red="0.67843137254901964" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
