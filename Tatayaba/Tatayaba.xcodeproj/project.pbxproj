@@ -17,6 +17,8 @@
 		1016C138238AFF7F002D18F3 /* VersionValidationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1016C137238AFF7F002D18F3 /* VersionValidationEndpoint.swift */; };
 		10181CB8235F655300220439 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10181CB7235F655300220439 /* GoogleService-Info.plist */; };
 		10244C592369F6F8004E65F9 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10244C582369F6F8004E65F9 /* ErrorMessage.swift */; };
+		10480802238C65720056F74B /* ProductImagePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10480801238C65720056F74B /* ProductImagePair.swift */; };
+		10480804238C657C0056F74B /* ProductIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10480803238C657C0056F74B /* ProductIcon.swift */; };
 		10616751235CB06A00F4A3A0 /* PaymentWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10616750235CB06A00F4A3A0 /* PaymentWebViewController.swift */; };
 		10616753235CBE9C00F4A3A0 /* PaymentWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10616752235CBE9C00F4A3A0 /* PaymentWebViewModel.swift */; };
 		10645967235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10645966235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift */; };
@@ -311,6 +313,8 @@
 		1016C137238AFF7F002D18F3 /* VersionValidationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionValidationEndpoint.swift; sourceTree = "<group>"; };
 		10181CB7235F655300220439 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		10244C582369F6F8004E65F9 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		10480801238C65720056F74B /* ProductImagePair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagePair.swift; sourceTree = "<group>"; };
+		10480803238C657C0056F74B /* ProductIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductIcon.swift; sourceTree = "<group>"; };
 		10616750235CB06A00F4A3A0 /* PaymentWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewController.swift; sourceTree = "<group>"; };
 		10616752235CBE9C00F4A3A0 /* PaymentWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewModel.swift; sourceTree = "<group>"; };
 		10645966235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDeatailsTableViewCellViewModel.swift; sourceTree = "<group>"; };
@@ -1048,6 +1052,8 @@
 				10FC8518234E373F00D13C34 /* ProductOption.swift */,
 				11069C402323FFA50093D6FF /* ProductMainPair.swift */,
 				11069C422323FFD70093D6FF /* ProductDetailedPair.swift */,
+				10480801238C65720056F74B /* ProductImagePair.swift */,
+				10480803238C657C0056F74B /* ProductIcon.swift */,
 				112654AF22D3A2B900904FB5 /* Category.swift */,
 			);
 			path = Models;
@@ -2535,8 +2541,10 @@
 				11007BD222DE2E6600AC9957 /* CatProductsViewModel.swift in Sources */,
 				11FEB4E022DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.swift in Sources */,
 				10DFE4542352619000AAB780 /* OptionsHeader.swift in Sources */,
+				10480804238C657C0056F74B /* ProductIcon.swift in Sources */,
 				1101C66D22E0D75500416307 /* HProductCollectionViewCell.swift in Sources */,
 				27E8533D2376B703002649BE /* PromotionData.swift in Sources */,
+				10480802238C65720056F74B /* ProductImagePair.swift in Sources */,
 				2767CB94236472290042F533 /* OrderDetailsCell.swift in Sources */,
 				848E89CC22CCEAAC000AA24C /* FeatureProductCollectionViewCell.swift in Sources */,
 				116C938F22F0954500921893 /* PaymentAPIClient.swift in Sources */,
@@ -2909,7 +2917,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.36;
+				CURRENT_PROJECT_VERSION = 1.0.37;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
@@ -2930,7 +2938,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.36;
+				CURRENT_PROJECT_VERSION = 1.0.37;
 				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

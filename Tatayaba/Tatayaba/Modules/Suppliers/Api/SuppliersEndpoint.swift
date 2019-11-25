@@ -63,7 +63,8 @@ extension SuppliersEndpoint: TargetType {
             return .requestParameters(parameters: [
                                                 "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
                                                 "items_per_page": 20,
-                                                "page": page.urlEscaped
+                                                "page": page.urlEscaped,
+                                                "lang_code": LanguageManager.getLanguage()
             ], encoding: URLEncoding.default)
         case .getSupplierDetails:
             var currencyId = Constants.Currency.kuwaitCurrencyId
@@ -74,7 +75,8 @@ extension SuppliersEndpoint: TargetType {
                                                 "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
 //                                                "items_per_page": 20,
 //                                                "page": page.urlEscaped,
-                                                "currency_id": currencyId.urlEscaped
+                                                "currency_id": currencyId.urlEscaped,
+                                                "lang_code": LanguageManager.getLanguage()
             ], encoding: URLEncoding.default)
         case .getSuppliersSortedByPosition(let page):
             return .requestParameters(parameters: [

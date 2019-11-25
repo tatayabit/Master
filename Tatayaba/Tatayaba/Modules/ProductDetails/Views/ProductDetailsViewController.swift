@@ -271,6 +271,7 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
                 guard let viewModel = viewModel else { return UIView() }
                 let option = viewModel.optionHeader(at: section)
                 let required = option.required == "Y"
+                
                 headerView.configure(titleObj: option.name, itemObj: item, sectionObj: section, required: required)
                 headerView.delegate = self
                 return headerView

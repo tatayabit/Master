@@ -108,7 +108,8 @@ extension UserEndpoint: TargetType {
                                                     "b_state": user.state,
                                                     "b_country": CountrySettings.shared.currentCountry?.code ?? "kw",
                                                     "b_zipcode": user.zipCode,
-                                                    "b_phone": user.billingPhone
+                                                    "b_phone": user.billingPhone,
+                                                    "fields": [ "40": user.block]
                 ], encoding: JSONEncoding.default)
         case .getProfile(let userId):
             return .requestPlain//.requestParameters(parameters: [ "id": userId.urlEscaped
