@@ -94,9 +94,9 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         self.indexPath = indexPath
         
         if product.hasOptions {
-            addToCartButton.setTitle(Constants.ProductDetails.options, for: .normal)
+            addToCartButton.setTitle("OPTIONS...".localized(), for: .normal)
         } else {
-            addToCartButton.setTitle(Constants.ProductDetails.addToCart, for: .normal)
+            addToCartButton.setTitle("ADD TO CART".localized(), for: .normal)
         }
         self.cellBlockName = cellBlockName
         
@@ -120,5 +120,6 @@ extension Constants {
     struct ProductDetails {
         static let options = "OPTIONS...".localized()
         static let addToCart = "ADD TO CART".localized()
+        
     }
 }

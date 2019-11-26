@@ -82,6 +82,9 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         scrollView.stackView.addArrangedSubview(squaredBlockView)
         squaredBlockView.translatesAutoresizingMaskIntoConstraints = false
         squaredBlockView.heightAnchor.constraint(equalToConstant: 220).isActive = true
+        //
+        
+        //
         self.showLoadingIndicator(to: squaredBlockView)
 
 

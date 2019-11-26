@@ -41,6 +41,15 @@ class BannersBlocksView: UIView, UICollectionViewDelegate, UICollectionViewDataS
         bannersCollectionView.register(BannerBlockCollectionViewCell.nib, forCellWithReuseIdentifier: BannerBlockCollectionViewCell.identifier)
         self.bannersCollectionView.dataSource = self
         self.bannersCollectionView.delegate = self
+        
+//        let layout = UICollectionViewFlowLayout()
+//        layout.scrollDirection = .horizontal
+//        self.bannersCollectionView.collectionViewLayout = layout
+        
+        self.bannersCollectionView.bounces = false
+
+       
+//        self.bannersCollectionView.isScrollEnabled = false
        
         
     }
@@ -72,6 +81,7 @@ class BannersBlocksView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         return CGSize(width: self.bounds.width, height: 255)
     }
 
