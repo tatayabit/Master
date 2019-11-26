@@ -30,7 +30,7 @@ class CartViewModel {
         CurrencySettings.shared.addCurrencyDelegate(delegate: self)
     }
     
-    func loadPricingListContent(couponValue: String, taxValue: Tax?, shippingValue: String) {
+    func loadPricingListContent(couponValue: String, taxValue: Tax?, shippingValue: String, freeShipping: Bool = false) {
         pricingList.removeAll()
         let cartClass: CartPricingItems = CartPricingItems()
         var model = CartPricingModel(title: cartClass.subtotal, value: cart.subtotalPrice)
@@ -40,8 +40,6 @@ class CartViewModel {
         pricingList.append(model)
         
         if taxValue?.customDuties?.type == "P" {
-//            (totalPriceValue * (Float(customDutiesStringValue)!)) / 100
-            
             model = CartPricingModel(title: cartClass.customDuties, value: "\(taxValue?.customDuties?.value ?? "0")%")
         }else {
             model = CartPricingModel(title: cartClass.customDuties, value: taxValue?.customDuties?.value?.formattedPrice ?? "0")
@@ -50,6 +48,17 @@ class CartViewModel {
         pricingList.append(model)
         
         if taxValue?.vat?.type == "P" {
+            //            if totalPriceValue >= maxValueToShowTax && maxValueToShowTax != 0 {
+            //                      if let customDutiesStringValue = taxValue?.customDuties?.value {
+            //                          if taxValue?.customDuties?.type == "P" {
+            //                              totalPriceValue += (totalPriceValue * (Float(customDutiesStringValue)!)) / 100
+            //                          } else {
+            //                              totalPriceValue += Float(customDutiesStringValue) ?? 0.0
+            //                          }
+            //                      }
+            //                  }
+            //            (totalPriceValue * (Float(customDutiesStringValue)!)) / 100
+                    
             model = CartPricingModel(title: cartClass.tax, value: "\(taxValue?.vat?.value ?? "0")%")
         }else {
             model = CartPricingModel(title: cartClass.tax, value: taxValue?.vat?.value?.formattedPrice ?? "0")
