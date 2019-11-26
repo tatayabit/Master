@@ -40,6 +40,8 @@ class CartViewModel {
         pricingList.append(model)
         
         if taxValue?.customDuties?.type == "P" {
+//            (totalPriceValue * (Float(customDutiesStringValue)!)) / 100
+            
             model = CartPricingModel(title: cartClass.customDuties, value: "\(taxValue?.customDuties?.value ?? "0")%")
         }else {
             model = CartPricingModel(title: cartClass.customDuties, value: taxValue?.customDuties?.value?.formattedPrice ?? "0")

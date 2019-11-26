@@ -94,6 +94,11 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     func calculateTotal() {
         
+        if self.hasFreeShippingDiscount() {
+            self.calculateTotalWithFreeShippingCoupon()
+            return
+        }
+        
         totalPriceValue = (cart.totalPrice as NSString).floatValue + (shippingValue as NSString).floatValue
         
         if totalPriceValue >= maxValueToShowTax && maxValueToShowTax != 0 {
@@ -158,6 +163,87 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         viewModel.loadPricingListContent(couponValue: couponTitleValue, taxValue: taxValue, shippingValue: shippingValue)
         let totalItemsText = "(" + String(cart.productsCount) + " " + cartClass.items + ")"
         totalTitleLabel.attributedText = attributedTotalTitle(text: totalItemsText)
+    }
+    
+    private func calculateTotalWithFreeShippingCoupon() {
+        
+        totalPriceValue = (cart.totalPrice as NSString).floatValue
+        
+        if totalPriceValue >= maxValueToShowTax && maxValueToShowTax != 0 {
+            if let customDutiesStringValue = taxValue?.customDuties?.value {
+                if taxValue?.customDuties?.type == "P" {
+                    totalPriceValue += (totalPriceValue * (Float(customDutiesStringValue)!)) / 100
+                } else {
+                    totalPriceValue += Float(customDutiesStringValue) ?? 0.0
+                }
+            }
+        }
+        
+        if let taxStringValue = taxValue?.vat?.value {
+            if taxValue?.vat?.type == "P" {
+                totalPriceValue += (totalPriceValue * (Float(taxStringValue)!)) / 100
+            } else {
+                totalPriceValue += Float(taxStringValue) ?? 0.0
+            }
+        }
+        
+        totalPriceValue += (shippingValue as NSString).floatValue
+        
+        if promotionData != nil {
+            let discountItem = promotionData?.bonuses?.first
+            let currentTotal = (cart.totalPrice as NSString).floatValue//totalPriceValue
+            if discountItem?.discountBonus == DiscountBonusTypes.byPercentage.rawValue {
+                let discountValueFromTotal = (currentTotal * ("\(discountItem?.discountValue ?? "0")" as NSString).floatValue) / 100
+                totalPriceValue = totalPriceValue - discountValueFromTotal
+                if let promoName = promotionData?.promoName {
+                    couponTitleValue = promoName
+                } else {
+                    couponTitleValue = "by \(discountItem?.discountValue ?? "0")%"
+                }
+            } else if discountItem?.discountBonus == DiscountBonusTypes.toPercentage.rawValue {
+                let discountValueFromTotal = (currentTotal * ("\(discountItem?.discountValue ?? "0")" as NSString).floatValue) / 100
+                totalPriceValue = discountValueFromTotal
+                if let promoName = promotionData?.promoName {
+                    couponTitleValue = promoName
+                } else {
+                    couponTitleValue = "to \(discountItem?.discountValue ?? "0")%"
+                }
+            } else if discountItem?.discountBonus == DiscountBonusTypes.byFixed.rawValue {
+                let discountValueFromTotal = ("\(discountItem?.discountValue ?? "0")" as NSString).floatValue
+                totalPriceValue = totalPriceValue - discountValueFromTotal
+                if let promoName = promotionData?.promoName {
+                    couponTitleValue = promoName
+                } else {
+                    couponTitleValue = "by \((discountItem?.discountValue ?? "0").formattedPrice)"
+                }
+            } else if discountItem?.discountBonus == DiscountBonusTypes.toFixed.rawValue {
+                let discountValueFromTotal = totalPriceValue - ("\(discountItem?.discountValue ?? "0")" as NSString).floatValue
+                totalPriceValue = discountValueFromTotal
+                if let promoName = promotionData?.promoName {
+                    couponTitleValue = promoName
+                } else {
+                    couponTitleValue = "to \((discountItem?.discountValue ?? "0").formattedPrice)"
+                }
+            }
+        }
+        
+        let totalPriceValueRounded = (totalPriceValue * 100).rounded() / 100
+        
+        totalPriceLabel.text = "\(totalPriceValueRounded)".formattedPrice
+        viewModel.loadPricingListContent(couponValue: couponTitleValue, taxValue: taxValue, shippingValue: shippingValue)
+        let totalItemsText = "(" + String(cart.productsCount) + " " + cartClass.items + ")"
+        totalTitleLabel.attributedText = attributedTotalTitle(text: totalItemsText)
+    }
+    
+    private func hasFreeShippingDiscount() -> Bool {
+        if let promotionData = promotionData {
+            if let promotionName = promotionData.promoName {
+                if promotionName.lowercased().contains("free delivery") {
+                    return true
+                }
+            }
+        }
+        return false
     }
     
     func attributedTotalTitle(text: String) -> NSAttributedString {
