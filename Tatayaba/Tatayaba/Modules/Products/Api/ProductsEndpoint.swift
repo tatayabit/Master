@@ -15,6 +15,7 @@ enum ProductsEndpoint {
     case getProductFeatures
     case getProductDetails(productId: String)
     case getAlsoBoughtProducts(productId: String)
+    case search(keyword: String, page: String)
 }
 
 
@@ -51,12 +52,15 @@ extension ProductsEndpoint: TargetType {
         case .getAlsoBoughtProducts:
             let version = "4.0"
             return "\(version.urlEscaped)/TtmBlocks/77"
+        case .search:
+            let version = "4.0"
+            return "\(version.urlEscaped)/TtmProducts"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getProducts, .getAllCategories, .getProductsOfCategory, .getProductFeatures, .getProductDetails, .getAlsoBoughtProducts:
+        case .getProducts, .getAllCategories, .getProductsOfCategory, .getProductFeatures, .getProductDetails, .getAlsoBoughtProducts, .search:
             return .get
         }
     }
@@ -122,6 +126,22 @@ extension ProductsEndpoint: TargetType {
             return .requestParameters(parameters: [ "also_bought_for_product_id": productId,
                                                     "currency_id": currencyId.urlEscaped,
                                                     "lang_code": LanguageManager.getLanguage()
+            ], encoding: URLEncoding.default)
+            
+        case .search(let keyword, let page):
+        var currencyId = Constants.Currency.kuwaitCurrencyId
+        if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
+            currencyId = countryCurrency
+        }
+        return .requestParameters(parameters: [ "items_per_page": 20,
+                                                "status": "A",
+//                                                "cid": category,
+                                                "page": page.urlEscaped,
+                                                "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
+                                                "lang_code": LanguageManager.getLanguage(),
+                                                "currency_id": currencyId.urlEscaped,
+                                                "search": "Y",
+                                                "q": keyword
             ], encoding: URLEncoding.default)
         }
     }
