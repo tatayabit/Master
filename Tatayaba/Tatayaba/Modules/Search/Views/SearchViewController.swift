@@ -13,6 +13,7 @@ class SearchViewController: BaseViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var productsCollectionView: UICollectionView!
 
     var viewModel: CatProductsViewModel?
+    var searchViewModel = SearchProductsViewModel()
     private let productDetailsSegue = "search_segue"
     let searchController = UISearchController(searchResultsController: nil)
     var searchActive : Bool = false
@@ -44,8 +45,10 @@ class SearchViewController: BaseViewController, UICollectionViewDelegate, UIColl
         
         guard let viewModel = viewModel else { return }
         self.showLoadingIndicator(to: self.view)
-//        viewModel.setDelegate(self)
-        viewModel.fetchModerators()
+        viewModel.setDelegate(self)
+        searchViewModel.setDelegate(self)
+        
+        //viewModel.fetchModerators()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -188,6 +191,8 @@ extension SearchViewController: UISearchControllerDelegate, UISearchBarDelegate,
         if(!searchText.isEmpty)
             {
                 //reload your data source if necessary
+                self.showLoadingIndicator(to: self.view)
+                searchViewModel.fetchModerators(keyword: searchText)
                 print(searchText)
             }
         }
@@ -209,34 +214,34 @@ extension SearchViewController: UISearchControllerDelegate, UISearchBarDelegate,
 }
 
 
-//
-//extension SearchViewController: CatProductsViewModelDelegate {
-//    func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
-//        // 1
-//        self.hideLoadingIndicator(from: self.view)
-//
-//        guard newIndexPathsToReload != nil else {
-//            productsCollectionView.reloadData()
-//            guard let viewModel = viewModel else { return }
-//            if viewModel.totalCount == 0 {
-//                showErrorAlerr(title: "", message: Constants.Products.noProductsFound) { _ in
-//                    self.navigationController?.popViewController(animated: true)
-//                }
-//            }
-//            return
-//        }
-//        // 2
-//        if let newIndexPathsToReload = newIndexPathsToReload {
-//            productsCollectionView.insertItems(at: newIndexPathsToReload)
-//        }
-//    }
-//
-//    func onFetchFailed(with reason: String) {
-//        self.hideLoadingIndicator(from: self.view)
-////        indicatorView.stopAnimating()
-//
-////        let title = "Warning".localizedString
-////        let action = UIAlertAction(title: "OK".localizedString, style: .default)
-////        displayAlert(with: title , message: reason, actions: [action])
-//    }
-//}
+
+extension SearchViewController: SearchProductsViewModelDelegate,CatProductsViewModelDelegate {
+    func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
+        // 1
+        self.hideLoadingIndicator(from: self.view)
+
+        guard newIndexPathsToReload != nil else {
+            productsCollectionView.reloadData()
+            guard let viewModel = viewModel else { return }
+            if viewModel.totalCount == 0 {
+                showErrorAlerr(title: "", message: Constants.Products.noProductsFound) { _ in
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+            return
+        }
+        // 2
+        if let newIndexPathsToReload = newIndexPathsToReload {
+            productsCollectionView.insertItems(at: newIndexPathsToReload)
+        }
+    }
+
+    func onFetchFailed(with reason: String) {
+        self.hideLoadingIndicator(from: self.view)
+//        indicatorView.stopAnimating()
+
+//        let title = "Warning".localizedString
+//        let action = UIAlertAction(title: "OK".localizedString, style: .default)
+//        displayAlert(with: title , message: reason, actions: [action])
+    }
+}

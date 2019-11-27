@@ -59,7 +59,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         addBannersSubView()
         setupListners()
         setupUI()
-//        addSearchBtn()
+        addSearchBtn()
         viewModel.loadAPIs()
         let cart = Cart.shared
         cart.updateTabBarCount()
