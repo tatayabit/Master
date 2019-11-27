@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>398227463517-4gjlos609g4t2iskdb84d18kc9imq9ju.apps.googleusercontent.com</string>
+	<string>398227463517-gtsenmcrs25ggscc7jivh8pq5h58trds.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.398227463517-4gjlos609g4t2iskdb84d18kc9imq9ju</string>
+	<string>com.googleusercontent.apps.398227463517-gtsenmcrs25ggscc7jivh8pq5h58trds</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBky9lLulDWJD_18yW4Df9s7EeUzG5HVAM</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>Tatayaba.Tatayaba</string>
+	<string>com.tatayab.tatayab</string>
 	<key>PROJECT_ID</key>
 	<string>tatayab-ios-application</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:398227463517:ios:e7cf21b819fb99ac0a5cb4</string>
+	<string>1:398227463517:ios:0b17ac959251e65d0a5cb4</string>
 	<key>DATABASE_URL</key>
 	<string>https://tatayab-ios-application.firebaseio.com</string>
 </dict>

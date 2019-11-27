@@ -13,7 +13,6 @@
 		100586A02386FCEB00D6CA76 /* ConvertedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1005869F2386FCEB00D6CA76 /* ConvertedProduct.swift */; };
 		100B8D5F236F2F52000E11E8 /* CountriesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100B8D5E236F2F52000E11E8 /* CountriesAPIClient.swift */; };
 		100B8D61236F2F6E000E11E8 /* CountriesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100B8D60236F2F6E000E11E8 /* CountriesEndpoint.swift */; };
-		10181CB8235F655300220439 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10181CB7235F655300220439 /* GoogleService-Info.plist */; };
 		10244C592369F6F8004E65F9 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10244C582369F6F8004E65F9 /* ErrorMessage.swift */; };
 		10480802238C65720056F74B /* ProductImagePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10480801238C65720056F74B /* ProductImagePair.swift */; };
 		10480804238C657C0056F74B /* ProductIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10480803238C657C0056F74B /* ProductIcon.swift */; };
@@ -26,6 +25,7 @@
 		106751DD235B7A590031F3E7 /* PaymentRedirectResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106751DC235B7A590031F3E7 /* PaymentRedirectResult.swift */; };
 		1083BFFD235B355600360E78 /* LiveChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1083BFFC235B355600360E78 /* LiveChatViewController.swift */; };
 		1098F1A62389162B00A8D367 /* ConciergeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098F1A52389162B00A8D367 /* ConciergeResponse.swift */; };
+		1099EB35238F13D600257DFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1099EB34238F13D600257DFA /* GoogleService-Info.plist */; };
 		109D29E3234A64D00052D01B /* ReverseGeoCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D29E2234A64D00052D01B /* ReverseGeoCoder.swift */; };
 		109D29E5234A668F0052D01B /* CountrySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D29E4234A668F0052D01B /* CountrySettings.swift */; };
 		10B08375234CF41800DCE773 /* CartAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B08374234CF41800DCE773 /* CartAPIClient.swift */; };
@@ -312,7 +312,6 @@
 		1005869F2386FCEB00D6CA76 /* ConvertedProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertedProduct.swift; sourceTree = "<group>"; };
 		100B8D5E236F2F52000E11E8 /* CountriesAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesAPIClient.swift; sourceTree = "<group>"; };
 		100B8D60236F2F6E000E11E8 /* CountriesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesEndpoint.swift; sourceTree = "<group>"; };
-		10181CB7235F655300220439 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		10244C582369F6F8004E65F9 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		10480801238C65720056F74B /* ProductImagePair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagePair.swift; sourceTree = "<group>"; };
 		10480803238C657C0056F74B /* ProductIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductIcon.swift; sourceTree = "<group>"; };
@@ -325,6 +324,7 @@
 		106751DC235B7A590031F3E7 /* PaymentRedirectResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRedirectResult.swift; sourceTree = "<group>"; };
 		1083BFFC235B355600360E78 /* LiveChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChatViewController.swift; sourceTree = "<group>"; };
 		1098F1A52389162B00A8D367 /* ConciergeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConciergeResponse.swift; sourceTree = "<group>"; };
+		1099EB34238F13D600257DFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		109D29E2234A64D00052D01B /* ReverseGeoCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGeoCoder.swift; sourceTree = "<group>"; };
 		109D29E4234A668F0052D01B /* CountrySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySettings.swift; sourceTree = "<group>"; };
 		10B08374234CF41800DCE773 /* CartAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartAPIClient.swift; sourceTree = "<group>"; };
@@ -1992,8 +1992,8 @@
 				847CDE4C22C9EE2300E67C8C /* LaunchScreen.storyboard */,
 				847CDE4F22C9EE2300E67C8C /* Info.plist */,
 				115795CF23314CB00002075E /* Localizable.strings */,
-				10181CB7235F655300220439 /* GoogleService-Info.plist */,
 				847CDE4722C9EE2300E67C8C /* Tatayaba.xcdatamodeld */,
+				1099EB34238F13D600257DFA /* GoogleService-Info.plist */,
 			);
 			path = Tatayaba;
 			sourceTree = "<group>";
@@ -2355,7 +2355,6 @@
 				1101C66E22E0D75500416307 /* HProductCollectionViewCell.xib in Resources */,
 				847CDE8A22CA19EE00E67C8C /* ProximaNova-Bold.ttf in Resources */,
 				847CDE8422CA19EE00E67C8C /* ProximaNova-Regular.ttf in Resources */,
-				10181CB8235F655300220439 /* GoogleService-Info.plist in Resources */,
 				11FEB4E122DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib in Resources */,
 				4C219867233BBB6900DE40FA /* Country.storyboard in Resources */,
 				115DC42D231187950001EF67 /* BannersBlocksView.xib in Resources */,
@@ -2384,6 +2383,7 @@
 				113647FC2316FF0F0097FDB3 /* CategoriesBlockView.xib in Resources */,
 				D5B71209238E14E0006BD0DD /* Search.storyboard in Resources */,
 				847CDE4622C9EE2300E67C8C /* Main.storyboard in Resources */,
+				1099EB35238F13D600257DFA /* GoogleService-Info.plist in Resources */,
 				4CC28C702327F961003EAEA6 /* GOTHAM-MEDIUM.TTF in Resources */,
 				11FB584A231C2147005DA4F0 /* CategoriesBlockCollectionViewCell.xib in Resources */,
 				4CD8B8A6232129D300D25CC3 /* Suppliers.storyboard in Resources */,
@@ -2488,6 +2488,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Tatayaba/Pods-Tatayaba-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
@@ -2503,6 +2504,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
