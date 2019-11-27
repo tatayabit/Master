@@ -9,15 +9,16 @@
 import Moya
 
 enum CartEndpoint {
-    case applyCoupon(code: String)
+    case applyCoupon(parameters: [String: Any])
     case getTaxAndShipping(countryCode: String)
+    case getPricesWithUpdatedCurrency(parameters: [String: Any])
 }
 
 
 extension CartEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
-        case .production: return "http://dev2%40tatayab.com:gsh34ps0N2DX5qS3y0P09U220h15HM8T@dev2.tatayab.com/api/"
+        case .production: return "http://dev_ios%40tatayab.com:6337M41B30af4Sh7A6006lSq2jabf3M2@dev2.tatayab.com/api/"
         case .qa: return "http://localhost:3000/"
         case .staging: return "http://localhost:3000/"
         }
@@ -32,18 +33,20 @@ extension CartEndpoint: TargetType {
     var path: String {
         switch self {
         case .applyCoupon:
-            return "4.0/SraCartContent"
+            return "4.0/TtmOrders"
         case .getTaxAndShipping:
-            return "4.0/TtmCartConfigData"
+            return "4.0/TtmCartConfigData/"
+        case .getPricesWithUpdatedCurrency:
+            return "4.0/TtmCurrencies/"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .applyCoupon:
-            return .get
         case .getTaxAndShipping:
             return .get
+        case .getPricesWithUpdatedCurrency, .applyCoupon:
+            return .post
         }
     }
     
@@ -58,12 +61,14 @@ extension CartEndpoint: TargetType {
     
     var task: Task {
         switch self {
-        case .applyCoupon(let code):
-            return .requestParameters(parameters: [ "coupon_codes": code
+        case .applyCoupon(let parameters):
+            
+        return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        case .getTaxAndShipping:
+            return .requestParameters(parameters: [ "country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw"
                 ], encoding: URLEncoding.queryString)
-        case .getTaxAndShipping(let countryCode):
-            return .requestParameters(parameters: [ "country_code": countryCode
-                ], encoding: URLEncoding.queryString)
+        case .getPricesWithUpdatedCurrency(let parameters):
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         }
     }
     

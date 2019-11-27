@@ -7,28 +7,40 @@
 //
 
 import Foundation
- private var countryList = [Country]()
+import Moya
 
-struct CountriesManager {
-    static let countriesJsonFile = "countries_list"
-    static func loadCountriesList() -> [Country] {
-        let url = Bundle.main.url(forResource: countriesJsonFile, withExtension: "json")!
-        do {
-            let jsonData = try Data(contentsOf: url)
-            let decoder = JSONDecoder()
-            // the name data is misleading
-            let myStruct = try decoder.decode([Country].self, from: jsonData)
-            
-            return myStruct
 
-        } catch { print(error) }
-        return [Country(code: "KW", name: "Kuwait")]
-    }
+class CountriesManager {
+    var countriesList = [Country]()
+    let apiClient = CountriesAPIClient()
+    static let shared = CountriesManager()
     
+    //MARK:- Api
+    func loadCountriesList() {
+        if countriesList.count > 0 { return }
+        
+        apiClient.getCountries { result in
+            switch result {
+            case .success(let response):
+                guard let countriesResult = response else { return }
+                self.countriesList = countriesResult.sorted(by: { $0.name < $1.name })
+            
+            case .failure(let error):
+                print("the error \(error)")
+            }
+        }
+    }
     
     func country(at indexPath: IndexPath) -> Country {
-        guard countryList.count > 0 else { return Country() }
-        return countryList[indexPath.row]
+        guard countriesList.count > 0 else { return Country() }
+        return countriesList[indexPath.row]
     }
     
+    func country(with name: String) -> Country? {
+        let foundCountries = self.countriesList.filter({ $0.name == name })
+        if foundCountries.count > 0 {
+            return foundCountries.first
+        }
+        return nil
+    }
 }

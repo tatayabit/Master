@@ -73,12 +73,13 @@ class FullScreenBannersView: UIView, UICollectionViewDelegate, UICollectionViewD
         } else {
             cell.configure(block.banners[indexPath.row])
         }
-
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.bounds.width, height: 150)
+        let aspectRatio = CGFloat(0.225)
+        let height = aspectRatio * UIScreen.main.bounds.height
+        return CGSize(width: self.bounds.width, height: height)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

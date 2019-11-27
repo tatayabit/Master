@@ -15,7 +15,24 @@ extension String {
 
     var formattedPrice: String {
         let priceFloat = Float(self)
-        return String(format: "%.3f KD", priceFloat ?? "0.000 KD")
+        var decimals = 2
+        if let currency = CurrencySettings.shared.currentCurrency {
+            decimals = Int(currency.decimals) ?? 2
+        }
+
+        return String(format: "%.\(decimals)f \(CurrencySettings.shared.currentCurrency?.currencyCode ?? "KD")", priceFloat ?? "0.000 \(CurrencySettings.shared.currentCurrency?.currencyCode ?? "KD")")
+    }
+    
+    func stripOutHtml() -> String {
+        do {
+            guard let data = self.data(using: .unicode) else {
+                return ""
+            }
+            let attributed = try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
+            return attributed.string
+        } catch {
+            return ""
+        }
     }
 }
 

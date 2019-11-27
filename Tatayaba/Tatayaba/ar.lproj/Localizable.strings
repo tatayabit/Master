@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   Tatayaba
 
@@ -11,6 +11,7 @@
 "Subtotal"="المجموع";
 "Shipping"="الشحن";
 "Tax"="الضرائب";
+"CustomDuties"="رسوم جمركية";
 "Coupon"="خصم";
 "items"="أصناف";
 "Cart Total"="المجموع الكلي";
@@ -25,7 +26,8 @@
 "Sign Up"="إنشاء حساب";
 "Skip"="تخطي";
 "Username or password are invalid"="البريد الالكتروني أو كلمة المرور غير صحيحة";
-
+"LoginFailed"= "خطا في الدخول";
+"AcceessDenied"= "الدخول ممنوع";
 
 // Error
 "Error"="خطأ";
@@ -36,6 +38,8 @@
 "Privacy Policy"="سياسة الخصوصية";
 "BRANDS"="العلامات التجارية";
 "Logout"="تسجيل الخروج";
+"Live Chat" = "دردشه";
+"Notifications" = "التنبيهات";
 "Delivery and Return Policy"="سياسة الاستبدال والاسترجاع";
 
 // Concierge
@@ -46,6 +50,51 @@
 "Please enter coupon value!" = "من فضلك ادخل الكوبون الصحيح !";
 "CouponAddedSuccessfully" = "تم اضافه الخصم بنجاح";
 "CouponRemovedSuccessfully" = "تم حذف الخصم بنجاح";
+"couponTypeNotImplemented" = "لا يمكن اضافه الخصم لذلك النوع";
+"Quantity"="الكمية";
 
 // CheckOut
 "EnterAddress" = "من فضلك ادخل عنوانك";
+
+"ForgetFailed" = "خطا في استرجاع الرقم السري";
+"ForgetSuccess" = "حسنا";
+
+// Product
+"OPTIONS..." = "الاختيارات...";
+"ADD TO CART" = "أضف إلى السلة";
+"one click buy" = "شراء سريع";
+"ONE CLICK BUY" = "شراء سريع";
+"Currencies" = "العملات";
+// Settings
+"Change Country"="تغيير الدولة";
+"active" = "متاح";
+"hidden" = "مخفي";
+"disabled" = "غير مفعل";
+"Brands" = "العلامات التجاريه";
+"seeMore" = "المزيد";
+"Perfume Name" = "اسم العطر";
+"Comment" = "تعليق";
+"Phone" = "رقم الجوال";
+"Name" = "الاسم";
+"Tracking" = "تتبع #:";
+"Order Value" = "قيمه الطلب:";
+"Track Order" = "تتبع الطلب";
+"View invoice" = "عرض الفاتوره";
+"Shipping" = "الشحن:";
+"Order date" = "تاريخ الطلب:";
+"Payment Method" = "طريقه الدفع:";
+"Shipping Address" = "عنوان الشحن:";
+"Billing Address" = "عنوان وصول الفواتير:";
+"Item Price" = "سعر المنتج:";
+"Paid Price" = "السعر المدفوع:";
+
+
+// Products list
+"No Products found!"= "لا يوجد منتجات!";
+"SECURE CHECKOUT" = "الدفع بامان";
+"SHIP TO" = "عنوان التوصيل";
+
+
+// Will be removed laetr
+"PERSONAL CARE" = "العناية الشخصية";
+"OIL" = "الدهن";

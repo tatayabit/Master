@@ -20,6 +20,8 @@ class CatProductsViewModel {
     private var currentPage = 0
     private var total = 0
     private var isFetchInProgress = false
+    private var shouldCallApi: Bool = true
+
     
     private weak var delegate: CatProductsViewModelDelegate?
     
@@ -42,25 +44,6 @@ class CatProductsViewModel {
         return productsList.count
     }
 
-
-    //MARK:- Api
-    func getProductsOfCategory(completion: @escaping (APIResult<ProductsResult?, MoyaError>) -> Void) {
-        let categoryId = Int(category.identifier) ?? 0
-        apiClient.getProductOf(categoryId: categoryId, page: currentPage) { result in
-            switch result {
-            case .success(let response):
-                guard let productResult = response else { return }
-                guard let products = productResult.products else { return }
-
-                self.productsList = products
-                print(productResult)
-
-            case .failure(let error):
-                print("the error \(error)")
-            }
-            completion(result)
-        }
-    }
     
     // MARK:- fetch more Api
     func fetchModerators() {
@@ -91,11 +74,14 @@ class CatProductsViewModel {
                     guard let productResult = response else { return }
                     guard let products = productResult.products else { return }
                     
-                    self.total = products.count
+                    if products.count < 20 {
+                        self.shouldCallApi = false
+                    }
+                    self.total += products.count
                     self.productsList.append(contentsOf: products)
                     
                     // 3
-                    if self.currentPage-1 > 1 {
+                    if self.currentPage > 1 {
                         let indexPathsToReload = self.calculateIndexPathsToReload(from: products)
                         if let delegate = self.delegate {
                             delegate.onFetchCompleted(with: indexPathsToReload)
@@ -138,5 +124,19 @@ class CatProductsViewModel {
     func addToCart(at indexPath: IndexPath)  {
         let cart = Cart.shared
         cart.addProduct(product: product(at: indexPath))
+    }
+    
+    func productInStock(at indexPath: IndexPath) -> Bool {
+        return product(at: indexPath).isInStock
+    }
+    
+    func productHasOptions(at indexPath: IndexPath) -> Bool {
+        return product(at: indexPath).hasOptions
+    }
+}
+
+extension Constants {
+    struct Products {
+        static let noProductsFound = "No Products found!".localized()
     }
 }

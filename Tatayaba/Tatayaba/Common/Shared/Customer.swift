@@ -15,7 +15,7 @@ class Customer {
     static let shared = Customer()
     private var userData: User?
 
-    var loggedin: Bool { return userData != nil }
+    var loggedin: Bool { return userData != nil && hasUserId() }
 
     var user: User? { return userData }
 
@@ -35,6 +35,10 @@ class Customer {
         print("loggedOut: \(String(describing: userData))")
         KeychainWrapper.standard.removeObject(forKey: userDataKey)
     }
+    
+    func hasUserId() -> Bool {
+        return userData?.identifier != "" && userData?.identifier != nil
+    }
 
     //MARK:- UserData KeyChain
     private func saveUserDataToKeyChain(userObj: User) {
@@ -53,4 +57,23 @@ class Customer {
         userData = userDataDecoded
         print("loaded userData: \(String(describing: userData))")
     }
+    
+    //MARK:- UserData check
+     func checkAddressData() -> Bool {
+        if ((userData?.billingAddress.count) ?? 0 > 0 && (userData?.billingCity.count) ?? 0 > 0) {
+            return true
+        }
+        else{
+            return false
+        }
+    }
+    
+    
+    //MARK:- UserData remove
+     func removeAddressData() {
+        userData?.billingAddress = ""
+        userData?.billingCity = ""
+        setUser(userData!)
+    }
+
 }

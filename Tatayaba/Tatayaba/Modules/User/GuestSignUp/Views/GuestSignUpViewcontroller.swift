@@ -61,7 +61,7 @@ class GuestSignUpViewcontroller: BaseViewController, ValidationDelegate {
             switch result {
             case .success(let loginResult):
                 print(loginResult!)
-                let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewCartViewController") as! NewCartViewController
+                let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewCartViewController") as! CartViewController
                 controller.buyingWayType = 1
                 self.navigationController?.pushViewController(controller, animated: false)
             case .failure(let error):
@@ -77,6 +77,9 @@ class GuestSignUpViewcontroller: BaseViewController, ValidationDelegate {
             print("errors:::: \(String(describing: error.1.errorMessage))")
         }
         
+        if errors.count > 0 {
+            showErrorAlerr(title: Constants.Common.error, message: "\(String(describing: errors[0].1.errorMessage))", handler: nil)
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

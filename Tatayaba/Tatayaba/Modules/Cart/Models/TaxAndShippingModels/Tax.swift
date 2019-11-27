@@ -11,7 +11,7 @@ struct Tax : Codable {
 
 
 	enum CodingKeys: String, CodingKey {
-		case customDuties
+		case customDuties = "custom_duties"
 		case vat
 	}
 	init(from decoder: Decoder) throws {

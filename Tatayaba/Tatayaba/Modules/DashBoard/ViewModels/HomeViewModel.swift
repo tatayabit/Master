@@ -15,6 +15,8 @@ class HomeViewModel {
     private let suppliersApiClient = SuppliersAPIClient()
 
 
+    let productIdList = ["268","270","305", "267", "297", "248", "265"]
+    var block_Id = ""
     var categoriesList = [Category]()
     var suppliersList = [Supplier]()
 
@@ -22,7 +24,7 @@ class HomeViewModel {
     var topBannersBlock: Block = Block()
     var squareBlock: Block = Block()
 
-    var productsBlock: Block = Block()
+    var productsBlocks = [Block]()
 
 
     /// This closure is being called once the categories api fetch
@@ -43,11 +45,13 @@ class HomeViewModel {
 
     //MARK:- Init
     func loadAPIs() {
-        getAllCategories()
-        loadTopBannerApi()
-        getSquaredBlock()
-        getAllSuppliers()
-        getProductBlock()
+        DispatchQueue.background(delay: 0.0, background: {
+            self.getAllCategories()
+            self.loadTopBannerApi()
+            self.getSquaredBlock()
+            self.getAllSuppliers()
+            self.getProductBlock()
+        })
     }
 
     //MARK:- Api
@@ -58,7 +62,7 @@ class HomeViewModel {
                 guard let categoriesResult = response else { return }
                 guard let categories = categoriesResult.categories else { return }
 
-                self.categoriesList = categories//.filter({ $0.parentId == "0" })
+                self.categoriesList = categories.sorted(by: { Int($0.position) ?? 0 < Int($1.position) ?? 0 }) .filter({ $0.parentId == "0" })
 
                 print(self.categoriesList)
 
@@ -77,7 +81,7 @@ class HomeViewModel {
     }
 
     func getAllSuppliers() {
-        suppliersApiClient.getSuppliers { result in
+        suppliersApiClient.getSuppliers(page: 0) { result in
             switch result {
             case .success(let response):
                 guard let suppliersResult = response else { return }
@@ -103,7 +107,7 @@ class HomeViewModel {
 
     func loadTopBannerApi() {
         // topBannerApi
-        blocksApiClient.getBlock(blockId: "259") { result in
+        blocksApiClient.getBlock(blockId: "242") { result in
             switch result {
             case .success(let responseB58):
                 guard let block = responseB58 else { return }
@@ -147,25 +151,35 @@ class HomeViewModel {
     }
 
     func getProductBlock() {
-        // squaredBlock
-        blocksApiClient.getBlock(blockId: "268") { result in
-            // 258
-            switch result {
-            case .success(let responseB44):
-                guard let block = responseB44 else { return }
-                self.productsBlock = block
-                print(block)
+        for id in productIdList {
+            // squaredBlock
+                    blocksApiClient.getBlock(blockId: id) { result in
+                        // 258
+                        switch result {
+                        case .success(let responseB44):
+                            guard let block = responseB44 else { return }
+                            var sortedBlock = block
+                            sortedBlock.products = block.products.sorted(by: { $0.fullDetails.position < $1.fullDetails.position })
+                            sortedBlock.products = sortedBlock.products.filter({ $0.fullDetails.amount > 0 })
+                            self.productsBlocks.append(sortedBlock)
+                            print(block)
+                            if (self.productsBlocks.count > 6) {
+                                if let newProductsArrived = self.onProductsBlockLoad {
+                                    newProductsArrived()
+                                }
+                            }
 
-                if let newProductsArrived = self.onProductsBlockLoad {
-                    newProductsArrived()
-                }
-            case .failure(let error):
-                print("the error \(error)")
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
-//                    self.getProductBlock()
-//                })
-            }
+                            
+                        case .failure(let error):
+                            print("the error \(error)")
+            //                DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+            //                    self.getProductBlock()
+            //                })
+                        }
+                    }
         }
+        
+        
     }
 
     //MARK:- Categories data
@@ -176,7 +190,7 @@ class HomeViewModel {
 
     //MARK:- Parsing Deeplink
     func parseSquareBlockDeeplink(at indexPath: IndexPath) -> DeepLinkModel {
-        guard squareBlock.banners.count > 0 else { return DeepLinkModel(type: .unknown, id: "") }
+        guard squareBlock.banners.count > 0 else { return DeepLinkModel(type: .unknown, id: "", title: "") }
         let banner = squareBlock.banners[indexPath.row]
 
         let deeplink = DeeplinkHandler(urlString: banner.url)
@@ -185,7 +199,7 @@ class HomeViewModel {
     }
     
     func parsetopBannersBlockDeeplink(at indexPath: IndexPath) -> DeepLinkModel {
-           guard topBannersBlock.banners.count > 0 else { return DeepLinkModel(type: .unknown, id: "") }
+        guard topBannersBlock.banners.count > 0 else { return DeepLinkModel(type: .unknown, id: "", title: "") }
            let banner = topBannersBlock.banners[indexPath.row]
 
            let deeplink = DeeplinkHandler(urlString: banner.url)
@@ -193,16 +207,26 @@ class HomeViewModel {
            return result
        }
 
-
+    // MARK:- HasRequiredOptions
+    func hasOptions(at indexPath: IndexPath) -> Bool {
+        let product = productsBlocks[0].products[indexPath.row].fullDetails
+        return product.hasOptions
+    }
+    
     // MARK:- AddToCart
     func addToCart(product: Product)  {
         let cart = Cart.shared
         cart.addProduct(product: product)
     }
+    
+    func productInStock(at product: Product) -> Bool {
+        return product.isInStock
+    }
 
     //MARK:- ProductDetails ViewModel
     func productDetailsViewModel(at indexPath: IndexPath) -> ProductDetailsViewModel {
-        let productViewModel = ProductDetailsViewModel(product: productsBlock.products[indexPath.row].fullDetails)
+        let selectedBlock = getSelectedProductBlock()
+        let productViewModel = ProductDetailsViewModel(product: selectedBlock.products[indexPath.row].fullDetails)
         return productViewModel
     }
 
@@ -212,8 +236,9 @@ class HomeViewModel {
         return CatProductsViewModel(category: category)
     }
     
-    func catProductsListViewModel(with id: String) -> CatProductsViewModel {
-        let category = Category(identifier: id)
+    func catProductsListViewModel(with id: String, title: String) -> CatProductsViewModel {
+        var category = Category(identifier: id)
+        category.name = title
         return CatProductsViewModel(category: category)
     }
 
@@ -221,5 +246,15 @@ class HomeViewModel {
     func supplierProductsViewModel(indexPath: IndexPath) -> SupplierProductsViewModel {
         let supplier = suppliersList[indexPath.row]
         return SupplierProductsViewModel(supplier: supplier)
+    }
+    
+    func getSelectedProductBlock() -> Block {
+        for block in productsBlocks {
+            if (block.blockId == self.block_Id) {
+                return block
+            }
+        }
+        return productsBlocks[0]
+        
     }
 }

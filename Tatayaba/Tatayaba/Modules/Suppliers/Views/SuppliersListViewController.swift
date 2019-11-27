@@ -8,76 +8,89 @@
 
 import UIKit
 
-class SuppliersListViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+class SuppliersListViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CountrySettingsDelegate {
 
     @IBOutlet weak var supplierCollection_View: UICollectionView!
-    lazy var searchBar:UISearchBar = UISearchBar()
+//    lazy var searchBar:UISearchBar = UISearchBar()
     let viewModel = SuppliersListViewModel()
-
+    
     private let supplierProductsSegue = "supplier_products_segue"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
-        viewModel.onsuppliersListLoad = {
-            self.supplierCollection_View.reloadData()
-        }
-        viewModel.getSuppliersList()
+        CountrySettings.shared.addDelegate(delegate: self)
+        viewModel.setDelegate(self)
+//        viewModel.onsuppliersListLoad = {
+//            self.supplierCollection_View.reloadData()
+//        }
+        reloadData()
     }
 
     func setupUI() {
-        self.NavigationBarWithOutBackButton()
+        NavigationBarWithBackButton()
         supplierCollection_View.register(SuppliersCollectionViewCell.nib, forCellWithReuseIdentifier: SuppliersCollectionViewCell.identifier)
-        setupSearchButton()
+//        setupSearchButton()
             
     }
     
-    // MARK:- SetupSearch Button
-    fileprivate func setupSearchButton() {
-        self.addSearchBarButton()
-        searchBar.isHidden = true
-        searchBar.searchBarStyle = UISearchBar.Style.prominent
-        searchBar.placeholder = " Search..."
-        searchBar.sizeToFit()
-        searchBar.delegate = self
-        searchBar.isTranslucent = false
-        searchBar.backgroundImage = UIImage()
-        searchBar.showsCancelButton = true
-        let cancelButtonAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white]
-        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes(cancelButtonAttributes, for: .normal)
+    func countryDidChange(to country: Country) {
+        print("country changes!!!")
+        print("SuppliersListViewController")
+        reloadData()
+    }
+    
+    func reloadData() {
+        viewModel.reset()
+    }
 
-        navigationItem.titleView = searchBar
-    }
     
-     func addSearchBarButton() {
-        let button = UIButton(frame: CGRect(x:UIScreen.main.bounds.width-40 , y: 0, width: 20, height: 20))
-        button.setBackgroundImage(UIImage(named: "Search"), for: .normal)
-        button.addTarget(self, action: #selector(self.SearchButtonAction), for: .touchUpInside)
-        
-        let barbutton = UIBarButtonItem(customView: button)
-        self.navigationItem.rightBarButtonItem = barbutton
-    }
+    // MARK:- SetupSearch Button
+//    fileprivate func setupSearchButton() {
+//        self.addSearchBarButton()
+//        searchBar.isHidden = true
+//        searchBar.searchBarStyle = UISearchBar.Style.prominent
+//        searchBar.placeholder = " Search..."
+//        searchBar.sizeToFit()
+//        searchBar.delegate = self
+//        searchBar.isTranslucent = false
+//        searchBar.backgroundImage = UIImage()
+//        searchBar.showsCancelButton = true
+//        let cancelButtonAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white]
+//        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes(cancelButtonAttributes, for: .normal)
+//
+//        navigationItem.titleView = searchBar
+//    }
+    
+//     func addSearchBarButton() {
+//        let button = UIButton(frame: CGRect(x:UIScreen.main.bounds.width-40 , y: 0, width: 20, height: 20))
+//        button.setBackgroundImage(UIImage(named: "Search"), for: .normal)
+//        button.addTarget(self, action: #selector(self.SearchButtonAction), for: .touchUpInside)
+//
+//        let barbutton = UIBarButtonItem(customView: button)
+//        self.navigationItem.rightBarButtonItem = barbutton
+//    }
     
     
-    @objc func SearchButtonAction(){
-        
-        searchBar.isHidden =  false
-        searchBar.alpha = 0
-        navigationItem.titleView = searchBar
-        navigationItem.setLeftBarButton(nil, animated: true)
-        navigationItem.setRightBarButton(nil, animated: true)
-        
-        UIView.animate(withDuration: 0.5, animations: {
-            self.searchBar.alpha = 1
-        }, completion: { finished in
-            self.searchBar.becomeFirstResponder()
-        })
-        
-    }
+//    @objc func SearchButtonAction(){
+//        
+//        searchBar.isHidden =  false
+//        searchBar.alpha = 0
+//        navigationItem.titleView = searchBar
+//        navigationItem.setLeftBarButton(nil, animated: true)
+//        navigationItem.setRightBarButton(nil, animated: true)
+//        
+//        UIView.animate(withDuration: 0.5, animations: {
+//            self.searchBar.alpha = 1
+//        }, completion: { finished in
+//            self.searchBar.becomeFirstResponder()
+//        })
+//        
+//    }
     
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return viewModel.suppliersList.count
+        return viewModel.totalCount
     }
     
     
@@ -88,6 +101,14 @@ class SuppliersListViewController: BaseViewController, UICollectionViewDelegate,
             cell.configure(supplier: viewModel.supplier(at: indexPath))
         
         return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == viewModel.currentCount - 12 {  //numberofitem count
+            viewModel.fetchModerators()
+            print("reached last cell!")
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -109,4 +130,33 @@ class SuppliersListViewController: BaseViewController, UICollectionViewDelegate,
             }
         }
     }
+}
+
+
+extension SuppliersListViewController: SuppliersListViewModelDelegate {
+    func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
+        // 1
+        self.hideLoadingIndicator(from: self.view)
+
+        guard newIndexPathsToReload != nil else {
+            self.supplierCollection_View.reloadData()
+            if viewModel.totalCount == 0 {
+                showErrorAlerr(title: "", message: Constants.Products.noProductsFound) { _ in
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+            return
+        }
+        // 2
+        if let newIndexPathsToReload = newIndexPathsToReload {
+            self.supplierCollection_View.insertItems(at: newIndexPathsToReload)
+        }
+    }
+    
+    func onFetchFailed(with reason: String) {
+        self.hideLoadingIndicator(from: self.view)
+        self.supplierCollection_View.reloadData()
+    }
+    
+    
 }

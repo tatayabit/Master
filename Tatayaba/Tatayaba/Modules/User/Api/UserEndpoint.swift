@@ -12,7 +12,9 @@ enum UserEndpoint {
     case signUp(user: User)
     case gusetSignUp(user: User)
     case login(user: User)
-    case getProfile(userId: Int)
+    case forgetPassword(email: String)
+    case updateProfile(user: User)
+    case getProfile(userId: String)
     
 }
 
@@ -20,7 +22,7 @@ enum UserEndpoint {
 extension UserEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
-        case .production: return "http://dev2%40tatayab.com:gsh34ps0N2DX5qS3y0P09U220h15HM8T@dev2.tatayab.com/api/"
+        case .production: return "http://dev_ios%40tatayab.com:6337M41B30af4Sh7A6006lSq2jabf3M2@dev2.tatayab.com/api/"
         case .qa: return "http://localhost:3000/"
         case .staging: return "http://localhost:3000/"
         }
@@ -38,19 +40,22 @@ extension UserEndpoint: TargetType {
             return "users"
         case .gusetSignUp:
             return "users"
+        case .updateProfile:
+            return "4.0/TtmUsers"
         case .getProfile(let userId):
-            let version = "4.0"
-            return "\(version.urlEscaped)/TtmUsers/\(userId)"
+            return "4.0/TtmUsers/\(userId.urlEscaped)"
         case .login:
             return "4.0/TtmAuth"
+        case .forgetPassword:
+            return "40/TtmForgetPass"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .signUp,.gusetSignUp, .login:
+        case .signUp, .gusetSignUp, .login, .updateProfile:
             return .post
-        case .getProfile:
+        case .getProfile, .forgetPassword:
             return .get
         }
     }
@@ -67,7 +72,7 @@ extension UserEndpoint: TargetType {
     var task: Task {
         switch self {
         case .signUp(let user):
-            
+        
             return .requestParameters(parameters: [ "email": user.email ,
                                                     "firstname": user.firstname ,
                                                     "password": user.password ,
@@ -82,10 +87,35 @@ extension UserEndpoint: TargetType {
                                                     "password": user.password ,
                                                     "user_type": "C",
                                                     "company_id": 1,
-                                                    "status": "A"
+                                                    "status": "A",
+                                                    "b_firstname": user.firstname,
+                                                    "b_address": user.billingAddress,
+                                                    "b_city": user.billingCity,
+                                                    "b_county": CountrySettings.shared.currentCountry?.code ?? "kw",
+                                                    "b_state": user.state,
+                                                    "b_country": CountrySettings.shared.currentCountry?.code ?? "kw",
+                                                    "b_zipcode": user.zipCode,
+                                                    "b_phone": user.billingPhone
                 ], encoding: JSONEncoding.default)
-        case .getProfile:
-            return .requestPlain
+        case .updateProfile(let user):
+            return .requestParameters(parameters: [ "update": "Y",
+                                                    "user_id" : user.identifier,
+                                                    "firstname": user.firstname,
+                                                    "b_firstname": user.firstname,
+                                                    "b_address": user.billingAddress,
+                                                    "b_city": user.billingCity,
+                                                    "b_county": CountrySettings.shared.currentCountry?.code ?? "kw",
+                                                    "b_state": user.state,
+                                                    "b_country": CountrySettings.shared.currentCountry?.code ?? "kw",
+                                                    "b_zipcode": user.zipCode,
+                                                    "b_phone": user.billingPhone
+                ], encoding: JSONEncoding.default)
+        case .getProfile(let userId):
+            return .requestPlain//.requestParameters(parameters: [ "id": userId.urlEscaped
+//            ], encoding: URLEncoding.queryString)
+        case .forgetPassword(let email):
+            return .requestParameters(parameters: [ "email": email
+            ], encoding: URLEncoding.queryString)
         case .login(let user):
             return .requestParameters(parameters: [ "email": user.email ,
                                                     "password": user.password

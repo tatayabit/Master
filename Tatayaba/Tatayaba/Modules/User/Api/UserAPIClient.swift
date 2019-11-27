@@ -27,9 +27,18 @@ struct UserAPIClient: APIClient {
     func login(user: User, completion: @escaping (APIResult<LoginResult?, MoyaError>) -> Void) {
         fetch(with: UserEndpoint.login(user: user), completion: completion)
     }
+    
+    func forgetPassword(email: String, completion: @escaping (APIResult<ForgetPasswordResult?, MoyaError>) -> Void) {
+        fetch(with: UserEndpoint.forgetPassword(email: email), completion: completion)
+    }
 
     func getProfile(userId: Int, completion: @escaping (APIResult<User?, MoyaError>) -> Void) {
-        fetch(with: UserEndpoint.getProfile(userId: userId), completion: completion)
+        fetch(with: UserEndpoint.getProfile(userId: String(userId)), completion: completion)
+    }
+    
+    func updateProfile(user: User, completion: @escaping (APIResult<SignUpResponse?, MoyaError>) -> Void) {
+        print(UserEndpoint.updateProfile(user: user))
+        fetch(with: UserEndpoint.updateProfile(user: user), completion: completion)
     }
 
 }

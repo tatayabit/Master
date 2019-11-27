@@ -9,16 +9,17 @@
 import Moya
 
 enum OrdersEndpoint {
-    case create(products: [String: Any], userId: String, userData: [String: Any]?, paymentId: String)
+    case create(products: [String: Any], userId: String, userData: [String: Any]?, paymentId: String, oneClickBuy: Bool, code: String)
     case getAllOrders(page: Int)
     case getOrder(orderId: String)
+
 }
 
 
 extension OrdersEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
-        case .production: return "http://dev2%40tatayab.com:gsh34ps0N2DX5qS3y0P09U220h15HM8T@dev2.tatayab.com/api/"
+        case .production: return "http://dev_ios%40tatayab.com:6337M41B30af4Sh7A6006lSq2jabf3M2@dev2.tatayab.com/api/"
         case .qa: return "http://localhost:3000/"
         case .staging: return "http://localhost:3000/"
         }
@@ -33,11 +34,13 @@ extension OrdersEndpoint: TargetType {
     var path: String {
         switch self {
         case .create:
-            return "stores/1/orders/"
+//            return "4.0/TtmOrders/"
+            return "4.0/stores/1/TtmOrders/"
+//            api/4.0/stores/1/TtmOrders/
         case .getAllOrders:
-            return "4.0/orders"
+            return "4.0/TtmOrders/"
         case .getOrder(let orderId):
-            return "orders/\(orderId.urlEscaped)"
+            return "4.0/TtmOrders/\(orderId.urlEscaped)"
         }
     }
 
@@ -61,14 +64,19 @@ extension OrdersEndpoint: TargetType {
 
     var task: Task {
         switch self {
-        case .create(let products, let userId, let userData, let paymentId):
+        case .create(let products, let userId, let userData, let paymentId, let isOneClickBuy, let code):
             var params = [
                 "user_id": userId,
                 "payment_id": paymentId,
-                "shipping_id": "9",
-                "products": products
+                "shipping_id": CountrySettings.shared.shipping?.shippingId ?? "7",
+                "products": products,
+                "coupon_code": code
                 ] as [String : Any]
 
+            if isOneClickBuy {
+                params["order_type"] = "oneclick"
+            }
+            
             if userData != nil {
                 params["user_data"] = userData
             }

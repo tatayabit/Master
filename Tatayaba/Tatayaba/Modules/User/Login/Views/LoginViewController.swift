@@ -38,6 +38,7 @@ class LoginViewController: BaseViewController, ValidationDelegate {
     func registerValidator() {
         validator.registerField(emailTextField, rules: [RequiredRule(message: "Email is required!"), EmailRule(message: "Invalid email")])
         validator.registerField(passwordTextField, rules: [RequiredRule(message: "Password is required!"), PasswordRule(regex: "^.{6,20}$", message: "Invalid password")])
+//        old password regex "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,20}$"
         emailTextField.becomeFirstResponder()
     }
 
@@ -56,14 +57,21 @@ class LoginViewController: BaseViewController, ValidationDelegate {
             switch result {
             case .success(let loginResult):
                 print(loginResult!)
-                self.performSegue(withIdentifier: self.homeSegue, sender: nil)
+                self.navigateToHome()
             case .failure(let error):
                 print("the error \(error)")
-                self.showErrorAlerr(title: Constants.Common.error, message: "Username or password are invalid".localized(), handler: nil)
+                do {
+                    if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
+                        self.showErrorAlerr(title: "LoginFailed".localized(), message: errorMessage, handler: nil)
+                    }
+                }
+                catch{
+                }
+//                self.showErrorAlerr(title: Constants.Common.error, message: "Username or password are invalid".localized(), handler: nil)
             }
         }
     }
-
+    
     func validationFailed(_ errors: [(Validatable, ValidationError)]) {
         print("Validation FAILED!")
         if errors.count > 0 {
@@ -91,14 +99,20 @@ class LoginViewController: BaseViewController, ValidationDelegate {
 
     //MARK:- IBActions
     @IBAction func loginAction(_ sender: UIButton) {
-        emailTextField.updateColors()
-        passwordTextField.updateColors()
-        validator.validate(self)
-//        UserDefaults.standard.set("1", forKey: "UserID") // Need to give userid
+            emailTextField.updateColors()
+            passwordTextField.updateColors()
+            validator.validate(self)
+    //        UserDefaults.standard.set("1", forKey: "UserID") // Need to give userid
 
-//        performSegue(withIdentifier: homeSegue, sender: nil)
+    //        performSegue(withIdentifier: homeSegue, sender: nil)
 
-    }
+        }
+    
+    @IBAction func forgetPasswordAction(_ sender: UIButton) {
+        let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "ForgetPasswordViewController") as! ForgetPasswordViewController
+        controller.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.pushViewController(controller, animated: true)
+        }
 
     
     @IBAction func skipAction(_ sender: UIButton) {

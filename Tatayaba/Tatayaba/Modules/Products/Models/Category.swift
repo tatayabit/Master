@@ -33,14 +33,16 @@ struct Category {
     var productCount: String
     var description: String
     var imageUrl: String
+    var position: String
     
-    init(identifier: String, parentId: String = "", name: String = "", productCount: String = "", description: String = "", imageUrl: String = "") {
+    init(identifier: String, parentId: String = "", name: String = "", productCount: String = "", description: String = "", imageUrl: String = "", position: String = "") {
         self.identifier = identifier
         self.parentId = parentId
         self.name = name
         self.productCount = productCount
         self.description = description
         self.imageUrl = imageUrl
+        self.position = position
     }
 }
 
@@ -52,6 +54,7 @@ extension Category: Codable {
         case productCount = "product_count"
         case description
         case imageUrl = "https_image_path"
+        case position = "position"
     }
 
     init(from decoder: Decoder) throws {
@@ -63,6 +66,7 @@ extension Category: Codable {
         productCount = try container.decodeIfPresent(String.self, forKey: .productCount) ?? ""
         description = try container.decodeIfPresent(String.self, forKey: .description) ?? ""
         imageUrl = try container.decodeIfPresent(String.self, forKey: .imageUrl) ?? ""
+        position = try container.decodeIfPresent(String.self, forKey: .position) ?? ""
     }
 
     func encode(to encoder: Encoder) throws {
@@ -74,5 +78,6 @@ extension Category: Codable {
         try container.encodeIfPresent(productCount, forKey: .productCount)
         try container.encodeIfPresent(description, forKey: .description)
         try container.encodeIfPresent(imageUrl, forKey: .imageUrl)
+        try container.encodeIfPresent(position, forKey: .position)
     }
 }

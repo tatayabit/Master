@@ -32,21 +32,6 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
         self.showLoadingIndicator(to: self.view)
         viewModel.setDelegate(self)
         viewModel.fetchModerators()
-
-//        viewModel.getProductsOfCategory { result in
-//            self.hideLoadingIndicator(from: self.view)
-//            switch result {
-//            case .success:
-//
-//                self.productsCollectionView.dataSource = self
-//                self.productsCollectionView.delegate = self
-//
-//            case .failure(let error):
-//                print("the error \(error)")
-//                self.showErrorAlerr(title: Constants.Common.error, message: error.localizedDescription, handler: nil)
-//            }
-//        }
-
     }
 
     func setupUI() {
@@ -70,38 +55,14 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
 
         cell.configure(viewModel.product(at: indexPath), indexPath: indexPath)
         cell.delegate = self
-        
-//        if indexPath.row == viewModel.productsCount - 1 { // last cell
-//
-//            self.showLoadingIndicator(to: self.view)
-//
-//            viewModel.getProductsOfCategory { result in
-//                self.hideLoadingIndicator(from: self.view)
-//                switch result {
-//                case .success:
-//                    
-//                    //self.productsCollectionView.reloadData()
-//                    self.hideLoadingIndicator(from: self.view)
-//                case .failure(let error):
-//                    print("the error \(error)")
-//                    self.showErrorAlerr(title: "Error".localized(), message: error.localizedDescription, handler: nil)
-//                }
-//
-//
-//            }
-//
-//
-//        }
-        
-        
-        
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard let viewModel = viewModel else { return }
-        if indexPath.row == viewModel.currentCount - 4 {  //numberofitem count
+        if indexPath.row == viewModel.currentCount - 1 {  //numberofitem count
             viewModel.fetchModerators()
+            print("reached last cell!")
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -127,11 +88,38 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
 
     // MARK:- ProductsBlockCollectionViewCellDelegate
     func didSelectAddToCartCell(indexPath: IndexPath) {
-        viewModel?.addToCart(at: indexPath)
+        guard let viewModel = viewModel else { return }
+        if !viewModel.productInStock(at: indexPath) {
+            showErrorAlerr(title: "Error", message: "This item is out of stock!", handler: nil)
+            return
+        }
+        if viewModel.productHasOptions(at: indexPath) {
+            performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
+        } else {
+            viewModel.addToCart(at: indexPath)
+        }
     }
     
     func didSelectOneClickBuy(indexPath: IndexPath) {
+        guard let viewModel = viewModel else { return }
+        if !viewModel.productInStock(at: indexPath) {
+            showErrorAlerr(title: "Error", message: "This item is out of stock!", handler: nil)
+            return
+        }
         
+        didSelectAddToCartCell(indexPath: indexPath)
+        
+        if viewModel.productHasOptions(at: indexPath) { return }
+        
+        if Customer.shared.loggedin {
+            let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewCartViewController") as! CartViewController
+            controller.buyingWayType = 1
+            self.navigationController?.pushViewController(controller, animated: false)
+        } else {
+            let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "GuestSignUpViewcontroller") as! GuestSignUpViewcontroller
+            tabBarController?.tabBar.isHidden = true
+            navigationController?.pushViewController(controller, animated: true)
+        }
     }
 
 }
@@ -144,15 +132,19 @@ extension CatProductsViewController: CatProductsViewModelDelegate {
         self.hideLoadingIndicator(from: self.view)
 
         guard newIndexPathsToReload != nil else {
-//            indicatorView.stopAnimating()
-//            productsCollectionView.isHidden = false
             productsCollectionView.reloadData()
+            guard let viewModel = viewModel else { return }
+            if viewModel.totalCount == 0 {
+                showErrorAlerr(title: "", message: Constants.Products.noProductsFound) { _ in
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
             return
         }
         // 2
-//        let indexPathsToReload = visibleIndexPathsToReload(intersecting: newIndexPathsToReload)
-//        productsCollectionView.reloadItems(at: indexPathsToReload)
-//        tableView.reloadRows(at: indexPathsToReload, with: .automatic)
+        if let newIndexPathsToReload = newIndexPathsToReload {
+            productsCollectionView.insertItems(at: newIndexPathsToReload)
+        }
     }
     
     func onFetchFailed(with reason: String) {

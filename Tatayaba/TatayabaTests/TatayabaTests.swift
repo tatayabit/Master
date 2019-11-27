@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Tatayaba
+//@testable import Tatayaba
 
 class TatayabaTests: XCTestCase {
     

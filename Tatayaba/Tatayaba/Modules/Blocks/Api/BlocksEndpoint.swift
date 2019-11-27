@@ -10,14 +10,13 @@ import Moya
 
 enum BlocksEndpoint {
     case getBlock(blockId: String)
-
 }
 
 
 extension BlocksEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
-        case .production: return "http://dev2%40tatayab.com:gsh34ps0N2DX5qS3y0P09U220h15HM8T@dev2.tatayab.com/api/"
+        case .production: return "http://dev_ios%40tatayab.com:6337M41B30af4Sh7A6006lSq2jabf3M2@dev2.tatayab.com/api/"
         case .qa: return "http://localhost:3000/"
         case .staging: return "http://localhost:3000/"
         }
@@ -58,7 +57,12 @@ extension BlocksEndpoint: TargetType {
         case .getBlock:
 //            "lang_code": LanguageManager.getLanguage()
 //            return .requestPlain
-            return .requestParameters(parameters: ["lang_code": LanguageManager.getLanguage()
+            var currencyId = Constants.Currency.kuwaitCurrencyId
+                       if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
+                           currencyId = countryCurrency
+                       }
+            return .requestParameters(parameters: ["lang_code": LanguageManager.getLanguage(),
+                                                   "currency_id": currencyId.urlEscaped
                 ], encoding: URLEncoding.default)
         }
     }

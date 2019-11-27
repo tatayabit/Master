@@ -11,7 +11,7 @@ struct Shipping : Codable {
 	let name : String?
 	let perUnit : String?
 	let rateType : String?
-	let rateValue : String?
+    var rateValue : String?
 	let shippingId : String?
 
 

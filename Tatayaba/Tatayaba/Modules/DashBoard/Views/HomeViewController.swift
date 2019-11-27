@@ -8,24 +8,46 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController, BannersBlocksViewProtocol, CategoriesBlockViewProtocol, ProductsBlockViewProtocol, SuppliersBlockViewProtocol, FullScreenBannersViewProtocol {
+class HomeViewController: BaseViewController, BannersBlocksViewProtocol, CategoriesBlockViewProtocol, ProductsBlockViewProtocol, SuppliersBlockViewProtocol, FullScreenBannersViewProtocol, CountrySettingsDelegate, CurrencySettingsDelegate {
+    
+    
+    
+    
+    func currencyDidChange(to currency: Currency) {
+        print("currency changes!!!")
+        print("HomeViewController")
+    }
    
     private let productDetailsSegue = "product_details_segue"
     private let categoryProductsSegue = "category_products_segue"
     private let supplierProductsSegue = "supplier_products_segue"
     private let allCategoriesSegue = "all_categories_segue"
+    private let allSuppliersSegue = "all_supplier_segue"
 
     @IBOutlet weak var scrollView: StackedScrollView!
-     var tabbar:UITabBar?
+    var tabbar:UITabBar?
     private var viewModel = HomeViewModel()
 
     let squaredBlockView: BannersBlocksView = .fromNib()
-    let productsBlocklView: ProductsBlockView = .fromNib()
+    let productsBlocklView: ProductsBlockView = .fromNib()//[UIView?]
     let fullScreenBannersView: FullScreenBannersView = .fromNib()
     let categoriesBlockView: CategoriesBlockView = .fromNib()
     let suppliersBlockView: SuppliersBlockView = .fromNib()
 
-
+//    // Duplicated Products (Will be removed  later)
+//    let productsBlocklViewCopyX: ProductsBlockView = .fromNib()
+//    let productsBlocklViewCopyXX: ProductsBlockView = .fromNib()
+//
+    
+    
+    // Duplicated Products (Will be updated  later)
+    let productsBlocklView270: ProductsBlockView = .fromNib()
+    let productsBlocklView305: ProductsBlockView = .fromNib()
+    let productsBlocklView267: ProductsBlockView = .fromNib()
+    let productsBlocklView297: ProductsBlockView = .fromNib()
+    let productsBlocklView248: ProductsBlockView = .fromNib()
+    let productsBlocklView265: ProductsBlockView = .fromNib()
+    
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +55,12 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         setupListners()
         setupUI()
         viewModel.loadAPIs()
-        CountriesManager.loadCountriesList()
+        let cart = Cart.shared
+        cart.updateTabBarCount()
+        CountriesManager.shared.loadCountriesList()
+        CurrenciesManager.shared.loadCurrenciesList()
+        CountrySettings.shared.addDelegate(delegate: self)
+        CurrencySettings.shared.addCurrencyDelegate(delegate: self)
     }
 
     fileprivate func addBannersSubView() {
@@ -54,7 +81,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         squaredBlockView.delegate = self
         scrollView.stackView.addArrangedSubview(squaredBlockView)
         squaredBlockView.translatesAutoresizingMaskIntoConstraints = false
-        squaredBlockView.heightAnchor.constraint(equalToConstant: 280).isActive = true
+        squaredBlockView.heightAnchor.constraint(equalToConstant: 255).isActive = true
         self.showLoadingIndicator(to: squaredBlockView)
 
 
@@ -70,43 +97,93 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         suppliersBlockView.translatesAutoresizingMaskIntoConstraints = false
         suppliersBlockView.heightAnchor.constraint(equalToConstant: 145).isActive = true
         self.showLoadingIndicator(to: suppliersBlockView)
+        
+        self.addDupplicatedProducts()
 
     }
 
     fileprivate func loadSquaredBlockViewData() {
-        self.hideLoadingIndicator(from: squaredBlockView)
-        squaredBlockView.block = viewModel.squareBlock
-        squaredBlockView.loadData()
-        squaredBlockView.titleLabel.text = "Trending on Tatayab"
-        squaredBlockView.viewAllButton.isHidden = true
+//        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
+//                           completion()
+//                       })
+        DispatchQueue.main.async {
+            self.hideLoadingIndicator(from: self.squaredBlockView)
+            self.squaredBlockView.block = self.viewModel.squareBlock
+            self.squaredBlockView.loadData()
+    //        squaredBlockView.titleLabel.text = "Trending on Tatayab"
+            self.squaredBlockView.viewAllButton.isHidden = true
+        }
     }
 
 
     fileprivate func loadProductsBlockViewData() {
-        self.hideLoadingIndicator(from: productsBlocklView)
-        productsBlocklView.block = viewModel.productsBlock
-        productsBlocklView.loadData()
+        DispatchQueue.main.async {
+
+        self.hideLoadingIndicator(from: self.productsBlocklView)
+        self.productsBlocklView.block = self.viewModel.productsBlocks[0]
+        self.productsBlocklView.loadData()
+        
+        self.hideLoadingIndicator(from: self.productsBlocklView270)
+        self.productsBlocklView270.block = self.viewModel.productsBlocks[1]
+        self.productsBlocklView270.loadData()
+        
+        self.hideLoadingIndicator(from: self.productsBlocklView305)
+        self.productsBlocklView305.block = self.viewModel.productsBlocks[2]
+        self.productsBlocklView305.loadData()
+        
+        self.hideLoadingIndicator(from: self.productsBlocklView267)
+        self.productsBlocklView267.block = self.viewModel.productsBlocks[3]
+        self.productsBlocklView267.loadData()
+        
+        self.hideLoadingIndicator(from: self.productsBlocklView297)
+        self.productsBlocklView297.block = self.viewModel.productsBlocks[4]
+        self.productsBlocklView297.loadData()
+        
+        self.hideLoadingIndicator(from: self.productsBlocklView248)
+        self.productsBlocklView248.block = self.viewModel.productsBlocks[5]
+        self.productsBlocklView248.loadData()
+        
+        self.hideLoadingIndicator(from: self.productsBlocklView265)
+        self.productsBlocklView265.block = self.viewModel.productsBlocks[6]
+        self.productsBlocklView265.loadData()
+//
+//        // Will be removed later
+//        self.hideLoadingIndicator(from: productsBlocklViewCopyX)
+//        productsBlocklViewCopyX.block = viewModel.productsBlock
+//        productsBlocklViewCopyX.loadData()
+//
+//        self.hideLoadingIndicator(from: productsBlocklViewCopyXX)
+//        productsBlocklViewCopyXX.block = viewModel.productsBlock
+//        productsBlocklViewCopyXX.loadData()
+        
+        }
     }
 
     fileprivate func loadFullScreenBannersViewData() {
-        self.hideLoadingIndicator(from: fullScreenBannersView)
-
-        fullScreenBannersView.block = viewModel.topBannersBlock
-        fullScreenBannersView.loadData()
+        DispatchQueue.main.async {
+            self.hideLoadingIndicator(from: self.fullScreenBannersView)
+            self.fullScreenBannersView.block = self.viewModel.topBannersBlock
+            self.fullScreenBannersView.loadData()
+        }
     }
 
     fileprivate func loadCategoriesBlockViewData() {
-        self.hideLoadingIndicator(from: categoriesBlockView)
+        DispatchQueue.main.async {
 
-        categoriesBlockView.categories = viewModel.categoriesList
-        categoriesBlockView.loadData()
+            self.hideLoadingIndicator(from: self.categoriesBlockView)
+            self.categoriesBlockView.categories = self.viewModel.categoriesList
+            self.categoriesBlockView.loadData()
+        }
     }
 
     fileprivate func loadSuppliersBlockViewData() {
-        self.hideLoadingIndicator(from: suppliersBlockView)
+        DispatchQueue.main.async {
 
-        suppliersBlockView.suppliers = viewModel.suppliersList
-        suppliersBlockView.loadData()
+            self.hideLoadingIndicator(from: self.suppliersBlockView)
+
+            self.suppliersBlockView.suppliers = self.viewModel.suppliersList
+            self.suppliersBlockView.loadData()
+        }
     }
 
 
@@ -130,6 +207,52 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         viewModel.onProductsBlockLoad = {
             self.loadProductsBlockViewData()
         }
+    }
+    
+    // MARK:- Duplicated Products (Will be removed later)
+    func addDupplicatedProducts() {
+        productsBlocklView270.delegate = self
+        scrollView.stackView.addArrangedSubview(productsBlocklView270)
+        productsBlocklView270.translatesAutoresizingMaskIntoConstraints = false
+        productsBlocklView270.heightAnchor.constraint(equalToConstant: 260).isActive = true
+        productsBlocklView270.titleLabel.text = "PERSONAL CARE".localized()
+        self.showLoadingIndicator(to: productsBlocklView270)
+        
+        productsBlocklView305.delegate = self
+        scrollView.stackView.addArrangedSubview(productsBlocklView305)
+        productsBlocklView305.translatesAutoresizingMaskIntoConstraints = false
+        productsBlocklView305.heightAnchor.constraint(equalToConstant: 260).isActive = true
+        productsBlocklView305.titleLabel.text = ""
+        self.showLoadingIndicator(to: productsBlocklView305)
+        
+        productsBlocklView267.delegate = self
+        scrollView.stackView.addArrangedSubview(productsBlocklView267)
+        productsBlocklView267.translatesAutoresizingMaskIntoConstraints = false
+        productsBlocklView267.heightAnchor.constraint(equalToConstant: 260).isActive = true
+        productsBlocklView267.titleLabel.text = ""
+        self.showLoadingIndicator(to: productsBlocklView267)
+        
+        productsBlocklView297.delegate = self
+        scrollView.stackView.addArrangedSubview(productsBlocklView297)
+        productsBlocklView297.translatesAutoresizingMaskIntoConstraints = false
+        productsBlocklView297.heightAnchor.constraint(equalToConstant: 260).isActive = true
+        productsBlocklView297.titleLabel.text = ""
+        self.showLoadingIndicator(to: productsBlocklView297)
+        
+        productsBlocklView248.delegate = self
+        scrollView.stackView.addArrangedSubview(productsBlocklView248)
+        productsBlocklView248.translatesAutoresizingMaskIntoConstraints = false
+        productsBlocklView248.heightAnchor.constraint(equalToConstant: 260).isActive = true
+        productsBlocklView248.titleLabel.text = ""
+        self.showLoadingIndicator(to: productsBlocklView248)
+        
+        productsBlocklView265.delegate = self
+        scrollView.stackView.addArrangedSubview(productsBlocklView265)
+        productsBlocklView265.translatesAutoresizingMaskIntoConstraints = false
+        productsBlocklView265.heightAnchor.constraint(equalToConstant: 260).isActive = true
+        productsBlocklView265.titleLabel.text = ""
+        self.showLoadingIndicator(to: productsBlocklView265)
+        
     }
 
     // MARK:- SetupUI
@@ -168,19 +291,27 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     }
 
     //MARK:- ProductsBlockViewProtocol
-    func didSelectProduct(at indexPath: IndexPath) {
+    func didSelectProduct(at indexPath: IndexPath, block_Id : String) {
+        print(block_Id)
+        self.viewModel.block_Id = block_Id
         performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
     }
 
     func didAddToCart(product: Product) {
         // addProdcut to cart
+        if !product.isInStock {
+            showErrorAlerr(title: "Error", message: "This item is out of stock!", handler: nil)
+            return
+        }
         viewModel.addToCart(product: product)
     }
     
     func didSelectOneClick(product: Product) {
+        didAddToCart(product: product)
+        
         if Customer.shared.loggedin {
-            let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewCartViewController") as! NewCartViewController
-            controller.buyingWayType = 0
+            let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewCartViewController") as! CartViewController
+            controller.buyingWayType = 1
             self.navigationController?.pushViewController(controller, animated: false)
         } else {
             let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "GuestSignUpViewcontroller") as! GuestSignUpViewcontroller
@@ -192,6 +323,16 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     //MARK:- SuppliersBlockViewProtocol
     func didSelectSupplier(at indexPath: IndexPath) {
         performSegue(withIdentifier: supplierProductsSegue, sender: indexPath)
+    }
+    
+    func didSelectViewAllSuppliers() {
+        performSegue(withIdentifier: allSuppliersSegue, sender: nil)
+    }
+    
+    // MARK:- CountrySettingsDelegate
+    func countryDidChange(to country: Country) {
+        print("country changes!!!")
+        print("HomeViewController")
     }
 }
 
@@ -213,7 +354,7 @@ extension HomeViewController {
             }
             
             if let deeplink = sender as? DeepLinkModel {
-                productsListVC.viewModel = viewModel.catProductsListViewModel(with: deeplink.id)
+                productsListVC.viewModel = viewModel.catProductsListViewModel(with: deeplink.id, title: deeplink.title)
             }
         }
 

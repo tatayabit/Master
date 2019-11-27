@@ -17,33 +17,45 @@ protocol CartViewModelDelegate: class {
 }
 
 class CartViewModel {
-
+    
     var pricingList = [CartPricingModel]()
     let cart = Cart.shared
     
     private let cartApiClient = CartAPIClient()
-
+    
     weak var delegate: CartViewModelDelegate?
-
+    
     init() {
-        loadPricingListContent(couponValue: "0", taxValue: "0", shippingValue: "0")
+        loadPricingListContent(couponValue: "0", taxValue: nil, shippingValue: "0")
+        CurrencySettings.shared.addCurrencyDelegate(delegate: self)
     }
-
-    func loadPricingListContent(couponValue: String, taxValue: String, shippingValue: String) {
+    
+    func loadPricingListContent(couponValue: String, taxValue: Tax?, shippingValue: String) {
         pricingList.removeAll()
-        var model = CartPricingModel(title: Constants.Cart.subtotal, value: cart.subtotalPrice)
-        pricingList.append(model)
-
-        model = CartPricingModel(title: Constants.Cart.shipping, value: cart.shippingFormatedPrice)
+        let cartClass: CartPricingItems = CartPricingItems()
+        var model = CartPricingModel(title: cartClass.subtotal, value: cart.subtotalPrice)
         pricingList.append(model)
         
-        model = CartPricingModel(title: Constants.Cart.shipping, value: shippingValue.formattedPrice)
+        model = CartPricingModel(title: cartClass.shipping, value: shippingValue.formattedPrice)
         pricingList.append(model)
         
-        model = CartPricingModel(title: Constants.Cart.tax, value: taxValue.formattedPrice)
+        if taxValue?.customDuties?.type == "P" {
+            model = CartPricingModel(title: cartClass.customDuties, value: "\(taxValue?.customDuties?.value ?? "0")%")
+        }else {
+            model = CartPricingModel(title: cartClass.customDuties, value: taxValue?.customDuties?.value?.formattedPrice ?? "0")
+        }
+        
         pricingList.append(model)
         
-        model = CartPricingModel(title: Constants.Cart.coupon, value: couponValue.formattedPrice)
+        if taxValue?.vat?.type == "P" {
+            model = CartPricingModel(title: cartClass.tax, value: "\(taxValue?.vat?.value ?? "0")%")
+        }else {
+            model = CartPricingModel(title: cartClass.tax, value: taxValue?.vat?.value?.formattedPrice ?? "0")
+        }
+        
+        pricingList.append(model)
+        
+        model = CartPricingModel(title: cartClass.coupon, value: couponValue)
         pricingList.append(model)
         
         if let delegate = delegate {
@@ -51,9 +63,14 @@ class CartViewModel {
         }
     }
     
+    // MARK:- One Click Buy
+    func setOneClickBuy(isOneClickBuy: Bool) {
+        cart.isOneClickBuy = isOneClickBuy
+    }
+    
     //MARK:- Api
-    func applyCoupon(couponCode: String, completion: @escaping (APIResult<couponResponse?, MoyaError>) -> Void) {
-        cartApiClient.applyCoupon(couponCode: couponCode) { result in
+    func applyCoupon(couponCode: String, email: String, completion: @escaping (APIResult<CouponResponse?, MoyaError>) -> Void) {
+        cartApiClient.applyCoupon(parameters: self.getApplyCouponJsonString(couponCode: couponCode, email: email)) { result in
             switch result {
             case .success(let couponResult):
                 if let coupon = couponResult {
@@ -72,6 +89,7 @@ class CartViewModel {
             case .success(let taxAndShippingResult):
                 if let taxAndShipping = taxAndShippingResult {
                     print(taxAndShipping)
+                    
                 }
             case .failure(let error):
                 print("the error \(error)")
@@ -79,16 +97,118 @@ class CartViewModel {
             completion(result)
         }
     }
+    
+    func getPricesWithUpdatedCurrency(to currency: Currency) {
+        if cart.productsList().count == 0 { return }
+        cartApiClient.getPricesWithUpdatedCurrency(parameters: self.getConvertingCurrencyJsonString(with: currency.currencyId)) { result in
+            switch result {
+            case .success(let convertedPricesResult):
+                if let convertedPrices = convertedPricesResult {
+                    print(convertedPrices)
+                    self.cart.updatePricesWithNewCurrency(currencyResponse: convertedPrices)
+                }
+            case .failure(let error):
+                print("the error \(error)")
+            }
+        }
+    }
+    
+    func getShippingPricesWithUpdatedCurrency(completion: @escaping (APIResult<ConvertedCurrency?, MoyaError>) -> Void) {
+        if cart.productsList().count == 0 { return }
+        cartApiClient.getPricesWithUpdatedCurrency(parameters: self.getShippingConvertingCurrencyJsonString()) { result in
+            switch result {
+            case .success(let convertedPricesResult):
+                if let convertedPrices = convertedPricesResult {
+                    print(convertedPrices)
+                    if var shipping = CountrySettings.shared.shipping {
+                        shipping.rateValue = convertedPrices.shippingCharge
+                        CountrySettings.shared.updateShipping(shippingValue: shipping)
+                    }
+                }
+            case .failure(let error):
+                print("the error \(error)")
+            }
+            completion(result)
+        }
+    }
+    
+    // MARK:- Get Apply Coupon format
+    private func getApplyCouponJsonString(couponCode: String, email: String) -> [String: Any] {
+        let productsList = cart.productsList()
+        var requestJson = [String: Any]()
+
+        var productsParms = [[String: Any]]()
+        
+        for product in productsList {
+            let singleProductDict = [
+                "product_id" : product.identifier,
+            ]
+            productsParms.append(singleProductDict)
+        }
+        
+        requestJson["products"] = productsParms
+        requestJson["shipping_id"] = CountrySettings.shared.shipping?.shippingId
+        requestJson["coupon_code"] = couponCode
+        requestJson["country_code"] = CountrySettings.shared.currentCountry?.code
+        requestJson["email"] = email
+        requestJson["currency_id"] = CurrencySettings.shared.currentCurrency?.currencyId
+        requestJson["coupon_data"] = true
+        
+        return requestJson
+    }
+
+    
+    // MARK:- Convert to get currency format
+    private func getConvertingCurrencyJsonString(with currencyId: String) -> [String: Any] {
+        let productsList = cart.productsList()
+        var requestJson = [String: Any]()
+        var productsParms = [[String: Any]]()
+        
+        for product in productsList {
+            let singleProductDict = [
+                "product_id" : product.identifier,
+                "price" : product.price
+            ]
+            productsParms.append(singleProductDict)
+        }
+        
+        requestJson["products"] = productsParms
+        requestJson["to_currency_id"] = currencyId
+        requestJson["convert_data"] = true
+        
+        return requestJson
+    }
+    
+    private func getShippingConvertingCurrencyJsonString() -> [String: Any] {
+        var shippingRate = "1.00"
+        if let shipping = CountrySettings.shared.shipping {
+            shippingRate = shipping.rateValue ?? "1.00"
+        }
+        var requestJson = [String: Any]()
+        
+        requestJson["products"] = []
+        requestJson["shipping_charge"] = shippingRate
+        requestJson["to_currency_id"] = CurrencySettings.shared.currentCurrency?.currencyId//currencyId
+        requestJson["convert_data"] = true
+        
+        return requestJson
+    }
 }
 
-extension Constants {
-    struct Cart {
-        static let subtotal = "Subtotal".localized()
-        static let shipping = "Shipping".localized()
-        static let tax = "Tax".localized()
-        static let coupon = "Coupon".localized()
-        static let items = "items".localized()
-        static let cartTotal = "Cart Total".localized()
-        static let cartEmpty = "Your Cart is Empty!".localized()
+extension CartViewModel: CurrencySettingsDelegate {
+    func currencyDidChange(to currency: Currency) {
+        self.getPricesWithUpdatedCurrency(to: currency)
     }
+}
+
+class CartPricingItems {
+    var subtotal = "Subtotal".localized()
+    var shipping = "Shipping".localized()
+    var tax = "Tax".localized()
+    var customDuties = "CustomDuties".localized()
+    var coupon = "Coupon".localized()
+    var items = "items".localized()
+    var cartTotal = "Cart Total".localized()
+    var cartEmpty = "Your Cart is Empty!".localized()
+    var Quantity = "Quantity".localized()
 }

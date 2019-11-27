@@ -25,10 +25,12 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var outOfStockLabel: UILabel!
+    @IBOutlet weak var discountPercentageLabel: UILabel!
     
     var viewModel: ProductDeatailsTableViewCellViewModel?
     weak var delegate: ProductDeatailsTableViewCellDelegate?
-    
+    weak var viewController: ProductDetailsViewController?
     //MARK:- Init
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,6 +44,7 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
     
     private func setupUI() {
         productCollectionView.register(ProductImageCarouselCollectionViewCell.nib, forCellWithReuseIdentifier: ProductImageCarouselCollectionViewCell.identifier)
+        self.outOfStockLabel.text = "Out of stock"
         productCollectionView.dataSource = self
         productCollectionView.delegate = self
     }
@@ -49,8 +52,22 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
     func configure(productVM: ProductDeatailsTableViewCellViewModel) {
         self.viewModel = productVM
         self.nameLabel.text = productVM.name
-        self.descriptionLabel.text = productVM.description
+        self.descriptionLabel.text = productVM.description.stripOutHtml()
         self.quantityLabel.text = String(productVM.selectedQuantity)
+        self.outOfStockLabel.isHidden = productVM.isInStock
+        self.discountPercentageLabel.text = productVM.discountPercentage + "%\nOFF"
+        self.discountPercentageLabel.isHidden = !productVM.hasDiscount
+
+        let originalPriceStrikeAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.thick.rawValue]
+
+        let originalPriceAttr = productVM.hasDiscount ? originalPriceStrikeAttributes : nil
+        let attributedString = NSMutableAttributedString(string: productVM.priceBeforeDiscount, attributes: originalPriceAttr)
+        attributedString.append(NSAttributedString(string: "    "))
+        
+        
+        let priceAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.brandDarkGray]
+        attributedString.append(NSMutableAttributedString(string: productVM.originalPrice, attributes: priceAttributes))
+        self.priceLabel.attributedText = attributedString
     }
     
     
@@ -73,6 +90,12 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: self.bounds.width, height: 255)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = UIStoryboard(name: "ProductDetails", bundle: Bundle.main).instantiateViewController(withIdentifier: "ImageZoomViewController") as! ImageZoomViewController
+        controller.productImage = viewModel?.imageUrl ?? ""
+        viewController?.navigationController?.pushViewController(controller, animated: true)
     }
     
     //MARK:- IBActions

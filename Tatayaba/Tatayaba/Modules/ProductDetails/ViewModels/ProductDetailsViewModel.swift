@@ -18,10 +18,24 @@ class ProductDetailsViewModel {
 
     private var product: Product
     private var recommendedList = [Product]()
+    var alsoBoughtProductsBlock: Block = Block()
 
     var optionsCount: Int { return self.product.productOptions.count }
+    var numberOfAlsoBoughtProducts: Int { return self.alsoBoughtProductsBlock.products.count }
+    
+    var numberOfSections: Int {
+        let numberOfAlsoBoughtSection = self.numberOfAlsoBoughtProducts > 0 ? 1: 0
+        return optionsCount + numberOfAlsoBoughtSection + 1
+    }
+    
+    var hasRequiredOptions: Bool {
+        return product.productOptions.filter({ $0.required == "Y" }).count > 0
+    }
+    
+    // Selection part
     private var selectedOptions = [OptionsSelection]()
     private var selectedQuantity: Int
+    var inStock: Bool { return product.isInStock }
 
     
     //MARK:- Init
@@ -41,6 +55,25 @@ class ProductDetailsViewModel {
                 self.product = productResult
                 print(self.product)
                 
+            case .failure(let error):
+                print("the error \(error)")
+            }
+            completion(result)
+        }
+    }
+    
+    func getAlsoBoughtProducts(completion: @escaping (APIResult<Block?, MoyaError>) -> Void) {
+        
+        apiClient.getAlsoBoughtProducts(productId: product.identifier) { result in
+            switch result {
+            case .success(let responseB44):
+                guard let block = responseB44 else { return }
+                var sortedBlock = block
+                sortedBlock.products = block.products.sorted(by: { $0.fullDetails.position < $1.fullDetails.position })
+                sortedBlock.products = sortedBlock.products.filter({ $0.fullDetails.amount > 0 })
+                self.alsoBoughtProductsBlock = sortedBlock
+                print(block)
+        
             case .failure(let error):
                 print("the error \(error)")
             }
@@ -70,9 +103,28 @@ class ProductDetailsViewModel {
     
     //MARK:- Product Details
     func increase() {
-        if self.selectedQuantity < 100 {
-            self.selectedQuantity += 1
+        
+        let maxQuantity = Int(product.maxQuantity) ?? 0
+        let stockQuantity = product.amount
+        var max = (stockQuantity > maxQuantity) ? maxQuantity : stockQuantity
+        if product.isOutOfStockActionB {
+            max = maxQuantity
         }
+        
+        if let cartItem = Cart.shared.cartItemsArr.filter({ $0.productId == String(product.identifier) }).first {
+            if max <= cartItem.count + selectedQuantity {
+                // max reached
+            } else {
+                self.selectedQuantity += 1
+            }
+        } else {
+            if max <= selectedQuantity {
+                // max reached
+            } else {
+                self.selectedQuantity += 1
+            }
+        }
+        
     }
     
     func decrease() {
@@ -110,11 +162,6 @@ class ProductDetailsViewModel {
     // MARK:- Options Selections
     func selected(at indexPath: IndexPath) -> Bool {
         let variant = optionVariant(at: indexPath)
-        if variant.identifier == "400" {
-            print("variant: \(variant)")
-            print("section: \(indexPath.section)")
-        }
-       
         let foundOptions = self.selectedOptions.filter{ $0.section == indexPath.section && $0.selectedVariant == variant.identifier }
         return foundOptions.count > 0
     }
@@ -122,6 +169,7 @@ class ProductDetailsViewModel {
     func selectOption(at indexPath: IndexPath) {
         let variant = optionVariant(at: indexPath)
         let option = OptionsSelection(section: indexPath.section, selectedVariant: variant.identifier)
+        unselectAllIfFound(at: indexPath.section)
         self.selectedOptions.append(option)
     }
     
@@ -131,6 +179,47 @@ class ProductDetailsViewModel {
         if foundOptions.count > 0 {
             self.selectedOptions.removeAll(where: { $0.section == indexPath.section && $0.selectedVariant == variant.identifier })
         }
+    }
+    
+    func unselectAllIfFound(at section: Int) {
+        let foundOptions = self.selectedOptions.filter{ $0.section == section }
+        if foundOptions.count > 0 {
+            self.selectedOptions.removeAll(where: { $0.section == section })
+        }
+    }
+    
+    func isAllRequiredOptionsSelected() -> Bool {
+        if hasRequiredOptions {
+            for section in 1..<optionsCount + 1 {
+                let option = optionHeader(at: section)
+                if option.required == "Y" {
+                    if self.selectedOptions.filter({ $0.section == section }).count == 0 {
+                        return false
+                    }
+                }
+            }
+        }
+        return true
+    }
+    
+    // MARK:- AlsoBoughtSection
+    func isAlsoBoughtSection(section: Int) -> Bool {
+        if numberOfAlsoBoughtProducts == 0 {
+            return false
+        }
+        return section == numberOfSections - 1
+    }
+    
+      
+    func addToCartAlsoBoughtProduct(product: Product)  {
+        let cart = Cart.shared
+        cart.addProduct(product: product)
+    }
+    
+    //MARK:- ProductDetails ViewModel
+    func alsoBoughtProductDetailsViewModel(at indexPath: IndexPath) -> ProductDetailsViewModel {
+        let productViewModel = ProductDetailsViewModel(product:self.alsoBoughtProductsBlock.products[indexPath.row].fullDetails)
+        return productViewModel
     }
     
     // MARK:- ProductDeatailsTableViewCellViewModel

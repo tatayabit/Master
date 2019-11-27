@@ -29,13 +29,24 @@ class OptionsHeader: UITableViewHeaderFooterView {
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapHeader)))
     }
     
-    func configure(titleObj: String?, itemObj: HeaderItem, sectionObj: Int) {
-        titleLabel.text = titleObj?.uppercased()
+    func configure(titleObj: String?, itemObj: HeaderItem, sectionObj: Int, required: Bool) {
+        
+//        titleLabel.text = titleObj?.uppercased()
+        titleLabel.attributedText = getTitle(title: titleObj ?? "", required: required)
         section = sectionObj
         item = itemObj
         
         arrowImageView.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    fileprivate func getTitle(title: String, required: Bool) -> NSAttributedString {
+        let attributedString = NSMutableAttributedString(string: title.uppercased() + " ")
+        if required {
+            let priceAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.red]
+            attributedString.append(NSMutableAttributedString(string: "*", attributes: priceAttributes))
+        }
+        return attributedString
     }
 
     //MARK: - Actions

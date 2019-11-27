@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   Tatayaba
 
@@ -11,6 +11,7 @@
 "Subtotal"="Subtotal";
 "Shipping"="Shipping";
 "Tax"="Tax";
+"CustomDuties"="Custom Duties";
 "Coupon"="Discount";
 "items"="items";
 "Cart Total"="Cart Total";
@@ -25,6 +26,8 @@
 "Sign Up"="Sign Up";
 "Skip"="Skip";
 "Username or password are invalid"="Username or password are invalid";
+"LoginFailed"= "Login Failed";
+"AcceessDenied"= "Acceess Denied";
 
 // Error
 "Error"="Error";
@@ -35,6 +38,8 @@
 "Privacy Policy"="Privacy Policy";
 "BRANDS"="Brands";
 "Logout"="Logout";
+"Live Chat" = "Live Chat";
+"Notifications" = "Notifications";
 "Delivery and Return Policy"="Delivery and Return Policy";
 
 // Concierge
@@ -46,6 +51,52 @@
 "Please enter coupon value!" = "Please enter coupon value!";
 "CouponAddedSuccessfully" = "Coupon Added Successfully";
 "CouponRemovedSuccessfully" = "Coupon Removed Successfully";
+"couponTypeNotImplemented" = "Can not add promotions on that type";
+"Quantity"="Quantity";
+
 
 // CheckOut
 "EnterAddress" = "Please Enter Your Shipping Address";
+
+"ForgetFailed" = "Forget Password Failed";
+"ForgetSuccess" = "Ok";
+
+// Product
+"OPTIONS..." = "OPTIONS...";
+"ADD TO CART" = "ADD TO CART";
+"one click buy" = "one click buy";
+"ONE CLICK BUY" = "ONE CLICK BUY";
+"Currencies" = "Currencies";
+
+// Settings
+"Change Country"="Change Country";
+"active" = "Active";
+"hidden" = "Hidden";
+"disabled" = "Disabled";
+"Brands" = "Brands";
+"seeMore" = "See More";
+"Perfume Name" = "Perfume Name";
+"Comment" = "Comment";
+"Phone" = "Phone";
+"Name" = "Name";
+"Tracking" = "Tracking #:";
+"Order Value" = "Order Value:";
+"Track Order" = "Track Order";
+"View invoice" = "View invoice";
+"Shipping" = "Shipping:";
+"Order date" = "Order date:";
+"Payment Method" = "Payment Method:";
+"Shipping Address" = "Shipping Address:";
+"Billing Address" = "Billing Address:";
+"Item Price" = "Item Price:";
+"Paid Price" = "Paid Price:";
+
+// Products list
+"No Products found!"= "No Products found!";
+"SECURE CHECKOUT" = "SECURE CHECKOUT";
+"SHIP TO" = "SHIP TO";
+
+
+// Will be removed laetr
+"PERSONAL CARE" = "PERSONAL CARE";
+"OIL" = "OIL";

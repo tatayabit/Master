@@ -14,7 +14,7 @@ struct SignUpViewModel {
 
     //MARK:- Api
 
-    func signUp(user: User, completion: @escaping (APIResult<User?, MoyaError>) -> Void) {
+    func signUp(user: User, completion: @escaping (APIResult<SignUpResponse?, MoyaError>) -> Void) {
 
         apiClient.signUp(user: user) { result in
             switch result {
@@ -27,16 +27,18 @@ struct SignUpViewModel {
                     case .success(let profileResponse):
                         guard let userResponse = profileResponse else { return }
                         print(userResponse)
+                        Customer.shared.setUser(userResponse)
                     case .failure(let profileError):
                         print("the profile error \(profileError)")
                     }
-                    completion(profileResult)
+//                    completion(profileResult)
                 })
             case .failure(let error):
                 print("the error \(error)")
 //                completion(error)
 
             }
+            completion(result)
         }
     }
     

@@ -45,7 +45,6 @@ class OrderTableViewCell: UITableViewCell {
         }else if self.StatusLabel.text == "Cancelled"{
              self.StatusLabel.textColor = UIColor.init(hexString:"#EC4C6F")
         }
-        
     }
 
     // MARK:- IBActions

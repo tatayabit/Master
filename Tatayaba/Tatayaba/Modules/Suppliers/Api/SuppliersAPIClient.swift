@@ -16,11 +16,11 @@ struct SuppliersAPIClient: APIClient {
 
     static let environment: APIEnvironment = .production
 
-    func getSuppliers(completion: @escaping (APIResult<SuppliersResult?, MoyaError>) -> Void) {
-        fetch(with: SuppliersEndpoint.getSuppliers(), completion: completion)
+    func getSuppliers(page: Int, completion: @escaping (APIResult<SuppliersResult?, MoyaError>) -> Void) {
+        fetch(with: SuppliersEndpoint.getSuppliers(page: String(page)), completion: completion)
     }
 
-    func getSupplierDetails(supplierId: String, completion: @escaping (APIResult<Supplier?, MoyaError>) -> Void) {
-        fetch(with: SuppliersEndpoint.getSupplierDetails(supplierId: supplierId), completion: completion)
+    func getSupplierDetails(supplierId: String, page: Int, completion: @escaping (APIResult<Supplier?, MoyaError>) -> Void) {
+        fetch(with: SuppliersEndpoint.getSupplierDetails(supplierId: supplierId, page: String(page)), completion: completion)
     }
 }

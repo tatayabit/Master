@@ -14,13 +14,14 @@ enum ProductsEndpoint {
     case getProductsOfCategory(categoryId: String, page: String)
     case getProductFeatures
     case getProductDetails(productId: String)
+    case getAlsoBoughtProducts(productId: String)
 }
 
 
 extension ProductsEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
-        case .production: return "http://dev2%40tatayab.com:gsh34ps0N2DX5qS3y0P09U220h15HM8T@dev2.tatayab.com/api/"
+        case .production: return "http://dev_ios%40tatayab.com:6337M41B30af4Sh7A6006lSq2jabf3M2@dev2.tatayab.com/api/"
         case .qa: return "http://localhost:3000/"
         case .staging: return "http://localhost:3000/"
         }
@@ -47,12 +48,15 @@ extension ProductsEndpoint: TargetType {
         case .getProductDetails(let productId):
             let version = "4.0"
             return "\(version.urlEscaped)/TtmProducts/\(productId.urlEscaped)"
+        case .getAlsoBoughtProducts:
+            let version = "4.0"
+            return "\(version.urlEscaped)/TtmBlocks/77"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getProducts, .getAllCategories, .getProductsOfCategory, .getProductFeatures, .getProductDetails:
+        case .getProducts, .getAllCategories, .getProductsOfCategory, .getProductFeatures, .getProductDetails, .getAlsoBoughtProducts:
             return .get
         }
     }
@@ -68,24 +72,55 @@ extension ProductsEndpoint: TargetType {
     
     var task: Task {
         switch self {
-        case .getProducts, .getProductDetails:
+        case .getProducts:
             return .requestPlain
+            
+        case .getProductDetails:
+            var currencyId = Constants.Currency.kuwaitCurrencyId
+
+            if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
+                currencyId = countryCurrency
+            }
+            return .requestParameters(parameters: ["currency_id": currencyId.urlEscaped
+            ], encoding: URLEncoding.default)
+            
         case .getAllCategories:
+            var currencyId = Constants.Currency.kuwaitCurrencyId
+            if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
+                currencyId = countryCurrency
+            }
             return .requestParameters(parameters: [ "items_per_page": 0,
                                                     "status": "A",
-                                                    "lang_code": LanguageManager.getLanguage()
+                                                    "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
+                                                    "lang_code": LanguageManager.getLanguage(),
+                                                    "currency_id": currencyId.urlEscaped
                 ], encoding: URLEncoding.default)
             
         case .getProductsOfCategory(let category, let page):
-            return .requestParameters(parameters: [ "items_per_page": 100,
+            var currencyId = Constants.Currency.kuwaitCurrencyId
+            if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
+                currencyId = countryCurrency
+            }
+            return .requestParameters(parameters: [ "items_per_page": 20,
+                                                    "status": "A",
                                                     "cid": category,
                                                     "page": page.urlEscaped,
-                                                    "lang_code": LanguageManager.getLanguage()
+                                                    "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
+                                                    "lang_code": LanguageManager.getLanguage(),
+                                                    "currency_id": currencyId.urlEscaped
                 ], encoding: URLEncoding.default)
             
         case .getProductFeatures:
             return .requestParameters(parameters: [ "items_per_page": 10
                 ], encoding: URLEncoding.default)
+        case .getAlsoBoughtProducts(let productId):
+            var currencyId = Constants.Currency.kuwaitCurrencyId
+            if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
+                currencyId = countryCurrency
+            }
+            return .requestParameters(parameters: [ "also_bought_for_product_id": productId,
+                                                    "currency_id": currencyId.urlEscaped
+            ], encoding: URLEncoding.default)
         }
     }
     

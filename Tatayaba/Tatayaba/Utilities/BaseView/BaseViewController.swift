@@ -8,6 +8,7 @@
 
 import UIKit
 import MBProgressHUD
+import MOLH
 
 extension Constants {
     struct Common {
@@ -35,7 +36,17 @@ class BaseViewController: UIViewController {
     // MARK:- Error Alert
     func showErrorAlerr(title: String?, message: String?, handler: ((UIAlertAction) -> Void)?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let htmlData = NSString(string: message ?? "").data(using: String.Encoding.unicode.rawValue)
+        let options = [NSAttributedString.DocumentReadingOptionKey.documentType:
+            NSAttributedString.DocumentType.html]
+        let attributedString = try? NSMutableAttributedString(data: htmlData ?? Data(),
+                                                              options: options,
+                                                              documentAttributes: nil)
+        alert.setValue(attributedString, forKey: "attributedMessage")
+        alert.view.traverseRadius(4)
+        alert.view.backgroundColor = .white
         let action = UIAlertAction(title: Constants.Common.ok, style: .cancel, handler: handler)
+        action.setValue(UIColor.black, forKey: "titleTextColor")
         alert.addAction(action)
 
         self.present(alert, animated: true) {
@@ -65,21 +76,31 @@ extension UIViewController {
     {
         let viewController: UIViewController? = UIStoryboard(name:storyboardName!, bundle: nil).instantiateViewController(withIdentifier: segueName!)
         self.navigationController?.pushViewController(viewController!, animated: true)
-        
-  
-       
-    
-        
+    }
+
+    func navigateToHome() {
+        // to solve problem of navigation bar and badge showing
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeTabBar") as! UITabBarController
+        let window = UIApplication.shared.keyWindow
+        window?.rootViewController = homeVC
+        window?.makeKeyAndVisible()
     }
     
     func NavigationBarWithOutBackButton(){
        
         self.navigationItem.hidesBackButton = true
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationController?.navigationBar.barTintColor = UIColor(red: 34.0/255, green: 28.0/255, blue: 53.0/255, alpha: 1.0)
-        navigationController?.hidesBottomBarWhenPushed = false
+        self.navigationController?.navigationBar.barTintColor = .brandDarkBlue//UIColor(red: 34.0/255, green: 28.0/255, blue: 53.0/255, alpha: 1.0)
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.hidesBottomBarWhenPushed = false
         self.tabBarController?.tabBar.isHidden = false
-       let logo = UIImage(named: "barName_Eng")
+        var logo: UIImage = UIImage()
+        if MOLHLanguage.currentAppleLanguage() == "en" {
+            logo = UIImage(named: "barName_Eng") ?? UIImage()
+        } else {
+            logo = UIImage(named: "barName_ar") ?? UIImage()
+        }
         let imageView = UIImageView(image:logo)
         imageView.contentMode = .scaleAspectFit
         navigationItem.titleView = imageView
@@ -90,10 +111,16 @@ extension UIViewController {
         
         self.navigationItem.hidesBackButton = true
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationController?.navigationBar.barTintColor = UIColor(red: 34.0/255, green: 28.0/255, blue: 53.0/255, alpha: 1.0)
-        navigationController?.hidesBottomBarWhenPushed = false
+        self.navigationController?.navigationBar.barTintColor = .brandDarkBlue//UIColor(red: 34.0/255, green: 28.0/255, blue: 53.0/255, alpha: 1.0)
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.hidesBottomBarWhenPushed = false
         self.tabBarController?.tabBar.isHidden = false
-        let logo = UIImage(named: "barName_Eng")
+        var logo: UIImage = UIImage()
+        if MOLHLanguage.currentAppleLanguage() == "en" {
+            logo = UIImage(named: "barName_Eng") ?? UIImage()
+        } else {
+            logo = UIImage(named: "barName_ar") ?? UIImage()
+        }
         let imageView = UIImageView(image:logo)
         imageView.contentMode = .scaleAspectFit
         navigationItem.titleView = imageView
@@ -110,7 +137,6 @@ extension UIViewController {
     }
     @objc func action(){
         navigationController?.popViewController(animated: true)
-    
     }
     
     
@@ -134,5 +160,21 @@ extension UIViewController {
         UIView.transition(with: button, duration: 0.5, options: .transitionCrossDissolve, animations: {
             button.isHidden = hidden
         })
+    }
+    
+    func setView(view: UIView, hidden: Bool) {
+        UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            view.isHidden = hidden
+        })
+    }
+}
+
+extension UIView {
+    func traverseRadius(_ radius: Float) {
+        layer.cornerRadius = CGFloat(radius)
+        
+        for subview: UIView in subviews {
+            subview.traverseRadius(radius)
+        }
     }
 }

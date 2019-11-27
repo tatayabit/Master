@@ -10,23 +10,31 @@ import UIKit
 
 class Cart {
     static let shared = Cart()
-    private var cartItemsArr = [CartItem]()
+    var cartItemsArr = [CartItem]()
     private var productsArr = [Product]()
 
-    var defaultShipping: ShippingMethod?
-    var paymentMethod: Payment?
+    var paymentMethod: PaymentMethod?
 
     var productsCount: Int { return cartItemsArr.count }
-    var subtotalPrice: String { return String(calculateSubTotal()).formattedPrice }
-    var shippingFormatedPrice: String { return String(shipping).formattedPrice }
-    var shipping: Float = 1
-    var totalPrice: String { return String(calculateTotal()).formattedPrice }
-
+    var subtotalPrice: String { return String(self.calculateSubTotal()).formattedPrice }
+    var totalPrice: String { return String(self.calculateTotal()).formattedPrice }
+    
+    var isOneClickBuy: Bool = false
+    var couponCode: String = ""
+    
+    
     //MARK:- Operational functions
     func addProduct(product: Product, quantity: Int = 1, options: [CartItemOptions]? = nil) {
         if productExistedInCart(product: product) {
             let cartItem = self.cartItem(for: product, options: options)
-            increaseCount(cartItem: cartItem)
+            let maxQuantity = product.maxQuantity
+            let stockQuantity = product.amount
+            let max = Int(maxQuantity) ?? 0
+            if max <= cartItem.count {
+                // max reached
+            } else if stockQuantity > max {
+                increaseCount(cartItem: cartItem, quantity: quantity)
+            }
         } else {
             let productModel = CartItem(productId: String(product.identifier), productName: product.name, quantity: quantity, options: options)
             cartItemsArr.append(productModel)
@@ -45,8 +53,8 @@ class Cart {
         updateTabBarCount()
     }
 
-    func increaseCount(cartItem: CartItem) {
-        cartItem.increaseCount(by: 1)
+    func increaseCount(cartItem: CartItem, quantity: Int) {
+        cartItem.increaseCount(by: quantity)
         updateTabBarCount()
     }
 
@@ -76,7 +84,7 @@ class Cart {
             for i in 0...productsArr.count - 1 {
                 let productItem = productsArr[i]
                 let cartItem = cartItemsArr[i]
-                let price = (productItem.price as NSString).floatValue//Float(productItem.price) ?? 0.0
+                let price = (productItem.price as NSString).floatValue
                 let quantity = Float(cartItem.count)
                 total += (quantity * price)
             }
@@ -86,7 +94,7 @@ class Cart {
     }
 
     func calculateTotal() -> Float {
-        return calculateSubTotal() + shipping
+        return calculateSubTotal()
     }
 
     //MARK:- Get Cart Item / Product
@@ -102,5 +110,37 @@ class Cart {
     private func productExistedInCart(product: Product) -> Bool {
         let existed = cartItemsArr.contains(where: { $0.productId == String(product.identifier) })
         return existed
+    }
+    
+    // MARK:- Update Currency
+    func updatePricesWithNewCurrency(currencyResponse: ConvertedCurrency) {
+        self.updateProductsPrices(productsResponse: currencyResponse.products)
+        
+    }
+    
+    private func updateProductsPrices(productsResponse: [ConvertedProduct]) {
+        print("cartProducts before new prices: \(productsArr)")
+        for cartProductIndex in 0...productsArr.count - 1 {
+            var product = productsArr[cartProductIndex]
+            
+            for convertedProduct in productsResponse {
+                if convertedProduct.identifier == product.identifier {
+                    product.price = convertedProduct.price
+                    productsArr[cartProductIndex] = product
+                }
+            }
+        }
+        
+        print("cartProducts after new prices: \(productsArr)")
+    }
+    
+    // MARK:- Reset
+    func reset() {
+        self.productsArr.removeAll()
+        self.cartItemsArr.removeAll()
+        self.isOneClickBuy = false
+        self.paymentMethod = nil
+        self.couponCode = ""
+        updateTabBarCount()
     }
 }
