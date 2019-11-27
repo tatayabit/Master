@@ -564,7 +564,7 @@
 		841CE30D22DCC32100A47FA0 /* messageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageViewModel.swift; sourceTree = "<group>"; };
 		841CE30F22DCC33600A47FA0 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		841CE31422DCC68A00A47FA0 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
-		847CDE3D22C9EE2300E67C8C /* Tatayab - Testing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tatayab - Testing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		847CDE3D22C9EE2300E67C8C /* TATAYAB - تطيّب.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TATAYAB - تطيّب.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		847CDE4022C9EE2300E67C8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847CDE4522C9EE2300E67C8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		847CDE4822C9EE2300E67C8C /* Tatayaba.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tatayaba.xcdatamodel; sourceTree = "<group>"; };
@@ -1973,7 +1973,7 @@
 		847CDE3E22C9EE2300E67C8C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				847CDE3D22C9EE2300E67C8C /* Tatayab - Testing.app */,
+				847CDE3D22C9EE2300E67C8C /* TATAYAB - تطيّب.app */,
 				847CDE5422C9EE2300E67C8C /* TatayabaTests.xctest */,
 				847CDE5F22C9EE2300E67C8C /* TatayabaUITests.xctest */,
 			);
@@ -2235,7 +2235,7 @@
 			);
 			name = Tatayaba;
 			productName = Tatayaba;
-			productReference = 847CDE3D22C9EE2300E67C8C /* Tatayab - Testing.app */;
+			productReference = 847CDE3D22C9EE2300E67C8C /* TATAYAB - تطيّب.app */;
 			productType = "com.apple.product-type.application";
 		};
 		847CDE5322C9EE2300E67C8C /* TatayabaTests */ = {
@@ -2977,18 +2977,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.38;
+				CURRENT_PROJECT_VERSION = 1.0.40;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 4.4.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Tatayaba.Tatayaba;
-				PRODUCT_NAME = "Tatayab - Testing";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tatayab.tatayab;
+				PRODUCT_NAME = "TATAYAB - تطيّب";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -2999,17 +2999,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.38;
+				CURRENT_PROJECT_VERSION = 1.0.40;
 				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 4.4.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Tatayaba.Tatayaba;
-				PRODUCT_NAME = "Tatayab - Testing";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tatayab.tatayab;
+				PRODUCT_NAME = "TATAYAB - تطيّب";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
