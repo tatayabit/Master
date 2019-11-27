@@ -37,7 +37,7 @@
 		<string>GothamHTF-Book.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
-	<string>Main</string>
+	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Home</string>
 	<key>UIRequiredDeviceCapabilities</key>
