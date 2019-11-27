@@ -52,13 +52,14 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     let productsBlocklView248: ProductsBlockView = .fromNib()
     let productsBlocklView265: ProductsBlockView = .fromNib()
     
+    
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         addBannersSubView()
         setupListners()
         setupUI()
-        addSearchBtn()
+//        addSearchBtn()
         viewModel.loadAPIs()
         let cart = Cart.shared
         cart.updateTabBarCount()

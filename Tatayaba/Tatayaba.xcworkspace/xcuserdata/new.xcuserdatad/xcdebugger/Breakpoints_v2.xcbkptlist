@@ -62,8 +62,8 @@
             filePath = "Tatayaba/Modules/DashBoard/Views/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "addBannersSubView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -87,22 +87,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A28ECA3C-9A1A-4411-A12E-7F37C44240E7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Concierge/Views/ConciergeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "F62F69FF-4150-4647-AC0C-118530783DC0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -114,38 +98,6 @@
             endingLineNumber = "48"
             landmarkName = "sampleData"
             landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2262AC9C-FD75-4BD8-9B7F-DFCA58A8864F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/DashBoard/ViewModels/HomeViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321"
-            landmarkName = "openStoreURL()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7441C5D1-BD0E-46C1-B0DB-8242C4561BC8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/DashBoard/ViewModels/HomeViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "323"
-            endingLineNumber = "323"
-            landmarkName = "openStoreURL()"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -350,7 +302,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "371"
             endingLineNumber = "371"
-            landmarkName = "loadTaxAndShipping()"
+            landmarkName = "getItemCell(tableView:indexPath:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

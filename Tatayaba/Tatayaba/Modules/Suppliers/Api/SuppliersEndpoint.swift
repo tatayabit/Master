@@ -18,7 +18,7 @@ enum SuppliersEndpoint {
 extension SuppliersEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
-        case .production: return "http://ios_tt%40tatayab.com:21Ju1619GAbm2u1pu0TP4hjyccAL07WP@dev.tatayab.com/api/"
+        case .production: return "http://ttm%40tatayab.com:608Wg8D72001FDUFT70F69nbw53KWmR1@tatayab.com/api/"
         case .qa: return "http://localhost:3000/"
         case .staging: return "http://localhost:3000/"
         }
