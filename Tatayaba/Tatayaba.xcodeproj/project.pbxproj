@@ -283,6 +283,8 @@
 		84BC08A422DC94AA00C6180E /* RecommendedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC08A322DC94AA00C6180E /* RecommendedCollectionViewCell.swift */; };
 		84BC08A622DC972300C6180E /* RecommendedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BC08A522DC972300C6180E /* RecommendedCollectionViewCell.xib */; };
 		9F7E463258DFBE1064395C51 /* Pods_TatayabaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */; };
+		D5B71207238E1420006BD0DD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B71206238E1420006BD0DD /* SearchViewController.swift */; };
+		D5B71209238E14E0006BD0DD /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B71208238E14E0006BD0DD /* Search.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -596,6 +598,8 @@
 		84BC08A522DC972300C6180E /* RecommendedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendedCollectionViewCell.xib; sourceTree = "<group>"; };
 		A8251C3E16050691EBDFB247 /* Pods_Tatayaba.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tatayaba.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55E5C982ED14B5FEE4DCD1D /* Pods-TatayabaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaUITests.debug.xcconfig"; path = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D5B71206238E1420006BD0DD /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		D5B71208238E14E0006BD0DD /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		E0F8BF293BFC39D47FD4C2EB /* Pods-Tatayaba.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tatayaba.debug.xcconfig"; path = "Target Support Files/Pods-Tatayaba/Pods-Tatayaba.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -666,6 +670,7 @@
 		1048080A238DC8030056F74B /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				D5B71208238E14E0006BD0DD /* Search.storyboard */,
 				1048080E238DC81B0056F74B /* Models */,
 				1048080D238DC8140056F74B /* ViewModels */,
 				1048080C238DC80E0056F74B /* Views */,
@@ -684,6 +689,7 @@
 		1048080C238DC80E0056F74B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D5B71206238E1420006BD0DD /* SearchViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1960,6 +1966,7 @@
 				847CDE3E22C9EE2300E67C8C /* Products */,
 				A8C318DE6A75DA5A76A75E39 /* Pods */,
 				9CDE61A50DEA5CDA03008907 /* Frameworks */,
+				D5B71205238E13A8006BD0DD /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2201,6 +2208,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D5B71205238E13A8006BD0DD /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2368,6 +2382,7 @@
 				847CDE8522CA19EE00E67C8C /* ProximaNova-Extrabld.ttf in Resources */,
 				11A8B15D22D7943D001B2661 /* WishlistCollectionViewCell.xib in Resources */,
 				113647FC2316FF0F0097FDB3 /* CategoriesBlockView.xib in Resources */,
+				D5B71209238E14E0006BD0DD /* Search.storyboard in Resources */,
 				847CDE4622C9EE2300E67C8C /* Main.storyboard in Resources */,
 				4CC28C702327F961003EAEA6 /* GOTHAM-MEDIUM.TTF in Resources */,
 				11FB584A231C2147005DA4F0 /* CategoriesBlockCollectionViewCell.xib in Resources */,
@@ -2643,6 +2658,7 @@
 				11081EEC22DB824600B68EA5 /* AboutUsViewController.swift in Sources */,
 				1145395D232CDC7C00EDC908 /* ImagePicker.swift in Sources */,
 				10616753235CBE9C00F4A3A0 /* PaymentWebViewModel.swift in Sources */,
+				D5B71207238E1420006BD0DD /* SearchViewController.swift in Sources */,
 				10B4CBCB237336ED0065918D /* DataBase64Decodable.swift in Sources */,
 				10FC8519234E373F00D13C34 /* ProductOption.swift in Sources */,
 				11007BD522DE2F2E00AC9957 /* NewProductCollectionViewCell.swift in Sources */,
@@ -2961,12 +2977,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.37;
+				CURRENT_PROJECT_VERSION = 1.0.38;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 4.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Tatayaba.Tatayaba;
 				PRODUCT_NAME = "Tatayab - Testing";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2982,11 +2999,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.37;
+				CURRENT_PROJECT_VERSION = 1.0.38;
 				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 4.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Tatayaba.Tatayaba;
 				PRODUCT_NAME = "Tatayab - Testing";
 				PROVISIONING_PROFILE_SPECIFIER = "";

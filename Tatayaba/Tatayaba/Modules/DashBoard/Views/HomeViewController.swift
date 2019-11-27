@@ -23,7 +23,11 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     private let supplierProductsSegue = "supplier_products_segue"
     private let allCategoriesSegue = "all_categories_segue"
     private let allSuppliersSegue = "all_supplier_segue"
+    private let searchSegue = "search_segue"
+    
 
+    
+    
     @IBOutlet weak var scrollView: StackedScrollView!
     var tabbar:UITabBar?
     private var viewModel = HomeViewModel()
@@ -48,12 +52,14 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     let productsBlocklView248: ProductsBlockView = .fromNib()
     let productsBlocklView265: ProductsBlockView = .fromNib()
     
+    
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         addBannersSubView()
         setupListners()
         setupUI()
+//        addSearchBtn()
         viewModel.loadAPIs()
         let cart = Cart.shared
         cart.updateTabBarCount()
@@ -61,6 +67,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         CurrenciesManager.shared.loadCurrenciesList()
         CountrySettings.shared.addDelegate(delegate: self)
         CurrencySettings.shared.addCurrencyDelegate(delegate: self)
+
     }
 
     fileprivate func addBannersSubView() {
@@ -268,6 +275,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
 
         self.NavigationBarWithOutBackButton()
         self.tabbar?.selectedItem = tabbar?.items?[0]
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -368,6 +376,19 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
 
         }}))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func search() {
+       performSegue(withIdentifier: searchSegue, sender: nil)
+    }
+    
+    func addSearchBtn(){
+        let searchBtn = UIButton(type: .custom)
+        searchBtn.setImage(UIImage(named: "Search"), for: .normal)
+        searchBtn.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        searchBtn.addTarget(self, action: #selector(HomeViewController.search), for: .touchUpInside)
+        let searchItem = UIBarButtonItem(customView: searchBtn)
+        self.navigationItem.rightBarButtonItem  = searchItem
     }
 }
 

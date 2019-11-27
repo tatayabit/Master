@@ -16,7 +16,8 @@ class HomeViewModel {
 
 
     //let productIdList = ["268","270","305", "267", "297", "248", "265"]
-    let productIdList = ["314","320","315", "316", "317", "318", "319"]
+//    let productIdList = ["314","320","315", "316", "317", "318", "319"]
+    let productIdList = ["268","270","297", "248", "265", "272", "260"]
     var block_Id = ""
     var categoriesList = [Category]()
     var suppliersList = [Supplier]()
@@ -271,19 +272,19 @@ class HomeViewModel {
         var tempProductsBlocks = [block0,block1,block2,block3,block4,block5,block6]
         for block in self.productsBlocks {
             switch block.blockId {
-            case "314":
+            case "268":
                 tempProductsBlocks[0] = block
-            case "320":
+            case "270":
                 tempProductsBlocks[1] = block
-            case "315":
+            case "297":
                 tempProductsBlocks[2] = block
-            case "316":
+            case "248":
                 tempProductsBlocks[3] = block
-            case "317":
+            case "265":
                 tempProductsBlocks[4] = block
-            case "318":
+            case "272":
                 tempProductsBlocks[5] = block
-            case "319":
+            case "260":
                 tempProductsBlocks[6] = block
             default:
                 print("Error in arrangment of ProductsBlocks")
@@ -295,8 +296,10 @@ class HomeViewModel {
     // validate API version   validApiClient
     
     func ValidateVersionVersion(completion: @escaping (String) -> ()){
-        let appVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String //CFBundleShortVersionString
-        validApiClient.getVersionValidation(version: "4.3.1" ?? "1.0.0"){
+        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        print(appVersion)
+        //CFBundleShortVersionString //CFBundleVersion
+        validApiClient.getVersionValidation(version: appVersion ?? "4.3.1"){
             result in
             switch result {
             case .success(let response):
@@ -314,7 +317,11 @@ class HomeViewModel {
     }
     
     func openStoreURL() {
-        if let url = URL(string: "https://www.apple.com/kw/ios/app-store/"),
+        //"https://www.apple.com/kw/ios/app-store/"
+        let arURL = "https://apps.apple.com/us/app/tatayab-تطي-ب/id1394093760/"
+        let url =  arURL.addingPercentEncoding( withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
+
+        if let url = URL(string: arURL.addingPercentEncoding( withAllowedCharacters: NSCharacterSet.urlQueryAllowed) ?? "https://www.apple.com/kw/ios/app-store/"),
             UIApplication.shared.canOpenURL(url)   //itms-apps://itunes.apple.com/app/id1024941703
         {
             if #available(iOS 10.0, *) {
