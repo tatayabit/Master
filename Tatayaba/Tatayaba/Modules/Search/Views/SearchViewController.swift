@@ -14,9 +14,11 @@ class SearchViewController: BaseViewController, UICollectionViewDelegate, UIColl
 
     var viewModel: CatProductsViewModel?
     var searchViewModel = SearchProductsViewModel()
-    private let productDetailsSegue = "search_segue"
+    private let productDetailsSegue = "product_details_segue"
     let searchController = UISearchController(searchResultsController: nil)
     var searchActive : Bool = false
+    var searchText = ""
+    var searchDelayer : Timer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +45,9 @@ class SearchViewController: BaseViewController, UICollectionViewDelegate, UIColl
         
         
         
-        guard let viewModel = viewModel else { return }
-        self.showLoadingIndicator(to: self.view)
-        viewModel.setDelegate(self)
+//        guard let viewModel = viewModel else { return }
+//        self.showLoadingIndicator(to: self.view)
+//        viewModel.setDelegate(self)
         searchViewModel.setDelegate(self)
         
         //viewModel.fetchModerators()
@@ -61,35 +63,25 @@ class SearchViewController: BaseViewController, UICollectionViewDelegate, UIColl
 
     //MARK:- CollectionViewDelegate
     
-    func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
-        guard let viewModel = viewModel else { return 0 }
-        if searchActive {
-            return viewModel.totalCount
-        }
-        else
-        {
-            return viewModel.totalCount
-        }
-        
-    }
 
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+           return searchViewModel.productsList.count
+       }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductsBlockCollectionViewCell.identifier, for: indexPath) as! ProductsBlockCollectionViewCell
-        guard let viewModel = viewModel else { return cell }
-
-        cell.configure(viewModel.product(at: indexPath), indexPath: indexPath)
+        cell.configure(searchViewModel.productsList[indexPath.row], indexPath: indexPath)
         cell.delegate = self
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        guard let viewModel = viewModel else { return }
-        if indexPath.row == viewModel.currentCount - 1 {  //numberofitem count
-            viewModel.fetchModerators()
+        if indexPath.row == searchViewModel.currentCount - 1 {  //numberofitem count
+            if(!searchText.isEmpty){
+                searchViewModel.fetchModerators(keyword: searchText)
+            }
             print("reached last cell!")
         }
     }
@@ -133,9 +125,9 @@ class SearchViewController: BaseViewController, UICollectionViewDelegate, UIColl
         }
         
         didSelectAddToCartCell(indexPath: indexPath)
-        
+
         if viewModel.productHasOptions(at: indexPath) { return }
-        
+
         if Customer.shared.loggedin {
             let controller = UIStoryboard(name: "Cart", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewCartViewController") as! CartViewController
             controller.buyingWayType = 1
@@ -146,6 +138,21 @@ class SearchViewController: BaseViewController, UICollectionViewDelegate, UIColl
             navigationController?.pushViewController(controller, animated: true)
         }
     }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.searchController.searchBar.endEditing(true)
+    }
+    
+    
+    //MARK:- Segue
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         if segue.identifier == productDetailsSegue {
+             let productDetailsVC = segue.destination as! ProductDetailsViewController
+             if let indexPath = sender as? IndexPath {
+                productDetailsVC.viewModel = ProductDetailsViewModel(product: searchViewModel.productsList[indexPath.row])
+             }
+         }
+     }
 
 }
 
@@ -188,15 +195,30 @@ extension SearchViewController: UISearchControllerDelegate, UISearchBarDelegate,
     
       func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchActive = true
+        searchViewModel.productsList.removeAll()
+//        searchDelayer = nil
+        if (searchDelayer == nil) {
+            searchDelayer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.doDelayedSearch), userInfo: searchText, repeats: false)
+        }else{
+            searchDelayer.invalidate()
+            searchDelayer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.doDelayedSearch), userInfo: searchText, repeats: false)
+        }
+        }
+      
+    @objc func doDelayedSearch (_ t: Timer){
+        assert(t == searchDelayer)
+        let searchText = searchDelayer.userInfo! as! String
         if(!searchText.isEmpty)
             {
+                self.searchText = searchText
                 //reload your data source if necessary
                 self.showLoadingIndicator(to: self.view)
                 searchViewModel.fetchModerators(keyword: searchText)
                 print(searchText)
-            }
+        }else{
+            self.productsCollectionView.reloadData()
         }
-      
+    }
       
       func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
           searchActive = false
@@ -215,15 +237,14 @@ extension SearchViewController: UISearchControllerDelegate, UISearchBarDelegate,
 
 
 
-extension SearchViewController: SearchProductsViewModelDelegate,CatProductsViewModelDelegate {
+extension SearchViewController: SearchProductsViewModelDelegate {
     func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
         // 1
         self.hideLoadingIndicator(from: self.view)
-
+        
         guard newIndexPathsToReload != nil else {
             productsCollectionView.reloadData()
-            guard let viewModel = viewModel else { return }
-            if viewModel.totalCount == 0 {
+            if searchViewModel.totalCount == 0 {
                 showErrorAlerr(title: "", message: Constants.Products.noProductsFound) { _ in
                     self.navigationController?.popViewController(animated: true)
                 }
@@ -232,6 +253,9 @@ extension SearchViewController: SearchProductsViewModelDelegate,CatProductsViewM
         }
         // 2
         if let newIndexPathsToReload = newIndexPathsToReload {
+            if newIndexPathsToReload.count == 0 {
+                productsCollectionView.reloadData()
+            }
             productsCollectionView.insertItems(at: newIndexPathsToReload)
         }
     }

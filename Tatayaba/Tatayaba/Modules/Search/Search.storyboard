@@ -11,7 +11,7 @@
         <!--Search View Controller-->
         <scene sceneID="bEa-eg-Wfj">
             <objects>
-                <viewController storyboardIdentifier="ProductsListViewController" id="44w-EE-RoO" customClass="SearchViewController" customModule="Tatayab___Testing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductsListViewController" id="44w-EE-RoO" customClass="SearchViewController" customModule="TATAYAB___تطيّب" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="56w-IT-LQX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,11 +39,22 @@
                     </view>
                     <connections>
                         <outlet property="productsCollectionView" destination="ae9-G1-aij" id="9JD-do-ara"/>
+                        <segue destination="oaH-HW-fat" kind="push" identifier="product_details_segue" id="6EW-lZ-dww"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ppg-Ba-NvE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="168.80000000000001" y="15.742128935532236"/>
+        </scene>
+        <!--ProductDetails-->
+        <scene sceneID="sKa-jq-QC7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProductDetails" id="oaH-HW-fat" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="oLs-Fu-R1Q"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p0Z-9S-QBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="998" y="231"/>
         </scene>
     </scenes>
 </document>

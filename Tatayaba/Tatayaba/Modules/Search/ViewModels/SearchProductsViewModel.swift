@@ -16,7 +16,7 @@ protocol SearchProductsViewModelDelegate: class {
 class SearchProductsViewModel {
     let apiClient = ProductsAPIClient()
 
-    private var productsList = [Product]()
+    var productsList = [Product]()
     private var currentPage = 0
     private var total = 0
     private var isFetchInProgress = false
