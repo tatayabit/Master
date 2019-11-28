@@ -21,7 +21,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductsBlockCollectionViewCell" id="gTV-IL-0wX" customClass="ProductsBlockCollectionViewCell" customModule="Tatayab___Testing" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductsBlockCollectionViewCell" id="gTV-IL-0wX" customClass="ProductsBlockCollectionViewCell" customModule="TATAYAB___تطيّب" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="168" height="205"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -101,7 +101,7 @@
                             <constraint firstAttribute="height" constant="29" id="8bP-lO-9N4"/>
                             <constraint firstAttribute="width" constant="29" id="xrO-sh-DFP"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="8"/>
+                        <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="7"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                         <userDefinedRuntimeAttributes>

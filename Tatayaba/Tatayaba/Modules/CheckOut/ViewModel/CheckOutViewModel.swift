@@ -97,14 +97,14 @@ class CheckOutViewModel {
     }
 
     //MARK:- Placing Order
-    func placeOrder(userData: User, completion: @escaping (APIResult<PlaceOrderResult?, MoyaError>) -> Void) {
+    func placeOrder(userData: User,notes :String, completion: @escaping (APIResult<PlaceOrderResult?, MoyaError>) -> Void) {
 
         let userId = getUserId()
         let userData = userId == "0" ? getUserDataModel(user: userData) : nil
 
         let paymentId = cart.paymentMethod?.paymentId ?? "0"
 
-        ordersApiClient.CreateOrder(products: getProductsModel(), userId: userId, userData: userData, paymentId: paymentId, oneClickBuy: cart.isOneClickBuy, code: cart.couponCode) { result in
+        ordersApiClient.CreateOrder(products: getProductsModel(), userId: userId, userData: userData, paymentId: paymentId, oneClickBuy: cart.isOneClickBuy, code: cart.couponCode, notes: notes) { result in
             switch result {
             case .success(let response):
                 guard let placeOrderResult = response else { return }

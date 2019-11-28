@@ -9,7 +9,7 @@
 import Moya
 
 enum OrdersEndpoint {
-    case create(products: [String: Any], userId: String, userData: [String: Any]?, paymentId: String, oneClickBuy: Bool, code: String)
+    case create(products: [String: Any], userId: String, userData: [String: Any]?, paymentId: String, oneClickBuy: Bool, code: String,notes:String)
     case getAllOrders(page: Int)
     case getOrder(orderId: String)
 
@@ -64,13 +64,14 @@ extension OrdersEndpoint: TargetType {
 
     var task: Task {
         switch self {
-        case .create(let products, let userId, let userData, let paymentId, let isOneClickBuy, let code):
+        case .create(let products, let userId, let userData, let paymentId, let isOneClickBuy, let code,let notes):
             var params = [
                 "user_id": userId,
                 "payment_id": paymentId,
                 "shipping_id": CountrySettings.shared.shipping?.shippingId ?? "7",
                 "products": products,
-                "coupon_code": code
+                "coupon_code": code,
+                "notes":notes
                 ] as [String : Any]
 
             if isOneClickBuy {

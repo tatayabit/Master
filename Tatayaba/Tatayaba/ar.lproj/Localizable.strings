@@ -6,6 +6,8 @@
   Copyright © 2019 Shaik. All rights reserved.
 */
 
+
+
 // Tab Bar Titles
 "Change Language"="تغيير اللغة";
 "Subtotal"="المجموع";
@@ -55,15 +57,15 @@
 
 // CheckOut
 "EnterAddress" = "من فضلك ادخل عنوانك";
-
+"Your Notes" = "ملاحظاتك ...";
 "ForgetFailed" = "خطا في استرجاع الرقم السري";
 "ForgetSuccess" = "حسنا";
 
 // Product
 "OPTIONS..." = "الاختيارات...";
 "ADD TO CART" = "أضف إلى السلة";
-"one click buy" = "شراء سريع";
-"ONE CLICK BUY" = "شراء سريع";
+"one click buy" = "اكسبريس";
+"ONE CLICK BUY" = "اكسبريس";
 "Currencies" = "العملات";
 // Settings
 "Change Country"="تغيير الدولة";
@@ -94,6 +96,9 @@
 "SECURE CHECKOUT" = "الدفع بامان";
 "SHIP TO" = "عنوان التوصيل";
 
+// Search
+"Cancel" = "إلغاء";
+"search Placeholder" = "ما هو مزاجك؟";
 
 // Will be removed laetr
 "PERSONAL CARE" = "العناية الشخصية";

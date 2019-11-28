@@ -36,22 +36,26 @@ class SearchViewController: BaseViewController, UICollectionViewDelegate, UIColl
         self.searchController.hidesNavigationBarDuringPresentation = false
         self.searchController.dimsBackgroundDuringPresentation = true
         self.searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search ..."
+        searchController.searchBar.placeholder = "search Placeholder".localized()
         searchController.searchBar.sizeToFit()
         
-        
         self.searchController.isActive = true
-        self.navigationItem.titleView = searchController.searchBar
         
+        if #available(iOS 11.0, *) {
+            self.navigationItem.searchController = searchController
+        } else {
+            // Fallback on earlier versions
+            self.navigationItem.titleView = searchController.searchBar
+        }
+        searchController.searchBar.tintColor = .white
+        searchController.searchBar.backgroundColor = .brandDarkBlue
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.brandDarkBlue]
         
-        
-//        guard let viewModel = viewModel else { return }
-//        self.showLoadingIndicator(to: self.view)
-//        viewModel.setDelegate(self)
+        let searchFieldBackgroundImage = UIImage(color: .white, size: CGSize(width: 44, height: searchController.searchBar.bounds.height/3.9))?.withRoundCorners(4)
+        UISearchBar.appearance().setSearchFieldBackgroundImage(searchFieldBackgroundImage, for: .normal)
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = "Cancel".localized()
         searchViewModel.setDelegate(self)
-        
-        //viewModel.fetchModerators()
-    }
+        }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -169,7 +173,6 @@ extension SearchViewController: UISearchControllerDelegate, UISearchBarDelegate,
     
       func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
           searchActive = false
-          self.dismiss(animated: true, completion: nil)
           navigationController?.popViewController(animated: true)
       }
       
@@ -177,14 +180,7 @@ extension SearchViewController: UISearchControllerDelegate, UISearchBarDelegate,
       {
           let searchString = searchController.searchBar.text
           print(searchString)
-//          filtered = items.filter({ (item) -> Bool in
-//              let countryText: NSString = item as NSString
-//
-//              return (countryText.range(of: searchString!, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
-//          })
-          
           productsCollectionView.reloadData()
-
       }
       
       func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -245,9 +241,9 @@ extension SearchViewController: SearchProductsViewModelDelegate {
         guard newIndexPathsToReload != nil else {
             productsCollectionView.reloadData()
             if searchViewModel.totalCount == 0 {
-                showErrorAlerr(title: "", message: Constants.Products.noProductsFound) { _ in
-                    self.navigationController?.popViewController(animated: true)
-                }
+//                showErrorAlerr(title: "", message: Constants.Products.noProductsFound) { _ in
+//                    self.navigationController?.popViewController(animated: true)
+//                }
             }
             return
         }
@@ -268,4 +264,39 @@ extension SearchViewController: SearchProductsViewModelDelegate {
 //        let action = UIAlertAction(title: "OK".localizedString, style: .default)
 //        displayAlert(with: title , message: reason, actions: [action])
     }
+}
+
+public extension UIImage {
+
+    public convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
+        let rect = CGRect(origin: .zero, size: size)
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
+        color.setFill()
+        UIRectFill(rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        guard let cgImage = image?.cgImage else { return nil }
+        self.init(cgImage: cgImage)
+    }
+
+    public func withRoundCorners(_ cornerRadius: CGFloat) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        let rect = CGRect(origin: CGPoint.zero, size: size)
+        let context = UIGraphicsGetCurrentContext()
+        let path = UIBezierPath(roundedRect: rect, cornerRadius: cornerRadius)
+
+        context?.beginPath()
+        context?.addPath(path.cgPath)
+        context?.closePath()
+        context?.clip()
+
+        draw(at: CGPoint.zero)
+
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext();
+
+        return image;
+    }
+
 }

@@ -6,6 +6,8 @@
   Copyright © 2019 Shaik. All rights reserved.
 */
 
+
+
 // Tab Bar Titles
 "Change Language"="Change Language";
 "Subtotal"="Subtotal";
@@ -57,7 +59,7 @@
 
 // CheckOut
 "EnterAddress" = "Please Enter Your Shipping Address";
-
+"Your Notes" = "Your Notes ...";
 "ForgetFailed" = "Forget Password Failed";
 "ForgetSuccess" = "Ok";
 
@@ -96,6 +98,9 @@
 "SECURE CHECKOUT" = "SECURE CHECKOUT";
 "SHIP TO" = "SHIP TO";
 
+// Search
+"Cancel" = "Cancel";
+"search Placeholder" = "What is your mood?";
 
 // Will be removed laetr
 "PERSONAL CARE" = "PERSONAL CARE";

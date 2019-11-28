@@ -13,7 +13,8 @@ import SwiftValidator
 class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, CountrySettingsDelegate {
     
     @IBOutlet weak var paymentTableView: UITableView!
-
+    @IBOutlet weak var notesTxtView: UITextView!
+    
     private let viewModel = CheckOutViewModel()
     
     let checkoutCompletedSegue = "checkout_completed_segue"
@@ -27,6 +28,9 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         self.setupUI()
         // self.updateData()
+        notesTxtView.delegate = self
+        notesTxtView.text = "Your Notes".localized()
+        notesTxtView.textColor = UIColor.lightGray
         CountrySettings.shared.addDelegate(delegate: self)
         viewModel.onPaymentMethodsListLoad = {
             self.paymentTableView.reloadData()
@@ -59,6 +63,11 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
     func setupUI() {
         self.tabBarController?.tabBar.isHidden = true
         NavigationBarWithBackButton()
+        if (LanguageManager.getLanguage() == "ar") {
+            self.notesTxtView.textAlignment = .right
+        }else{
+            self.notesTxtView.textAlignment = .left
+        }
         self.paymentTableView.register(PaymentMethodTableViewCell.nib, forCellReuseIdentifier: PaymentMethodTableViewCell.identifier)
         self.paymentTableView.register(CheckoutAddressTableViewCell.nib, forCellReuseIdentifier: CheckoutAddressTableViewCell.identifier)
     }
@@ -85,7 +94,7 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
             //         self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
             self.showLoadingIndicator(to: self.view)
             if let user = Customer.shared.user {
-                viewModel.placeOrder(userData: user) { result in
+                viewModel.placeOrder(userData: user, notes: notesTxtView.text) { result in
                     self.hideLoadingIndicator(from: self.view)
                     switch result {
                     case .success(let response):
@@ -249,4 +258,19 @@ extension CheckOutViewController {
             }
         }
     }
+}
+extension CheckOutViewController:UITextViewDelegate{
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Your Notes".localized()
+            textView.textColor = UIColor.lightGray
+        }
+    }
+    
 }
