@@ -105,28 +105,40 @@ class SuppliersListViewModel {
                     guard let suppliersResult = response else { return }
                     guard let suppliers = suppliersResult.suppliers else { return }
                     
+                        
+                    
                     
                     if suppliers.count < 20 {
                         self.shouldCallApi = false
                     }
-                    
-                    self.total += suppliers.count
-                    self.suppliersList.append(contentsOf: suppliers)
-                    
-                    // 3
-                    if self.currentPage > 1 {
-                        let indexPathsToReload = self.calculateIndexPathsToReload(from: suppliers)
-                        if let delegate = self.delegate {
-                            delegate.onFetchCompleted(with: indexPathsToReload)
+                    if(self.checkNewSuppliers(newSuppliers: suppliers)){
+                        self.total += suppliers.count
+                        self.suppliersList.append(contentsOf: suppliers)
+                        // 3
+                        if self.currentPage > 1 {
+                            let indexPathsToReload = self.calculateIndexPathsToReload(from: suppliers)
+                            if let delegate = self.delegate {
+                                delegate.onFetchCompleted(with: indexPathsToReload)
+                            }
+                        } else {
+                            if let delegate = self.delegate {
+                                delegate.onFetchCompleted(with: .none)
+                            }
                         }
-                    } else {
-                        if let delegate = self.delegate {
-                            delegate.onFetchCompleted(with: .none)
-                        }
-                    }
+                    }  
                 }
             }
         }
+    }
+    
+    func checkNewSuppliers(newSuppliers:[Supplier]) -> Bool {
+        for supplier in suppliersList {
+            if (newSuppliers[0].supplierId == supplier.supplierId ) {
+                self.shouldCallApi = false
+                return false
+            }
+        }
+        return true
     }
     
     private func calculateIndexPathsToReload(from newSuppliers: [Supplier]) -> [IndexPath] {

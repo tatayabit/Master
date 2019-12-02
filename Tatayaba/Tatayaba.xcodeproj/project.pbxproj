@@ -2997,7 +2997,7 @@
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 4.4.0;
+				MARKETING_VERSION = 4.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tatayab.tatayab;
 				PRODUCT_NAME = "TATAYAB - تطيّب";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3018,7 +3018,7 @@
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 4.4.0;
+				MARKETING_VERSION = 4.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tatayab.tatayab;
 				PRODUCT_NAME = "TATAYAB - تطيّب";
 				PROVISIONING_PROFILE_SPECIFIER = "";

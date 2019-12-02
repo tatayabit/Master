@@ -192,6 +192,7 @@ extension SearchViewController: UISearchControllerDelegate, UISearchBarDelegate,
       func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchActive = true
         searchViewModel.productsList.removeAll()
+        searchViewModel.currentPage = 0
 //        searchDelayer = nil
         if (searchDelayer == nil) {
             searchDelayer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.doDelayedSearch), userInfo: searchText, repeats: false)
