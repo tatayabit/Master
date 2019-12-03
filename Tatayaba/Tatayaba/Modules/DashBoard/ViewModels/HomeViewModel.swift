@@ -161,8 +161,8 @@ class HomeViewModel {
                         case .success(let responseB44):
                             guard let block = responseB44 else { return }
                             var sortedBlock = block
-                            sortedBlock.products = block.products.sorted(by: { $0.fullDetails.position < $1.fullDetails.position })
-                            sortedBlock.products = sortedBlock.products.filter({ $0.fullDetails.amount > 0 })
+//                            sortedBlock.products = block.products.sorted(by: { $0.fullDetails.position < $1.fullDetails.position })
+//                            sortedBlock.products = sortedBlock.products.filter({ $0.fullDetails.amount > 0 })
                             self.productsBlocks.append(sortedBlock)
                             print(block)
                             if (self.productsBlocks.count > 6) {
