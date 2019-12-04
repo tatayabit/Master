@@ -12,6 +12,7 @@ import CoreLocation
 protocol LocationManagerDelegate {
     func didDetectCurrentUserLocation(location: CLLocation)
     func userLocationDenied()
+    func userLocationEnabled()
 }
 class LocationManager: NSObject, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
@@ -19,12 +20,16 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     var delegate: LocationManagerDelegate?
     
     func initService() {
+        locationManager.delegate = self
         if locationServiceAvailable() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.distanceFilter = kCLLocationAccuracyHundredMeters
-            locationManager.requestWhenInUseAuthorization()
-            locationManager.startUpdatingLocation()
+            if self.locationServiceEnabled() {
+                locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                locationManager.distanceFilter = kCLLocationAccuracyHundredMeters
+                locationManager.startUpdatingLocation()
+            } else {
+                locationManager.requestWhenInUseAuthorization()
+            }
+            
         } else {
             if let delegate = self.delegate {
                 delegate.userLocationDenied()
@@ -44,12 +49,33 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         }
     }
     
+    private func locationServiceEnabled() -> Bool {
+        return CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
             self.locationManager.stopUpdatingLocation()
             if let delegate = self.delegate {
                 delegate.didDetectCurrentUserLocation(location: location)
             }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            if let delegate = self.delegate {
+                delegate.userLocationEnabled()
+            }
+        
+        case .denied:
+            if let delegate = self.delegate {
+                delegate.userLocationDenied()
+            }
+        default:
+            break
         }
     }
 }

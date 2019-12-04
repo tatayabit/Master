@@ -11,8 +11,6 @@ import CoreLocation
 
 class HomeViewController: BaseViewController, BannersBlocksViewProtocol, CategoriesBlockViewProtocol, ProductsBlockViewProtocol, SuppliersBlockViewProtocol, FullScreenBannersViewProtocol, CountrySettingsDelegate, CurrencySettingsDelegate {
     
-
-    
     func currencyDidChange(to currency: Currency) {
         print("currency changes!!!")
         print("HomeViewController")
@@ -58,21 +56,34 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        addBannersSubView()
-        setupListners()
         setupUI()
-        addSearchBtn()
-        viewModel.loadAPIs()
         let cart = Cart.shared
         cart.updateTabBarCount()
+        addSearchBtn()
         CountriesManager.shared.loadCountriesList()
         CurrenciesManager.shared.loadCurrenciesList()
         CountrySettings.shared.addDelegate(delegate: self)
         CurrencySettings.shared.addCurrencyDelegate(delegate: self)
-        locationManager.delegate = self
-        locationManager.initService()
+        startLocationProcessing()
     }
 
+    // MARK:- BannersLoading
+    private func loadBanners() {
+        addBannersSubView()
+        setupListners()
+        viewModel.loadAPIs()
+    }
+    // MARK:- Location Processing
+    private func startLocationProcessing() {
+        if AppDelegate.shared.shouldCheckLocation {
+            locationManager.delegate = self
+            locationManager.initService()
+        } else {
+            self.loadBanners()
+        }
+    }
+    
+    // MARK:- Setup Banners
     fileprivate func addBannersSubView() {
         fullScreenBannersView.delegate = self
         scrollView.stackView.addArrangedSubview(fullScreenBannersView)
@@ -419,26 +430,61 @@ extension HomeViewController {
     }
 }
 
-extension HomeViewController: LocationManagerDelegate {
+extension HomeViewController: LocationManagerDelegate, CountryViewDelegate {
+    func userLocationEnabled() {
+        self.startLocationProcessing()
+    }
+    
     func didDetectCurrentUserLocation(location: CLLocation) {
+        AppDelegate.shared.shouldCheckLocation = false
         print("current user location: \(location)")
+        CountrySettings.shared.getGeoReversedCountry(lat: location.coordinate.latitude, lng: location.coordinate.longitude, completionBlock:{
+            self.loadBanners()
+        })
     }
     
     func userLocationDenied() {
         // initialise a pop up for using later
+        AppDelegate.shared.shouldCheckLocation = false
+
         let alertController = UIAlertController(title: "Location Service is disabled", message: "Please go to Settings and turn on the permissions", preferredStyle: .alert)
         let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
             guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
                 return
             }
             if UIApplication.shared.canOpenURL(settingsUrl) {
-                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in })
+                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                    if self.viewModel.isCurrentCountrySelected() {
+                        self.loadBanners()
+                    } else {
+                        self.loadCountries()
+                    }
+                })
              }
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default) { _ in
+            // open countriesList VC
+            if self.viewModel.isCurrentCountrySelected() {
+                self.loadBanners()
+            } else {
+                self.loadCountries()
+            }
+        }
+
         alertController.addAction(cancelAction)
         alertController.addAction(settingsAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func loadCountries() {
+        let controller = UIStoryboard(name: "Country", bundle: Bundle.main).instantiateViewController(withIdentifier: "CountryViewController") as! CountryViewController
+        controller.delegate = self
+        navigationController?.pushViewController(controller, animated: false)
+    }
+
+    func countrySelected(selectedCountry: Country) {
+        CountrySettings.shared.currentCountry = selectedCountry
+        self.loadBanners()
     }
     
     
