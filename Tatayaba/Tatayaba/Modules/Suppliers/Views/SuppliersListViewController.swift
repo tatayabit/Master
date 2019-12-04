@@ -15,10 +15,12 @@ class SuppliersListViewController: BaseViewController, UICollectionViewDelegate,
     let viewModel = SuppliersListViewModel()
     
     private let supplierProductsSegue = "supplier_products_segue"
+    private let searchSegue = "search_segue"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
+        addSearchBtn()
         CountrySettings.shared.addDelegate(delegate: self)
         viewModel.setDelegate(self)
 //        viewModel.onsuppliersListLoad = {
@@ -87,6 +89,10 @@ class SuppliersListViewController: BaseViewController, UICollectionViewDelegate,
 //        })
 //        
 //    }
+    
+    @objc func search() {
+       performSegue(withIdentifier: searchSegue, sender: nil)
+    }
     
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {

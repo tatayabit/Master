@@ -62,7 +62,7 @@ class HomeHorizontalLayout: UICollectionViewLayout {
     //MARK:- Size calculations
     fileprivate func calculateSizes(_ collectionView: UICollectionView) {
         // 2
-        let columnWidth = superWidth / CGFloat(numberOfColumns)
+        let columnWidth = superWidth / CGFloat(numberOfColumns) - 8
 
         var yOffset = [CGFloat]()
 

@@ -67,6 +67,15 @@ class BaseViewController: UIViewController {
         }
     }
     
+    func addSearchBtn(){
+        let searchBtn = UIButton(type: .custom)
+        searchBtn.setImage(UIImage(named: "Search"), for: .normal)
+        searchBtn.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        searchBtn.addTarget(self, action: #selector(HomeViewController.search), for: .touchUpInside)
+        let searchItem = UIBarButtonItem(customView: searchBtn)
+        self.navigationItem.rightBarButtonItem  = searchItem
+    }
+    
 
 }
 

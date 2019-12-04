@@ -17,7 +17,7 @@ class SearchProductsViewModel {
     let apiClient = ProductsAPIClient()
 
     var productsList = [Product]()
-    private var currentPage = 0
+    var currentPage = 0
     private var total = 0
     private var isFetchInProgress = false
     private var shouldCallApi: Bool = true
