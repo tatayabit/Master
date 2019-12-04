@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		053D694C0D5575CB4917A4B5 /* Pods_TatayabaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */; };
+		100236C42395806800C031E8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100236C32395806800C031E8 /* LocationManager.swift */; };
 		1005869B23868DA200D6CA76 /* Float+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1005869A23868DA200D6CA76 /* Float+Extension.swift */; };
 		1005869E2386FA4500D6CA76 /* ConvertedCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1005869D2386FA4500D6CA76 /* ConvertedCurrency.swift */; };
 		100586A02386FCEB00D6CA76 /* ConvertedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1005869F2386FCEB00D6CA76 /* ConvertedProduct.swift */; };
@@ -308,6 +309,7 @@
 /* Begin PBXFileReference section */
 		02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B399FC35D3B3B996D93EC1 /* Pods-TatayabaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaUITests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		100236C32395806800C031E8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		1005869A23868DA200D6CA76 /* Float+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Extension.swift"; sourceTree = "<group>"; };
 		1005869D2386FA4500D6CA76 /* ConvertedCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertedCurrency.swift; sourceTree = "<group>"; };
 		1005869F2386FCEB00D6CA76 /* ConvertedProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertedProduct.swift; sourceTree = "<group>"; };
@@ -634,6 +636,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		100236C22395805400C031E8 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				100236C32395806800C031E8 /* LocationManager.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		1005869C2386FA1B00D6CA76 /* Currency */ = {
 			isa = PBXGroup;
 			children = (
@@ -1578,6 +1588,7 @@
 		11F52FA522CA7D92000F0D85 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				100236C22395805400C031E8 /* Location */,
 				1048080A238DC8030056F74B /* Search */,
 				1098F1A023890E2800A8D367 /* VersionChecking */,
 				10244C562369F6DF004E65F9 /* ErrorMessage */,
@@ -2660,6 +2671,7 @@
 				11624ED3230C468700E81ABD /* BlockImagePairDetailed.swift in Sources */,
 				11C271B022F20625004613E3 /* AddressesListViewModel.swift in Sources */,
 				11945BBD22F0B08D000F08DC /* CheckOutModel.swift in Sources */,
+				100236C42395806800C031E8 /* LocationManager.swift in Sources */,
 				11081EEC22DB824600B68EA5 /* AboutUsViewController.swift in Sources */,
 				1145395D232CDC7C00EDC908 /* ImagePicker.swift in Sources */,
 				10616753235CBE9C00F4A3A0 /* PaymentWebViewModel.swift in Sources */,
