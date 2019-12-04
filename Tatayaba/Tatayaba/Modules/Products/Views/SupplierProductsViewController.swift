@@ -15,12 +15,13 @@ class SupplierProductsViewController: BaseViewController, UICollectionViewDelega
 
     var viewModel: SupplierProductsViewModel?
     private let productDetailsSegue = "product_details_segue"
-
+    private let searchSegue = "search_segue"
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        addSearchBtn()
         setupUI()
         self.productsCollectionView.dataSource = self
         self.productsCollectionView.delegate = self
@@ -50,6 +51,10 @@ class SupplierProductsViewController: BaseViewController, UICollectionViewDelega
         NavigationBarWithBackButton()
         productsCollectionView.register(ProductsBlockCollectionViewCell.nib, forCellWithReuseIdentifier: ProductsBlockCollectionViewCell.identifier)
         self.supplierNameLabel.text = viewModel?.supplier.name
+    }
+    
+    @objc func search() {
+       performSegue(withIdentifier: searchSegue, sender: nil)
     }
 
     //MARK:- CollectionViewDelegate

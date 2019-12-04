@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GLN-Po-Fbg">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GLN-Po-Fbg">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,13 +11,13 @@
         <!--Cat Products View Controller-->
         <scene sceneID="GyZ-ot-Wjr">
             <objects>
-                <viewController storyboardIdentifier="ProductsListViewController" id="ALH-I4-uE5" customClass="CatProductsViewController" customModule="Tatayaba" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductsListViewController" id="ALH-I4-uE5" customClass="CatProductsViewController" customModule="TATAYAB___تطيّب" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sjq-Cp-BxO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e7J-S5-Wr6">
-                                <rect key="frame" x="0.0" y="20" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JAZLEY PERFUMES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3r-Og-etN">
                                         <rect key="frame" x="40" y="8" width="295" height="24"/>
@@ -38,7 +36,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="92z-o3-Ol4">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="jbE-BQ-axa">
                                     <size key="itemSize" width="50" height="50"/>
@@ -65,6 +63,7 @@
                         <outlet property="categoryNameLabel" destination="s3r-Og-etN" id="Xs9-e6-DY7"/>
                         <outlet property="productsCollectionView" destination="92z-o3-Ol4" id="FQA-sx-fMk"/>
                         <segue destination="d0B-yD-4bh" kind="show" identifier="product_details_segue" id="fIf-Rr-DOj"/>
+                        <segue destination="LEC-nR-jgK" kind="push" identifier="search_segue" id="LcB-7d-yWi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BII-o7-ZTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -82,13 +81,13 @@
         <!--Categories View Controller-->
         <scene sceneID="pEE-rE-1yF">
             <objects>
-                <viewController storyboardIdentifier="CategoriesViewController" id="GLN-Po-Fbg" customClass="CategoriesViewController" customModule="Tatayaba" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoriesViewController" id="GLN-Po-Fbg" customClass="CategoriesViewController" customModule="TATAYAB___تطيّب" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tv8-bS-p16">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J5W-Qw-OfE">
-                                <rect key="frame" x="5" y="20" width="365" height="647"/>
+                                <rect key="frame" x="5" y="0.0" width="365" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="m6E-JE-Iwe">
                                     <size key="itemSize" width="100" height="100"/>
@@ -111,6 +110,7 @@
                     <connections>
                         <outlet property="categoriesCollectionView" destination="J5W-Qw-OfE" id="u1J-EM-5hr"/>
                         <segue destination="ALH-I4-uE5" kind="show" identifier="show_products_list_segue" id="MzE-iG-XXN"/>
+                        <segue destination="LEC-nR-jgK" kind="push" identifier="search_segue" id="OlE-Jb-YQj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pum-8p-tzL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -120,13 +120,13 @@
         <!--Supplier Products View Controller-->
         <scene sceneID="v8r-xN-6a8">
             <objects>
-                <viewController storyboardIdentifier="SupplierProductsViewController" id="uHJ-CY-IMq" customClass="SupplierProductsViewController" customModule="Tatayaba" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SupplierProductsViewController" id="uHJ-CY-IMq" customClass="SupplierProductsViewController" customModule="TATAYAB___تطيّب" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m4j-jP-H33">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flA-Dm-Gaq">
-                                <rect key="frame" x="0.0" y="20" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JAZLEY PERFUMES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ad-wf-Gam">
                                         <rect key="frame" x="40" y="8" width="295" height="24"/>
@@ -145,7 +145,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jaB-cG-1b1">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="YGY-hT-0B8">
                                     <size key="itemSize" width="50" height="50"/>
@@ -172,14 +172,26 @@
                         <outlet property="productsCollectionView" destination="jaB-cG-1b1" id="Drh-X9-rq2"/>
                         <outlet property="supplierNameLabel" destination="8ad-wf-Gam" id="knu-5w-sdg"/>
                         <segue destination="d0B-yD-4bh" kind="show" identifier="product_details_segue" id="n7o-Ql-kGT"/>
+                        <segue destination="LEC-nR-jgK" kind="push" identifier="search_segue" id="IM8-ZJ-GB5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ESN-nf-T4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="169" y="735"/>
         </scene>
+        <!--Search-->
+        <scene sceneID="V2i-3C-YCI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Search" id="LEC-nR-jgK" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2fE-cd-bWX"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="acB-WG-RA0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-850" y="701"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="IM8-ZJ-GB5"/>
         <segue reference="n7o-Ql-kGT"/>
     </inferredMetricsTieBreakers>
 </document>

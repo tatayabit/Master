@@ -14,11 +14,13 @@ class CategoriesViewController: BaseViewController, UICollectionViewDelegate, UI
 
     private let viewModel = CategoriesViewModel()
     private let productsListSegue = "show_products_list_segue"
+    private let searchSegue = "search_segue"
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        addSearchBtn()
         setupUI()
         CountrySettings.shared.addDelegate(delegate: self)
         self.categoriesCollectionView.dataSource = self
@@ -37,7 +39,10 @@ class CategoriesViewController: BaseViewController, UICollectionViewDelegate, UI
         self.NavigationBarWithOutBackButton()
         categoriesCollectionView.register(CategoryCollectionViewCell.nib, forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
     }
-
+    
+    @objc func search() {
+       performSegue(withIdentifier: searchSegue, sender: nil)
+    }
     //MARK:- CollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
