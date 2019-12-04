@@ -7,11 +7,11 @@
 //
 
 import UIKit
+import CoreLocation
 
 class HomeViewController: BaseViewController, BannersBlocksViewProtocol, CategoriesBlockViewProtocol, ProductsBlockViewProtocol, SuppliersBlockViewProtocol, FullScreenBannersViewProtocol, CountrySettingsDelegate, CurrencySettingsDelegate {
     
-    
-    
+
     
     func currencyDidChange(to currency: Currency) {
         print("currency changes!!!")
@@ -52,6 +52,8 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     let productsBlocklView248: ProductsBlockView = .fromNib()
     let productsBlocklView265: ProductsBlockView = .fromNib()
     
+    let locationManager = LocationManager()
+    
     
     //MARK:- Life Cycle
     override func viewDidLoad() {
@@ -67,7 +69,8 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         CurrenciesManager.shared.loadCurrenciesList()
         CountrySettings.shared.addDelegate(delegate: self)
         CurrencySettings.shared.addCurrencyDelegate(delegate: self)
-
+        locationManager.delegate = self
+        locationManager.initService()
     }
 
     fileprivate func addBannersSubView() {
@@ -421,5 +424,30 @@ extension HomeViewController {
             }
         }
     }
+}
+
+extension HomeViewController: LocationManagerDelegate {
+    func didDetectCurrentUserLocation(location: CLLocation) {
+        print("current user location: \(location)")
+    }
+    
+    func userLocationDenied() {
+        // initialise a pop up for using later
+        let alertController = UIAlertController(title: "Location Service is disabled", message: "Please go to Settings and turn on the permissions", preferredStyle: .alert)
+        let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                return
+            }
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in })
+             }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        alertController.addAction(cancelAction)
+        alertController.addAction(settingsAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    
 }
 
