@@ -37,6 +37,8 @@ class CountrySettings {
     
     func getGeoReversedCountry(lat: Double = 29.3571553, lng: Double = 47.9945803, completionBlock: (() -> Void)? = nil) {
         let geoCoder = ReverseGeoCoder()
+        let countriesList = CountriesManager.shared.countriesList
+        let currenciesList = CurrenciesManager.shared.currenciesList
         geoCoder.getCountry(lat: lat, lng: lng) { (countryName, error) in
             if error != nil {
                 self.currentCountry = CountriesManager.shared.country(with: countryName)//"Kuwait"
@@ -44,6 +46,15 @@ class CountrySettings {
                     completionBlock()
                 }
                 return
+            }
+            
+            if let index = countriesList.firstIndex(where:{ $0.name == countryName }){
+                if let currency = currenciesList.first(where: {$0.countriesList.contains(countriesList[index].code)}){
+                    CurrencySettings.shared.currentCurrency = currency
+                }
+                if Customer.shared.loggedin {
+                    Customer.shared.removeAddressData()
+                }
             }
             self.currentCountry = CountriesManager.shared.country(with: countryName)
             if let completionBlock = completionBlock {

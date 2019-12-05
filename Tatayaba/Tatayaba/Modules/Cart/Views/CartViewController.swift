@@ -100,7 +100,6 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         }
         
         totalPriceValue = (cart.totalPrice as NSString).floatValue + (shippingValue as NSString).floatValue
-        
         if totalPriceValue >= maxValueToShowTax && maxValueToShowTax != 0 {
             if let customDutiesStringValue = taxValue?.customDuties?.value {
                 if taxValue?.customDuties?.type == "P" {
@@ -442,7 +441,8 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     func loadTaxAndShipping() {
         showLoadingIndicator(to: self.view)
-        viewModel.getTaxAndShipping(countryCode: "KW") { result in
+        let countryCode = CountrySettings.shared.currentCountry?.code ?? "KW"
+        viewModel.getTaxAndShipping(countryCode: countryCode) { result in
             switch result {
             case .success(let taxAndShippingResponse):
                 if let taxAndShippingResponse = taxAndShippingResponse {
@@ -500,6 +500,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             }
         }
     }
+    
     
     @IBAction func applyCouponAction(_ sender: UIButton) {
         if let couponValue = couponTextField.text, couponValue != "" {

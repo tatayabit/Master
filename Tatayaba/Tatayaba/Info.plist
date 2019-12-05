@@ -33,10 +33,10 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>This app wants to take pictures.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app wants to use your photos.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app wants to use your location to select your country automatically.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app wants to use your photos.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Cairo-Regular.ttf</string>
