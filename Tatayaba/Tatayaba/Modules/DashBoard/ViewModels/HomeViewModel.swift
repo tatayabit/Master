@@ -331,5 +331,9 @@ class HomeViewModel {
             }
         }
     }
+    
+    func isCurrentCountrySelected() -> Bool {
+        return CountrySettings.shared.currentCountry != nil
+    }
 }
 

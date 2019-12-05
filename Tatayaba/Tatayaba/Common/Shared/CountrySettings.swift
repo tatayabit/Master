@@ -35,14 +35,20 @@ class CountrySettings {
     private var delegates = [CountrySettingsDelegate]()
     
     
-    func getGeoReversedCountry() {
+    func getGeoReversedCountry(lat: Double = 29.3571553, lng: Double = 47.9945803, completionBlock: (() -> Void)? = nil) {
         let geoCoder = ReverseGeoCoder()
-        geoCoder.getCountry(lat: 29.3571553, lng: 47.9945803) { (countryName, error) in
+        geoCoder.getCountry(lat: lat, lng: lng) { (countryName, error) in
             if error != nil {
                 self.currentCountry = CountriesManager.shared.country(with: countryName)//"Kuwait"
+                if let completionBlock = completionBlock {
+                    completionBlock()
+                }
                 return
             }
             self.currentCountry = CountriesManager.shared.country(with: countryName)
+            if let completionBlock = completionBlock {
+                completionBlock()
+            }
         }
     }
     
@@ -67,7 +73,7 @@ class CountrySettings {
     func loadData() {
         loadCountrySettingsDataFromKeyChain()
         if currentCountry == nil {
-            self.getGeoReversedCountry()
+            self.getGeoReversedCountry(completionBlock: nil)
         }
     }
     
