@@ -61,13 +61,21 @@ class HomeHorizontalLayout: UICollectionViewLayout {
 
     //MARK:- Size calculations
     fileprivate func calculateSizes(_ collectionView: UICollectionView) {
+        
+        let screenSize: CGRect = UIScreen.main.bounds
+        print(screenSize.width)
         // 2
         let columnWidth = superWidth / CGFloat(numberOfColumns) - 8
 
         var yOffset = [CGFloat]()
 
         for row in 0 ..< numberOfRows {
-            yOffset.append(CGFloat(row) * 101.5)
+            if (screenSize.width > 400) {
+                yOffset.append(CGFloat(row) * 101.5)
+            }else{
+                yOffset.append(CGFloat(row) * 93)
+            }
+            
         }
 
         var row = 0
