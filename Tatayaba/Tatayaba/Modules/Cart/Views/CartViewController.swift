@@ -489,10 +489,35 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             self.hideLoadingIndicator(from: self.view)
 
             switch result {
-            case .success:
+            case .success(let convertedPricesResult):
                 if let shippingValue = CountrySettings.shared.shipping?.rateValue {
                     self.shippingValue = shippingValue
                 }
+                
+                if let convertedPrices = convertedPricesResult {
+
+                    print(convertedPrices)
+                    
+                    if var tax = CountrySettings.shared.tax {
+                          // check VAT
+                        if var vat = tax.vat {
+                            if vat.type != "P" {
+                                vat.value = convertedPrices.vatAmount
+                            }
+                        }
+                        
+                        // check CustomDuties
+                        if var customDuties = tax.customDuties {
+                          customDuties.cartTotalThreshold = convertedPrices.cartTotalThreshold
+                          tax.customDuties = customDuties
+                        }
+                        
+                        self.taxValue = tax
+                        self.maxValueToShowTax = ("\(self.taxValue?.customDuties?.cartTotalThreshold ?? "0")" as NSString).floatValue
+                        CountrySettings.shared.updateTax(taxValue: tax)
+                    }
+                }
+
                 self.calculateTotal()
                 
             case .failure(let error):

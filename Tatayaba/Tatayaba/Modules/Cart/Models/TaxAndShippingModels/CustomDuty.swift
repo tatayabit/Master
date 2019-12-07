@@ -6,7 +6,7 @@ import Foundation
 
 struct CustomDuty : Codable {
 
-	let cartTotalThreshold : String?
+    var cartTotalThreshold : String?
 	let type : String?
 	let value : String?
 

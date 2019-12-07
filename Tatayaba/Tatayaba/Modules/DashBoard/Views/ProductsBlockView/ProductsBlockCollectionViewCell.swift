@@ -40,7 +40,7 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         self.layoutIfNeeded()
     }
     func configure(_ product: Product, indexPath: IndexPath) {
-        bannerImageView.sd_setImage(with: URL(string: product.mainPair.detailedPair.imageUrl), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
+        bannerImageView.sd_setImage(with: URL(string: product.mainPair.detailedPair.imageUrl), placeholderImage: UIImage(named: "productPlaceholder"), options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
 
         nameLabel.text = product.supplierName == "None" ? "" : product.supplierName
         descriptionLabel.text = product.name
@@ -71,7 +71,7 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         self.layoutIfNeeded()
     }
     func configureProduct(_ product: Product, indexPath: IndexPath, cellBlockName : String) {
-        bannerImageView.sd_setImage(with: URL(string: product.mainPair.detailedPair.imageUrl), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
+        bannerImageView.sd_setImage(with: URL(string: product.mainPair.detailedPair.imageUrl), placeholderImage: UIImage(named: "productPlaceholder"), options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
 
         nameLabel.text = product.supplierName == "None" ? "" : product.supplierName
         descriptionLabel.text = product.name

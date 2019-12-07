@@ -197,6 +197,26 @@ class CartViewModel {
         }
         var requestJson = [String: Any]()
         
+        if let tax = CountrySettings.shared.tax {
+            // check VAT
+            if let vat = tax.vat {
+                if let vatType = vat.type, vatType != "P" {
+                    requestJson["vat"] = vat.value
+                }
+            }
+            
+            // check CustomDuties
+            if let customDuties = tax.customDuties {
+                if let thresholdString = customDuties.cartTotalThreshold {
+                    let thresholdValue = (thresholdString as NSString).doubleValue
+                    if thresholdValue > 0 {
+                        requestJson["threshold_limit"] = thresholdString
+                    }
+                }
+            }
+        }
+        
+        
         requestJson["products"] = []
         requestJson["shipping_charge"] = shippingRate
         requestJson["to_currency_id"] = CurrencySettings.shared.currentCurrency?.currencyId//currencyId

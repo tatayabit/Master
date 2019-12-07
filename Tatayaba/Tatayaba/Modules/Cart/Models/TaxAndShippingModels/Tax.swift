@@ -6,7 +6,7 @@ import Foundation
 
 struct Tax : Codable {
 
-	let customDuties : CustomDuty?
+    var customDuties : CustomDuty?
 	let vat : Vat?
 
 

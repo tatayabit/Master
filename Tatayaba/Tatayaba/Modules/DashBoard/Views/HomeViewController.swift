@@ -295,7 +295,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated) // No need for semicolon
         self.tabBarController?.tabBar.isHidden = false
-        ValidateVersionVersion()
+//        ValidateVersionVersion()
         
     }
 

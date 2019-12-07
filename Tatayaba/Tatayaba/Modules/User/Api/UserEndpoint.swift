@@ -22,9 +22,10 @@ enum UserEndpoint {
 extension UserEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
-        case .production: return "http://ttm%40tatayab.com:608Wg8D72001FDUFT70F69nbw53KWmR1@tatayab.com/api/"
-        case .qa: return "http://localhost:3000/"
-        case .staging: return "http://localhost:3000/"
+        case .production: return BaseUrls.production
+        case .dev2: return BaseUrls.dev2
+        case .staging: return BaseUrls.staging
+        case .dev3: return BaseUrls.dev3
         }
     }
     
@@ -125,8 +126,15 @@ extension UserEndpoint: TargetType {
     }
     
     var headers: [String : String]? {
+       var authKey = ""
+        switch UserAPIClient.environment {
+        case .production: authKey = Keys.Authorizations.production
+        case .dev2: authKey = Keys.Authorizations.dev2
+        case .staging: authKey = Keys.Authorizations.staging
+        case .dev3: authKey = Keys.Authorizations.dev3
+        }
         return ["Content-type": "application/json",
-                "authorization": "Basic ZGUyQHRhdGF5YWIuY29tOkU5NzBBU3NxMGU5R21TSjJFWDBCTEd2c2tPMlVGODQx=="
+                "authorization": authKey//"Basic ZGUyQHRhdGF5YWIuY29tOkU5NzBBU3NxMGU5R21TSjJFWDBCTEd2c2tPMlVGODQx=="
         ]
     }
     

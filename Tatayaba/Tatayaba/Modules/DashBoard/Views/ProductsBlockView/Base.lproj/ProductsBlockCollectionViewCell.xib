@@ -43,7 +43,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5bD-Qe-4T2">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="productPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="5bD-Qe-4T2">
                         <rect key="frame" x="20" y="5" width="128" height="119"/>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdI-c6-iOC">
@@ -197,4 +197,7 @@
             <point key="canvasLocation" x="265.60000000000002" y="192.95352323838082"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="productPlaceholder" width="80" height="80"/>
+    </resources>
 </document>
