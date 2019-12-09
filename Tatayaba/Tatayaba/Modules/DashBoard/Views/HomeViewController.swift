@@ -44,6 +44,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     
     // Duplicated Products (Will be updated  later)
     let productsBlocklView270: ProductsBlockView = .fromNib()
+    let productsBlocklView293: ProductsBlockView = .fromNib()
     let productsBlocklView305: ProductsBlockView = .fromNib()
     let productsBlocklView267: ProductsBlockView = .fromNib()
     let productsBlocklView297: ProductsBlockView = .fromNib()
@@ -153,24 +154,28 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         self.productsBlocklView270.block = self.viewModel.productsBlocks[1]
         self.productsBlocklView270.loadData()
         
+        self.hideLoadingIndicator(from: self.productsBlocklView293)
+        self.productsBlocklView293.block = self.viewModel.productsBlocks[2]
+        self.productsBlocklView293.loadData()
+                   
         self.hideLoadingIndicator(from: self.productsBlocklView305)
-        self.productsBlocklView305.block = self.viewModel.productsBlocks[2]
+        self.productsBlocklView305.block = self.viewModel.productsBlocks[3]
         self.productsBlocklView305.loadData()
         
         self.hideLoadingIndicator(from: self.productsBlocklView267)
-        self.productsBlocklView267.block = self.viewModel.productsBlocks[3]
+        self.productsBlocklView267.block = self.viewModel.productsBlocks[4]
         self.productsBlocklView267.loadData()
         
         self.hideLoadingIndicator(from: self.productsBlocklView297)
-        self.productsBlocklView297.block = self.viewModel.productsBlocks[4]
+        self.productsBlocklView297.block = self.viewModel.productsBlocks[5]
         self.productsBlocklView297.loadData()
         
         self.hideLoadingIndicator(from: self.productsBlocklView248)
-        self.productsBlocklView248.block = self.viewModel.productsBlocks[5]
+        self.productsBlocklView248.block = self.viewModel.productsBlocks[6]
         self.productsBlocklView248.loadData()
         
         self.hideLoadingIndicator(from: self.productsBlocklView265)
-        self.productsBlocklView265.block = self.viewModel.productsBlocks[6]
+        self.productsBlocklView265.block = self.viewModel.productsBlocks[7]
         self.productsBlocklView265.loadData()
 //
 //        // Will be removed later
@@ -244,6 +249,13 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         productsBlocklView270.titleLabel.text = "PERSONAL CARE".localized()
         self.showLoadingIndicator(to: productsBlocklView270)
         
+        productsBlocklView293.delegate = self
+        scrollView.stackView.addArrangedSubview(productsBlocklView293)
+        productsBlocklView293.translatesAutoresizingMaskIntoConstraints = false
+        productsBlocklView293.heightAnchor.constraint(equalToConstant: 260).isActive = true
+        productsBlocklView293.titleLabel.text = ""
+        self.showLoadingIndicator(to: productsBlocklView293)
+        
         productsBlocklView305.delegate = self
         scrollView.stackView.addArrangedSubview(productsBlocklView305)
         productsBlocklView305.translatesAutoresizingMaskIntoConstraints = false
@@ -295,7 +307,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated) // No need for semicolon
         self.tabBarController?.tabBar.isHidden = false
-//        ValidateVersionVersion()
+        //ValidateVersionVersion()
         
     }
 

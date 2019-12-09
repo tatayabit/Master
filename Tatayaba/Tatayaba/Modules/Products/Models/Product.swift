@@ -47,8 +47,9 @@ struct Product {
     var outOfStockActions: String
     var productStatus: String?
     var hasOptions: Bool
+    var is_free_delivery: String
     
-    init(name: String = "", supplierName: String = "", description: String = "", priceBeforeDiscount: String = "", discountPercentage: String = "", price: String = "0.00", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair(), productOptions: [ProductOption] = [ProductOption](), maxQuantity: String = "0", position: String = "", amount: Int = 0, outOfStockActions: String = "", productStatus: String = "", hasOptions: Bool = false) {
+    init(name: String = "", supplierName: String = "", description: String = "", priceBeforeDiscount: String = "", discountPercentage: String = "", price: String = "0.00", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair(), productOptions: [ProductOption] = [ProductOption](), maxQuantity: String = "0", position: String = "", amount: Int = 0, outOfStockActions: String = "", productStatus: String = "", hasOptions: Bool = false, is_free_delivery: String = "") {
 
         self.name = name
         self.description = description
@@ -67,6 +68,7 @@ struct Product {
         self.outOfStockActions = outOfStockActions
         self.productStatus = productStatus
         self.hasOptions = hasOptions
+        self.is_free_delivery = is_free_delivery
     }
 }
 
@@ -90,6 +92,7 @@ extension Product: Codable {
         case outOfStockActions = "out_of_stock_actions"
         case productStatus = "product_status"
         case hasOptions = "has_options"
+        case is_free_delivery = "is_free_delivery"
     }
 
     init(from decoder: Decoder) throws {
@@ -111,7 +114,7 @@ extension Product: Codable {
         outOfStockActions = try container.decodeIfPresent(String.self, forKey: .outOfStockActions) ?? ""
         productStatus = try container.decodeIfPresent(String.self, forKey: .productStatus) ?? ""
         hasOptions = try container.decodeIfPresent(Bool.self, forKey: .hasOptions) ?? false
-        
+        is_free_delivery = try container.decodeIfPresent(String.self, forKey: .is_free_delivery) ?? ""
         var amountVal = 0
         if let amountString = try container.decodeIfPresent(String.self, forKey: .amount) {
             amountVal = Int(amountString) ?? 0
@@ -174,6 +177,7 @@ extension Product: Codable {
         try container.encodeIfPresent(amount, forKey: .amount)
         try container.encodeIfPresent(productStatus, forKey: .productStatus)
         try container.encodeIfPresent(hasOptions, forKey: .hasOptions)
+        try container.encodeIfPresent(is_free_delivery, forKey: .is_free_delivery)
     }
 }
 

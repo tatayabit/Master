@@ -88,7 +88,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F62F69FF-4150-4647-AC0C-118530783DC0"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tatayaba/Modules/VersionChecking/Api/VersionValidationEndpoint.swift"
@@ -98,22 +98,6 @@
             endingLineNumber = "48"
             landmarkName = "sampleData"
             landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "716E0A56-19E8-4BE0-830B-D202946D70BC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/ViewModel/CartViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
-            landmarkName = "getConvertingCurrencyJsonString(with:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -437,38 +421,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D6118411-F936-4CAC-925E-94652CEA6D5A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/CheckOut/Views/CheckOutViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "setupUI()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9E6E778C-BE0F-47A6-8967-2FEFC021BD2A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/CheckOut/Views/CheckOutViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "setupUI()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "664352C1-C8FD-4BC1-BFC3-A9DBF10A4658"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -543,22 +495,6 @@
                   offsetFromSymbolStart = "644">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DC28CC7B-4D66-4E9C-8278-FA8226FC5E04"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Common/Network/APIClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "fetch(with:completion:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -772,22 +708,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B302721E-66B7-4C8F-8A77-22409A3BA4EB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Products/Views/CatProductsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "53D16B10-E9D3-44D1-B8C4-BD79E7642B81"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -900,22 +820,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4B2A0951-E010-4E43-9E61-7BB607ED48B5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/CheckOut/Views/CheckOutViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "3C8BD9D6-D707-4801-A1F9-C116B8675F11"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -964,118 +868,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0C30AE81-E55F-4C5D-92B0-AF9B63DED1A5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/Views/CartViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "456"
-            endingLineNumber = "456"
-            landmarkName = "loadTaxAndShipping()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1F354472-D14F-42AB-8AE4-1B76EE4DB26D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/Views/CartViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "454"
-            endingLineNumber = "454"
-            landmarkName = "loadTaxAndShipping()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F360B886-F8D5-45BE-9C22-6CBF3862E13C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/Views/CartViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "449"
-            endingLineNumber = "449"
-            landmarkName = "loadTaxAndShipping()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F360B886-F8D5-45BE-9C22-6CBF3862E13C - 302e2bfbe106c352"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.CartViewController.loadTaxAndShipping() -&gt; ()"
-                  moduleName = "TATAYAB - &#x62a;&#x637;&#x64a;&#x651;&#x628;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Tatyab/Master/Tatayaba/Tatayaba/Modules/Cart/Views/CartViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "449"
-                  endingLineNumber = "449"
-                  offsetFromSymbolStart = "648">
-               </Location>
-               <Location
-                  uuid = "F360B886-F8D5-45BE-9C22-6CBF3862E13C - 8c37785bc0162206"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.TaxAndShippingResponse&gt;, Moya.MoyaError&gt;) -&gt; () in TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.CartViewController.loadTaxAndShipping() -&gt; ()"
-                  moduleName = "TATAYAB - &#x62a;&#x637;&#x64a;&#x651;&#x628;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Tatyab/Master/Tatayaba/Tatayaba/Modules/Cart/Views/CartViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "451"
-                  endingLineNumber = "451"
-                  offsetFromSymbolStart = "184">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "89180E6C-3B5E-4C08-BD28-49B2C1B93864"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/Views/CartViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "reloadUIData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A1392A6C-C94C-4C01-BA10-B789365649CB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Common/Network/APIClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "fetch(with:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "634C1315-F24A-4334-86CA-9B46A9075DAD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1092,16 +884,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DAED7F0F-62A5-4B57-A753-EDD835A9BC05"
+            uuid = "3AAD47DB-DC95-4117-A189-68ECBD991BD1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/Api/CartAPIClient.swift"
+            filePath = "Tatayaba/Modules/CheckOut/Cells/PaymentMethodTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "getPricesWithUpdatedCurrency(parameters:completion:)"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "customConfigure(payment:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "Order Number: # 50001"; ObjectID = "3sH-Xv-YsG"; */
+"3sH-Xv-YsG.text" = "Order Number: # 50001";
+
+/* Class = "UINavigationItem"; title = "TATAYAB"; ObjectID = "5Zc-2H-YFY"; */
+"5Zc-2H-YFY.title" = "TATAYAB";
+
+/* Class = "UILabel"; text = "Saturday ,March 26"; ObjectID = "9Zx-z2-ysY"; */
+"9Zx-z2-ysY.text" = "Saturday ,March 26";
+
+/* Class = "UINavigationItem"; title = "TATAYAB"; ObjectID = "GsK-Xn-94L"; */
+"GsK-Xn-94L.title" = "TATAYAB";
+
+/* Class = "UILabel"; text = "Order Date"; ObjectID = "OlL-hE-wLq"; */
+"OlL-hE-wLq.text" = "Order Date";
+
+/* Class = "UIButton"; normalTitle = "PAY NOW"; ObjectID = "RgV-Yr-ArJ"; */
+"RgV-Yr-ArJ.normalTitle" = "ادفع حالا";
+
+/* Class = "UIButton"; normalTitle = "VIEW OR MANAGE ORDER"; ObjectID = "fL2-6x-DVA"; */
+"fL2-6x-DVA.normalTitle" = "VIEW OR MANAGE ORDER";
+
+/* Class = "UILabel"; text = "Your Smart box is on the way!"; ObjectID = "gzj-a1-yeI"; */
+"gzj-a1-yeI.text" = "Your Smart box is on the way!";
+
+/* Class = "UILabel"; text = "SECURE CHECKOUT"; ObjectID = "ibO-EQ-sMv"; */
+"ibO-EQ-sMv.text" = "SECURE CHECKOUT";
+
+/* Class = "UILabel"; text = "Order Number: # 50001"; ObjectID = "pyx-15-Bth"; */
+"pyx-15-Bth.text" = "Order Number: # 50001";

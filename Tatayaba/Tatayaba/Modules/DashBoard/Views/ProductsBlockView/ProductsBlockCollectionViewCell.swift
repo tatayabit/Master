@@ -20,8 +20,10 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var outOfStockLabel: UILabel!
+    @IBOutlet weak var freeDeliveryLabel: UILabel!
     @IBOutlet weak var discountPercentageLabel: UILabel!
     @IBOutlet weak var addToCartButton: UIButton!
+    
 
     var indexPath: IndexPath = IndexPath(item: 0, section: 0)
     weak var delegate: ProductsBlockCollectionViewCellDelegate?
@@ -32,6 +34,8 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         outOfStockLabel.text = "Out of stock"
+        freeDeliveryLabel.text = "free Delivery".localized()
+        
         self.discountPercentageLabel.isHidden = true
     }
 
@@ -46,6 +50,12 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         descriptionLabel.text = product.name
         priceLabel.text = product.price.formattedPrice
         outOfStockLabel.isHidden = product.isInStock
+        if(product.is_free_delivery == "Y"){
+            freeDeliveryLabel.isHidden = false
+        }else{
+            freeDeliveryLabel.isHidden = true
+        }
+        freeDeliveryLabel.sizeToFit()
         self.discountPercentageLabel.text = product.discountPercentage + "%\nOFF"
         
         
@@ -77,6 +87,12 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         descriptionLabel.text = product.name
         priceLabel.text = product.price.formattedPrice
         outOfStockLabel.isHidden = product.isInStock
+        if(product.is_free_delivery == "Y"){
+            freeDeliveryLabel.isHidden = false
+        }else{
+            freeDeliveryLabel.isHidden = true
+        }
+        freeDeliveryLabel.sizeToFit()
         self.discountPercentageLabel.text = product.discountPercentage + "%\nOFF"
         
         

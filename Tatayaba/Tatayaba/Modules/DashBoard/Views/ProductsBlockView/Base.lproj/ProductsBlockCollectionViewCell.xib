@@ -136,6 +136,16 @@
                         <color key="textColor" red="0.67843137254901964" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Free Delivery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgI-pV-f1l">
+                        <rect key="frame" x="89" y="108" width="62" height="14"/>
+                        <color key="backgroundColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="0.41177926939999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="h2G-LZ-8xz"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="8"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Out of stock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5I-jM-puR">
                         <rect key="frame" x="22" y="108" width="55" height="14"/>
                         <color key="backgroundColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="0.41177926936619719" colorSpace="custom" customColorSpace="sRGB"/>
@@ -154,6 +164,8 @@
                 <constraint firstItem="lJx-Wu-3a2" firstAttribute="bottom" secondItem="Ndg-qA-zgg" secondAttribute="bottom" id="0yt-mV-nYP"/>
                 <constraint firstItem="lJx-Wu-3a2" firstAttribute="top" secondItem="H7V-tf-fQL" secondAttribute="bottom" constant="2" id="ENE-ld-QZz"/>
                 <constraint firstAttribute="trailing" secondItem="H7V-tf-fQL" secondAttribute="trailing" constant="7" id="FYb-J2-8ch"/>
+                <constraint firstItem="cgI-pV-f1l" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="P5I-jM-puR" secondAttribute="trailing" id="HiC-R9-NW9"/>
+                <constraint firstItem="cgI-pV-f1l" firstAttribute="bottom" secondItem="P5I-jM-puR" secondAttribute="bottom" id="I4X-im-6wf"/>
                 <constraint firstItem="P5I-jM-puR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ljt-Oo-7wO"/>
                 <constraint firstItem="5M2-iy-DXo" firstAttribute="centerX" secondItem="Ndg-qA-zgg" secondAttribute="centerX" id="Lq7-VC-hd2"/>
                 <constraint firstItem="5M2-iy-DXo" firstAttribute="centerY" secondItem="Ndg-qA-zgg" secondAttribute="centerY" id="M7s-I7-EFc"/>
@@ -161,6 +173,7 @@
                 <constraint firstAttribute="trailing" secondItem="hOq-pl-Bgm" secondAttribute="trailing" constant="7" id="OKf-Xh-7TN"/>
                 <constraint firstItem="Ndg-qA-zgg" firstAttribute="bottom" secondItem="rcq-m0-cLY" secondAttribute="bottom" constant="-2" id="OMH-P7-s7A"/>
                 <constraint firstItem="rcq-m0-cLY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="3" id="Op9-JS-iAF"/>
+                <constraint firstItem="P5I-jM-puR" firstAttribute="top" secondItem="cgI-pV-f1l" secondAttribute="top" id="PgF-2H-rim"/>
                 <constraint firstItem="uau-dH-D7f" firstAttribute="top" secondItem="P5I-jM-puR" secondAttribute="bottom" constant="4" id="SUx-eF-Bex"/>
                 <constraint firstItem="Ndg-qA-zgg" firstAttribute="trailing" secondItem="rcq-m0-cLY" secondAttribute="trailing" constant="-2" id="UFt-wk-jrL"/>
                 <constraint firstItem="5bD-Qe-4T2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="UUM-bL-YAH"/>
@@ -174,6 +187,7 @@
                 <constraint firstAttribute="trailing" secondItem="rcq-m0-cLY" secondAttribute="trailing" constant="3" id="cyn-YO-cEo"/>
                 <constraint firstItem="hOq-pl-Bgm" firstAttribute="top" secondItem="uau-dH-D7f" secondAttribute="bottom" constant="3" id="fKV-ii-AH0"/>
                 <constraint firstItem="lJx-Wu-3a2" firstAttribute="top" secondItem="Ndg-qA-zgg" secondAttribute="top" id="iJo-54-CIy"/>
+                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="cgI-pV-f1l" secondAttribute="trailing" constant="17" id="jPg-f2-QLp"/>
                 <constraint firstAttribute="bottom" secondItem="rcq-m0-cLY" secondAttribute="bottom" constant="3" id="kKf-np-foP"/>
                 <constraint firstItem="Ndg-qA-zgg" firstAttribute="leading" secondItem="lJx-Wu-3a2" secondAttribute="trailing" constant="2" id="plK-Ct-Fkb"/>
                 <constraint firstItem="H7V-tf-fQL" firstAttribute="top" secondItem="hOq-pl-Bgm" secondAttribute="bottom" constant="3" id="qYt-Xi-Fti"/>
@@ -190,6 +204,7 @@
                 <outlet property="bannerImageView" destination="5bD-Qe-4T2" id="NYL-dp-Rqe"/>
                 <outlet property="descriptionLabel" destination="hOq-pl-Bgm" id="4XB-we-cX1"/>
                 <outlet property="discountPercentageLabel" destination="wdI-c6-iOC" id="NaZ-d9-6le"/>
+                <outlet property="freeDeliveryLabel" destination="cgI-pV-f1l" id="vv2-i3-Lgo"/>
                 <outlet property="nameLabel" destination="uau-dH-D7f" id="GJL-t7-xm9"/>
                 <outlet property="outOfStockLabel" destination="P5I-jM-puR" id="ssG-c6-gTi"/>
                 <outlet property="priceLabel" destination="H7V-tf-fQL" id="1mc-QD-9uN"/>
