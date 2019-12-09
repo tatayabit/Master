@@ -95,7 +95,8 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
             //         self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
             self.showLoadingIndicator(to: self.view)
             if let user = Customer.shared.user {
-                viewModel.placeOrder(userData: user, notes: notesTxtView.text) { result in
+
+                viewModel.placeOrder(userData: user, notes: (notesTxtView.text == "Your Notes".localized()) ? "" : notesTxtView.text) { result in
                     self.hideLoadingIndicator(from: self.view)
                     switch result {
                     case .success(let response):
