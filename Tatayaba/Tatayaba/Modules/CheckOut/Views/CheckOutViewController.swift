@@ -21,7 +21,7 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
     let paymentWebViewSegue = "payment_web_view_segue"
     
     enum sectionType: Int {
-        case payment = 0, address
+        case payment = 0, address = 1 , financial
     }
     
     override func viewDidLoad() {
@@ -70,6 +70,7 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
         }
         self.paymentTableView.register(PaymentMethodTableViewCell.nib, forCellReuseIdentifier: PaymentMethodTableViewCell.identifier)
         self.paymentTableView.register(CheckoutAddressTableViewCell.nib, forCellReuseIdentifier: CheckoutAddressTableViewCell.identifier)
+        self.paymentTableView.register(FinancialTableViewCell.nib, forCellReuseIdentifier: FinancialTableViewCell.identifier)
     }
     
     func validationFailed(_ errors: [(Validatable, ValidationError)]) {
@@ -156,7 +157,7 @@ extension CheckOutViewController {
         //        if viewModel.pricingList.count > 0 {
         //            return 2
         //        }
-        return 2
+        return 3
     }
     
     // MARK:- UITableViewDelegate - Cell
@@ -181,6 +182,8 @@ extension CheckOutViewController {
             return 60
         case sectionType.address.rawValue:
             return 100
+        case sectionType.financial.rawValue:
+            return 60
         default: return 0
         }
     }
@@ -191,6 +194,8 @@ extension CheckOutViewController {
             return viewModel.paymentMethods.count
         case sectionType.address.rawValue:
             return 1
+        case sectionType.financial.rawValue:
+            return 2
         default: return 0
         }
     }
@@ -202,6 +207,8 @@ extension CheckOutViewController {
             
         case sectionType.address.rawValue:
             return getAddressCell(tableView: tableView, indexPath: indexPath)
+        case sectionType.financial.rawValue:
+            return getFinancialCell(tableView: tableView, indexPath: indexPath)
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: PaymentMethodTableViewCell.identifier, for: indexPath) as! PaymentMethodTableViewCell
             return cell
@@ -213,6 +220,14 @@ extension CheckOutViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: PaymentMethodTableViewCell.identifier, for: indexPath) as! PaymentMethodTableViewCell
         
         cell.configure(payment: viewModel.paymentMethods[indexPath.row])
+        return cell
+    }
+    
+    // MARK:- FinancialViewCell
+    func getFinancialCell(tableView: UITableView, indexPath: IndexPath) -> FinancialTableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: FinancialTableViewCell.identifier, for: indexPath) as! FinancialTableViewCell
+        cell.configure(number:indexPath.row)
+        cell.isUserInteractionEnabled = false
         return cell
     }
     

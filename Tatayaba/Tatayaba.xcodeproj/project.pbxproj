@@ -284,6 +284,8 @@
 		84BC08A622DC972300C6180E /* RecommendedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BC08A522DC972300C6180E /* RecommendedCollectionViewCell.xib */; };
 		9F7E463258DFBE1064395C51 /* Pods_TatayabaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */; };
 		D519D8A8239CFB080026DD97 /* CheckOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D519D8AA239CFB080026DD97 /* CheckOut.storyboard */; };
+		D5643AA5239E761E00885FD3 /* FinancialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5643AA3239E761E00885FD3 /* FinancialTableViewCell.swift */; };
+		D5643AA6239E761E00885FD3 /* FinancialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5643AA4239E761E00885FD3 /* FinancialTableViewCell.xib */; };
 		D5B71207238E1420006BD0DD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B71206238E1420006BD0DD /* SearchViewController.swift */; };
 		D5B71209238E14E0006BD0DD /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B71208238E14E0006BD0DD /* Search.storyboard */; };
 		D5B7120E23903795006BD0DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5B7121023903795006BD0DD /* InfoPlist.strings */; };
@@ -602,6 +604,8 @@
 		B55E5C982ED14B5FEE4DCD1D /* Pods-TatayabaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaUITests.debug.xcconfig"; path = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D519D8AC239CFB0E0026DD97 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/CheckOut.strings; sourceTree = "<group>"; };
 		D519D8AD239CFB2D0026DD97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CheckOut.storyboard; sourceTree = "<group>"; };
+		D5643AA3239E761E00885FD3 /* FinancialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialTableViewCell.swift; sourceTree = "<group>"; };
+		D5643AA4239E761E00885FD3 /* FinancialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinancialTableViewCell.xib; sourceTree = "<group>"; };
 		D5B71206238E1420006BD0DD /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D5B71208238E14E0006BD0DD /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		D5B7120F23903795006BD0DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -1353,6 +1357,8 @@
 				11D842582336A86200F732F9 /* PaymentMethodTableViewCell.xib */,
 				1113A7992329698200FAAC7F /* CheckoutAddressTableViewCell.swift */,
 				1113A79A2329698200FAAC7F /* CheckoutAddressTableViewCell.xib */,
+				D5643AA3239E761E00885FD3 /* FinancialTableViewCell.swift */,
+				D5643AA4239E761E00885FD3 /* FinancialTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2390,6 +2396,7 @@
 				11FB5870231D5EFF005DA4F0 /* SuppliersBlockCollectionViewCell.xib in Resources */,
 				847CDE8722CA19EE00E67C8C /* ProximaNova-Semibold.ttf in Resources */,
 				11D84249233620D400F732F9 /* User.storyboard in Resources */,
+				D5643AA6239E761E00885FD3 /* FinancialTableViewCell.xib in Resources */,
 				11FB5874231D5F1C005DA4F0 /* SuppliersBlockView.xib in Resources */,
 				11081EFD22DB8F5500B68EA5 /* ProfileDetailsView.xib in Resources */,
 				11D4E6A12312FCDB00226A23 /* FullScreenBannersView.xib in Resources */,
@@ -2643,6 +2650,7 @@
 				112654A922D25E5B00904FB5 /* SignUpResponse.swift in Sources */,
 				11D4E69F2312FC5500226A23 /* FullScreenBannersView.swift in Sources */,
 				11945BBB22F0B08D000F08DC /* CheckOutViewController.swift in Sources */,
+				D5643AA5239E761E00885FD3 /* FinancialTableViewCell.swift in Sources */,
 				11D4917722CBC3BB009D8B23 /* UIColor+Extension.swift in Sources */,
 				116C936322F0930300921893 /* OrdersEndpoint.swift in Sources */,
 				11624ECF230C454A00E81ABD /* BlockProduct.swift in Sources */,

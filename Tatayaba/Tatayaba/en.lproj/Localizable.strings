@@ -17,6 +17,8 @@
 "Coupon"="Discount";
 "items"="items";
 "Cart Total"="Cart Total";
+"Total"="Total";
+"Payment surcharge"="Payment surcharge";
 
 // Login
 "Email"="Email";

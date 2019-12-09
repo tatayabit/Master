@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -49,7 +49,7 @@
         <!--CART-->
         <scene sceneID="WlR-5y-WeC">
             <objects>
-                <viewController storyboardIdentifier="NewCartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jjl-9Q-NrU" customClass="CartViewController" customModule="Tatayab___Testing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewCartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jjl-9Q-NrU" customClass="CartViewController" customModule="TATAYAB___تطيّب" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zkh-rZ-djh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -102,7 +102,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="445"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CartTableViewCell" rowHeight="111" id="QE9-ah-kei" customClass="CartTableViewCell" customModule="Tatayab___Testing" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CartTableViewCell" rowHeight="111" id="QE9-ah-kei" customClass="CartTableViewCell" customModule="TATAYAB___تطيّب" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="111"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QE9-ah-kei" id="j07-hG-qqI">

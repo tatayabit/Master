@@ -17,6 +17,8 @@
 "Coupon"="خصم";
 "items"="أصناف";
 "Cart Total"="المجموع الكلي";
+"Total"="المجموع الكلي";
+"Payment surcharge"="الرسوم الإضافية";
 
 // Login
 "Email"="البريد الالكتروني";
