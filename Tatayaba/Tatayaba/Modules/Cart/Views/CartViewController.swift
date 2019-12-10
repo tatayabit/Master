@@ -44,7 +44,11 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     private let checkoutSegue = "checkout_segue"
     let cartClass: CartPricingItems = CartPricingItems()
     var promotionData : PromotionData?
-    
+    var totalPriceValueRounded:Float = 0.0 {
+        didSet {
+            cart.totalPriceValueRounded = totalPriceValueRounded
+        }
+    }
     let resetVCNotification = "resetVCNotification"
     
     enum sectionType: Int {
@@ -156,7 +160,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             }
         }
         
-        let totalPriceValueRounded = (totalPriceValue * 100).rounded() / 100
+        totalPriceValueRounded = (totalPriceValue * 100).rounded() / 100
         
         totalPriceLabel.text = "\(totalPriceValueRounded)".formattedPrice
         viewModel.loadPricingListContent(couponValue: couponTitleValue, taxValue: taxValue, shippingValue: shippingValue)
@@ -226,7 +230,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             }
         }
         
-        let totalPriceValueRounded = (totalPriceValue * 100).rounded() / 100
+        totalPriceValueRounded = (totalPriceValue * 100).rounded() / 100
         
         totalPriceLabel.text = "\(totalPriceValueRounded)".formattedPrice
         viewModel.loadPricingListContent(couponValue: couponTitleValue, taxValue: taxValue, shippingValue: shippingValue, freeShipping: true)
@@ -234,6 +238,9 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         totalTitleLabel.attributedText = attributedTotalTitle(text: totalItemsText)
     }
     
+    public func getCalculatedTotal() -> Float {
+        return self.totalPriceValueRounded
+    }
     private func hasFreeShippingDiscount() -> Bool {
         if let promotionData = promotionData {
             if let promotionName = promotionData.promoName {

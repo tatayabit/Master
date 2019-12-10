@@ -30,7 +30,8 @@ class FinancialTableViewCell: UITableViewCell {
             valueLabel.text = viewModal.cart.paymentMethod?.fSurcharge
         }else if (number == 1){
             keyLabel.text = "Total".localized()
-            valueLabel.text = viewModal.totalValue
+            let value = (viewModal.cart.paymentMethod?.fSurcharge?.floatValue ?? 0.0) + viewModal.cart.totalPriceValueRounded
+            valueLabel.text = String(value).formattedPrice
         }else{
             print("Error in FinancialTableViewCell ")
         }

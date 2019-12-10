@@ -18,12 +18,14 @@ class Cart {
     var productsCount: Int { return cartItemsArr.count }
     var subtotalPrice: String { return String(self.calculateSubTotal()).formattedPrice }
     var totalPrice: String { return String(self.calculateTotal()).formattedPrice }
-    
+    var totalPriceValueRounded : Float = 0.0
     var isOneClickBuy: Bool = false
     var couponCode: String = ""
     
     
     //MARK:- Operational functions
+    
+    
     func addProduct(product: Product, quantity: Int = 1, options: [CartItemOptions]? = nil) {
         if productExistedInCart(product: product) {
             let cartItem = self.cartItem(for: product, options: options)
