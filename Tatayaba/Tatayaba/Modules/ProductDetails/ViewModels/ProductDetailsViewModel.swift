@@ -138,6 +138,11 @@ class ProductDetailsViewModel {
         return self.product.productOptions[section - 1]
     }
     
+    func isSelectedSection(section: Int) -> Bool {
+        let foundOptions = self.selectedOptions.filter{ $0.section == section }
+        return foundOptions.count > 0
+    }
+    
     //MARK:- Product Options variants
     func numberOfVariants(at section: Int) -> Int {
         // first row always not options section
