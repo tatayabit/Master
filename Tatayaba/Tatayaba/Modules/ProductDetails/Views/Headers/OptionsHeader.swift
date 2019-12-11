@@ -9,7 +9,7 @@
 import UIKit
 
 protocol OptionsHeaderDelegate: class {
-    func toggleSection(header: OptionsHeader, section: Int)
+    func toggleSection(section: Int)
 }
 
 class OptionsHeader: UITableViewHeaderFooterView {
@@ -22,14 +22,15 @@ class OptionsHeader: UITableViewHeaderFooterView {
     
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var arrowImageView: UIImageView!
-    
+    @IBOutlet weak private var selectedImageView: UIImageView!
+
     //MARK:- Initialize
     override func awakeFromNib() {
         super.awakeFromNib()
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapHeader)))
     }
     
-    func configure(titleObj: String?, itemObj: HeaderItem, sectionObj: Int, required: Bool) {
+    func configure(titleObj: String?, itemObj: HeaderItem, sectionObj: Int, required: Bool, selected: Bool) {
         
 //        titleLabel.text = titleObj?.uppercased()
         titleLabel.attributedText = getTitle(title: titleObj ?? "", required: required)
@@ -38,6 +39,7 @@ class OptionsHeader: UITableViewHeaderFooterView {
         
         arrowImageView.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        selectedImageView.isHidden = !selected
     }
     
     fileprivate func getTitle(title: String, required: Bool) -> NSAttributedString {
@@ -51,7 +53,7 @@ class OptionsHeader: UITableViewHeaderFooterView {
 
     //MARK: - Actions
     @objc private func didTapHeader() {
-        delegate?.toggleSection(header: self, section: section)
+        delegate?.toggleSection(section: section)
     }
     
     func callTapAction() {

@@ -239,6 +239,7 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
             guard let viewModel = viewModel else { return }
             viewModel.didSelectOption(at: indexPath)
             product_Tableview.reloadData()
+            toggleSection(section: indexPath.section)
         }
     }
     
@@ -272,7 +273,7 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
                 let option = viewModel.optionHeader(at: section)
                 let required = option.required == "Y"
                 
-                headerView.configure(titleObj: option.name, itemObj: item, sectionObj: section, required: required)
+                headerView.configure(titleObj: option.name, itemObj: item, sectionObj: section, required: required, selected: viewModel.isSelectedSection(section: section))
                 headerView.delegate = self
                 return headerView
             }
@@ -281,7 +282,7 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
         return UIView()
     }
     
-    func toggleSection(header: OptionsHeader, section: Int) {
+    func toggleSection(section: Int) {
         let item = headerItems[section]
         if item.isCollapsible {
             

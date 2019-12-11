@@ -6,12 +6,12 @@
 //  Copyright © 2019 Shaik. All rights reserved.
 //
 
-struct CartItemOptions {
+struct CartItemOptions: Codable {
     var optionId: String
     var variantId: String
 }
 
-class CartItem {
+class CartItem: Codable {
     var productId: String
     var productName: String
     var options: [CartItemOptions]?

@@ -119,6 +119,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         CurrencySettings.shared.loadData()
         MOLH.shared.activate(true)
         setupGlobalAppearance()
+        loadCartData()
+    }
+    
+    private func loadCartData() {
+        Cart.shared.loadDataFromCaching()
     }
 }
 
