@@ -23,6 +23,32 @@ class Cart {
     var couponCode: String = ""
     
     
+    //MARK:- LoadDataFromCaching
+    func loadDataFromCaching() {
+        let cartSaving = CartSaving()
+
+        if let cartList = cartSaving.loadCartItemsFromKeyChain() {
+            self.cartItemsArr = cartList
+        }
+        
+        if let cartProducts = cartSaving.loadCartProductsFromKeyChain() {
+            self.productsArr = cartProducts
+        }
+        
+        if let payment = cartSaving.loadPaymentMethodFromKeyChain() {
+            self.paymentMethod = payment
+        }
+    }
+    
+    //MARK:- SaveCartToCaching
+    func saveCartToCaching() {
+        let cartSaving = CartSaving()
+
+        cartSaving.saveProducts(products: self.productsArr)
+        cartSaving.saveCartItems(cartItems: self.cartItemsArr)
+        cartSaving.savePaymentMethod(method: self.paymentMethod)
+    }
+    
     //MARK:- Operational functions
     
     
@@ -43,6 +69,7 @@ class Cart {
             productsArr.append(product)
         }
         updateTabBarCount()
+        saveCartToCaching()
     }
 
     func cartItem(for product: Product, options: [CartItemOptions]?) -> CartItem {
@@ -53,16 +80,19 @@ class Cart {
         cartItemsArr.remove(at: indexPath.row)
         productsArr.remove(at: indexPath.row)
         updateTabBarCount()
+        saveCartToCaching()
     }
 
     func increaseCount(cartItem: CartItem, quantity: Int) {
         cartItem.increaseCount(by: quantity)
         updateTabBarCount()
+        saveCartToCaching()
     }
 
     func decreaseCount(cartItem: CartItem) {
         cartItem.decreaseCount(by: 1)
         updateTabBarCount()
+        saveCartToCaching()
     }
 
     func product(at indexPath: IndexPath) -> (Product, CartItem) {
@@ -144,5 +174,6 @@ class Cart {
         self.paymentMethod = nil
         self.couponCode = ""
         updateTabBarCount()
+//        saveCartToCaching()
     }
 }

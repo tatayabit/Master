@@ -116,13 +116,22 @@ extension Product: Codable {
         hasOptions = try container.decodeIfPresent(Bool.self, forKey: .hasOptions) ?? false
         is_free_delivery = try container.decodeIfPresent(String.self, forKey: .is_free_delivery) ?? ""
         var amountVal = 0
-        if let amountString = try container.decodeIfPresent(String.self, forKey: .amount) {
-            amountVal = Int(amountString) ?? 0
-        } else if let amountInt = try container.decodeIfPresent(Int.self, forKey: .amount) {
-            amountVal = Int(amountInt)
+        do {
+            let amountInt = try? container.decodeIfPresent(Int.self, forKey: .amount)
+            if let amountInt = amountInt {
+                amountVal = amountInt ?? 0
+            }
         }
         
+        do {
+            let amountString = try? container.decodeIfPresent(String.self, forKey: .amount)
+            if let amountString = amountString {
+                amountVal = Int(amountString ?? "0") ?? 0
+            }
+        }
+       
         amount = amountVal
+
         
         var idVal = ""
         if let identifierString = try? container.decode(String.self, forKey: .identifier) {
