@@ -86,6 +86,7 @@ extension ProductsEndpoint: TargetType {
             if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
                 currencyId = countryCurrency
             }
+            print(LanguageManager.getLanguage())
             return .requestParameters(parameters: ["currency_id": currencyId.urlEscaped,
                                                    "lang_code": LanguageManager.getLanguage()
             ], encoding: URLEncoding.default)
