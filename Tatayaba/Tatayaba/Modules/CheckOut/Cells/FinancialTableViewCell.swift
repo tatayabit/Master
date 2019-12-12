@@ -27,14 +27,73 @@ class FinancialTableViewCell: UITableViewCell {
     func configure(number: Int) {
         if (number == 0){
             keyLabel.text = "Payment surcharge".localized()
-            valueLabel.text = viewModal.cart.paymentMethod?.fSurcharge
+            getSurchargeValue { surChargeValue in
+                self.valueLabel.text = "\(surChargeValue)"//viewModal.cart.paymentMethod?.fSurcharge
+            }
         }else if (number == 1){
             keyLabel.text = "Total".localized()
-            let value = (viewModal.cart.paymentMethod?.fSurcharge?.floatValue ?? 0.0) + viewModal.cart.totalPriceValueRounded
-            valueLabel.text = String(value).formattedPrice
+            getSurchargeValue { surChargeValue in
+                let value = surChargeValue + self.viewModal.cart.totalPriceValueRounded
+                self.valueLabel.text = String(value).formattedPrice
+            }
         }else{
             print("Error in FinancialTableViewCell ")
         }
         
+    }
+    
+    func getSurchargeValue(completion:((Float) -> ())?) {
+        let objCurrency = CurrencySettings.shared.kuwaitiDinarCurrency
+        let currencyCode = objCurrency?.currencyCode
+        
+        var surchargeFinal = 0.00
+        
+        if let  payment = Cart.shared.paymentMethod {
+            if (currencyCode != "KD") {
+                if let surcharge = payment.fSurcharge,let surchargeValue = Double(surcharge) {
+                         
+                    if (surchargeValue > 0) {
+                        viewModal.getConvertedPricesWithUpdatedCurrency(value: surchargeValue){result in
+                                              
+                            switch result {
+                            case .success(let convertedPricesResult):
+                                                 
+                                if let convertedPrices = convertedPricesResult {
+                                    surchargeFinal = (convertedPrices.shippingCharge as NSString).doubleValue
+                                }
+                            case .failure(let error):
+                                print("the error \(error)")
+                            }
+                            if let completion = completion {
+                                completion(Float(surchargeFinal))
+                            }
+                        }
+                    } else {
+                        if let completion = completion {
+                            completion(Float(surchargeFinal))
+                        }
+                    }
+                } else {
+                    if let completion = completion {
+                        completion(Float(surchargeFinal))
+                    }
+                }
+            }else {
+
+               if let surcharge = payment.fSurcharge,let surchargeValue = Double(surcharge) {
+                   if (surchargeValue > 0) {
+                        surchargeFinal = surchargeValue
+                   }
+               }
+                
+                if let completion = completion {
+                    completion(Float(surchargeFinal))
+                }
+            }
+        } else {
+            if let completion = completion {
+                completion(Float(surchargeFinal))
+            }
+        }
     }
 }
