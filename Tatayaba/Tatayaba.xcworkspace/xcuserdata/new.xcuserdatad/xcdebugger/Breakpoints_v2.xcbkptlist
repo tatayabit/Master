@@ -96,7 +96,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
                   endingLineNumber = "33"
-                  offsetFromSymbolStart = "160">
+                  offsetFromSymbolStart = "187">
                </Location>
                <Location
                   uuid = "D4FCE505-85C6-4DCB-A1AE-1CC161E31F97 - c82e94d646edd162"
@@ -111,7 +111,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
                   endingLineNumber = "33"
-                  offsetFromSymbolStart = "188">
+                  offsetFromSymbolStart = "222">
                </Location>
                <Location
                   uuid = "D4FCE505-85C6-4DCB-A1AE-1CC161E31F97 - c82e94d646edd162"
@@ -126,7 +126,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
                   endingLineNumber = "33"
-                  offsetFromSymbolStart = "1044">
+                  offsetFromSymbolStart = "1215">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -159,7 +159,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
                   endingLineNumber = "33"
-                  offsetFromSymbolStart = "160">
+                  offsetFromSymbolStart = "187">
                </Location>
                <Location
                   uuid = "58F6DE1A-A3DD-4CCF-9010-7E602564425C - c82e94d646edd162"
@@ -174,7 +174,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
                   endingLineNumber = "33"
-                  offsetFromSymbolStart = "188">
+                  offsetFromSymbolStart = "222">
                </Location>
                <Location
                   uuid = "58F6DE1A-A3DD-4CCF-9010-7E602564425C - c82e94d646edd162"
@@ -189,7 +189,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
                   endingLineNumber = "33"
-                  offsetFromSymbolStart = "1044">
+                  offsetFromSymbolStart = "1215">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -334,7 +334,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "86"
                   endingLineNumber = "86"
-                  offsetFromSymbolStart = "188">
+                  offsetFromSymbolStart = "219">
                </Location>
                <Location
                   uuid = "3AFB05D5-2CE4-42DF-AD0C-30A8E7C60A0D - 3b3aef8208cc3f2e"
@@ -349,7 +349,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "86"
                   endingLineNumber = "86"
-                  offsetFromSymbolStart = "232">
+                  offsetFromSymbolStart = "273">
                </Location>
                <Location
                   uuid = "3AFB05D5-2CE4-42DF-AD0C-30A8E7C60A0D - 3b3aef8208cc3f2e"
@@ -364,7 +364,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "86"
                   endingLineNumber = "86"
-                  offsetFromSymbolStart = "644">
+                  offsetFromSymbolStart = "852">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -397,7 +397,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "93"
                   endingLineNumber = "93"
-                  offsetFromSymbolStart = "684">
+                  offsetFromSymbolStart = "898">
                </Location>
                <Location
                   uuid = "D761AD76-F312-49D2-8152-765E894A9C1E - 4b3045a78a5c6538"
@@ -412,7 +412,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "98"
                   endingLineNumber = "98"
-                  offsetFromSymbolStart = "128">
+                  offsetFromSymbolStart = "149">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -510,22 +510,6 @@
             startingLineNumber = "60"
             endingLineNumber = "60"
             landmarkName = "collectionView(_:numberOfItemsInSection:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4A0D30A4-F528-44AA-91B1-DB15BA89FB21"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/ProductDetails/Views/Cell/productDeatailsTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "configure(productVM:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -813,7 +797,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "86"
                   endingLineNumber = "86"
-                  offsetFromSymbolStart = "144">
+                  offsetFromSymbolStart = "173">
                </Location>
                <Location
                   uuid = "1DB0F4F5-7490-45AE-88C4-A1A23DFA237E - c3c3e9f6c0e9e086"
@@ -828,7 +812,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "86"
                   endingLineNumber = "86"
-                  offsetFromSymbolStart = "172">
+                  offsetFromSymbolStart = "208">
                </Location>
                <Location
                   uuid = "1DB0F4F5-7490-45AE-88C4-A1A23DFA237E - c3c3e9f6c0e9e086"
@@ -843,7 +827,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "86"
                   endingLineNumber = "86"
-                  offsetFromSymbolStart = "528">
+                  offsetFromSymbolStart = "629">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1245,6 +1229,54 @@
             startingLineNumber = "39"
             endingLineNumber = "39"
             landmarkName = "clearCart()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24D8EF40-199B-4C9F-8265-FA89ED93135B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/ProductDetails/Views/Headers/OptionsHeader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "configure(titleObj:itemObj:sectionObj:required:selected:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A0FC69A5-38F0-4AB8-B3CC-E0D5CDC45629"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/ProductDetails/Views/ProductDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
+            landmarkName = "tableView(_:viewForHeaderInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "639B08B8-9926-4E54-A025-4A184A757FA8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/ProductDetails/Views/ProductDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
+            landmarkName = "tableView(_:viewForHeaderInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

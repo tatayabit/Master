@@ -10,7 +10,6 @@ import UIKit
 
 class PaymentMethodTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var selectionImageView: UIImageView!
     @IBOutlet weak var surchargeLabel: UILabel!
@@ -57,7 +56,6 @@ class PaymentMethodTableViewCell: UITableViewCell {
     }
     
     func customConfigure(payment: PaymentMethod){
-        nameLabel.text = payment.payment
         selectionImageView.isHidden = payment.paymentId != Cart.shared.paymentMethod?.paymentId
         iconImageView.sd_setImage(with: URL(string: payment.image?.icon?.imagePath ?? ""), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
     }

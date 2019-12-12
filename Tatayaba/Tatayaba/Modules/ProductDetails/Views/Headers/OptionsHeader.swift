@@ -34,6 +34,7 @@ class OptionsHeader: UITableViewHeaderFooterView {
         
 //        titleLabel.text = titleObj?.uppercased()
         titleLabel.attributedText = getTitle(title: titleObj ?? "", required: required)
+        
         section = sectionObj
         item = itemObj
         
