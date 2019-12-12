@@ -13,6 +13,8 @@ enum CartEndpoint {
     case getTaxAndShipping(countryCode: String)
     case getPricesWithUpdatedCurrency(parameters: [String: Any])
     case updateServerCart(products: [String: Any], userId: String, paymentId: String)
+    case deleteAllCart(userId: String)
+    case getServerCart(userId: String)
 }
 
 
@@ -40,17 +42,19 @@ extension CartEndpoint: TargetType {
             return "4.0/TtmCartConfigData/"
         case .getPricesWithUpdatedCurrency:
             return "4.0/TtmCurrencies/"
-        case .updateServerCart:
+        case .updateServerCart, .deleteAllCart, .getServerCart:
             return "4.0/TtmCartContent"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getTaxAndShipping:
+        case .getTaxAndShipping, .getServerCart:
             return .get
         case .getPricesWithUpdatedCurrency, .applyCoupon, .updateServerCart:
             return .post
+        case .deleteAllCart:
+            return .delete
         }
     }
     
@@ -84,7 +88,9 @@ extension CartEndpoint: TargetType {
 
             print("decoded: \(decoded)")
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
-
+        case .deleteAllCart(let userId),.getServerCart(let userId):
+            let params = ["user_id": userId] as [String : Any]
+            return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         }
     }
     

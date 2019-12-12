@@ -291,6 +291,7 @@
 		D5B71209238E14E0006BD0DD /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B71208238E14E0006BD0DD /* Search.storyboard */; };
 		D5B7120E23903795006BD0DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5B7121023903795006BD0DD /* InfoPlist.strings */; };
 		D5C602EE23A2015200083E3C /* UpdateServerCartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C602ED23A2015200083E3C /* UpdateServerCartResponse.swift */; };
+		D5C602F023A2177400083E3C /* CartContentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C602EF23A2177400083E3C /* CartContentResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -614,6 +615,7 @@
 		D5B7120F23903795006BD0DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D5B712112390379B006BD0DD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D5C602ED23A2015200083E3C /* UpdateServerCartResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateServerCartResponse.swift; sourceTree = "<group>"; };
+		D5C602EF23A2177400083E3C /* CartContentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartContentResponse.swift; sourceTree = "<group>"; };
 		E0F8BF293BFC39D47FD4C2EB /* Pods-Tatayaba.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tatayaba.debug.xcconfig"; path = "Target Support Files/Pods-Tatayaba/Pods-Tatayaba.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2255,6 +2257,7 @@
 			isa = PBXGroup;
 			children = (
 				D5C602ED23A2015200083E3C /* UpdateServerCartResponse.swift */,
+				D5C602EF23A2177400083E3C /* CartContentResponse.swift */,
 			);
 			path = UpdateServerCart;
 			sourceTree = "<group>";
@@ -2634,6 +2637,7 @@
 				11A09F3C22FB255700C3E5B8 /* OrderDetailsViewController.swift in Sources */,
 				11D4917A22CBCF8B009D8B23 /* UIView+Extensions.swift in Sources */,
 				1137042C22F9E35D00EAFBBD /* Customer.swift in Sources */,
+				D5C602F023A2177400083E3C /* CartContentResponse.swift in Sources */,
 				27A9089C2357906C0032DA41 /* PaymentImage.swift in Sources */,
 				841CE30A22DCC2B300A47FA0 /* MessagesViewController.swift in Sources */,
 				848E89C122CC99AC000AA24C /* AACarousel.swift in Sources */,

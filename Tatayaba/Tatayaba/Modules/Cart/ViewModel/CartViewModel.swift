@@ -243,6 +243,36 @@ class CartViewModel {
         }
     }
     
+    func deleteServerCart( completion: @escaping (APIResult<UpdateServerCartResponse?, MoyaError>) -> Void) {
+
+        let userId = getUserId()
+        cartApiClient.deleteAllCart( userId: userId) { result in
+            switch result {
+            case .success(let response):
+                guard let updateCartResult = response else { return }
+
+            case .failure(let error):
+                print("the error \(error)")
+            }
+            completion(result)
+        }
+    }
+    
+    func getServerCart( completion: @escaping (APIResult<CartContentResponse?, MoyaError>) -> Void) {
+
+        let userId = getUserId()
+        cartApiClient.getServerCart( userId: userId) { result in
+            switch result {
+            case .success(let response):
+                guard let getCartResult = response else { return }
+
+            case .failure(let error):
+                print("the error \(error)")
+            }
+            completion(result)
+        }
+    }
+    
     func getUserId() -> String {
         let customer = Customer.shared
         if customer.loggedin {

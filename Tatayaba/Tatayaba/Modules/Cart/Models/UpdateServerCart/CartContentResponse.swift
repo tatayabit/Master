@@ -1,5 +1,5 @@
 //
-//  UpdateServerCartResponse.swift
+//  CartContentResponse.swift
 //  Tatayaba
 //
 //  Created by new on 12/12/19.
@@ -7,8 +7,7 @@
 //
 
 import Foundation
-
-struct UpdateServerCartResponse : Codable{
+struct CartContentResponse : Codable{
     var cart_ids = [String:Int]()
 
     enum UserCodingKeys: String, CodingKey {
@@ -20,4 +19,3 @@ struct UpdateServerCartResponse : Codable{
         cart_ids = try container.decode([String:Int].self, forKey: .cart_ids)
     }
 }
-

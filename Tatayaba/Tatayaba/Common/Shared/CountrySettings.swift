@@ -18,7 +18,7 @@ class CountrySettings {
     static let shared = CountrySettings()
     var currentCountry: Country? {
         willSet {
-            Cart.shared.reset()
+            //Cart.shared.reset()
             if let currentCountry = newValue {
                 saveCountrySettingsDataToKeyChain(countryObj: currentCountry)
                 for delegate in delegates {

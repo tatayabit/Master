@@ -45,9 +45,17 @@ class CartSaving {
         guard let savedData = KeychainWrapper.standard.data(forKey: cartItemsKey) else { return nil }
         guard let encodedData = NSKeyedUnarchiver.unarchiveObject(with: savedData) as? Data else { return nil }
 
-        let cartDataDecoded = try? PropertyListDecoder().decode([CartItem].self, from: encodedData)
-        let cartItems = cartDataDecoded
+//        let cartDataDecoded = try? PropertyListDecoder().decode([CartItem].self, from: encodedData)
+        var cartItems = [CartItem]()
         print("loaded cartItems: \(String(describing: cartItems))")
+        
+        do {
+           let cartDataDecoded = try PropertyListDecoder().decode([CartItem].self, from: encodedData)
+            cartItems = cartDataDecoded
+            return cartItems
+        }catch {
+            print("Unexpected error: \(error).")
+        }
         return cartItems
     }
     
