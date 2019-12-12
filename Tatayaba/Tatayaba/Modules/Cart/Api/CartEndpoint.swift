@@ -12,6 +12,7 @@ enum CartEndpoint {
     case applyCoupon(parameters: [String: Any])
     case getTaxAndShipping(countryCode: String)
     case getPricesWithUpdatedCurrency(parameters: [String: Any])
+    case updateServerCart(products: [String: Any], userId: String, paymentId: String)
 }
 
 
@@ -39,6 +40,8 @@ extension CartEndpoint: TargetType {
             return "4.0/TtmCartConfigData/"
         case .getPricesWithUpdatedCurrency:
             return "4.0/TtmCurrencies/"
+        case .updateServerCart:
+            return "4.0/TtmCartContent"
         }
     }
     
@@ -46,7 +49,7 @@ extension CartEndpoint: TargetType {
         switch self {
         case .getTaxAndShipping:
             return .get
-        case .getPricesWithUpdatedCurrency, .applyCoupon:
+        case .getPricesWithUpdatedCurrency, .applyCoupon, .updateServerCart:
             return .post
         }
     }
@@ -70,6 +73,18 @@ extension CartEndpoint: TargetType {
                 ], encoding: URLEncoding.queryString)
         case .getPricesWithUpdatedCurrency(let parameters):
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        case .updateServerCart(let products, let userId,let paymentId):
+            let params = [
+            "user_id": userId,
+            "payment_id": paymentId,
+            "products": products,
+            ] as [String : Any]
+            let jsonData = try! JSONSerialization.data(withJSONObject: params, options: [])
+            let decoded = String(data: jsonData, encoding: .utf8)!
+
+            print("decoded: \(decoded)")
+            return .requestParameters(parameters: params, encoding: JSONEncoding.default)
+
         }
     }
     

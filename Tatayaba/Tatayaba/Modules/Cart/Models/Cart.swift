@@ -12,7 +12,6 @@ class Cart {
     static let shared = Cart()
     var cartItemsArr = [CartItem]()
     private var productsArr = [Product]()
-
     var paymentMethod: PaymentMethod?
 
     var productsCount: Int { return cartItemsArr.count }
@@ -39,6 +38,18 @@ class Cart {
             self.paymentMethod = payment
         }
     }
+    
+    func callUpdateServerCart(){
+        CartViewModel.shared.updateServerCart() { result in
+                switch result {
+                case .success(let response):
+                    guard let placeOrderResult = response else { return }
+                    print(placeOrderResult)
+                case .failure(let error):
+                    print("the error \(error)")
+                }
+            }
+        }
     
     //MARK:- SaveCartToCaching
     func saveCartToCaching() {
@@ -70,6 +81,7 @@ class Cart {
         }
         updateTabBarCount()
         saveCartToCaching()
+        callUpdateServerCart()
     }
 
     func cartItem(for product: Product, options: [CartItemOptions]?) -> CartItem {

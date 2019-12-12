@@ -290,6 +290,7 @@
 		D5B71207238E1420006BD0DD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B71206238E1420006BD0DD /* SearchViewController.swift */; };
 		D5B71209238E14E0006BD0DD /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B71208238E14E0006BD0DD /* Search.storyboard */; };
 		D5B7120E23903795006BD0DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5B7121023903795006BD0DD /* InfoPlist.strings */; };
+		D5C602EE23A2015200083E3C /* UpdateServerCartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C602ED23A2015200083E3C /* UpdateServerCartResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -612,6 +613,7 @@
 		D5B71208238E14E0006BD0DD /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		D5B7120F23903795006BD0DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D5B712112390379B006BD0DD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D5C602ED23A2015200083E3C /* UpdateServerCartResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateServerCartResponse.swift; sourceTree = "<group>"; };
 		E0F8BF293BFC39D47FD4C2EB /* Pods-Tatayaba.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tatayaba.debug.xcconfig"; path = "Target Support Files/Pods-Tatayaba/Pods-Tatayaba.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2177,6 +2179,7 @@
 		84BC08A022DC934A00C6180E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D5C602EC23A2012D00083E3C /* UpdateServerCart */,
 				1005869C2386FA1B00D6CA76 /* Currency */,
 				27A908912357906C0032DA41 /* TaxAndShippingModels */,
 				27A9085C235264230032DA41 /* CouponModels */,
@@ -2246,6 +2249,14 @@
 			children = (
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		D5C602EC23A2012D00083E3C /* UpdateServerCart */ = {
+			isa = PBXGroup;
+			children = (
+				D5C602ED23A2015200083E3C /* UpdateServerCartResponse.swift */,
+			);
+			path = UpdateServerCart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2726,6 +2737,7 @@
 				27A9089A2357906C0032DA41 /* PaymentIcon.swift in Sources */,
 				27E8533C2376B703002649BE /* Condition.swift in Sources */,
 				848E89C522CCDDBB000AA24C /* HomeViewController.swift in Sources */,
+				D5C602EE23A2015200083E3C /* UpdateServerCartResponse.swift in Sources */,
 				27A9089F2357906C0032DA41 /* TaxAndShippingResponse.swift in Sources */,
 				11B07917233A781F003041E8 /* ConciergeEndpoint.swift in Sources */,
 				11B07912233A771F003041E8 /* Concierge.swift in Sources */,

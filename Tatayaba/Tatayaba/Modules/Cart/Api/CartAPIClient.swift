@@ -20,6 +20,10 @@ struct CartAPIClient: APIClient {
            fetch(with: CartEndpoint.applyCoupon(parameters: parameters), completion: completion)
        }
     
+    func updateServerCart(products: [String: Any], userId: String, paymentId: String, completion: @escaping (APIResult<UpdateServerCartResponse?, MoyaError>) -> Void) {
+           fetch(with: CartEndpoint.updateServerCart(products: products, userId: userId, paymentId: paymentId), completion: completion)
+       }
+    
     func getTaxAndShipping(countryCode: String, completion: @escaping (APIResult<TaxAndShippingResponse?, MoyaError>) -> Void) {
         fetch(with: CartEndpoint.getTaxAndShipping(countryCode: countryCode), completion: completion)
     }
