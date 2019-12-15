@@ -55,6 +55,7 @@ class OptionsHeader: UITableViewHeaderFooterView {
     //MARK: - Actions
     @objc private func didTapHeader() {
         delegate?.toggleSection(section: section)
+        
     }
     
     func callTapAction() {

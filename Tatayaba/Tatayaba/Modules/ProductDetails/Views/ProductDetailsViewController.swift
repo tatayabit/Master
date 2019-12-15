@@ -239,6 +239,12 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
             guard let viewModel = viewModel else { return }
             viewModel.didSelectOption(at: indexPath)
             product_Tableview.reloadData()
+            
+            
+            
+            let variant = viewModel.optionVariant(at: indexPath)
+            let option = OptionsSelection(section: indexPath.section, selectedVariant: variant.identifier)
+            print(option.selectedVariant)
             toggleSection(section: indexPath.section)
         }
     }
