@@ -34,9 +34,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Visa" translatesAutoresizingMaskIntoConstraints="NO" id="zl9-cE-FNN">
-                        <rect key="frame" x="75" y="11" width="120" height="32"/>
+                        <rect key="frame" x="65" y="11" width="130" height="32"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="120" id="hB9-VJ-08c"/>
+                            <constraint firstAttribute="width" constant="130" id="hB9-VJ-08c"/>
                             <constraint firstAttribute="height" constant="32" id="tTM-Yl-apH"/>
                         </constraints>
                     </imageView>
@@ -59,7 +59,7 @@
                     <constraint firstAttribute="bottom" secondItem="Iw8-kX-S1E" secondAttribute="bottom" id="Mk3-CI-c0T"/>
                     <constraint firstItem="Iw8-kX-S1E" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Mre-dS-V4D"/>
                     <constraint firstItem="7Zt-KN-pvt" firstAttribute="centerY" secondItem="Iw8-kX-S1E" secondAttribute="centerY" constant="-2" id="SuJ-6t-yXk"/>
-                    <constraint firstItem="zl9-cE-FNN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="75" id="grd-iW-KS3"/>
+                    <constraint firstItem="zl9-cE-FNN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="65" id="grd-iW-KS3"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
