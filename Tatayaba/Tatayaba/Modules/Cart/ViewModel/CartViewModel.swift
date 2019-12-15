@@ -317,6 +317,55 @@ class CartViewModel {
         }
         return optionsParms
     }
+    
+    // MARK:- Update Shipping Price
+    func applyFreeShippingPrice() {
+//        pricingList
+        let cartClass: CartPricingItems = CartPricingItems()
+        let newModel = CartPricingModel(title: cartClass.shipping, value: "0.00".formattedPrice)
+        if let row = self.pricingList.firstIndex(where: {$0.title == cartClass.shipping }) {
+               self.pricingList[row] = newModel
+        }
+//        model = CartPricingModel(title: cartClass.shipping, value: shippingValue.formattedPrice)
+//        pricingList.append(model)
+    }
+    // MARK:- Apply Silent Free Shipping Coupon
+    func applySilentFreeShippingCoupon(completion: @escaping (APIResult<CouponResponse?, MoyaError>) -> Void) {
+//        if self.shouldApplyFreeShippingCoupon() {
+            var couponCode = ""
+            let email = Customer.shared.user?.email ?? ""
+            if let countryCode = CountrySettings.shared.currentCountry?.code {
+                if countryCode.uppercased() == "KW" {
+                    couponCode = "FDQ8"
+                } else {
+                    couponCode = "FDGCC"
+                }
+                
+                cartApiClient.applyCoupon(parameters: self.getApplyCouponJsonString(couponCode: couponCode, email: email)) { result in
+                    switch result {
+                    case .success(let couponResult):
+                        if let coupon = couponResult {
+                            print(coupon)
+                        }
+                    case .failure(let error):
+                        print("the error \(error)")
+                    }
+                    completion(result)
+                }
+                
+            }
+//        }
+    }
+    
+    func shouldApplyFreeShippingCoupon() -> Bool {
+        guard let countryCode = CountrySettings.shared.currentCountry?.code else { return false }
+        if countryCode.uppercased() == "KW" { return true }
+        let gccCodes = ["SA","AE","QA","BH","OM"]
+        if gccCodes.contains(countryCode.uppercased()) {
+            return true
+        }
+        return false
+    }
 }
 
 extension CartViewModel: CurrencySettingsDelegate {

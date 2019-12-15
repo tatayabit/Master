@@ -44,6 +44,8 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     private let checkoutSegue = "checkout_segue"
     let cartClass: CartPricingItems = CartPricingItems()
     var promotionData : PromotionData?
+    var forcedFreeDelivery = false
+
     var totalPriceValueRounded:Float = 0.0 {
         didSet {
             cart.totalPriceValueRounded = totalPriceValueRounded
@@ -124,7 +126,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         
         if promotionData != nil {
             let discountItem = promotionData?.bonuses?.first
-            let currentTotal = (cart.totalPrice as NSString).floatValue//totalPriceValue
+            let currentTotal = (cart.totalPrice as NSString).floatValue
             if discountItem?.discountBonus == DiscountBonusTypes.byPercentage.rawValue {
                 let discountValueFromTotal = (currentTotal * ("\(discountItem?.discountValue ?? "0")" as NSString).floatValue) / 100
                 totalPriceValue = totalPriceValue - discountValueFromTotal
@@ -242,6 +244,9 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         return self.totalPriceValueRounded
     }
     private func hasFreeShippingDiscount() -> Bool {
+        if self.forcedFreeDelivery {
+            return true
+        }
         if let promotionData = promotionData {
             if let promotionName = promotionData.promoName {
                 if promotionName.lowercased().contains("free delivery") {
@@ -432,6 +437,35 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         reloadUIData()
      }
     
+    //MARK:- Apply Silent free delivery coupon
+    func applySilentFreeDeliveryCoupon() {
+        if viewModel.shouldApplyFreeShippingCoupon() {
+            viewModel.applySilentFreeShippingCoupon { result in
+                switch result {
+                case .success(let couponResult):
+                    if let promotionValue = couponResult?.promotionData {
+                        print(promotionValue)
+                        if promotionValue.errorMessage == nil {
+                            if promotionValue.bonuses?.first?.bonus == BonusTypes.orderDiscount.rawValue {
+//                                self.promotionData = promotionValue
+                                self.forcedFreeDelivery = true
+                                self.shippingValue = "0.000"
+                                self.viewModel.loadPricingListContent(couponValue: self.couponTitleValue, taxValue: self.taxValue, shippingValue: self.shippingValue, freeShipping: true)
+                                self.calculateTotal()
+                                self.cartTableview.reloadData()
+                            }
+                        }
+                        
+                    } else {
+                        print("no coupon discound parsed")
+                    }
+                case .failure(let error):
+                    print("the error \(error)")
+                }
+            }
+        }
+    }
+    
     //MARK:- IBActions
     @IBAction func checkoutAction(_ sender: Any) {
         performSegue(withIdentifier: checkoutSegue, sender: nil)
@@ -482,11 +516,12 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                 } else {
                     self.hideLoadingIndicator(from: self.view)
                 }
-                
+                self.applySilentFreeDeliveryCoupon()
                 
             case .failure(let error):
                 self.hideLoadingIndicator(from: self.view)
                 print("the error \(error)")
+                self.applySilentFreeDeliveryCoupon()
             }
         }
     }
