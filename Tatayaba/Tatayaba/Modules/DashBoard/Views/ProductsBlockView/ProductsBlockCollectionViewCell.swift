@@ -75,7 +75,9 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         if product.hasOptions {
             addToCartButton.setTitle(Constants.ProductDetails.options, for: .normal)
         } else {
-            addToCartButton.setTitle(Constants.ProductDetails.addToCart, for: .normal)
+            print(LanguageManager.getLanguage())
+            print("ADD TO CART".localized())
+            addToCartButton.setTitle("ADD TO CART".localized(), for: .normal)
         }
         
         self.layoutIfNeeded()
@@ -112,6 +114,8 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         if product.hasOptions {
             addToCartButton.setTitle("OPTIONS...".localized(), for: .normal)
         } else {
+            print(LanguageManager.getLanguage())
+            print("ADD TO CART".localized())
             addToCartButton.setTitle("ADD TO CART".localized(), for: .normal)
         }
         self.cellBlockName = cellBlockName
