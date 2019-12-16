@@ -12,6 +12,7 @@ class PaymentMethodTableViewCell: UITableViewCell {
 
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var selectionImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var surchargeLabel: UILabel!
     
     var viewModal = CheckOutViewModel()
@@ -24,6 +25,7 @@ class PaymentMethodTableViewCell: UITableViewCell {
         
         let objCurrency = CurrencySettings.shared.kuwaitiDinarCurrency
         let currencyCode = objCurrency?.currencyCode
+        setTitle(payment: payment)
         if (currencyCode != "KD") {
             if let surcharge = payment.fSurcharge,let surchargeValue = Double(surcharge) {
             if (surchargeValue > 0) {
@@ -58,5 +60,20 @@ class PaymentMethodTableViewCell: UITableViewCell {
     func customConfigure(payment: PaymentMethod){
         selectionImageView.isHidden = payment.paymentId != Cart.shared.paymentMethod?.paymentId
         iconImageView.sd_setImage(with: URL(string: payment.image?.icon?.imagePath ?? ""), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
+    }
+    func setTitle(payment: PaymentMethod)  {
+        print(payment.payment)
+        switch payment.payment {
+        case " K-net","كي نت":
+            self.titleLabel.text = "K-net".localized()
+        case "Mada","مدى":
+            self.titleLabel.text = "Mada".localized()
+        case "Visa, Mastercard","فيزا ,ماستركارد":
+            self.titleLabel.text = "Visa".localized()
+        case "Cash on delivery","الدفع عند الاستلام":
+            self.titleLabel.text = "Cash on delivery".localized()
+        default:
+            self.titleLabel.text = "testtttt"
+        }
     }
 }

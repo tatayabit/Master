@@ -109,3 +109,9 @@
 
 // version  valaidation
 alertValaidationMessage = "يجب عليك الترقية ، الإصدار الخاص بك غير معتمد بعد الآن";
+
+// payment Methods
+"K-net" = "كي نت";
+"Mada" = "مدى";
+"Visa" = "فيزا ,ماستركارد";
+"Cash on delivery" = "الدفع عند الاستلام";

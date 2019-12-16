@@ -111,3 +111,9 @@
 
 // version  valaidation
 alertValaidationMessage = "You have to upgrade , your version is not supported anymore";
+
+// payment Methods
+"K-net" = "K-net";
+"Mada" = "Mada";
+"Visa" = "Visa, Mastercard";
+"Cash on delivery" = "Cash on delivery";
