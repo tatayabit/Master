@@ -516,22 +516,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "18068FB1-7632-43F5-8DB4-DB0437664FD3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/DashBoard/ViewModels/HomeViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "293"
-            endingLineNumber = "293"
-            landmarkName = "arrangeProductsBlocks()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "0E15260D-48C1-4223-B9F7-9B7628AE1890"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1134,6 +1118,54 @@
             endingLineNumber = "76"
             landmarkName = "setTitle(payment:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9638E602-14A3-4BA7-9EC4-930088D9D9CE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/DashBoard/Views/ProductsBlockView/ProductsBlockCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "ProductDetails"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "9638E602-14A3-4BA7-9EC4-930088D9D9CE - e9672346a05fb71"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.Constants.ProductDetails.addToCart.unsafeMutableAddressor : Swift.String"
+                  moduleName = "TATAYAB - &#x62a;&#x637;&#x64a;&#x651;&#x628;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Tatyab/Master/Tatayaba/Tatayaba/Modules/DashBoard/Views/ProductsBlockView/ProductsBlockCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "138"
+                  endingLineNumber = "138"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "9638E602-14A3-4BA7-9EC4-930088D9D9CE - 972b0f250a38ffdf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "globalinit_33_EE359BA88B8FB51973CC5104BB07740F_func1"
+                  moduleName = "TATAYAB - &#x62a;&#x637;&#x64a;&#x651;&#x628;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Tatyab/Master/Tatayaba/Tatayaba/Modules/DashBoard/Views/ProductsBlockView/ProductsBlockCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "138"
+                  endingLineNumber = "138"
+                  offsetFromSymbolStart = "8">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
