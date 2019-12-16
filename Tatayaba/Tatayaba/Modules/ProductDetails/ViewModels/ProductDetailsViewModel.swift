@@ -10,7 +10,9 @@ import Moya
 struct OptionsSelection {
     var section: Int
     var selectedVariant: String
+    var selectedName: String
 }
+
 
 class ProductDetailsViewModel {
     
@@ -19,7 +21,8 @@ class ProductDetailsViewModel {
     private var product: Product
     private var recommendedList = [Product]()
     var alsoBoughtProductsBlock: Block = Block()
-
+    var sectionTitle : String = ""
+    var sectionNumber:Int = 0
     var optionsCount: Int { return self.product.productOptions.count }
     var numberOfAlsoBoughtProducts: Int { return self.alsoBoughtProductsBlock.products.count }
     
@@ -138,11 +141,20 @@ class ProductDetailsViewModel {
         return self.product.productOptions[section - 1]
     }
     
+    func setSelectedHeaderTitle(sectionTitle: String, section:Int) {
+        self.sectionTitle = sectionTitle
+        self.sectionNumber = section
+    }
+    
     func isSelectedSection(section: Int) -> Bool {
         let foundOptions = self.selectedOptions.filter{ $0.section == section }
         return foundOptions.count > 0
     }
-    
+   
+    func getSelectedSection(section: Int) -> [OptionsSelection] {
+           let foundOptions = self.selectedOptions.filter{ $0.section == section }
+           return foundOptions
+       }
     //MARK:- Product Options variants
     func numberOfVariants(at section: Int) -> Int {
         // first row always not options section
@@ -173,7 +185,7 @@ class ProductDetailsViewModel {
     
     func selectOption(at indexPath: IndexPath) {
         let variant = optionVariant(at: indexPath)
-        let option = OptionsSelection(section: indexPath.section, selectedVariant: variant.identifier)
+        let option = OptionsSelection(section: indexPath.section, selectedVariant: variant.identifier,selectedName:variant.name)
         unselectAllIfFound(at: indexPath.section)
         self.selectedOptions.append(option)
     }

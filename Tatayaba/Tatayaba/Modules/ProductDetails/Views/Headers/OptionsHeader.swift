@@ -61,5 +61,9 @@ class OptionsHeader: UITableViewHeaderFooterView {
     func callTapAction() {
         self.didTapHeader()
     }
+    
+    func setTitle(title:String) {
+        self.titleLabel.text = title
+    }
 }
 
