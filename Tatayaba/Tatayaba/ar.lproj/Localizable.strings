@@ -64,7 +64,7 @@
 "ForgetSuccess" = "حسنا";
 
 // Product
-"OPTIONS..." = "الاختيارات...";
+"OPTIONS..." = "أضف إلي السلة...";
 "ADD TO CART" = "أضف إلى السلة";
 "one click buy" = "اكسبريس";
 "ONE CLICK BUY" = "اكسبريس";
@@ -92,6 +92,7 @@
 "Billing Address" = "عنوان وصول الفواتير:";
 "Item Price" = "سعر المنتج:";
 "Paid Price" = "السعر المدفوع:";
+"No Orders" = "لا يوجد طلبات سابقة";
 
 
 // Products list
@@ -115,3 +116,5 @@ alertValaidationMessage = "يجب عليك الترقية ، الإصدار ال
 "Mada" = "مدى";
 "Visa" = "فيزا ,ماستركارد";
 "Cash on delivery" = "الدفع عند الاستلام";
+
+"OFF" = "%\nخصم";

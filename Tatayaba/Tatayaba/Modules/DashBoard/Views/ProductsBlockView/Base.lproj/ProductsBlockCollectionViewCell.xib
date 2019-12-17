@@ -53,7 +53,7 @@
                             <constraint firstAttribute="height" constant="40" id="faQ-pZ-zOp"/>
                             <constraint firstAttribute="width" constant="40" id="sao-PQ-Bp6"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="7"/>
+                        <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="8"/>
                         <color key="textColor" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                         <userDefinedRuntimeAttributes>
@@ -138,7 +138,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Free Delivery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgI-pV-f1l">
                         <rect key="frame" x="89" y="108" width="62" height="14"/>
-                        <color key="backgroundColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="0.41177926939999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.18060550093650818" green="0.14968296885490417" blue="0.27401843667030334" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="h2G-LZ-8xz"/>
                         </constraints>

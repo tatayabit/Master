@@ -13,7 +13,7 @@ class OrdersViewController: BaseViewController, UITableViewDelegate, UITableView
     private let viewModel = OrdersViewModel()
     private let orderDetailsSegue = "order_details_segue"
     @IBOutlet weak var tableView: UITableView!
-
+    let cartClass: CartPricingItems = CartPricingItems()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
@@ -51,9 +51,14 @@ class OrdersViewController: BaseViewController, UITableViewDelegate, UITableView
 extension OrdersViewController{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       // return viewModel.orderCount
-        
-         return viewModel.orderCount
+        if (viewModel.orderCount > 0){
+            return viewModel.orderCount
+            
+        }else{
+            self.tableView.setEmptyMessage("No Orders".localized())
+            return 0
+        }
+         
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130

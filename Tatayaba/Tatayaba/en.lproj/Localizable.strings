@@ -66,7 +66,7 @@
 "ForgetSuccess" = "Ok";
 
 // Product
-"OPTIONS..." = "OPTIONS...";
+"OPTIONS..." = "ADD TO CART...";
 "ADD TO CART" = "ADD TO CART";
 "one click buy" = "one click buy";
 "ONE CLICK BUY" = "ONE CLICK BUY";
@@ -95,7 +95,7 @@
 "Billing Address" = "Billing Address:";
 "Item Price" = "Item Price:";
 "Paid Price" = "Paid Price:";
-
+"No Orders" = "you don't have any orders yet";
 // Products list
 "No Products found!"= "No Products found!";
 "SECURE CHECKOUT" = "SECURE CHECKOUT";
@@ -117,3 +117,5 @@ alertValaidationMessage = "You have to upgrade , your version is not supported a
 "Mada" = "Mada";
 "Visa" = "Visa, Mastercard";
 "Cash on delivery" = "Cash on delivery";
+//
+"OFF" = "%\nOFF";

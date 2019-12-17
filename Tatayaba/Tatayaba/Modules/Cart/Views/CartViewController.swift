@@ -83,6 +83,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     func setupTabBar() {
 //        if AppDelegate.shared.rootViewController.selectedIndex == 4 {
             self.NavigationBarWithOutBackButton()
+            //self.NavigationBarWithBackButton()
 //            AppDelegate.shared.rootViewController.tabBar.isHidden = false
 //        } else {
 //            self.NavigationBarWithBackButton()

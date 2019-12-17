@@ -56,46 +56,8 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
             freeDeliveryLabel.isHidden = true
         }
         freeDeliveryLabel.sizeToFit()
-        self.discountPercentageLabel.text = product.discountPercentage + "%\nOFF"
-        
-        
-        if let percentage = Float(product.priceBeforeDiscount) {
-            self.discountPercentageLabel.isHidden = !(percentage > 0)
-        } else {
-            self.discountPercentageLabel.isHidden = true
-        }
-        if let discountPercentage = Float(product.discountPercentage) {
-            self.discountPercentageLabel.isHidden = !(discountPercentage > 0)
-        } else {
-            self.discountPercentageLabel.isHidden = true
-        }
-        
-        self.indexPath = indexPath
-        
-        if product.hasOptions {
-            addToCartButton.setTitle(Constants.ProductDetails.options, for: .normal)
-        } else {
-            print(LanguageManager.getLanguage())
-            print("ADD TO CART".localized())
-            addToCartButton.setTitle("ADD TO CART".localized(), for: .normal)
-        }
-        
-        self.layoutIfNeeded()
-    }
-    func configureProduct(_ product: Product, indexPath: IndexPath, cellBlockName : String) {
-        bannerImageView.sd_setImage(with: URL(string: product.mainPair.detailedPair.imageUrl), placeholderImage: UIImage(named: "productPlaceholder"), options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
-
-        nameLabel.text = product.supplierName == "None" ? "" : product.supplierName
-        descriptionLabel.text = product.name
-        priceLabel.text = product.price.formattedPrice
-        outOfStockLabel.isHidden = product.isInStock
-        if(product.is_free_delivery == "Y"){
-            freeDeliveryLabel.isHidden = false
-        }else{
-            freeDeliveryLabel.isHidden = true
-        }
-        freeDeliveryLabel.sizeToFit()
-        self.discountPercentageLabel.text = product.discountPercentage + "%\nOFF"
+        print("OFF".localized())
+        self.discountPercentageLabel.text = product.discountPercentage + "OFF".localized()
         
         
         if let percentage = Float(product.priceBeforeDiscount) {
@@ -114,8 +76,43 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         if product.hasOptions {
             addToCartButton.setTitle("OPTIONS...".localized(), for: .normal)
         } else {
-            print(LanguageManager.getLanguage())
-            print("ADD TO CART".localized())
+            addToCartButton.setTitle("ADD TO CART".localized(), for: .normal)
+        }
+        
+        self.layoutIfNeeded()
+    }
+    func configureProduct(_ product: Product, indexPath: IndexPath, cellBlockName : String) {
+        bannerImageView.sd_setImage(with: URL(string: product.mainPair.detailedPair.imageUrl), placeholderImage: UIImage(named: "productPlaceholder"), options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
+
+        nameLabel.text = product.supplierName == "None" ? "" : product.supplierName
+        descriptionLabel.text = product.name
+        priceLabel.text = product.price.formattedPrice
+        outOfStockLabel.isHidden = product.isInStock
+        if(product.is_free_delivery == "Y"){
+            freeDeliveryLabel.isHidden = false
+        }else{
+            freeDeliveryLabel.isHidden = true
+        }
+        freeDeliveryLabel.sizeToFit()
+        self.discountPercentageLabel.text = product.discountPercentage + "OFF".localized()
+        
+        
+        if let percentage = Float(product.priceBeforeDiscount) {
+            self.discountPercentageLabel.isHidden = !(percentage > 0)
+        } else {
+            self.discountPercentageLabel.isHidden = true
+        }
+        if let discountPercentage = Float(product.discountPercentage) {
+            self.discountPercentageLabel.isHidden = !(discountPercentage > 0)
+        } else {
+            self.discountPercentageLabel.isHidden = true
+        }
+        
+        self.indexPath = indexPath
+        
+        if product.hasOptions {
+            addToCartButton.setTitle("OPTIONS...".localized(), for: .normal)
+        } else {
             addToCartButton.setTitle("ADD TO CART".localized(), for: .normal)
         }
         self.cellBlockName = cellBlockName
