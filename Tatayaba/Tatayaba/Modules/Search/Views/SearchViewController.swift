@@ -47,7 +47,7 @@ class SearchViewController: BaseViewController, UICollectionViewDelegate, UIColl
             // Fallback on earlier versions
             self.navigationItem.titleView = searchController.searchBar
         }
-        searchController.searchBar.tintColor = .white
+//        searchController.searchBar.tintColor = .white
         searchController.searchBar.backgroundColor = .brandDarkBlue
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.brandDarkBlue]
         

@@ -61,19 +61,21 @@ class PaymentMethodTableViewCell: UITableViewCell {
         selectionImageView.isHidden = payment.paymentId != Cart.shared.paymentMethod?.paymentId
         iconImageView.sd_setImage(with: URL(string: payment.image?.icon?.imagePath ?? ""), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
     }
-    func setTitle(payment: PaymentMethod)  {
-        print(payment.payment)
-        switch payment.payment {
-        case " K-net","كي نت":
-            self.titleLabel.text = "K-net".localized()
-        case "Mada","مدى":
-            self.titleLabel.text = "Mada".localized()
-        case "Visa, Mastercard","فيزا ,ماستركارد":
-            self.titleLabel.text = "Visa".localized()
-        case "Cash on delivery","الدفع عند الاستلام":
-            self.titleLabel.text = "Cash on delivery".localized()
-        default:
-            self.titleLabel.text = "testtttt"
+    func setTitle(payment: PaymentMethod) {
+        if let paymentName = payment.payment {
+            print(paymentName)
+            switch paymentName {
+            case " K-net","كي نت":
+                self.titleLabel.text = "K-net".localized()
+            case "Mada","مدى":
+                self.titleLabel.text = "Mada".localized()
+            case "Visa, Mastercard","فيزا ,ماستركارد":
+                self.titleLabel.text = "Visa".localized()
+            case "Cash on delivery","الدفع عند الاستلام":
+                self.titleLabel.text = "Cash on delivery".localized()
+            default:
+                self.titleLabel.text = ""//"testtttt"
+            }
         }
     }
 }

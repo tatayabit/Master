@@ -70,7 +70,7 @@ extension OrdersViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! OrderTableViewCell
 
         cell.configure(order: viewModel.order(at: indexPath), indexPath: indexPath)
-
+        cell.delegate = self
         return cell
     }
     
