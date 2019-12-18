@@ -33,6 +33,8 @@
 		10B08375234CF41800DCE773 /* CartAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B08374234CF41800DCE773 /* CartAPIClient.swift */; };
 		10B08377234CF92C00DCE773 /* CartEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B08376234CF92C00DCE773 /* CartEndpoint.swift */; };
 		10B4CBCB237336ED0065918D /* DataBase64Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B4CBCA237336ED0065918D /* DataBase64Decodable.swift */; };
+		10C62BEC23AA901E00562CC0 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C62BEB23AA901E00562CC0 /* NotificationService.swift */; };
+		10C62BF023AA901E00562CC0 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 10C62BE923AA901E00562CC0 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		10C8E8F7238929DA00E22581 /* Dispatch+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C8E8F6238929DA00E22581 /* Dispatch+Extensions.swift */; };
 		10DFE45023525D9C00AAB780 /* HeaderViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DFE44F23525D9C00AAB780 /* HeaderViewItem.swift */; };
 		10DFE4542352619000AAB780 /* OptionsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DFE4532352619000AAB780 /* OptionsHeader.swift */; };
@@ -200,6 +202,7 @@
 		11FEB4D822DF822A00F2E9B8 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FEB4D722DF822A00F2E9B8 /* ProductDetailsViewController.swift */; };
 		11FEB4E022DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FEB4DE22DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.swift */; };
 		11FEB4E122DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FEB4DF22DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib */; };
+		22D7DA58DEF0C18687FA24EC /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C227C1481B76531C2BD967B /* Pods_OneSignalNotificationServiceExtension.framework */; };
 		274291882379B73D00B413BA /* IBDesignable+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274291872379B73C00B413BA /* IBDesignable+Localize.swift */; };
 		2742918A237AB3A400B413BA /* UpdateProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27429189237AB3A400B413BA /* UpdateProfileViewModel.swift */; };
 		27497C53234E4EF600D84690 /* GuestSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27497C50234E4EF500D84690 /* GuestSignUpViewModel.swift */; };
@@ -295,6 +298,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		10C62BEE23AA901E00562CC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 847CDE3522C9EE2300E67C8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 10C62BE823AA901E00562CC0;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
 		847CDE5522C9EE2300E67C8C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 847CDE3522C9EE2300E67C8C /* Project object */;
@@ -310,6 +320,20 @@
 			remoteInfo = Tatayaba;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		10C62BF123AA901E00562CC0 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				10C62BF023AA901E00562CC0 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -339,6 +363,10 @@
 		10B08374234CF41800DCE773 /* CartAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartAPIClient.swift; sourceTree = "<group>"; };
 		10B08376234CF92C00DCE773 /* CartEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartEndpoint.swift; sourceTree = "<group>"; };
 		10B4CBCA237336ED0065918D /* DataBase64Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase64Decodable.swift; sourceTree = "<group>"; };
+		10C62BE923AA901E00562CC0 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		10C62BEB23AA901E00562CC0 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		10C62BED23AA901E00562CC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10C62BF523AA933300562CC0 /* TATAYAB - تطيّب.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TATAYAB - تطيّب.entitlements"; sourceTree = "<group>"; };
 		10C8E8F6238929DA00E22581 /* Dispatch+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dispatch+Extensions.swift"; sourceTree = "<group>"; };
 		10DFE44F23525D9C00AAB780 /* HeaderViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewItem.swift; sourceTree = "<group>"; };
 		10DFE4532352619000AAB780 /* OptionsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsHeader.swift; sourceTree = "<group>"; };
@@ -511,6 +539,7 @@
 		11FEB4D722DF822A00F2E9B8 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		11FEB4DE22DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageCarouselCollectionViewCell.swift; sourceTree = "<group>"; };
 		11FEB4DF22DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductImageCarouselCollectionViewCell.xib; sourceTree = "<group>"; };
+		14C98C1CEBDE08CEA582BB4F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		20779A04B1BCECF103C599EE /* Pods-Tatayaba.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tatayaba.release.xcconfig"; path = "Target Support Files/Pods-Tatayaba/Pods-Tatayaba.release.xcconfig"; sourceTree = "<group>"; };
 		22CC9CEE04574A387EDF22EE /* Pods-TatayabaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaTests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaTests/Pods-TatayabaTests.release.xcconfig"; sourceTree = "<group>"; };
 		274291872379B73C00B413BA /* IBDesignable+Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IBDesignable+Localize.swift"; sourceTree = "<group>"; };
@@ -604,8 +633,10 @@
 		84BC089D22DC84A900C6180E /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		84BC08A322DC94AA00C6180E /* RecommendedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedCollectionViewCell.swift; sourceTree = "<group>"; };
 		84BC08A522DC972300C6180E /* RecommendedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendedCollectionViewCell.xib; sourceTree = "<group>"; };
+		8C227C1481B76531C2BD967B /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8251C3E16050691EBDFB247 /* Pods_Tatayaba.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tatayaba.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55E5C982ED14B5FEE4DCD1D /* Pods-TatayabaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaUITests.debug.xcconfig"; path = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B89BCDB598CCBCBACB5DD4DD /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		D519D8AC239CFB0E0026DD97 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/CheckOut.strings; sourceTree = "<group>"; };
 		D519D8AD239CFB2D0026DD97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CheckOut.storyboard; sourceTree = "<group>"; };
 		D5643AA3239E761E00885FD3 /* FinancialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialTableViewCell.swift; sourceTree = "<group>"; };
@@ -620,6 +651,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		10C62BE623AA901E00562CC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22D7DA58DEF0C18687FA24EC /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		847CDE3A22C9EE2300E67C8C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -815,6 +854,15 @@
 				10B4CBCA237336ED0065918D /* DataBase64Decodable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		10C62BEA23AA901E00562CC0 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				10C62BEB23AA901E00562CC0 /* NotificationService.swift */,
+				10C62BED23AA901E00562CC0 /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 		10DFE4512352616000AAB780 /* Headers */ = {
@@ -1998,6 +2046,7 @@
 				847CDE3F22C9EE2300E67C8C /* Tatayaba */,
 				847CDE5722C9EE2300E67C8C /* TatayabaTests */,
 				847CDE6222C9EE2300E67C8C /* TatayabaUITests */,
+				10C62BEA23AA901E00562CC0 /* OneSignalNotificationServiceExtension */,
 				847CDE3E22C9EE2300E67C8C /* Products */,
 				A8C318DE6A75DA5A76A75E39 /* Pods */,
 				9CDE61A50DEA5CDA03008907 /* Frameworks */,
@@ -2011,6 +2060,7 @@
 				847CDE3D22C9EE2300E67C8C /* TATAYAB - تطيّب.app */,
 				847CDE5422C9EE2300E67C8C /* TatayabaTests.xctest */,
 				847CDE5F22C9EE2300E67C8C /* TatayabaUITests.xctest */,
+				10C62BE923AA901E00562CC0 /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2018,6 +2068,7 @@
 		847CDE3F22C9EE2300E67C8C /* Tatayaba */ = {
 			isa = PBXGroup;
 			children = (
+				10C62BF523AA933300562CC0 /* TATAYAB - تطيّب.entitlements */,
 				114D1A0122CBB09D009205F3 /* Common */,
 				11F52FA522CA7D92000F0D85 /* Modules */,
 				847CDE7822CA12EC00E67C8C /* Utilities */,
@@ -2229,6 +2280,7 @@
 				A8251C3E16050691EBDFB247 /* Pods_Tatayaba.framework */,
 				02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */,
 				2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */,
+				8C227C1481B76531C2BD967B /* Pods_OneSignalNotificationServiceExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2242,6 +2294,8 @@
 				22CC9CEE04574A387EDF22EE /* Pods-TatayabaTests.release.xcconfig */,
 				B55E5C982ED14B5FEE4DCD1D /* Pods-TatayabaUITests.debug.xcconfig */,
 				04B399FC35D3B3B996D93EC1 /* Pods-TatayabaUITests.release.xcconfig */,
+				B89BCDB598CCBCBACB5DD4DD /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				14C98C1CEBDE08CEA582BB4F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -2265,6 +2319,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		10C62BE823AA901E00562CC0 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10C62BF423AA901E00562CC0 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				0036CB41AA14C985D18C7920 /* [CP] Check Pods Manifest.lock */,
+				10C62BE523AA901E00562CC0 /* Sources */,
+				10C62BE623AA901E00562CC0 /* Frameworks */,
+				10C62BE723AA901E00562CC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = 10C62BE923AA901E00562CC0 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		847CDE3C22C9EE2300E67C8C /* Tatayaba */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 847CDE6822C9EE2300E67C8C /* Build configuration list for PBXNativeTarget "Tatayaba" */;
@@ -2275,10 +2347,12 @@
 				847CDE3B22C9EE2300E67C8C /* Resources */,
 				D08D80323791471B0F8F2ED8 /* [CP] Embed Pods Frameworks */,
 				10181CB9235F695300220439 /* ShellScript */,
+				10C62BF123AA901E00562CC0 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				10C62BEF23AA901E00562CC0 /* PBXTargetDependency */,
 			);
 			name = Tatayaba;
 			productName = Tatayaba;
@@ -2329,10 +2403,14 @@
 		847CDE3522C9EE2300E67C8C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Shaik;
 				TargetAttributes = {
+					10C62BE823AA901E00562CC0 = {
+						CreatedOnToolsVersion = 11.2.1;
+						ProvisioningStyle = Automatic;
+					};
 					847CDE3C22C9EE2300E67C8C = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -2366,11 +2444,19 @@
 				847CDE3C22C9EE2300E67C8C /* Tatayaba */,
 				847CDE5322C9EE2300E67C8C /* TatayabaTests */,
 				847CDE5E22C9EE2300E67C8C /* TatayabaUITests */,
+				10C62BE823AA901E00562CC0 /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		10C62BE723AA901E00562CC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		847CDE3B22C9EE2300E67C8C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2458,6 +2544,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0036CB41AA14C985D18C7920 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		10181CB9235F695300220439 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2572,6 +2680,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		10C62BE523AA901E00562CC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10C62BEC23AA901E00562CC0 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		847CDE3922C9EE2300E67C8C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2815,6 +2931,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		10C62BEF23AA901E00562CC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 10C62BE823AA901E00562CC0 /* OneSignalNotificationServiceExtension */;
+			targetProxy = 10C62BEE23AA901E00562CC0 /* PBXContainerItemProxy */;
+		};
 		847CDE5622C9EE2300E67C8C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 847CDE3C22C9EE2300E67C8C /* Tatayaba */;
@@ -2927,6 +3048,51 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		10C62BF223AA901E00562CC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B89BCDB598CCBCBACB5DD4DD /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.53;
+				DEVELOPMENT_TEAM = 74YH76FB8C;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 4.4.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tatayab.tatayab.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		10C62BF323AA901E00562CC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14C98C1CEBDE08CEA582BB4F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.53;
+				DEVELOPMENT_TEAM = 74YH76FB8C;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 4.4.2;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tatayab.tatayab.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		847CDE6622C9EE2300E67C8C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3046,7 +3212,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E0F8BF293BFC39D47FD4C2EB /* Pods-Tatayaba.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Tatayaba/TATAYAB - تطيّب.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.53;
@@ -3068,7 +3236,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 20779A04B1BCECF103C599EE /* Pods-Tatayaba.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Tatayaba/TATAYAB - تطيّب.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.53;
@@ -3166,6 +3336,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		10C62BF423AA901E00562CC0 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10C62BF223AA901E00562CC0 /* Debug */,
+				10C62BF323AA901E00562CC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		847CDE3822C9EE2300E67C8C /* Build configuration list for PBXProject "Tatayaba" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
