@@ -6,6 +6,8 @@
   Copyright © 2019 Shaik. All rights reserved.
 */
 
+
+
 // Tab Bar Titles
 "Change Language"="Change Language";
 "Subtotal"="Subtotal";
@@ -15,6 +17,8 @@
 "Coupon"="Discount";
 "items"="items";
 "Cart Total"="Cart Total";
+"Total"="Total";
+"Payment surcharge"="Payment surcharge";
 
 // Login
 "Email"="Email";
@@ -57,16 +61,17 @@
 
 // CheckOut
 "EnterAddress" = "Please Enter Your Shipping Address";
-
+"Your Notes" = "Your Notes ...";
 "ForgetFailed" = "Forget Password Failed";
 "ForgetSuccess" = "Ok";
 
 // Product
-"OPTIONS..." = "OPTIONS...";
+"OPTIONS..." = "ADD TO CART...";
 "ADD TO CART" = "ADD TO CART";
 "one click buy" = "one click buy";
 "ONE CLICK BUY" = "ONE CLICK BUY";
 "Currencies" = "Currencies";
+"free Delivery" = " FREE DELIVERY ";
 
 // Settings
 "Change Country"="Change Country";
@@ -90,13 +95,27 @@
 "Billing Address" = "Billing Address:";
 "Item Price" = "Item Price:";
 "Paid Price" = "Paid Price:";
-
+"No Orders" = "you don't have any orders yet";
 // Products list
 "No Products found!"= "No Products found!";
 "SECURE CHECKOUT" = "SECURE CHECKOUT";
 "SHIP TO" = "SHIP TO";
 
+// Search
+"Cancel" = "Cancel";
+"search Placeholder" = "What is your mood?";
 
 // Will be removed laetr
 "PERSONAL CARE" = "PERSONAL CARE";
 "OIL" = "OIL";
+
+// version  valaidation
+alertValaidationMessage = "You have to upgrade , your version is not supported anymore";
+
+// payment Methods
+"K-net" = "K-net";
+"Mada" = "Mada";
+"Visa" = "Visa, Mastercard";
+"Cash on delivery" = "Cash on delivery";
+//
+"OFF" = "%\nOFF";

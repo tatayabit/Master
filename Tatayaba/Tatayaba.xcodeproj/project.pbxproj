@@ -8,13 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		053D694C0D5575CB4917A4B5 /* Pods_TatayabaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */; };
+		100236C42395806800C031E8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100236C32395806800C031E8 /* LocationManager.swift */; };
 		1005869B23868DA200D6CA76 /* Float+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1005869A23868DA200D6CA76 /* Float+Extension.swift */; };
 		1005869E2386FA4500D6CA76 /* ConvertedCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1005869D2386FA4500D6CA76 /* ConvertedCurrency.swift */; };
 		100586A02386FCEB00D6CA76 /* ConvertedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1005869F2386FCEB00D6CA76 /* ConvertedProduct.swift */; };
 		100B8D5F236F2F52000E11E8 /* CountriesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100B8D5E236F2F52000E11E8 /* CountriesAPIClient.swift */; };
 		100B8D61236F2F6E000E11E8 /* CountriesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100B8D60236F2F6E000E11E8 /* CountriesEndpoint.swift */; };
 		10181CB8235F655300220439 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10181CB7235F655300220439 /* GoogleService-Info.plist */; };
+		101AE02A23A02B3D005DD372 /* CartSaving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AE02923A02B3D005DD372 /* CartSaving.swift */; };
 		10244C592369F6F8004E65F9 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10244C582369F6F8004E65F9 /* ErrorMessage.swift */; };
+		10480802238C65720056F74B /* ProductImagePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10480801238C65720056F74B /* ProductImagePair.swift */; };
+		10480804238C657C0056F74B /* ProductIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10480803238C657C0056F74B /* ProductIcon.swift */; };
+		10480819238DC9C10056F74B /* VersionValidationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10480817238DC9C10056F74B /* VersionValidationEndpoint.swift */; };
+		1048081A238DC9C10056F74B /* VersionValidationAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10480818238DC9C10056F74B /* VersionValidationAPIClient.swift */; };
+		1048081C238DC9F10056F74B /* SearchProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1048081B238DC9F10056F74B /* SearchProductsViewModel.swift */; };
 		10616751235CB06A00F4A3A0 /* PaymentWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10616750235CB06A00F4A3A0 /* PaymentWebViewController.swift */; };
 		10616753235CBE9C00F4A3A0 /* PaymentWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10616752235CBE9C00F4A3A0 /* PaymentWebViewModel.swift */; };
 		10645967235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10645966235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift */; };
@@ -123,7 +130,6 @@
 		118A10F423294EA9003F86DE /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118A10F323294EA9003F86DE /* UIFont+Extensions.swift */; };
 		11945BBA22F0B08D000F08DC /* CheckoutCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11945BAF22F0B08D000F08DC /* CheckoutCompletedViewController.swift */; };
 		11945BBB22F0B08D000F08DC /* CheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11945BB022F0B08D000F08DC /* CheckOutViewController.swift */; };
-		11945BBC22F0B08D000F08DC /* CheckOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11945BB122F0B08D000F08DC /* CheckOut.storyboard */; };
 		11945BBD22F0B08D000F08DC /* CheckOutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11945BB322F0B08D000F08DC /* CheckOutModel.swift */; };
 		11945BBE22F0B08D000F08DC /* CheckOutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11945BB522F0B08D000F08DC /* CheckOutViewModel.swift */; };
 		11945BBF22F0B08D000F08DC /* CheckoutCompletedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11945BB622F0B08D000F08DC /* CheckoutCompletedViewModel.swift */; };
@@ -278,6 +284,14 @@
 		84BC08A422DC94AA00C6180E /* RecommendedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC08A322DC94AA00C6180E /* RecommendedCollectionViewCell.swift */; };
 		84BC08A622DC972300C6180E /* RecommendedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BC08A522DC972300C6180E /* RecommendedCollectionViewCell.xib */; };
 		9F7E463258DFBE1064395C51 /* Pods_TatayabaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */; };
+		D519D8A8239CFB080026DD97 /* CheckOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D519D8AA239CFB080026DD97 /* CheckOut.storyboard */; };
+		D5643AA5239E761E00885FD3 /* FinancialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5643AA3239E761E00885FD3 /* FinancialTableViewCell.swift */; };
+		D5643AA6239E761E00885FD3 /* FinancialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5643AA4239E761E00885FD3 /* FinancialTableViewCell.xib */; };
+		D5B71207238E1420006BD0DD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B71206238E1420006BD0DD /* SearchViewController.swift */; };
+		D5B71209238E14E0006BD0DD /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B71208238E14E0006BD0DD /* Search.storyboard */; };
+		D5B7120E23903795006BD0DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5B7121023903795006BD0DD /* InfoPlist.strings */; };
+		D5C602EE23A2015200083E3C /* UpdateServerCartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C602ED23A2015200083E3C /* UpdateServerCartResponse.swift */; };
+		D5C602F023A2177400083E3C /* CartContentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C602EF23A2177400083E3C /* CartContentResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -300,13 +314,20 @@
 /* Begin PBXFileReference section */
 		02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B399FC35D3B3B996D93EC1 /* Pods-TatayabaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaUITests.release.xcconfig"; path = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		100236C32395806800C031E8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		1005869A23868DA200D6CA76 /* Float+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Extension.swift"; sourceTree = "<group>"; };
 		1005869D2386FA4500D6CA76 /* ConvertedCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertedCurrency.swift; sourceTree = "<group>"; };
 		1005869F2386FCEB00D6CA76 /* ConvertedProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertedProduct.swift; sourceTree = "<group>"; };
 		100B8D5E236F2F52000E11E8 /* CountriesAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesAPIClient.swift; sourceTree = "<group>"; };
 		100B8D60236F2F6E000E11E8 /* CountriesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesEndpoint.swift; sourceTree = "<group>"; };
 		10181CB7235F655300220439 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		101AE02923A02B3D005DD372 /* CartSaving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartSaving.swift; sourceTree = "<group>"; };
 		10244C582369F6F8004E65F9 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		10480801238C65720056F74B /* ProductImagePair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagePair.swift; sourceTree = "<group>"; };
+		10480803238C657C0056F74B /* ProductIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductIcon.swift; sourceTree = "<group>"; };
+		10480817238DC9C10056F74B /* VersionValidationEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionValidationEndpoint.swift; sourceTree = "<group>"; };
+		10480818238DC9C10056F74B /* VersionValidationAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionValidationAPIClient.swift; sourceTree = "<group>"; };
+		1048081B238DC9F10056F74B /* SearchProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductsViewModel.swift; sourceTree = "<group>"; };
 		10616750235CB06A00F4A3A0 /* PaymentWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewController.swift; sourceTree = "<group>"; };
 		10616752235CBE9C00F4A3A0 /* PaymentWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewModel.swift; sourceTree = "<group>"; };
 		10645966235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDeatailsTableViewCellViewModel.swift; sourceTree = "<group>"; };
@@ -418,7 +439,6 @@
 		118A10F323294EA9003F86DE /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		11945BAF22F0B08D000F08DC /* CheckoutCompletedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutCompletedViewController.swift; sourceTree = "<group>"; };
 		11945BB022F0B08D000F08DC /* CheckOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckOutViewController.swift; sourceTree = "<group>"; };
-		11945BB122F0B08D000F08DC /* CheckOut.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CheckOut.storyboard; sourceTree = "<group>"; };
 		11945BB322F0B08D000F08DC /* CheckOutModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckOutModel.swift; sourceTree = "<group>"; };
 		11945BB522F0B08D000F08DC /* CheckOutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckOutViewModel.swift; sourceTree = "<group>"; };
 		11945BB622F0B08D000F08DC /* CheckoutCompletedViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutCompletedViewModel.swift; sourceTree = "<group>"; };
@@ -552,7 +572,7 @@
 		841CE30D22DCC32100A47FA0 /* messageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageViewModel.swift; sourceTree = "<group>"; };
 		841CE30F22DCC33600A47FA0 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		841CE31422DCC68A00A47FA0 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
-		847CDE3D22C9EE2300E67C8C /* Tatayab - Testing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tatayab - Testing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		847CDE3D22C9EE2300E67C8C /* TATAYAB - تطيّب.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TATAYAB - تطيّب.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		847CDE4022C9EE2300E67C8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847CDE4522C9EE2300E67C8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		847CDE4822C9EE2300E67C8C /* Tatayaba.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tatayaba.xcdatamodel; sourceTree = "<group>"; };
@@ -586,6 +606,16 @@
 		84BC08A522DC972300C6180E /* RecommendedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendedCollectionViewCell.xib; sourceTree = "<group>"; };
 		A8251C3E16050691EBDFB247 /* Pods_Tatayaba.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tatayaba.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55E5C982ED14B5FEE4DCD1D /* Pods-TatayabaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TatayabaUITests.debug.xcconfig"; path = "Target Support Files/Pods-TatayabaUITests/Pods-TatayabaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D519D8AC239CFB0E0026DD97 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/CheckOut.strings; sourceTree = "<group>"; };
+		D519D8AD239CFB2D0026DD97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CheckOut.storyboard; sourceTree = "<group>"; };
+		D5643AA3239E761E00885FD3 /* FinancialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialTableViewCell.swift; sourceTree = "<group>"; };
+		D5643AA4239E761E00885FD3 /* FinancialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinancialTableViewCell.xib; sourceTree = "<group>"; };
+		D5B71206238E1420006BD0DD /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		D5B71208238E14E0006BD0DD /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		D5B7120F23903795006BD0DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D5B712112390379B006BD0DD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D5C602ED23A2015200083E3C /* UpdateServerCartResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateServerCartResponse.swift; sourceTree = "<group>"; };
+		D5C602EF23A2177400083E3C /* CartContentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartContentResponse.swift; sourceTree = "<group>"; };
 		E0F8BF293BFC39D47FD4C2EB /* Pods-Tatayaba.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tatayaba.debug.xcconfig"; path = "Target Support Files/Pods-Tatayaba/Pods-Tatayaba.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -617,6 +647,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		100236C22395805400C031E8 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				100236C32395806800C031E8 /* LocationManager.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		1005869C2386FA1B00D6CA76 /* Currency */ = {
 			isa = PBXGroup;
 			children = (
@@ -637,6 +675,14 @@
 			path = Api;
 			sourceTree = "<group>";
 		};
+		101AE02B23A02B46005DD372 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				101AE02923A02B3D005DD372 /* CartSaving.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		10244C562369F6DF004E65F9 /* ErrorMessage */ = {
 			isa = PBXGroup;
 			children = (
@@ -649,6 +695,48 @@
 			isa = PBXGroup;
 			children = (
 				10244C582369F6F8004E65F9 /* ErrorMessage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1048080A238DC8030056F74B /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				D5B71208238E14E0006BD0DD /* Search.storyboard */,
+				1048080E238DC81B0056F74B /* Models */,
+				1048080D238DC8140056F74B /* ViewModels */,
+				1048080C238DC80E0056F74B /* Views */,
+				1048080B238DC8090056F74B /* Api */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		1048080B238DC8090056F74B /* Api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		1048080C238DC80E0056F74B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D5B71206238E1420006BD0DD /* SearchViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1048080D238DC8140056F74B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1048081B238DC9F10056F74B /* SearchProductsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1048080E238DC81B0056F74B /* Models */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -691,6 +779,8 @@
 		1098F1A323890E4600A8D367 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				10480818238DC9C10056F74B /* VersionValidationAPIClient.swift */,
+				10480817238DC9C10056F74B /* VersionValidationEndpoint.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -1042,6 +1132,8 @@
 				10FC8518234E373F00D13C34 /* ProductOption.swift */,
 				11069C402323FFA50093D6FF /* ProductMainPair.swift */,
 				11069C422323FFD70093D6FF /* ProductDetailedPair.swift */,
+				10480801238C65720056F74B /* ProductImagePair.swift */,
+				10480803238C657C0056F74B /* ProductIcon.swift */,
 				112654AF22D3A2B900904FB5 /* Category.swift */,
 			);
 			path = Models;
@@ -1248,7 +1340,7 @@
 				11945BAF22F0B08D000F08DC /* CheckoutCompletedViewController.swift */,
 				11945BB022F0B08D000F08DC /* CheckOutViewController.swift */,
 				10616750235CB06A00F4A3A0 /* PaymentWebViewController.swift */,
-				11945BB122F0B08D000F08DC /* CheckOut.storyboard */,
+				D519D8AA239CFB080026DD97 /* CheckOut.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1279,6 +1371,8 @@
 				11D842582336A86200F732F9 /* PaymentMethodTableViewCell.xib */,
 				1113A7992329698200FAAC7F /* CheckoutAddressTableViewCell.swift */,
 				1113A79A2329698200FAAC7F /* CheckoutAddressTableViewCell.xib */,
+				D5643AA3239E761E00885FD3 /* FinancialTableViewCell.swift */,
+				D5643AA4239E761E00885FD3 /* FinancialTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1515,6 +1609,8 @@
 		11F52FA522CA7D92000F0D85 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				100236C22395805400C031E8 /* Location */,
+				1048080A238DC8030056F74B /* Search */,
 				1098F1A023890E2800A8D367 /* VersionChecking */,
 				10244C562369F6DF004E65F9 /* ErrorMessage */,
 				11089C0523328AFB00BE9B78 /* Countries */,
@@ -1905,13 +2001,14 @@
 				847CDE3E22C9EE2300E67C8C /* Products */,
 				A8C318DE6A75DA5A76A75E39 /* Pods */,
 				9CDE61A50DEA5CDA03008907 /* Frameworks */,
+				D5B71205238E13A8006BD0DD /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
 		847CDE3E22C9EE2300E67C8C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				847CDE3D22C9EE2300E67C8C /* Tatayab - Testing.app */,
+				847CDE3D22C9EE2300E67C8C /* TATAYAB - تطيّب.app */,
 				847CDE5422C9EE2300E67C8C /* TatayabaTests.xctest */,
 				847CDE5F22C9EE2300E67C8C /* TatayabaUITests.xctest */,
 			);
@@ -1932,6 +2029,7 @@
 				115795CF23314CB00002075E /* Localizable.strings */,
 				10181CB7235F655300220439 /* GoogleService-Info.plist */,
 				847CDE4722C9EE2300E67C8C /* Tatayaba.xcdatamodeld */,
+				D5B7121023903795006BD0DD /* InfoPlist.strings */,
 			);
 			path = Tatayaba;
 			sourceTree = "<group>";
@@ -2061,6 +2159,7 @@
 		84BC089422DC7CD200C6180E /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				101AE02B23A02B46005DD372 /* Helper */,
 				10B08373234CF3FD00DCE773 /* Api */,
 				84BC08A222DC936500C6180E /* TableCells */,
 				84BC08A122DC935700C6180E /* ViewModel */,
@@ -2082,6 +2181,7 @@
 		84BC08A022DC934A00C6180E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D5C602EC23A2012D00083E3C /* UpdateServerCart */,
 				1005869C2386FA1B00D6CA76 /* Currency */,
 				27A908912357906C0032DA41 /* TaxAndShippingModels */,
 				27A9085C235264230032DA41 /* CouponModels */,
@@ -2146,6 +2246,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D5B71205238E13A8006BD0DD /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		D5C602EC23A2012D00083E3C /* UpdateServerCart */ = {
+			isa = PBXGroup;
+			children = (
+				D5C602ED23A2015200083E3C /* UpdateServerCartResponse.swift */,
+				D5C602EF23A2177400083E3C /* CartContentResponse.swift */,
+			);
+			path = UpdateServerCart;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2166,7 +2282,7 @@
 			);
 			name = Tatayaba;
 			productName = Tatayaba;
-			productReference = 847CDE3D22C9EE2300E67C8C /* Tatayab - Testing.app */;
+			productReference = 847CDE3D22C9EE2300E67C8C /* TATAYAB - تطيّب.app */;
 			productType = "com.apple.product-type.application";
 		};
 		847CDE5322C9EE2300E67C8C /* TatayabaTests */ = {
@@ -2259,7 +2375,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11945BBC22F0B08D000F08DC /* CheckOut.storyboard in Resources */,
+				D519D8A8239CFB080026DD97 /* CheckOut.storyboard in Resources */,
+				D5B7120E23903795006BD0DD /* InfoPlist.strings in Resources */,
 				10DFE456235262E100AAB780 /* OptionsHeader.xib in Resources */,
 				847CDE4E22C9EE2300E67C8C /* LaunchScreen.storyboard in Resources */,
 				27AB3014236AD40300CFBF59 /* Cairo-Regular.ttf in Resources */,
@@ -2304,6 +2421,7 @@
 				11FB5870231D5EFF005DA4F0 /* SuppliersBlockCollectionViewCell.xib in Resources */,
 				847CDE8722CA19EE00E67C8C /* ProximaNova-Semibold.ttf in Resources */,
 				11D84249233620D400F732F9 /* User.storyboard in Resources */,
+				D5643AA6239E761E00885FD3 /* FinancialTableViewCell.xib in Resources */,
 				11FB5874231D5F1C005DA4F0 /* SuppliersBlockView.xib in Resources */,
 				11081EFD22DB8F5500B68EA5 /* ProfileDetailsView.xib in Resources */,
 				11D4E6A12312FCDB00226A23 /* FullScreenBannersView.xib in Resources */,
@@ -2313,6 +2431,7 @@
 				847CDE8522CA19EE00E67C8C /* ProximaNova-Extrabld.ttf in Resources */,
 				11A8B15D22D7943D001B2661 /* WishlistCollectionViewCell.xib in Resources */,
 				113647FC2316FF0F0097FDB3 /* CategoriesBlockView.xib in Resources */,
+				D5B71209238E14E0006BD0DD /* Search.storyboard in Resources */,
 				847CDE4622C9EE2300E67C8C /* Main.storyboard in Resources */,
 				4CC28C702327F961003EAEA6 /* GOTHAM-MEDIUM.TTF in Resources */,
 				11FB584A231C2147005DA4F0 /* CategoriesBlockCollectionViewCell.xib in Resources */,
@@ -2518,6 +2637,7 @@
 				11A09F3C22FB255700C3E5B8 /* OrderDetailsViewController.swift in Sources */,
 				11D4917A22CBCF8B009D8B23 /* UIView+Extensions.swift in Sources */,
 				1137042C22F9E35D00EAFBBD /* Customer.swift in Sources */,
+				D5C602F023A2177400083E3C /* CartContentResponse.swift in Sources */,
 				27A9089C2357906C0032DA41 /* PaymentImage.swift in Sources */,
 				841CE30A22DCC2B300A47FA0 /* MessagesViewController.swift in Sources */,
 				848E89C122CC99AC000AA24C /* AACarousel.swift in Sources */,
@@ -2529,8 +2649,10 @@
 				11007BD222DE2E6600AC9957 /* CatProductsViewModel.swift in Sources */,
 				11FEB4E022DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.swift in Sources */,
 				10DFE4542352619000AAB780 /* OptionsHeader.swift in Sources */,
+				10480804238C657C0056F74B /* ProductIcon.swift in Sources */,
 				1101C66D22E0D75500416307 /* HProductCollectionViewCell.swift in Sources */,
 				27E8533D2376B703002649BE /* PromotionData.swift in Sources */,
+				10480802238C65720056F74B /* ProductImagePair.swift in Sources */,
 				2767CB94236472290042F533 /* OrderDetailsCell.swift in Sources */,
 				848E89CC22CCEAAC000AA24C /* FeatureProductCollectionViewCell.swift in Sources */,
 				116C938F22F0954500921893 /* PaymentAPIClient.swift in Sources */,
@@ -2554,12 +2676,14 @@
 				112654A922D25E5B00904FB5 /* SignUpResponse.swift in Sources */,
 				11D4E69F2312FC5500226A23 /* FullScreenBannersView.swift in Sources */,
 				11945BBB22F0B08D000F08DC /* CheckOutViewController.swift in Sources */,
+				D5643AA5239E761E00885FD3 /* FinancialTableViewCell.swift in Sources */,
 				11D4917722CBC3BB009D8B23 /* UIColor+Extension.swift in Sources */,
 				116C936322F0930300921893 /* OrdersEndpoint.swift in Sources */,
 				11624ECF230C454A00E81ABD /* BlockProduct.swift in Sources */,
 				11081EFB22DB8F4900B68EA5 /* ProfileDetailsView.swift in Sources */,
 				847CDE4922C9EE2300E67C8C /* Tatayaba.xcdatamodeld in Sources */,
 				8407BABF22E8623E001F2C2A /* OrderModel.swift in Sources */,
+				10480819238DC9C10056F74B /* VersionValidationEndpoint.swift in Sources */,
 				11007BD022DE2DC700AC9957 /* CatProductsViewController.swift in Sources */,
 				8407BAC222E869A8001F2C2A /* OrderTableViewCell.swift in Sources */,
 				115DC43023118A500001EF67 /* BannerBlockCollectionViewCell.swift in Sources */,
@@ -2582,9 +2706,11 @@
 				11624ED3230C468700E81ABD /* BlockImagePairDetailed.swift in Sources */,
 				11C271B022F20625004613E3 /* AddressesListViewModel.swift in Sources */,
 				11945BBD22F0B08D000F08DC /* CheckOutModel.swift in Sources */,
+				100236C42395806800C031E8 /* LocationManager.swift in Sources */,
 				11081EEC22DB824600B68EA5 /* AboutUsViewController.swift in Sources */,
 				1145395D232CDC7C00EDC908 /* ImagePicker.swift in Sources */,
 				10616753235CBE9C00F4A3A0 /* PaymentWebViewModel.swift in Sources */,
+				D5B71207238E1420006BD0DD /* SearchViewController.swift in Sources */,
 				10B4CBCB237336ED0065918D /* DataBase64Decodable.swift in Sources */,
 				10FC8519234E373F00D13C34 /* ProductOption.swift in Sources */,
 				11007BD522DE2F2E00AC9957 /* NewProductCollectionViewCell.swift in Sources */,
@@ -2609,11 +2735,13 @@
 				115795C6233001F60002075E /* SupplierProductsViewModel.swift in Sources */,
 				4CC343A6232F96C2005BA810 /* profileTabMenuViewController.swift in Sources */,
 				11D612AC22CE4A05000D42C3 /* User.swift in Sources */,
+				1048081C238DC9F10056F74B /* SearchProductsViewModel.swift in Sources */,
 				1113A79B2329698200FAAC7F /* CheckoutAddressTableViewCell.swift in Sources */,
 				1137042922F9C79200EAFBBD /* OrdersViewModel.swift in Sources */,
 				27A9089A2357906C0032DA41 /* PaymentIcon.swift in Sources */,
 				27E8533C2376B703002649BE /* Condition.swift in Sources */,
 				848E89C522CCDDBB000AA24C /* HomeViewController.swift in Sources */,
+				D5C602EE23A2015200083E3C /* UpdateServerCartResponse.swift in Sources */,
 				27A9089F2357906C0032DA41 /* TaxAndShippingResponse.swift in Sources */,
 				11B07917233A781F003041E8 /* ConciergeEndpoint.swift in Sources */,
 				11B07912233A771F003041E8 /* Concierge.swift in Sources */,
@@ -2650,6 +2778,7 @@
 				100B8D5F236F2F52000E11E8 /* CountriesAPIClient.swift in Sources */,
 				116C937022F0949B00921893 /* CartItem.swift in Sources */,
 				2742918A237AB3A400B413BA /* UpdateProfileViewModel.swift in Sources */,
+				1048081A238DC9C10056F74B /* VersionValidationAPIClient.swift in Sources */,
 				4CC343A8232F9FAF005BA810 /* ProfileMenuTableViewCell.swift in Sources */,
 				27AB3009236710AC00CFBF59 /* ImageZoomViewController.swift in Sources */,
 				2767CB8F236471BC0042F533 /* OrderMainInfoCell.swift in Sources */,
@@ -2659,6 +2788,7 @@
 				11945BC922F0B0C6000F08DC /* ShippingMethod.swift in Sources */,
 				27E8534623775F50002649BE /* CurrencyEndpoint.swift in Sources */,
 				27A9089D2357906C0032DA41 /* Vat.swift in Sources */,
+				101AE02A23A02B3D005DD372 /* CartSaving.swift in Sources */,
 				11FB5859231C3B18005DA4F0 /* SuppliersAPIClient.swift in Sources */,
 				11FB585B231C3B26005DA4F0 /* SuppliersEndpoint.swift in Sources */,
 				111C8A36230B1123003F5FDB /* BlocksAPIClient.swift in Sources */,
@@ -2774,6 +2904,24 @@
 				847CDE4D22C9EE2300E67C8C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D519D8AA239CFB080026DD97 /* CheckOut.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D519D8AC239CFB0E0026DD97 /* ar */,
+				D519D8AD239CFB2D0026DD97 /* Base */,
+			);
+			name = CheckOut.storyboard;
+			sourceTree = "<group>";
+		};
+		D5B7121023903795006BD0DD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5B7120F23903795006BD0DD /* en */,
+				D5B712112390379B006BD0DD /* ar */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -2901,17 +3049,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.33;
+				CURRENT_PROJECT_VERSION = 1.0.53;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Tatayaba.Tatayaba;
-				PRODUCT_NAME = "Tatayab - Testing";
+				MARKETING_VERSION = 4.4.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tatayab.tatayab;
+				PRODUCT_NAME = "TATAYAB - تطيّب";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -2922,16 +3071,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.33;
+				CURRENT_PROJECT_VERSION = 1.0.53;
 				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Tatayaba.Tatayaba;
-				PRODUCT_NAME = "Tatayab - Testing";
+				MARKETING_VERSION = 4.4.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tatayab.tatayab;
+				PRODUCT_NAME = "TATAYAB - تطيّب";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

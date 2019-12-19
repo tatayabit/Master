@@ -15,15 +15,17 @@ enum ProductsEndpoint {
     case getProductFeatures
     case getProductDetails(productId: String)
     case getAlsoBoughtProducts(productId: String)
+    case search(keyword: String, page: String)
 }
 
 
 extension ProductsEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
-        case .production: return "http://dev_ios%40tatayab.com:6337M41B30af4Sh7A6006lSq2jabf3M2@dev2.tatayab.com/api/"
-        case .qa: return "http://localhost:3000/"
-        case .staging: return "http://localhost:3000/"
+        case .production: return BaseUrls.production
+        case .dev2: return BaseUrls.dev2
+        case .staging: return BaseUrls.staging
+        case .dev3: return BaseUrls.dev3
         }
     }
     
@@ -51,12 +53,15 @@ extension ProductsEndpoint: TargetType {
         case .getAlsoBoughtProducts:
             let version = "4.0"
             return "\(version.urlEscaped)/TtmBlocks/77"
+        case .search:
+            let version = "4.0"
+            return "\(version.urlEscaped)/TtmProducts"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getProducts, .getAllCategories, .getProductsOfCategory, .getProductFeatures, .getProductDetails, .getAlsoBoughtProducts:
+        case .getProducts, .getAllCategories, .getProductsOfCategory, .getProductFeatures, .getProductDetails, .getAlsoBoughtProducts, .search:
             return .get
         }
     }
@@ -81,7 +86,9 @@ extension ProductsEndpoint: TargetType {
             if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
                 currencyId = countryCurrency
             }
-            return .requestParameters(parameters: ["currency_id": currencyId.urlEscaped
+            print(LanguageManager.getLanguage())
+            return .requestParameters(parameters: ["currency_id": currencyId.urlEscaped,
+                                                   "lang_code": LanguageManager.getLanguage()
             ], encoding: URLEncoding.default)
             
         case .getAllCategories:
@@ -119,15 +126,38 @@ extension ProductsEndpoint: TargetType {
                 currencyId = countryCurrency
             }
             return .requestParameters(parameters: [ "also_bought_for_product_id": productId,
-                                                    "currency_id": currencyId.urlEscaped
+                                                    "currency_id": currencyId.urlEscaped,
+                                                    "lang_code": LanguageManager.getLanguage()
+            ], encoding: URLEncoding.default)
+            
+        case .search(let keyword, let page):
+        var currencyId = Constants.Currency.kuwaitCurrencyId
+        if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
+            currencyId = countryCurrency
+        }
+        return .requestParameters(parameters: [ "items_per_page": 20,
+                                                "status": "A",
+//                                                "cid": category,
+                                                "page": page.urlEscaped,
+                                                "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
+                                                "lang_code": LanguageManager.getLanguage(),
+                                                "currency_id": currencyId.urlEscaped,
+                                                "search": "Y",
+                                                "q": keyword
             ], encoding: URLEncoding.default)
         }
     }
     
     var headers: [String : String]? {
-        
+        var authKey = ""
+        switch UserAPIClient.environment {
+        case .production: authKey = Keys.Authorizations.production
+        case .dev2: authKey = Keys.Authorizations.dev2
+        case .staging: authKey = Keys.Authorizations.staging
+        case .dev3: authKey = Keys.Authorizations.dev3
+        }
         return ["Content-type": "application/json",
-                "authorization": "Basic ZGUyQHRhdGF5YWIuY29tOkU5NzBBU3NxMGU5R21TSjJFWDBCTEd2c2tPMlVGODQx=="
+                "authorization": authKey//"Basic ZGUyQHRhdGF5YWIuY29tOkU5NzBBU3NxMGU5R21TSjJFWDBCTEd2c2tPMlVGODQx=="
         ]
     }
     

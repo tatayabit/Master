@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Tatayaba
+
+  Created by new on 11/28/19.
+  Copyright © 2019 Shaik. All rights reserved.
+*/
+/* Localized Bundle Display Name */
+"CFBundleDisplayName" = "تطيّب";

@@ -11,6 +11,8 @@ class CheckOutViewModel {
     private let shippingApiClient = ShippingAPIClient()
     private let paymentApiClient = PaymentAPIClient()
     private let ordersApiClient = OrdersAPIClient()
+    private let cartApiClient = CartAPIClient()
+
 
     let cart = Cart.shared
 
@@ -95,14 +97,14 @@ class CheckOutViewModel {
     }
 
     //MARK:- Placing Order
-    func placeOrder(userData: User, completion: @escaping (APIResult<PlaceOrderResult?, MoyaError>) -> Void) {
+    func placeOrder(userData: User,notes :String, completion: @escaping (APIResult<PlaceOrderResult?, MoyaError>) -> Void) {
 
         let userId = getUserId()
         let userData = userId == "0" ? getUserDataModel(user: userData) : nil
 
         let paymentId = cart.paymentMethod?.paymentId ?? "0"
 
-        ordersApiClient.CreateOrder(products: getProductsModel(), userId: userId, userData: userData, paymentId: paymentId, oneClickBuy: cart.isOneClickBuy, code: cart.couponCode) { result in
+        ordersApiClient.CreateOrder(products: getProductsModel(), userId: userId, userData: userData, paymentId: paymentId, oneClickBuy: cart.isOneClickBuy, code: cart.couponCode, notes: notes) { result in
             switch result {
             case .success(let response):
                 guard let placeOrderResult = response else { return }
@@ -182,6 +184,33 @@ class CheckOutViewModel {
             "b_address": user.shippingAddress
         ]
         return dict
+    }
+    
+    // MARK:-
+    func getConvertedPricesWithUpdatedCurrency(value:Double,completion: @escaping (APIResult<ConvertedCurrency?, MoyaError>) -> Void) {
+           if cart.productsList().count == 0 { return }
+        cartApiClient.getPricesWithUpdatedCurrency(parameters: self.getConvertingCurrencyJsonString(value: value)) { result in
+               switch result {
+               case .success(let convertedPricesResult):
+                   if let convertedPrices = convertedPricesResult {
+                       print(convertedPrices)
+                   }
+               case .failure(let error):
+                   print("the error \(error)")
+               }
+               completion(result)
+           }
+       }
+    
+    private func getConvertingCurrencyJsonString(value : Double) -> [String: Any] {
+        
+        var requestJson = [String: Any]()
+        
+        requestJson["shipping_charge"] = value
+        requestJson["to_currency_id"] = CurrencySettings.shared.currentCurrency?.currencyId//currencyId
+        requestJson["convert_data"] = true
+        
+        return requestJson
     }
 
     //MARK:- CheckoutCompletedViewModel

@@ -47,8 +47,9 @@ struct Product {
     var outOfStockActions: String
     var productStatus: String?
     var hasOptions: Bool
+    var is_free_delivery: String
     
-    init(name: String = "", supplierName: String = "", description: String = "", priceBeforeDiscount: String = "", discountPercentage: String = "", price: String = "0.00", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair(), productOptions: [ProductOption] = [ProductOption](), maxQuantity: String = "0", position: String = "", amount: Int = 0, outOfStockActions: String = "", productStatus: String = "", hasOptions: Bool = false) {
+    init(name: String = "", supplierName: String = "", description: String = "", priceBeforeDiscount: String = "", discountPercentage: String = "", price: String = "0.00", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair(), productOptions: [ProductOption] = [ProductOption](), maxQuantity: String = "0", position: String = "", amount: Int = 0, outOfStockActions: String = "", productStatus: String = "", hasOptions: Bool = false, is_free_delivery: String = "") {
 
         self.name = name
         self.description = description
@@ -67,6 +68,7 @@ struct Product {
         self.outOfStockActions = outOfStockActions
         self.productStatus = productStatus
         self.hasOptions = hasOptions
+        self.is_free_delivery = is_free_delivery
     }
 }
 
@@ -90,6 +92,7 @@ extension Product: Codable {
         case outOfStockActions = "out_of_stock_actions"
         case productStatus = "product_status"
         case hasOptions = "has_options"
+        case is_free_delivery = "is_free_delivery"
     }
 
     init(from decoder: Decoder) throws {
@@ -111,15 +114,24 @@ extension Product: Codable {
         outOfStockActions = try container.decodeIfPresent(String.self, forKey: .outOfStockActions) ?? ""
         productStatus = try container.decodeIfPresent(String.self, forKey: .productStatus) ?? ""
         hasOptions = try container.decodeIfPresent(Bool.self, forKey: .hasOptions) ?? false
-        
+        is_free_delivery = try container.decodeIfPresent(String.self, forKey: .is_free_delivery) ?? ""
         var amountVal = 0
-        if let amountString = try container.decodeIfPresent(String.self, forKey: .amount) {
-            amountVal = Int(amountString) ?? 0
-        } else if let amountInt = try container.decodeIfPresent(Int.self, forKey: .amount) {
-            amountVal = Int(amountInt)
+        do {
+            let amountInt = try? container.decodeIfPresent(Int.self, forKey: .amount)
+            if let amountInt = amountInt {
+                amountVal = amountInt ?? 0
+            }
         }
         
+        do {
+            let amountString = try? container.decodeIfPresent(String.self, forKey: .amount)
+            if let amountString = amountString {
+                amountVal = Int(amountString ?? "0") ?? 0
+            }
+        }
+       
         amount = amountVal
+
         
         var idVal = ""
         if let identifierString = try? container.decode(String.self, forKey: .identifier) {
@@ -132,7 +144,7 @@ extension Product: Codable {
         
         var priceVal = ""
         if let priceValString = try? container.decode(String.self, forKey: .price) {
-            priceVal = priceValString
+            priceVal = priceValString.replacingOccurrences(of: ",", with: "")
         } else if let priceValInt = try? container.decode(Float.self, forKey: .price) {
             priceVal = "\(priceValInt)"
         }
@@ -140,7 +152,7 @@ extension Product: Codable {
         
         var priceBeforeDiscountVal = ""
         if let priceBeforeDiscountValString = try? container.decode(String.self, forKey: .priceBeforeDiscount) {
-            priceBeforeDiscountVal = priceBeforeDiscountValString
+            priceBeforeDiscountVal = priceBeforeDiscountValString.replacingOccurrences(of: ",", with: "")
         } else if let priceBeforeDiscountValInt = try? container.decode(Float.self, forKey: .priceBeforeDiscount) {
             priceBeforeDiscountVal = "\(priceBeforeDiscountValInt)"
         }
@@ -148,7 +160,7 @@ extension Product: Codable {
         
         var discountPercentageVal = ""
         if let discountPercentageValString = try? container.decode(String.self, forKey: .discountPercentage) {
-            discountPercentageVal = discountPercentageValString
+            discountPercentageVal = discountPercentageValString.replacingOccurrences(of: ",", with: "")
         } else if let discountPercentageValInt = try? container.decode(Float.self, forKey: .discountPercentage) {
             discountPercentageVal = "\(discountPercentageValInt)"
         }
@@ -174,6 +186,7 @@ extension Product: Codable {
         try container.encodeIfPresent(amount, forKey: .amount)
         try container.encodeIfPresent(productStatus, forKey: .productStatus)
         try container.encodeIfPresent(hasOptions, forKey: .hasOptions)
+        try container.encodeIfPresent(is_free_delivery, forKey: .is_free_delivery)
     }
 }
 

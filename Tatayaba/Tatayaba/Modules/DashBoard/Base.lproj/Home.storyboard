@@ -38,6 +38,7 @@
                         <segue destination="qwp-Xb-7g4" kind="show" identifier="category_products_segue" id="rvK-k9-LrT"/>
                         <segue destination="W65-ey-hEj" kind="show" identifier="supplier_products_segue" id="r7n-Rh-uNL"/>
                         <segue destination="eTb-qW-7Db" kind="show" identifier="all_supplier_segue" id="4ZE-6a-7K7"/>
+                        <segue destination="N5I-6P-sd3" kind="push" identifier="search_segue" id="CCQ-EB-rkK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNm-hz-0IP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -242,17 +243,27 @@
             </objects>
             <point key="canvasLocation" x="82" y="522"/>
         </scene>
+        <!--Search-->
+        <scene sceneID="BZV-Kj-DQA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Search" id="N5I-6P-sd3" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ukm-eS-oba"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pvq-IO-5Bu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2215" y="-506"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="Profile_selected" width="40" height="40"/>
-        <image name="Profile_unselected" width="40" height="40"/>
-        <image name="cart_selected" width="40" height="40"/>
-        <image name="cart_unselected" width="40" height="40"/>
-        <image name="category_selected" width="40" height="40"/>
-        <image name="category_unselected" width="40" height="40"/>
-        <image name="concierge_selected" width="40" height="40"/>
-        <image name="concierge_unselected" width="40" height="40"/>
-        <image name="home_selected" width="40" height="40"/>
-        <image name="home_unselected" width="40" height="40"/>
+        <image name="Profile_selected" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="Profile_unselected" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="cart_selected" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="cart_unselected" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="category_selected" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="category_unselected" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="concierge_selected" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="concierge_unselected" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="home_selected" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="home_unselected" width="33.333332061767578" height="33.333332061767578"/>
     </resources>
 </document>

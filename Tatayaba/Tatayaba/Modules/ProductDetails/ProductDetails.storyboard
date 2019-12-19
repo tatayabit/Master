@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,7 +25,7 @@
         <!--Product Details View Controller-->
         <scene sceneID="u64-mt-OE4">
             <objects>
-                <viewController storyboardIdentifier="ProductDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sab-ra-ANU" customClass="ProductDetailsViewController" customModule="Tatayab___Testing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sab-ra-ANU" customClass="ProductDetailsViewController" customModule="TATAYAB___تطيّب" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iB0-e7-ZzJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,7 +57,7 @@
                                     <constraint firstAttribute="height" constant="50" id="JY7-Sp-eqv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
-                                <state key="normal" title="ADD TO CART">
+                                <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -74,7 +74,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="704"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ProductDeatailsTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProductDeatailsTableViewCell" rowHeight="415" id="Mlu-K9-C5A" customClass="ProductDeatailsTableViewCell" customModule="Tatayab___Testing" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ProductDeatailsTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProductDeatailsTableViewCell" rowHeight="415" id="Mlu-K9-C5A" customClass="ProductDeatailsTableViewCell" customModule="TATAYAB___تطيّب" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="415"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mlu-K9-C5A" id="L6q-L8-rvC">
@@ -134,7 +134,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyR-gg-KHo">
-                                                            <rect key="frame" x="4" y="32" width="42" height="24"/>
+                                                            <rect key="frame" x="4" y="36" width="42" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="8E2-EB-Aiz"/>
                                                                 <constraint firstAttribute="width" constant="42" id="ebz-Cg-zp7"/>
@@ -147,13 +147,13 @@
                                                     <color key="backgroundColor" red="0.91340368989999998" green="0.9215845466" blue="0.92563194039999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="tyR-gg-KHo" secondAttribute="trailing" constant="4" id="3Uh-eD-2kU"/>
+                                                        <constraint firstItem="tyR-gg-KHo" firstAttribute="centerY" secondItem="hrW-AT-q23" secondAttribute="centerY" id="3lB-3U-5xc"/>
                                                         <constraint firstItem="tef-yc-INp" firstAttribute="centerX" secondItem="hrW-AT-q23" secondAttribute="centerX" id="4Js-ES-YC2"/>
-                                                        <constraint firstAttribute="bottom" secondItem="tef-yc-INp" secondAttribute="bottom" constant="11" id="COi-Q0-usO"/>
                                                         <constraint firstItem="Z8W-ap-nbR" firstAttribute="centerX" secondItem="tef-yc-INp" secondAttribute="centerX" id="TmW-FE-b4e"/>
                                                         <constraint firstItem="tef-yc-INp" firstAttribute="top" secondItem="Z8W-ap-nbR" secondAttribute="bottom" constant="7" id="X97-fH-42r"/>
                                                         <constraint firstAttribute="width" constant="50" id="p8I-nx-0BW"/>
-                                                        <constraint firstAttribute="bottom" secondItem="tyR-gg-KHo" secondAttribute="bottom" constant="40" id="rNa-dN-rXo"/>
                                                         <constraint firstItem="tyR-gg-KHo" firstAttribute="leading" secondItem="hrW-AT-q23" secondAttribute="leading" constant="4" id="siT-nT-IWX"/>
+                                                        <constraint firstItem="tef-yc-INp" firstAttribute="top" secondItem="tyR-gg-KHo" secondAttribute="bottom" constant="-10" id="yPQ-n4-9iA"/>
                                                     </constraints>
                                                 </view>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WxN-4G-hCE">
@@ -285,7 +285,7 @@
         <!--Image Zoom View Controller-->
         <scene sceneID="Ics-XR-J6w">
             <objects>
-                <viewController storyboardIdentifier="ImageZoomViewController" id="tli-Jd-7Ir" customClass="ImageZoomViewController" customModule="Tatayab___Testing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImageZoomViewController" id="tli-Jd-7Ir" customClass="ImageZoomViewController" customModule="TATAYAB___تطيّب" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A2K-z6-AhQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="OptionsHeader" customModule="Tatayaba" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="OptionsHeader" customModule="TATAYAB___تطيّب" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="355" height="97"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -31,15 +31,24 @@
                         <constraint firstAttribute="height" constant="25" id="tJ1-nq-J9x"/>
                     </constraints>
                 </imageView>
+                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="ktM-Xo-YZk">
+                    <rect key="frame" x="0.0" y="28.5" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="aUi-sV-qsI"/>
+                        <constraint firstAttribute="height" constant="40" id="yPy-24-Fhf"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1Wg-nk-eRz" secondAttribute="trailing" constant="8" id="0Ie-qd-KHR"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="U7p-tw-wbf" secondAttribute="bottom" constant="8" id="2nr-pz-f8B"/>
+                <constraint firstItem="ktM-Xo-YZk" firstAttribute="centerY" secondItem="U7p-tw-wbf" secondAttribute="centerY" id="4z0-0H-lLf"/>
                 <constraint firstItem="BJw-Nx-g7S" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="6sa-aS-oXI"/>
                 <constraint firstItem="1Wg-nk-eRz" firstAttribute="centerY" secondItem="U7p-tw-wbf" secondAttribute="centerY" id="Ji3-8k-xdg"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="BJw-Nx-g7S" secondAttribute="trailing" id="NBL-db-k8t"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="U7p-tw-wbf" secondAttribute="trailing" constant="8" id="S5x-cW-jtR"/>
                 <constraint firstItem="BJw-Nx-g7S" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YAb-8s-lvx"/>
+                <constraint firstItem="ktM-Xo-YZk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="c9t-Cu-Sa9"/>
                 <constraint firstItem="U7p-tw-wbf" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="fg2-jH-arf"/>
                 <constraint firstAttribute="bottom" secondItem="BJw-Nx-g7S" secondAttribute="bottom" id="xMY-fF-1rp"/>
                 <constraint firstItem="U7p-tw-wbf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="zl3-xX-gZc"/>
@@ -48,12 +57,14 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="arrowImageView" destination="1Wg-nk-eRz" id="EJj-dj-tIV"/>
+                <outlet property="selectedImageView" destination="ktM-Xo-YZk" id="Xss-UA-mwr"/>
                 <outlet property="titleLabel" destination="U7p-tw-wbf" id="dzP-jD-Wo1"/>
             </connections>
             <point key="canvasLocation" x="37.600000000000001" y="-208.24587706146929"/>
         </view>
     </objects>
     <resources>
+        <image name="checkmark" width="30" height="30"/>
         <image name="up-arrow" width="7.5" height="4"/>
     </resources>
 </document>

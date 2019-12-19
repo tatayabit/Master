@@ -10,8 +10,25 @@ import Moya
 
 enum APIEnvironment {
     case staging
-    case qa
+    case dev2
+    case dev3
     case production
+}
+
+struct BaseUrls {
+    static let production = "http://ttm%40tatayab.com:608Wg8D72001FDUFT70F69nbw53KWmR1@tatayab.com/api/"
+    static let staging = "http://localhost:3000/"
+    static let dev2 = "http://localhost:3000/"
+    static let dev3 = "http://m.roshan%40tatayab.com:9Z19bF0f911Se53c5EE4U4Ik4F2282Fr@dev3.tatayab.com/api/"
+}
+
+struct Keys {
+    struct Authorizations {
+        static let production = "ZGV2X2lvc0B0YXRheWFiLmNvbTo2MzM3TTQxQjMwYWY0U2g3QTYwMDZsU3EyamFiZjNNMg=="
+        static let staging = "http://localhost:3000/"
+        static let dev2 = "http://localhost:3000/"
+        static let dev3 = "bS5yb3NoYW5AdGF0YXlhYi5jb206OVoxOWJGMGY5MTFTZTUzYzVFRTRVNElrNEYyMjgyRnI="
+    }
 }
 
 protocol APIClient {

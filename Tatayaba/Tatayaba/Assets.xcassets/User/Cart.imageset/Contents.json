@@ -2,16 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "unnamed-19.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Artboard 2-9.png",
+      "filename" : "unnamed-9.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Artboard 2-8.png",
+      "filename" : "unnamed-2.png",
       "scale" : "3x"
     }
   ],

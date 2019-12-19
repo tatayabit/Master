@@ -7,11 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
 class HomeViewController: BaseViewController, BannersBlocksViewProtocol, CategoriesBlockViewProtocol, ProductsBlockViewProtocol, SuppliersBlockViewProtocol, FullScreenBannersViewProtocol, CountrySettingsDelegate, CurrencySettingsDelegate {
-    
-    
-    
     
     func currencyDidChange(to currency: Currency) {
         print("currency changes!!!")
@@ -23,7 +21,11 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     private let supplierProductsSegue = "supplier_products_segue"
     private let allCategoriesSegue = "all_categories_segue"
     private let allSuppliersSegue = "all_supplier_segue"
+    private let searchSegue = "search_segue"
+    
 
+    
+    
     @IBOutlet weak var scrollView: StackedScrollView!
     var tabbar:UITabBar?
     private var viewModel = HomeViewModel()
@@ -42,27 +44,47 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     
     // Duplicated Products (Will be updated  later)
     let productsBlocklView270: ProductsBlockView = .fromNib()
+    let productsBlocklView293: ProductsBlockView = .fromNib()
     let productsBlocklView305: ProductsBlockView = .fromNib()
     let productsBlocklView267: ProductsBlockView = .fromNib()
     let productsBlocklView297: ProductsBlockView = .fromNib()
     let productsBlocklView248: ProductsBlockView = .fromNib()
     let productsBlocklView265: ProductsBlockView = .fromNib()
     
+    let locationManager = LocationManager()
+    
+    
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        addBannersSubView()
-        setupListners()
         setupUI()
-        viewModel.loadAPIs()
         let cart = Cart.shared
         cart.updateTabBarCount()
+        addSearchBtn()
         CountriesManager.shared.loadCountriesList()
         CurrenciesManager.shared.loadCurrenciesList()
         CountrySettings.shared.addDelegate(delegate: self)
         CurrencySettings.shared.addCurrencyDelegate(delegate: self)
+        startLocationProcessing()
     }
 
+    // MARK:- BannersLoading
+    private func loadBanners() {
+        addBannersSubView()
+        setupListners()
+        viewModel.loadAPIs()
+    }
+    // MARK:- Location Processing
+    private func startLocationProcessing() {
+        if AppDelegate.shared.shouldCheckLocation {
+            locationManager.delegate = self
+            locationManager.initService()
+        } else {
+            self.loadBanners()
+        }
+    }
+    
+    // MARK:- Setup Banners
     fileprivate func addBannersSubView() {
         fullScreenBannersView.delegate = self
         scrollView.stackView.addArrangedSubview(fullScreenBannersView)
@@ -81,7 +103,10 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         squaredBlockView.delegate = self
         scrollView.stackView.addArrangedSubview(squaredBlockView)
         squaredBlockView.translatesAutoresizingMaskIntoConstraints = false
-        squaredBlockView.heightAnchor.constraint(equalToConstant: 255).isActive = true
+        squaredBlockView.heightAnchor.constraint(equalToConstant: 225).isActive = true
+        //
+        
+        //
         self.showLoadingIndicator(to: squaredBlockView)
 
 
@@ -91,14 +116,16 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         productsBlocklView.heightAnchor.constraint(equalToConstant: 260).isActive = true
         self.showLoadingIndicator(to: productsBlocklView)
 
+        
+        self.addDupplicatedProducts()
 
         suppliersBlockView.delegate = self
         scrollView.stackView.addArrangedSubview(suppliersBlockView)
         suppliersBlockView.translatesAutoresizingMaskIntoConstraints = false
-        suppliersBlockView.heightAnchor.constraint(equalToConstant: 145).isActive = true
+        suppliersBlockView.heightAnchor.constraint(equalToConstant: 165).isActive = true
         self.showLoadingIndicator(to: suppliersBlockView)
         
-        self.addDupplicatedProducts()
+        
 
     }
 
@@ -127,24 +154,28 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         self.productsBlocklView270.block = self.viewModel.productsBlocks[1]
         self.productsBlocklView270.loadData()
         
+        self.hideLoadingIndicator(from: self.productsBlocklView293)
+        self.productsBlocklView293.block = self.viewModel.productsBlocks[2]
+        self.productsBlocklView293.loadData()
+                   
         self.hideLoadingIndicator(from: self.productsBlocklView305)
-        self.productsBlocklView305.block = self.viewModel.productsBlocks[2]
+        self.productsBlocklView305.block = self.viewModel.productsBlocks[3]
         self.productsBlocklView305.loadData()
         
         self.hideLoadingIndicator(from: self.productsBlocklView267)
-        self.productsBlocklView267.block = self.viewModel.productsBlocks[3]
+        self.productsBlocklView267.block = self.viewModel.productsBlocks[4]
         self.productsBlocklView267.loadData()
         
         self.hideLoadingIndicator(from: self.productsBlocklView297)
-        self.productsBlocklView297.block = self.viewModel.productsBlocks[4]
+        self.productsBlocklView297.block = self.viewModel.productsBlocks[5]
         self.productsBlocklView297.loadData()
         
         self.hideLoadingIndicator(from: self.productsBlocklView248)
-        self.productsBlocklView248.block = self.viewModel.productsBlocks[5]
+        self.productsBlocklView248.block = self.viewModel.productsBlocks[6]
         self.productsBlocklView248.loadData()
         
         self.hideLoadingIndicator(from: self.productsBlocklView265)
-        self.productsBlocklView265.block = self.viewModel.productsBlocks[6]
+        self.productsBlocklView265.block = self.viewModel.productsBlocks[7]
         self.productsBlocklView265.loadData()
 //
 //        // Will be removed later
@@ -218,6 +249,13 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         productsBlocklView270.titleLabel.text = "PERSONAL CARE".localized()
         self.showLoadingIndicator(to: productsBlocklView270)
         
+        productsBlocklView293.delegate = self
+        scrollView.stackView.addArrangedSubview(productsBlocklView293)
+        productsBlocklView293.translatesAutoresizingMaskIntoConstraints = false
+        productsBlocklView293.heightAnchor.constraint(equalToConstant: 260).isActive = true
+        productsBlocklView293.titleLabel.text = ""
+        self.showLoadingIndicator(to: productsBlocklView293)
+        
         productsBlocklView305.delegate = self
         scrollView.stackView.addArrangedSubview(productsBlocklView305)
         productsBlocklView305.translatesAutoresizingMaskIntoConstraints = false
@@ -263,11 +301,14 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
 
         self.NavigationBarWithOutBackButton()
         self.tabbar?.selectedItem = tabbar?.items?[0]
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated) // No need for semicolon
         self.tabBarController?.tabBar.isHidden = false
+        ValidateVersionVersion()
+        
     }
 
     // MARK:- CategoriesBlockView delegate
@@ -334,6 +375,40 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         print("country changes!!!")
         print("HomeViewController")
     }
+    
+    
+    func ValidateVersionVersion(){
+        viewModel.ValidateVersionVersion(){ status in
+            if(status != "success"){
+                self.showAlert()
+            }
+            
+            }
+    }
+    func showAlert()
+    {
+        let alert = UIAlertController(title: "Alert", message: "alertValaidationMessage".localized(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+              switch action.style{
+              case .default:
+                self.viewModel.openStoreURL()
+                self.showAlert()
+              case .cancel:
+                    print("cancel")
+
+              case .destructive:
+                    print("destructive")
+
+
+        }}))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func search() {
+       performSegue(withIdentifier: searchSegue, sender: nil)
+    }
+    
+    
 }
 
 extension HomeViewController {
@@ -365,5 +440,65 @@ extension HomeViewController {
             }
         }
     }
+}
+
+extension HomeViewController: LocationManagerDelegate, CountryViewDelegate {
+    func userLocationEnabled() {
+        self.startLocationProcessing()
+    }
+    
+    func didDetectCurrentUserLocation(location: CLLocation) {
+        AppDelegate.shared.shouldCheckLocation = false
+        print("current user location: \(location)")
+        CountrySettings.shared.getGeoReversedCountry(lat: location.coordinate.latitude, lng: location.coordinate.longitude, completionBlock:{
+            self.loadBanners()
+        })
+    }
+    
+    func userLocationDenied() {
+        // initialise a pop up for using later
+        AppDelegate.shared.shouldCheckLocation = false
+
+        let alertController = UIAlertController(title: "Location Service is disabled", message: "Please go to Settings and turn on the permissions", preferredStyle: .alert)
+        let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                return
+            }
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                    if self.viewModel.isCurrentCountrySelected() {
+                        self.loadBanners()
+                    } else {
+                        self.loadCountries()
+                    }
+                })
+             }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default) { _ in
+            // open countriesList VC
+            if self.viewModel.isCurrentCountrySelected() {
+                self.loadBanners()
+            } else {
+                self.loadCountries()
+            }
+        }
+
+        alertController.addAction(cancelAction)
+        alertController.addAction(settingsAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func loadCountries() {
+        let controller = UIStoryboard(name: "Country", bundle: Bundle.main).instantiateViewController(withIdentifier: "CountryViewController") as! CountryViewController
+        controller.delegate = self
+        navigationController?.pushViewController(controller, animated: false)
+    }
+
+    func countrySelected(selectedCountry: Country) {
+        CountrySettings.shared.currentCountry = selectedCountry
+        self.loadBanners()
+    }
+    
+    
 }
 

@@ -18,7 +18,7 @@ class ProductImageCarouselCollectionViewCell: UICollectionViewCell {
     }
 
     func configure(imageUrl: String) {
-        productImageView.sd_setImage(with: URL(string: imageUrl), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
+        productImageView.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(named: "productPlaceholder"), options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
 
     }
 }

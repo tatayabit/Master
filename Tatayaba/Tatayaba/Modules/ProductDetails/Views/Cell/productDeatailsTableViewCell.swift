@@ -52,7 +52,13 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
     func configure(productVM: ProductDeatailsTableViewCellViewModel) {
         self.viewModel = productVM
         self.nameLabel.text = productVM.name
-        self.descriptionLabel.text = productVM.description.stripOutHtml()
+        if (productVM.description.count > 0) {
+            self.descriptionLabel.text = productVM.description.stripOutHtml()
+
+        }else{
+            self.descriptionLabel.text = "\(productVM.name) \(productVM.supplierName)"
+
+        }
         self.quantityLabel.text = String(productVM.selectedQuantity)
         self.outOfStockLabel.isHidden = productVM.isInStock
         self.discountPercentageLabel.text = productVM.discountPercentage + "%\nOFF"

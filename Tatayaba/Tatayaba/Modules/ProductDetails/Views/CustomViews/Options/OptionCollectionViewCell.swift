@@ -28,6 +28,7 @@ class OptionCollectionViewCell: UITableViewCell {
         self.titleLabel.text = option.name
         updateRemoveButton(hide: !selected)
 //        productImageView.image = UIImage(named: imageName)
+        iconImageView.sd_setImage(with: URL(string: option.imagePair.icon.url), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
     }
     
     func updateRemoveButton(hide: Bool) {

@@ -18,7 +18,7 @@ class CountrySettings {
     static let shared = CountrySettings()
     var currentCountry: Country? {
         willSet {
-            Cart.shared.reset()
+            //Cart.shared.reset()
             if let currentCountry = newValue {
                 saveCountrySettingsDataToKeyChain(countryObj: currentCountry)
                 for delegate in delegates {
@@ -35,14 +35,31 @@ class CountrySettings {
     private var delegates = [CountrySettingsDelegate]()
     
     
-    func getGeoReversedCountry() {
+    func getGeoReversedCountry(lat: Double = 29.3571553, lng: Double = 47.9945803, completionBlock: (() -> Void)? = nil) {
         let geoCoder = ReverseGeoCoder()
-        geoCoder.getCountry(lat: 29.3571553, lng: 47.9945803) { (countryName, error) in
+        let countriesList = CountriesManager.shared.countriesList
+        let currenciesList = CurrenciesManager.shared.currenciesList
+        geoCoder.getCountry(lat: lat, lng: lng) { (countryName, error) in
             if error != nil {
                 self.currentCountry = CountriesManager.shared.country(with: countryName)//"Kuwait"
+                if let completionBlock = completionBlock {
+                    completionBlock()
+                }
                 return
             }
+            
+            if let index = countriesList.firstIndex(where:{ $0.name == countryName }){
+                if let currency = currenciesList.first(where: {$0.countriesList.contains(countriesList[index].code)}){
+                    CurrencySettings.shared.currentCurrency = currency
+                }
+                if Customer.shared.loggedin {
+                    Customer.shared.removeAddressData()
+                }
+            }
             self.currentCountry = CountriesManager.shared.country(with: countryName)
+            if let completionBlock = completionBlock {
+                completionBlock()
+            }
         }
     }
     
@@ -67,7 +84,7 @@ class CountrySettings {
     func loadData() {
         loadCountrySettingsDataFromKeyChain()
         if currentCountry == nil {
-            self.getGeoReversedCountry()
+            self.getGeoReversedCountry(completionBlock: nil)
         }
     }
     

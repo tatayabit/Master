@@ -20,8 +20,10 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var outOfStockLabel: UILabel!
+    @IBOutlet weak var freeDeliveryLabel: UILabel!
     @IBOutlet weak var discountPercentageLabel: UILabel!
     @IBOutlet weak var addToCartButton: UIButton!
+    
 
     var indexPath: IndexPath = IndexPath(item: 0, section: 0)
     weak var delegate: ProductsBlockCollectionViewCellDelegate?
@@ -32,6 +34,8 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         outOfStockLabel.text = "Out of stock"
+        freeDeliveryLabel.text = "free Delivery".localized()
+        
         self.discountPercentageLabel.isHidden = true
     }
 
@@ -40,13 +44,20 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         self.layoutIfNeeded()
     }
     func configure(_ product: Product, indexPath: IndexPath) {
-        bannerImageView.sd_setImage(with: URL(string: product.mainPair.detailedPair.imageUrl), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
+        bannerImageView.sd_setImage(with: URL(string: product.mainPair.detailedPair.imageUrl), placeholderImage: UIImage(named: "productPlaceholder"), options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
 
         nameLabel.text = product.supplierName == "None" ? "" : product.supplierName
         descriptionLabel.text = product.name
         priceLabel.text = product.price.formattedPrice
         outOfStockLabel.isHidden = product.isInStock
-        self.discountPercentageLabel.text = product.discountPercentage + "%\nOFF"
+        if(product.is_free_delivery == "Y"){
+            freeDeliveryLabel.isHidden = false
+        }else{
+            freeDeliveryLabel.isHidden = true
+        }
+        freeDeliveryLabel.sizeToFit()
+        print("OFF".localized())
+        self.discountPercentageLabel.text = product.discountPercentage + "OFF".localized()
         
         
         if let percentage = Float(product.priceBeforeDiscount) {
@@ -63,21 +74,27 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         self.indexPath = indexPath
         
         if product.hasOptions {
-            addToCartButton.setTitle(Constants.ProductDetails.options, for: .normal)
+            addToCartButton.setTitle("OPTIONS...".localized(), for: .normal)
         } else {
-            addToCartButton.setTitle(Constants.ProductDetails.addToCart, for: .normal)
+            addToCartButton.setTitle("ADD TO CART".localized(), for: .normal)
         }
         
         self.layoutIfNeeded()
     }
     func configureProduct(_ product: Product, indexPath: IndexPath, cellBlockName : String) {
-        bannerImageView.sd_setImage(with: URL(string: product.mainPair.detailedPair.imageUrl), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
+        bannerImageView.sd_setImage(with: URL(string: product.mainPair.detailedPair.imageUrl), placeholderImage: UIImage(named: "productPlaceholder"), options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
 
         nameLabel.text = product.supplierName == "None" ? "" : product.supplierName
         descriptionLabel.text = product.name
         priceLabel.text = product.price.formattedPrice
         outOfStockLabel.isHidden = product.isInStock
-        self.discountPercentageLabel.text = product.discountPercentage + "%\nOFF"
+        if(product.is_free_delivery == "Y"){
+            freeDeliveryLabel.isHidden = false
+        }else{
+            freeDeliveryLabel.isHidden = true
+        }
+        freeDeliveryLabel.sizeToFit()
+        self.discountPercentageLabel.text = product.discountPercentage + "OFF".localized()
         
         
         if let percentage = Float(product.priceBeforeDiscount) {
@@ -94,9 +111,9 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         self.indexPath = indexPath
         
         if product.hasOptions {
-            addToCartButton.setTitle(Constants.ProductDetails.options, for: .normal)
+            addToCartButton.setTitle("OPTIONS...".localized(), for: .normal)
         } else {
-            addToCartButton.setTitle(Constants.ProductDetails.addToCart, for: .normal)
+            addToCartButton.setTitle("ADD TO CART".localized(), for: .normal)
         }
         self.cellBlockName = cellBlockName
         
@@ -120,5 +137,6 @@ extension Constants {
     struct ProductDetails {
         static let options = "OPTIONS...".localized()
         static let addToCart = "ADD TO CART".localized()
+        
     }
 }

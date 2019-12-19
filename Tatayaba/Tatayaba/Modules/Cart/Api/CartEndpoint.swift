@@ -12,15 +12,19 @@ enum CartEndpoint {
     case applyCoupon(parameters: [String: Any])
     case getTaxAndShipping(countryCode: String)
     case getPricesWithUpdatedCurrency(parameters: [String: Any])
+    case updateServerCart(products: [String: Any], userId: String, paymentId: String)
+    case deleteAllCart(userId: String)
+    case getServerCart(userId: String)
 }
 
 
 extension CartEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
-        case .production: return "http://dev_ios%40tatayab.com:6337M41B30af4Sh7A6006lSq2jabf3M2@dev2.tatayab.com/api/"
-        case .qa: return "http://localhost:3000/"
-        case .staging: return "http://localhost:3000/"
+        case .production: return BaseUrls.production
+        case .dev2: return BaseUrls.dev2
+        case .staging: return BaseUrls.staging
+        case .dev3: return BaseUrls.dev3
         }
     }
     
@@ -38,15 +42,19 @@ extension CartEndpoint: TargetType {
             return "4.0/TtmCartConfigData/"
         case .getPricesWithUpdatedCurrency:
             return "4.0/TtmCurrencies/"
+        case .updateServerCart, .deleteAllCart, .getServerCart:
+            return "4.0/TtmCartContent"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getTaxAndShipping:
+        case .getTaxAndShipping, .getServerCart:
             return .get
-        case .getPricesWithUpdatedCurrency, .applyCoupon:
+        case .getPricesWithUpdatedCurrency, .applyCoupon, .updateServerCart:
             return .post
+        case .deleteAllCart:
+            return .delete
         }
     }
     
@@ -69,13 +77,33 @@ extension CartEndpoint: TargetType {
                 ], encoding: URLEncoding.queryString)
         case .getPricesWithUpdatedCurrency(let parameters):
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        case .updateServerCart(let products, let userId,let paymentId):
+            let params = [
+            "user_id": userId,
+            "payment_id": paymentId,
+            "products": products,
+            ] as [String : Any]
+            let jsonData = try! JSONSerialization.data(withJSONObject: params, options: [])
+            let decoded = String(data: jsonData, encoding: .utf8)!
+
+            print("decoded: \(decoded)")
+            return .requestParameters(parameters: params, encoding: JSONEncoding.default)
+        case .deleteAllCart(let userId),.getServerCart(let userId):
+            let params = ["user_id": userId] as [String : Any]
+            return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         }
     }
     
     var headers: [String : String]? {
-        
+       var authKey = ""
+        switch UserAPIClient.environment {
+        case .production: authKey = Keys.Authorizations.production
+        case .dev2: authKey = Keys.Authorizations.dev2
+        case .staging: authKey = Keys.Authorizations.staging
+        case .dev3: authKey = Keys.Authorizations.dev3
+        }
         return ["Content-type": "application/json",
-                "authorization": "Basic ZGUyQHRhdGF5YWIuY29tOkU5NzBBU3NxMGU5R21TSjJFWDBCTEd2c2tPMlVGODQx=="
+                "authorization": authKey//"Basic ZGUyQHRhdGF5YWIuY29tOkU5NzBBU3NxMGU5R21TSjJFWDBCTEd2c2tPMlVGODQx=="
         ]
     }
     
