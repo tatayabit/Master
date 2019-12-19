@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="44w-EE-RoO">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="bEa-eg-Wfj">
+            <objects>
+                <viewController storyboardIdentifier="ProductsListViewController" id="44w-EE-RoO" customClass="SearchViewController" customModule="TATAYAB___تطيّب" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="56w-IT-LQX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ae9-G1-aij">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="oh1-Id-h5E">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.83137254900000002" green="0.84313725490000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ae9-G1-aij" firstAttribute="top" secondItem="1pc-Oo-Qor" secondAttribute="top" id="3Ne-Rz-BGf"/>
+                            <constraint firstItem="1pc-Oo-Qor" firstAttribute="trailing" secondItem="ae9-G1-aij" secondAttribute="trailing" id="Y6J-wC-ns8"/>
+                            <constraint firstItem="ae9-G1-aij" firstAttribute="leading" secondItem="1pc-Oo-Qor" secondAttribute="leading" id="l6y-nl-FBO"/>
+                            <constraint firstItem="1pc-Oo-Qor" firstAttribute="bottom" secondItem="ae9-G1-aij" secondAttribute="bottom" id="lkV-lb-XwT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1pc-Oo-Qor"/>
+                    </view>
+                    <connections>
+                        <outlet property="productsCollectionView" destination="ae9-G1-aij" id="9JD-do-ara"/>
+                        <segue destination="oaH-HW-fat" kind="push" identifier="product_details_segue" id="6EW-lZ-dww"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ppg-Ba-NvE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168.80000000000001" y="15.742128935532236"/>
+        </scene>
+        <!--ProductDetails-->
+        <scene sceneID="sKa-jq-QC7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProductDetails" id="oaH-HW-fat" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="oLs-Fu-R1Q"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p0Z-9S-QBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="998" y="231"/>
+        </scene>
+    </scenes>
+</document>

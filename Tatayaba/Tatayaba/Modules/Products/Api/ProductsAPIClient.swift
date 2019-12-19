@@ -41,4 +41,8 @@ struct ProductsAPIClient: APIClient {
     func getAlsoBoughtProducts(productId: String, completion: @escaping (APIResult<Block?, MoyaError>) -> Void) {
         fetch(with: ProductsEndpoint.getAlsoBoughtProducts(productId: productId), completion: completion)
     }
+    
+    func search(with keyword: String, page: Int, completion: @escaping (APIResult<ProductsResult?, MoyaError>) -> Void) {
+        fetch(with: ProductsEndpoint.search(keyword: keyword, page: String(page)), completion: completion)
+    }
 }

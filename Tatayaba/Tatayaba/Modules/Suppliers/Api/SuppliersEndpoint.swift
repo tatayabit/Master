@@ -10,6 +10,7 @@ import Moya
 
 enum SuppliersEndpoint {
     case getSuppliers(page: String)
+    case getSuppliersSortedByPosition(page: String)
     case getSupplierDetails(supplierId: String, page: String)
 }
 
@@ -17,9 +18,10 @@ enum SuppliersEndpoint {
 extension SuppliersEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
-        case .production: return "http://dev_ios%40tatayab.com:6337M41B30af4Sh7A6006lSq2jabf3M2@dev2.tatayab.com/api/"
-        case .qa: return "http://localhost:3000/"
-        case .staging: return "http://localhost:3000/"
+        case .production: return BaseUrls.production
+        case .dev2: return BaseUrls.dev2
+        case .staging: return BaseUrls.staging
+        case .dev3: return BaseUrls.dev3
         }
     }
 
@@ -31,7 +33,7 @@ extension SuppliersEndpoint: TargetType {
 
     var path: String {
         switch self {
-        case .getSuppliers:
+        case .getSuppliers, .getSuppliersSortedByPosition:
             let version = "4.0"
             return "\(version.urlEscaped)/TtmSuppliers/"
         case .getSupplierDetails(let supplierId, _):
@@ -42,7 +44,7 @@ extension SuppliersEndpoint: TargetType {
 
     var method: Moya.Method {
         switch self {
-        case .getSuppliers, .getSupplierDetails:
+        case .getSuppliers, .getSupplierDetails, .getSuppliersSortedByPosition:
             return .get
         }
     }
@@ -62,7 +64,8 @@ extension SuppliersEndpoint: TargetType {
             return .requestParameters(parameters: [
                                                 "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
                                                 "items_per_page": 20,
-                                                "page": page.urlEscaped
+                                                "page": page.urlEscaped,
+                                                "lang_code": LanguageManager.getLanguage()
             ], encoding: URLEncoding.default)
         case .getSupplierDetails:
             var currencyId = Constants.Currency.kuwaitCurrencyId
@@ -73,15 +76,31 @@ extension SuppliersEndpoint: TargetType {
                                                 "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
 //                                                "items_per_page": 20,
 //                                                "page": page.urlEscaped,
-                                                "currency_id": currencyId.urlEscaped
+                                                "currency_id": currencyId.urlEscaped,
+                                                "lang_code": LanguageManager.getLanguage()
             ], encoding: URLEncoding.default)
-//            "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
+        case .getSuppliersSortedByPosition(let page):
+            return .requestParameters(parameters: [
+                                                "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
+                                                "items_per_page": 20,
+                                                "page": page.urlEscaped,
+                                                "sort_by": "position",
+                                                "sort_order": "asc"
+//                                                sort_by=position&sort_order=
+            ], encoding: URLEncoding.default)
         }
     }
 
     var headers: [String : String]? {
+        var authKey = ""
+        switch UserAPIClient.environment {
+        case .production: authKey = Keys.Authorizations.production
+        case .dev2: authKey = Keys.Authorizations.dev2
+        case .staging: authKey = Keys.Authorizations.staging
+        case .dev3: authKey = Keys.Authorizations.dev3
+        }
         return ["Content-type": "application/json",
-                "authorization": "ZGV2X2lvc0B0YXRheWFiLmNvbTo2MzM3TTQxQjMwYWY0U2g3QTYwMDZsU3EyamFiZjNNMg=="//"Basic ZGV2MkB0YXRheWFiLmNvbTo4OUlPMzlOM1pKTVRKSTcweUdGOVBqQjk5RDhVNTcyOQ=="
+                "authorization": authKey//"Basic ZGUyQHRhdGF5YWIuY29tOkU5NzBBU3NxMGU5R21TSjJFWDBCTEd2c2tPMlVGODQx=="
         ]
     }
 

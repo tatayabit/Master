@@ -34,7 +34,7 @@ class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITab
     var Session1_img: [String] = ["Cart"]
 
     var Session2 = [String]()
-    var Session2_img: [String] = ["settings", "settings", "settings", "liveChat", "Notifiction"]
+    var Session2_img: [String] = ["language", "currency", "country", "liveChat", "Notifiction"]
 
 
     var Session3 = [String]()
@@ -48,7 +48,7 @@ class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         Session1 = [profile.myOrders]
-        Session2 = [profile.changeLanguage, profile.currencies, profile.changeCountry, profile.liveChat, profile.notifications]
+        Session2 = [profile.changeLanguage, profile.currencies, profile.changeCountry, profile.liveChat] //, profile.notifications
         Session3 = [profile.deliveryAndReturnPolicy, profile.privacyPolicy,profile.logout]
         Session4 = [profile.deliveryAndReturnPolicy, profile.privacyPolicy]
          NavigationBarWithOutBackButton()

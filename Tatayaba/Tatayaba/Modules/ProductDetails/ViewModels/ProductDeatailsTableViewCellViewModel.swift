@@ -11,7 +11,7 @@ class ProductDeatailsTableViewCellViewModel {
     var name: String { return product.name }
     var description: String {
         if product.description.isEmpty {
-            return "This is product is one of our best sellers"
+            return ""
         }
         return product.description.stripOutHtml() }
     var originalPrice: String { return product.price.formattedPrice }
@@ -35,7 +35,7 @@ class ProductDeatailsTableViewCellViewModel {
     var selectedQuantity: Int
     var optionsCount: Int { return self.product.productOptions.count }
     var isInStock: Bool { return self.product.isInStock }
-    
+    var supplierName : String { return self.product.supplierName }
     // MARK:- Init
     init(product: Product) {
         self.product = product

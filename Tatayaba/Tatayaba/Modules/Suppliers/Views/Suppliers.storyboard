@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0xq-fk-tAf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0xq-fk-tAf">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +11,7 @@
         <!--Suppliers List View Controller-->
         <scene sceneID="yMf-k0-3tv">
             <objects>
-                <viewController storyboardIdentifier="SuppliersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0xq-fk-tAf" customClass="SuppliersListViewController" customModule="Tatayab___Testing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SuppliersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0xq-fk-tAf" customClass="SuppliersListViewController" customModule="TATAYAB___تطيّب" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jRC-mX-oaL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +26,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="SuppliersBlockCollectionViewCell" reuseIdentifier="SuppliersBlockCollectionViewCell" id="XEY-UX-rk8" customClass="SuppliersBlockCollectionViewCell" customModule="Tatayab___Testing" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="SuppliersBlockCollectionViewCell" reuseIdentifier="SuppliersBlockCollectionViewCell" id="XEY-UX-rk8" customClass="SuppliersBlockCollectionViewCell" customModule="TATAYAB___تطيّب" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -62,6 +62,7 @@
                     <connections>
                         <outlet property="supplierCollection_View" destination="88h-Dv-iTC" id="fFk-da-5b0"/>
                         <segue destination="7ts-ut-Jvw" kind="show" identifier="supplier_products_segue" id="7za-aB-ZZC"/>
+                        <segue destination="WZq-hu-Mg9" kind="push" identifier="search_segue" id="42F-ZC-zTp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cp8-68-2jf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -75,6 +76,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vf3-3D-nna" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="580" y="96"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="uIx-o3-t0n">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Search" id="WZq-hu-Mg9" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="adm-2g-Fny"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T6t-mH-ECi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="579" y="205"/>
         </scene>
     </scenes>
 </document>

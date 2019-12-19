@@ -22,9 +22,10 @@ enum UserEndpoint {
 extension UserEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
-        case .production: return "http://dev_ios%40tatayab.com:6337M41B30af4Sh7A6006lSq2jabf3M2@dev2.tatayab.com/api/"
-        case .qa: return "http://localhost:3000/"
-        case .staging: return "http://localhost:3000/"
+        case .production: return BaseUrls.production
+        case .dev2: return BaseUrls.dev2
+        case .staging: return BaseUrls.staging
+        case .dev3: return BaseUrls.dev3
         }
     }
     
@@ -108,7 +109,8 @@ extension UserEndpoint: TargetType {
                                                     "b_state": user.state,
                                                     "b_country": CountrySettings.shared.currentCountry?.code ?? "kw",
                                                     "b_zipcode": user.zipCode,
-                                                    "b_phone": user.billingPhone
+                                                    "b_phone": user.billingPhone,
+                                                    "fields": [ "40": user.block]
                 ], encoding: JSONEncoding.default)
         case .getProfile(let userId):
             return .requestPlain//.requestParameters(parameters: [ "id": userId.urlEscaped
@@ -124,8 +126,15 @@ extension UserEndpoint: TargetType {
     }
     
     var headers: [String : String]? {
+       var authKey = ""
+        switch UserAPIClient.environment {
+        case .production: authKey = Keys.Authorizations.production
+        case .dev2: authKey = Keys.Authorizations.dev2
+        case .staging: authKey = Keys.Authorizations.staging
+        case .dev3: authKey = Keys.Authorizations.dev3
+        }
         return ["Content-type": "application/json",
-                "authorization": "Basic ZGUyQHRhdGF5YWIuY29tOkU5NzBBU3NxMGU5R21TSjJFWDBCTEd2c2tPMlVGODQx=="
+                "authorization": authKey//"Basic ZGUyQHRhdGF5YWIuY29tOkU5NzBBU3NxMGU5R21TSjJFWDBCTEd2c2tPMlVGODQx=="
         ]
     }
     

@@ -15,7 +15,9 @@ class HomeViewModel {
     private let suppliersApiClient = SuppliersAPIClient()
 
 
-    let productIdList = ["268","270","305", "267", "297", "248", "265"]
+    //let productIdList = ["268","270","305", "267", "297", "248", "265"]
+//    let productIdList = ["314","320","315", "316", "317", "318", "319"]
+    let productIdList = ["268","293","270","297", "248", "265", "272", "260"]
     var block_Id = ""
     var categoriesList = [Category]()
     var suppliersList = [Supplier]()
@@ -26,7 +28,7 @@ class HomeViewModel {
 
     var productsBlocks = [Block]()
 
-
+    let validApiClient = VersionValidationAPIClient()
     /// This closure is being called once the categories api fetch
     var onCategoriesListLoad: (() -> ())?
 
@@ -81,7 +83,7 @@ class HomeViewModel {
     }
 
     func getAllSuppliers() {
-        suppliersApiClient.getSuppliers(page: 0) { result in
+        suppliersApiClient.getSuppliersSortedByPosition(page: 0) { result in
             switch result {
             case .success(let response):
                 guard let suppliersResult = response else { return }
@@ -107,7 +109,7 @@ class HomeViewModel {
 
     func loadTopBannerApi() {
         // topBannerApi
-        blocksApiClient.getBlock(blockId: "242") { result in
+        blocksApiClient.getBlock(blockId: "312") { result in      //242
             switch result {
             case .success(let responseB58):
                 guard let block = responseB58 else { return }
@@ -129,7 +131,7 @@ class HomeViewModel {
 
     func getSquaredBlock() {
         // squaredBlock
-        blocksApiClient.getBlock(blockId: "269") { result in
+        blocksApiClient.getBlock(blockId: "313") { result in    //269
             // 259
             switch result {
             case .success(let responseB44):
@@ -159,11 +161,12 @@ class HomeViewModel {
                         case .success(let responseB44):
                             guard let block = responseB44 else { return }
                             var sortedBlock = block
-                            sortedBlock.products = block.products.sorted(by: { $0.fullDetails.position < $1.fullDetails.position })
-                            sortedBlock.products = sortedBlock.products.filter({ $0.fullDetails.amount > 0 })
+//                            sortedBlock.products = block.products.sorted(by: { $0.fullDetails.position < $1.fullDetails.position })
+//                            sortedBlock.products = sortedBlock.products.filter({ $0.fullDetails.amount > 0 })
                             self.productsBlocks.append(sortedBlock)
                             print(block)
-                            if (self.productsBlocks.count > 6) {
+                            if (self.productsBlocks.count > 7) {
+                                self.productsBlocks = self.arrangeProductsBlocks()
                                 if let newProductsArrived = self.onProductsBlockLoad {
                                     newProductsArrived()
                                 }
@@ -255,6 +258,85 @@ class HomeViewModel {
             }
         }
         return productsBlocks[0]
+    }
+    
+    func arrangeProductsBlocks() -> [Block] {
+        var block0 = Block()
+        var block1 = Block()
+        var block2 = Block()
+        var block3 = Block()
+        var block4 = Block()
+        var block5 = Block()
+        var block6 = Block()
+        var block7 = Block()
         
+        var tempProductsBlocks = [block0,block1,block2,block3,block4,block5,block6,block7]
+        for block in self.productsBlocks {
+            switch block.blockId {
+            case "268":
+                tempProductsBlocks[0] = block
+            case "293":
+                tempProductsBlocks[1] = block
+            case "270":
+                tempProductsBlocks[2] = block
+            case "297":
+                tempProductsBlocks[3] = block
+            case "248":
+                tempProductsBlocks[4] = block
+            case "265":
+                tempProductsBlocks[5] = block
+            case "272":
+                tempProductsBlocks[6] = block
+            case "260":
+                tempProductsBlocks[7] = block
+            default:
+                print("Error in arrangment of ProductsBlocks")
+            }
+        }
+        return tempProductsBlocks
+    }
+    
+    // validate API version   validApiClient
+    
+    func ValidateVersionVersion(completion: @escaping (String) -> ()){
+        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        print(appVersion)
+        //CFBundleShortVersionString //CFBundleVersion
+        validApiClient.getVersionValidation(version: appVersion ?? "4.3.1"){
+            result in
+            switch result {
+            case .success(let response):
+                print("Sucess")
+                guard let vResponse = response else { return }
+                if let test = vResponse["status"]{
+                    completion(test)
+                }
+
+            case .failure(let error):
+                print("the error \(error)")
+                completion("success")
+            }
+        }
+    }
+    
+    func openStoreURL() {
+        //"https://www.apple.com/kw/ios/app-store/"
+        let arURL = "https://apps.apple.com/us/app/tatayab-تطي-ب/id1394093760/"
+        let url =  arURL.addingPercentEncoding( withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
+
+        if let url = URL(string: arURL.addingPercentEncoding( withAllowedCharacters: NSCharacterSet.urlQueryAllowed) ?? "https://www.apple.com/kw/ios/app-store/"),
+            UIApplication.shared.canOpenURL(url)   //itms-apps://itunes.apple.com/app/id1024941703
+        {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+    }
+    
+    func isCurrentCountrySelected() -> Bool {
+        return CountrySettings.shared.currentCountry != nil
     }
 }
+

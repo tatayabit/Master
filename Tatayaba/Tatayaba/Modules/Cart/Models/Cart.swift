@@ -12,18 +12,57 @@ class Cart {
     static let shared = Cart()
     var cartItemsArr = [CartItem]()
     private var productsArr = [Product]()
-
     var paymentMethod: PaymentMethod?
 
     var productsCount: Int { return cartItemsArr.count }
     var subtotalPrice: String { return String(self.calculateSubTotal()).formattedPrice }
     var totalPrice: String { return String(self.calculateTotal()).formattedPrice }
-    
+    var totalPriceValueRounded : Float = 0.0
     var isOneClickBuy: Bool = false
     var couponCode: String = ""
     
     
+    //MARK:- LoadDataFromCaching
+    func loadDataFromCaching() {
+        let cartSaving = CartSaving()
+
+        if let cartList = cartSaving.loadCartItemsFromKeyChain() {
+            self.cartItemsArr = cartList
+        }
+        
+        if let cartProducts = cartSaving.loadCartProductsFromKeyChain() {
+            self.productsArr = cartProducts
+        }
+        
+        if let payment = cartSaving.loadPaymentMethodFromKeyChain() {
+            self.paymentMethod = payment
+        }
+    }
+    
+    func callUpdateServerCart(){
+        CartViewModel.shared.updateServerCart() { result in
+                switch result {
+                case .success(let response):
+                    guard let placeOrderResult = response else { return }
+                    print(placeOrderResult)
+                case .failure(let error):
+                    print("the error \(error)")
+                }
+            }
+        }
+    
+    //MARK:- SaveCartToCaching
+    func saveCartToCaching() {
+        let cartSaving = CartSaving()
+
+        cartSaving.saveProducts(products: self.productsArr)
+        cartSaving.saveCartItems(cartItems: self.cartItemsArr)
+        cartSaving.savePaymentMethod(method: self.paymentMethod)
+    }
+    
     //MARK:- Operational functions
+    
+    
     func addProduct(product: Product, quantity: Int = 1, options: [CartItemOptions]? = nil) {
         if productExistedInCart(product: product) {
             let cartItem = self.cartItem(for: product, options: options)
@@ -41,6 +80,8 @@ class Cart {
             productsArr.append(product)
         }
         updateTabBarCount()
+        saveCartToCaching()
+        callUpdateServerCart()
     }
 
     func cartItem(for product: Product, options: [CartItemOptions]?) -> CartItem {
@@ -51,16 +92,19 @@ class Cart {
         cartItemsArr.remove(at: indexPath.row)
         productsArr.remove(at: indexPath.row)
         updateTabBarCount()
+        saveCartToCaching()
     }
 
     func increaseCount(cartItem: CartItem, quantity: Int) {
         cartItem.increaseCount(by: quantity)
         updateTabBarCount()
+        saveCartToCaching()
     }
 
     func decreaseCount(cartItem: CartItem) {
         cartItem.decreaseCount(by: 1)
         updateTabBarCount()
+        saveCartToCaching()
     }
 
     func product(at indexPath: IndexPath) -> (Product, CartItem) {
@@ -142,5 +186,6 @@ class Cart {
         self.paymentMethod = nil
         self.couponCode = ""
         updateTabBarCount()
+//        saveCartToCaching()
     }
 }

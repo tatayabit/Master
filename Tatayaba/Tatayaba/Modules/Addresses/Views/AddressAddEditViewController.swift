@@ -54,6 +54,7 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
                 phoneNumberTextField.text = currentUser.billingPhone
                 stateTextField.text = currentUser.state
                 zipCodeTextField.text = currentUser.zipCode
+                blockTextField.text = currentUser.block
                 user = currentUser
                 guestCompletDataView.isHidden = true
             }
@@ -86,6 +87,9 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
         user?.billingPhone = phoneNumberTextField.text ?? ""
         user?.state = stateTextField.text ?? ""
         user?.zipCode = zipCodeTextField.text ?? ""
+        user?.firstname = fullNameTextField.text ?? ""
+        user?.block = blockTextField.text ?? ""
+        
         if let user = user {
             showLoadingIndicator(to: self.view)
             viewModel.updateProfile(user: user) { result in
@@ -119,8 +123,9 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
             guard let billingPhone = phoneNumberTextField.text else { return }
             guard let state = stateTextField.text else { return }
             guard let zipCode = zipCodeTextField.text else { return }
-            
-            let user = User(email: email, firstname: firstname, lastname: firstname, password: password, billingAddress: billingAddress,billingCity: billingCity,billingCountry: billingCountry,billingPhone: billingPhone,state: state,zipCode: zipCode)
+            guard let block = blockTextField.text else { return }
+
+            let user = User(email: email, firstname: firstname, lastname: firstname, password: password, billingAddress: billingAddress,billingCity: billingCity,billingCountry: billingCountry,billingPhone: billingPhone,state: state,zipCode: zipCode, block: block)
             
             guestViewModel.guestSignUp(user: user) { result in
                 self.hideLoadingIndicator(from: self.view)

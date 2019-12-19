@@ -15,13 +15,13 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
 
     var viewModel: CatProductsViewModel?
     private let productDetailsSegue = "product_details_segue"
-
+    private let searchSegue = "search_segue"
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.NavigationBarWithBackButton()
-
+        addSearchBtn()
         setupUI()
         self.productsCollectionView.dataSource = self
         self.productsCollectionView.delegate = self
@@ -39,6 +39,9 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
         self.categoryNameLabel.text = viewModel?.category.name
     }
 
+    @objc func search() {
+       performSegue(withIdentifier: searchSegue, sender: nil)
+    }
     //MARK:- CollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {

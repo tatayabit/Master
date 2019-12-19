@@ -7,7 +7,7 @@ import Foundation
 struct Vat : Codable {
 
 	let type : String?
-	let value : String?
+    var value : String?
 
 
 	enum CodingKeys: String, CodingKey {

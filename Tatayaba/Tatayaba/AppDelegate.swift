@@ -16,6 +16,7 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var shouldCheckLocation = true
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -116,9 +117,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Customer.shared.loadData()
         CountrySettings.shared.loadData()
         CurrencySettings.shared.loadData()
-//        CountrySettings.shared.getGeoReversedCountry()
         MOLH.shared.activate(true)
         setupGlobalAppearance()
+        loadCartData()
+    }
+    
+    private func loadCartData() {
+        Cart.shared.loadDataFromCaching()
     }
 }
 

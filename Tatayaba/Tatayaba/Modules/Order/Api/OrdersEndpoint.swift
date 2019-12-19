@@ -9,7 +9,7 @@
 import Moya
 
 enum OrdersEndpoint {
-    case create(products: [String: Any], userId: String, userData: [String: Any]?, paymentId: String, oneClickBuy: Bool, code: String)
+    case create(products: [String: Any], userId: String, userData: [String: Any]?, paymentId: String, oneClickBuy: Bool, code: String,notes:String)
     case getAllOrders(page: Int)
     case getOrder(orderId: String)
 
@@ -19,9 +19,10 @@ enum OrdersEndpoint {
 extension OrdersEndpoint: TargetType {
     var environmentBaseURL: String {
         switch UserAPIClient.environment {
-        case .production: return "http://dev_ios%40tatayab.com:6337M41B30af4Sh7A6006lSq2jabf3M2@dev2.tatayab.com/api/"
-        case .qa: return "http://localhost:3000/"
-        case .staging: return "http://localhost:3000/"
+        case .production: return BaseUrls.production
+        case .dev2: return BaseUrls.dev2
+        case .staging: return BaseUrls.staging
+        case .dev3: return BaseUrls.dev3
         }
     }
 
@@ -64,13 +65,14 @@ extension OrdersEndpoint: TargetType {
 
     var task: Task {
         switch self {
-        case .create(let products, let userId, let userData, let paymentId, let isOneClickBuy, let code):
+        case .create(let products, let userId, let userData, let paymentId, let isOneClickBuy, let code,let notes):
             var params = [
                 "user_id": userId,
                 "payment_id": paymentId,
                 "shipping_id": CountrySettings.shared.shipping?.shippingId ?? "7",
                 "products": products,
-                "coupon_code": code
+                "coupon_code": code,
+                "notes":notes
                 ] as [String : Any]
 
             if isOneClickBuy {
@@ -99,9 +101,15 @@ extension OrdersEndpoint: TargetType {
     }
 
     var headers: [String : String]? {
-
+       var authKey = ""
+        switch UserAPIClient.environment {
+        case .production: authKey = Keys.Authorizations.production
+        case .dev2: authKey = Keys.Authorizations.dev2
+        case .staging: authKey = Keys.Authorizations.staging
+        case .dev3: authKey = Keys.Authorizations.dev3
+        }
         return ["Content-type": "application/json",
-                "authorization": "Basic ZGUyQHRhdGF5YWIuY29tOkU5NzBBU3NxMGU5R21TSjJFWDBCTEd2c2tPMlVGODQx=="
+                "authorization": authKey//"Basic ZGUyQHRhdGF5YWIuY29tOkU5NzBBU3NxMGU5R21TSjJFWDBCTEd2c2tPMlVGODQx=="
         ]
     }
 

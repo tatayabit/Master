@@ -13,20 +13,24 @@ import SwiftValidator
 class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, CountrySettingsDelegate {
     
     @IBOutlet weak var paymentTableView: UITableView!
-
+    @IBOutlet weak var notesTxtView: UITextView!
+    
     private let viewModel = CheckOutViewModel()
     
     let checkoutCompletedSegue = "checkout_completed_segue"
     let paymentWebViewSegue = "payment_web_view_segue"
     
     enum sectionType: Int {
-        case payment = 0, address
+        case payment = 0, address = 1 , financial
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
         // self.updateData()
+        notesTxtView.delegate = self
+        notesTxtView.text = "Your Notes".localized()
+        notesTxtView.textColor = UIColor.lightGray
         CountrySettings.shared.addDelegate(delegate: self)
         viewModel.onPaymentMethodsListLoad = {
             self.paymentTableView.reloadData()
@@ -59,8 +63,14 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
     func setupUI() {
         self.tabBarController?.tabBar.isHidden = true
         NavigationBarWithBackButton()
+        if (LanguageManager.getLanguage() == "ar") {
+            self.notesTxtView.textAlignment = .right
+        }else{
+            self.notesTxtView.textAlignment = .left
+        }
         self.paymentTableView.register(PaymentMethodTableViewCell.nib, forCellReuseIdentifier: PaymentMethodTableViewCell.identifier)
         self.paymentTableView.register(CheckoutAddressTableViewCell.nib, forCellReuseIdentifier: CheckoutAddressTableViewCell.identifier)
+        self.paymentTableView.register(FinancialTableViewCell.nib, forCellReuseIdentifier: FinancialTableViewCell.identifier)
     }
     
     func validationFailed(_ errors: [(Validatable, ValidationError)]) {
@@ -85,7 +95,8 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
             //         self.performSegue(withIdentifier: self.checkoutCompletedSegue, sender: nil)
             self.showLoadingIndicator(to: self.view)
             if let user = Customer.shared.user {
-                viewModel.placeOrder(userData: user) { result in
+
+                viewModel.placeOrder(userData: user, notes: (notesTxtView.text == "Your Notes".localized()) ? "" : notesTxtView.text) { result in
                     self.hideLoadingIndicator(from: self.view)
                     switch result {
                     case .success(let response):
@@ -147,7 +158,7 @@ extension CheckOutViewController {
         //        if viewModel.pricingList.count > 0 {
         //            return 2
         //        }
-        return 2
+        return 3
     }
     
     // MARK:- UITableViewDelegate - Cell
@@ -172,6 +183,8 @@ extension CheckOutViewController {
             return 60
         case sectionType.address.rawValue:
             return 100
+        case sectionType.financial.rawValue:
+            return 60
         default: return 0
         }
     }
@@ -182,6 +195,8 @@ extension CheckOutViewController {
             return viewModel.paymentMethods.count
         case sectionType.address.rawValue:
             return 1
+        case sectionType.financial.rawValue:
+            return 2
         default: return 0
         }
     }
@@ -193,6 +208,8 @@ extension CheckOutViewController {
             
         case sectionType.address.rawValue:
             return getAddressCell(tableView: tableView, indexPath: indexPath)
+        case sectionType.financial.rawValue:
+            return getFinancialCell(tableView: tableView, indexPath: indexPath)
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: PaymentMethodTableViewCell.identifier, for: indexPath) as! PaymentMethodTableViewCell
             return cell
@@ -204,6 +221,14 @@ extension CheckOutViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: PaymentMethodTableViewCell.identifier, for: indexPath) as! PaymentMethodTableViewCell
         
         cell.configure(payment: viewModel.paymentMethods[indexPath.row])
+        return cell
+    }
+    
+    // MARK:- FinancialViewCell
+    func getFinancialCell(tableView: UITableView, indexPath: IndexPath) -> FinancialTableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: FinancialTableViewCell.identifier, for: indexPath) as! FinancialTableViewCell
+        cell.configure(number:indexPath.row)
+        cell.isUserInteractionEnabled = false
         return cell
     }
     
@@ -249,4 +274,19 @@ extension CheckOutViewController {
             }
         }
     }
+}
+extension CheckOutViewController:UITextViewDelegate{
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Your Notes".localized()
+            textView.textColor = UIColor.lightGray
+        }
+    }
+    
 }

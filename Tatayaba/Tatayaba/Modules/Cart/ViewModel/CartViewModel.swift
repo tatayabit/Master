@@ -17,7 +17,7 @@ protocol CartViewModelDelegate: class {
 }
 
 class CartViewModel {
-    
+    static let shared = CartViewModel()
     var pricingList = [CartPricingModel]()
     let cart = Cart.shared
     
@@ -30,7 +30,7 @@ class CartViewModel {
         CurrencySettings.shared.addCurrencyDelegate(delegate: self)
     }
     
-    func loadPricingListContent(couponValue: String, taxValue: Tax?, shippingValue: String) {
+    func loadPricingListContent(couponValue: String, taxValue: Tax?, shippingValue: String, freeShipping: Bool = false) {
         pricingList.removeAll()
         let cartClass: CartPricingItems = CartPricingItems()
         var model = CartPricingModel(title: cartClass.subtotal, value: cart.subtotalPrice)
@@ -48,6 +48,17 @@ class CartViewModel {
         pricingList.append(model)
         
         if taxValue?.vat?.type == "P" {
+            //            if totalPriceValue >= maxValueToShowTax && maxValueToShowTax != 0 {
+            //                      if let customDutiesStringValue = taxValue?.customDuties?.value {
+            //                          if taxValue?.customDuties?.type == "P" {
+            //                              totalPriceValue += (totalPriceValue * (Float(customDutiesStringValue)!)) / 100
+            //                          } else {
+            //                              totalPriceValue += Float(customDutiesStringValue) ?? 0.0
+            //                          }
+            //                      }
+            //                  }
+            //            (totalPriceValue * (Float(customDutiesStringValue)!)) / 100
+                    
             model = CartPricingModel(title: cartClass.tax, value: "\(taxValue?.vat?.value ?? "0")%")
         }else {
             model = CartPricingModel(title: cartClass.tax, value: taxValue?.vat?.value?.formattedPrice ?? "0")
@@ -186,12 +197,174 @@ class CartViewModel {
         }
         var requestJson = [String: Any]()
         
+        if let tax = CountrySettings.shared.tax {
+            // check VAT
+            if let vat = tax.vat {
+                if let vatType = vat.type, vatType != "P" {
+                    requestJson["vat"] = vat.value
+                }
+            }
+            
+            // check CustomDuties
+            if let customDuties = tax.customDuties {
+                if let thresholdString = customDuties.cartTotalThreshold {
+                    let thresholdValue = (thresholdString as NSString).doubleValue
+                    if thresholdValue > 0 {
+                        requestJson["threshold_limit"] = thresholdString
+                    }
+                }
+            }
+        }
+        
+        
         requestJson["products"] = []
         requestJson["shipping_charge"] = shippingRate
         requestJson["to_currency_id"] = CurrencySettings.shared.currentCurrency?.currencyId//currencyId
         requestJson["convert_data"] = true
         
         return requestJson
+    }
+    
+    func updateServerCart( completion: @escaping (APIResult<UpdateServerCartResponse?, MoyaError>) -> Void) {
+
+        let userId = getUserId()
+        let paymentId = cart.paymentMethod?.paymentId ?? "0"
+
+        cartApiClient.updateServerCart(products: getProductsModel(), userId: userId, paymentId: paymentId) { result in
+            switch result {
+            case .success(let response):
+                guard let updateCartResult = response else { return }
+                print(updateCartResult.cart_ids.count)
+
+            case .failure(let error):
+                print("the error \(error)")
+            }
+            completion(result)
+        }
+    }
+    
+    func deleteServerCart( completion: @escaping (APIResult<UpdateServerCartResponse?, MoyaError>) -> Void) {
+
+        let userId = getUserId()
+        cartApiClient.deleteAllCart( userId: userId) { result in
+            switch result {
+            case .success(let response):
+                guard let updateCartResult = response else { return }
+
+            case .failure(let error):
+                print("the error \(error)")
+            }
+            completion(result)
+        }
+    }
+    
+    func getServerCart( completion: @escaping (APIResult<CartContentResponse?, MoyaError>) -> Void) {
+
+        let userId = getUserId()
+        cartApiClient.getServerCart( userId: userId) { result in
+            switch result {
+            case .success(let response):
+                guard let getCartResult = response else { return }
+
+            case .failure(let error):
+                print("the error \(error)")
+            }
+            completion(result)
+        }
+    }
+    
+    func getUserId() -> String {
+        let customer = Customer.shared
+        if customer.loggedin {
+            guard let user = customer.user else { return "0" }
+            return user.identifier
+        }
+        return "0"
+    }
+
+    func getProductsModel() -> [String: Any] {
+        let cartItems = cart.cartItemsList()
+        var productsParms = [String: Any]()
+
+        for i in 0...cartItems.count - 1 {
+            let cartItemX = cartItems[i]
+
+            var optionsParms = [[String: String]]()
+            if let options = cartItemX.options {
+                if options.count > 0 {
+                   optionsParms = getProductOptions(cartOptions: options)
+                }
+            }
+            
+            var productPP = [String: Any]()
+            productPP["product_id"] = cartItemX.productId
+            productPP["amount"] = "\(cartItemX.count)"
+            
+            if optionsParms.count > 0 {
+                productPP["product_options"] = optionsParms
+
+            }
+            productsParms["\(cartItemX.productId)"] = productPP
+            
+        }
+        return productsParms
+    }
+    
+    func getProductOptions(cartOptions: [CartItemOptions]) -> [[String: String]] {
+        var optionsParms = [[String: String]]()
+        for optionSection in cartOptions {
+            optionsParms.append([optionSection.optionId: optionSection.variantId])
+        }
+        return optionsParms
+    }
+    
+    // MARK:- Update Shipping Price
+    func applyFreeShippingPrice() {
+//        pricingList
+        let cartClass: CartPricingItems = CartPricingItems()
+        let newModel = CartPricingModel(title: cartClass.shipping, value: "0.00".formattedPrice)
+        if let row = self.pricingList.firstIndex(where: {$0.title == cartClass.shipping }) {
+               self.pricingList[row] = newModel
+        }
+//        model = CartPricingModel(title: cartClass.shipping, value: shippingValue.formattedPrice)
+//        pricingList.append(model)
+    }
+    // MARK:- Apply Silent Free Shipping Coupon
+    func applySilentFreeShippingCoupon(completion: @escaping (APIResult<CouponResponse?, MoyaError>) -> Void) {
+//        if self.shouldApplyFreeShippingCoupon() {
+            var couponCode = ""
+            let email = Customer.shared.user?.email ?? ""
+            if let countryCode = CountrySettings.shared.currentCountry?.code {
+                if countryCode.uppercased() == "KW" {
+                    couponCode = "FDQ8"
+                } else {
+                    couponCode = "FDGCC"
+                }
+                
+                cartApiClient.applyCoupon(parameters: self.getApplyCouponJsonString(couponCode: couponCode, email: email)) { result in
+                    switch result {
+                    case .success(let couponResult):
+                        if let coupon = couponResult {
+                            print(coupon)
+                        }
+                    case .failure(let error):
+                        print("the error \(error)")
+                    }
+                    completion(result)
+                }
+                
+            }
+//        }
+    }
+    
+    func shouldApplyFreeShippingCoupon() -> Bool {
+        guard let countryCode = CountrySettings.shared.currentCountry?.code else { return false }
+        if countryCode.uppercased() == "KW" { return true }
+        let gccCodes = ["SA","AE","QA","BH","OM"]
+        if gccCodes.contains(countryCode.uppercased()) {
+            return true
+        }
+        return false
     }
 }
 
