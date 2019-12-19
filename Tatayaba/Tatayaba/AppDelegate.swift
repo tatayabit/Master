@@ -16,6 +16,8 @@ import OneSignal
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    let oneSignalAppId = "54a67dff-ed77-4fcb-937a-658374aeae03"
+    
     var window: UIWindow?
     var shouldCheckLocation = true
     
@@ -120,7 +122,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Replace 'YOUR_APP_ID' with your OneSignal App ID.
         OneSignal.initWithLaunchOptions(launchOptions,
-                                        appId: "YOUR_ONESIGNAL_APP_ID",
+                                        appId: oneSignalAppId,
                                         handleNotificationAction: nil,
                                         settings: onesignalInitSettings)
         

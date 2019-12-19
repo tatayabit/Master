@@ -367,6 +367,7 @@
 		10C62BEB23AA901E00562CC0 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		10C62BED23AA901E00562CC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10C62BF523AA933300562CC0 /* TATAYAB - تطيّب.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TATAYAB - تطيّب.entitlements"; sourceTree = "<group>"; };
+		10C62BF623AA9C6F00562CC0 /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
 		10C8E8F6238929DA00E22581 /* Dispatch+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dispatch+Extensions.swift"; sourceTree = "<group>"; };
 		10DFE44F23525D9C00AAB780 /* HeaderViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewItem.swift; sourceTree = "<group>"; };
 		10DFE4532352619000AAB780 /* OptionsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsHeader.swift; sourceTree = "<group>"; };
@@ -859,6 +860,7 @@
 		10C62BEA23AA901E00562CC0 /* OneSignalNotificationServiceExtension */ = {
 			isa = PBXGroup;
 			children = (
+				10C62BF623AA9C6F00562CC0 /* OneSignalNotificationServiceExtension.entitlements */,
 				10C62BEB23AA901E00562CC0 /* NotificationService.swift */,
 				10C62BED23AA901E00562CC0 /* Info.plist */,
 			);
@@ -3053,6 +3055,7 @@
 			baseConfigurationReference = B89BCDB598CCBCBACB5DD4DD /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.53;
@@ -3076,6 +3079,7 @@
 			baseConfigurationReference = 14C98C1CEBDE08CEA582BB4F /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.53;
