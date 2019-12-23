@@ -19,6 +19,6 @@ class SuppliersCollectionViewCell: UICollectionViewCell {
 
     func configure(supplier: Supplier) {
         titleLabel.text = supplier.name
-        imageView.sd_setImage(with: URL(string: supplier.logo.icon.url), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
+        imageView.sd_setImage(with: URL(string: (supplier.logo?.icon.url)!), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
     }
 }

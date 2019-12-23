@@ -56,7 +56,6 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
             freeDeliveryLabel.isHidden = true
         }
         freeDeliveryLabel.sizeToFit()
-        print("OFF".localized())
         self.discountPercentageLabel.text = product.discountPercentage + "OFF".localized()
         
         

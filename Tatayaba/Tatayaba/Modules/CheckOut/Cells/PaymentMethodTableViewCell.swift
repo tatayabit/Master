@@ -73,7 +73,7 @@ class PaymentMethodTableViewCell: UITableViewCell {
         case "Cash on delivery","الدفع عند الاستلام":
             self.titleLabel.text = "Cash on delivery".localized()
         default:
-            self.titleLabel.text = "testtttt"
+            self.titleLabel.text = ""
         }
     }
 }
