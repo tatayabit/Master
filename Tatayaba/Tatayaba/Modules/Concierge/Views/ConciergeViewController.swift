@@ -9,9 +9,7 @@
 import UIKit
 
 class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, ImagePickerDelegate, CountryViewDelegate {
-    
-    
-    
+   
     @IBOutlet weak var scrollView: StackedScrollView!
     
     let conciergeSubView: ConciergeSubView = .fromNib()
@@ -46,10 +44,12 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
     }
     
     // MARK:- ConciergeSubViewDelegate
-    func didSelectUplaodConcierge() {
-        
-        
+    func callUplaodConcierge() {
         self.showAlert()
+    }
+    
+    func didFailConciergeValidation(errorTitle: String, errorMessage: String) {
+        self.showErrorAlerr(title: errorTitle, message: errorMessage, handler: nil)
     }
     
     func showAlert() {
@@ -93,15 +93,27 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
             switch result {
             case .success(let ConciergeResult):
                 print(ConciergeResult!)
-                self.showErrorAlerr(title: Constants.Concierge.uploaded, message: "Thanks for using concierge feature,\nWe will call you back withing 48 hours!".localized(), handler: { action in
-                    
-                })
+                if let ConciergeResult = ConciergeResult {
+                    if ConciergeResult["status"] == "success" {
+                        self.showErrorAlerr(title: Constants.Concierge.uploaded, message: "Thanks for using concierge feature,\nWe will call you back withing 48 hours!".localized(), handler: { action in
+                            })
+                    } else{
+                        self.showConciergeUploadError()
+                    }
+                } else {
+                    self.showConciergeUploadError()
+                }
                 
             case .failure(let error):
                 print("the error \(error)")
-                self.showErrorAlerr(title: Constants.Common.error, message: "Something went wrong while submitting your concierge!".localized(), handler: nil)
+                self.showConciergeUploadError()
             }
         }
+    }
+    
+    // MARK:- show Concierge Upload Error
+    private func showConciergeUploadError() {
+        self.showErrorAlerr(title: Constants.Common.error, message: "Something went wrong while submitting your concierge!".localized(), handler: nil)
     }
     
     // MARK:- ImagePickerDelegate
