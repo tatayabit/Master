@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         loadAppConfigurations()
         setupOneSignal(launchOptions)
+        setupFirebasePushNotifications(application)
+
         
         // Override point for customization after application launch.
         return true
@@ -136,8 +138,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //END OneSignal initializataion code
     }
     
+    // MARK:- Firebase
+    fileprivate func setupFirebasePushNotifications(_ application: UIApplication) {
+        if #available(iOS 10.0, *) {
+            // For iOS 10 display notification (sent via APNS)
+            UNUserNotificationCenter.current().delegate = self
+            
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: {_, _ in })
+        } else {
+            let settings: UIUserNotificationSettings =
+                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+        
+        application.registerForRemoteNotifications()
+        
+        Messaging.messaging().delegate = self
+    }
+    
     // MARK:- App Configurations
-    func loadAppConfigurations() {
+    fileprivate func loadAppConfigurations() {
         FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
         Customer.shared.loadData()
@@ -148,9 +171,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loadCartData()
     }
     
-    private func loadCartData() {
+    fileprivate func loadCartData() {
         Cart.shared.loadDataFromCaching()
     }
+    
+    
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate, MessagingDelegate {
+    
 }
 
 extension AppDelegate {

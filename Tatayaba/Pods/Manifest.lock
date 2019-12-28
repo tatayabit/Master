@@ -10,6 +10,9 @@ PODS:
     - FirebaseAnalytics (= 6.1.3)
   - Firebase/CoreOnly (6.10.0):
     - FirebaseCore (= 6.3.1)
+  - Firebase/Messaging (6.10.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (~> 4.1.6)
   - FirebaseAnalytics (6.1.3):
     - FirebaseCore (~> 6.3)
     - FirebaseInstanceID (~> 4.2)
@@ -19,6 +22,7 @@ PODS:
     - GoogleUtilities/Network (~> 6.0)
     - "GoogleUtilities/NSData+zlib (~> 6.0)"
     - nanopb (~> 0.3.901)
+  - FirebaseAnalyticsInterop (1.4.0)
   - FirebaseCore (6.3.1):
     - FirebaseCoreDiagnostics (~> 1.0)
     - FirebaseCoreDiagnosticsInterop (~> 1.0)
@@ -35,6 +39,15 @@ PODS:
     - FirebaseCore (~> 6.0)
     - GoogleUtilities/Environment (~> 6.0)
     - GoogleUtilities/UserDefaults (~> 6.0)
+  - FirebaseMessaging (4.1.10):
+    - FirebaseAnalyticsInterop (~> 1.3)
+    - FirebaseCore (~> 6.2)
+    - FirebaseInstanceID (~> 4.1)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.2)
+    - GoogleUtilities/Environment (~> 6.2)
+    - GoogleUtilities/Reachability (~> 6.2)
+    - GoogleUtilities/UserDefaults (~> 6.2)
+    - Protobuf (>= 3.9.2, ~> 3.9)
   - GoogleAppMeasurement (6.1.3):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
@@ -78,6 +91,7 @@ PODS:
   - nanopb/encode (0.3.901)
   - NewRelicAgent (6.9.0)
   - OneSignal (2.12.0)
+  - Protobuf (3.11.2)
   - Result (4.1.0)
   - SDWebImage (5.0.6):
     - SDWebImage/Core (= 5.0.6)
@@ -90,6 +104,7 @@ DEPENDENCIES:
   - Crashlytics (~> 3.14.0)
   - Fabric (~> 1.10.2)
   - Firebase/Analytics
+  - Firebase/Messaging
   - IQKeyboardManagerSwift
   - MBProgressHUD (~> 1.1.0)
   - MOLH
@@ -125,8 +140,11 @@ SPEC REPOS:
     - SwiftKeychainWrapper
   trunk:
     - Alamofire
+    - FirebaseAnalyticsInterop
+    - FirebaseMessaging
     - Moya
     - OneSignal
+    - Protobuf
     - Result
 
 EXTERNAL SOURCES:
@@ -145,10 +163,12 @@ SPEC CHECKSUMS:
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   Firebase: 5e6b7b12bf9adb90986688edc06b156c37e109cd
   FirebaseAnalytics: 0e3ecff2c5d86070f7d4325e21f1edabfbd558dc
+  FirebaseAnalyticsInterop: d48b6ab67bcf016a05e55b71fc39c61c0cb6b7f3
   FirebaseCore: 064c2dd92a8ca5974bbdcb080df9921e46bd34cd
   FirebaseCoreDiagnostics: af29e43048607588c050889d19204f4d7b758c9f
   FirebaseCoreDiagnosticsInterop: 6829da2b8d1fc795ff1bd99df751d3788035d2cb
   FirebaseInstanceID: 550df9be1f99f751d8fcde3ac342a1e21a0e6c42
+  FirebaseMessaging: 089b7a4991425783384acc8bcefcd78c0af913bd
   GoogleAppMeasurement: 434cc7be25e71dc04b8d0e3079125127b330e84a
   GoogleDataTransport: f6fe28f43e3a300736854260961ad485b473edc5
   GoogleDataTransportCCTSupport: 862418a8cdda520c4dd4af83a756d04efe4a6990
@@ -160,12 +180,13 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   NewRelicAgent: 53086dc2e077da434f477c700cc1f1a9caea2513
   OneSignal: 910a12186a2d9d8f7412b1d03304b53091f2c421
+  Protobuf: dd1aaea7140debfe4dd0683fb8ef208e527ae153
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
   SwiftKeychainWrapper: 82c4c02cdc36f9a24f7edfcaab3e336401caa1a1
   SwiftValidator: 58c155c8ae8421ef716a96e52a49984dd54c700c
 
-PODFILE CHECKSUM: c65fe5babb3b7039793f92143edb4212c8b651ce
+PODFILE CHECKSUM: f9b05a16f2c5124963f5507fb01e75d2df54cd14
 
 COCOAPODS: 1.8.4
