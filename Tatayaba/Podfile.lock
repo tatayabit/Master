@@ -90,7 +90,6 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - NewRelicAgent (6.9.0)
-  - OneSignal (2.12.0)
   - Protobuf (3.11.2)
   - Result (4.1.0)
   - SDWebImage (5.0.6):
@@ -110,7 +109,6 @@ DEPENDENCIES:
   - MOLH
   - Moya
   - NewRelicAgent
-  - OneSignal (< 3.0, >= 2.11.2)
   - SDWebImage
   - SkyFloatingLabelTextField
   - SwiftKeychainWrapper
@@ -143,7 +141,6 @@ SPEC REPOS:
     - FirebaseAnalyticsInterop
     - FirebaseMessaging
     - Moya
-    - OneSignal
     - Protobuf
     - Result
 
@@ -179,7 +176,6 @@ SPEC CHECKSUMS:
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   NewRelicAgent: 53086dc2e077da434f477c700cc1f1a9caea2513
-  OneSignal: 910a12186a2d9d8f7412b1d03304b53091f2c421
   Protobuf: dd1aaea7140debfe4dd0683fb8ef208e527ae153
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
@@ -187,6 +183,6 @@ SPEC CHECKSUMS:
   SwiftKeychainWrapper: 82c4c02cdc36f9a24f7edfcaab3e336401caa1a1
   SwiftValidator: 58c155c8ae8421ef716a96e52a49984dd54c700c
 
-PODFILE CHECKSUM: f9b05a16f2c5124963f5507fb01e75d2df54cd14
+PODFILE CHECKSUM: 4232fb7366ef77ec5f2a2f17ad02a5a0f0dac0e2
 
 COCOAPODS: 1.8.4
