@@ -14,7 +14,6 @@
 		100586A02386FCEB00D6CA76 /* ConvertedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1005869F2386FCEB00D6CA76 /* ConvertedProduct.swift */; };
 		100B8D5F236F2F52000E11E8 /* CountriesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100B8D5E236F2F52000E11E8 /* CountriesAPIClient.swift */; };
 		100B8D61236F2F6E000E11E8 /* CountriesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100B8D60236F2F6E000E11E8 /* CountriesEndpoint.swift */; };
-		10181CB8235F655300220439 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10181CB7235F655300220439 /* GoogleService-Info.plist */; };
 		101AE02A23A02B3D005DD372 /* CartSaving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AE02923A02B3D005DD372 /* CartSaving.swift */; };
 		10244C592369F6F8004E65F9 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10244C582369F6F8004E65F9 /* ErrorMessage.swift */; };
 		10480802238C65720056F74B /* ProductImagePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10480801238C65720056F74B /* ProductImagePair.swift */; };
@@ -22,6 +21,7 @@
 		10480819238DC9C10056F74B /* VersionValidationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10480817238DC9C10056F74B /* VersionValidationEndpoint.swift */; };
 		1048081A238DC9C10056F74B /* VersionValidationAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10480818238DC9C10056F74B /* VersionValidationAPIClient.swift */; };
 		1048081C238DC9F10056F74B /* SearchProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1048081B238DC9F10056F74B /* SearchProductsViewModel.swift */; };
+		104CD27223B7F00000E4A497 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 104CD27123B7EFFF00E4A497 /* GoogleService-Info.plist */; };
 		10616751235CB06A00F4A3A0 /* PaymentWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10616750235CB06A00F4A3A0 /* PaymentWebViewController.swift */; };
 		10616753235CBE9C00F4A3A0 /* PaymentWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10616752235CBE9C00F4A3A0 /* PaymentWebViewModel.swift */; };
 		10645967235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10645966235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift */; };
@@ -333,7 +333,6 @@
 		1005869F2386FCEB00D6CA76 /* ConvertedProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertedProduct.swift; sourceTree = "<group>"; };
 		100B8D5E236F2F52000E11E8 /* CountriesAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesAPIClient.swift; sourceTree = "<group>"; };
 		100B8D60236F2F6E000E11E8 /* CountriesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesEndpoint.swift; sourceTree = "<group>"; };
-		10181CB7235F655300220439 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		101AE02923A02B3D005DD372 /* CartSaving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartSaving.swift; sourceTree = "<group>"; };
 		10244C582369F6F8004E65F9 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		10480801238C65720056F74B /* ProductImagePair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagePair.swift; sourceTree = "<group>"; };
@@ -341,6 +340,7 @@
 		10480817238DC9C10056F74B /* VersionValidationEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionValidationEndpoint.swift; sourceTree = "<group>"; };
 		10480818238DC9C10056F74B /* VersionValidationAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionValidationAPIClient.swift; sourceTree = "<group>"; };
 		1048081B238DC9F10056F74B /* SearchProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductsViewModel.swift; sourceTree = "<group>"; };
+		104CD27123B7EFFF00E4A497 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		10616750235CB06A00F4A3A0 /* PaymentWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewController.swift; sourceTree = "<group>"; };
 		10616752235CBE9C00F4A3A0 /* PaymentWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewModel.swift; sourceTree = "<group>"; };
 		10645966235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDeatailsTableViewCellViewModel.swift; sourceTree = "<group>"; };
@@ -2044,8 +2044,8 @@
 				847CDE4A22C9EE2300E67C8C /* Assets.xcassets */,
 				847CDE4C22C9EE2300E67C8C /* LaunchScreen.storyboard */,
 				847CDE4F22C9EE2300E67C8C /* Info.plist */,
+				104CD27123B7EFFF00E4A497 /* GoogleService-Info.plist */,
 				115795CF23314CB00002075E /* Localizable.strings */,
-				10181CB7235F655300220439 /* GoogleService-Info.plist */,
 				847CDE4722C9EE2300E67C8C /* Tatayaba.xcdatamodeld */,
 				D5B7121023903795006BD0DD /* InfoPlist.strings */,
 			);
@@ -2417,6 +2417,7 @@
 				10F8530F2368B75500DD9EF8 /* AlsoBoughtProductsTableViewCell.xib in Resources */,
 				114D1A1622CBB27E009205F3 /* CategoryCollectionViewCell.xib in Resources */,
 				115795CD23314CB00002075E /* Localizable.strings in Resources */,
+				104CD27223B7F00000E4A497 /* GoogleService-Info.plist in Resources */,
 				27AB3017236C3A8C00CFBF59 /* Cart.storyboard in Resources */,
 				84B819E322D1D775000DD69A /* ProductDetails.storyboard in Resources */,
 				11C271B222F20636004613E3 /* Addresses.storyboard in Resources */,
@@ -2425,7 +2426,6 @@
 				1101C66E22E0D75500416307 /* HProductCollectionViewCell.xib in Resources */,
 				847CDE8A22CA19EE00E67C8C /* ProximaNova-Bold.ttf in Resources */,
 				847CDE8422CA19EE00E67C8C /* ProximaNova-Regular.ttf in Resources */,
-				10181CB8235F655300220439 /* GoogleService-Info.plist in Resources */,
 				11FEB4E122DF921800F2E9B8 /* ProductImageCarouselCollectionViewCell.xib in Resources */,
 				4C219867233BBB6900DE40FA /* Country.storyboard in Resources */,
 				115DC42D231187950001EF67 /* BannersBlocksView.xib in Resources */,
@@ -3074,13 +3074,13 @@
 				CODE_SIGN_ENTITLEMENTS = "Tatayaba/TATAYAB - تطيّب.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.53;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 4.4.2;
+				MARKETING_VERSION = 4.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tatayab.tatayab;
 				PRODUCT_NAME = "TATAYAB - تطيّب";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3097,12 +3097,12 @@
 				CODE_SIGN_ENTITLEMENTS = "Tatayaba/TATAYAB - تطيّب.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.53;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 4.4.2;
+				MARKETING_VERSION = 4.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tatayab.tatayab;
 				PRODUCT_NAME = "TATAYAB - تطيّب";
 				PROVISIONING_PROFILE_SPECIFIER = "";
