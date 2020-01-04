@@ -13,7 +13,10 @@ class Cart {
     var cartItemsArr = [CartItem]()
     private var productsArr = [Product]()
     var paymentMethod: PaymentMethod?
-
+//    let viewModel = CartViewModel.shared
+    private let cartApiClient = CartAPIClient()
+    let cartSaving = CartSaving()
+    var cart_ids = [String: String]()
     var productsCount: Int { return cartItemsArr.count }
     var subtotalPrice: String { return String(self.calculateSubTotal()).formattedPrice }
     var totalPrice: String { return String(self.calculateTotal()).formattedPrice }
@@ -38,18 +41,6 @@ class Cart {
             self.paymentMethod = payment
         }
     }
-    
-    func callUpdateServerCart(){
-        CartViewModel.shared.updateServerCart() { result in
-                switch result {
-                case .success(let response):
-                    guard let placeOrderResult = response else { return }
-                    print(placeOrderResult)
-                case .failure(let error):
-                    print("the error \(error)")
-                }
-            }
-        }
     
     //MARK:- SaveCartToCaching
     func saveCartToCaching() {
@@ -78,10 +69,14 @@ class Cart {
             let productModel = CartItem(productId: String(product.identifier), productName: product.name, quantity: quantity, options: options)
             cartItemsArr.append(productModel)
             productsArr.append(product)
+            if (self.checkLogin()){
+                self.addCartToServer()
+            }else{
+                saveCartToCaching()
+            }
         }
         updateTabBarCount()
-        saveCartToCaching()
-        callUpdateServerCart()
+        
     }
 
     func cartItem(for product: Product, options: [CartItemOptions]?) -> CartItem {
@@ -92,19 +87,32 @@ class Cart {
         cartItemsArr.remove(at: indexPath.row)
         productsArr.remove(at: indexPath.row)
         updateTabBarCount()
-        saveCartToCaching()
+        
+        if (self.checkLogin()) {
+            //self.deleteItemFromServer(cart_id: self.cart_ids.keysForValue(value: productsArr[indexPath.row].identifier)[0])
+        } else {
+            saveCartToCaching()
+        }
     }
 
     func increaseCount(cartItem: CartItem, quantity: Int) {
         cartItem.increaseCount(by: quantity)
         updateTabBarCount()
-        saveCartToCaching()
+        if (self.checkLogin()){
+            self.addCartToServer()
+        }else{
+            saveCartToCaching()
+        }
     }
 
     func decreaseCount(cartItem: CartItem) {
         cartItem.decreaseCount(by: 1)
         updateTabBarCount()
-        saveCartToCaching()
+        if (self.checkLogin()){
+            self.addCartToServer()
+        }else{
+            saveCartToCaching()
+        }
     }
 
     func product(at indexPath: IndexPath) -> (Product, CartItem) {
@@ -187,5 +195,135 @@ class Cart {
         self.couponCode = ""
         updateTabBarCount()
 //        saveCartToCaching()
+    }
+}
+
+extension Cart {
+    
+    func getUserId() -> String {
+        let customer = Customer.shared
+        if customer.loggedin {
+            guard let user = customer.user else { return "0" }
+            return user.identifier
+        }
+        return "0"
+    }
+    
+    func getProductOptions(cartOptions: [CartItemOptions]) -> [[String: String]] {
+        var optionsParms = [[String: String]]()
+        for optionSection in cartOptions {
+            optionsParms.append([optionSection.optionId: optionSection.variantId])
+        }
+        return optionsParms
+    }
+    
+    func getProductsModel() -> [String: Any] {
+        let cartItems = self.cartItemsList()
+        var productsParms = [String: Any]()
+
+        for i in 0...cartItems.count - 1 {
+            let cartItemX = cartItems[i]
+
+            var optionsParms = [[String: String]]()
+            if let options = cartItemX.options {
+                if options.count > 0 {
+                   optionsParms = getProductOptions(cartOptions: options)
+                }
+            }
+            
+            var productPP = [String: Any]()
+            productPP["product_id"] = cartItemX.productId
+            productPP["amount"] = "\(cartItemX.count)"
+            
+            if optionsParms.count > 0 {
+                productPP["product_options"] = optionsParms
+
+            }
+            productsParms["\(cartItemX.productId)"] = productPP
+            
+        }
+        return productsParms
+    }
+    
+    func updateLocalStorage() {
+        deleteLocalStorage()
+        saveCartToCaching()
+    }
+    
+    func getLocalStorage() {
+        if let cartList = cartSaving.loadCartItemsFromKeyChain() {
+            print(cartList.count)
+        }
+    }
+    
+    func deleteLocalStorage() {
+        if checkLocalStorage() {
+            cartSaving.deleteCartCashing()
+        }
+    }
+    
+    func checkLogin() -> Bool {
+        return Customer.shared.loggedin
+    }
+    func checkLocalStorage() -> Bool {
+        return cartSaving.checkLocalCaching()
+    }
+    
+    func getCartFromServer() {
+        let userId = getUserId()
+        cartApiClient.getServerCart( userId: userId) { result in
+            switch result {
+            case .success(let response):
+                guard let getCartResult = response else { return }
+                self.updateLocalStorage()
+            case .failure(let error):
+                print("the error \(error)")
+            }
+        }
+    }
+    
+    func addCartToServer() -> Void {
+        let userId = getUserId()
+        let paymentId = self.paymentMethod?.paymentId ?? "0"
+
+        cartApiClient.addServerCart(products: getProductsModel(), userId: userId, paymentId: paymentId) { result in
+            switch result {
+            case .success(let response):
+                //let updateServerCartResponse = try UpdateServerCartResponse(response)
+                guard let updateCartResult = response else { return }
+                print(updateCartResult.cart_ids.count)
+                //print(updateCartResult.cart_ids.count)
+                self.updateLocalStorage()
+            case .failure(let error):
+                print("the error \(error)")
+            }
+        }
+    }
+    
+    func deleteAllCartFromServer() {
+        let userId = getUserId()
+        cartApiClient.deleteAllFromCart( userId: userId) { result in
+            switch result {
+            case .success(_):
+                print("Deleted sucssfully")
+                self.updateLocalStorage()
+            case .failure(let error):
+                print("the error \(error)")
+            }
+        }
+    }
+    
+    func deleteItemFromServer(cart_id:String) {
+        let userId = getUserId()
+        cartApiClient.deleteItemfromCart(userId: userId, cart_id: cart_id) { result in
+            switch result {
+            case .success( _):
+                print("Deleted sucssfully")
+                self.updateLocalStorage()
+            case .failure(let error):
+                print("the error \(error)")
+            }
+            
+        }
     }
 }

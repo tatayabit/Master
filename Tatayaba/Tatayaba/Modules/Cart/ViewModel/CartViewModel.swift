@@ -19,8 +19,9 @@ protocol CartViewModelDelegate: class {
 class CartViewModel {
     static let shared = CartViewModel()
     var pricingList = [CartPricingModel]()
+    let cartSaving = CartSaving()
     let cart = Cart.shared
-    
+    let defaults = UserDefaults.standard
     private let cartApiClient = CartAPIClient()
     
     weak var delegate: CartViewModelDelegate?
@@ -225,90 +226,9 @@ class CartViewModel {
         return requestJson
     }
     
-    func updateServerCart( completion: @escaping (APIResult<UpdateServerCartResponse?, MoyaError>) -> Void) {
-
-        let userId = getUserId()
-        let paymentId = cart.paymentMethod?.paymentId ?? "0"
-
-        cartApiClient.updateServerCart(products: getProductsModel(), userId: userId, paymentId: paymentId) { result in
-            switch result {
-            case .success(let response):
-                guard let updateCartResult = response else { return }
-                print(updateCartResult.cart_ids.count)
-
-            case .failure(let error):
-                print("the error \(error)")
-            }
-            completion(result)
-        }
-    }
     
-    func deleteServerCart( completion: @escaping (APIResult<UpdateServerCartResponse?, MoyaError>) -> Void) {
 
-        let userId = getUserId()
-        cartApiClient.deleteAllCart( userId: userId) { result in
-            switch result {
-            case .success(let response):
-                guard let updateCartResult = response else { return }
-
-            case .failure(let error):
-                print("the error \(error)")
-            }
-            completion(result)
-        }
-    }
     
-    func getServerCart( completion: @escaping (APIResult<CartContentResponse?, MoyaError>) -> Void) {
-
-        let userId = getUserId()
-        cartApiClient.getServerCart( userId: userId) { result in
-            switch result {
-            case .success(let response):
-                guard let getCartResult = response else { return }
-
-            case .failure(let error):
-                print("the error \(error)")
-            }
-            completion(result)
-        }
-    }
-    
-    func getUserId() -> String {
-        let customer = Customer.shared
-        if customer.loggedin {
-            guard let user = customer.user else { return "0" }
-            return user.identifier
-        }
-        return "0"
-    }
-
-    func getProductsModel() -> [String: Any] {
-        let cartItems = cart.cartItemsList()
-        var productsParms = [String: Any]()
-
-        for i in 0...cartItems.count - 1 {
-            let cartItemX = cartItems[i]
-
-            var optionsParms = [[String: String]]()
-            if let options = cartItemX.options {
-                if options.count > 0 {
-                   optionsParms = getProductOptions(cartOptions: options)
-                }
-            }
-            
-            var productPP = [String: Any]()
-            productPP["product_id"] = cartItemX.productId
-            productPP["amount"] = "\(cartItemX.count)"
-            
-            if optionsParms.count > 0 {
-                productPP["product_options"] = optionsParms
-
-            }
-            productsParms["\(cartItemX.productId)"] = productPP
-            
-        }
-        return productsParms
-    }
     
     func getProductOptions(cartOptions: [CartItemOptions]) -> [[String: String]] {
         var optionsParms = [[String: String]]()
@@ -385,3 +305,6 @@ class CartPricingItems {
     var cartEmpty = "Your Cart is Empty!".localized()
     var Quantity = "Quantity".localized()
 }
+
+
+

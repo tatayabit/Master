@@ -12,8 +12,9 @@ enum CartEndpoint {
     case applyCoupon(parameters: [String: Any])
     case getTaxAndShipping(countryCode: String)
     case getPricesWithUpdatedCurrency(parameters: [String: Any])
-    case updateServerCart(products: [String: Any], userId: String, paymentId: String)
-    case deleteAllCart(userId: String)
+    case addServerCart(products: [String: Any], userId: String, paymentId: String)
+    case deleteAllFromCart(userId: String)
+    case deleteItemFromCart(userId: String, cart_id:String)
     case getServerCart(userId: String)
 }
 
@@ -42,7 +43,7 @@ extension CartEndpoint: TargetType {
             return "4.0/TtmCartConfigData/"
         case .getPricesWithUpdatedCurrency:
             return "4.0/TtmCurrencies/"
-        case .updateServerCart, .deleteAllCart, .getServerCart:
+        case .addServerCart, .deleteAllFromCart, .deleteItemFromCart , .getServerCart:
             return "4.0/TtmCartContent"
         }
     }
@@ -51,9 +52,9 @@ extension CartEndpoint: TargetType {
         switch self {
         case .getTaxAndShipping, .getServerCart:
             return .get
-        case .getPricesWithUpdatedCurrency, .applyCoupon, .updateServerCart:
+        case .getPricesWithUpdatedCurrency, .applyCoupon, .addServerCart:
             return .post
-        case .deleteAllCart:
+        case .deleteAllFromCart, .deleteItemFromCart:
             return .delete
         }
     }
@@ -75,9 +76,11 @@ extension CartEndpoint: TargetType {
         case .getTaxAndShipping:
             return .requestParameters(parameters: [ "country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw"
                 ], encoding: URLEncoding.queryString)
+        case .getServerCart(let userId):
+            return .requestParameters(parameters: [ "user_id": userId], encoding: URLEncoding.queryString)
         case .getPricesWithUpdatedCurrency(let parameters):
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-        case .updateServerCart(let products, let userId,let paymentId):
+        case .addServerCart(let products, let userId,let paymentId):
             let params = [
             "user_id": userId,
             "payment_id": paymentId,
@@ -88,8 +91,11 @@ extension CartEndpoint: TargetType {
 
             print("decoded: \(decoded)")
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
-        case .deleteAllCart(let userId),.getServerCart(let userId):
+        case .deleteAllFromCart(let userId):
             let params = ["user_id": userId] as [String : Any]
+            return .requestParameters(parameters: params, encoding: JSONEncoding.default)
+        case .deleteItemFromCart(let userId, let cart_id):
+            let params = ["user_id": userId, "cart_id": cart_id] as [String : Any]
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         }
     }

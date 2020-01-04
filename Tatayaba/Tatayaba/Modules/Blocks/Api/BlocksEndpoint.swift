@@ -59,9 +59,9 @@ extension BlocksEndpoint: TargetType {
 //            "lang_code": LanguageManager.getLanguage()
 //            return .requestPlain
             var currencyId = Constants.Currency.kuwaitCurrencyId
-                       if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
+            if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
                            currencyId = countryCurrency
-                       }
+                }
             return .requestParameters(parameters: ["lang_code": LanguageManager.getLanguage(),
                                                    "currency_id": currencyId.urlEscaped
                 ], encoding: URLEncoding.default)
