@@ -25,7 +25,8 @@ class ConciergeSubView: UIView, ValidationDelegate {
     @IBOutlet weak var customerNameTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var phoneTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var countryButton: UIButton!
-
+//    @IBOutlet weak var bannerImageViewHeightConstraint: NSLayoutConstraint!
+    
     var country: Country?
     weak var delegate: ConciergeSubViewDelegate?
     private let validator = Validator()
@@ -33,8 +34,16 @@ class ConciergeSubView: UIView, ValidationDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        bannerImageView.sd_setImage(with: URL(string: "https://tatayab.com/images/companies/1/inside%20page%20english.jpg"), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
-        registerValidator()
+//        bannerImageView.sd_setImage(with: URL(string: "https://tatayab.com/images/companies/1/inside%20page%20english.jpg"), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
+        
+        self.configureConciergeImage()
+        self.registerValidator()
+    }
+    
+    private func configureConciergeImage() {
+        let conciergeBgImage = LanguageManager.isArabicLanguage() ? "concierge_ar" : "concierge_en"
+        self.bannerImageView.image = UIImage(named: conciergeBgImage)
+//        self.bannerImageViewHeightConstraint.constant = UIScreen.main.bounds.width
     }
 
     // MARK:- Concierge Model
@@ -89,18 +98,12 @@ class ConciergeSubView: UIView, ValidationDelegate {
     }
 
     @IBAction func countryAction(_ sender: Any) {
-       
         if let delegate = delegate {
             delegate.didSelectCounty()
         }
-
-        
     }
 
     @IBAction func submitAction(_ sender: Any) {
         validator.validate(self)
-//        if let delegate = delegate {
-//            delegate.didSelectSubmitConcierge(concierge: createConcierge())
-//        }
     }
 }
