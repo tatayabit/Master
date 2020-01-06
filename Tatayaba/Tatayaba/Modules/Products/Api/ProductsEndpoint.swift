@@ -16,6 +16,7 @@ enum ProductsEndpoint {
     case getProductDetails(productId: String)
     case getAlsoBoughtProducts(productId: String)
     case search(keyword: String, page: String)
+    case getFilteredProductOfCategory(categoryId: String, page: String,sort_by:String,sort_order:String)
 }
 
 
@@ -45,6 +46,9 @@ extension ProductsEndpoint: TargetType {
         case .getProductsOfCategory:
             let version = "4.0"
             return "\(version.urlEscaped)/TtmProducts"
+        case .getFilteredProductOfCategory( _,  _, let sort_by, let sort_order):
+            let version = "4.0"
+            return "\(version.urlEscaped)/TtmProducts/?sort_by=\(sort_by.urlEscaped)&sort_order=\(sort_order.urlEscaped)"
         case .getProductFeatures:
             return "TtmCategories/268/products"
         case .getProductDetails(let productId):
@@ -61,7 +65,7 @@ extension ProductsEndpoint: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .getProducts, .getAllCategories, .getProductsOfCategory, .getProductFeatures, .getProductDetails, .getAlsoBoughtProducts, .search:
+        case .getProducts, .getAllCategories, .getProductsOfCategory, .getProductFeatures, .getProductDetails, .getAlsoBoughtProducts, .search, .getFilteredProductOfCategory:
             return .get
         }
     }
@@ -116,6 +120,20 @@ extension ProductsEndpoint: TargetType {
                                                     "lang_code": LanguageManager.getLanguage(),
                                                     "currency_id": currencyId.urlEscaped
                 ], encoding: URLEncoding.default)
+            
+        case .getFilteredProductOfCategory(let category, let page, let _, let _):
+        var currencyId = Constants.Currency.kuwaitCurrencyId
+        if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
+            currencyId = countryCurrency
+        }
+        return .requestParameters(parameters: [ "items_per_page": 20,
+                                                "status": "A",
+                                                "cid": category,
+                                                "page": page.urlEscaped,
+                                                "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
+                                                "lang_code": LanguageManager.getLanguage(),
+                                                "currency_id": currencyId.urlEscaped
+            ], encoding: URLEncoding.default)
             
         case .getProductFeatures:
             return .requestParameters(parameters: [ "items_per_page": 10
