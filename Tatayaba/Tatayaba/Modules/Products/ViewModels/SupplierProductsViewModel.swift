@@ -11,6 +11,7 @@ import Moya
 protocol SupplierProductsViewModelDelegate: class {
     func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?)
     func onFetchFailed(with reason: String)
+    func onFilteringFetchCompleted(with newIndexPathsToReload: [IndexPath]?)
 }
 
 class SupplierProductsViewModel {
@@ -22,6 +23,8 @@ class SupplierProductsViewModel {
     private var productsList = [Product]()
     private var currentPage = 0
     private var total = 0
+    
+    private var filterSettings = FilterSettings()
 //    private var isFetchInProgress = false
 //    private var shouldCallApi: Bool = true
 
@@ -64,6 +67,34 @@ class SupplierProductsViewModel {
 //            completion(result)
 //        }
 //    }
+    
+    func getFilteredProductsApi() {
+        apiClient.getFilteredProductOfSupplier(supplierId: supplier.supplierId, page: currentPage, sort_by: filterSettings.filter.rawValue, sort_order:filterSettings.sorting.rawValue) { result in
+                 
+            switch result {
+            // 3
+            case .failure(let error):
+                 DispatchQueue.main.async {
+                     self.delegate?.onFetchFailed(with: error.localizedDescription)
+                 }
+             // 4
+            case .success(let response):
+                DispatchQueue.main.async {
+                    guard let supplierResult = response else { return }
+                    
+                    self.supplier = supplierResult
+                    print(self.supplier)
+                
+                    self.total += supplierResult.products.count
+                    self.productsList.append(contentsOf: supplierResult.products)
+                 
+                    if let delegate = self.delegate {
+                        delegate.onFetchCompleted(with: .none)
+                    }
+                }
+            }
+        }
+    }
     
     // MARK:- fetch more Api
      func fetchModerators() {
@@ -141,7 +172,37 @@ class SupplierProductsViewModel {
         let productViewModel = ProductDetailsViewModel(product: product(at: indexPath))
         return productViewModel
     }
+    
+    // MARK:- Filter
+    func freeDeliveryPressed() {
+        self.filterSettings.freeDelivery = !self.filterSettings.freeDelivery
+        self.resetAllProdcuts()
+        self.getFilteredProductsApi()
+    }
+    
+    
+    
+    func filterOptionsChanged() {
+        // TODO: add the inputs will be passed from the view
+        // call the changes before calling api
+        self.resetAllProdcuts()
+        self.getFilteredProductsApi()
+    }
+    
+    func sortByOptionsChanged() {
+        // TODO: add the inputs will be passed from the view
+        // call the changes before calling api
+        self.resetAllProdcuts()
+        self.getFilteredProductsApi()
+    }
 
+    
+    // MARK:- Reset Data
+    private func resetAllProdcuts() {
+        self.productsList.removeAll()
+        self.currentPage = 0
+        self.total = 0
+    }
     // MARK:- AddToCart
     func addToCart(at indexPath: IndexPath)  {
         let cart = Cart.shared

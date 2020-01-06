@@ -147,6 +147,7 @@ class SupplierProductsViewController: BaseViewController, UICollectionViewDelega
 
 
 extension SupplierProductsViewController: SupplierProductsViewModelDelegate {
+    
     func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
         // 1
         self.hideLoadingIndicator(from: self.view)
@@ -178,4 +179,23 @@ extension SupplierProductsViewController: SupplierProductsViewModelDelegate {
 //        let action = UIAlertAction(title: "OK".localizedString, style: .default)
 //        displayAlert(with: title , message: reason, actions: [action])
     }
+    
+    
+    func onFilteringFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
+        // TODO: clear the table view before load the data
+        
+        // 1
+               self.hideLoadingIndicator(from: self.view)
+
+               guard newIndexPathsToReload != nil else {
+                   productsCollectionView.reloadData()
+                   return
+               }
+               // 2
+               if let newIndexPathsToReload = newIndexPathsToReload {
+                   productsCollectionView.insertItems(at: newIndexPathsToReload)
+               }
+               
+    }
+
 }
