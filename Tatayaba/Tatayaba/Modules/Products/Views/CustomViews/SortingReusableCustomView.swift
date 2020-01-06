@@ -46,5 +46,24 @@ class SortingReusableCustomView: UIView {
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
     
+    override  func awakeFromNib() {
+        super.awakeFromNib()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(clickFreeDeliveryView(sender:)))
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(clickFilterView(sender:)))
+        let tap3 = UITapGestureRecognizer(target: self, action: #selector(clickSortView(sender:)))
+        FreeDeliveryView.addGestureRecognizer(tap)
+        FilterView.addGestureRecognizer(tap2)
+        SortView.addGestureRecognizer(tap3)
+       }
+    
+    @objc func clickFreeDeliveryView(sender:UITapGestureRecognizer) {
+        print("clickFreeDeliveryView tap working")
+    }
+    @objc func clickFilterView(sender:UITapGestureRecognizer) {
+        print("clickFilterView tap working")
+    }
+    @objc func clickSortView(sender:UITapGestureRecognizer) {
+        print("clickSortView tap working")
+    }
     
 }
