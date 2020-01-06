@@ -118,3 +118,8 @@ alertValaidationMessage = "يجب عليك الترقية ، الإصدار ال
 "Cash on delivery" = "الدفع عند الاستلام";
 
 "OFF" = "%\nخصم";
+
+// custom Filter view
+"Free Delivery" = "شحن مجاني";
+"Filter" = "تصنيف حسب";
+"Sort" = "ترتيب حسب";

@@ -292,6 +292,8 @@
 		D5B7120E23903795006BD0DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5B7121023903795006BD0DD /* InfoPlist.strings */; };
 		D5C602EE23A2015200083E3C /* UpdateServerCartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C602ED23A2015200083E3C /* UpdateServerCartResponse.swift */; };
 		D5C602F023A2177400083E3C /* CartContentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C602EF23A2177400083E3C /* CartContentResponse.swift */; };
+		D5DC602B23C1E13A00B13E15 /* SortingReusableCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DC602A23C1E13A00B13E15 /* SortingReusableCustomView.swift */; };
+		D5DC603123C1E22E00B13E15 /* SortingReusableCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5DC603023C1E22E00B13E15 /* SortingReusableCustomView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -633,6 +635,8 @@
 		D5B712112390379B006BD0DD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D5C602ED23A2015200083E3C /* UpdateServerCartResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateServerCartResponse.swift; sourceTree = "<group>"; };
 		D5C602EF23A2177400083E3C /* CartContentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartContentResponse.swift; sourceTree = "<group>"; };
+		D5DC602A23C1E13A00B13E15 /* SortingReusableCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingReusableCustomView.swift; sourceTree = "<group>"; };
+		D5DC603023C1E22E00B13E15 /* SortingReusableCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortingReusableCustomView.xib; sourceTree = "<group>"; };
 		E0F8BF293BFC39D47FD4C2EB /* Pods-Tatayaba.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tatayaba.debug.xcconfig"; path = "Target Support Files/Pods-Tatayaba/Pods-Tatayaba.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1225,6 +1229,8 @@
 				114D1A1422CBB27E009205F3 /* CategoryCollectionViewCell.xib */,
 				11007BD322DE2F2E00AC9957 /* NewProductCollectionViewCell.swift */,
 				11007BD422DE2F2E00AC9957 /* NewProductCollectionViewCell.xib */,
+				D5DC602A23C1E13A00B13E15 /* SortingReusableCustomView.swift */,
+				D5DC603023C1E22E00B13E15 /* SortingReusableCustomView.xib */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -2458,6 +2464,7 @@
 				4CC28C702327F961003EAEA6 /* GOTHAM-MEDIUM.TTF in Resources */,
 				11FB584A231C2147005DA4F0 /* CategoriesBlockCollectionViewCell.xib in Resources */,
 				4CD8B8A6232129D300D25CC3 /* Suppliers.storyboard in Resources */,
+				D5DC603123C1E22E00B13E15 /* SortingReusableCustomView.xib in Resources */,
 				11257427233155DF0015C3AD /* Home.storyboard in Resources */,
 				847CDE8822CA19EE00E67C8C /* ProximaNova-Black.ttf in Resources */,
 			);
@@ -2747,6 +2754,7 @@
 				27E8534523775F50002649BE /* CurrencyAPIClient.swift in Sources */,
 				112654AE22D2693600904FB5 /* ProductsEndpoint.swift in Sources */,
 				11FB585D231C3C3C005DA4F0 /* Supplier.swift in Sources */,
+				D5DC602B23C1E13A00B13E15 /* SortingReusableCustomView.swift in Sources */,
 				114D1A0B22CBB12B009205F3 /* CellActionHandler.swift in Sources */,
 				84BC089E22DC84A900C6180E /* CartTableViewCell.swift in Sources */,
 				27F32DC42371F657000F7758 /* ForgetPasswordViewController.swift in Sources */,

@@ -119,3 +119,8 @@ alertValaidationMessage = "You have to upgrade , your version is not supported a
 "Cash on delivery" = "Cash on delivery";
 //
 "OFF" = "%\nOFF";
+
+// custom Filter view
+"Free Delivery" = "FREE DELIVERY";
+"Filter" = "FILTER";
+"Sort" = "SORT";
