@@ -10,6 +10,7 @@ import UIKit
 
 class SupplierProductsViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ProductsBlockCollectionViewCellDelegate {
 
+    @IBOutlet weak var filterView: SortingReusableCustomView!
     @IBOutlet weak var productsCollectionView: UICollectionView!
     @IBOutlet weak var supplierNameLabel: UILabel!
 
@@ -28,7 +29,10 @@ class SupplierProductsViewController: BaseViewController, UICollectionViewDelega
         
         guard let viewModel = viewModel else { return }
         viewModel.setDelegate(self)
+        self.filterView.delegate = self
+        
         loadData()
+        
     }
     
     func loadData() {
@@ -146,7 +150,7 @@ class SupplierProductsViewController: BaseViewController, UICollectionViewDelega
 }
 
 
-extension SupplierProductsViewController: SupplierProductsViewModelDelegate {
+extension SupplierProductsViewController: SupplierProductsViewModelDelegate, isAbleToReceiveData {
     
     func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
         // 1
@@ -198,4 +202,31 @@ extension SupplierProductsViewController: SupplierProductsViewModelDelegate {
                
     }
 
+}
+extension SupplierProductsViewController : FilterDelegate{
+    func freeDeliveryClick() {
+        print("test 1")
+    }
+    func filterClick() {
+        print("test 2")
+        let vc = FilterTableViewController()
+        vc.delegate = self
+        vc.viewType = 0
+        self.present(vc, animated: true, completion: nil)
+    }
+    func sortClick() {
+        print("test 3")
+        let vc = FilterTableViewController()
+        vc.delegate = self
+        vc.viewType = 1
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    func pass(data: String) { //conforms to protocol
+    // implement your own implementation
+        print(data)
+     }
+}
+protocol isAbleToReceiveData {
+  func pass(data: String)  //data: string is an example parameter
 }

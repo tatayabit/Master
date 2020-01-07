@@ -12,7 +12,7 @@ import UIKit
 class SortingReusableCustomView: UIView {
     let nibName = "SortingReusableCustomView"
     var contentView:UIView?
-   
+    var delegate: FilterDelegate?
     @IBOutlet weak var FreeDeliveryView: UIView!
     @IBOutlet weak var FilterView: UIView!
     @IBOutlet weak var SortView: UIView!
@@ -58,12 +58,21 @@ class SortingReusableCustomView: UIView {
     
     @objc func clickFreeDeliveryView(sender:UITapGestureRecognizer) {
         print("clickFreeDeliveryView tap working")
+        delegate?.freeDeliveryClick()
     }
     @objc func clickFilterView(sender:UITapGestureRecognizer) {
         print("clickFilterView tap working")
+        delegate?.filterClick()
     }
     @objc func clickSortView(sender:UITapGestureRecognizer) {
         print("clickSortView tap working")
+        delegate?.sortClick()
     }
     
+}
+
+protocol FilterDelegate: class {
+    func freeDeliveryClick()
+    func filterClick()
+    func sortClick()
 }
