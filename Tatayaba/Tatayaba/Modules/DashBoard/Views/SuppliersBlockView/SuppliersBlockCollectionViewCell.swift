@@ -19,6 +19,6 @@ class SuppliersBlockCollectionViewCell: UICollectionViewCell {
     }
 
     func configure(_ supplier: Supplier) {
-        bannerImageView.sd_setImage(with: URL(string: supplier.logo.icon.url), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
+        bannerImageView.sd_setImage(with: URL(string: (supplier.logo?.icon.url)!), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
     }
 }

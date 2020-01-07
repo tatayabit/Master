@@ -208,6 +208,7 @@ extension profileTabMenuViewController{
     // MARK:- Change Language
     func changeLanguege() {
         MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
+        UserDefaults.standard.set(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en", forKey: "Language")
         MOLH.reset()
         reloadUI()
     }

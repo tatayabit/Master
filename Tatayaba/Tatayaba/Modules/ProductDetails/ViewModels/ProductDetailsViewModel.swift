@@ -28,7 +28,7 @@ class ProductDetailsViewModel {
     
     var numberOfSections: Int {
         let numberOfAlsoBoughtSection = self.numberOfAlsoBoughtProducts > 0 ? 1: 0
-        return optionsCount + numberOfAlsoBoughtSection + 1
+        return optionsCount + numberOfAlsoBoughtSection + 2
     }
     
     var hasRequiredOptions: Bool {
@@ -207,7 +207,7 @@ class ProductDetailsViewModel {
     
     func isAllRequiredOptionsSelected() -> Bool {
         if hasRequiredOptions {
-            for section in 1..<optionsCount + 1 {
+            for section in 2..<optionsCount + 2 {
                 let option = optionHeader(at: section)
                 if option.required == "Y" {
                     if self.selectedOptions.filter({ $0.section == section }).count == 0 {
@@ -224,7 +224,7 @@ class ProductDetailsViewModel {
         if numberOfAlsoBoughtProducts == 0 {
             return false
         }
-        return section == numberOfSections - 1
+        return section == numberOfSections - 2
     }
     
       

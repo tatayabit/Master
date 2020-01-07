@@ -136,7 +136,7 @@ class SupplierProductsViewModel {
 //                    }
                     
                     self.total += supplierResult.products.count
-                    self.productsList.append(contentsOf: supplierResult.products)
+                    self.productsList.append(contentsOf: (supplierResult.products))
                      
                     // 3
 //                    if self.currentPage > 1 {

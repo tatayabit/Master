@@ -65,6 +65,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         CurrenciesManager.shared.loadCurrenciesList()
         CountrySettings.shared.addDelegate(delegate: self)
         CurrencySettings.shared.addCurrencyDelegate(delegate: self)
+        loadDefaults()
         startLocationProcessing()
     }
 
@@ -83,6 +84,30 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
             self.loadBanners()
         }
     }
+    private func loadDefaults() {
+        
+        if let savedPerson = UserDefaults.standard.object(forKey: "country") as? Data {
+            let decoder = JSONDecoder()
+            if let country = try? decoder.decode(Country.self, from: savedPerson) {
+                CountrySettings.shared.currentCountry = country
+                AppDelegate.shared.shouldCheckLocation = false
+                
+            }
+        }
+    
+        if let currency = UserDefaults.standard.object(forKey: "currency") as? Data {
+            let decoder = JSONDecoder()
+            if let currency = try? decoder.decode(Currency.self, from: currency) {
+                CurrencySettings.shared.currentCurrency = currency
+            }
+        }
+        
+        if let Language = UserDefaults.standard.string(forKey: "Language") {
+            // do next
+        }
+        
+    }
+    
     
     // MARK:- Setup Banners
     fileprivate func addBannersSubView() {
