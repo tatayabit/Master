@@ -29,10 +29,10 @@ extension SuppliersResult: Codable {
 
 struct Supplier {
     var supplierId: String = ""
-    var status: String = ""
+    var status: String? = ""
     var name: String = ""
-    var logo: SupplierLogo
-    var products: [Product]
+    var logo: SupplierLogo?
+    var products: [Product]?
 
     init(supplierId: String = "", status: String = "", name: String = "", logo: SupplierLogo = SupplierLogo(), products: [Product] = [Product]()) {
         self.supplierId = supplierId
@@ -40,6 +40,11 @@ struct Supplier {
         self.name = name
         self.logo = logo
         self.products = products
+    }
+    
+    init(supplierId: String = "",name: String = "") {
+        self.supplierId = supplierId
+        self.name = name
     }
 }
 

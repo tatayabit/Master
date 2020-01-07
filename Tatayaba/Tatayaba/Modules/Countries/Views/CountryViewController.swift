@@ -19,6 +19,7 @@ protocol CurrencyViewDelegate: class {
 class CountryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     private let viewModel = CountriesManager()
     private let currencyViewModel = CurrenciesManager()
+    let encoder = JSONEncoder()
     let countriesList = CountriesManager.shared.countriesList
     let currenciesList = CurrenciesManager.shared.currenciesList
     weak var delegate: CountryViewDelegate?
@@ -68,6 +69,14 @@ extension CountryViewController{
             delegate?.countrySelected(selectedCountry: countriesList[indexPath.row])
             if let currency = currenciesList.first(where: {$0.countriesList.contains(countriesList[indexPath.row].code)}){
                 CurrencySettings.shared.currentCurrency = currency
+                if let encoded = try? encoder.encode(countriesList[indexPath.row]) {
+                    let defaults = UserDefaults.standard
+                    defaults.set(encoded, forKey: "country")
+                }
+                if let encoded = try? encoder.encode(currency) {
+                    let defaults = UserDefaults.standard
+                    defaults.set(encoded, forKey: "currency")
+                }
             }
             if Customer.shared.loggedin {
                 Customer.shared.removeAddressData()
@@ -76,6 +85,10 @@ extension CountryViewController{
 //            navigationController?.popViewController(animated: true)
         } else {
             CurrencySettings.shared.currentCurrency = currenciesList[indexPath.row]
+            if let encoded = try? encoder.encode(currenciesList[indexPath.row]) {
+                let defaults = UserDefaults.standard
+                defaults.set(encoded, forKey: "currency")
+            }
             navigateToHome()
         }
     }

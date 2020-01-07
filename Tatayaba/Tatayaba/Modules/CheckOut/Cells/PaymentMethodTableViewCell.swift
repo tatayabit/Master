@@ -61,6 +61,7 @@ class PaymentMethodTableViewCell: UITableViewCell {
         selectionImageView.isHidden = payment.paymentId != Cart.shared.paymentMethod?.paymentId
         iconImageView.sd_setImage(with: URL(string: payment.image?.icon?.imagePath ?? ""), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
     }
+    
     func setTitle(payment: PaymentMethod) {
         if let paymentName = payment.payment {
             print(paymentName)

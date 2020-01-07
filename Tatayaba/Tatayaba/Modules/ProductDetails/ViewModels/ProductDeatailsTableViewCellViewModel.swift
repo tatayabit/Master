@@ -35,7 +35,9 @@ class ProductDeatailsTableViewCellViewModel {
     var selectedQuantity: Int
     var optionsCount: Int { return self.product.productOptions.count }
     var isInStock: Bool { return self.product.isInStock }
+    var is_free_delivery: String { return self.product.is_free_delivery }
     var supplierName : String { return self.product.supplierName }
+    var supplier_id : String { return self.product.supplier_id }
     // MARK:- Init
     init(product: Product) {
         self.product = product
