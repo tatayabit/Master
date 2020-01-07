@@ -181,21 +181,21 @@ extension SupplierProductsViewController: SupplierProductsViewModelDelegate {
     }
     
     
-    func onFilteringFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
-        // TODO: clear the table view before load the data
-        
-        // 1
-               self.hideLoadingIndicator(from: self.view)
-
-               guard newIndexPathsToReload != nil else {
-                   productsCollectionView.reloadData()
-                   return
-               }
-               // 2
-               if let newIndexPathsToReload = newIndexPathsToReload {
-                   productsCollectionView.insertItems(at: newIndexPathsToReload)
-               }
-               
-    }
+//    func onFilteringFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
+//        // TODO: clear the table view before load the data
+//        
+//        // 1
+//               self.hideLoadingIndicator(from: self.view)
+//
+//               guard newIndexPathsToReload != nil else {
+//                   productsCollectionView.reloadData()
+//                   return
+//               }
+//               // 2
+//               if let newIndexPathsToReload = newIndexPathsToReload {
+//                   productsCollectionView.insertItems(at: newIndexPathsToReload)
+//               }
+//               
+//    }
 
 }
