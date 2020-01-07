@@ -11,7 +11,7 @@ import Moya
 protocol SupplierProductsViewModelDelegate: class {
     func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?)
     func onFetchFailed(with reason: String)
-    func onFilteringFetchCompleted(with newIndexPathsToReload: [IndexPath]?)
+//    func onFilteringFetchCompleted(with newIndexPathsToReload: [IndexPath]?)
 }
 
 class SupplierProductsViewModel {

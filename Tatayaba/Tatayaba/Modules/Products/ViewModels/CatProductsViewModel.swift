@@ -11,6 +11,7 @@ import Moya
 protocol CatProductsViewModelDelegate: class {
     func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?)
     func onFetchFailed(with reason: String)
+//    func onFilteringFetchCompleted(with newIndexPathsToReload: [IndexPath]?)
 }
 
 class CatProductsViewModel {
@@ -22,6 +23,8 @@ class CatProductsViewModel {
     private var isFetchInProgress = false
     private var shouldCallApi: Bool = true
 
+    
+    private var filterSettings = FilterSettings()
     
     private weak var delegate: CatProductsViewModelDelegate?
     
@@ -46,6 +49,58 @@ class CatProductsViewModel {
 
     
     // MARK:- fetch more Api
+    
+    func getFilteredProductsApi() {
+        // 1
+        guard !isFetchInProgress else {
+            return
+        }
+        
+        // 2
+        isFetchInProgress = true
+        
+        let categoryId = Int(category.identifier) ?? 0
+        apiClient.getFilteredProductOfCategory(categoryId: categoryId, page: currentPage, sort_by: filterSettings.filter.rawValue, sort_order: filterSettings.sorting.rawValue) { result in
+            
+            switch result {
+            // 3
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.isFetchInProgress = false
+                    self.delegate?.onFetchFailed(with: error.localizedDescription)
+                }
+            // 4
+            case .success(let response):
+                DispatchQueue.main.async {
+                    // 1
+                    self.currentPage += 1
+                    self.isFetchInProgress = false
+                    // 2
+                    guard let productResult = response else { return }
+                    guard let products = productResult.products else { return }
+                    
+                    if products.count < 20 {
+                        self.shouldCallApi = false
+                    }
+                    self.total += products.count
+                    self.productsList.append(contentsOf: products)
+                    
+                    // 3
+                    if self.currentPage > 1 {
+                        let indexPathsToReload = self.calculateIndexPathsToReload(from: products)
+                        if let delegate = self.delegate {
+                            delegate.onFetchCompleted(with: indexPathsToReload)
+                        }
+                    } else {
+                        if let delegate = self.delegate {
+                            delegate.onFetchCompleted(with: .none)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     func fetchModerators() {
         // 1
         guard !isFetchInProgress else {
@@ -118,6 +173,39 @@ class CatProductsViewModel {
     func productDetailsViewModel(at indexPath: IndexPath) -> ProductDetailsViewModel {
         let productViewModel = ProductDetailsViewModel(product: product(at: indexPath))
         return productViewModel
+    }
+    
+    // MARK:- Filter
+    func freeDeliveryPressed() {
+        self.filterSettings.freeDelivery = !self.filterSettings.freeDelivery
+        self.resetAllProdcuts()
+        self.getFilteredProductsApi()
+    }
+    
+    
+    
+    func filterOptionsChanged() {
+        // TODO: add the inputs will be passed from the view
+        // call the changes before calling api
+        self.resetAllProdcuts()
+        self.getFilteredProductsApi()
+    }
+    
+    func sortByOptionsChanged() {
+        // TODO: add the inputs will be passed from the view
+        // call the changes before calling api
+        self.resetAllProdcuts()
+        self.getFilteredProductsApi()
+    }
+    
+    
+    // MARK:- Reset Data
+    private func resetAllProdcuts() {
+        self.productsList.removeAll()
+        self.currentPage = 0
+        self.total = 0
+        self.isFetchInProgress = false
+        self.shouldCallApi = true
     }
 
     // MARK:- AddToCart
