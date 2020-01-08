@@ -15,6 +15,8 @@ class SupplierProductsViewController: BaseViewController, UICollectionViewDelega
     @IBOutlet weak var supplierNameLabel: UILabel!
 
     var viewModel: SupplierProductsViewModel?
+    var selectedFilterOption:String?
+    var sortFilterOption:String?
     private let productDetailsSegue = "product_details_segue"
     private let searchSegue = "search_segue"
 

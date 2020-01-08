@@ -18,14 +18,15 @@ class FilterOptionsTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    func configure (viewType:Int , optionName:String){
-        if (viewType == 0){
-            self.textLabel?.text = optionName
-            self.selectImage?.isHidden = true
-        }else{
-            self.textLabel?.text = optionName
-            self.selectImage?.isHidden = false
+    func configure (viewType:Int , optionName:String,selected:Bool){
+        self.textLabel?.text = optionName
+        self.selectImage?.isHidden = false
+        if selected {
+            self.selectImage?.image = #imageLiteral(resourceName: "check")
+        } else {
+            self.selectImage?.image = #imageLiteral(resourceName: "unCheck")
         }
+        
         
     }
     

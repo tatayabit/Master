@@ -12,7 +12,9 @@ class FilterTableViewController: UITableViewController {
     
     var delegate: isAbleToReceiveData?
     var viewType:Int = 0
-    var selectedOption:String = " "
+    var selectedOption:String?
+    var selectedFilterOption:String?
+    var sortFilterOption:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(FilterOptionsTableViewCell.self, forCellReuseIdentifier: "FilterOptionsTableViewCell")
@@ -21,7 +23,7 @@ class FilterTableViewController: UITableViewController {
 
     }
     override func viewWillDisappear(_ animated: Bool) {
-        delegate?.pass(data: self.selectedOption) //call the func in the previous vc
+        delegate?.pass(data: self.selectedOption ?? "") //call the func in the previous vc
     }
     
     var filterArray = ["Feature".localized(),"price".localized(),"Rating".localized(),"popularity".localized()]
@@ -46,12 +48,18 @@ class FilterTableViewController: UITableViewController {
             let cellIdentifier = "FilterOptionsTableViewCell"
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! FilterOptionsTableViewCell
             if (self.viewType == 0){
+                if let filteroption = selectedFilterOption {
+                     cell.configure(viewType: self.viewType, optionName:
+                     self.filterArray[indexPath.row], selected: true)
+                }else{
                     cell.configure(viewType: self.viewType, optionName:
-                    self.filterArray[indexPath.row])
+                    self.filterArray[indexPath.row], selected: false)
+                }
+                    
                     return cell
             }else if (self.viewType == 1){
                     cell.configure(viewType: self.viewType, optionName:
-                        self.sortArray[indexPath.row])
+                        self.sortArray[indexPath.row], selected: false)
                     return cell
             }else{
                 return cell
