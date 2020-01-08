@@ -177,8 +177,8 @@ class SupplierProductsViewModel {
     // MARK:- Filter
     func freeDeliveryPressed() {
         self.filterSettings.freeDelivery = !self.filterSettings.freeDelivery
-        self.resetAllProdcuts()
-        self.getFilteredProductsApi()
+//        self.resetAllProdcuts()
+//        self.getFilteredProductsApi()
     }
     
     

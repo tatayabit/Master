@@ -211,7 +211,6 @@ extension SupplierProductsViewController : FilterDelegate{
     }
     
     func filterClick() {
-        print("test 2")
         let vc = FilterTableViewController()
         vc.delegate = self
         vc.viewType = 0
@@ -220,7 +219,6 @@ extension SupplierProductsViewController : FilterDelegate{
 //        self.present(vc, animated: true, completion: nil)
     }
     func sortClick() {
-        print("test 3")
         let vc = FilterTableViewController()
         vc.delegate = self
         vc.viewType = 1
