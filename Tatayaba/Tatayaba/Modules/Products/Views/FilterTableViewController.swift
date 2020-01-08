@@ -16,8 +16,8 @@ class FilterTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(FilterOptionsTableViewCell.self, forCellReuseIdentifier: "FilterOptionsTableViewCell")
-        
-            //NavigationBarWithBackButton()
+        tableView.tableFooterView = UIView()
+        NavigationBarWithCancelButton()
 
     }
     override func viewWillDisappear(_ animated: Bool) {

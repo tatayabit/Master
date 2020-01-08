@@ -48,6 +48,9 @@ class SortingReusableCustomView: UIView {
     
     override  func awakeFromNib() {
         super.awakeFromNib()
+        self.freeDilveryLBL.adjustsFontSizeToFitWidth = true
+        self.freeDilveryLBL.minimumScaleFactor = 0.2
+//        self.freeDilveryLBL.numberOfLines = 0
         let tap = UITapGestureRecognizer(target: self, action: #selector(clickFreeDeliveryView(sender:)))
         let tap2 = UITapGestureRecognizer(target: self, action: #selector(clickFilterView(sender:)))
         let tap3 = UITapGestureRecognizer(target: self, action: #selector(clickSortView(sender:)))

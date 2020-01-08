@@ -212,14 +212,17 @@ extension SupplierProductsViewController : FilterDelegate{
         let vc = FilterTableViewController()
         vc.delegate = self
         vc.viewType = 0
-        self.present(vc, animated: true, completion: nil)
+        let navController = UINavigationController(rootViewController: vc)
+        self.navigationController?.present(navController, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil)
     }
     func sortClick() {
         print("test 3")
         let vc = FilterTableViewController()
         vc.delegate = self
         vc.viewType = 1
-        self.present(vc, animated: true, completion: nil)
+        let navController = UINavigationController(rootViewController: vc)
+        self.navigationController?.present(navController, animated: true, completion: nil)
     }
     
     func pass(data: String) { //conforms to protocol
