@@ -11,6 +11,7 @@ import UIKit
 class FilterTableViewController: UITableViewController {
     
     var delegate: isAbleToReceiveData?
+    /// Detect type 0 is a Filtering view, 1 is SortBy view
     var viewType:Int = 0
     var selectedOption:String?
     var selectedFilterOption:String?
@@ -23,7 +24,8 @@ class FilterTableViewController: UITableViewController {
 
     }
     override func viewWillDisappear(_ animated: Bool) {
-        delegate?.pass(data: self.selectedOption ?? "") //call the func in the previous vc
+
+        delegate?.pass(data: self.selectedOption ?? "", type: viewType) //call the func in the previous vc
     }
     
     var filterArray = ["Feature".localized(),"price".localized(),"Rating".localized(),"popularity".localized()]

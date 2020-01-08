@@ -40,9 +40,9 @@ extension SuppliersEndpoint: TargetType {
         case .getSupplierDetails(let supplierId, _):
             let version = "4.0"
             return "\(version.urlEscaped)/TtmSuppliers/\(supplierId.urlEscaped)"
-        case .getFilteredProductOfSupplier( _,  _, let sort_by, let sort_order):
+        case .getFilteredProductOfSupplier( _,  _, _, _):
         let version = "4.0"
-        return "\(version.urlEscaped)/TtmProducts/?sort_by=\(sort_by.urlEscaped)&sort_order=\(sort_order.urlEscaped)"
+        return "\(version.urlEscaped)/TtmProducts/"
         }
     }
 
@@ -84,7 +84,7 @@ extension SuppliersEndpoint: TargetType {
                                                 "lang_code": LanguageManager.getLanguage()
             ], encoding: URLEncoding.default)
             
-        case .getFilteredProductOfSupplier(_, let page,  _,  _):
+        case .getFilteredProductOfSupplier(let supplierId, let page, let sort_by, let sort_order):
             var currencyId = Constants.Currency.kuwaitCurrencyId
             if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
                 currencyId = countryCurrency
@@ -93,7 +93,10 @@ extension SuppliersEndpoint: TargetType {
                                                     "page": page.urlEscaped,
                                                     "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
                                                     "lang_code": LanguageManager.getLanguage(),
-                                                    "currency_id": currencyId.urlEscaped
+                                                    "currency_id": currencyId.urlEscaped,
+                                                    "sort_order": sort_order,
+                                                    "sort_by": sort_by,
+                                                    "supplier_id": supplierId
                 ], encoding: URLEncoding.default)
         case .getSuppliersSortedByPosition(let page):
             return .requestParameters(parameters: [

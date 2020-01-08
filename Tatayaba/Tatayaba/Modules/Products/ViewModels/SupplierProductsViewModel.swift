@@ -68,8 +68,9 @@ class SupplierProductsViewModel {
 //        }
 //    }
     
+    
     func getFilteredProductsApi() {
-        apiClient.getFilteredProductOfSupplier(supplierId: supplier.supplierId, page: currentPage, sort_by: filterSettings.filter.rawValue, sort_order:filterSettings.sorting.rawValue) { result in
+        apiClient.getFilteredProductOfSupplier(supplierId: supplier.supplierId, page: currentPage, sort_by: filterSettings.filter, sort_order:filterSettings.sorting.rawValue) { result in
                  
             switch result {
             // 3
@@ -82,7 +83,7 @@ class SupplierProductsViewModel {
                 DispatchQueue.main.async {
                     guard let supplierResult = response else { return }
                     
-                    self.supplier = supplierResult
+//                    self.supplier = supplierResult
                     print(self.supplier)
                 
                     self.total += supplierResult.products.count
@@ -176,26 +177,25 @@ class SupplierProductsViewModel {
     // MARK:- Filter
     func freeDeliveryPressed() {
         self.filterSettings.freeDelivery = !self.filterSettings.freeDelivery
-        self.resetAllProdcuts()
-        self.getFilteredProductsApi()
+//        self.resetAllProdcuts()
+//        self.getFilteredProductsApi()
     }
     
     
     
-    func filterOptionsChanged() {
-        // TODO: add the inputs will be passed from the view
+    func filterOptionsChanged(filterValue: String) {
         // call the changes before calling api
         self.resetAllProdcuts()
+        self.filterSettings.filter = filterValue
         self.getFilteredProductsApi()
     }
     
-    func sortByOptionsChanged() {
-        // TODO: add the inputs will be passed from the view
+    func sortByOptionsChanged(sortBy: FilterSettings.SortingOptions) {
         // call the changes before calling api
         self.resetAllProdcuts()
+        self.filterSettings.sorting = sortBy
         self.getFilteredProductsApi()
     }
-
     
     // MARK:- Reset Data
     private func resetAllProdcuts() {

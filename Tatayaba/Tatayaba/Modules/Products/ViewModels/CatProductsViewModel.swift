@@ -60,7 +60,7 @@ class CatProductsViewModel {
         isFetchInProgress = true
         
         let categoryId = Int(category.identifier) ?? 0
-        apiClient.getFilteredProductOfCategory(categoryId: categoryId, page: currentPage, sort_by: filterSettings.filter.rawValue, sort_order: filterSettings.sorting.rawValue) { result in
+        apiClient.getFilteredProductOfCategory(categoryId: categoryId, page: currentPage, sort_by: filterSettings.filter, sort_order: filterSettings.sorting.rawValue) { result in
             
             switch result {
             // 3
@@ -157,6 +157,10 @@ class CatProductsViewModel {
         return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
     }
     
+    // MARK:- LoadMoreViewAction
+    func loadMoreViewAction() {
+        
+    }
     
     // MARK:- filter Products Options
     func filterOptions(products: [Product]) {
@@ -184,7 +188,7 @@ class CatProductsViewModel {
     
     
     
-    func filterOptionsChanged() {
+    func filterOptionsChanged(filterValue: String) {
         // TODO: add the inputs will be passed from the view
         // call the changes before calling api
         self.resetAllProdcuts()
