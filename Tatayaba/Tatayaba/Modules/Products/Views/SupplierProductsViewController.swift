@@ -205,8 +205,11 @@ extension SupplierProductsViewController: SupplierProductsViewModelDelegate, isA
 }
 extension SupplierProductsViewController : FilterDelegate{
     func freeDeliveryClick() {
-        print("test 1")
+        print("freeDeliveryClick")
+        guard let viewModel = viewModel else { return }
+        viewModel.freeDeliveryPressed()
     }
+    
     func filterClick() {
         print("test 2")
         let vc = FilterTableViewController()
@@ -225,11 +228,22 @@ extension SupplierProductsViewController : FilterDelegate{
         self.navigationController?.present(navController, animated: true, completion: nil)
     }
     
-    func pass(data: String) { //conforms to protocol
+    func pass(data: String, type: Int) { //conforms to protocol
     // implement your own implementation
         print(data)
+        guard let viewModel = viewModel else { return }
+        if type == 0 {
+            // filter
+            viewModel.filterOptionsChanged(filterValue: data)
+        } else if type == 1 {
+            // sort by
+            let sortBy: FilterSettings.SortingOptions = data.lowercased() == "low to high" ? .ascending : .descending
+            viewModel.sortByOptionsChanged(sortBy: sortBy)
+        }
+        self.productsCollectionView.reloadData()
      }
+    
 }
 protocol isAbleToReceiveData {
-  func pass(data: String)  //data: string is an example parameter
+    func pass(data: String, type: Int)  //data: string is an example parameter, type 0 is Filter, 1 is sortBy
 }
