@@ -24,8 +24,8 @@ class FilterTableViewController: UITableViewController {
         delegate?.pass(data: self.selectedOption) //call the func in the previous vc
     }
     
-    var filterArray = ["Feature","price","Rating","popularity"]
-    var sortArray = ["High to low","Low to high"]
+    var filterArray = ["Feature".localized(),"price".localized(),"Rating".localized(),"popularity".localized()]
+    var sortArray = ["High to low".localized(),"Low to high".localized()]
     
 }
     extension FilterTableViewController {
