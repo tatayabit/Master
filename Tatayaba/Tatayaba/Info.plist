@@ -32,11 +32,11 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>This app wants to take pictures.</string>
+	<string>This app wants to take pictures to use our concierge.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app wants to use your location to select your country automatically.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app wants to use your photos.</string>
+	<string>This app wants to use your photos to use our concierge.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Cairo-Regular.ttf</string>
