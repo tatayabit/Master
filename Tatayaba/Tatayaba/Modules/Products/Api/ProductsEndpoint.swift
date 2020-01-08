@@ -22,7 +22,7 @@ enum ProductsEndpoint {
 
 extension ProductsEndpoint: TargetType {
     var environmentBaseURL: String {
-        switch UserAPIClient.environment {
+        switch ProductsAPIClient.environment {
         case .production: return BaseUrls.production
         case .dev2: return BaseUrls.dev2
         case .staging: return BaseUrls.staging
@@ -170,7 +170,7 @@ extension ProductsEndpoint: TargetType {
     
     var headers: [String : String]? {
         var authKey = ""
-        switch UserAPIClient.environment {
+        switch ProductsAPIClient.environment {
         case .production: authKey = Keys.Authorizations.production
         case .dev2: authKey = Keys.Authorizations.dev2
         case .staging: authKey = Keys.Authorizations.staging

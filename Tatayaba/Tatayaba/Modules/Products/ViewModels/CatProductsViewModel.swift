@@ -159,7 +159,11 @@ class CatProductsViewModel {
     
     // MARK:- LoadMoreViewAction
     func loadMoreViewAction() {
-        
+        if self.filterSettings.isUsingDefalutValues() {
+            self.fetchModerators()
+        } else {
+            self.getFilteredProductsApi()
+        }
     }
     
     // MARK:- filter Products Options
@@ -192,6 +196,7 @@ class CatProductsViewModel {
         // TODO: add the inputs will be passed from the view
         // call the changes before calling api
         self.resetAllProdcuts()
+        self.filterSettings.filter = filterValue
         self.getFilteredProductsApi()
     }
     
@@ -199,6 +204,7 @@ class CatProductsViewModel {
         // TODO: add the inputs will be passed from the view
         // call the changes before calling api
         self.resetAllProdcuts()
+        self.filterSettings.sorting = sortBy
         self.getFilteredProductsApi()
     }
     

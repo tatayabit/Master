@@ -68,7 +68,7 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard let viewModel = viewModel else { return }
         if indexPath.row == viewModel.currentCount - 1 {  //numberofitem count
-            viewModel.fetchModerators()
+            viewModel.loadMoreViewAction()//fetchModerators()
             print("reached last cell!")
         }
     }
