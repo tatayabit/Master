@@ -20,11 +20,11 @@ class FilterOptionsTableViewCell: UITableViewCell {
 
     func configure (viewType:Int , optionName:String,selected:Bool){
         self.textLabel?.text = optionName
-        self.selectImage?.isHidden = false
         if selected {
-            self.selectImage?.image = #imageLiteral(resourceName: "check")
+            self.imageView?.isHidden = false
+            self.imageView?.image = #imageLiteral(resourceName: "Status")
         } else {
-            self.selectImage?.image = #imageLiteral(resourceName: "unCheck")
+            self.imageView?.isHidden = true
         }
         
         

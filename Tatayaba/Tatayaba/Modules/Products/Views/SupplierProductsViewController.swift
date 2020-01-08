@@ -216,6 +216,7 @@ extension SupplierProductsViewController : FilterDelegate{
         let vc = FilterTableViewController()
         vc.delegate = self
         vc.viewType = 0
+        vc.selectedFilterOption = self.selectedFilterOption
         let navController = UINavigationController(rootViewController: vc)
         self.navigationController?.present(navController, animated: true, completion: nil)
 //        self.present(vc, animated: true, completion: nil)
@@ -224,6 +225,7 @@ extension SupplierProductsViewController : FilterDelegate{
         let vc = FilterTableViewController()
         vc.delegate = self
         vc.viewType = 1
+        vc.sortFilterOption = self.sortFilterOption
         let navController = UINavigationController(rootViewController: vc)
         self.navigationController?.present(navController, animated: true, completion: nil)
     }
@@ -234,9 +236,11 @@ extension SupplierProductsViewController : FilterDelegate{
         guard let viewModel = viewModel else { return }
         if type == 0 {
             // filter
+            selectedFilterOption = data
             viewModel.filterOptionsChanged(filterValue: data)
         } else if type == 1 {
             // sort by
+            sortFilterOption = data
             let sortBy: FilterSettings.SortingOptions = data.lowercased() == "low to high" ? .ascending : .descending
             viewModel.sortByOptionsChanged(sortBy: sortBy)
         }

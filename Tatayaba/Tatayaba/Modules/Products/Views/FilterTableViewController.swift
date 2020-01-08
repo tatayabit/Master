@@ -16,20 +16,32 @@ class FilterTableViewController: UITableViewController {
     var selectedOption:String?
     var selectedFilterOption:String?
     var sortFilterOption:String?
+    var filterArray2 = ["Feature","price","Rating","popularity"]
+    var sortArray2 = ["High to low","Low to high"]
+    var filterArray = ["Feature".localized(),"price".localized(),"Rating".localized(),"popularity".localized()]
+    var sortArray = ["High to low".localized(),"Low to high".localized()]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(FilterOptionsTableViewCell.self, forCellReuseIdentifier: "FilterOptionsTableViewCell")
         tableView.tableFooterView = UIView()
         NavigationBarWithCancelButton()
+        setselectedOptionInit()
 
     }
     override func viewWillDisappear(_ animated: Bool) {
 
         delegate?.pass(data: self.selectedOption ?? "", type: viewType) //call the func in the previous vc
     }
-    
-    var filterArray = ["Feature".localized(),"price".localized(),"Rating".localized(),"popularity".localized()]
-    var sortArray = ["High to low".localized(),"Low to high".localized()]
+   
+    func setselectedOptionInit(){
+        if (self.viewType == 0){
+            self.selectedOption = self.selectedFilterOption
+        }else if(self.viewType == 1){
+            self.selectedOption = self.sortFilterOption
+        }
+    }
     
 }
     extension FilterTableViewController {
@@ -48,11 +60,18 @@ class FilterTableViewController: UITableViewController {
             
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cellIdentifier = "FilterOptionsTableViewCell"
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! FilterOptionsTableViewCell
+            let cell  = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! FilterOptionsTableViewCell
+            
             if (self.viewType == 0){
-                if let filteroption = selectedFilterOption {
-                     cell.configure(viewType: self.viewType, optionName:
-                     self.filterArray[indexPath.row], selected: true)
+                if let filterOption = selectedFilterOption {
+                    if (filterOption == self.filterArray2[indexPath.row]) {
+                        cell.configure(viewType: self.viewType, optionName:
+                        self.filterArray[indexPath.row], selected: true)
+                    } else {
+                        cell.configure(viewType: self.viewType, optionName:
+                        self.filterArray[indexPath.row], selected: false)
+                    }
+                     
                 }else{
                     cell.configure(viewType: self.viewType, optionName:
                     self.filterArray[indexPath.row], selected: false)
@@ -60,9 +79,20 @@ class FilterTableViewController: UITableViewController {
                     
                     return cell
             }else if (self.viewType == 1){
-                    cell.configure(viewType: self.viewType, optionName:
+                if let sortOption = sortFilterOption {
+                    if (sortOption == self.sortArray2[indexPath.row]) {
+                        cell.configure(viewType: self.viewType, optionName:
+                        self.sortArray[indexPath.row], selected: true)
+                    } else {
+                        cell.configure(viewType: self.viewType, optionName:
                         self.sortArray[indexPath.row], selected: false)
-                    return cell
+                    }
+                     
+                }else{
+                    cell.configure(viewType: self.viewType, optionName:
+                    self.sortArray[indexPath.row], selected: false)
+                }
+                return cell
             }else{
                 return cell
             }
@@ -71,10 +101,10 @@ class FilterTableViewController: UITableViewController {
         override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
                 tableView.deselectRow(at: indexPath, animated: true)                
             if(self.viewType == 0){
-                self.selectedOption = self.filterArray[indexPath.row]
+                self.selectedOption = self.filterArray2[indexPath.row]
                 dismiss(animated: true, completion: nil)
             }else if(self.viewType == 1){
-                self.selectedOption = self.sortArray[indexPath.row]
+                self.selectedOption = self.sortArray2[indexPath.row]
                 dismiss(animated: true, completion: nil)
             }
                 dismiss(animated: true, completion: nil)
