@@ -60,15 +60,12 @@ class SortingReusableCustomView: UIView {
        }
     
     @objc func clickFreeDeliveryView(sender:UITapGestureRecognizer) {
-        print("clickFreeDeliveryView tap working")
         delegate?.freeDeliveryClick()
     }
     @objc func clickFilterView(sender:UITapGestureRecognizer) {
-        print("clickFilterView tap working")
         delegate?.filterClick()
     }
     @objc func clickSortView(sender:UITapGestureRecognizer) {
-        print("clickSortView tap working")
         delegate?.sortClick()
     }
     

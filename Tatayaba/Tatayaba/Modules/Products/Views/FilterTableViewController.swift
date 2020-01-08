@@ -59,9 +59,7 @@ class FilterTableViewController: UITableViewController {
         }
             
         override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-                tableView.deselectRow(at: indexPath, animated: true)
-                
-                print(indexPath.row)
+                tableView.deselectRow(at: indexPath, animated: true)                
             if(self.viewType == 0){
                 self.selectedOption = self.filterArray[indexPath.row]
                 dismiss(animated: true, completion: nil)
