@@ -195,7 +195,7 @@ class CatProductsViewModel {
         self.getFilteredProductsApi()
     }
     
-    func sortByOptionsChanged() {
+    func sortByOptionsChanged(sortBy: FilterSettings.SortingOptions) {
         // TODO: add the inputs will be passed from the view
         // call the changes before calling api
         self.resetAllProdcuts()

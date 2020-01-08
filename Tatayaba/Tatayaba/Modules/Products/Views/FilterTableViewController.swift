@@ -24,6 +24,7 @@ class FilterTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.register(FilterOptionsTableViewCell.self, forCellReuseIdentifier: "FilterOptionsTableViewCell")
         tableView.tableFooterView = UIView()
         NavigationBarWithCancelButton()

@@ -195,11 +195,17 @@ extension CatProductsViewController : FilterDelegate,isAbleToReceiveData{
         if type == 0 {
             // filter
             selectedFilterOption = data
+            viewModel.filterOptionsChanged(filterValue: data)
+
         } else if type == 1 {
             // sort by
             sortFilterOption = data
-            
+            let sortBy: FilterSettings.SortingOptions = data.lowercased() == "low to high" ? .ascending : .descending
+            viewModel.sortByOptionsChanged(sortBy: sortBy)
         }
+        
+        self.productsCollectionView.reloadData()
+
         
      }
     

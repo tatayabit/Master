@@ -46,9 +46,9 @@ extension ProductsEndpoint: TargetType {
         case .getProductsOfCategory:
             let version = "4.0"
             return "\(version.urlEscaped)/TtmProducts"
-        case .getFilteredProductOfCategory( _,  _, let sort_by, let sort_order):
+        case .getFilteredProductOfCategory( _,  _, _, _):
             let version = "4.0"
-            return "\(version.urlEscaped)/TtmProducts/?sort_by=\(sort_by.urlEscaped)&sort_order=\(sort_order.urlEscaped)"
+            return "\(version.urlEscaped)/TtmProducts/"
         case .getProductFeatures:
             return "TtmCategories/268/products"
         case .getProductDetails(let productId):
@@ -121,7 +121,7 @@ extension ProductsEndpoint: TargetType {
                                                     "currency_id": currencyId.urlEscaped
                 ], encoding: URLEncoding.default)
             
-        case .getFilteredProductOfCategory(let category, let page, let _, let _):
+        case .getFilteredProductOfCategory(let category, let page, let sort_by, let sort_order):
         var currencyId = Constants.Currency.kuwaitCurrencyId
         if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
             currencyId = countryCurrency
@@ -132,7 +132,9 @@ extension ProductsEndpoint: TargetType {
                                                 "page": page.urlEscaped,
                                                 "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
                                                 "lang_code": LanguageManager.getLanguage(),
-                                                "currency_id": currencyId.urlEscaped
+                                                "currency_id": currencyId.urlEscaped,
+                                                "sort_order": sort_order,
+                                                "sort_by": sort_by
             ], encoding: URLEncoding.default)
             
         case .getProductFeatures:
