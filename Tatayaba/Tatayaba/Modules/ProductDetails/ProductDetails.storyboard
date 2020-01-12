@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sab-ra-ANU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sab-ra-ANU">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,9 +13,6 @@
         </array>
         <array key="GothamHTF-Book.ttf">
             <string>GothamHTF-Book</string>
-        </array>
-        <array key="Myriad Pro Regular.ttf">
-            <string>MyriadPro-Regular</string>
         </array>
         <array key="ProximaNova-Semibold.ttf">
             <string>ProximaNova-Semibold</string>
@@ -74,11 +71,11 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="704"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ProductDeatailsTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProductDeatailsTableViewCell" rowHeight="340" id="Mlu-K9-C5A" customClass="ProductDeatailsTableViewCell" customModule="TATAYAB___تطيّب" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="340"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ProductDeatailsTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProductDeatailsTableViewCell" rowHeight="365" id="Mlu-K9-C5A" customClass="ProductDeatailsTableViewCell" customModule="TATAYAB___تطيّب" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="365"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mlu-K9-C5A" id="L6q-L8-rvC">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="340"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="365"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loP-HZ-eFk">
@@ -102,35 +99,29 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                 </collectionView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGx-ef-rdJ">
-                                                    <rect key="frame" x="13" y="8" width="50" height="50"/>
-                                                    <color key="backgroundColor" red="0.87450980392156863" green="0.63921568627450975" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50% Off" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGx-ef-rdJ">
+                                                    <rect key="frame" x="12" y="342" width="53.5" height="17"/>
+                                                    <color key="backgroundColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="0.10197513207605634" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="c6B-v7-Vch"/>
-                                                        <constraint firstAttribute="width" constant="50" id="n6L-cY-yfA"/>
+                                                        <constraint firstAttribute="height" constant="17" id="o3W-ox-WLG"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="10"/>
-                                                    <color key="textColor" red="0.13333333333333333" green="0.10980392156862745" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="25"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom box - Tatera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTl-HN-FIy">
-                                                    <rect key="frame" x="12" y="286" width="390" height="11"/>
-                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
-                                                    <color key="textColor" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="13"/>
+                                                    <color key="textColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hs9-cS-nTL">
-                                                    <rect key="frame" x="12" y="303" width="390" height="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom box - Tatera" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTl-HN-FIy">
+                                                    <rect key="frame" x="12" y="262" width="390" height="26"/>
+                                                    <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="16"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hs9-cS-nTL">
+                                                    <rect key="frame" x="12" y="317" width="390" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="cpa-XC-QMa"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
-                                                    <color key="textColor" red="0.1960784314" green="0.2274509804" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="16"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Out of stock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdA-1N-V75">
@@ -144,23 +135,33 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyS-xl-paP">
-                                                    <rect key="frame" x="20" y="264" width="374" height="14"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brand: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpT-0A-7hZ">
+                                                    <rect key="frame" x="12" y="296" width="46" height="14"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="14" id="zFV-2y-NVa"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="13"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyS-xl-paP">
+                                                    <rect key="frame" x="70.5" y="296" width="32" height="14"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="14" id="NZ4-K3-iej"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="14"/>
-                                                    <color key="textColor" red="0.1218648031" green="0.091383777560000004" blue="0.1908861697" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="13"/>
+                                                    <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzn-vE-eBV">
-                                                    <rect key="frame" x="20" y="318" width="141" height="20"/>
-                                                    <color key="backgroundColor" red="0.12186480313539505" green="0.091383777558803558" blue="0.19088616967201233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzn-vE-eBV">
+                                                    <rect key="frame" x="73.5" y="342" width="36" height="17"/>
+                                                    <color key="backgroundColor" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="0.10401078345070422" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="HoZ-EQ-HeF"/>
+                                                        <constraint firstAttribute="height" constant="17" id="HoZ-EQ-HeF"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="13"/>
+                                                    <color key="textColor" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -170,28 +171,29 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="mGx-ef-rdJ" firstAttribute="leading" secondItem="L6q-L8-rvC" secondAttribute="leading" constant="12" id="15J-S7-ZLL"/>
                                                 <constraint firstAttribute="trailing" secondItem="WxN-4G-hCE" secondAttribute="trailing" id="1ze-OK-OJG"/>
+                                                <constraint firstItem="Hs9-cS-nTL" firstAttribute="top" secondItem="mpT-0A-7hZ" secondAttribute="bottom" constant="7" id="5FJ-71-TzE"/>
                                                 <constraint firstItem="cdA-1N-V75" firstAttribute="bottom" secondItem="WxN-4G-hCE" secondAttribute="bottom" constant="-4" id="6bf-Ly-IS7"/>
-                                                <constraint firstItem="qyS-xl-paP" firstAttribute="top" secondItem="WxN-4G-hCE" secondAttribute="bottom" constant="9" id="6eJ-MH-0ON"/>
-                                                <constraint firstItem="hTl-HN-FIy" firstAttribute="top" secondItem="qyS-xl-paP" secondAttribute="bottom" constant="8" id="7BK-dL-jAa"/>
-                                                <constraint firstItem="tzn-vE-eBV" firstAttribute="leading" secondItem="L6q-L8-rvC" secondAttribute="leading" constant="20" id="894-zp-AnC"/>
-                                                <constraint firstItem="qyS-xl-paP" firstAttribute="leading" secondItem="WxN-4G-hCE" secondAttribute="leading" constant="20" id="8Id-xv-yer"/>
-                                                <constraint firstItem="qyS-xl-paP" firstAttribute="trailing" secondItem="WxN-4G-hCE" secondAttribute="trailing" constant="-20" id="9Mn-YZ-39w"/>
                                                 <constraint firstAttribute="trailing" secondItem="Hs9-cS-nTL" secondAttribute="trailing" constant="12" id="Epx-N3-j9X"/>
-                                                <constraint firstItem="tzn-vE-eBV" firstAttribute="top" secondItem="Hs9-cS-nTL" secondAttribute="bottom" id="FNR-n3-tmh"/>
+                                                <constraint firstItem="tzn-vE-eBV" firstAttribute="top" secondItem="Hs9-cS-nTL" secondAttribute="bottom" constant="10" id="FNR-n3-tmh"/>
+                                                <constraint firstItem="mGx-ef-rdJ" firstAttribute="top" secondItem="tzn-vE-eBV" secondAttribute="top" id="GAN-db-Pdf"/>
+                                                <constraint firstItem="mpT-0A-7hZ" firstAttribute="leading" secondItem="L6q-L8-rvC" secondAttribute="leading" constant="12" id="KfJ-1F-Z46"/>
                                                 <constraint firstItem="Hs9-cS-nTL" firstAttribute="leading" secondItem="hTl-HN-FIy" secondAttribute="leading" id="Lte-rv-NE7"/>
                                                 <constraint firstItem="Hs9-cS-nTL" firstAttribute="leading" secondItem="L6q-L8-rvC" secondAttribute="leading" constant="12" id="MDw-Ob-gQg"/>
                                                 <constraint firstItem="Hs9-cS-nTL" firstAttribute="trailing" secondItem="hTl-HN-FIy" secondAttribute="trailing" id="MGh-SJ-xQr"/>
-                                                <constraint firstAttribute="trailing" secondItem="tzn-vE-eBV" secondAttribute="trailing" constant="253" id="R6v-cI-wQO"/>
                                                 <constraint firstItem="cdA-1N-V75" firstAttribute="leading" secondItem="L6q-L8-rvC" secondAttribute="leading" constant="22" id="YIn-fK-Tmi"/>
-                                                <constraint firstItem="mGx-ef-rdJ" firstAttribute="top" secondItem="L6q-L8-rvC" secondAttribute="top" constant="8" id="aZO-dX-P60"/>
+                                                <constraint firstItem="qyS-xl-paP" firstAttribute="centerY" secondItem="mpT-0A-7hZ" secondAttribute="centerY" id="bzS-eL-mtt"/>
+                                                <constraint firstItem="hTl-HN-FIy" firstAttribute="top" secondItem="WxN-4G-hCE" secondAttribute="bottom" constant="7" id="fpL-cs-Qlt"/>
                                                 <constraint firstItem="WxN-4G-hCE" firstAttribute="top" secondItem="L6q-L8-rvC" secondAttribute="top" id="iYP-TA-KA6"/>
-                                                <constraint firstItem="Hs9-cS-nTL" firstAttribute="top" secondItem="hTl-HN-FIy" secondAttribute="bottom" constant="6" id="kJe-DC-7x0"/>
+                                                <constraint firstItem="qyS-xl-paP" firstAttribute="height" secondItem="mpT-0A-7hZ" secondAttribute="height" id="nrk-As-doa"/>
                                                 <constraint firstItem="WxN-4G-hCE" firstAttribute="leading" secondItem="L6q-L8-rvC" secondAttribute="leading" id="o1Y-CO-FXE"/>
-                                                <constraint firstItem="mGx-ef-rdJ" firstAttribute="leading" secondItem="L6q-L8-rvC" secondAttribute="leading" constant="13" id="rGH-Sl-5xk"/>
                                                 <constraint firstItem="loP-HZ-eFk" firstAttribute="top" secondItem="L6q-L8-rvC" secondAttribute="top" constant="10" id="rW9-kt-P0M"/>
-                                                <constraint firstAttribute="bottom" secondItem="tzn-vE-eBV" secondAttribute="bottom" constant="2" id="wiv-CL-auh"/>
+                                                <constraint firstItem="tzn-vE-eBV" firstAttribute="leading" secondItem="mGx-ef-rdJ" secondAttribute="trailing" constant="8" id="s3B-ck-MMn"/>
+                                                <constraint firstItem="mpT-0A-7hZ" firstAttribute="top" secondItem="hTl-HN-FIy" secondAttribute="bottom" constant="8" id="tpc-cn-Mlg"/>
+                                                <constraint firstAttribute="bottom" secondItem="tzn-vE-eBV" secondAttribute="bottom" constant="6" id="wiv-CL-auh"/>
                                                 <constraint firstAttribute="trailing" secondItem="loP-HZ-eFk" secondAttribute="trailing" constant="15" id="xF6-5b-WXh"/>
+                                                <constraint firstItem="qyS-xl-paP" firstAttribute="leading" secondItem="mpT-0A-7hZ" secondAttribute="trailing" constant="12.5" id="yfm-99-Gmd"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -202,11 +204,12 @@
                                             <outlet property="outOfStockLabel" destination="cdA-1N-V75" id="X9C-hj-3rW"/>
                                             <outlet property="priceLabel" destination="Hs9-cS-nTL" id="mxs-K8-db2"/>
                                             <outlet property="productCollectionView" destination="WxN-4G-hCE" id="t2w-z5-M2l"/>
+                                            <outlet property="supplierHeaderLabel" destination="mpT-0A-7hZ" id="FuG-v3-KW3"/>
                                             <outlet property="supplierName" destination="qyS-xl-paP" id="sUu-Td-OI2"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DescriptionTableViewCell" rowHeight="170" id="bvo-kK-Eeg" customClass="DescriptionTableViewCell" customModule="TATAYAB___تطيّب" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="368" width="414" height="170"/>
+                                        <rect key="frame" x="0.0" y="393" width="414" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bvo-kK-Eeg" id="Uio-ae-mgt">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>

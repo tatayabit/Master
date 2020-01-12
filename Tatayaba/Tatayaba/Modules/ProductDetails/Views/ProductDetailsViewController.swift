@@ -53,7 +53,6 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
                 headerItems.append(item)
             }
             
-            
             reloadSections = { section in
                 let indexSet = IndexSet(integer: section)
                 self.product_Tableview.reloadSections(indexSet, with: .automatic)

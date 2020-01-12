@@ -23,6 +23,8 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
     @IBOutlet weak var outOfStockLabel: UILabel!
     @IBOutlet weak var discountPercentageLabel: UILabel!
     @IBOutlet weak var supplierName: UILabel!
+    @IBOutlet weak var supplierHeaderLabel: UILabel!
+
     @IBOutlet weak var freeShipping: UILabel!
     
     var viewModel: ProductDeatailsTableViewCellViewModel?
@@ -54,9 +56,10 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
         self.supplier_Name = productVM.supplierName
         self.nameLabel.text = productVM.name
         self.outOfStockLabel.isHidden = productVM.isInStock
-        self.discountPercentageLabel.text = productVM.discountPercentage + "%\nOFF"
+        self.discountPercentageLabel.text = productVM.discountPercentage + "%OFF"
         self.discountPercentageLabel.isHidden = !productVM.hasDiscount
         self.supplierName.text = productVM.supplierName
+        self.supplierHeaderLabel.text = "Brand:"
         self.freeShipping.text = "free Delivery".localized()
         if(productVM.is_free_delivery == "Y"){
             freeShipping.isHidden = false
@@ -65,15 +68,23 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
         }
         self.supplierName.isUserInteractionEnabled = true
         self.supplierName.addGestureRecognizer(UITapGestureRecognizer(target:self, action: #selector(tapLabel(gesture:))))
-        let originalPriceStrikeAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.thick.rawValue]
+        let originalPriceStrikeAttributes: [NSAttributedString.Key: Any] =
+            [NSAttributedString.Key.strikethroughStyle:
+                NSUnderlineStyle.thick.rawValue,
+             .foregroundColor: UIColor.brandDarkGray,
+             NSAttributedString.Key.font: UIFont.lightGotham(size: 12.0)]
 
         let originalPriceAttr = productVM.hasDiscount ? originalPriceStrikeAttributes : nil
-        let attributedString = NSMutableAttributedString(string: productVM.priceBeforeDiscount, attributes: originalPriceAttr)
+        let priceAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.black]
+
+        let attributedString = NSMutableAttributedString(string: productVM.originalPrice, attributes: priceAttributes)
         attributedString.append(NSAttributedString(string: "    "))
         
         
-        let priceAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.brandDarkGray]
-        attributedString.append(NSMutableAttributedString(string: productVM.originalPrice, attributes: priceAttributes))
+        attributedString.append(NSMutableAttributedString(string: productVM.priceBeforeDiscount, attributes: originalPriceAttr))
+        
+        
+        
         self.priceLabel.attributedText = attributedString
     }
     

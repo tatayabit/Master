@@ -96,7 +96,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
                   endingLineNumber = "18"
-                  offsetFromSymbolStart = "308">
+                  offsetFromSymbolStart = "360">
                </Location>
                <Location
                   uuid = "E5C5809C-AAF9-46F8-B2CF-28736046A403 - e7b6e4d6f769a792"
@@ -111,7 +111,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
                   endingLineNumber = "18"
-                  offsetFromSymbolStart = "344">
+                  offsetFromSymbolStart = "414">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -129,6 +129,22 @@
             startingLineNumber = "172"
             endingLineNumber = "172"
             landmarkName = "messaging(_:didReceive:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "65B920B8-BDE0-4F2D-AF60-1C76D6DC319E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/ProductDetails/Views/Cell/productDeatailsTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "configure(productVM:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
