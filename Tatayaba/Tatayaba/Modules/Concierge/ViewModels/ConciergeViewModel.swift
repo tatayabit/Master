@@ -10,7 +10,7 @@ import Moya
 
 struct ConciergeViewModel {
     private let apiClient = ConciergeAPIClient()
-
+    
     //MARK:- Api
     func uploadConcierge(concierge: Concierge, completion: @escaping (APIResult<[String: String]?, MoyaError>) -> Void) {
         apiClient.uploadConcierge(concierge: concierge) { result in

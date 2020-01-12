@@ -150,17 +150,23 @@
                                                         <constraint firstAttribute="height" constant="14" id="NZ4-K3-iej"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="14"/>
-                                                    <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.1218648031" green="0.091383777560000004" blue="0.1908861697" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzn-vE-eBV">
-                                                    <rect key="frame" x="22" y="318" width="377" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzn-vE-eBV">
+                                                    <rect key="frame" x="20" y="318" width="141" height="20"/>
+                                                    <color key="backgroundColor" red="0.12186480313539505" green="0.091383777558803558" blue="0.19088616967201233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="HoZ-EQ-HeF"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
-                                                    <color key="textColor" red="0.001227634958922863" green="0.51187342405319214" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="25"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -168,7 +174,7 @@
                                                 <constraint firstItem="cdA-1N-V75" firstAttribute="bottom" secondItem="WxN-4G-hCE" secondAttribute="bottom" constant="-4" id="6bf-Ly-IS7"/>
                                                 <constraint firstItem="qyS-xl-paP" firstAttribute="top" secondItem="WxN-4G-hCE" secondAttribute="bottom" constant="9" id="6eJ-MH-0ON"/>
                                                 <constraint firstItem="hTl-HN-FIy" firstAttribute="top" secondItem="qyS-xl-paP" secondAttribute="bottom" constant="8" id="7BK-dL-jAa"/>
-                                                <constraint firstItem="tzn-vE-eBV" firstAttribute="leading" secondItem="L6q-L8-rvC" secondAttribute="leading" constant="22" id="894-zp-AnC"/>
+                                                <constraint firstItem="tzn-vE-eBV" firstAttribute="leading" secondItem="L6q-L8-rvC" secondAttribute="leading" constant="20" id="894-zp-AnC"/>
                                                 <constraint firstItem="qyS-xl-paP" firstAttribute="leading" secondItem="WxN-4G-hCE" secondAttribute="leading" constant="20" id="8Id-xv-yer"/>
                                                 <constraint firstItem="qyS-xl-paP" firstAttribute="trailing" secondItem="WxN-4G-hCE" secondAttribute="trailing" constant="-20" id="9Mn-YZ-39w"/>
                                                 <constraint firstAttribute="trailing" secondItem="Hs9-cS-nTL" secondAttribute="trailing" constant="12" id="Epx-N3-j9X"/>
@@ -176,7 +182,7 @@
                                                 <constraint firstItem="Hs9-cS-nTL" firstAttribute="leading" secondItem="hTl-HN-FIy" secondAttribute="leading" id="Lte-rv-NE7"/>
                                                 <constraint firstItem="Hs9-cS-nTL" firstAttribute="leading" secondItem="L6q-L8-rvC" secondAttribute="leading" constant="12" id="MDw-Ob-gQg"/>
                                                 <constraint firstItem="Hs9-cS-nTL" firstAttribute="trailing" secondItem="hTl-HN-FIy" secondAttribute="trailing" id="MGh-SJ-xQr"/>
-                                                <constraint firstAttribute="trailing" secondItem="tzn-vE-eBV" secondAttribute="trailing" constant="15" id="R6v-cI-wQO"/>
+                                                <constraint firstAttribute="trailing" secondItem="tzn-vE-eBV" secondAttribute="trailing" constant="253" id="R6v-cI-wQO"/>
                                                 <constraint firstItem="cdA-1N-V75" firstAttribute="leading" secondItem="L6q-L8-rvC" secondAttribute="leading" constant="22" id="YIn-fK-Tmi"/>
                                                 <constraint firstItem="mGx-ef-rdJ" firstAttribute="top" secondItem="L6q-L8-rvC" secondAttribute="top" constant="8" id="aZO-dX-P60"/>
                                                 <constraint firstItem="WxN-4G-hCE" firstAttribute="top" secondItem="L6q-L8-rvC" secondAttribute="top" id="iYP-TA-KA6"/>
