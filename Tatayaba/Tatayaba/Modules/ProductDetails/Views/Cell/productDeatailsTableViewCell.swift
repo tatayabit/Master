@@ -57,7 +57,9 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
         self.supplier_Name = productVM.supplierName
         self.nameLabel.text = productVM.name
         self.outOfStockLabel.isHidden = productVM.isInStock
-        self.discountPercentageLabel.text = productVM.discountPercentage + "%" + "OFF".localized()
+        if productVM.hasDiscount {
+            self.discountPercentageLabel.text = productVM.discountPercentage + "% " + "OFF".localized()
+        }
         self.discountPercentageLabel.isHidden = !productVM.hasDiscount
         self.supplierName.text = productVM.supplierName
         self.supplierHeaderLabel.text = "Brand".localized() + ":"
@@ -71,7 +73,8 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
         self.supplierName.addGestureRecognizer(UITapGestureRecognizer(target:self, action: #selector(tapLabel(gesture:))))
         DispatchQueue.main.async {
             
-        
+            self.freeShipping.font = UIFont.mediumGotham(size: 11.0)
+            self.discountPercentageLabel.font = UIFont.mediumGotham(size: 11.0)
             let originalPriceStrikeAttributes: [NSAttributedString.Key: Any] =
                    [NSAttributedString.Key.strikethroughStyle:
                        NSUnderlineStyle.thick.rawValue,
