@@ -29,7 +29,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66O-IQ-2gc">
-                    <rect key="frame" x="14" y="6" width="347" height="97"/>
+                    <rect key="frame" x="14" y="6" width="347" height="105"/>
                     <string key="text">Welcome to TATAYAB CONCIERGE. Your fastest destination to find your beloved perfume across the world. Finding a fragrance has never been that easy before.
 
 </string>
@@ -38,7 +38,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dpM-x7-6Sn" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                    <rect key="frame" x="12" y="321" width="351" height="45"/>
+                    <rect key="frame" x="12" y="329" width="351" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="9PH-OP-f5F"/>
                     </constraints>
@@ -185,7 +185,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brQ-wk-eWl">
-                    <rect key="frame" x="8" y="111" width="359" height="40"/>
+                    <rect key="frame" x="8" y="119" width="359" height="40"/>
                     <color key="backgroundColor" red="0.13354238869999999" green="0.1071816161" blue="0.2066496015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="kwt-cv-BKC"/>
@@ -199,7 +199,7 @@
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera-logo" translatesAutoresizingMaskIntoConstraints="NO" id="sVe-jI-esR">
-                    <rect key="frame" x="8" y="159.5" width="359.00000000000023" height="149"/>
+                    <rect key="frame" x="8" y="167.5" width="359" height="149"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -16,7 +16,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
             endingLineNumber = "89"
-            landmarkName = "addBannersSubView()"
+            landmarkName = "loadDefaults()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -820,22 +820,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C33F6F68-4EAC-4E3B-AE59-210B91CF0335"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/ProductDetails/Views/Headers/OptionsHeader.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "configure(titleObj:itemObj:sectionObj:required:selected:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "1529611D-5575-4343-B487-7C0C5A3058E8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1199,8 +1183,8 @@
             filePath = "Tatayaba/Modules/Concierge/Views/ConciergeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "didSelectSubmitConcierge(concierge:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1231,8 +1215,8 @@
             filePath = "Tatayaba/Modules/Concierge/Views/ConciergeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "didFailConciergeValidation(errorTitle:errorMessage:)"
             landmarkType = "7">
          </BreakpointContent>
