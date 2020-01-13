@@ -58,7 +58,7 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
         self.nameLabel.text = productVM.name
         self.outOfStockLabel.isHidden = productVM.isInStock
         if productVM.hasDiscount {
-            self.discountPercentageLabel.text = productVM.discountPercentage + "% " + "OFF".localized()
+            self.discountPercentageLabel.text = " " + productVM.discountPercentage + "% " + "OFF".localized() + " "
         }
         self.discountPercentageLabel.isHidden = !productVM.hasDiscount
         self.supplierName.text = productVM.supplierName
