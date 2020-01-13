@@ -23,6 +23,8 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
     @IBOutlet weak var outOfStockLabel: UILabel!
     @IBOutlet weak var discountPercentageLabel: UILabel!
     @IBOutlet weak var supplierName: UILabel!
+    @IBOutlet weak var supplierHeaderLabel: UILabel!
+
     @IBOutlet weak var freeShipping: UILabel!
     
     var viewModel: ProductDeatailsTableViewCellViewModel?
@@ -46,6 +48,7 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
         self.outOfStockLabel.text = "Out of stock"
         productCollectionView.dataSource = self
         productCollectionView.delegate = self
+        self.nameLabel.font = UIFont.mediumGotham(size: 16)
     }
     
     func configure(productVM: ProductDeatailsTableViewCellViewModel) {
@@ -54,9 +57,12 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
         self.supplier_Name = productVM.supplierName
         self.nameLabel.text = productVM.name
         self.outOfStockLabel.isHidden = productVM.isInStock
-        self.discountPercentageLabel.text = productVM.discountPercentage + "%\nOFF"
+        if productVM.hasDiscount {
+            self.discountPercentageLabel.text = productVM.discountPercentage + "% " + "OFF".localized()
+        }
         self.discountPercentageLabel.isHidden = !productVM.hasDiscount
         self.supplierName.text = productVM.supplierName
+        self.supplierHeaderLabel.text = "Brand".localized() + ":"
         self.freeShipping.text = "free Delivery".localized()
         if(productVM.is_free_delivery == "Y"){
             freeShipping.isHidden = false
@@ -65,16 +71,31 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
         }
         self.supplierName.isUserInteractionEnabled = true
         self.supplierName.addGestureRecognizer(UITapGestureRecognizer(target:self, action: #selector(tapLabel(gesture:))))
-        let originalPriceStrikeAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.thick.rawValue]
+        DispatchQueue.main.async {
+            
+            self.freeShipping.font = UIFont.mediumGotham(size: 11.0)
+            self.discountPercentageLabel.font = UIFont.mediumGotham(size: 11.0)
+            let originalPriceStrikeAttributes: [NSAttributedString.Key: Any] =
+                   [NSAttributedString.Key.strikethroughStyle:
+                       NSUnderlineStyle.thick.rawValue,
+                    .foregroundColor: UIColor.brandDarkGray,
+                    NSAttributedString.Key.font: UIFont.htfbookGotham(size: 12.0)]
+       //        GothamHTF-Book
 
-        let originalPriceAttr = productVM.hasDiscount ? originalPriceStrikeAttributes : nil
-        let attributedString = NSMutableAttributedString(string: productVM.priceBeforeDiscount, attributes: originalPriceAttr)
-        attributedString.append(NSAttributedString(string: "    "))
-        
-        
-        let priceAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.brandDarkGray]
-        attributedString.append(NSMutableAttributedString(string: productVM.originalPrice, attributes: priceAttributes))
-        self.priceLabel.attributedText = attributedString
+               let originalPriceAttr = productVM.hasDiscount ? originalPriceStrikeAttributes : nil
+               let priceAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.black]
+
+               let attributedString = NSMutableAttributedString(string: productVM.originalPrice, attributes: priceAttributes)
+               attributedString.append(NSAttributedString(string: "    "))
+               
+               
+               attributedString.append(NSMutableAttributedString(string: productVM.priceBeforeDiscount, attributes: originalPriceAttr))
+               
+               
+               
+               
+                   self.priceLabel.attributedText = attributedString
+        }
     }
     
     

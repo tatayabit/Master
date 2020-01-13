@@ -44,7 +44,7 @@ class OptionsHeader: UITableViewHeaderFooterView {
     }
     
     fileprivate func getTitle(title: String, required: Bool) -> NSAttributedString {
-        let attributedString = NSMutableAttributedString(string: title.uppercased() + " ")
+        let attributedString = NSMutableAttributedString(string: title + " ")
         if required {
             let priceAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.red]
             attributedString.append(NSMutableAttributedString(string: "*", attributes: priceAttributes))

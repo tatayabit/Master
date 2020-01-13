@@ -224,7 +224,7 @@ class ProductDetailsViewModel {
         if numberOfAlsoBoughtProducts == 0 {
             return false
         }
-        return section == numberOfSections - 2
+        return section == numberOfSections - 1
     }
     
       

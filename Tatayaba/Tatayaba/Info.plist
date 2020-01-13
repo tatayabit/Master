@@ -41,6 +41,8 @@
 	<array>
 		<string>Cairo-Regular.ttf</string>
 		<string>GothamHTF-Book.ttf</string>
+		<string>Gotham-Light.otf</string>
+		<string>GothamMedium.ttf</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>
