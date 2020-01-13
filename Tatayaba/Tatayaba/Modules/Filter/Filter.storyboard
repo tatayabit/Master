@@ -10,7 +10,7 @@
         <!--Stories Table View Controller-->
         <scene sceneID="Lsi-yL-ECX">
             <objects>
-                <tableViewController id="lPM-Gh-aDy" customClass="StoriesTableViewController" customModule="NewspaperExample" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="lPM-Gh-aDy" customClass="StoriesTableViewController" customModule="TATAYAB___تطيّب" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wql-4U-TAJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,7 +50,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZHn-bE-8aO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="133"/>
+            <point key="canvasLocation" x="119" y="143"/>
         </scene>
     </scenes>
 </document>
