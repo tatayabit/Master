@@ -58,12 +58,14 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
                 self.product_Tableview.reloadSections(indexSet, with: .automatic)
             }
         }
+        let item1 = HeaderItem(rowCount: 1, collapsed: true, isCollapsible: false)
+        headerItems.append(item1)
+        
         if viewModel.numberOfAlsoBoughtProducts > 0 {
             let item = HeaderItem(rowCount: 0, collapsed: true, isCollapsible: false)
             headerItems.append(item)
         }
-        let item1 = HeaderItem(rowCount: 1, collapsed: true, isCollapsible: false)
-        headerItems.append(item1)
+        
 
         product_Tableview.delegate = self
         product_Tableview.dataSource = self
@@ -220,13 +222,15 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
         if (indexPath.section == 0){
            return UITableView.automaticDimension
         }else if(indexPath.section == self.headerItems.count - 2){
-           if let viewModel = viewModel {
-               if viewModel.isAlsoBoughtSection(section: indexPath.section) {
-                   return 260
-               }
-           }
+            // Details section
+           return UITableView.automaticDimension
         }else if (indexPath.section == self.headerItems.count - 1){
-            return UITableView.automaticDimension
+            // also bought
+            if let viewModel = viewModel {
+                if viewModel.isAlsoBoughtSection(section: indexPath.section) {
+                    return 260
+                }
+            }
         }else{
             return 60
         }
@@ -257,7 +261,7 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
                        }
             cell.delegate = self
                        return cell
-        }else if(indexPath.section == self.headerItems.count - 2){
+        }else if(indexPath.section == self.headerItems.count - 1){
             if let viewModel = viewModel {
                 if viewModel.isAlsoBoughtSection(section: indexPath.section) {
                     let cell = tableView.dequeueReusableCell(withIdentifier: AlsoBoughtProductsTableViewCell.identifier, for: indexPath) as! AlsoBoughtProductsTableViewCell
@@ -267,7 +271,7 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
                     return cell
                 }
             }
-        }else if (indexPath.section == self.headerItems.count - 1){
+        }else if (indexPath.section == self.headerItems.count - 2){
             let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionTableViewCell.identifier, for: indexPath) as! DescriptionTableViewCell
             //            cell.viewController = self
                         cell.delegate = self
@@ -323,6 +327,15 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == self.headerItems.count - 2 {
+            // Descriptions
+            return
+        }
+        if let viewModel = viewModel {
+            if viewModel.isAlsoBoughtSection(section: indexPath.section) {
+                return
+            }
+        }
         switch indexPath.section {
         case sectionType.details.rawValue: break
         default:

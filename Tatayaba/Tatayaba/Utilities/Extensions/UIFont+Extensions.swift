@@ -10,11 +10,15 @@ import UIKit
 
 extension UIFont {
     class func mediumGotham(size: CGFloat) -> UIFont {
-        return UIFont(name: "GOTHAM-MEDIUM", size: size)!
+        return UIFont(name: "GothamMedium", size: size)!
     }
 
     class func lightGotham(size: CGFloat) -> UIFont {
         return UIFont(name: "Gotham-Light", size: size)!
+    }
+    
+    class func htfbookGotham(size: CGFloat) -> UIFont {
+        return UIFont(name: "GothamHTF-Book", size: size)!
     }
     
     class func appRegularFontWith(name: String, size: CGFloat) -> UIFont{

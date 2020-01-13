@@ -239,7 +239,7 @@
 		4C30D9E8232FDD9500629D38 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30D9E7232FDD9500629D38 /* WebViewViewController.swift */; };
 		4CC28C482327EF59003EAEA6 /* GothamHTF-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CC28C472327EF59003EAEA6 /* GothamHTF-Book.ttf */; };
 		4CC28C5E2327F1CF003EAEA6 /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4CC28C4C2327F1CE003EAEA6 /* Gotham-Light.otf */; };
-		4CC28C702327F961003EAEA6 /* GOTHAM-MEDIUM.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 4CC28C6F2327F961003EAEA6 /* GOTHAM-MEDIUM.TTF */; };
+		4CC28C702327F961003EAEA6 /* GothamMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CC28C6F2327F961003EAEA6 /* GothamMedium.ttf */; };
 		4CC343A4232F96A6005BA810 /* ProfileTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC343A3232F96A6005BA810 /* ProfileTab.storyboard */; };
 		4CC343A6232F96C2005BA810 /* profileTabMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC343A5232F96C2005BA810 /* profileTabMenuViewController.swift */; };
 		4CC343A8232F9FAF005BA810 /* ProfileMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC343A7232F9FAF005BA810 /* ProfileMenuTableViewCell.swift */; };
@@ -572,7 +572,7 @@
 		4C30D9E7232FDD9500629D38 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		4CC28C472327EF59003EAEA6 /* GothamHTF-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamHTF-Book.ttf"; sourceTree = "<group>"; };
 		4CC28C4C2327F1CE003EAEA6 /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.otf"; sourceTree = "<group>"; };
-		4CC28C6F2327F961003EAEA6 /* GOTHAM-MEDIUM.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GOTHAM-MEDIUM.TTF"; sourceTree = "<group>"; };
+		4CC28C6F2327F961003EAEA6 /* GothamMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamMedium.ttf; sourceTree = "<group>"; };
 		4CC343A3232F96A6005BA810 /* ProfileTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileTab.storyboard; sourceTree = "<group>"; };
 		4CC343A5232F96C2005BA810 /* profileTabMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileTabMenuViewController.swift; sourceTree = "<group>"; };
 		4CC343A7232F9FAF005BA810 /* ProfileMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -2102,7 +2102,7 @@
 			isa = PBXGroup;
 			children = (
 				27AB3013236AD40300CFBF59 /* Cairo-Regular.ttf */,
-				4CC28C6F2327F961003EAEA6 /* GOTHAM-MEDIUM.TTF */,
+				4CC28C6F2327F961003EAEA6 /* GothamMedium.ttf */,
 				4CC28C4C2327F1CE003EAEA6 /* Gotham-Light.otf */,
 				4CEDFF3E231A69DD001385DD /* Myriad Pro Regular.ttf */,
 				847CDE8122CA19ED00E67C8C /* ProximaNova-Black.ttf */,
@@ -2461,7 +2461,7 @@
 				113647FC2316FF0F0097FDB3 /* CategoriesBlockView.xib in Resources */,
 				D5B71209238E14E0006BD0DD /* Search.storyboard in Resources */,
 				847CDE4622C9EE2300E67C8C /* Main.storyboard in Resources */,
-				4CC28C702327F961003EAEA6 /* GOTHAM-MEDIUM.TTF in Resources */,
+				4CC28C702327F961003EAEA6 /* GothamMedium.ttf in Resources */,
 				11FB584A231C2147005DA4F0 /* CategoriesBlockCollectionViewCell.xib in Resources */,
 				4CD8B8A6232129D300D25CC3 /* Suppliers.storyboard in Resources */,
 				11257427233155DF0015C3AD /* Home.storyboard in Resources */,

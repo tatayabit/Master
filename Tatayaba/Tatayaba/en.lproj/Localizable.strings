@@ -119,5 +119,6 @@ alertValaidationMessage = "You have to upgrade , your version is not supported a
 "Visa" = "Visa, Mastercard";
 "Cash on delivery" = "Cash on delivery";
 //
-"OFF" = "%\nOFF";
+"OFF" = "OFF";
 "OverView" = "Product Details";
+"Brand" = "Brand";

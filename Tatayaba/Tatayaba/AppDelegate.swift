@@ -26,6 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loadAppConfigurations()
         setupFirebasePushNotifications(application)
 
+        for family: String in UIFont.familyNames
+        {
+            print(family)
+            for names: String in UIFont.fontNames(forFamilyName: family)
+            {
+                print("font:::: == \(names)")
+            }
+        }
         
         // Override point for customization after application launch.
         return true
