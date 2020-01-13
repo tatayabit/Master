@@ -36,7 +36,7 @@ extension UIColor {
     }
     
     static var brandDarkGray: UIColor {
-        return UIColor(hexString: "#8A959E")
+        return UIColor(hexString: "8A959E")
     }
     
 }

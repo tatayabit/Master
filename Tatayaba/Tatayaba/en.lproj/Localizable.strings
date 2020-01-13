@@ -82,6 +82,7 @@
 "seeMore" = "See More";
 "Perfume Name" = "Perfume Name";
 "Comment" = "Comment";
+"Perform Description" = "Perform Description";
 "Phone" = "Phone";
 "Name" = "Name";
 "Tracking" = "Tracking #:";
@@ -117,8 +118,6 @@ alertValaidationMessage = "You have to upgrade , your version is not supported a
 "Mada" = "Mada";
 "Visa" = "Visa, Mastercard";
 "Cash on delivery" = "Cash on delivery";
-//
-"OFF" = "%\nOFF";
 
 // custom Filter view
 "Free Delivery" = "FREE DELIVERY";
@@ -130,3 +129,7 @@ alertValaidationMessage = "You have to upgrade , your version is not supported a
 "popularity" = "popularity";
 "High to low" = "High to low";
 "Low to high" = "Low to high";
+"OFF" = "OFF";
+"OverView" = "Product Details";
+"Brand" = "Brand";
+

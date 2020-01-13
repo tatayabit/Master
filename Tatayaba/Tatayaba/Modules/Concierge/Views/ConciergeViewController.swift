@@ -28,14 +28,30 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
             conciergeSubView.countryButton.setTitle(country.name, for: .normal)
             conciergeSubView.country = country
         }
+        setData()
         self.NavigationBarWithOutBackButton()
         
+    }
+    func setData(){
+        let customer = Customer.shared
+        if customer.loggedin {
+            if let user = customer.user{
+                if  (user.firstname.count > 0){
+                    conciergeSubView.customerNameTextField.text = user.firstname + " " + user.lastname
+                    conciergeSubView.customerNameTextField.isUserInteractionEnabled = false
+                }
+                if  (user.phone.count > 0)  {
+                    conciergeSubView.phoneTextField.text = user.phone
+                    conciergeSubView.phoneTextField.isUserInteractionEnabled = false
+                }
+            }
+        }
     }
     
     fileprivate func addconciergeSubView() {
         scrollView.stackView.addArrangedSubview(conciergeSubView)
         conciergeSubView.translatesAutoresizingMaskIntoConstraints = false
-        conciergeSubView.heightAnchor.constraint(equalToConstant: 750).isActive = true
+        conciergeSubView.heightAnchor.constraint(equalToConstant: 650).isActive = true
         conciergeSubView.delegate = self
     }
     
@@ -88,6 +104,7 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
     func didSelectSubmitConcierge(concierge: Concierge) {
         
         showLoadingIndicator(to: self.view)
+        self.conciergeSubView.alpha = 0.2
         viewModel.uploadConcierge(concierge: concierge) { result in
             self.hideLoadingIndicator(from: self.view)
             switch result {
@@ -96,12 +113,15 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
                 if let ConciergeResult = ConciergeResult {
                     if ConciergeResult["status"] == "success" {
                         self.showErrorAlerr(title: Constants.Concierge.uploaded, message: "Thanks for using concierge feature,\nWe will call you back withing 48 hours!".localized(), handler: { action in
+                            self.conciergeSubView.alpha = 1
                             })
                     } else{
                         self.showConciergeUploadError()
+                        self.conciergeSubView.alpha = 1
                     }
                 } else {
                     self.showConciergeUploadError()
+                    self.conciergeSubView.alpha = 1
                 }
                 
             case .failure(let error):
@@ -118,7 +138,7 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
     
     // MARK:- ImagePickerDelegate
     func imagePickerDelegate(didSelect image: UIImage, delegatedForm: ImagePicker) {
-        conciergeSubView.bannerImageView.image = image
+        conciergeSubView.perfumeImage.image = image
         imagePicker.dismiss()
     }
     

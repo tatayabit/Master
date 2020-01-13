@@ -3,7 +3,9 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,23 +21,28 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="wlV-2n-IBo" customClass="ConciergeSubView" customModule="TATAYAB___تطيّب" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
+
+            <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QPz-oN-vuA">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="306"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="STg-ik-hU0"/>
+                    </constraints>
+
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66O-IQ-2gc">
-                    <rect key="frame" x="14" y="312" width="347" height="77.5"/>
+                    <rect key="frame" x="14" y="6" width="347" height="97"/>
                     <string key="text">Welcome to TATAYAB CONCIERGE. Your fastest destination to find your beloved perfume across the world. Finding a fragrance has never been that easy before.
 
 </string>
-                    <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="12"/>
+                    <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dpM-x7-6Sn" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                    <rect key="frame" x="12" y="441.5" width="351" height="45"/>
+                    <rect key="frame" x="12" y="321" width="351" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="9PH-OP-f5F"/>
                     </constraints>
@@ -68,42 +75,25 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Perfume Name"/>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FQ9-Gc-Hej" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                    <rect key="frame" x="12" y="490.5" width="351" height="45"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xjh-qr-5XP">
+                    <rect key="frame" x="12" y="344.5" width="351" height="45"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="45" id="uZ7-Bd-OU0"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="q2U-kB-jb6"/>
                     </constraints>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
-                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                            <color key="value" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                            <color key="value" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
-                            <color key="value" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                            <color key="value" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                            <color key="value" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                            <color key="value" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Comment"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Comment"/>
-                    </userDefinedRuntimeAttributes>
-                </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OCb-v7-g18" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                    <rect key="frame" x="12" y="539.5" width="351" height="45"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i40-9d-Ds6">
+                    <rect key="frame" x="12" y="391" width="351" height="1"/>
+                    <color key="backgroundColor" red="0.13359850645065308" green="0.10292818397283554" blue="0.21072956919670105" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="Gnr-r8-vnW"/>
+                    </constraints>
+                </view>
+                <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OCb-v7-g18" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                    <rect key="frame" x="12" y="392" width="351" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="MKg-lk-YvO"/>
                     </constraints>
@@ -136,8 +126,8 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Name"/>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iqm-uc-Uhe" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                    <rect key="frame" x="12" y="588.5" width="351" height="45"/>
+                <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iqm-uc-Uhe" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                    <rect key="frame" x="12" y="441" width="351" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="tjv-FV-o6D"/>
                     </constraints>
@@ -170,8 +160,8 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Phone"/>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOy-jO-bT9">
-                    <rect key="frame" x="8" y="685.5" width="359" height="40"/>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOy-jO-bT9">
+                    <rect key="frame" x="8" y="538" width="359" height="40"/>
                     <color key="backgroundColor" red="0.13354238869999999" green="0.1071816161" blue="0.2066496015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="rex-6X-W7v"/>
@@ -184,8 +174,8 @@
                         <action selector="submitAction:" destination="wlV-2n-IBo" eventType="touchUpInside" id="n5a-IC-qQ1"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVF-cJ-Lsi">
-                    <rect key="frame" x="8" y="637.5" width="359" height="40"/>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVF-cJ-Lsi">
+                    <rect key="frame" x="8" y="490" width="359" height="40"/>
                     <color key="backgroundColor" red="0.13354238869999999" green="0.1071816161" blue="0.2066496015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="jYc-Kj-PrW"/>
@@ -199,62 +189,76 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brQ-wk-eWl">
-                    <rect key="frame" x="8" y="397.5" width="359" height="40"/>
+                    <rect key="frame" x="8" y="111" width="359" height="40"/>
                     <color key="backgroundColor" red="0.13354238869999999" green="0.1071816161" blue="0.2066496015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="kwt-cv-BKC"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
-                    <state key="normal" title="Upload">
+                    <state key="normal" title="Upload perfum image">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
                         <action selector="uploadAction:" destination="wlV-2n-IBo" eventType="touchUpInside" id="27H-A8-8pe"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera-logo" translatesAutoresizingMaskIntoConstraints="NO" id="sVe-jI-esR">
+                    <rect key="frame" x="8" y="159.5" width="359.00000000000023" height="149"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="i40-9d-Ds6" firstAttribute="leading" secondItem="xjh-qr-5XP" secondAttribute="leading" id="2FA-4b-O5C"/>
                 <constraint firstItem="brQ-wk-eWl" firstAttribute="leading" secondItem="wlV-2n-IBo" secondAttribute="leading" constant="8" id="3Se-Ea-Kmo"/>
                 <constraint firstItem="QOy-jO-bT9" firstAttribute="top" secondItem="SVF-cJ-Lsi" secondAttribute="bottom" constant="8" id="3yA-DL-OUj"/>
+                <constraint firstItem="i40-9d-Ds6" firstAttribute="trailing" secondItem="xjh-qr-5XP" secondAttribute="trailing" id="5AG-Zs-MkL"/>
                 <constraint firstAttribute="trailing" secondItem="66O-IQ-2gc" secondAttribute="trailing" constant="14" id="5RR-TO-hB2"/>
                 <constraint firstItem="Lau-fo-u0d" firstAttribute="trailing" secondItem="dpM-x7-6Sn" secondAttribute="trailing" constant="12" id="5nr-LJ-i3G"/>
-                <constraint firstItem="FQ9-Gc-Hej" firstAttribute="trailing" secondItem="dpM-x7-6Sn" secondAttribute="trailing" id="5rc-z1-ekh"/>
-                <constraint firstItem="OCb-v7-g18" firstAttribute="top" secondItem="FQ9-Gc-Hej" secondAttribute="bottom" constant="4" id="6XZ-rn-LZ6"/>
                 <constraint firstItem="QOy-jO-bT9" firstAttribute="leading" secondItem="Lau-fo-u0d" secondAttribute="leading" constant="8" id="8r5-MK-0sJ"/>
                 <constraint firstItem="66O-IQ-2gc" firstAttribute="top" secondItem="QPz-oN-vuA" secondAttribute="bottom" constant="6" id="A5V-Zv-X8d"/>
                 <constraint firstItem="Lau-fo-u0d" firstAttribute="trailing" secondItem="QPz-oN-vuA" secondAttribute="trailing" id="AvP-5s-LUN"/>
                 <constraint firstItem="dpM-x7-6Sn" firstAttribute="leading" secondItem="Lau-fo-u0d" secondAttribute="leading" constant="12" id="BzR-Cf-DkA"/>
                 <constraint firstItem="QPz-oN-vuA" firstAttribute="top" secondItem="Lau-fo-u0d" secondAttribute="top" id="CNs-Ei-8j8"/>
-                <constraint firstItem="OCb-v7-g18" firstAttribute="trailing" secondItem="FQ9-Gc-Hej" secondAttribute="trailing" id="ETL-ZS-hNr"/>
+                <constraint firstItem="OCb-v7-g18" firstAttribute="top" secondItem="i40-9d-Ds6" secondAttribute="bottom" constant="2" id="I1s-zY-619"/>
+                <constraint firstItem="sVe-jI-esR" firstAttribute="trailing" secondItem="brQ-wk-eWl" secondAttribute="trailing" id="K79-I2-0Jg"/>
+                <constraint firstItem="dpM-x7-6Sn" firstAttribute="trailing" secondItem="xjh-qr-5XP" secondAttribute="trailing" id="N3a-5A-MTo"/>
                 <constraint firstItem="QPz-oN-vuA" firstAttribute="leading" secondItem="Lau-fo-u0d" secondAttribute="leading" id="Owk-zJ-jeL"/>
+                <constraint firstItem="i40-9d-Ds6" firstAttribute="top" secondItem="xjh-qr-5XP" secondAttribute="bottom" constant="1.5" id="Oyp-iB-0AR"/>
                 <constraint firstItem="SVF-cJ-Lsi" firstAttribute="top" secondItem="iqm-uc-Uhe" secondAttribute="bottom" constant="4" id="PO4-hP-xlM"/>
+                <constraint firstItem="OCb-v7-g18" firstAttribute="trailing" secondItem="xjh-qr-5XP" secondAttribute="trailing" id="R1W-P1-DYl"/>
                 <constraint firstItem="SVF-cJ-Lsi" firstAttribute="trailing" secondItem="QOy-jO-bT9" secondAttribute="trailing" id="RVB-bL-EWO"/>
-                <constraint firstItem="OCb-v7-g18" firstAttribute="leading" secondItem="FQ9-Gc-Hej" secondAttribute="leading" id="VOV-HB-diU"/>
+                <constraint firstItem="sVe-jI-esR" firstAttribute="top" secondItem="brQ-wk-eWl" secondAttribute="bottom" constant="8.5" id="WNp-rp-TE7"/>
                 <constraint firstItem="brQ-wk-eWl" firstAttribute="top" secondItem="66O-IQ-2gc" secondAttribute="bottom" constant="8" id="Xxs-Uo-nKM"/>
                 <constraint firstItem="Lau-fo-u0d" firstAttribute="bottom" secondItem="QOy-jO-bT9" secondAttribute="bottom" constant="24.5" id="ZUT-nA-eXB"/>
                 <constraint firstItem="Lau-fo-u0d" firstAttribute="trailing" secondItem="brQ-wk-eWl" secondAttribute="trailing" constant="8" id="e1f-ix-IlD"/>
                 <constraint firstItem="iqm-uc-Uhe" firstAttribute="top" secondItem="OCb-v7-g18" secondAttribute="bottom" constant="4" id="eG1-j4-6Wr"/>
                 <constraint firstItem="iqm-uc-Uhe" firstAttribute="leading" secondItem="OCb-v7-g18" secondAttribute="leading" id="hSh-1K-ra8"/>
-                <constraint firstItem="FQ9-Gc-Hej" firstAttribute="leading" secondItem="dpM-x7-6Sn" secondAttribute="leading" id="haQ-LJ-8IC"/>
-                <constraint firstItem="FQ9-Gc-Hej" firstAttribute="top" secondItem="dpM-x7-6Sn" secondAttribute="bottom" constant="4" id="hpq-Sj-msO"/>
                 <constraint firstItem="66O-IQ-2gc" firstAttribute="leading" secondItem="Lau-fo-u0d" secondAttribute="leading" constant="14" id="igv-dJ-wpG"/>
+                <constraint firstItem="dpM-x7-6Sn" firstAttribute="top" secondItem="sVe-jI-esR" secondAttribute="bottom" constant="12.5" id="kM9-sd-usO"/>
+                <constraint firstItem="OCb-v7-g18" firstAttribute="leading" secondItem="xjh-qr-5XP" secondAttribute="leading" id="mTM-AA-cYz"/>
                 <constraint firstItem="SVF-cJ-Lsi" firstAttribute="leading" secondItem="QOy-jO-bT9" secondAttribute="leading" id="nZF-U0-pON"/>
+                <constraint firstItem="sVe-jI-esR" firstAttribute="leading" secondItem="brQ-wk-eWl" secondAttribute="leading" id="t4m-dX-ZA5"/>
                 <constraint firstAttribute="trailing" secondItem="QOy-jO-bT9" secondAttribute="trailing" constant="8" id="tjv-HI-WxI"/>
+                <constraint firstItem="xjh-qr-5XP" firstAttribute="top" secondItem="dpM-x7-6Sn" secondAttribute="bottom" constant="5.5" id="vgm-uN-eOJ"/>
                 <constraint firstItem="iqm-uc-Uhe" firstAttribute="trailing" secondItem="OCb-v7-g18" secondAttribute="trailing" id="xLw-93-pjA"/>
-                <constraint firstItem="dpM-x7-6Sn" firstAttribute="top" secondItem="brQ-wk-eWl" secondAttribute="bottom" constant="4" id="yO5-v9-stz"/>
+                <constraint firstItem="dpM-x7-6Sn" firstAttribute="top" secondItem="brQ-wk-eWl" secondAttribute="bottom" constant="170" id="yO5-v9-stz"/>
+                <constraint firstItem="dpM-x7-6Sn" firstAttribute="leading" secondItem="xjh-qr-5XP" secondAttribute="leading" id="ydj-gM-xfe"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="Lau-fo-u0d"/>
             <connections>
                 <outlet property="bannerImageView" destination="QPz-oN-vuA" id="AMP-fj-Pcz"/>
-                <outlet property="commentTextField" destination="FQ9-Gc-Hej" id="Yjz-UY-hhH"/>
                 <outlet property="countryButton" destination="SVF-cJ-Lsi" id="LA7-eG-ue7"/>
                 <outlet property="customerNameTextField" destination="OCb-v7-g18" id="LuA-bL-nqO"/>
+                <outlet property="perfumeImage" destination="sVe-jI-esR" id="yPA-sO-GJG"/>
                 <outlet property="perfumeNameTextField" destination="dpM-x7-6Sn" id="txw-sy-vxa"/>
+                <outlet property="perufumDescription" destination="xjh-qr-5XP" id="x7u-Tu-5bw"/>
                 <outlet property="phoneTextField" destination="iqm-uc-Uhe" id="Czy-Dc-OJ2"/>
             </connections>
             <point key="canvasLocation" x="157.59999999999999" y="179.91004497751126"/>
         </view>
     </objects>
+    <resources>
+        <image name="camera-logo" width="1195" height="874"/>
+    </resources>
 </document>

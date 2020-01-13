@@ -8,29 +8,30 @@
 
 import UIKit
 
-protocol ProductDeatailsTableViewCellDelegate: class {
-    func didIncreaseQuantity()
-    func didDecreaseQuantity()
+protocol ProductDeatailsSupplierDelegate: class {
+    func didSupplierClicked(supplierID : String,supplierName:String)
 }
 
 class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var productCollectionView: UICollectionView!
     
-    @IBOutlet weak var upButton: UIButton!
-    @IBOutlet weak var downButton: UIButton!
     @IBOutlet weak var favoriteButton: UIButton!
     
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var outOfStockLabel: UILabel!
     @IBOutlet weak var discountPercentageLabel: UILabel!
+    @IBOutlet weak var supplierName: UILabel!
+    @IBOutlet weak var supplierHeaderLabel: UILabel!
+
+    @IBOutlet weak var freeShipping: UILabel!
     
     var viewModel: ProductDeatailsTableViewCellViewModel?
-    weak var delegate: ProductDeatailsTableViewCellDelegate?
     weak var viewController: ProductDetailsViewController?
+    weak var delegate: ProductDeatailsSupplierDelegate?
+    var supplier_id = ""
+    var supplier_Name = ""
     //MARK:- Init
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,33 +48,54 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
         self.outOfStockLabel.text = "Out of stock"
         productCollectionView.dataSource = self
         productCollectionView.delegate = self
+        self.nameLabel.font = UIFont.mediumGotham(size: 16)
     }
     
     func configure(productVM: ProductDeatailsTableViewCellViewModel) {
         self.viewModel = productVM
+        self.supplier_id = productVM.supplier_id
+        self.supplier_Name = productVM.supplierName
         self.nameLabel.text = productVM.name
-        if (productVM.description.count > 0) {
-            self.descriptionLabel.text = productVM.description.stripOutHtml()
-
-        }else{
-            self.descriptionLabel.text = "\(productVM.name) \(productVM.supplierName)"
-
-        }
-        self.quantityLabel.text = String(productVM.selectedQuantity)
         self.outOfStockLabel.isHidden = productVM.isInStock
-        self.discountPercentageLabel.text = productVM.discountPercentage + "%\nOFF"
+        if productVM.hasDiscount {
+            self.discountPercentageLabel.text = productVM.discountPercentage + "% " + "OFF".localized()
+        }
         self.discountPercentageLabel.isHidden = !productVM.hasDiscount
+        self.supplierName.text = productVM.supplierName
+        self.supplierHeaderLabel.text = "Brand".localized() + ":"
+        self.freeShipping.text = "free Delivery".localized()
+        if(productVM.is_free_delivery == "Y"){
+            freeShipping.isHidden = false
+        }else{
+            freeShipping.isHidden = true
+        }
+        self.supplierName.isUserInteractionEnabled = true
+        self.supplierName.addGestureRecognizer(UITapGestureRecognizer(target:self, action: #selector(tapLabel(gesture:))))
+        DispatchQueue.main.async {
+            
+            self.freeShipping.font = UIFont.mediumGotham(size: 11.0)
+            self.discountPercentageLabel.font = UIFont.mediumGotham(size: 11.0)
+            let originalPriceStrikeAttributes: [NSAttributedString.Key: Any] =
+                   [NSAttributedString.Key.strikethroughStyle:
+                       NSUnderlineStyle.thick.rawValue,
+                    .foregroundColor: UIColor.brandDarkGray,
+                    NSAttributedString.Key.font: UIFont.htfbookGotham(size: 12.0)]
+       //        GothamHTF-Book
 
-        let originalPriceStrikeAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.thick.rawValue]
+               let originalPriceAttr = productVM.hasDiscount ? originalPriceStrikeAttributes : nil
+               let priceAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.black]
 
-        let originalPriceAttr = productVM.hasDiscount ? originalPriceStrikeAttributes : nil
-        let attributedString = NSMutableAttributedString(string: productVM.priceBeforeDiscount, attributes: originalPriceAttr)
-        attributedString.append(NSAttributedString(string: "    "))
-        
-        
-        let priceAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.brandDarkGray]
-        attributedString.append(NSMutableAttributedString(string: productVM.originalPrice, attributes: priceAttributes))
-        self.priceLabel.attributedText = attributedString
+               let attributedString = NSMutableAttributedString(string: productVM.originalPrice, attributes: priceAttributes)
+               attributedString.append(NSAttributedString(string: "    "))
+               
+               
+               attributedString.append(NSMutableAttributedString(string: productVM.priceBeforeDiscount, attributes: originalPriceAttr))
+               
+               
+               
+               
+                   self.priceLabel.attributedText = attributedString
+        }
     }
     
     
@@ -104,22 +126,11 @@ class ProductDeatailsTableViewCell: UITableViewCell, UICollectionViewDataSource,
         viewController?.navigationController?.pushViewController(controller, animated: true)
     }
     
-    //MARK:- IBActions
-    @IBAction func increaseQuantity(_ sender: UIButton) {
-        guard let viewModel = viewModel else { return }
-        viewModel.increase()
-        quantityLabel.text = String(viewModel.selectedQuantity)
-        if let delegate = delegate {
-            delegate.didIncreaseQuantity()
-        }
+    @IBAction func tapLabel(gesture: UITapGestureRecognizer) {
+      if let delegate = delegate {
+        delegate.didSupplierClicked(supplierID: self.supplier_id ?? " ", supplierName: self.supplier_Name ?? "")
+      }
     }
     
-    @IBAction func decreaseQuantity(_ sender: UIButton) {
-        guard let viewModel = viewModel else { return }
-        viewModel.decrease()
-        quantityLabel.text = String(viewModel.selectedQuantity)
-        if let delegate = delegate {
-            delegate.didDecreaseQuantity()
-        }
-    }
+
 }

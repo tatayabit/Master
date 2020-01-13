@@ -79,6 +79,7 @@
 "seeMore" = "المزيد";
 "Perfume Name" = "اسم العطر";
 "Comment" = "تعليق";
+"Perform Description" = "تفاصيل العطر";
 "Phone" = "رقم الجوال";
 "Name" = "الاسم";
 "Tracking" = "تتبع #:";
@@ -117,7 +118,6 @@ alertValaidationMessage = "يجب عليك الترقية ، الإصدار ال
 "Visa" = "فيزا ,ماستركارد";
 "Cash on delivery" = "الدفع عند الاستلام";
 
-"OFF" = "%\nخصم";
 
 // custom Filter view
 "Free Delivery" = "شحن مجاني";
@@ -129,3 +129,6 @@ alertValaidationMessage = "يجب عليك الترقية ، الإصدار ال
 "popularity" = "الأكثر شهرة";
 "High to low" = "من الأعلي إلي الأقل";
 "Low to high" = "من الأقل إلي الأعلي";
+"OFF" = "خصم";
+"OverView" = "تفاصيل المنتج";
+"Brand" = "العلامة التجارية";

@@ -13,13 +13,16 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
     @IBOutlet weak var product_Tableview: UITableView!
     
     enum sectionType: Int {
-        case details = 0, options
+        case details = 0
+        //case desc = 1
+        case options
     }
     
     var viewModel: ProductDetailsViewModel?
+    private let viewModelHome = HomeViewModel()
     var headerItems = [HeaderItem]()
     var reloadSections: ((_ section: Int) -> Void)?
-    
+    private let supplierProductsSegue = "supplier_products_segue"
     //MARK:- Init
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +45,7 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
         guard let viewModel = viewModel else { return }
         let item = HeaderItem(rowCount: 1, collapsed: true, isCollapsible: false)
         headerItems.append(item)
-
+        
         if viewModel.optionsCount > 0 {
             for i in 1..<(viewModel.optionsCount + 1) {
                 let numberOfRows = viewModel.numberOfVariants(at: i)
@@ -50,16 +53,20 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
                 headerItems.append(item)
             }
             
-            
             reloadSections = { section in
                 let indexSet = IndexSet(integer: section)
                 self.product_Tableview.reloadSections(indexSet, with: .automatic)
             }
         }
+        let item1 = HeaderItem(rowCount: 1, collapsed: true, isCollapsible: false)
+        headerItems.append(item1)
+        
         if viewModel.numberOfAlsoBoughtProducts > 0 {
             let item = HeaderItem(rowCount: 0, collapsed: true, isCollapsible: false)
             headerItems.append(item)
         }
+        
+
         product_Tableview.delegate = self
         product_Tableview.dataSource = self
         product_Tableview.reloadData()
@@ -159,12 +166,36 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
             viewModel.addToCart()
         }
     }
+    
+    //MARK:- Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == supplierProductsSegue {
+                let productsListVC = segue.destination as! SupplierProductsViewController
+            var supplierId = ""
+            var supplierName = ""
+                if let dict = sender as? [String:String] {
+                    for (key, value) in dict {
+                        print(key, value)
+                        supplierId = dict["supplierID"] ?? " "
+                        supplierName = dict["supplierName"] ?? " "
+                    }
+                    productsListVC.viewModel = SupplierProductsViewModel(supplier:Supplier(supplierId : supplierId,name : supplierName))
+                }
+            }
+        }
 
 }
-extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTableViewCellDelegate {
+extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTableViewCellDelegate,ProductDeatailsSupplierDelegate {
+   
+    func didSupplierClicked(supplierID: String,supplierName: String) {
+        var dictSendData:[String:String] = [:]
+        dictSendData.updateValue(supplierID, forKey: "supplierID")
+        dictSendData.updateValue(supplierName, forKey: "supplierName")
+        performSegue(withIdentifier: supplierProductsSegue, sender: dictSendData)
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         if let viewModel = viewModel {
             if viewModel.isAlsoBoughtSection(section: section) {
                 return 1
@@ -188,50 +219,123 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if let viewModel = viewModel {
-            if viewModel.isAlsoBoughtSection(section: indexPath.section) {
-                return 260
+        if (indexPath.section == 0){
+           return UITableView.automaticDimension
+        }else if(indexPath.section == self.headerItems.count - 2){
+            // Details section
+           return UITableView.automaticDimension
+        }else if (indexPath.section == self.headerItems.count - 1){
+            // also bought
+            if let viewModel = viewModel {
+                if viewModel.isAlsoBoughtSection(section: indexPath.section) {
+                    return 260
+                }
             }
-        }
-        
-        switch indexPath.section {
-        case sectionType.details.rawValue:
-            return UITableView.automaticDimension
-        default:
+        }else{
             return 60
         }
+        return 60
+        
+//        if let viewModel = viewModel {
+//            if viewModel.isAlsoBoughtSection(section: indexPath.section) {
+//                return 260
+//            }
+//        }
+//
+//        switch indexPath.section {
+//        case sectionType.details.rawValue:
+//            return UITableView.automaticDimension
+//        case sectionType.desc.rawValue:
+//            return UITableView.automaticDimension
+//        default:
+//            return 60
+//        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if let viewModel = viewModel {
-            if viewModel.isAlsoBoughtSection(section: indexPath.section) {
-                let cell = tableView.dequeueReusableCell(withIdentifier: AlsoBoughtProductsTableViewCell.identifier, for: indexPath) as! AlsoBoughtProductsTableViewCell
-                cell.configure(with: viewModel.alsoBoughtProductsBlock)
-                cell.delegate = self
-                return cell
-            }
-        }
-        
-        switch indexPath.section {
-        case sectionType.details.rawValue:
+        if (indexPath.section == 0){
             let cell = tableView.dequeueReusableCell(withIdentifier: ProductDeatailsTableViewCell.identifier, for: indexPath) as! ProductDeatailsTableViewCell
-            cell.viewController = self
-            if let viewModel = viewModel {
-                cell.configure(productVM: viewModel.detailsCellVM())
-            }
+                       cell.viewController = self
+                       if let viewModel = viewModel {
+                           cell.configure(productVM: viewModel.detailsCellVM())
+                       }
             cell.delegate = self
-            return cell
-        default:
+                       return cell
+        }else if(indexPath.section == self.headerItems.count - 1){
+            if let viewModel = viewModel {
+                if viewModel.isAlsoBoughtSection(section: indexPath.section) {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: AlsoBoughtProductsTableViewCell.identifier, for: indexPath) as! AlsoBoughtProductsTableViewCell
+                    cell.configure(with: viewModel.alsoBoughtProductsBlock)
+                    cell.delegate = self
+                    cell.selectionStyle = .none
+                    return cell
+                }
+            }
+        }else if (indexPath.section == self.headerItems.count - 2){
+            let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionTableViewCell.identifier, for: indexPath) as! DescriptionTableViewCell
+            //            cell.viewController = self
+                        cell.delegate = self
+                        cell.selectionStyle = .none
+                        if let viewModel = viewModel {
+                            cell.configure(productVM: viewModel.detailsCellVM())
+                        }
+                        return cell
+        }else{
+            print(indexPath.section)
             let cell = tableView.dequeueReusableCell(withIdentifier: OptionCollectionViewCell.identifier, for: indexPath) as! OptionCollectionViewCell
             if let viewModel = viewModel {
                 cell.configure(option: viewModel.optionVariant(at: indexPath), selected: viewModel.selected(at: indexPath))
             }
             return cell
         }
+//        if let viewModel = viewModel {
+//            if viewModel.isAlsoBoughtSection(section: indexPath.section) {
+//                let cell = tableView.dequeueReusableCell(withIdentifier: AlsoBoughtProductsTableViewCell.identifier, for: indexPath) as! AlsoBoughtProductsTableViewCell
+//                cell.configure(with: viewModel.alsoBoughtProductsBlock)
+//                cell.delegate = self
+//                return cell
+//            }
+//        }
+//
+//        switch indexPath.section {
+//        case sectionType.details.rawValue:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: ProductDeatailsTableViewCell.identifier, for: indexPath) as! ProductDeatailsTableViewCell
+//            cell.viewController = self
+//            if let viewModel = viewModel {
+//                cell.configure(productVM: viewModel.detailsCellVM())
+//            }
+//            return cell
+//        case sectionType.desc.rawValue:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionTableViewCell.identifier, for: indexPath) as! DescriptionTableViewCell
+////            cell.viewController = self
+//            cell.delegate = self
+//            cell.selectionStyle = .none
+//            if let viewModel = viewModel {
+//                cell.configure(productVM: viewModel.detailsCellVM())
+//            }
+//            return cell
+//        default:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: OptionCollectionViewCell.identifier, for: indexPath) as! OptionCollectionViewCell
+//            if let viewModel = viewModel {
+//                cell.configure(option: viewModel.optionVariant(at: indexPath), selected: viewModel.selected(at: indexPath))
+//            }
+//            return cell
+//        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProductDeatailsTableViewCell.identifier, for: indexPath) as! ProductDeatailsTableViewCell
+        return cell
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == self.headerItems.count - 2 {
+            // Descriptions
+            return
+        }
+        if let viewModel = viewModel {
+            if viewModel.isAlsoBoughtSection(section: indexPath.section) {
+                return
+            }
+        }
         switch indexPath.section {
         case sectionType.details.rawValue: break
         default:
@@ -251,23 +355,32 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
        }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if let viewModel = viewModel {
-            if viewModel.isAlsoBoughtSection(section: section) {
-                return 0
-            }
-        }
         
-        switch section {
-        case sectionType.details.rawValue:
-            return 0
-        default:
+        if (section == 0 || section == self.headerItems.count - 1 || section == self.headerItems.count - 2 ){
+           return 0
+        }else{
             return 60
         }
+//
+//        if let viewModel = viewModel {
+//            if viewModel.isAlsoBoughtSection(section: section) {
+//                return 0
+//            }
+//        }
+//
+//        switch section {
+//        case sectionType.details.rawValue:
+//            return 0
+//        case sectionType.desc.rawValue:
+//            return 0
+//        default:
+//            return 60
+//        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: OptionsHeader.identifier) as? OptionsHeader {
-            if section > 0 {
+            if section > 0 && section < headerItems.count - 2 {
                 let item = headerItems[section]
                 guard let viewModel = viewModel else { return UIView() }
                 let option = viewModel.optionHeader(at: section)

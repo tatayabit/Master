@@ -56,8 +56,7 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
             freeDeliveryLabel.isHidden = true
         }
         freeDeliveryLabel.sizeToFit()
-        print("OFF".localized())
-        self.discountPercentageLabel.text = product.discountPercentage + "OFF".localized()
+        self.discountPercentageLabel.text = product.discountPercentage + "%\n" + "OFF".localized()
         
         
         if let percentage = Float(product.priceBeforeDiscount) {
@@ -94,7 +93,7 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
             freeDeliveryLabel.isHidden = true
         }
         freeDeliveryLabel.sizeToFit()
-        self.discountPercentageLabel.text = product.discountPercentage + "OFF".localized()
+        self.discountPercentageLabel.text = product.discountPercentage + "%\n" + "OFF".localized()
         
         
         if let percentage = Float(product.priceBeforeDiscount) {

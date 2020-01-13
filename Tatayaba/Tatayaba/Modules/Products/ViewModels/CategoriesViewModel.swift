@@ -19,7 +19,8 @@ class CategoriesViewModel {
     var categoriesCount: Int { return categoriesList.count }
 
     //MARK:- Api
-    func getAllCategories() {
+    func
+        getAllCategories() {
         apiClient.getAllCategories { result in
             switch result {
             case .success(let response):

@@ -25,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         loadAppConfigurations()
         setupFirebasePushNotifications(application)
-
         
         // Override point for customization after application launch.
         return true

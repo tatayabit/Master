@@ -40,6 +40,7 @@ struct Product {
     var status: String
     var mainPair: ProductMainPair
     var supplierName: String
+    var supplier_id: String
     var productOptions: [ProductOption]
     var maxQuantity: String
     var position: String
@@ -49,7 +50,7 @@ struct Product {
     var hasOptions: Bool
     var is_free_delivery: String
     
-    init(name: String = "", supplierName: String = "", description: String = "", priceBeforeDiscount: String = "", discountPercentage: String = "", price: String = "0.00", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair(), productOptions: [ProductOption] = [ProductOption](), maxQuantity: String = "0", position: String = "", amount: Int = 0, outOfStockActions: String = "", productStatus: String = "", hasOptions: Bool = false, is_free_delivery: String = "") {
+    init(name: String = "", supplierName: String = "",supplier_id: String = "", description: String = "", priceBeforeDiscount: String = "", discountPercentage: String = "", price: String = "0.00", inWishlist: Bool = false, identifier: String = "", status: String = "H", mainPair: ProductMainPair = ProductMainPair(), productOptions: [ProductOption] = [ProductOption](), maxQuantity: String = "0", position: String = "", amount: Int = 0, outOfStockActions: String = "", productStatus: String = "", hasOptions: Bool = false, is_free_delivery: String = "") {
 
         self.name = name
         self.description = description
@@ -61,6 +62,7 @@ struct Product {
         self.status = status
         self.mainPair = mainPair
         self.supplierName = supplierName
+        self.supplier_id = supplier_id
         self.productOptions = productOptions
         self.maxQuantity = maxQuantity
         self.position = position
@@ -85,6 +87,7 @@ extension Product: Codable {
         case status = "status"
         case mainPair = "main_pair"
         case supplierName = "supplier_name"
+        case supplier_id = "supplier_id"
         case productOptions = "product_options"
         case maxQuantity = "max_qty"
         case position = "featured_position"
@@ -106,7 +109,8 @@ extension Product: Codable {
 //        identifier = try container.decodeIfPresent(String.self, forKey: .identifier) ?? ""
         status = try container.decodeIfPresent(String.self, forKey: .status) ?? "H"
         mainPair = try container.decodeIfPresent(ProductMainPair.self, forKey: .mainPair) ?? ProductMainPair()
-
+        
+        supplier_id = try container.decodeIfPresent(String.self, forKey: .supplier_id) ?? ""
         supplierName = try container.decodeIfPresent(String.self, forKey: .supplierName) ?? ""
         productOptions = try container.decodeIfPresent([ProductOption].self, forKey: .productOptions) ?? [ProductOption]()
         maxQuantity = try container.decodeIfPresent(String.self, forKey: .maxQuantity) ?? "0"
@@ -181,6 +185,7 @@ extension Product: Codable {
         try container.encodeIfPresent(status, forKey: .status)
         try container.encodeIfPresent(mainPair, forKey: .mainPair)
         try container.encodeIfPresent(supplierName, forKey: .supplierName)
+        try container.encodeIfPresent(supplierName, forKey: .supplier_id)
         try container.encodeIfPresent(maxQuantity, forKey: .maxQuantity)
         try container.encodeIfPresent(position, forKey: .position)
         try container.encodeIfPresent(amount, forKey: .amount)
