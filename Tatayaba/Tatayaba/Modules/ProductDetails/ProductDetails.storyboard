@@ -99,16 +99,6 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                 </collectionView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGx-ef-rdJ">
-                                                    <rect key="frame" x="12" y="342" width="0.0" height="17"/>
-                                                    <color key="backgroundColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="0.10197513207605634" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="17" id="o3W-ox-WLG"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="11"/>
-                                                    <color key="textColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom box - Tatera" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTl-HN-FIy">
                                                     <rect key="frame" x="12" y="262" width="390" height="26"/>
                                                     <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="16"/>
@@ -154,30 +144,41 @@
                                                     <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzn-vE-eBV">
-                                                    <rect key="frame" x="20" y="342" width="27" height="17"/>
-                                                    <color key="backgroundColor" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="0.10401078345070422" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="939-r6-0VJ">
+                                                    <rect key="frame" x="12" y="342" width="398" height="17"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGx-ef-rdJ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="363" height="17"/>
+                                                            <color key="backgroundColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="0.10197513207605634" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="11"/>
+                                                            <color key="textColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzn-vE-eBV">
+                                                            <rect key="frame" x="371" y="0.0" width="27" height="17"/>
+                                                            <color key="backgroundColor" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="0.10401078345070422" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="11"/>
+                                                            <color key="textColor" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="25"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                    </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="17" id="HoZ-EQ-HeF"/>
+                                                        <constraint firstAttribute="height" constant="17" id="Ciw-Xy-t6U"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="11"/>
-                                                    <color key="textColor" red="0.1333333333" green="0.10980392160000001" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="25"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="mGx-ef-rdJ" firstAttribute="leading" secondItem="L6q-L8-rvC" secondAttribute="leading" constant="12" id="15J-S7-ZLL"/>
+                                                <constraint firstItem="939-r6-0VJ" firstAttribute="leading" secondItem="L6q-L8-rvC" secondAttribute="leading" constant="12" id="0Gq-6H-KjK"/>
                                                 <constraint firstAttribute="trailing" secondItem="WxN-4G-hCE" secondAttribute="trailing" id="1ze-OK-OJG"/>
                                                 <constraint firstItem="Hs9-cS-nTL" firstAttribute="top" secondItem="mpT-0A-7hZ" secondAttribute="bottom" constant="7" id="5FJ-71-TzE"/>
                                                 <constraint firstItem="cdA-1N-V75" firstAttribute="bottom" secondItem="WxN-4G-hCE" secondAttribute="bottom" constant="-4" id="6bf-Ly-IS7"/>
+                                                <constraint firstAttribute="bottom" secondItem="939-r6-0VJ" secondAttribute="bottom" constant="6" id="E4P-XW-WeL"/>
                                                 <constraint firstAttribute="trailing" secondItem="Hs9-cS-nTL" secondAttribute="trailing" constant="12" id="Epx-N3-j9X"/>
-                                                <constraint firstItem="tzn-vE-eBV" firstAttribute="top" secondItem="Hs9-cS-nTL" secondAttribute="bottom" constant="10" id="FNR-n3-tmh"/>
-                                                <constraint firstItem="mGx-ef-rdJ" firstAttribute="top" secondItem="tzn-vE-eBV" secondAttribute="top" id="GAN-db-Pdf"/>
                                                 <constraint firstItem="mpT-0A-7hZ" firstAttribute="leading" secondItem="L6q-L8-rvC" secondAttribute="leading" constant="12" id="KfJ-1F-Z46"/>
                                                 <constraint firstItem="Hs9-cS-nTL" firstAttribute="leading" secondItem="hTl-HN-FIy" secondAttribute="leading" id="Lte-rv-NE7"/>
                                                 <constraint firstItem="Hs9-cS-nTL" firstAttribute="leading" secondItem="L6q-L8-rvC" secondAttribute="leading" constant="12" id="MDw-Ob-gQg"/>
@@ -185,13 +186,12 @@
                                                 <constraint firstItem="cdA-1N-V75" firstAttribute="leading" secondItem="L6q-L8-rvC" secondAttribute="leading" constant="22" id="YIn-fK-Tmi"/>
                                                 <constraint firstItem="qyS-xl-paP" firstAttribute="centerY" secondItem="mpT-0A-7hZ" secondAttribute="centerY" id="bzS-eL-mtt"/>
                                                 <constraint firstItem="hTl-HN-FIy" firstAttribute="top" secondItem="WxN-4G-hCE" secondAttribute="bottom" constant="7" id="fpL-cs-Qlt"/>
+                                                <constraint firstItem="939-r6-0VJ" firstAttribute="top" secondItem="Hs9-cS-nTL" secondAttribute="bottom" constant="10" id="haB-Qu-9ok"/>
                                                 <constraint firstItem="WxN-4G-hCE" firstAttribute="top" secondItem="L6q-L8-rvC" secondAttribute="top" id="iYP-TA-KA6"/>
                                                 <constraint firstItem="qyS-xl-paP" firstAttribute="height" secondItem="mpT-0A-7hZ" secondAttribute="height" id="nrk-As-doa"/>
                                                 <constraint firstItem="WxN-4G-hCE" firstAttribute="leading" secondItem="L6q-L8-rvC" secondAttribute="leading" id="o1Y-CO-FXE"/>
                                                 <constraint firstItem="loP-HZ-eFk" firstAttribute="top" secondItem="L6q-L8-rvC" secondAttribute="top" constant="10" id="rW9-kt-P0M"/>
-                                                <constraint firstItem="tzn-vE-eBV" firstAttribute="leading" secondItem="mGx-ef-rdJ" secondAttribute="trailing" constant="8" id="s3B-ck-MMn"/>
                                                 <constraint firstItem="mpT-0A-7hZ" firstAttribute="top" secondItem="hTl-HN-FIy" secondAttribute="bottom" constant="8" id="tpc-cn-Mlg"/>
-                                                <constraint firstAttribute="bottom" secondItem="tzn-vE-eBV" secondAttribute="bottom" constant="6" id="wiv-CL-auh"/>
                                                 <constraint firstAttribute="trailing" secondItem="loP-HZ-eFk" secondAttribute="trailing" constant="15" id="xF6-5b-WXh"/>
                                                 <constraint firstItem="qyS-xl-paP" firstAttribute="leading" secondItem="mpT-0A-7hZ" secondAttribute="trailing" constant="12.5" id="yfm-99-Gmd"/>
                                             </constraints>
