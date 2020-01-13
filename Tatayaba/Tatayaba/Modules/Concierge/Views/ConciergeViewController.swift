@@ -36,12 +36,14 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
         let customer = Customer.shared
         if customer.loggedin {
             if let user = customer.user{
-                print(user.firstname + " " + user.lastname)
-                print(user.phone)
-                conciergeSubView.customerNameTextField.text = user.firstname + " " + user.lastname
-                conciergeSubView.customerNameTextField.isUserInteractionEnabled = false
-                conciergeSubView.phoneTextField.text = user.phone
-                conciergeSubView.phoneTextField.isUserInteractionEnabled = false
+                if  (user.firstname.count > 0){
+                    conciergeSubView.customerNameTextField.text = user.firstname + " " + user.lastname
+                    conciergeSubView.customerNameTextField.isUserInteractionEnabled = false
+                }
+                if  (user.phone.count > 0)  {
+                    conciergeSubView.phoneTextField.text = user.phone
+                    conciergeSubView.phoneTextField.isUserInteractionEnabled = false
+                }
             }
         }
     }

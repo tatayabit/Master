@@ -287,6 +287,7 @@
 		D519D8A8239CFB080026DD97 /* CheckOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D519D8AA239CFB080026DD97 /* CheckOut.storyboard */; };
 		D5643AA5239E761E00885FD3 /* FinancialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5643AA3239E761E00885FD3 /* FinancialTableViewCell.swift */; };
 		D5643AA6239E761E00885FD3 /* FinancialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5643AA4239E761E00885FD3 /* FinancialTableViewCell.xib */; };
+		D56E98A123CC5AE300E9817C /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D56E98A023CC5AE300E9817C /* Filter.storyboard */; };
 		D59AF4D523A8C8D60093EF40 /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59AF4D423A8C8D60093EF40 /* DescriptionTableViewCell.swift */; };
 		D5B71207238E1420006BD0DD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B71206238E1420006BD0DD /* SearchViewController.swift */; };
 		D5B71209238E14E0006BD0DD /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B71208238E14E0006BD0DD /* Search.storyboard */; };
@@ -629,6 +630,7 @@
 		D519D8AD239CFB2D0026DD97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CheckOut.storyboard; sourceTree = "<group>"; };
 		D5643AA3239E761E00885FD3 /* FinancialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialTableViewCell.swift; sourceTree = "<group>"; };
 		D5643AA4239E761E00885FD3 /* FinancialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinancialTableViewCell.xib; sourceTree = "<group>"; };
+		D56E98A023CC5AE300E9817C /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
 		D59AF4D423A8C8D60093EF40 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		D5B71206238E1420006BD0DD /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D5B71208238E14E0006BD0DD /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -1631,6 +1633,7 @@
 		11F52FA522CA7D92000F0D85 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D56E989C23CC5A7B00E9817C /* Filter */,
 				100236C22395805400C031E8 /* Location */,
 				1048080A238DC8030056F74B /* Search */,
 				1098F1A023890E2800A8D367 /* VersionChecking */,
@@ -2273,6 +2276,38 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D56E989C23CC5A7B00E9817C /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				D56E98A023CC5AE300E9817C /* Filter.storyboard */,
+				D56E989F23CC5AA900E9817C /* Views */,
+				D56E989E23CC5AA200E9817C /* API */,
+				D56E989D23CC5A8E00E9817C /* ViewModels */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		D56E989D23CC5A8E00E9817C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D56E989E23CC5AA200E9817C /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		D56E989F23CC5AA900E9817C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D5B71205238E13A8006BD0DD /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -2449,6 +2484,7 @@
 				11FB5870231D5EFF005DA4F0 /* SuppliersBlockCollectionViewCell.xib in Resources */,
 				847CDE8722CA19EE00E67C8C /* ProximaNova-Semibold.ttf in Resources */,
 				11D84249233620D400F732F9 /* User.storyboard in Resources */,
+				D56E98A123CC5AE300E9817C /* Filter.storyboard in Resources */,
 				D5643AA6239E761E00885FD3 /* FinancialTableViewCell.xib in Resources */,
 				11FB5874231D5F1C005DA4F0 /* SuppliersBlockView.xib in Resources */,
 				11081EFD22DB8F5500B68EA5 /* ProfileDetailsView.xib in Resources */,
