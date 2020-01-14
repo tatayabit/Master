@@ -133,6 +133,12 @@ class CatProductsViewModel {
     func productHasOptions(at indexPath: IndexPath) -> Bool {
         return product(at: indexPath).hasOptions
     }
+    
+    
+    // MARK:- Filter ViewModel
+    func filterViewModel() -> FilterRootViewModel {
+        return FilterRootViewModel(initializer: .category)
+    }
 }
 
 extension Constants {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GLN-Po-Fbg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GLN-Po-Fbg">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -64,11 +64,22 @@
                         <outlet property="productsCollectionView" destination="92z-o3-Ol4" id="FQA-sx-fMk"/>
                         <segue destination="d0B-yD-4bh" kind="show" identifier="product_details_segue" id="fIf-Rr-DOj"/>
                         <segue destination="LEC-nR-jgK" kind="push" identifier="search_segue" id="LcB-7d-yWi"/>
+                        <segue destination="GWU-Rf-ecK" kind="show" identifier="filter_segue" id="EJm-4a-S38"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BII-o7-ZTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="168.80000000000001" y="15.742128935532236"/>
+        </scene>
+        <!--Filter-->
+        <scene sceneID="HWP-1S-MFv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Filter" id="GWU-Rf-ecK" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="d9F-rz-ta1"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HWo-lN-cBf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060" y="-132"/>
         </scene>
         <!--ProductDetails-->
         <scene sceneID="mZ8-qq-wcE">
@@ -191,7 +202,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IM8-ZJ-GB5"/>
-        <segue reference="n7o-Ql-kGT"/>
+        <segue reference="LcB-7d-yWi"/>
+        <segue reference="fIf-Rr-DOj"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,18 +9,18 @@
 import UIKit
 
 class FilterTableViewCell: UITableViewCell {
-    @IBOutlet weak var nameLBL: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var arrowImg: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func configure(title: String, values: String) {
+        self.nameLabel.text = title
+        self.detailsLabel.text = values
     }
 
 }

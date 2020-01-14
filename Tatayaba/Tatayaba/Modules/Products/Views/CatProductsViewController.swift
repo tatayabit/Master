@@ -16,6 +16,7 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
     var viewModel: CatProductsViewModel?
     private let productDetailsSegue = "product_details_segue"
     private let searchSegue = "search_segue"
+    private let filterSegue = "filter_segue"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +71,7 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
+//        performSegue(withIdentifier: filterSegue, sender: nil)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -85,6 +87,13 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
                 if let viewModel = viewModel {
                     productDetailsVC.viewModel = viewModel.productDetailsViewModel(at: indexPath)
                 }
+            }
+        }
+        
+        if segue.identifier == filterSegue {
+            let filterVC = segue.destination as! FilterTableViewController
+            if let viewModel = viewModel {
+                filterVC.viewModel = viewModel.filterViewModel()
             }
         }
     }

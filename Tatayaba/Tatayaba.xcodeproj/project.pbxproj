@@ -34,6 +34,8 @@
 		10B08377234CF92C00DCE773 /* CartEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B08376234CF92C00DCE773 /* CartEndpoint.swift */; };
 		10B4CBCB237336ED0065918D /* DataBase64Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B4CBCA237336ED0065918D /* DataBase64Decodable.swift */; };
 		10C8E8F7238929DA00E22581 /* Dispatch+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C8E8F6238929DA00E22581 /* Dispatch+Extensions.swift */; };
+		10CA138523CCDFAD002E000C /* SupplierFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CA138423CCDFAD002E000C /* SupplierFilterViewModel.swift */; };
+		10CA138823CD96F9002E000C /* FilterRootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CA138723CD96F9002E000C /* FilterRootViewModel.swift */; };
 		10DFE45023525D9C00AAB780 /* HeaderViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DFE44F23525D9C00AAB780 /* HeaderViewItem.swift */; };
 		10DFE4542352619000AAB780 /* OptionsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DFE4532352619000AAB780 /* OptionsHeader.swift */; };
 		10DFE456235262E100AAB780 /* OptionsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10DFE455235262E100AAB780 /* OptionsHeader.xib */; };
@@ -361,6 +363,8 @@
 		10B4CBCA237336ED0065918D /* DataBase64Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase64Decodable.swift; sourceTree = "<group>"; };
 		10C62BF523AA933300562CC0 /* TATAYAB - تطيّب.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TATAYAB - تطيّب.entitlements"; sourceTree = "<group>"; };
 		10C8E8F6238929DA00E22581 /* Dispatch+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dispatch+Extensions.swift"; sourceTree = "<group>"; };
+		10CA138423CCDFAD002E000C /* SupplierFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierFilterViewModel.swift; sourceTree = "<group>"; };
+		10CA138723CD96F9002E000C /* FilterRootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRootViewModel.swift; sourceTree = "<group>"; };
 		10DFE44F23525D9C00AAB780 /* HeaderViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewItem.swift; sourceTree = "<group>"; };
 		10DFE4532352619000AAB780 /* OptionsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsHeader.swift; sourceTree = "<group>"; };
 		10DFE455235262E100AAB780 /* OptionsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionsHeader.xib; sourceTree = "<group>"; };
@@ -846,6 +850,37 @@
 				10B4CBCA237336ED0065918D /* DataBase64Decodable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		10CA138123CCDF70002E000C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				10CA138723CD96F9002E000C /* FilterRootViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		10CA138223CCDF89002E000C /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		10CA138323CCDF92002E000C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		10CA138623CCE22E002E000C /* Suppliers */ = {
+			isa = PBXGroup;
+			children = (
+				10CA138423CCDFAD002E000C /* SupplierFilterViewModel.swift */,
+				D56E98A623CC66C000E9817C /* SupplierFilterTableViewController.swift */,
+			);
+			path = Suppliers;
 			sourceTree = "<group>";
 		};
 		10DFE4512352616000AAB780 /* Headers */ = {
@@ -2288,25 +2323,13 @@
 			isa = PBXGroup;
 			children = (
 				D56E98A023CC5AE300E9817C /* Filter.storyboard */,
+				10CA138623CCE22E002E000C /* Suppliers */,
 				D56E989F23CC5AA900E9817C /* Views */,
-				D56E989E23CC5AA200E9817C /* API */,
-				D56E989D23CC5A8E00E9817C /* ViewModels */,
+				10CA138323CCDF92002E000C /* Models */,
+				10CA138223CCDF89002E000C /* API */,
+				10CA138123CCDF70002E000C /* ViewModels */,
 			);
 			path = Filter;
-			sourceTree = "<group>";
-		};
-		D56E989D23CC5A8E00E9817C /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		D56E989E23CC5AA200E9817C /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		D56E989F23CC5AA900E9817C /* Views */ = {
@@ -2315,7 +2338,6 @@
 				D56E98A823CC673A00E9817C /* CustomViews */,
 				D56E98A223CC669B00E9817C /* FilterTableViewController.swift */,
 				D56E98A423CC66AA00E9817C /* SortTableViewController.swift */,
-				D56E98A623CC66C000E9817C /* SupplierFilterTableViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2414,7 +2436,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = Shaik;
+				ORGANIZATIONNAME = Tatayab;
 				TargetAttributes = {
 					847CDE3C22C9EE2300E67C8C = {
 						CreatedOnToolsVersion = 9.2;
@@ -2740,6 +2762,7 @@
 				1101C66D22E0D75500416307 /* HProductCollectionViewCell.swift in Sources */,
 				27E8533D2376B703002649BE /* PromotionData.swift in Sources */,
 				10480802238C65720056F74B /* ProductImagePair.swift in Sources */,
+				10CA138823CD96F9002E000C /* FilterRootViewModel.swift in Sources */,
 				D56E98AA23CC675F00E9817C /* FilterTableViewCell.swift in Sources */,
 				2767CB94236472290042F533 /* OrderDetailsCell.swift in Sources */,
 				848E89CC22CCEAAC000AA24C /* FeatureProductCollectionViewCell.swift in Sources */,
@@ -2820,6 +2843,7 @@
 				11B07910233A7661003041E8 /* UIImage+Extensions.swift in Sources */,
 				113647FA2316FF090097FDB3 /* CategoriesBlockView.swift in Sources */,
 				11B07915233A780D003041E8 /* ConciergeAPIClient.swift in Sources */,
+				10CA138523CCDFAD002E000C /* SupplierFilterViewModel.swift in Sources */,
 				27F32DC32371F657000F7758 /* ForgetPasswordViewModel.swift in Sources */,
 				847CDE4122C9EE2300E67C8C /* AppDelegate.swift in Sources */,
 				115795C6233001F60002075E /* SupplierProductsViewModel.swift in Sources */,

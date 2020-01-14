@@ -17,41 +17,85 @@ struct Headline {
 
 }
 
-class FilterTableViewController: UITableViewController {
+protocol FilterTableViewInterface: class {
+    func setTableDataSource()
+    func reloadListData()
+    func applySelectedFilters()
+    func resetFilters()
+    func dismissScreen()
+    
+    func openSuppliersFilter()
+    func openCategoriesFilter()
+    func openPriceFilter()
+}
 
-    var headlines = [
-    Headline(id: 1, title: "Lorem Ipsum", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id ornare tortor, quis dictum enim. Morbi convallis tincidunt quam eget bibendum. Suspendisse malesuada maximus ante, at molestie massa fringilla id.", image: "Apple"),
-    Headline(id: 2, title: "Aenean condimentum", text: "Ut eget massa erat. Morbi mauris diam, vulputate at luctus non, finibus et diam. Morbi et felis a lacus pharetra blandit.", image: "Banana"),
-    Headline(id: 3, title: "In ac ante sapien", text: "Aliquam egestas ultricies dapibus. Nam molestie nunc in ipsum vehicula accumsan quis sit amet quam. Sed vel feugiat eros.", image: "Cantaloupe"),
-    ]
+class FilterTableViewController: UITableViewController {
+    
+    var viewModel: FilterRootViewModel?
+    
+    let suppliersSegue = "suppliers_segue"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        self.viewModel?.notifyViewLoaded()
     }
 
     // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//
-//        return headlines.count
-//    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return headlines.count
+        guard let viewModel = viewModel else { return 0 }
+        return viewModel.rowsCount()
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! FilterTableViewCell
-
-           let headline = headlines[indexPath.row]
-           cell.nameLBL?.text = headline.title
-           cell.arrowImg?.image = UIImage(named: "right_rectangle_product")
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: FilterTableViewCell.identifier, for: indexPath) as! FilterTableViewCell
+        if let viewModel = viewModel {
+            let (title, values) = viewModel.getCellData(at: indexPath)
+            cell.configure(title: title, values: values)
+        }
+        
+//           cell.arrowImg?.image = UIImage(named: "right_rectangle_product")
            return cell
        }
-   
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let viewModel = viewModel else { return }
+        viewModel.didSelectRow(at: indexPath)
+    }
+}
 
+extension FilterTableViewController: FilterTableViewInterface {
+    func setTableDataSource() {
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+    }
+    
+    func reloadListData() {
+        self.tableView.reloadData()
+    }
+    
+    func applySelectedFilters() {
+        
+    }
+    
+    func resetFilters() {
+        
+    }
+    
+    func dismissScreen() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func openSuppliersFilter() {
+        self.performSegue(withIdentifier: suppliersSegue, sender: nil)
+    }
+    
+    func openCategoriesFilter() {
+        
+    }
+    
+    func openPriceFilter() {
+        
+    }
 }
