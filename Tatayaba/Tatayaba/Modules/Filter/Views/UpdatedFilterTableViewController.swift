@@ -29,7 +29,7 @@ protocol FilterTableViewInterface: class {
     func openPriceFilter()
 }
 
-class FilterTableViewController: UITableViewController {
+class UpdatedFilterTableViewController: UITableViewController {
     
     var viewModel: FilterRootViewModel?
     
@@ -65,7 +65,7 @@ class FilterTableViewController: UITableViewController {
     }
 }
 
-extension FilterTableViewController: FilterTableViewInterface {
+extension UpdatedFilterTableViewController: FilterTableViewInterface {
     func setTableDataSource() {
         self.tableView.delegate = self
         self.tableView.dataSource = self

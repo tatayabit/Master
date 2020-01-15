@@ -91,7 +91,7 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
         }
         
         if segue.identifier == filterSegue {
-            let filterVC = segue.destination as! FilterTableViewController
+            let filterVC = segue.destination as! UpdatedFilterTableViewController
             if let viewModel = viewModel {
                 filterVC.viewModel = viewModel.filterViewModel()
             }
