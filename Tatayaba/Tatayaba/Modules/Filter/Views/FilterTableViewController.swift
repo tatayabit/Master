@@ -34,10 +34,13 @@ class FilterTableViewController: UITableViewController {
     var viewModel: FilterRootViewModel?
     
     let suppliersSegue = "suppliers_segue"
+    let priceSegue = "price_segue"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel?.notifyViewLoaded()
+        viewModel?.view = self
     }
 
     // MARK: - Table view data source
@@ -52,9 +55,7 @@ class FilterTableViewController: UITableViewController {
             let (title, values) = viewModel.getCellData(at: indexPath)
             cell.configure(title: title, values: values)
         }
-        
-//           cell.arrowImg?.image = UIImage(named: "right_rectangle_product")
-           return cell
+        return cell
        }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -96,6 +97,6 @@ extension FilterTableViewController: FilterTableViewInterface {
     }
     
     func openPriceFilter() {
-        
+        self.performSegue(withIdentifier: priceSegue, sender: nil)
     }
 }

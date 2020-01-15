@@ -21,6 +21,7 @@ class FilterTableViewCell: UITableViewCell {
     func configure(title: String, values: String) {
         self.nameLabel.text = title
         self.detailsLabel.text = values
+       // self.arrowImg.image = UIImage(named: "right_rectangle_product")
     }
 
 }

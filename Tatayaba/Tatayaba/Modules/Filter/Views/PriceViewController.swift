@@ -19,14 +19,21 @@ class PriceViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.NavigationBarWithBackButton()
-        setViewBorder()
+        setView()
         
         // Do any additional setup after loading the view.
     }
     
-    func setViewBorder(){
+    func setView(){
+        self.minLBL.text = "Min".localized()
+        self.maxLBL.text = "Max".localized()
         minView.addBottomBorder()
         maxView.addBottomBorder()
     }
 
+    @IBAction func applyPriceAction(_ sender: Any) {
+        let minPrice = self.minValueTXT.text
+        let maxPrice = self.maxValueTXT.text
+        self.navigationController?.popViewController(animated: true)
+    }
 }

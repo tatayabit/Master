@@ -34,6 +34,7 @@ class FilterRootViewModel {
     
     init(initializer: InitializerType) {
         self.initializer = initializer
+        
     }
     
     func search(with text: String) {}
