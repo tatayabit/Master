@@ -133,3 +133,5 @@ alertValaidationMessage = "You have to upgrade , your version is not supported a
 "OverView" = "Product Details";
 "Brand" = "Brand";
 
+"Min"="Min";
+"Max"="Max";

@@ -74,8 +74,8 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
-//        performSegue(withIdentifier: filterSegue, sender: nil)
+       // performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
+        performSegue(withIdentifier: filterSegue, sender: nil)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
