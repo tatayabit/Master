@@ -38,6 +38,7 @@ class FilterTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel?.notifyViewLoaded()
+        self.viewModel?.view = self
     }
 
     // MARK: - Table view data source

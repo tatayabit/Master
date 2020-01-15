@@ -12,14 +12,27 @@ protocol SupplierFilterViewModelInterface {
 //    func supplier(at row: Int) -> Supplier
 }
 
-class SupplierFilterViewModel: SupplierFilterViewModelInterface {
+class SupplierFilterViewModel {
     weak var view: SupplierFilterViewInterface?
 
     private var allSuppliers = [Supplier]()
+    var resultSuppliers: [Supplier]
+    
+    init() {
+        self.resultSuppliers = allSuppliers
+    }
+    
+}
 
-    func notifyViewLoaded() {}
-    func search(with text: String) {}
-//    func supplier(at row: Int) -> Supplier {}
+extension SupplierFilterViewModel: SupplierFilterViewModelInterface {
+    func notifyViewLoaded() {
+        self.view?.reloadListData()
+    }
     
+    func search(with text: String) {
+        self.resultSuppliers = self.allSuppliers.filter{ $0.name.contains(text) }
+        self.view?.reloadListData()
+    }
     
+    //    func supplier(at row: Int) -> Supplier {}
 }

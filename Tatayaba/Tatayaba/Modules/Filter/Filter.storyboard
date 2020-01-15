@@ -106,6 +106,9 @@
                         <viewLayoutGuide key="safeArea" id="cW6-Yi-mbT"/>
                     </view>
                     <navigationItem key="navigationItem" id="jOa-Kf-lQu"/>
+                    <connections>
+                        <outlet property="searchBar" destination="sNe-cF-c8b" id="RAC-gB-RMt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7f-Uu-Xi1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
