@@ -148,5 +148,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B3907733-5D15-45C3-AC63-10680DA420F0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../Tatayab Files/untitled folder 2/Filter/ViewModel/FilterViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "getSupplierList()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B3907733-5D15-45C3-AC63-10680DA420F0 - a984dc2de0671070"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.FilterViewModel.getSupplierList() -&gt; ()"
+                  moduleName = "TATAYAB - &#x62a;&#x637;&#x64a;&#x651;&#x628;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kareemmohammed/Documents/Tatayab%20Files/untitled%20folder%202/Filter/ViewModel/FilterViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "B3907733-5D15-45C3-AC63-10680DA420F0 - ed970d418ebb19ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.SuppliersResult&gt;, Moya.MoyaError&gt;) -&gt; () in TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.FilterViewModel.getSupplierList() -&gt; ()"
+                  moduleName = "TATAYAB - &#x62a;&#x637;&#x64a;&#x651;&#x628;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kareemmohammed/Documents/Tatayab%20Files/untitled%20folder%202/Filter/ViewModel/FilterViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "322">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
