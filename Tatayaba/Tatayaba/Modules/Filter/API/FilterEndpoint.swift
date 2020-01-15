@@ -78,7 +78,8 @@ extension FilterEndpoint: TargetType {
         case .getSuppliers:
             return .requestParameters(parameters: [
                     "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
-                                            "lang_code": LanguageManager.getLanguage()
+                                            "lang_code": LanguageManager.getLanguage(),
+                                            "get_all":""
             ], encoding: URLEncoding.default)
         case .getCategories:
             var currencyId = Constants.Currency.kuwaitCurrencyId
