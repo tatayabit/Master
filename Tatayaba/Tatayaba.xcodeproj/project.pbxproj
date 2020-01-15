@@ -295,6 +295,7 @@
 		D56E98A723CC66C000E9817C /* SupplierFilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56E98A623CC66C000E9817C /* SupplierFilterTableViewController.swift */; };
 		D56E98AA23CC675F00E9817C /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56E98A923CC675F00E9817C /* FilterTableViewCell.swift */; };
 		D59AF4D523A8C8D60093EF40 /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59AF4D423A8C8D60093EF40 /* DescriptionTableViewCell.swift */; };
+		D59E55E723CEFC1900DF3BA5 /* PriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59E55E623CEFC1900DF3BA5 /* PriceViewController.swift */; };
 		D5B71207238E1420006BD0DD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B71206238E1420006BD0DD /* SearchViewController.swift */; };
 		D5B71209238E14E0006BD0DD /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B71208238E14E0006BD0DD /* Search.storyboard */; };
 		D5B7120E23903795006BD0DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5B7121023903795006BD0DD /* InfoPlist.strings */; };
@@ -644,6 +645,7 @@
 		D56E98A623CC66C000E9817C /* SupplierFilterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierFilterTableViewController.swift; sourceTree = "<group>"; };
 		D56E98A923CC675F00E9817C /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		D59AF4D423A8C8D60093EF40 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		D59E55E623CEFC1900DF3BA5 /* PriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceViewController.swift; sourceTree = "<group>"; };
 		D5B71206238E1420006BD0DD /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D5B71208238E14E0006BD0DD /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		D5B7120F23903795006BD0DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -2338,6 +2340,7 @@
 				D56E98A823CC673A00E9817C /* CustomViews */,
 				D56E98A223CC669B00E9817C /* FilterTableViewController.swift */,
 				D56E98A423CC66AA00E9817C /* SortTableViewController.swift */,
+				D59E55E623CEFC1900DF3BA5 /* PriceViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2792,6 +2795,7 @@
 				116C936322F0930300921893 /* OrdersEndpoint.swift in Sources */,
 				11624ECF230C454A00E81ABD /* BlockProduct.swift in Sources */,
 				11081EFB22DB8F4900B68EA5 /* ProfileDetailsView.swift in Sources */,
+				D59E55E723CEFC1900DF3BA5 /* PriceViewController.swift in Sources */,
 				847CDE4922C9EE2300E67C8C /* Tatayaba.xcdatamodeld in Sources */,
 				8407BABF22E8623E001F2C2A /* OrderModel.swift in Sources */,
 				10480819238DC9C10056F74B /* VersionValidationEndpoint.swift in Sources */,
