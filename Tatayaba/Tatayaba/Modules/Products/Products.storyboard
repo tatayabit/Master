@@ -70,7 +70,7 @@
                         <outlet property="productsCollectionView" destination="92z-o3-Ol4" id="FQA-sx-fMk"/>
                         <segue destination="d0B-yD-4bh" kind="show" identifier="product_details_segue" id="fIf-Rr-DOj"/>
                         <segue destination="LEC-nR-jgK" kind="push" identifier="search_segue" id="LcB-7d-yWi"/>
-                        <segue destination="GWU-Rf-ecK" kind="show" identifier="filter_segue" id="EJm-4a-S38"/>
+                        <segue destination="GWU-Rf-ecK" kind="presentation" identifier="filter_segue" id="EJm-4a-S38"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BII-o7-ZTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
