@@ -118,7 +118,18 @@ alertValaidationMessage = "You have to upgrade , your version is not supported a
 "Mada" = "Mada";
 "Visa" = "Visa, Mastercard";
 "Cash on delivery" = "Cash on delivery";
-//
+
+// custom Filter view
+"Free Delivery" = "FREE DELIVERY";
+"Filter" = "FILTER";
+"Sort" = "SORT";
+"Feature" = "Feature";
+"price" = "price";
+"Rating" = "Rating";
+"popularity" = "popularity";
+"High to low" = "High to low";
+"Low to high" = "Low to high";
 "OFF" = "OFF";
 "OverView" = "Product Details";
 "Brand" = "Brand";
+

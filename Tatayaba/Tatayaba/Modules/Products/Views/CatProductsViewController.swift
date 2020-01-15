@@ -11,9 +11,12 @@ import UIKit
 class CatProductsViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ProductsBlockCollectionViewCellDelegate {
 
     @IBOutlet weak var productsCollectionView: UICollectionView!
+    @IBOutlet weak var filterView: SortingReusableCustomView!
     @IBOutlet weak var categoryNameLabel: UILabel!
 
     var viewModel: CatProductsViewModel?
+    var selectedFilterOption:String?
+    var sortFilterOption:String?
     private let productDetailsSegue = "product_details_segue"
     private let searchSegue = "search_segue"
     private let filterSegue = "filter_segue"
@@ -32,6 +35,7 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
         guard let viewModel = viewModel else { return }
         self.showLoadingIndicator(to: self.view)
         viewModel.setDelegate(self)
+        self.filterView.delegate = self
         viewModel.fetchModerators()
     }
 
@@ -65,7 +69,7 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard let viewModel = viewModel else { return }
         if indexPath.row == viewModel.currentCount - 1 {  //numberofitem count
-            viewModel.fetchModerators()
+            viewModel.loadMoreViewAction()//fetchModerators()
             print("reached last cell!")
         }
     }
@@ -167,4 +171,51 @@ extension CatProductsViewController: CatProductsViewModelDelegate {
 //        let action = UIAlertAction(title: "OK".localizedString, style: .default)
 //        displayAlert(with: title , message: reason, actions: [action])
     }
+}
+extension CatProductsViewController : FilterDelegate,isAbleToReceiveData{
+    func freeDeliveryClick() {
+        print("freeDeliveryClick")
+        guard let viewModel = viewModel else { return }
+        viewModel.freeDeliveryPressed()
+    }
+    
+    func filterClick() {
+        let vc = FilterTableViewController()
+        vc.delegate = self
+        vc.viewType = 0
+        vc.selectedFilterOption = self.selectedFilterOption
+        let navController = UINavigationController(rootViewController: vc)
+        self.navigationController?.present(navController, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil)
+    }
+    func sortClick() {
+        let vc = FilterTableViewController()
+        vc.delegate = self
+        vc.viewType = 1
+        vc.sortFilterOption = self.sortFilterOption
+        let navController = UINavigationController(rootViewController: vc)
+        self.navigationController?.present(navController, animated: true, completion: nil)
+    }
+    
+    func pass(data: String, type: Int) { //conforms to protocol
+    // implement your own implementation
+        print(data)
+        guard let viewModel = viewModel else { return }
+        if type == 0 {
+            // filter
+            selectedFilterOption = data
+            viewModel.filterOptionsChanged(filterValue: data)
+
+        } else if type == 1 {
+            // sort by
+            sortFilterOption = data
+            let sortBy: FilterSettings.SortingOptions = data.lowercased() == "low to high" ? .ascending : .descending
+            viewModel.sortByOptionsChanged(sortBy: sortBy)
+        }
+        
+        self.productsCollectionView.reloadData()
+
+        
+     }
+    
 }

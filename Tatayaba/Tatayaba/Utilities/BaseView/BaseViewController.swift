@@ -149,13 +149,43 @@ extension UIViewController {
         let item2 = UIBarButtonItem(customView: btn2)
         
         self.navigationItem.leftBarButtonItem  = item2
-        
-        
-        
     }
+    
+     func NavigationBarWithCancelButton(){
+           
+        self.navigationItem.hidesBackButton = true
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.navigationBar.barTintColor = .brandDarkBlue
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.hidesBottomBarWhenPushed = false
+        self.tabBarController?.tabBar.isHidden = false
+        var logo: UIImage = UIImage()
+        if MOLHLanguage.currentAppleLanguage() == "en" {
+            logo = UIImage(named: "barName_Eng") ?? UIImage()
+        } else {
+            logo = UIImage(named: "barName_ar") ?? UIImage()
+        }
+        let imageView = UIImageView(image:logo)
+        imageView.contentMode = .scaleAspectFit
+        navigationItem.titleView = imageView
+           
+        let btn2 = UIButton(type: .custom)
+//           btn2.setImage(UIImage(named: "BackBar"), for: .normal)
+        btn2.setTitle("Cancel".localized(), for: .normal)
+        btn2.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        btn2.addTarget(self, action: #selector(cancel), for: .touchUpInside)
+        let item2 = UIBarButtonItem(customView: btn2)
+           
+        self.navigationItem.leftBarButtonItem  = item2
+       }
+    
     @objc func action(){
         navigationController?.popViewController(animated: true)
     }
+    
+    @objc func cancel(){
+           dismiss(animated: true, completion: nil)
+       }
     
     
     

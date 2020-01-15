@@ -12,6 +12,7 @@ enum SuppliersEndpoint {
     case getSuppliers(page: String)
     case getSuppliersSortedByPosition(page: String)
     case getSupplierDetails(supplierId: String, page: String)
+    case getFilteredProductOfSupplier(supplierId: String, page: String,sort_by:String,sort_order:String)
 }
 
 
@@ -39,12 +40,15 @@ extension SuppliersEndpoint: TargetType {
         case .getSupplierDetails(let supplierId, _):
             let version = "4.0"
             return "\(version.urlEscaped)/TtmSuppliers/\(supplierId.urlEscaped)"
+        case .getFilteredProductOfSupplier( _,  _, _, _):
+        let version = "4.0"
+        return "\(version.urlEscaped)/TtmProducts/"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .getSuppliers, .getSupplierDetails, .getSuppliersSortedByPosition:
+        case .getSuppliers, .getSupplierDetails, .getSuppliersSortedByPosition,.getFilteredProductOfSupplier:
             return .get
         }
     }
@@ -79,6 +83,21 @@ extension SuppliersEndpoint: TargetType {
                                                 "currency_id": currencyId.urlEscaped,
                                                 "lang_code": LanguageManager.getLanguage()
             ], encoding: URLEncoding.default)
+            
+        case .getFilteredProductOfSupplier(let supplierId, let page, let sort_by, let sort_order):
+            var currencyId = Constants.Currency.kuwaitCurrencyId
+            if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
+                currencyId = countryCurrency
+            }
+            return .requestParameters(parameters: [ "items_per_page": 20,
+                                                    "page": page.urlEscaped,
+                                                    "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
+                                                    "lang_code": LanguageManager.getLanguage(),
+                                                    "currency_id": currencyId.urlEscaped,
+                                                    "sort_order": sort_order,
+                                                    "sort_by": sort_by,
+                                                    "supplier_id": supplierId
+                ], encoding: URLEncoding.default)
         case .getSuppliersSortedByPosition(let page):
             return .requestParameters(parameters: [
                                                 "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",

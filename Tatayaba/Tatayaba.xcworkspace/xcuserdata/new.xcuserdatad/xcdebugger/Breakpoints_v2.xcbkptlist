@@ -1017,6 +1017,25 @@
             endingLineNumber = "139"
             landmarkName = "ProductDetails"
             landmarkType = "14">
+
+            <Locations>
+               <Location
+                  uuid = "9638E602-14A3-4BA7-9EC4-930088D9D9CE - e9672346a05fb71"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.Constants.ProductDetails.addToCart.unsafeMutableAddressor : Swift.String"
+                  moduleName = "TATAYAB - &#x62a;&#x637;&#x64a;&#x651;&#x628;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Tatyab/Master/Tatayaba/Tatayaba/Modules/DashBoard/Views/ProductsBlockView/ProductsBlockCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1093,8 +1112,12 @@
             filePath = "Tatayaba/Modules/Products/Views/SupplierProductsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182">
+
+            startingLineNumber = "235"
+            endingLineNumber = "235"
+            landmarkName = "pass(data:type:)"
+            landmarkType = "7">
+
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1109,6 +1132,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "187"
             endingLineNumber = "187"
+
             landmarkName = "setView(view:hidden:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1123,8 +1147,11 @@
             filePath = "Tatayaba/Modules/Products/Views/SupplierProductsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182">
+            startingLineNumber = "228"
+            endingLineNumber = "228"
+            landmarkName = "sortClick()"
+            landmarkType = "7">
+
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1137,8 +1164,11 @@
             filePath = "Tatayaba/Modules/Products/Views/CatProductsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162">
+
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "pass(data:type:)"
+
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

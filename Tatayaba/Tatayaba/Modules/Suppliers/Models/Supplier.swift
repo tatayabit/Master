@@ -32,7 +32,7 @@ struct Supplier {
     var status: String? = ""
     var name: String = ""
     var logo: SupplierLogo?
-    var products: [Product]?
+    var products: [Product]
 
     init(supplierId: String = "", status: String = "", name: String = "", logo: SupplierLogo = SupplierLogo(), products: [Product] = [Product]()) {
         self.supplierId = supplierId
@@ -45,6 +45,7 @@ struct Supplier {
     init(supplierId: String = "",name: String = "") {
         self.supplierId = supplierId
         self.name = name
+        self.products = [Product]()
     }
 }
 

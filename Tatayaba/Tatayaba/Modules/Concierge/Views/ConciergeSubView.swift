@@ -26,14 +26,14 @@ class ConciergeSubView: UIView, ValidationDelegate {
     @IBOutlet weak var customerNameTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var phoneTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var countryButton: UIButton!
-
+//    @IBOutlet weak var bannerImageViewHeightConstraint: NSLayoutConstraint!
+    
     var country: Country?
     weak var delegate: ConciergeSubViewDelegate?
     private let validator = Validator()
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
        // bannerImageView.sd_setImage(with: URL(string: "https://tatayab.com/images/companies/1/inside%20page%20english.jpg"), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
         perufumDescription.placeholder = "Perform Description".localized()
         perufumDescription.isScrollEnabled = false
@@ -93,15 +93,13 @@ class ConciergeSubView: UIView, ValidationDelegate {
     }
 
     @IBAction func countryAction(_ sender: Any) {
-       
         if let delegate = delegate {
             delegate.didSelectCounty()
         }
-
-        
     }
 
     @IBAction func submitAction(_ sender: Any) {
+
         if ((perfumeImage.image?.isEqualToImage(image: #imageLiteral(resourceName: "camera-logo")))! ){
             if let delegate = delegate {
                 delegate.didFailConciergeValidation(errorTitle: Constants.Common.error, errorMessage: "Perfum image is reqired")
@@ -113,6 +111,7 @@ class ConciergeSubView: UIView, ValidationDelegate {
 //        if let delegate = delegate {
 //            delegate.didSelectSubmitConcierge(concierge: createConcierge())
 //        }
+
     }
     
 }
