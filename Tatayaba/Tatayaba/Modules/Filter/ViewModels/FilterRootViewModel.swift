@@ -30,12 +30,11 @@ class FilterRootViewModel {
     private var minimumPrice = 0.00
     private var maximumPrice = 0.00
     private var freeDelivery = false
-    
+    private var featured = false
     var initializer: InitializerType
     
     init(initializer: InitializerType) {
         self.initializer = initializer
-        
     }
         
     
@@ -59,6 +58,11 @@ class FilterRootViewModel {
         return ("Free Delivery", freeDeliveryString)
     }
     
+    func featuredData() -> (String, String) {
+        let featuredString = self.featured ? "Featured" : ""
+        return ("Featured", featuredString)
+    }
+    
     func isFilterApplied() -> Bool {
         let suppliersApplied = self.suppliers.count > 0
         let categoriesApplied = self.categories.count > 0
@@ -77,6 +81,8 @@ class FilterRootViewModel {
             return self.priceData()
         case .freeDelivery:
             return self.freeDeliveryData()
+        case .featured:
+            return self.featuredData()
         case .none:
             return ("", "")
         }
@@ -90,6 +96,8 @@ class FilterRootViewModel {
             return self.priceData()
         case .freeDelivery:
             return self.freeDeliveryData()
+        case .featured:
+            return self.featuredData()
         case .none:
             return ("", "")
         }
@@ -106,6 +114,8 @@ class FilterRootViewModel {
             return self.priceData()
         case .freeDelivery:
             return self.freeDeliveryData()
+        case .featured:
+            return self.featuredData()
         case .none:
             return ("", "")
         }
@@ -119,6 +129,7 @@ class FilterRootViewModel {
         case .price:
             self.view?.openPriceFilter()
         case .freeDelivery: break
+        case .featured: break
 //            return self.freeDeliveryData()
         case .none: break
         }
@@ -131,6 +142,7 @@ class FilterRootViewModel {
         case .price:
             self.view?.openPriceFilter()
         case .freeDelivery: break
+        case .featured: break
 //            return self.freeDeliveryData()
         case .none: break
         }
@@ -146,6 +158,7 @@ class FilterRootViewModel {
         case .price:
             self.view?.openPriceFilter()
         case .freeDelivery: break
+         case .featured: break
 //            return self.freeDeliveryData()
         case .none: break
         }
@@ -258,16 +271,19 @@ extension FilterRootViewModel {
         case supplier
         case search
         
+        
         enum CategoryRowTypes: Int, CaseIterable {
             case supplier
             case price
             case freeDelivery
+            case featured
         }
         
         enum SupplierRowTypes: Int, CaseIterable {
             case category
             case price
             case freeDelivery
+            case featured
         }
         
         enum SearchRowTypes: Int, CaseIterable {
@@ -275,6 +291,7 @@ extension FilterRootViewModel {
             case supplier
             case price
             case freeDelivery
+            case featured
         }
     }
 }

@@ -70,7 +70,7 @@
                         <outlet property="productsCollectionView" destination="92z-o3-Ol4" id="FQA-sx-fMk"/>
                         <segue destination="d0B-yD-4bh" kind="show" identifier="product_details_segue" id="fIf-Rr-DOj"/>
                         <segue destination="LEC-nR-jgK" kind="push" identifier="search_segue" id="LcB-7d-yWi"/>
-                        <segue destination="GWU-Rf-ecK" kind="presentation" identifier="filter_segue" id="EJm-4a-S38"/>
+                        <segue destination="GWU-Rf-ecK" kind="push" identifier="filter_segue" id="EJm-4a-S38"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BII-o7-ZTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -150,7 +150,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hg0-vr-SMQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1176.8" y="773.16341829085468"/>
+            <point key="canvasLocation" x="1687" y="653"/>
         </scene>
         <!--Categories View Controller-->
         <scene sceneID="pEE-rE-1yF">
@@ -255,6 +255,7 @@
                         <outlet property="supplierNameLabel" destination="8ad-wf-Gam" id="knu-5w-sdg"/>
                         <segue destination="d0B-yD-4bh" kind="show" identifier="product_details_segue" id="n7o-Ql-kGT"/>
                         <segue destination="LEC-nR-jgK" kind="push" identifier="search_segue" id="IM8-ZJ-GB5"/>
+                        <segue destination="GWU-Rf-ecK" kind="push" identifier="filter_segue" id="MFM-Q4-eKc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ESN-nf-T4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -276,7 +277,8 @@
         <image name="Close" width="130" height="130"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LcB-7d-yWi"/>
-        <segue reference="fIf-Rr-DOj"/>
+        <segue reference="IM8-ZJ-GB5"/>
+        <segue reference="n7o-Ql-kGT"/>
+        <segue reference="MFM-Q4-eKc"/>
     </inferredMetricsTieBreakers>
 </document>

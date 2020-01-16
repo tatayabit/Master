@@ -47,6 +47,8 @@
 		10BCEFA023D0A613000FB506 /* CategoriesFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BCEF9F23D0A613000FB506 /* CategoriesFilterViewController.swift */; };
 		10BCEFC423D10B4C000FB506 /* FilterCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BCEFC223D10B4C000FB506 /* FilterCategoryTableViewCell.swift */; };
 		10BCEFC523D10B4C000FB506 /* FilterCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10BCEFC323D10B4C000FB506 /* FilterCategoryTableViewCell.xib */; };
+		10BCEFC723D11DC3000FB506 /* FilterCategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BCEFC623D11DC3000FB506 /* FilterCategoryHeaderView.swift */; };
+		10BCEFC923D11DF8000FB506 /* FilterCategoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10BCEFC823D11DF8000FB506 /* FilterCategoryHeaderView.xib */; };
 		10C8E8F7238929DA00E22581 /* Dispatch+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C8E8F6238929DA00E22581 /* Dispatch+Extensions.swift */; };
 		10D68F1523D03BEF00D65959 /* FilterAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D68F1323D03BEF00D65959 /* FilterAPIClient.swift */; };
 		10D68F1623D03BEF00D65959 /* FilterEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D68F1423D03BEF00D65959 /* FilterEndpoint.swift */; };
@@ -393,6 +395,8 @@
 		10BCEF9F23D0A613000FB506 /* CategoriesFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFilterViewController.swift; sourceTree = "<group>"; };
 		10BCEFC223D10B4C000FB506 /* FilterCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		10BCEFC323D10B4C000FB506 /* FilterCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCategoryTableViewCell.xib; sourceTree = "<group>"; };
+		10BCEFC623D11DC3000FB506 /* FilterCategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCategoryHeaderView.swift; sourceTree = "<group>"; };
+		10BCEFC823D11DF8000FB506 /* FilterCategoryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCategoryHeaderView.xib; sourceTree = "<group>"; };
 		10C62BF523AA933300562CC0 /* TATAYAB - تطيّب.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TATAYAB - تطيّب.entitlements"; sourceTree = "<group>"; };
 		10C8E8F6238929DA00E22581 /* Dispatch+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dispatch+Extensions.swift"; sourceTree = "<group>"; };
 		10D68F1323D03BEF00D65959 /* FilterAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterAPIClient.swift; sourceTree = "<group>"; };
@@ -833,12 +837,12 @@
 			isa = PBXGroup;
 			children = (
 				10BCEF9C23D0A5D3000FB506 /* Categories */,
+				108EFB1323CF968A00E71E40 /* Filter.storyboard */,
 				10D68F1D23D03CEE00D65959 /* Suppliers */,
 				10D68F1A23D03CCF00D65959 /* Models */,
 				10D68F1723D03C2000D65959 /* ViewModel */,
 				10D68F1223D03BEF00D65959 /* API */,
 				108EFB0923CF968A00E71E40 /* ViewModels */,
-				108EFB1323CF968A00E71E40 /* Filter.storyboard */,
 				108EFB1423CF968A00E71E40 /* Views */,
 			);
 			path = Filter;
@@ -856,8 +860,9 @@
 			isa = PBXGroup;
 			children = (
 				108EFB1523CF968A00E71E40 /* UpdatedFilterTableViewController.swift */,
-				108EFB1623CF968A00E71E40 /* CustomViews */,
+				1022725723CF9A4F00788232 /* PriceViewController.swift */,
 				108EFB1823CF968A00E71E40 /* SortTableViewController.swift */,
+				108EFB1623CF968A00E71E40 /* CustomViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -946,6 +951,8 @@
 				10BCEF9F23D0A613000FB506 /* CategoriesFilterViewController.swift */,
 				10BCEFC223D10B4C000FB506 /* FilterCategoryTableViewCell.swift */,
 				10BCEFC323D10B4C000FB506 /* FilterCategoryTableViewCell.xib */,
+				10BCEFC623D11DC3000FB506 /* FilterCategoryHeaderView.swift */,
+				10BCEFC823D11DF8000FB506 /* FilterCategoryHeaderView.xib */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1132,7 +1139,6 @@
 		111004DD231D7FAA001CF248 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1022725723CF9A4F00788232 /* PriceViewController.swift */,
 				11069C3C2323A43A0093D6FF /* SuppliersListViewController.swift */,
 				4CD8B8A5232129D300D25CC3 /* Suppliers.storyboard */,
 				D57B970323C48C8C00B4B1EA /* FilterOptionsTableVC.swift */,
@@ -2579,6 +2585,7 @@
 				848E89CD22CCEAAC000AA24C /* FeatureProductCollectionViewCell.xib in Resources */,
 				11A8B15322D79377001B2661 /* Wishlist.storyboard in Resources */,
 				11257438233159CB0015C3AD /* ConciergeSubView.xib in Resources */,
+				10BCEFC923D11DF8000FB506 /* FilterCategoryHeaderView.xib in Resources */,
 				847CDE4B22C9EE2300E67C8C /* Assets.xcassets in Resources */,
 				841CE30C22DCC2D700A47FA0 /* Message.storyboard in Resources */,
 				4CC28C5E2327F1CF003EAEA6 /* Gotham-Light.otf in Resources */,
@@ -2952,6 +2959,7 @@
 				1048081C238DC9F10056F74B /* SearchProductsViewModel.swift in Sources */,
 				1113A79B2329698200FAAC7F /* CheckoutAddressTableViewCell.swift in Sources */,
 				1137042922F9C79200EAFBBD /* OrdersViewModel.swift in Sources */,
+				10BCEFC723D11DC3000FB506 /* FilterCategoryHeaderView.swift in Sources */,
 				27A9089A2357906C0032DA41 /* PaymentIcon.swift in Sources */,
 				27E8533C2376B703002649BE /* Condition.swift in Sources */,
 				848E89C522CCDDBB000AA24C /* HomeViewController.swift in Sources */,

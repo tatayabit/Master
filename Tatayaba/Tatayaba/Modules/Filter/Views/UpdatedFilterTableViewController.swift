@@ -33,21 +33,44 @@ protocol FilterTableViewInterface: class {
     func applyCategoriesFilter(categories: [Category])
 }
 
-class UpdatedFilterTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class UpdatedFilterTableViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     var viewModel: FilterRootViewModel?
     
     let suppliersSegue = "suppliers_segue"
     let categoriesSegue = "categories_segue"
+    let priceSegue = "price_Segue"
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var applyBTN: UIButton!
+    @IBOutlet weak var resetBTN: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(FilterTableViewCell.nib, forCellReuseIdentifier: FilterTableViewCell.identifier)
+        
         self.viewModel?.view = self
         self.viewModel?.notifyViewLoaded()
+        self.setup()
     }
 
+    func setup(){
+        
+        self.NavigationBarWithBackButton()
+        
+        self.tableView.tableFooterView = UIView()
+        
+        applyBTN.backgroundColor = #colorLiteral(red: 0.1335985065, green: 0.102928184, blue: 0.2107295692, alpha: 1)
+        applyBTN.layer.cornerRadius = 5
+        applyBTN.layer.borderWidth = 1
+        applyBTN.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        applyBTN.setTitle("apply".localized(), for: .normal)
+        
+        resetBTN.backgroundColor = .clear
+        resetBTN.layer.cornerRadius = 5
+        resetBTN.layer.borderWidth = 1
+        resetBTN.layer.borderColor = #colorLiteral(red: 0.1335985065, green: 0.102928184, blue: 0.2107295692, alpha: 1)
+        resetBTN.setTitle("Cancel".localized(), for: .normal)
+    }
     // MARK: - Table view data source
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
@@ -134,7 +157,7 @@ extension UpdatedFilterTableViewController: FilterTableViewInterface {
     }
     
     func openPriceFilter() {
-        
+        self.performSegue(withIdentifier: priceSegue, sender: nil)
     }
     
     func applySuppliersFilter(suppliers: [Supplier]) {

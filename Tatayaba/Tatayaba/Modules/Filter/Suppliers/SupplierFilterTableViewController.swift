@@ -13,7 +13,7 @@ protocol SupplierFilterViewInterface: class {
     func applySelectedSuppliers(suppliers: [Supplier])
 }
 
-class SupplierFilterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SupplierFilterViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var suppliersTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -24,10 +24,12 @@ class SupplierFilterViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.NavigationBarWithBackButton()
+        self.suppliersTableView.tableFooterView = UIView()
         self.searchBar.delegate = self
         self.viewModel?.view = self
         self.suppliersTableView.register(FilterSelectionTableViewCell.nib, forCellReuseIdentifier: FilterSelectionTableViewCell.identifier)
+        self.showLoadingIndicator(to: self.view)
         self.viewModel?.notifyViewLoaded()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -89,12 +91,11 @@ extension SupplierFilterViewController: SupplierFilterViewInterface {
         DispatchQueue.main.async {
            self.suppliersTableView.reloadData()
         }
+        self.hideLoadingIndicator(from: self.view)
     }
     
     func applySelectedSuppliers(suppliers: [Supplier]) {
         self.filterTableViewInterface?.applySuppliersFilter(suppliers: suppliers)
         self.navigationController?.popViewController(animated: true)
     }
-    
-    
 }

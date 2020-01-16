@@ -19,7 +19,8 @@ class SupplierProductsViewController: BaseViewController, UICollectionViewDelega
     var sortFilterOption:String?
     private let productDetailsSegue = "product_details_segue"
     private let searchSegue = "search_segue"
-
+    private let filterSegue = "filter_segue"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -108,6 +109,13 @@ class SupplierProductsViewController: BaseViewController, UICollectionViewDelega
                 if let viewModel = viewModel {
                     productDetailsVC.viewModel = viewModel.productDetailsViewModel(at: indexPath)
                 }
+            }
+        }
+        
+        if segue.identifier == filterSegue {
+            let filterVC = segue.destination as! UpdatedFilterTableViewController
+            if let viewModel = viewModel {
+                filterVC.viewModel = viewModel.filterViewModel()
             }
         }
     }
@@ -213,12 +221,13 @@ extension SupplierProductsViewController : FilterDelegate{
     }
     
     func filterClick() {
-        let vc = FilterTableViewController()
-        vc.delegate = self
-        vc.viewType = 0
-        vc.selectedFilterOption = self.selectedFilterOption
-        let navController = UINavigationController(rootViewController: vc)
-        self.navigationController?.present(navController, animated: true, completion: nil)
+        self.performSegue(withIdentifier: filterSegue, sender: nil)
+//        let vc = FilterTableViewController()
+//        vc.delegate = self
+//        vc.viewType = 0
+//        vc.selectedFilterOption = self.selectedFilterOption
+//        let navController = UINavigationController(rootViewController: vc)
+//        self.navigationController?.present(navController, animated: true, completion: nil)
 //        self.present(vc, animated: true, completion: nil)
     }
     func sortClick() {

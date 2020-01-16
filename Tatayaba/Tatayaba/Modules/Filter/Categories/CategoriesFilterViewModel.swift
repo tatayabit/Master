@@ -11,7 +11,9 @@ import Foundation
 protocol CategoriesFilterViewModelInterface {
     func notifyViewLoaded()
     func didSelectRow(at indexPath: IndexPath)
-    func categoryCellData(at row: Int) -> (Category, Bool)
+    func didSelectSection(at section: Int)
+    func subCategoryCellData(at indexPath: IndexPath) -> (Category, Bool)
+    func categorySectionData(at section: Int) -> (Category, Bool)
     func applyFilterActionPressed()
 }
 
@@ -21,7 +23,7 @@ class CategoriesFilterViewModel {
     weak var view: CategoriesFilterViewInterface?
 
     private let apiClient = FilterAPIClient()
-    private var allCategories = [Category]()
+    var allCategories = [Category]()
     private var selectedCategories: [Category]
     
     
@@ -46,13 +48,29 @@ class CategoriesFilterViewModel {
         }
     }
     
-    func categorySelected(at row: Int) -> Bool {
+    func categorySelected(at section: Int) -> Bool {
         return selectedCategories.contains(where: {
-            $0.identifier == selectedCategories[row].identifier
+            $0.identifier == selectedCategories[section].identifier
         })
     }
     
-    func addOrRemoveSupplierSelection(at row: Int) {
+    func subCategorySelected(at indexPath: IndexPath) -> Bool {
+        return false
+//        return selectedCategories.contains(where: {
+//            $0.identifier == selectedCategories[section].identifier
+//        })
+    }
+    
+    func addOrRemoveSupplierSectionSelection(at section: Int) {
+        let category = allCategories[section]
+        if self.selectedCategories.contains(where: {$0.identifier == category.identifier}) {
+            self.selectedCategories.removeAll(where: {$0.identifier == category.identifier})
+        } else {
+            self.selectedCategories.append(category)
+        }
+    }
+    
+    func addOrRemoveSupplierRowSelection(at row: Int) {
         let category = allCategories[row]
         if self.selectedCategories.contains(where: {$0.identifier == category.identifier}) {
             self.selectedCategories.removeAll(where: {$0.identifier == category.identifier})
@@ -64,17 +82,27 @@ class CategoriesFilterViewModel {
 
 
 extension CategoriesFilterViewModel: CategoriesFilterViewModelInterface {
-    func categoryCellData(at row: Int) -> (Category, Bool) {
+    // Section
+    func categorySectionData(at row: Int) -> (Category, Bool) {
         return (allCategories[row], self.categorySelected(at: row))
+    }
+    
+    func didSelectSection(at section: Int) {
+        
+    }
+    
+    // Row
+    func subCategoryCellData(at indexPath: IndexPath) -> (Category, Bool) {
+        return (allCategories[indexPath.section].subCategories[indexPath.row], self.subCategorySelected(at: indexPath))
+    }
+    
+    func didSelectRow(at indexPath: IndexPath) {
+        self.addOrRemoveSupplierRowSelection(at: indexPath.row)
+        self.view?.reloadListData()
     }
     
     func notifyViewLoaded() {
         self.callFilterCategoriesApi()
-    }
-    
-    func didSelectRow(at indexPath: IndexPath) {
-        self.addOrRemoveSupplierSelection(at: indexPath.row)
-        self.view?.reloadListData()
     }
     
     func applyFilterActionPressed() {

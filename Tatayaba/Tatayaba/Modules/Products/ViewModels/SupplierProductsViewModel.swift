@@ -197,6 +197,11 @@ class SupplierProductsViewModel {
         self.getFilteredProductsApi()
     }
     
+    // MARK:- Filter ViewModel
+    func filterViewModel() -> FilterRootViewModel {
+        return FilterRootViewModel(initializer: .supplier)
+    }
+    
     // MARK:- Reset Data
     private func resetAllProdcuts() {
         self.productsList.removeAll()
