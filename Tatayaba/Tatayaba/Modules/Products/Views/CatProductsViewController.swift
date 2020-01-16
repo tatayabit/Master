@@ -180,19 +180,7 @@ extension CatProductsViewController : FilterDelegate,isAbleToReceiveData{
     }
     
     func filterClick() {
-//        let vc = FilterTableViewController()
-//        vc.delegate = self
-//        vc.viewType = 0
-//        vc.selectedFilterOption = self.selectedFilterOption
-        
-        let filterStoryBoard = UIStoryboard(name: "Filter", bundle: nil)
-        let filterRootVC = filterStoryBoard.instantiateViewController(withIdentifier: "UpdatedFilterTableViewController") as! UpdatedFilterTableViewController
-        if let viewModel = viewModel {
-            filterRootVC.viewModel = viewModel.filterViewModel()
-        }
-        let navController = UINavigationController(rootViewController: filterRootVC)
-        self.navigationController?.present(navController, animated: true, completion: nil)
-//        self.present(vc, animated: true, completion: nil)
+        self.performSegue(withIdentifier: filterSegue, sender: nil)
     }
     func sortClick() {
         let vc = FilterTableViewController()

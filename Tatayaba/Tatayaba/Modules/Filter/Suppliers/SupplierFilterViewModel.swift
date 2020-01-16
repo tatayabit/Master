@@ -29,10 +29,12 @@ class SupplierFilterViewModel {
     }
     
     func callFilterSuppliersApi() {
+        var obj = BaseViewController()
         apiClient.getSuppliers() { result in
             switch result {
             // 3
             case .failure(let error):
+                
                 print("Failed: \(error.localizedDescription)")
             // 4
             case .success(let response):

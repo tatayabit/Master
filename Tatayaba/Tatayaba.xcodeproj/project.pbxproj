@@ -824,12 +824,12 @@
 		108EFB0623CF968A00E71E40 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				108EFB1323CF968A00E71E40 /* Filter.storyboard */,
 				10D68F1D23D03CEE00D65959 /* Suppliers */,
 				10D68F1A23D03CCF00D65959 /* Models */,
 				10D68F1723D03C2000D65959 /* ViewModel */,
 				10D68F1223D03BEF00D65959 /* API */,
 				108EFB0923CF968A00E71E40 /* ViewModels */,
-				108EFB1323CF968A00E71E40 /* Filter.storyboard */,
 				108EFB1423CF968A00E71E40 /* Views */,
 			);
 			path = Filter;
@@ -847,8 +847,9 @@
 			isa = PBXGroup;
 			children = (
 				108EFB1523CF968A00E71E40 /* UpdatedFilterTableViewController.swift */,
-				108EFB1623CF968A00E71E40 /* CustomViews */,
+				1022725723CF9A4F00788232 /* PriceViewController.swift */,
 				108EFB1823CF968A00E71E40 /* SortTableViewController.swift */,
+				108EFB1623CF968A00E71E40 /* CustomViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1112,7 +1113,6 @@
 		111004DD231D7FAA001CF248 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1022725723CF9A4F00788232 /* PriceViewController.swift */,
 				11069C3C2323A43A0093D6FF /* SuppliersListViewController.swift */,
 				4CD8B8A5232129D300D25CC3 /* Suppliers.storyboard */,
 				D57B970323C48C8C00B4B1EA /* FilterOptionsTableVC.swift */,

@@ -15,6 +15,7 @@ class PriceViewController: BaseViewController {
     @IBOutlet weak var maxValueTXT: UITextField!
     @IBOutlet weak var minLBL: UILabel!
     @IBOutlet weak var maxLBL: UILabel!
+    @IBOutlet weak var applyBTN: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class PriceViewController: BaseViewController {
     func setView(){
         self.minLBL.text = "Min".localized()
         self.maxLBL.text = "Max".localized()
+        self.applyBTN.setTitle("apply".localized(), for: .normal)
         minView.addBottomBorder()
         maxView.addBottomBorder()
     }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GLN-Po-Fbg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GLN-Po-Fbg">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -70,7 +70,7 @@
                         <outlet property="productsCollectionView" destination="92z-o3-Ol4" id="FQA-sx-fMk"/>
                         <segue destination="d0B-yD-4bh" kind="show" identifier="product_details_segue" id="fIf-Rr-DOj"/>
                         <segue destination="LEC-nR-jgK" kind="push" identifier="search_segue" id="LcB-7d-yWi"/>
-                        <segue destination="GWU-Rf-ecK" kind="presentation" identifier="filter_segue" id="EJm-4a-S38"/>
+                        <segue destination="GWU-Rf-ecK" kind="push" identifier="filter_segue" id="EJm-4a-S38"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BII-o7-ZTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -150,7 +150,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hg0-vr-SMQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1176.8" y="773.16341829085468"/>
+            <point key="canvasLocation" x="1687" y="653"/>
         </scene>
         <!--Categories View Controller-->
         <scene sceneID="pEE-rE-1yF">
@@ -276,7 +276,7 @@
         <image name="Close" width="130" height="130"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LcB-7d-yWi"/>
-        <segue reference="fIf-Rr-DOj"/>
+        <segue reference="IM8-ZJ-GB5"/>
+        <segue reference="n7o-Ql-kGT"/>
     </inferredMetricsTieBreakers>
 </document>
