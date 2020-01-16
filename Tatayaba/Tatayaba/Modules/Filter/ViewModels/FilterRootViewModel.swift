@@ -36,10 +36,7 @@ class FilterRootViewModel {
         self.initializer = initializer
         
     }
-    
-    func search(with text: String) {}
-//    func supplier(at row: Int) -> Supplier {}
-    
+        
     
     func suppliersData() -> (String, String) {
         return ("Suppliers", self.suppliers.map{ $0.name }.joined(separator: ", "))
