@@ -43,6 +43,8 @@
 		10B08377234CF92C00DCE773 /* CartEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B08376234CF92C00DCE773 /* CartEndpoint.swift */; };
 		10B4CBCB237336ED0065918D /* DataBase64Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B4CBCA237336ED0065918D /* DataBase64Decodable.swift */; };
 		10B8F81223C3D0D800B6A325 /* FilterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B8F81123C3D0D800B6A325 /* FilterSettings.swift */; };
+		10BCEF9E23D0A5EE000FB506 /* CategoriesFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BCEF9D23D0A5EE000FB506 /* CategoriesFilterViewModel.swift */; };
+		10BCEFA023D0A613000FB506 /* CategoriesFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BCEF9F23D0A613000FB506 /* CategoriesFilterViewController.swift */; };
 		10C8E8F7238929DA00E22581 /* Dispatch+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C8E8F6238929DA00E22581 /* Dispatch+Extensions.swift */; };
 		10D68F1523D03BEF00D65959 /* FilterAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D68F1323D03BEF00D65959 /* FilterAPIClient.swift */; };
 		10D68F1623D03BEF00D65959 /* FilterEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D68F1423D03BEF00D65959 /* FilterEndpoint.swift */; };
@@ -385,6 +387,8 @@
 		10B08376234CF92C00DCE773 /* CartEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartEndpoint.swift; sourceTree = "<group>"; };
 		10B4CBCA237336ED0065918D /* DataBase64Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase64Decodable.swift; sourceTree = "<group>"; };
 		10B8F81123C3D0D800B6A325 /* FilterSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettings.swift; sourceTree = "<group>"; };
+		10BCEF9D23D0A5EE000FB506 /* CategoriesFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFilterViewModel.swift; sourceTree = "<group>"; };
+		10BCEF9F23D0A613000FB506 /* CategoriesFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFilterViewController.swift; sourceTree = "<group>"; };
 		10C62BF523AA933300562CC0 /* TATAYAB - تطيّب.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TATAYAB - تطيّب.entitlements"; sourceTree = "<group>"; };
 		10C8E8F6238929DA00E22581 /* Dispatch+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dispatch+Extensions.swift"; sourceTree = "<group>"; };
 		10D68F1323D03BEF00D65959 /* FilterAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterAPIClient.swift; sourceTree = "<group>"; };
@@ -824,6 +828,7 @@
 		108EFB0623CF968A00E71E40 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				10BCEF9C23D0A5D3000FB506 /* Categories */,
 				10D68F1D23D03CEE00D65959 /* Suppliers */,
 				10D68F1A23D03CCF00D65959 /* Models */,
 				10D68F1723D03C2000D65959 /* ViewModel */,
@@ -928,6 +933,15 @@
 				10B4CBCA237336ED0065918D /* DataBase64Decodable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		10BCEF9C23D0A5D3000FB506 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				10BCEF9D23D0A5EE000FB506 /* CategoriesFilterViewModel.swift */,
+				10BCEF9F23D0A613000FB506 /* CategoriesFilterViewController.swift */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		10D68F1223D03BEF00D65959 /* API */ = {
@@ -2827,6 +2841,7 @@
 				11C271B622F20E24004613E3 /* AddressTableViewCell.swift in Sources */,
 				1083BFFD235B355600360E78 /* LiveChatViewController.swift in Sources */,
 				11FB584D231C2DBB005DA4F0 /* ProductsBlockView.swift in Sources */,
+				10BCEF9E23D0A5EE000FB506 /* CategoriesFilterViewModel.swift in Sources */,
 				4C219865233BBAA000DE40FA /* CountryViewController.swift in Sources */,
 				11945BBE22F0B08D000F08DC /* CheckOutViewModel.swift in Sources */,
 				11007BD222DE2E6600AC9957 /* CatProductsViewModel.swift in Sources */,
@@ -2859,6 +2874,7 @@
 				11069C392323A2EE0093D6FF /* SupplierDetailsViewModel.swift in Sources */,
 				11FB5872231D5F13005DA4F0 /* SuppliersBlockView.swift in Sources */,
 				100586A02386FCEB00D6CA76 /* ConvertedProduct.swift in Sources */,
+				10BCEFA023D0A613000FB506 /* CategoriesFilterViewController.swift in Sources */,
 				112654A922D25E5B00904FB5 /* SignUpResponse.swift in Sources */,
 				11D4E69F2312FC5500226A23 /* FullScreenBannersView.swift in Sources */,
 				11945BBB22F0B08D000F08DC /* CheckOutViewController.swift in Sources */,

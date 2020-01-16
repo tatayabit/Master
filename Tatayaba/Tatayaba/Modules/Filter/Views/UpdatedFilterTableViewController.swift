@@ -30,6 +30,7 @@ protocol FilterTableViewInterface: class {
     
     // suppliers filter interface
     func applySuppliersFilter(suppliers: [Supplier])
+    func applyCategoriesFilter(categories: [Category])
 }
 
 class UpdatedFilterTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -92,6 +93,7 @@ class UpdatedFilterTableViewController: UIViewController, UITableViewDelegate, U
 }
 
 extension UpdatedFilterTableViewController: FilterTableViewInterface {
+    
     func setTableDataSource() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -129,5 +131,10 @@ extension UpdatedFilterTableViewController: FilterTableViewInterface {
     func applySuppliersFilter(suppliers: [Supplier]) {
         guard let viewModel = viewModel else { return }
         viewModel.didUpdateSuppliers(newSuppliers: suppliers)
+    }
+    
+    func applyCategoriesFilter(categories: [Category]) {
+        guard let viewModel = viewModel else { return }
+        viewModel.didUpdateCategories(newCategories: categories)
     }
 }

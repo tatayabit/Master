@@ -60,10 +60,6 @@ class SupplierFilterViewModel {
             self.selectedSuppliers.append(supplier)
         }
     }
-    
-    func nothing() {
-        
-    }
 }
 
 extension SupplierFilterViewModel: SupplierFilterViewModelInterface {
