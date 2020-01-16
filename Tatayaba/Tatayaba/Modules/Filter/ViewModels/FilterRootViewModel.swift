@@ -13,6 +13,7 @@ protocol FilterRootViewModelInterface {
     func getCellData(at indexPath: IndexPath) -> (String, String)
     func didSelectRow(at indexPath: IndexPath)
     func rowsCount() -> Int
+    func didPressResetFilter()
     
     // from other viewModels
     func didUpdateCategories(newCategories: [Category])
@@ -56,6 +57,15 @@ class FilterRootViewModel {
     func freeDeliveryData() -> (String, String) {
         let freeDeliveryString = self.freeDelivery ? "Free Delivery" : ""
         return ("Free Delivery", freeDeliveryString)
+    }
+    
+    func isFilterApplied() -> Bool {
+        let suppliersApplied = self.suppliers.count > 0
+        let categoriesApplied = self.categories.count > 0
+        let minimumApplied = self.minimumPrice > 0.00
+        let maxmumApplied = self.maximumPrice > 0.00
+        return suppliersApplied && categoriesApplied
+            && minimumApplied && maxmumApplied && self.freeDelivery
     }
     
     
@@ -145,6 +155,19 @@ class FilterRootViewModel {
     func supplierFilterViewModel() -> SupplierFilterViewModel {
         return SupplierFilterViewModel(selectedSuppliers: self.suppliers)
     }
+    
+    // MARK:- FilterRequestModel
+    func createFilterRequestModel() -> FilterRequestModel? {
+        var requestModel: FilterRequestModel?
+        if self.isFilterApplied() {
+            requestModel?.page = "0"
+            requestModel?.supplier_ids = self.suppliers.map{ $0.supplierId }
+            requestModel?.cat_ids = self.categories.map{ $0.identifier }
+            requestModel?.min = "\(self.minimumPrice)"
+            requestModel?.max = "\(self.maximumPrice)"
+        }
+        return requestModel
+    }
 }
 
 extension FilterRootViewModel: FilterRootViewModelInterface {
@@ -210,6 +233,15 @@ extension FilterRootViewModel: FilterRootViewModelInterface {
     func didUpdatePrice(newMinimumPrice: Double, newMaximumPrice: Double) {
         self.minimumPrice = newMinimumPrice
         self.maximumPrice = newMaximumPrice
+        self.view?.reloadListData()
+    }
+    
+    func didPressResetFilter() {
+        self.suppliers = [Supplier]()
+        self.categories = [Category]()
+        self.minimumPrice = 0.00
+        self.maximumPrice = 0.00
+        self.freeDelivery = false
         self.view?.reloadListData()
     }
 }

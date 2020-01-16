@@ -106,7 +106,7 @@ extension UpdatedFilterTableViewController: FilterTableViewInterface {
     }
     
     func resetFilters() {
-        
+        self.viewModel?.didPressResetFilter()
     }
     
     func dismissScreen() {
