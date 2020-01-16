@@ -38,6 +38,7 @@ class UpdatedFilterTableViewController: UIViewController, UITableViewDelegate, U
     var viewModel: FilterRootViewModel?
     
     let suppliersSegue = "suppliers_segue"
+    let categoriesSegue = "categories_segue"
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -88,6 +89,14 @@ class UpdatedFilterTableViewController: UIViewController, UITableViewDelegate, U
             }
             suppliersFilterVC.filterTableViewInterface = self
         }
+        
+        if segue.identifier == categoriesSegue {
+            let categoriesFilterVC = segue.destination as! CategoriesFilterViewController
+            if let viewModel = viewModel {
+                categoriesFilterVC.viewModel = viewModel.categoriesFilterViewModel()
+            }
+            categoriesFilterVC.filterTableViewInterface = self
+        }
 
     }
 }
@@ -121,7 +130,7 @@ extension UpdatedFilterTableViewController: FilterTableViewInterface {
     }
     
     func openCategoriesFilter() {
-        
+        self.performSegue(withIdentifier: categoriesSegue, sender: nil)
     }
     
     func openPriceFilter() {

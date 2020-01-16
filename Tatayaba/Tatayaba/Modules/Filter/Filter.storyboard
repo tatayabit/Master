@@ -165,6 +165,7 @@
                         <outlet property="tableView" destination="bzu-xX-fKH" id="sVg-m7-mYZ"/>
                         <segue destination="j0y-bM-xIc" kind="show" identifier="suppliers_segue" id="qms-M4-4c4"/>
                         <segue destination="YPI-Bd-YzO" kind="show" identifier="price_segue" id="5wu-MS-VQI"/>
+                        <segue destination="4pp-II-wOO" kind="show" identifier="categories_segue" id="xLb-Pb-5yw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e54-ST-Opp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -283,6 +284,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NEo-w6-kmO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1356.521739130435" y="426.5625"/>
+        </scene>
+        <!--Categories Filter View Controller-->
+        <scene sceneID="9kC-5Q-4fp">
+            <objects>
+                <viewController storyboardIdentifier="CategoriesFilterViewController" id="4pp-II-wOO" customClass="CategoriesFilterViewController" customModule="TATAYAB___تطيّب" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1It-PU-yjj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BfI-rf-era">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="720"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="4pp-II-wOO" id="Y0O-d8-608"/>
+                                    <outlet property="delegate" destination="4pp-II-wOO" id="ec1-8H-YWQ"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVh-Hs-mgx">
+                                <rect key="frame" x="20" y="728" width="374" height="60"/>
+                                <color key="backgroundColor" red="0.13359850649999999" green="0.10292818400000001" blue="0.21072956919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="0AZ-QX-vfA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="Apply">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="applyFilterAction:" destination="4pp-II-wOO" eventType="touchUpInside" id="Tpc-az-hQy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BfI-rf-era" firstAttribute="leading" secondItem="hnD-hB-ffF" secondAttribute="leading" id="1qU-cf-k4J"/>
+                            <constraint firstItem="eVh-Hs-mgx" firstAttribute="top" secondItem="BfI-rf-era" secondAttribute="bottom" constant="8" id="B1x-zh-luO"/>
+                            <constraint firstItem="eVh-Hs-mgx" firstAttribute="leading" secondItem="hnD-hB-ffF" secondAttribute="leading" constant="20" id="XzD-HV-IRi"/>
+                            <constraint firstItem="hnD-hB-ffF" firstAttribute="bottom" secondItem="eVh-Hs-mgx" secondAttribute="bottom" constant="20" id="f2W-NK-3Vl"/>
+                            <constraint firstItem="hnD-hB-ffF" firstAttribute="trailing" secondItem="BfI-rf-era" secondAttribute="trailing" id="j5b-gc-mjb"/>
+                            <constraint firstItem="BfI-rf-era" firstAttribute="top" secondItem="hnD-hB-ffF" secondAttribute="top" id="m5H-Bz-hMv"/>
+                            <constraint firstItem="hnD-hB-ffF" firstAttribute="trailing" secondItem="eVh-Hs-mgx" secondAttribute="trailing" constant="20" id="pRa-ka-QPY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hnD-hB-ffF"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yzX-zO-uuv"/>
+                    <connections>
+                        <outlet property="applyButton" destination="eVh-Hs-mgx" id="GHB-V2-kDq"/>
+                        <outlet property="categoriesTableView" destination="BfI-rf-era" id="x5c-Vn-Mwm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hHW-KV-h6P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1335" y="1201"/>
         </scene>
     </scenes>
     <resources>

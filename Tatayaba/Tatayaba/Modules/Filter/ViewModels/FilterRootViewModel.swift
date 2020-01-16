@@ -156,6 +156,11 @@ class FilterRootViewModel {
         return SupplierFilterViewModel(selectedSuppliers: self.suppliers)
     }
     
+    // MARK:- CategoriesFilterViewModel
+    func categoriesFilterViewModel() -> CategoriesFilterViewModel {
+        return CategoriesFilterViewModel(selectedCategories: self.categories)
+    }
+    
     // MARK:- FilterRequestModel
     func createFilterRequestModel() -> FilterRequestModel? {
         var requestModel: FilterRequestModel?

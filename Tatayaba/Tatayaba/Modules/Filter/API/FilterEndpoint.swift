@@ -50,7 +50,7 @@ extension FilterEndpoint: TargetType {
             return "\(version.urlEscaped)/TtmSuppliers/"
         case .getCategories:
             let version = "4.0"
-            return "\(version.urlEscaped)/TtmCategories/"
+            return "\(version.urlEscaped)/TtmCategoriesTree/"
         }
     }
 

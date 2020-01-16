@@ -45,6 +45,8 @@
 		10B8F81223C3D0D800B6A325 /* FilterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B8F81123C3D0D800B6A325 /* FilterSettings.swift */; };
 		10BCEF9E23D0A5EE000FB506 /* CategoriesFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BCEF9D23D0A5EE000FB506 /* CategoriesFilterViewModel.swift */; };
 		10BCEFA023D0A613000FB506 /* CategoriesFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BCEF9F23D0A613000FB506 /* CategoriesFilterViewController.swift */; };
+		10BCEFC423D10B4C000FB506 /* FilterCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BCEFC223D10B4C000FB506 /* FilterCategoryTableViewCell.swift */; };
+		10BCEFC523D10B4C000FB506 /* FilterCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10BCEFC323D10B4C000FB506 /* FilterCategoryTableViewCell.xib */; };
 		10C8E8F7238929DA00E22581 /* Dispatch+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C8E8F6238929DA00E22581 /* Dispatch+Extensions.swift */; };
 		10D68F1523D03BEF00D65959 /* FilterAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D68F1323D03BEF00D65959 /* FilterAPIClient.swift */; };
 		10D68F1623D03BEF00D65959 /* FilterEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D68F1423D03BEF00D65959 /* FilterEndpoint.swift */; };
@@ -389,6 +391,8 @@
 		10B8F81123C3D0D800B6A325 /* FilterSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettings.swift; sourceTree = "<group>"; };
 		10BCEF9D23D0A5EE000FB506 /* CategoriesFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFilterViewModel.swift; sourceTree = "<group>"; };
 		10BCEF9F23D0A613000FB506 /* CategoriesFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFilterViewController.swift; sourceTree = "<group>"; };
+		10BCEFC223D10B4C000FB506 /* FilterCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		10BCEFC323D10B4C000FB506 /* FilterCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCategoryTableViewCell.xib; sourceTree = "<group>"; };
 		10C62BF523AA933300562CC0 /* TATAYAB - تطيّب.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TATAYAB - تطيّب.entitlements"; sourceTree = "<group>"; };
 		10C8E8F6238929DA00E22581 /* Dispatch+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dispatch+Extensions.swift"; sourceTree = "<group>"; };
 		10D68F1323D03BEF00D65959 /* FilterAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterAPIClient.swift; sourceTree = "<group>"; };
@@ -940,6 +944,8 @@
 			children = (
 				10BCEF9D23D0A5EE000FB506 /* CategoriesFilterViewModel.swift */,
 				10BCEF9F23D0A613000FB506 /* CategoriesFilterViewController.swift */,
+				10BCEFC223D10B4C000FB506 /* FilterCategoryTableViewCell.swift */,
+				10BCEFC323D10B4C000FB506 /* FilterCategoryTableViewCell.xib */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -2564,6 +2570,7 @@
 				D519D8A8239CFB080026DD97 /* CheckOut.storyboard in Resources */,
 				D5B7120E23903795006BD0DD /* InfoPlist.strings in Resources */,
 				10DFE456235262E100AAB780 /* OptionsHeader.xib in Resources */,
+				10BCEFC523D10B4C000FB506 /* FilterCategoryTableViewCell.xib in Resources */,
 				847CDE4E22C9EE2300E67C8C /* LaunchScreen.storyboard in Resources */,
 				27AB3014236AD40300CFBF59 /* Cairo-Regular.ttf in Resources */,
 				847CDE8922CA19EE00E67C8C /* ProximaNovaT-Thin.ttf in Resources */,
@@ -2864,6 +2871,7 @@
 				11945BBF22F0B08D000F08DC /* CheckoutCompletedViewModel.swift in Sources */,
 				108EFB2323CF968B00E71E40 /* SortTableViewController.swift in Sources */,
 				10D68F1523D03BEF00D65959 /* FilterAPIClient.swift in Sources */,
+				10BCEFC423D10B4C000FB506 /* FilterCategoryTableViewCell.swift in Sources */,
 				10244C592369F6F8004E65F9 /* ErrorMessage.swift in Sources */,
 				4C30D9E8232FDD9500629D38 /* WebViewViewController.swift in Sources */,
 				11B0791F233BCB2A003041E8 /* Address.swift in Sources */,

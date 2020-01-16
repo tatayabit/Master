@@ -24,10 +24,14 @@ class CategoriesFilterViewController: UIViewController {
         super.viewDidLoad()
 
         self.viewModel?.view = self
-        self.categoriesTableView.register(FilterSelectionTableViewCell.nib, forCellReuseIdentifier: FilterSelectionTableViewCell.identifier)
+        self.categoriesTableView.register(FilterCategoryTableViewCell.nib, forCellReuseIdentifier: FilterCategoryTableViewCell.identifier)
         self.viewModel?.notifyViewLoaded()
     }
-
+    
+    // MARK:- IBActions
+    @IBAction func applyFilterAction(_ sender: Any) {
+        self.viewModel?.applyFilterActionPressed()
+    }
 }
 
 

@@ -29,6 +29,23 @@ class CategoriesFilterViewModel {
         self.selectedCategories = selectedCategories
     }
     
+    func callFilterCategoriesApi() {
+        apiClient.getCategories { result in
+            switch result {
+            // 3
+            case .failure(let error):
+                print("Failed: \(error.localizedDescription)")
+            // 4
+            case .success(let response):
+                print("success")
+                if let response = response {
+                    self.allCategories = response.categories!
+                    self.view?.reloadListData()
+                }
+            }
+        }
+    }
+    
     func categorySelected(at row: Int) -> Bool {
         return selectedCategories.contains(where: {
             $0.identifier == selectedCategories[row].identifier
@@ -52,7 +69,7 @@ extension CategoriesFilterViewModel: CategoriesFilterViewModelInterface {
     }
     
     func notifyViewLoaded() {
-//        self.callFilterSuppliersApi()
+        self.callFilterCategoriesApi()
     }
     
     func didSelectRow(at indexPath: IndexPath) {
