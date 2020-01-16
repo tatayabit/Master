@@ -42,11 +42,11 @@ class FilterRootViewModel {
     
     
     func suppliersData() -> (String, String) {
-        return ("Suppliers", self.suppliers.map{ $0.name }.joined(separator: ","))
+        return ("Suppliers", self.suppliers.map{ $0.name }.joined(separator: ", "))
     }
     
     func categoriesData() -> (String, String) {
-        return ("Categories", self.categories.map{ $0.name }.joined(separator: ","))
+        return ("Categories", self.categories.map{ $0.name }.joined(separator: ", "))
     }
     
     func priceData() -> (String, String) {
@@ -144,6 +144,10 @@ class FilterRootViewModel {
         }
     }
     
+    // MARK:- SupplierFilterViewModel
+    func supplierFilterViewModel() -> SupplierFilterViewModel {
+        return SupplierFilterViewModel(selectedSuppliers: self.suppliers)
+    }
 }
 
 extension FilterRootViewModel: FilterRootViewModelInterface {

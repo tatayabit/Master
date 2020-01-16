@@ -31,13 +31,7 @@
 		10645967235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10645966235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift */; };
 		106751DD235B7A590031F3E7 /* PaymentRedirectResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106751DC235B7A590031F3E7 /* PaymentRedirectResult.swift */; };
 		1083BFFD235B355600360E78 /* LiveChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1083BFFC235B355600360E78 /* LiveChatViewController.swift */; };
-		108EFB1923CF968B00E71E40 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108EFB0823CF968A00E71E40 /* FilterViewModel.swift */; };
 		108EFB1A23CF968B00E71E40 /* FilterRootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108EFB0A23CF968A00E71E40 /* FilterRootViewModel.swift */; };
-		108EFB1B23CF968B00E71E40 /* SupplierFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108EFB0C23CF968A00E71E40 /* SupplierFilterViewModel.swift */; };
-		108EFB1C23CF968B00E71E40 /* SupplierFilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108EFB0D23CF968A00E71E40 /* SupplierFilterTableViewController.swift */; };
-		108EFB1D23CF968B00E71E40 /* FilterRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108EFB0F23CF968A00E71E40 /* FilterRequestModel.swift */; };
-		108EFB1E23CF968B00E71E40 /* FilterAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108EFB1123CF968A00E71E40 /* FilterAPIClient.swift */; };
-		108EFB1F23CF968B00E71E40 /* FilterEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108EFB1223CF968A00E71E40 /* FilterEndpoint.swift */; };
 		108EFB2023CF968B00E71E40 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 108EFB1323CF968A00E71E40 /* Filter.storyboard */; };
 		108EFB2123CF968B00E71E40 /* UpdatedFilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108EFB1523CF968A00E71E40 /* UpdatedFilterTableViewController.swift */; };
 		108EFB2223CF968B00E71E40 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108EFB1723CF968A00E71E40 /* FilterTableViewCell.swift */; };
@@ -50,6 +44,12 @@
 		10B4CBCB237336ED0065918D /* DataBase64Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B4CBCA237336ED0065918D /* DataBase64Decodable.swift */; };
 		10B8F81223C3D0D800B6A325 /* FilterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B8F81123C3D0D800B6A325 /* FilterSettings.swift */; };
 		10C8E8F7238929DA00E22581 /* Dispatch+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C8E8F6238929DA00E22581 /* Dispatch+Extensions.swift */; };
+		10D68F1523D03BEF00D65959 /* FilterAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D68F1323D03BEF00D65959 /* FilterAPIClient.swift */; };
+		10D68F1623D03BEF00D65959 /* FilterEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D68F1423D03BEF00D65959 /* FilterEndpoint.swift */; };
+		10D68F1923D03C2000D65959 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D68F1823D03C2000D65959 /* FilterViewModel.swift */; };
+		10D68F1C23D03CCF00D65959 /* FilterRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D68F1B23D03CCF00D65959 /* FilterRequestModel.swift */; };
+		10D68F2023D03CEE00D65959 /* SupplierFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D68F1E23D03CEE00D65959 /* SupplierFilterViewModel.swift */; };
+		10D68F2123D03CEE00D65959 /* SupplierFilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D68F1F23D03CEE00D65959 /* SupplierFilterTableViewController.swift */; };
 		10DFE45023525D9C00AAB780 /* HeaderViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DFE44F23525D9C00AAB780 /* HeaderViewItem.swift */; };
 		10DFE4542352619000AAB780 /* OptionsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DFE4532352619000AAB780 /* OptionsHeader.swift */; };
 		10DFE456235262E100AAB780 /* OptionsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10DFE455235262E100AAB780 /* OptionsHeader.xib */; };
@@ -373,13 +373,7 @@
 		10645966235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDeatailsTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		106751DC235B7A590031F3E7 /* PaymentRedirectResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRedirectResult.swift; sourceTree = "<group>"; };
 		1083BFFC235B355600360E78 /* LiveChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChatViewController.swift; sourceTree = "<group>"; };
-		108EFB0823CF968A00E71E40 /* FilterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		108EFB0A23CF968A00E71E40 /* FilterRootViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterRootViewModel.swift; sourceTree = "<group>"; };
-		108EFB0C23CF968A00E71E40 /* SupplierFilterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupplierFilterViewModel.swift; sourceTree = "<group>"; };
-		108EFB0D23CF968A00E71E40 /* SupplierFilterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupplierFilterTableViewController.swift; sourceTree = "<group>"; };
-		108EFB0F23CF968A00E71E40 /* FilterRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterRequestModel.swift; sourceTree = "<group>"; };
-		108EFB1123CF968A00E71E40 /* FilterAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterAPIClient.swift; sourceTree = "<group>"; };
-		108EFB1223CF968A00E71E40 /* FilterEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterEndpoint.swift; sourceTree = "<group>"; };
 		108EFB1323CF968A00E71E40 /* Filter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
 		108EFB1523CF968A00E71E40 /* UpdatedFilterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatedFilterTableViewController.swift; sourceTree = "<group>"; };
 		108EFB1723CF968A00E71E40 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
@@ -393,6 +387,12 @@
 		10B8F81123C3D0D800B6A325 /* FilterSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettings.swift; sourceTree = "<group>"; };
 		10C62BF523AA933300562CC0 /* TATAYAB - تطيّب.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TATAYAB - تطيّب.entitlements"; sourceTree = "<group>"; };
 		10C8E8F6238929DA00E22581 /* Dispatch+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dispatch+Extensions.swift"; sourceTree = "<group>"; };
+		10D68F1323D03BEF00D65959 /* FilterAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterAPIClient.swift; sourceTree = "<group>"; };
+		10D68F1423D03BEF00D65959 /* FilterEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterEndpoint.swift; sourceTree = "<group>"; };
+		10D68F1823D03C2000D65959 /* FilterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		10D68F1B23D03CCF00D65959 /* FilterRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterRequestModel.swift; sourceTree = "<group>"; };
+		10D68F1E23D03CEE00D65959 /* SupplierFilterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupplierFilterViewModel.swift; sourceTree = "<group>"; };
+		10D68F1F23D03CEE00D65959 /* SupplierFilterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupplierFilterTableViewController.swift; sourceTree = "<group>"; };
 		10DFE44F23525D9C00AAB780 /* HeaderViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewItem.swift; sourceTree = "<group>"; };
 		10DFE4532352619000AAB780 /* OptionsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsHeader.swift; sourceTree = "<group>"; };
 		10DFE455235262E100AAB780 /* OptionsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionsHeader.xib; sourceTree = "<group>"; };
@@ -824,24 +824,15 @@
 		108EFB0623CF968A00E71E40 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
-				108EFB0723CF968A00E71E40 /* ViewModel */,
+				10D68F1D23D03CEE00D65959 /* Suppliers */,
+				10D68F1A23D03CCF00D65959 /* Models */,
+				10D68F1723D03C2000D65959 /* ViewModel */,
+				10D68F1223D03BEF00D65959 /* API */,
 				108EFB0923CF968A00E71E40 /* ViewModels */,
-				108EFB0B23CF968A00E71E40 /* Suppliers */,
-				108EFB0E23CF968A00E71E40 /* Models */,
-				108EFB1023CF968A00E71E40 /* API */,
 				108EFB1323CF968A00E71E40 /* Filter.storyboard */,
 				108EFB1423CF968A00E71E40 /* Views */,
 			);
-			name = Filter;
-			path = "../../../../../../Tatayab Files/untitled folder 2/Filter";
-			sourceTree = "<group>";
-		};
-		108EFB0723CF968A00E71E40 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				108EFB0823CF968A00E71E40 /* FilterViewModel.swift */,
-			);
-			path = ViewModel;
+			path = Filter;
 			sourceTree = "<group>";
 		};
 		108EFB0923CF968A00E71E40 /* ViewModels */ = {
@@ -850,32 +841,6 @@
 				108EFB0A23CF968A00E71E40 /* FilterRootViewModel.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		108EFB0B23CF968A00E71E40 /* Suppliers */ = {
-			isa = PBXGroup;
-			children = (
-				108EFB0C23CF968A00E71E40 /* SupplierFilterViewModel.swift */,
-				108EFB0D23CF968A00E71E40 /* SupplierFilterTableViewController.swift */,
-			);
-			path = Suppliers;
-			sourceTree = "<group>";
-		};
-		108EFB0E23CF968A00E71E40 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				108EFB0F23CF968A00E71E40 /* FilterRequestModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		108EFB1023CF968A00E71E40 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				108EFB1123CF968A00E71E40 /* FilterAPIClient.swift */,
-				108EFB1223CF968A00E71E40 /* FilterEndpoint.swift */,
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		108EFB1423CF968A00E71E40 /* Views */ = {
@@ -963,6 +928,40 @@
 				10B4CBCA237336ED0065918D /* DataBase64Decodable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		10D68F1223D03BEF00D65959 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				10D68F1323D03BEF00D65959 /* FilterAPIClient.swift */,
+				10D68F1423D03BEF00D65959 /* FilterEndpoint.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		10D68F1723D03C2000D65959 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				10D68F1823D03C2000D65959 /* FilterViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		10D68F1A23D03CCF00D65959 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				10D68F1B23D03CCF00D65959 /* FilterRequestModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		10D68F1D23D03CEE00D65959 /* Suppliers */ = {
+			isa = PBXGroup;
+			children = (
+				10D68F1E23D03CEE00D65959 /* SupplierFilterViewModel.swift */,
+				10D68F1F23D03CEE00D65959 /* SupplierFilterTableViewController.swift */,
+			);
+			path = Suppliers;
 			sourceTree = "<group>";
 		};
 		10DFE4512352616000AAB780 /* Headers */ = {
@@ -2756,7 +2755,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				112654B222D3AC6F00904FB5 /* CategoriesViewController.swift in Sources */,
-				108EFB1F23CF968B00E71E40 /* FilterEndpoint.swift in Sources */,
 				4CD8B8AA23212A3100D25CC3 /* SuppliersCollectionViewCell.swift in Sources */,
 				11089C0A23328B2200BE9B78 /* Country.swift in Sources */,
 				D5BF778523CB4F7E00A9D067 /* UITextViewPlaceholder.swift in Sources */,
@@ -2795,7 +2793,6 @@
 				84BC089C22DC7D4900C6180E /* Cart.swift in Sources */,
 				115DC427231177FC0001EF67 /* HomeHorizontalLayout.swift in Sources */,
 				11D612A922CE49D1000D42C3 /* UserEndpoint.swift in Sources */,
-				108EFB1C23CF968B00E71E40 /* SupplierFilterTableViewController.swift in Sources */,
 				11D612A122CE48F3000D42C3 /* APIResult.swift in Sources */,
 				115795BD232FE42C0002075E /* LanguageManager.swift in Sources */,
 				116C938722F0952700921893 /* PlaceOrderResult.swift in Sources */,
@@ -2815,7 +2812,6 @@
 				11453954232A8D2900EDC908 /* ConciergeViewModel.swift in Sources */,
 				848E89C822CCE53E000AA24C /* BaseViewController.swift in Sources */,
 				111C8A38230B1135003F5FDB /* BlocksEndpoint.swift in Sources */,
-				108EFB1D23CF968B00E71E40 /* FilterRequestModel.swift in Sources */,
 				1100421122D4F3520099AE64 /* String+Extensions.swift in Sources */,
 				11453952232A8CF700EDC908 /* ConciergeViewController.swift in Sources */,
 				11B0791C233BCA25003041E8 /* AddressAddEditViewModel.swift in Sources */,
@@ -2842,6 +2838,7 @@
 				10480802238C65720056F74B /* ProductImagePair.swift in Sources */,
 				2767CB94236472290042F533 /* OrderDetailsCell.swift in Sources */,
 				848E89CC22CCEAAC000AA24C /* FeatureProductCollectionViewCell.swift in Sources */,
+				10D68F1623D03BEF00D65959 /* FilterEndpoint.swift in Sources */,
 				116C938F22F0954500921893 /* PaymentAPIClient.swift in Sources */,
 				11624ED1230C464800E81ABD /* BlockImagePair.swift in Sources */,
 				11E8A679232816730091BD11 /* PriceTableViewCell.swift in Sources */,
@@ -2851,6 +2848,7 @@
 				109D29E5234A668F0052D01B /* CountrySettings.swift in Sources */,
 				11945BBF22F0B08D000F08DC /* CheckoutCompletedViewModel.swift in Sources */,
 				108EFB2323CF968B00E71E40 /* SortTableViewController.swift in Sources */,
+				10D68F1523D03BEF00D65959 /* FilterAPIClient.swift in Sources */,
 				10244C592369F6F8004E65F9 /* ErrorMessage.swift in Sources */,
 				4C30D9E8232FDD9500629D38 /* WebViewViewController.swift in Sources */,
 				11B0791F233BCB2A003041E8 /* Address.swift in Sources */,
@@ -2862,7 +2860,6 @@
 				11FB5872231D5F13005DA4F0 /* SuppliersBlockView.swift in Sources */,
 				100586A02386FCEB00D6CA76 /* ConvertedProduct.swift in Sources */,
 				112654A922D25E5B00904FB5 /* SignUpResponse.swift in Sources */,
-				108EFB1E23CF968B00E71E40 /* FilterAPIClient.swift in Sources */,
 				11D4E69F2312FC5500226A23 /* FullScreenBannersView.swift in Sources */,
 				11945BBB22F0B08D000F08DC /* CheckOutViewController.swift in Sources */,
 				108EFB2123CF968B00E71E40 /* UpdatedFilterTableViewController.swift in Sources */,
@@ -2885,10 +2882,10 @@
 				11945BCA22F0B0C6000F08DC /* ShippingAPIClient.swift in Sources */,
 				11069C412323FFA60093D6FF /* ProductMainPair.swift in Sources */,
 				11089C0C23328CFD00BE9B78 /* CountriesManager.swift in Sources */,
+				10D68F1923D03C2000D65959 /* FilterViewModel.swift in Sources */,
 				11B2C41C22D64F0A00EAD9C6 /* ProductDetailsViewModel.swift in Sources */,
 				11089C172333E8A600BE9B78 /* ShippingRate.swift in Sources */,
 				841CE31022DCC33600A47FA0 /* MessageModel.swift in Sources */,
-				108EFB1923CF968B00E71E40 /* FilterViewModel.swift in Sources */,
 				11FB5852231C2EC2005DA4F0 /* ProductsBlockCollectionViewCell.swift in Sources */,
 				11A8B15F22D797EF001B2661 /* WishlistViewModel.swift in Sources */,
 				841CE31622DCC68A00A47FA0 /* MessageTableViewCell.swift in Sources */,
@@ -2938,11 +2935,11 @@
 				27A9089F2357906C0032DA41 /* TaxAndShippingResponse.swift in Sources */,
 				11B07917233A781F003041E8 /* ConciergeEndpoint.swift in Sources */,
 				11B07912233A771F003041E8 /* Concierge.swift in Sources */,
-				108EFB1B23CF968B00E71E40 /* SupplierFilterViewModel.swift in Sources */,
 				114D1A0922CBB10D009205F3 /* TableCellConfigutator.swift in Sources */,
 				1022725823CF9A4F00788232 /* PriceViewController.swift in Sources */,
 				27AB300B23685E0B00CFBF59 /* productDeatailsTableViewCell.swift in Sources */,
 				11AA79402326C4C0001EEDC0 /* AddressAddEditViewController.swift in Sources */,
+				10D68F1C23D03CCF00D65959 /* FilterRequestModel.swift in Sources */,
 				11081EEF22DB829200B68EA5 /* AboutUsViewModel.swift in Sources */,
 				11945BBA22F0B08D000F08DC /* CheckoutCompletedViewController.swift in Sources */,
 				1107DE1023200CAC000F8398 /* BannerMainPair.swift in Sources */,
@@ -2956,6 +2953,7 @@
 				841CE30E22DCC32100A47FA0 /* messageViewModel.swift in Sources */,
 				11D612A322CE4978000D42C3 /* SignUpViewModel.swift in Sources */,
 				11069C3F2323DB4E0093D6FF /* TITextField.swift in Sources */,
+				10D68F2123D03CEE00D65959 /* SupplierFilterTableViewController.swift in Sources */,
 				27A9089B2357906C0032DA41 /* CustomDuty.swift in Sources */,
 				11D612A022CE48F3000D42C3 /* APIClient.swift in Sources */,
 				11F52FB722CA7D92000F0D85 /* SplashViewController.swift in Sources */,
@@ -2984,6 +2982,7 @@
 				11A8B15822D793AC001B2661 /* WishlistViewController.swift in Sources */,
 				11624EDB230C6C1800E81ABD /* BlockBgImageIcon.swift in Sources */,
 				11945BC922F0B0C6000F08DC /* ShippingMethod.swift in Sources */,
+				10D68F2023D03CEE00D65959 /* SupplierFilterViewModel.swift in Sources */,
 				27E8534623775F50002649BE /* CurrencyEndpoint.swift in Sources */,
 				27A9089D2357906C0032DA41 /* Vat.swift in Sources */,
 				101AE02A23A02B3D005DD372 /* CartSaving.swift in Sources */,
