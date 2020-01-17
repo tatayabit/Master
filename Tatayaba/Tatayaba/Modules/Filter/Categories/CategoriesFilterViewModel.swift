@@ -60,8 +60,8 @@ class CategoriesFilterViewModel {
         if self.selectedCategories.contains(where: {$0.identifier == category.identifier}) {
             self.selectedCategories.removeAll(where: {$0.identifier == category.identifier})
         } else {
-            self.selectedCategories.append(category)
             self.removeSubCategoriesIfSelected(at: section)
+            self.selectedCategories.append(category)
         }
     }
     
@@ -84,12 +84,11 @@ class CategoriesFilterViewModel {
         if self.selectedCategories.contains(where: {$0.identifier == subCategory.identifier}) {
             self.selectedCategories.removeAll(where: {$0.identifier == subCategory.identifier})
         } else {
-            
-            self.selectedCategories.append(subCategory)
             if self.categorySelected(at: indexPath.section) {
                 let category = allCategories[indexPath.section]
                 self.selectedCategories.removeAll(where: {$0.identifier == category.identifier})
             }
+            self.selectedCategories.append(subCategory)
         }
     }
 }

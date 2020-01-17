@@ -24,4 +24,10 @@ class FilterSelectionTableViewCell: UITableViewCell {
         self.checkMarkImageView.image = UIImage(named: imageIcon)
     }
     
+    func configure2(text: String, selected: Bool) {
+        self.nameLabel.text = text
+        let imageIcon = selected ? "selected_icon" : "unselected_icon"
+        self.checkMarkImageView.image = UIImage(named: imageIcon)
+    }
+    
 }

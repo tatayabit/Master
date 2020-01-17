@@ -183,30 +183,22 @@ extension CatProductsViewController : FilterDelegate,isAbleToReceiveData{
         self.performSegue(withIdentifier: filterSegue, sender: nil)
     }
     func sortClick() {
-        let vc = FilterTableViewController()
+        let vc = SortTableViewController()
         vc.delegate = self
-        vc.viewType = 1
         vc.sortFilterOption = self.sortFilterOption
         let navController = UINavigationController(rootViewController: vc)
         self.navigationController?.present(navController, animated: true, completion: nil)
     }
     
-    func pass(data: String, type: Int) { //conforms to protocol
+    func pass(data: String) { //conforms to protocol
     // implement your own implementation
         print(data)
         guard let viewModel = viewModel else { return }
-        if type == 0 {
-            // filter
-            selectedFilterOption = data
-            viewModel.filterOptionsChanged(filterValue: data)
-
-        } else if type == 1 {
-            // sort by
-            sortFilterOption = data
-            let sortBy: FilterSettings.SortingOptions = data.lowercased() == "low to high" ? .ascending : .descending
-            viewModel.sortByOptionsChanged(sortBy: sortBy)
-        }
         
+            // sort by
+        sortFilterOption = data
+        let sortBy: FilterSettings.SortingOptions = data.lowercased() == "low to high" ? .ascending : .descending
+        viewModel.sortByOptionsChanged(sortBy: sortBy)
         self.productsCollectionView.reloadData()
 
         

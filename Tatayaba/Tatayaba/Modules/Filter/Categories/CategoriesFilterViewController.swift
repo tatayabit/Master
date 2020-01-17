@@ -51,8 +51,8 @@ extension CategoriesFilterViewController: UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: FilterCategoryHeaderView.identifier) as? FilterCategoryHeaderView else { return nil }
-            guard let viewModel = viewModel else { return nil }
-            let (category, selected) = viewModel.categorySectionData(at: section)
+        guard let viewModel = viewModel else { return nil }
+        let (category, selected) = viewModel.categorySectionData(at: section)
         headerView.configure(category: category, selected: selected, section: section)
         headerView.delegate = self
         

@@ -30,7 +30,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2v3-R6-X2Z">
                     <rect key="frame" x="0.0" y="0.0" width="422" height="44"/>
                     <connections>
-                        <action selector="didTabHeaderAction:" destination="-1" eventType="touchUpInside" id="wyx-mz-aYP"/>
+                        <action selector="didTabHeaderAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="eMT-3Z-QZD"/>
                     </connections>
                 </button>
             </subviews>

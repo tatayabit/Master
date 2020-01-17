@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F2424E1A-467A-4E91-A15E-3188B45F2071"
+            uuid = "B8241C22-C910-4063-ABF7-3C09D795D608"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Filter/Categories/CategoriesFilterViewModel.swift"
+            filePath = "Tatayaba/Modules/Filter/Categories/CustomCells/FilterCategoryHeaderView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "callFilterCategoriesApi()"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "configure(category:selected:section:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
