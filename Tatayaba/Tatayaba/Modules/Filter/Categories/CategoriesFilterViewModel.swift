@@ -50,18 +50,17 @@ class CategoriesFilterViewModel {
     
     func categorySelected(at section: Int) -> Bool {
         return selectedCategories.contains(where: {
-            $0.identifier == selectedCategories[section].identifier
+            $0.identifier == allCategories[section].identifier
         })
     }
     
     func subCategorySelected(at indexPath: IndexPath) -> Bool {
-        return false
-//        return selectedCategories.contains(where: {
-//            $0.identifier == selectedCategories[section].identifier
-//        })
+        return selectedCategories.contains(where: {
+            $0.identifier == allCategories[indexPath.section].subCategories[indexPath.row].identifier
+        })
     }
     
-    func addOrRemoveSupplierSectionSelection(at section: Int) {
+    func addOrRemoveCategorySectionSelection(at section: Int) {
         let category = allCategories[section]
         if self.selectedCategories.contains(where: {$0.identifier == category.identifier}) {
             self.selectedCategories.removeAll(where: {$0.identifier == category.identifier})
@@ -70,8 +69,8 @@ class CategoriesFilterViewModel {
         }
     }
     
-    func addOrRemoveSupplierRowSelection(at row: Int) {
-        let category = allCategories[row]
+    func addOrRemoveCategoryRowSelection(at indexPath: IndexPath) {
+        let category = allCategories[indexPath.section].subCategories[indexPath.row]
         if self.selectedCategories.contains(where: {$0.identifier == category.identifier}) {
             self.selectedCategories.removeAll(where: {$0.identifier == category.identifier})
         } else {
@@ -88,7 +87,8 @@ extension CategoriesFilterViewModel: CategoriesFilterViewModelInterface {
     }
     
     func didSelectSection(at section: Int) {
-        
+        self.addOrRemoveCategorySectionSelection(at: section)
+        self.view?.reloadListData()
     }
     
     // Row
@@ -97,7 +97,7 @@ extension CategoriesFilterViewModel: CategoriesFilterViewModelInterface {
     }
     
     func didSelectRow(at indexPath: IndexPath) {
-        self.addOrRemoveSupplierRowSelection(at: indexPath.row)
+        self.addOrRemoveCategoryRowSelection(at: indexPath)
         self.view?.reloadListData()
     }
     

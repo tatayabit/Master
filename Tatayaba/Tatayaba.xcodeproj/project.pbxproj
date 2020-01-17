@@ -949,12 +949,20 @@
 			children = (
 				10BCEF9D23D0A5EE000FB506 /* CategoriesFilterViewModel.swift */,
 				10BCEF9F23D0A613000FB506 /* CategoriesFilterViewController.swift */,
+				10BEE43F23D1C38800DA55E0 /* CustomCells */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		10BEE43F23D1C38800DA55E0 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
 				10BCEFC223D10B4C000FB506 /* FilterCategoryTableViewCell.swift */,
 				10BCEFC323D10B4C000FB506 /* FilterCategoryTableViewCell.xib */,
 				10BCEFC623D11DC3000FB506 /* FilterCategoryHeaderView.swift */,
 				10BCEFC823D11DF8000FB506 /* FilterCategoryHeaderView.xib */,
 			);
-			path = Categories;
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 		10D68F1223D03BEF00D65959 /* API */ = {

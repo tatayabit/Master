@@ -13,7 +13,7 @@ protocol CategoriesFilterViewInterface: class {
     func applySelectedCategories(categories: [Category])
 }
 
-class CategoriesFilterViewController: UIViewController {
+class CategoriesFilterViewController: BaseViewController {
     @IBOutlet weak var categoriesTableView: UITableView!
     @IBOutlet weak var applyButton: UIButton!
     
@@ -24,6 +24,8 @@ class CategoriesFilterViewController: UIViewController {
         super.viewDidLoad()
 
         self.viewModel?.view = self
+        self.showLoadingIndicator(to: self.view)
+
         self.categoriesTableView.register(FilterCategoryTableViewCell.nib, forCellReuseIdentifier: FilterCategoryTableViewCell.identifier)
         self.categoriesTableView.register(FilterCategoryHeaderView.nib, forHeaderFooterViewReuseIdentifier: FilterCategoryHeaderView.identifier)
         self.viewModel?.notifyViewLoaded()
@@ -35,8 +37,8 @@ class CategoriesFilterViewController: UIViewController {
     }
 }
 
-extension CategoriesFilterViewController: UITableViewDelegate, UITableViewDataSource {
-    
+extension CategoriesFilterViewController: UITableViewDelegate, UITableViewDataSource, FilterCategoryHeaderViewDelegate {
+   
     // MARK:- Sections
     func numberOfSections(in tableView: UITableView) -> Int {
         guard let viewModel = viewModel else { return 0 }
@@ -49,11 +51,10 @@ extension CategoriesFilterViewController: UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: FilterCategoryHeaderView.identifier) as? FilterCategoryHeaderView else { return nil }
-//        if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: FilterCategoryHeaderView.identifier) as? FilterCategoryHeaderView {
             guard let viewModel = viewModel else { return nil }
             let (category, selected) = viewModel.categorySectionData(at: section)
-            headerView.configure(category: category, selected: selected)
-//        }
+        headerView.configure(category: category, selected: selected, section: section)
+        headerView.delegate = self
         
         return headerView
     }
@@ -77,6 +78,16 @@ extension CategoriesFilterViewController: UITableViewDelegate, UITableViewDataSo
         return cell
     }
     
+    // MARK:- Selection
+    func didSelectHeader(at section: Int) {
+        guard let viewModel = viewModel else { return }
+        viewModel.didSelectSection(at: section)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let viewModel = viewModel else { return }
+        viewModel.didSelectRow(at: indexPath)
+    }
     
 }
 
@@ -91,5 +102,6 @@ extension CategoriesFilterViewController: CategoriesFilterViewInterface {
         DispatchQueue.main.async {
            self.categoriesTableView.reloadData()
         }
+        self.hideLoadingIndicator(from: self.view)
     }
 }
