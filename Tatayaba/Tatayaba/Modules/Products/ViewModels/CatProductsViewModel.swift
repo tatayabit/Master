@@ -85,6 +85,11 @@ class CatProductsViewModel {
             requestJson["max"] = max.urlEscaped
         }
         
+        if let searchString = filterObj.searchText{
+            requestJson["search"] = "y"
+            requestJson["q"] = searchString
+        }
+        
         return requestJson
     }
     

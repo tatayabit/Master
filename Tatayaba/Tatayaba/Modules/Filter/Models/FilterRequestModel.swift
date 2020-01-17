@@ -14,8 +14,9 @@ struct FilterRequestModel {
     var supplier_ids: [String]?
     var min: String?
     var max: String?
+    var searchText : String?
     
-    init(page:String ,sort_by: [String],sort_order: String,cat_ids: [String],supplier_ids: [String],min: String,max: String) {
+    init(page:String ,sort_by: [String],sort_order: String,cat_ids: [String],supplier_ids: [String],min: String,max: String,searchText:String) {
         self.page = page
         self.sort_by = sort_by
         self.sort_order = sort_order
@@ -23,5 +24,6 @@ struct FilterRequestModel {
         self.supplier_ids = supplier_ids
         self.min = min
         self.max = max
+        self.searchText = searchText
     }
 }
