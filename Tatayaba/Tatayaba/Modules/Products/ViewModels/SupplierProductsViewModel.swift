@@ -16,6 +16,7 @@ protocol SupplierProductsViewModelDelegate: class {
 
 class SupplierProductsViewModel {
     let apiClient = SuppliersAPIClient()
+    let filterApiClient = FilterAPIClient()
 
     var supplier: Supplier
     
@@ -24,10 +25,10 @@ class SupplierProductsViewModel {
     private var currentPage = 0
     private var total = 0
     
-    private var filterSettings = FilterSettings()
 //    private var isFetchInProgress = false
 //    private var shouldCallApi: Bool = true
 
+    var filterRequestObj: FilterRequestModel?
     
     private weak var delegate: SupplierProductsViewModelDelegate?
 
@@ -69,33 +70,33 @@ class SupplierProductsViewModel {
 //    }
     
     
-    func getFilteredProductsApi() {
-        apiClient.getFilteredProductOfSupplier(supplierId: supplier.supplierId, page: currentPage, sort_by: filterSettings.filter, sort_order:filterSettings.sorting.rawValue) { result in
-                 
-            switch result {
-            // 3
-            case .failure(let error):
-                 DispatchQueue.main.async {
-                     self.delegate?.onFetchFailed(with: error.localizedDescription)
-                 }
-             // 4
-            case .success(let response):
-                DispatchQueue.main.async {
-                    guard let supplierResult = response else { return }
-                    
-//                    self.supplier = supplierResult
-                    print(self.supplier)
-                
-                    self.total += supplierResult.products.count
-                    self.productsList.append(contentsOf: supplierResult.products)
-                 
-                    if let delegate = self.delegate {
-                        delegate.onFetchCompleted(with: .none)
-                    }
-                }
-            }
-        }
-    }
+//    func getFilteredProductsApi() {
+//        apiClient.getFilteredProductOfSupplier(supplierId: supplier.supplierId, page: currentPage, sort_by: filterSettings.filter, sort_order:filterSettings.sorting.rawValue) { result in
+//
+//            switch result {
+//            // 3
+//            case .failure(let error):
+//                 DispatchQueue.main.async {
+//                     self.delegate?.onFetchFailed(with: error.localizedDescription)
+//                 }
+//             // 4
+//            case .success(let response):
+//                DispatchQueue.main.async {
+//                    guard let supplierResult = response else { return }
+//
+////                    self.supplier = supplierResult
+//                    print(self.supplier)
+//
+//                    self.total += supplierResult.products.count
+//                    self.productsList.append(contentsOf: supplierResult.products)
+//
+//                    if let delegate = self.delegate {
+//                        delegate.onFetchCompleted(with: .none)
+//                    }
+//                }
+//            }
+//        }
+//    }
     
     // MARK:- fetch more Api
      func fetchModerators() {
@@ -175,31 +176,27 @@ class SupplierProductsViewModel {
     }
     
     // MARK:- Filter
-    func freeDeliveryPressed() {
-        self.filterSettings.freeDelivery = !self.filterSettings.freeDelivery
-//        self.resetAllProdcuts()
-//        self.getFilteredProductsApi()
-    }
-    
-    
-    
-    func filterOptionsChanged(filterValue: String) {
-        // call the changes before calling api
-        self.resetAllProdcuts()
-        self.filterSettings.filter = filterValue
-        self.getFilteredProductsApi()
-    }
-    
     func sortByOptionsChanged(sortBy: FilterSettings.SortingOptions) {
         // call the changes before calling api
         self.resetAllProdcuts()
-        self.filterSettings.sorting = sortBy
-        self.getFilteredProductsApi()
+//        self.filterSettings.sorting = sortBy
+//        self.getFilteredProductsApi()
+    }
+    
+    // MARK:- applyFilter
+    func didApplyFilter(filterRequestModel: FilterRequestModel?) {
+        self.filterRequestObj = filterRequestModel
+        self.resetAllProdcuts()
+        if filterRequestModel != nil {
+//            getFilteredProducts()
+        } else {
+            self.fetchModerators()
+        }
     }
     
     // MARK:- Filter ViewModel
     func filterViewModel() -> FilterRootViewModel {
-        return FilterRootViewModel(initializer: .supplier, requestModel: nil)
+        return FilterRootViewModel(initializer: .supplier, requestModel: self.filterRequestObj)
     }
     
     // MARK:- Reset Data

@@ -19,7 +19,8 @@ struct BaseUrls {
     static let production = "http://ttm%40tatayab.com:608Wg8D72001FDUFT70F69nbw53KWmR1@tatayab.com/api/"
     static let staging = "http://localhost:3000/"
     static let dev2 = "http://localhost:3000/"
-    static let dev3 = "http://m.roshan%40tatayab.com:9Z19bF0f911Se53c5EE4U4Ik4F2282Fr@dev3.tatayab.com/api/"
+    static let dev3 = //"https://dev3.tatayab.com/api/"
+    "http://m.roshan%40tatayab.com:9Z19bF0f911Se53c5EE4U4Ik4F2282Fr@dev3.tatayab.com/api/"
 }
 
 struct Keys {

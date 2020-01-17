@@ -74,7 +74,7 @@ extension FilterEndpoint: TargetType {
         switch self {
             
         case .getFilteredProduct(let parameters):
-            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
         case .getSuppliers:
             return .requestParameters(parameters: [
                     "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",

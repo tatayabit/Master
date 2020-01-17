@@ -142,58 +142,6 @@ class CatProductsViewModel {
     }
     
     // MARK:- fetch more Api
-    
-//    func getFilteredProductsApi() {
-//        // 1
-//        guard !isFetchInProgress else {
-//            return
-//        }
-//
-//        // 2
-//        isFetchInProgress = true
-//
-//        let categoryId = Int(category.identifier) ?? 0
-//        apiClient.getFilteredProductOfCategory(categoryId: categoryId, page: currentPage, sort_by: filterSettings.filter, sort_order: filterSettings.sorting.rawValue) { result in
-//
-//            switch result {
-//            // 3
-//            case .failure(let error):
-//                DispatchQueue.main.async {
-//                    self.isFetchInProgress = false
-//                    self.delegate?.onFetchFailed(with: error.localizedDescription)
-//                }
-//            // 4
-//            case .success(let response):
-//                DispatchQueue.main.async {
-//                    // 1
-//                    self.currentPage += 1
-//                    self.isFetchInProgress = false
-//                    // 2
-//                    guard let productResult = response else { return }
-//                    guard let products = productResult.products else { return }
-//
-//                    if products.count < 20 {
-//                        self.shouldCallApi = false
-//                    }
-//                    self.total += products.count
-//                    self.productsList.append(contentsOf: products)
-//
-//                    // 3
-//                    if self.currentPage > 1 {
-//                        let indexPathsToReload = self.calculateIndexPathsToReload(from: products)
-//                        if let delegate = self.delegate {
-//                            delegate.onFetchCompleted(with: indexPathsToReload)
-//                        }
-//                    } else {
-//                        if let delegate = self.delegate {
-//                            delegate.onFetchCompleted(with: .none)
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
-    
     func fetchModerators() {
         // 1
         guard !isFetchInProgress else {

@@ -217,8 +217,8 @@ extension SupplierProductsViewController: SupplierProductsViewModelDelegate, isA
 extension SupplierProductsViewController : FilterDelegate{
     func freeDeliveryClick() {
         print("freeDeliveryClick")
-        guard let viewModel = viewModel else { return }
-        viewModel.freeDeliveryPressed()
+//        guard let viewModel = viewModel else { return }
+//        viewModel.freeDeliveryPressed()
     }
     
     func filterClick() {
