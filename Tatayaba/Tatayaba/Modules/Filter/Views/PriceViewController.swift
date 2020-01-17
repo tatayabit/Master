@@ -50,8 +50,15 @@ class PriceViewController: BaseViewController {
     }
 
     @IBAction func applyPriceAction(_ sender: Any) {
-        self.minValue = Double(self.minValueTXT.text ?? "0.00") ?? 0.00
-        self.maxValue = Double(self.maxValueTXT.text ?? "10000.00") ?? 10000.00
+        let language = minValueTXT.textInputMode?.primaryLanguage
+        if(language == "ar"){
+            self.minValue = Double(self.minValueTXT.text?.arToEnDigits ?? "0.00") ?? 0.00
+            self.maxValue = Double(self.maxValueTXT.text?.arToEnDigits ?? "10000.00") ?? 10000.00
+        }else{
+            self.minValue = Double(self.minValueTXT.text ?? "0.00") ?? 0.00
+            self.maxValue = Double(self.maxValueTXT.text ?? "10000.00") ?? 10000.00
+        }
+       
         if (minValue > maxValue){
             self.showErrorAlerr(title: "Error".localized(), message: "min>max".localized(), handler: nil)
         }else{
@@ -59,5 +66,14 @@ class PriceViewController: BaseViewController {
             self.navigationController?.popViewController(animated: true)
         }
        
+    }
+}
+
+extension String {
+    public var arToEnDigits : String {
+        let arabicNumbers = ["٠": "0","١": "1","٢": "2","٣": "3","٤": "4","٥": "5","٦": "6","٧": "7","٨": "8","٩": "9"]
+        var txt = self
+        arabicNumbers.map { txt = txt.replacingOccurrences(of: $0, with: $1)}
+        return txt
     }
 }
