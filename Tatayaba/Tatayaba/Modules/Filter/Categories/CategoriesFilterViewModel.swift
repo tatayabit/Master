@@ -48,15 +48,10 @@ class CategoriesFilterViewModel {
         }
     }
     
+    // MARK:- Category
     func categorySelected(at section: Int) -> Bool {
         return selectedCategories.contains(where: {
             $0.identifier == allCategories[section].identifier
-        })
-    }
-    
-    func subCategorySelected(at indexPath: IndexPath) -> Bool {
-        return selectedCategories.contains(where: {
-            $0.identifier == allCategories[indexPath.section].subCategories[indexPath.row].identifier
         })
     }
     
@@ -66,15 +61,35 @@ class CategoriesFilterViewModel {
             self.selectedCategories.removeAll(where: {$0.identifier == category.identifier})
         } else {
             self.selectedCategories.append(category)
+            self.removeSubCategoriesIfSelected(at: section)
         }
     }
     
+    func removeSubCategoriesIfSelected(at section: Int) {
+        let subcategories = allCategories[section].subCategories
+        for subCategory in subcategories {
+            self.selectedCategories.removeAll(where: {$0.identifier == subCategory.identifier})
+        }
+    }
+    
+    // MARK:- SubCategory
+    func subCategorySelected(at indexPath: IndexPath) -> Bool {
+        return selectedCategories.contains(where: {
+            $0.identifier == allCategories[indexPath.section].subCategories[indexPath.row].identifier
+        })
+    }
+    
     func addOrRemoveCategoryRowSelection(at indexPath: IndexPath) {
-        let category = allCategories[indexPath.section].subCategories[indexPath.row]
-        if self.selectedCategories.contains(where: {$0.identifier == category.identifier}) {
-            self.selectedCategories.removeAll(where: {$0.identifier == category.identifier})
+        let subCategory = allCategories[indexPath.section].subCategories[indexPath.row]
+        if self.selectedCategories.contains(where: {$0.identifier == subCategory.identifier}) {
+            self.selectedCategories.removeAll(where: {$0.identifier == subCategory.identifier})
         } else {
-            self.selectedCategories.append(category)
+            
+            self.selectedCategories.append(subCategory)
+            if self.categorySelected(at: indexPath.section) {
+                let category = allCategories[indexPath.section]
+                self.selectedCategories.removeAll(where: {$0.identifier == category.identifier})
+            }
         }
     }
 }
