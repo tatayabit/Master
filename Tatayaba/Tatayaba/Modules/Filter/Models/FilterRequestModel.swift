@@ -24,4 +24,8 @@ struct FilterRequestModel {
         self.min = min
         self.max = max
     }
+    
+    init() {
+        self.page = "0"
+    }
 }

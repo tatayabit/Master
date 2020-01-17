@@ -182,6 +182,9 @@ class FilterRootViewModel {
     // MARK:- FilterRequestModel
     func createFilterRequestModel() {
         if self.isFilterApplied() {
+            if requestModel == nil {
+                requestModel = FilterRequestModel()
+            }
             requestModel?.page = "0"
             requestModel?.supplier_ids = self.suppliers.map{ $0.supplierId }
             requestModel?.cat_ids = self.categories.map{ $0.identifier }
