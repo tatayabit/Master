@@ -73,11 +73,15 @@ class CatProductsViewModel {
         }
         
         if let cat_ids = filterObj.cat_ids{
-            requestJson["cid"] = cat_ids.joined(separator:",").urlEscaped
+            if (cat_ids.count > 0 ){
+                requestJson["cid"] = cat_ids.joined(separator:",").urlEscaped
+            }
         }
         
         if let supplier_ids = filterObj.supplier_ids{
-            requestJson["supplier_ids"] = supplier_ids.joined(separator:",").urlEscaped
+            if (supplier_ids.count > 0 ){
+                requestJson["supplier_ids"] = supplier_ids.joined(separator:",").urlEscaped
+            }
         }
         
         if let min = filterObj.min, let max = filterObj.max{
