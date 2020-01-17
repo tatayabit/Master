@@ -22,7 +22,8 @@ class PriceViewController: BaseViewController {
     @IBOutlet weak var applyBTN: UIButton!
     
     weak var priceView: PriceProtocol?
-    
+    var minValue:Double = 0.0
+    var maxValue:Double = 10000.0
     override func viewDidLoad() {
         super.viewDidLoad()
         self.NavigationBarWithBackButton()
@@ -31,17 +32,32 @@ class PriceViewController: BaseViewController {
     }
     
     func setView(){
+        self.hideKeyboardWhenTappedAround()
         self.minLBL.text = "Min".localized()
         self.maxLBL.text = "Max".localized()
+        if self.minValue > 0.00 || self.maxValue < 10000.0 {
+            self.minValueTXT.text = String(self.minValue)
+            self.maxValueTXT.text = String(self.maxValue)
+        }else{
+            self.minValueTXT.placeholder = String(self.minValue)
+            self.maxValueTXT.placeholder = String(self.maxValue)
+        }
         self.applyBTN.setTitle("apply".localized(), for: .normal)
         minView.addBottomBorder()
         maxView.addBottomBorder()
     }
 
     @IBAction func applyPriceAction(_ sender: Any) {
+        self.minValue = Double(self.minValueTXT.text ?? "0.00")!
+        self.maxValue = Double(self.maxValueTXT.text ?? "0.00")!
         let minPrice = self.minValueTXT.text ?? "0.00"
         let maxPrice = self.maxValueTXT.text ?? "10000.00"
-        priceView?.didUpdatePriceFromPrice(newMinimumPrice: Double(minPrice)!, newMaximumPrice: Double(maxPrice)!)
-        self.navigationController?.popViewController(animated: true)
+        if (minValue > maxValue){
+            self.showErrorAlerr(title: "Error".localized(), message: "min>max".localized(), handler: nil)
+        }else{
+            priceView?.didUpdatePriceFromPrice(newMinimumPrice: Double(minPrice)!, newMaximumPrice: Double(maxPrice)!)
+            self.navigationController?.popViewController(animated: true)
+        }
+       
     }
 }

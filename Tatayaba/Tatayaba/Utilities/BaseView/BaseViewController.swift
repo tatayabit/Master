@@ -66,6 +66,10 @@ class BaseViewController: UIViewController {
             loadingArr.removeAll(where: { $0 == containerView })
         }
     }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     func addSearchBtn(){
         let searchBtn = UIButton(type: .custom)

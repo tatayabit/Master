@@ -136,3 +136,4 @@ alertValaidationMessage = "You have to upgrade , your version is not supported a
 "Min"="Min";
 "Max"="Max";
 "apply" = "APPLY";
+"min>max" = "The minimum value should be less than the maximum value";
