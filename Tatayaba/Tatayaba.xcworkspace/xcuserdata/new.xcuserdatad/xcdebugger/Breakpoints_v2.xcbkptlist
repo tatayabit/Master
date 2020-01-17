@@ -1217,8 +1217,8 @@
             filePath = "Tatayaba/Modules/Filter/ViewModels/FilterRootViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "didSelectSearchCell(at:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1258,48 +1258,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8B4C1808-0BCA-4910-AA5D-B727110DD74F"
+            uuid = "090FFD3C-BEE2-423C-A1B0-C7279A52C5BF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Filter/Views/PriceViewController.swift"
+            filePath = "Tatayaba/Modules/Filter/Views/UpdatedFilterTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "applyPriceAction(_:)"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "didUpdatePriceFromPrice(newMinimumPrice:newMaximumPrice:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A1A6020A-1057-4459-A1FF-B3CE4F9F887B"
+            uuid = "3918A094-D66B-41E7-A853-1EF194C4834B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/Filter/Views/UpdatedFilterTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "didUpdatePriceFromPrice(newMinimumPrice:newMaximumPrice:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4754EC7D-1EF9-4F5B-ADAC-13849EEC4742"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tatayaba/Modules/Filter/ViewModels/FilterRootViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
-            landmarkName = "didUpdateCategories(newCategories:)"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
+            landmarkName = "didUpdatePrice(newMinimumPrice:newMaximumPrice:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DA09B321-35E3-46BA-8D90-C0A2B3B8725B"
+            uuid = "00ECBB94-26ED-4324-BAC0-07510E9B1159"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Filter/Views/PriceViewController.swift"
+            filePath = "Tatayaba/Modules/Filter/Views/UpdatedFilterTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "applyPriceAction(_:)"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

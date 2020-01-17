@@ -35,6 +35,7 @@ protocol FilterTableViewInterface: class {
 class UpdatedFilterTableViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     var viewModel: FilterRootViewModel?
+    var priceModel : PriceProtocol?
     
     let suppliersSegue = "suppliers_segue"
     let priceSegue = "price_Segue"
@@ -45,7 +46,7 @@ class UpdatedFilterTableViewController: BaseViewController, UITableViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(FilterTableViewCell.nib, forCellReuseIdentifier: FilterTableViewCell.identifier)
-        
+        self.priceModel = self
         self.viewModel?.view = self
         self.viewModel?.notifyViewLoaded()
         self.setup()
@@ -110,7 +111,11 @@ class UpdatedFilterTableViewController: BaseViewController, UITableViewDelegate,
             }
             suppliersFilterVC.filterTableViewInterface = self
         }
-
+        
+        if segue.identifier == priceSegue {
+            guard let vc = segue.destination as? PriceViewController else {return}
+            vc.priceView = self
+        }
     }
 }
 
@@ -153,4 +158,13 @@ extension UpdatedFilterTableViewController: FilterTableViewInterface {
         guard let viewModel = viewModel else { return }
         viewModel.didUpdateSuppliers(newSuppliers: suppliers)
     }
+}
+
+extension UpdatedFilterTableViewController : PriceProtocol{
+    func didUpdatePriceFromPrice(newMinimumPrice: Double, newMaximumPrice: Double) {
+        guard let viewModel = viewModel else { return }
+        viewModel.didUpdatePrice(newMinimumPrice: newMinimumPrice, newMaximumPrice: newMaximumPrice)
+    }
+    
+    
 }
