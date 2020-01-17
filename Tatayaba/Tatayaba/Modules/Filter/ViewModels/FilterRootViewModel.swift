@@ -29,8 +29,8 @@ class FilterRootViewModel {
 
     private var suppliers = [Supplier]()
     private var categories = [Category]()
-    private var minimumPrice = 0.00
-    private var maximumPrice = 0.00
+    var minimumPrice = 0.00
+    var maximumPrice = 10000.0
     private var freeDelivery = false
     private var featured = false
     var initializer: InitializerType
@@ -49,7 +49,7 @@ class FilterRootViewModel {
     }
     
     func priceData() -> (String, String) {
-        if self.maximumPrice > 0.00 && self.minimumPrice >= 0.00 {
+        if self.maximumPrice < 10000.00 && self.minimumPrice > 0.00 {
             return ("Price", "\(self.minimumPrice) - \(self.maximumPrice)")
         }
         return ("Price", "")
@@ -292,4 +292,5 @@ extension FilterRootViewModel {
         }
     }
 }
+
 

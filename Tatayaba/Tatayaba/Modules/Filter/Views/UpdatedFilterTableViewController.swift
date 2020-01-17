@@ -114,6 +114,8 @@ class UpdatedFilterTableViewController: BaseViewController, UITableViewDelegate,
         
         if segue.identifier == priceSegue {
             guard let vc = segue.destination as? PriceViewController else {return}
+            vc.minValue = self.viewModel?.minimumPrice ?? 0.0
+            vc.maxValue = self.viewModel?.maximumPrice ?? 10000.0
             vc.priceView = self
         }
     }
