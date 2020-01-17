@@ -102,6 +102,10 @@ class UpdatedFilterTableViewController: BaseViewController, UITableViewDelegate,
 //        self.viewModel?.applyFilterActionPressed()
     }
     
+    @IBAction func resetFilterAction(_ sender: Any) {
+            self.viewModel?.didPressResetFilter()
+        }
+    
     // MARK:- Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == suppliersSegue {

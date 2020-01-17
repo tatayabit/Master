@@ -259,6 +259,7 @@ extension FilterRootViewModel: FilterRootViewModelInterface {
         self.minimumPrice = 0.00
         self.maximumPrice = 0.00
         self.freeDelivery = false
+        self.featured = false
         self.view?.reloadListData()
     }
 }
