@@ -24,8 +24,7 @@ class CatProductsViewModel {
     private var isFetchInProgress = false
     private var shouldCallApi: Bool = true
 
-    
-    private var filterSettings = FilterSettings()
+    var filterRequestObj: FilterRequestModel?
     
     private weak var delegate: CatProductsViewModelDelegate?
     
@@ -89,57 +88,33 @@ class CatProductsViewModel {
         return requestJson
     }
     
-    func getFilteredProducts(with filterObj:FilterRequestModel) {
-        filterApiClient.getFilteredProduct(parameters: self.getFilterProductsJsonString(with: filterObj)) { result in
-            switch result {
-            case .success(let result):
-                if let result = result {
-                    print(result.products?.count as Any)
-                    self.productsList = result.products!
-                }
-            case .failure(let error):
-                print("the error \(error)")
-            }
-        }
-    }
-    
-    // MARK:- fetch more Api
-    
-    func getFilteredProductsApi() {
+    func getFilteredProducts() {
         // 1
-        guard !isFetchInProgress else {
-            return
-        }
+       guard !isFetchInProgress else {
+           return
+       }
+
+       // 2
+       isFetchInProgress = true
         
-        // 2
-        isFetchInProgress = true
-        
-        let categoryId = Int(category.identifier) ?? 0
-        apiClient.getFilteredProductOfCategory(categoryId: categoryId, page: currentPage, sort_by: filterSettings.filter, sort_order: filterSettings.sorting.rawValue) { result in
-            
+        filterApiClient.getFilteredProduct(parameters: self.getFilterProductsJsonString(with: self.filterRequestObj!)) { result in
             switch result {
-            // 3
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    self.isFetchInProgress = false
-                    self.delegate?.onFetchFailed(with: error.localizedDescription)
-                }
-            // 4
             case .success(let response):
                 DispatchQueue.main.async {
                     // 1
                     self.currentPage += 1
+                    self.filterRequestObj?.page = "\(self.currentPage)"
                     self.isFetchInProgress = false
                     // 2
                     guard let productResult = response else { return }
                     guard let products = productResult.products else { return }
-                    
+
                     if products.count < 20 {
                         self.shouldCallApi = false
                     }
                     self.total += products.count
                     self.productsList.append(contentsOf: products)
-                    
+
                     // 3
                     if self.currentPage > 1 {
                         let indexPathsToReload = self.calculateIndexPathsToReload(from: products)
@@ -152,9 +127,72 @@ class CatProductsViewModel {
                         }
                     }
                 }
+//                if let response = response {
+//                    print(result.products?.count as Any)
+//                    self.productsList = result.products!
+//                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.isFetchInProgress = false
+                    self.delegate?.onFetchFailed(with: error.localizedDescription)
+                }
+                print("the error \(error)")
             }
         }
     }
+    
+    // MARK:- fetch more Api
+    
+//    func getFilteredProductsApi() {
+//        // 1
+//        guard !isFetchInProgress else {
+//            return
+//        }
+//
+//        // 2
+//        isFetchInProgress = true
+//
+//        let categoryId = Int(category.identifier) ?? 0
+//        apiClient.getFilteredProductOfCategory(categoryId: categoryId, page: currentPage, sort_by: filterSettings.filter, sort_order: filterSettings.sorting.rawValue) { result in
+//
+//            switch result {
+//            // 3
+//            case .failure(let error):
+//                DispatchQueue.main.async {
+//                    self.isFetchInProgress = false
+//                    self.delegate?.onFetchFailed(with: error.localizedDescription)
+//                }
+//            // 4
+//            case .success(let response):
+//                DispatchQueue.main.async {
+//                    // 1
+//                    self.currentPage += 1
+//                    self.isFetchInProgress = false
+//                    // 2
+//                    guard let productResult = response else { return }
+//                    guard let products = productResult.products else { return }
+//
+//                    if products.count < 20 {
+//                        self.shouldCallApi = false
+//                    }
+//                    self.total += products.count
+//                    self.productsList.append(contentsOf: products)
+//
+//                    // 3
+//                    if self.currentPage > 1 {
+//                        let indexPathsToReload = self.calculateIndexPathsToReload(from: products)
+//                        if let delegate = self.delegate {
+//                            delegate.onFetchCompleted(with: indexPathsToReload)
+//                        }
+//                    } else {
+//                        if let delegate = self.delegate {
+//                            delegate.onFetchCompleted(with: .none)
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
     
     func fetchModerators() {
         // 1
@@ -214,18 +252,13 @@ class CatProductsViewModel {
     
     // MARK:- LoadMoreViewAction
     func loadMoreViewAction() {
-        if self.filterSettings.isUsingDefalutValues() {
+        if self.filterRequestObj == nil {
             self.fetchModerators()
         } else {
-            self.getFilteredProductsApi()
+            self.getFilteredProducts()
         }
     }
     
-    // MARK:- filter Products Options
-    func filterOptions(products: [Product]) {
-        
-    }
-
     // MARK:- Product data
     func product(at indexPath: IndexPath) -> Product {
         guard productsList.count > 0 else { return Product() }
@@ -239,28 +272,12 @@ class CatProductsViewModel {
     }
     
     // MARK:- Filter
-    func freeDeliveryPressed() {
-        self.filterSettings.freeDelivery = !self.filterSettings.freeDelivery
-        self.resetAllProdcuts()
-        self.getFilteredProductsApi()
-    }
-    
-    
-    
-    func filterOptionsChanged(filterValue: String) {
-        // TODO: add the inputs will be passed from the view
-        // call the changes before calling api
-        self.resetAllProdcuts()
-        self.filterSettings.filter = filterValue
-        self.getFilteredProductsApi()
-    }
-    
     func sortByOptionsChanged(sortBy: FilterSettings.SortingOptions) {
         // TODO: add the inputs will be passed from the view
         // call the changes before calling api
         self.resetAllProdcuts()
-        self.filterSettings.sorting = sortBy
-        self.getFilteredProductsApi()
+//        self.filterSettings.sorting = sortBy
+//        self.getFilteredProductsApi()
     }
     
     
@@ -287,10 +304,20 @@ class CatProductsViewModel {
         return product(at: indexPath).hasOptions
     }
     
+    // MARK:- applyFilter
+    func didApplyFilter(filterRequestModel: FilterRequestModel?) {
+        self.filterRequestObj = filterRequestModel
+        self.resetAllProdcuts()
+        if filterRequestModel != nil {
+            getFilteredProducts()
+        } else {
+            self.fetchModerators()
+        }
+    }
     
     // MARK:- Filter ViewModel
     func filterViewModel() -> FilterRootViewModel {
-        return FilterRootViewModel(initializer: .category)
+        return FilterRootViewModel(initializer: .category, requestModel: self.filterRequestObj)
     }
 }
 

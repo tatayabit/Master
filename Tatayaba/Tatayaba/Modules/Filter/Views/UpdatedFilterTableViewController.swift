@@ -150,6 +150,7 @@ extension UpdatedFilterTableViewController: FilterTableViewInterface {
     
     func applySelectedFilters(filterRequestModel: FilterRequestModel?) {
         self.senderView?.didApplyFilter(filterRequestModel: filterRequestModel)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func resetFilters() {

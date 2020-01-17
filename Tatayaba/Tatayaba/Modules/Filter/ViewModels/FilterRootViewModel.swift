@@ -33,9 +33,11 @@ class FilterRootViewModel {
     private var freeDelivery = false
     private var featured = false
     var initializer: InitializerType
+    private var requestModel: FilterRequestModel?
     
-    init(initializer: InitializerType) {
+    init(initializer: InitializerType, requestModel: FilterRequestModel?) {
         self.initializer = initializer
+        self.requestModel = requestModel
     }
         
     
@@ -178,8 +180,7 @@ class FilterRootViewModel {
     }
     
     // MARK:- FilterRequestModel
-    func createFilterRequestModel() -> FilterRequestModel? {
-        var requestModel: FilterRequestModel?
+    func createFilterRequestModel() {
         if self.isFilterApplied() {
             requestModel?.page = "0"
             requestModel?.supplier_ids = self.suppliers.map{ $0.supplierId }
@@ -187,7 +188,6 @@ class FilterRootViewModel {
             requestModel?.min = "\(self.minimumPrice)"
             requestModel?.max = "\(self.maximumPrice)"
         }
-        return requestModel
     }
 }
 
@@ -268,8 +268,8 @@ extension FilterRootViewModel: FilterRootViewModelInterface {
     }
     
     func didPressApplyFilters() {
-        let requestModel = self.createFilterRequestModel()
-        self.view?.applySelectedFilters(filterRequestModel: requestModel)
+        self.createFilterRequestModel()
+        self.view?.applySelectedFilters(filterRequestModel: self.requestModel)
     }
 }
 

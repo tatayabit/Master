@@ -199,7 +199,7 @@ class SupplierProductsViewModel {
     
     // MARK:- Filter ViewModel
     func filterViewModel() -> FilterRootViewModel {
-        return FilterRootViewModel(initializer: .supplier)
+        return FilterRootViewModel(initializer: .supplier, requestModel: nil)
     }
     
     // MARK:- Reset Data

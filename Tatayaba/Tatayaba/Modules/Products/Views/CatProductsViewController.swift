@@ -176,8 +176,8 @@ extension CatProductsViewController: CatProductsViewModelDelegate {
 extension CatProductsViewController : FilterDelegate,isAbleToReceiveData{
     func freeDeliveryClick() {
         print("freeDeliveryClick")
-        guard let viewModel = viewModel else { return }
-        viewModel.freeDeliveryPressed()
+//        guard let viewModel = viewModel else { return }
+//        viewModel.freeDeliveryPressed()
     }
     
     func filterClick() {
@@ -206,6 +206,7 @@ extension CatProductsViewController : FilterDelegate,isAbleToReceiveData{
 
 extension CatProductsViewController: FilterProductsReturnViewInterface {
     func didApplyFilter(filterRequestModel: FilterRequestModel?) {
-        
+        guard let viewModel = viewModel else { return }
+        viewModel.didApplyFilter(filterRequestModel: filterRequestModel)
     }
 }
