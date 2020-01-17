@@ -18,10 +18,19 @@ class FilterTableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    func configure(title: String, values: String) {
+    func configure(title: String, values: String,isContaingImage:Bool) {
+        self.selectionStyle = .none
         self.nameLabel.text = title
         self.detailsLabel.text = values
-       // self.arrowImg.image = UIImage(named: "right_rectangle_product")
+        
+        if isContaingImage {
+            self.detailsLabel.text = ""
+            if (values.count > 0) {
+                self.arrowImg.image = UIImage(named: "selected_icon")
+            }else{
+                self.arrowImg.image = UIImage(named: "unselected_icon")
+            }
+        }
     }
 
 }

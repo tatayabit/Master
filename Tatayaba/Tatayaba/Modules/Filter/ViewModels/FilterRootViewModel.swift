@@ -130,9 +130,12 @@ class FilterRootViewModel {
             self.view?.openSuppliersFilter()
         case .price:
             self.view?.openPriceFilter()
-        case .freeDelivery: break
-        case .featured: break
-//            return self.freeDeliveryData()
+        case .freeDelivery:
+            self.freeDelivery = !freeDelivery
+            self.view?.reloadListData()
+        case .featured:
+            self.featured = !featured
+            self.view?.reloadListData()
         case .none: break
         }
     }
@@ -160,8 +163,7 @@ class FilterRootViewModel {
         case .price:
             self.view?.openPriceFilter()
         case .freeDelivery: break
-         case .featured: break
-//            return self.freeDeliveryData()
+        case .featured: break
         case .none: break
         }
     }
@@ -262,6 +264,7 @@ extension FilterRootViewModel: FilterRootViewModelInterface {
         self.minimumPrice = 0.00
         self.maximumPrice = 0.00
         self.freeDelivery = false
+        self.featured = false
         self.view?.reloadListData()
     }
 }

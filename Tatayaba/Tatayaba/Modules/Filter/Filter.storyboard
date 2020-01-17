@@ -158,6 +158,9 @@
                                 <state key="normal" title="RESET">
                                     <color key="titleColor" red="0.13359850649999999" green="0.10292818400000001" blue="0.21072956919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="resetFilterAction:" destination="RlF-eC-9gz" eventType="touchUpInside" id="hlb-cp-fGg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
