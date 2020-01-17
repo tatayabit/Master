@@ -21,6 +21,8 @@ protocol FilterRootViewModelInterface {
     func didUpdatePrice(newMinimumPrice: Double, newMaximumPrice: Double)
 }
 
+
+
 class FilterRootViewModel {
     
     weak var view: FilterTableViewInterface?
@@ -47,7 +49,7 @@ class FilterRootViewModel {
     }
     
     func priceData() -> (String, String) {
-        if self.maximumPrice > 0.00 && self.minimumPrice > 0.00 {
+        if self.maximumPrice > 0.00 && self.minimumPrice >= 0.00 {
             return ("Price", "\(self.minimumPrice) - \(self.maximumPrice)")
         }
         return ("Price", "")
@@ -295,3 +297,4 @@ extension FilterRootViewModel {
         }
     }
 }
+

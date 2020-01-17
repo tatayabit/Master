@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol PriceProtocol: class {
+    func didUpdatePriceFromPrice(newMinimumPrice: Double, newMaximumPrice: Double)
+}
+
 class PriceViewController: BaseViewController {
     @IBOutlet weak var minView: UIView!
     @IBOutlet weak var maxView: UIView!
@@ -17,11 +21,12 @@ class PriceViewController: BaseViewController {
     @IBOutlet weak var maxLBL: UILabel!
     @IBOutlet weak var applyBTN: UIButton!
     
+    weak var priceView: PriceProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.NavigationBarWithBackButton()
         setView()
-        
         // Do any additional setup after loading the view.
     }
     
@@ -34,8 +39,9 @@ class PriceViewController: BaseViewController {
     }
 
     @IBAction func applyPriceAction(_ sender: Any) {
-        let minPrice = self.minValueTXT.text
-        let maxPrice = self.maxValueTXT.text
+        let minPrice = self.minValueTXT.text ?? "0.00"
+        let maxPrice = self.maxValueTXT.text ?? "10000.00"
+        priceView?.didUpdatePriceFromPrice(newMinimumPrice: Double(minPrice)!, newMaximumPrice: Double(maxPrice)!)
         self.navigationController?.popViewController(animated: true)
     }
 }
