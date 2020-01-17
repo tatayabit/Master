@@ -38,6 +38,8 @@ class PriceViewController: BaseViewController {
         if self.minValue > 0.00 || self.maxValue < 10000.0 {
             self.minValueTXT.text = String(self.minValue)
             self.maxValueTXT.text = String(self.maxValue)
+            self.minValueTXT.placeholder = String(0.0)
+            self.maxValueTXT.placeholder = String(10000.0)
         }else{
             self.minValueTXT.placeholder = String(self.minValue)
             self.maxValueTXT.placeholder = String(self.maxValue)
@@ -48,14 +50,12 @@ class PriceViewController: BaseViewController {
     }
 
     @IBAction func applyPriceAction(_ sender: Any) {
-        self.minValue = Double(self.minValueTXT.text ?? "0.00")!
-        self.maxValue = Double(self.maxValueTXT.text ?? "0.00")!
-        let minPrice = self.minValueTXT.text ?? "0.00"
-        let maxPrice = self.maxValueTXT.text ?? "10000.00"
+        self.minValue = Double(self.minValueTXT.text ?? "0.00") ?? 0.00
+        self.maxValue = Double(self.maxValueTXT.text ?? "10000.00") ?? 10000.00
         if (minValue > maxValue){
             self.showErrorAlerr(title: "Error".localized(), message: "min>max".localized(), handler: nil)
         }else{
-            priceView?.didUpdatePriceFromPrice(newMinimumPrice: Double(minPrice)!, newMaximumPrice: Double(maxPrice)!)
+            priceView?.didUpdatePriceFromPrice(newMinimumPrice: minValue, newMaximumPrice: maxValue)
             self.navigationController?.popViewController(animated: true)
         }
        

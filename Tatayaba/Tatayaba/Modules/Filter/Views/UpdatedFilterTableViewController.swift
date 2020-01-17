@@ -84,12 +84,12 @@ class UpdatedFilterTableViewController: BaseViewController, UITableViewDelegate,
         let cell = tableView.dequeueReusableCell(withIdentifier: FilterTableViewCell.identifier, for: indexPath) as! FilterTableViewCell
         if let viewModel = viewModel {
             let (title, values) = viewModel.getCellData(at: indexPath)
-            cell.configure(title: title, values: values)
+            let isContaingImage:Bool = (indexPath.row >= (self.viewModel?.rowsCount() ?? 5) - 2 )
+            cell.configure(title: title, values: values, isContaingImage: isContaingImage)
         }
         
-//           cell.arrowImg?.image = UIImage(named: "right_rectangle_product")
-           return cell
-       }
+        return cell
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
