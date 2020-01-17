@@ -22,6 +22,7 @@ class CategoriesFilterViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.NavigationBarWithBackButton()
 
         self.viewModel?.view = self
         self.showLoadingIndicator(to: self.view)
