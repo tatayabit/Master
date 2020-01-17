@@ -26,9 +26,9 @@ class FilterTableViewCell: UITableViewCell {
         if isContaingImage {
             self.detailsLabel.text = ""
             if (values.count > 0) {
-                self.arrowImg.image = UIImage(named: "right_rectangle_product")
+                self.arrowImg.image = UIImage(named: "selected_icon")
             }else{
-                self.arrowImg.image = nil
+                self.arrowImg.image = UIImage(named: "unselected_icon")
             }
         }
     }
