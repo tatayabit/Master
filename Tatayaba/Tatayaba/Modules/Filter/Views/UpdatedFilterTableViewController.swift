@@ -20,7 +20,7 @@ struct Headline {
 protocol FilterTableViewInterface: class {
     func setTableDataSource()
     func reloadListData()
-    func applySelectedFilters()
+    func applySelectedFilters(filterRequestModel: FilterRequestModel?)
     func resetFilters()
     func dismissScreen()
     
@@ -36,7 +36,8 @@ protocol FilterTableViewInterface: class {
 class UpdatedFilterTableViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     var viewModel: FilterRootViewModel?
-    var priceModel : PriceProtocol?
+    var priceModel: PriceProtocol?
+    var senderView: FilterProductsReturnViewInterface?
     
     let suppliersSegue = "suppliers_segue"
     let categoriesSegue = "categories_segue"
@@ -102,11 +103,12 @@ class UpdatedFilterTableViewController: BaseViewController, UITableViewDelegate,
     // MARK:- IBActions
     @IBAction func applyFilterAction(_ sender: Any) {
 //        self.viewModel?.applyFilterActionPressed()
+        self.viewModel?.didPressApplyFilters()
     }
     
     @IBAction func resetFilterAction(_ sender: Any) {
-            self.viewModel?.didPressResetFilter()
-        }
+        self.viewModel?.didPressResetFilter()
+    }
     
     // MARK:- Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -146,8 +148,8 @@ extension UpdatedFilterTableViewController: FilterTableViewInterface {
         self.tableView.reloadData()
     }
     
-    func applySelectedFilters() {
-        
+    func applySelectedFilters(filterRequestModel: FilterRequestModel?) {
+        self.senderView?.didApplyFilter(filterRequestModel: filterRequestModel)
     }
     
     func resetFilters() {
@@ -157,7 +159,6 @@ extension UpdatedFilterTableViewController: FilterTableViewInterface {
     func dismissScreen() {
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
-    
     
     func openSuppliersFilter() {
         self.performSegue(withIdentifier: suppliersSegue, sender: nil)

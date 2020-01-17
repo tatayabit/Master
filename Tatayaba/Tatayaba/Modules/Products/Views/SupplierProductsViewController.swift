@@ -117,6 +117,7 @@ class SupplierProductsViewController: BaseViewController, UICollectionViewDelega
             if let viewModel = viewModel {
                 filterVC.viewModel = viewModel.filterViewModel()
             }
+            filterVC.senderView = self
         }
     }
 
@@ -251,4 +252,10 @@ extension SupplierProductsViewController : FilterDelegate{
 }
 protocol isAbleToReceiveData {
     func pass(data: String)  //data: string is an example parameter, type 0 is Filter, 1 is sortBy
+}
+
+extension SupplierProductsViewController: FilterProductsReturnViewInterface {
+    func didApplyFilter(filterRequestModel: FilterRequestModel?) {
+        
+    }
 }

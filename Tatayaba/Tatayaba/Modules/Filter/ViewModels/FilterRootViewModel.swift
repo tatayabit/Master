@@ -14,14 +14,13 @@ protocol FilterRootViewModelInterface {
     func didSelectRow(at indexPath: IndexPath)
     func rowsCount() -> Int
     func didPressResetFilter()
+    func didPressApplyFilters()
     
     // from other viewModels
     func didUpdateCategories(newCategories: [Category])
     func didUpdateSuppliers(newSuppliers: [Supplier])
     func didUpdatePrice(newMinimumPrice: Double, newMaximumPrice: Double)
 }
-
-
 
 class FilterRootViewModel {
     
@@ -70,8 +69,8 @@ class FilterRootViewModel {
         let categoriesApplied = self.categories.count > 0
         let minimumApplied = self.minimumPrice > 0.00
         let maxmumApplied = self.maximumPrice > 0.00
-        return suppliersApplied && categoriesApplied
-            && minimumApplied && maxmumApplied && self.freeDelivery
+        return suppliersApplied || categoriesApplied
+            || minimumApplied || maxmumApplied || self.freeDelivery
     }
     
     
@@ -266,6 +265,11 @@ extension FilterRootViewModel: FilterRootViewModelInterface {
         self.freeDelivery = false
         self.featured = false
         self.view?.reloadListData()
+    }
+    
+    func didPressApplyFilters() {
+        let requestModel = self.createFilterRequestModel()
+        self.view?.applySelectedFilters(filterRequestModel: requestModel)
     }
 }
 

@@ -99,6 +99,7 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
             if let viewModel = viewModel {
                 filterVC.viewModel = viewModel.filterViewModel()
             }
+            filterVC.senderView = self
         }
     }
 
@@ -200,8 +201,11 @@ extension CatProductsViewController : FilterDelegate,isAbleToReceiveData{
         let sortBy: FilterSettings.SortingOptions = data.lowercased() == "low to high" ? .ascending : .descending
         viewModel.sortByOptionsChanged(sortBy: sortBy)
         self.productsCollectionView.reloadData()
-
-        
      }
-    
+}
+
+extension CatProductsViewController: FilterProductsReturnViewInterface {
+    func didApplyFilter(filterRequestModel: FilterRequestModel?) {
+        
+    }
 }

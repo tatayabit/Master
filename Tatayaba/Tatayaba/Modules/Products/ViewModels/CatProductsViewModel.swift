@@ -16,6 +16,7 @@ protocol CatProductsViewModelDelegate: class {
 
 class CatProductsViewModel {
     let apiClient = ProductsAPIClient()
+    let filterApiClient = FilterAPIClient()
 
     private var productsList = [Product]()
     private var currentPage = 0
@@ -47,6 +48,60 @@ class CatProductsViewModel {
         return productsList.count
     }
 
+    // MARK:- NewFilter Api
+    private func getFilterProductsJsonString(with filterObj:FilterRequestModel) -> [String: Any] {
+
+        var requestJson = [String: Any]()
+        
+        var currencyId = Constants.Currency.kuwaitCurrencyId
+        if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
+            currencyId = countryCurrency
+        }
+
+        requestJson["page"] = filterObj.page.urlEscaped
+        requestJson["items_per_page"] = 20
+        requestJson["available_country_code"] = CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw"
+        requestJson["currency_id"] = currencyId.urlEscaped
+        requestJson["lang_code"] = LanguageManager.getLanguage()
+        
+        
+        if let sort_by = filterObj.sort_by{
+            requestJson["sort_by"] = sort_by.joined(separator:",").urlEscaped
+        }
+        
+        if let sort_order = filterObj.sort_order{
+            requestJson["sort_order"] = sort_order
+        }
+        
+        if let cat_ids = filterObj.cat_ids{
+            requestJson["cid"] = cat_ids.joined(separator:",").urlEscaped
+        }
+        
+        if let supplier_ids = filterObj.supplier_ids{
+            requestJson["supplier_ids"] = supplier_ids.joined(separator:",").urlEscaped
+        }
+        
+        if let min = filterObj.min, let max = filterObj.max{
+            requestJson["min"] = min.urlEscaped
+            requestJson["max"] = max.urlEscaped
+        }
+        
+        return requestJson
+    }
+    
+    func getFilteredProducts(with filterObj:FilterRequestModel) {
+        filterApiClient.getFilteredProduct(parameters: self.getFilterProductsJsonString(with: filterObj)) { result in
+            switch result {
+            case .success(let result):
+                if let result = result {
+                    print(result.products?.count as Any)
+                    self.productsList = result.products!
+                }
+            case .failure(let error):
+                print("the error \(error)")
+            }
+        }
+    }
     
     // MARK:- fetch more Api
     

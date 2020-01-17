@@ -48,6 +48,7 @@
 		10BCEFC523D10B4C000FB506 /* FilterCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10BCEFC323D10B4C000FB506 /* FilterCategoryTableViewCell.xib */; };
 		10BCEFC723D11DC3000FB506 /* FilterCategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BCEFC623D11DC3000FB506 /* FilterCategoryHeaderView.swift */; };
 		10BCEFC923D11DF8000FB506 /* FilterCategoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10BCEFC823D11DF8000FB506 /* FilterCategoryHeaderView.xib */; };
+		10BEE44123D238BB00DA55E0 /* FilterProductsReturnViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BEE44023D238BB00DA55E0 /* FilterProductsReturnViewInterface.swift */; };
 		10C8E8F7238929DA00E22581 /* Dispatch+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C8E8F6238929DA00E22581 /* Dispatch+Extensions.swift */; };
 		10D68F1523D03BEF00D65959 /* FilterAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D68F1323D03BEF00D65959 /* FilterAPIClient.swift */; };
 		10D68F1623D03BEF00D65959 /* FilterEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D68F1423D03BEF00D65959 /* FilterEndpoint.swift */; };
@@ -395,6 +396,7 @@
 		10BCEFC323D10B4C000FB506 /* FilterCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCategoryTableViewCell.xib; sourceTree = "<group>"; };
 		10BCEFC623D11DC3000FB506 /* FilterCategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCategoryHeaderView.swift; sourceTree = "<group>"; };
 		10BCEFC823D11DF8000FB506 /* FilterCategoryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCategoryHeaderView.xib; sourceTree = "<group>"; };
+		10BEE44023D238BB00DA55E0 /* FilterProductsReturnViewInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterProductsReturnViewInterface.swift; sourceTree = "<group>"; };
 		10C62BF523AA933300562CC0 /* TATAYAB - تطيّب.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TATAYAB - تطيّب.entitlements"; sourceTree = "<group>"; };
 		10C8E8F6238929DA00E22581 /* Dispatch+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dispatch+Extensions.swift"; sourceTree = "<group>"; };
 		10D68F1323D03BEF00D65959 /* FilterAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterAPIClient.swift; sourceTree = "<group>"; };
@@ -861,6 +863,7 @@
 				108EFB1523CF968A00E71E40 /* UpdatedFilterTableViewController.swift */,
 				1022725723CF9A4F00788232 /* PriceViewController.swift */,
 				108EFB1623CF968A00E71E40 /* CustomViews */,
+				10BEE44023D238BB00DA55E0 /* FilterProductsReturnViewInterface.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2843,6 +2846,7 @@
 				11081EF622DB8A1600B68EA5 /* ProfileViewModel.swift in Sources */,
 				27F32DC62371FCCA000F7758 /* ForgetPasswordResult.swift in Sources */,
 				11453954232A8D2900EDC908 /* ConciergeViewModel.swift in Sources */,
+				10BEE44123D238BB00DA55E0 /* FilterProductsReturnViewInterface.swift in Sources */,
 				848E89C822CCE53E000AA24C /* BaseViewController.swift in Sources */,
 				111C8A38230B1135003F5FDB /* BlocksEndpoint.swift in Sources */,
 				1100421122D4F3520099AE64 /* String+Extensions.swift in Sources */,
