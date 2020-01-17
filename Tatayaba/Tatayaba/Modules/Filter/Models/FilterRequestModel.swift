@@ -26,4 +26,8 @@ struct FilterRequestModel {
         self.max = max
         self.searchText = searchText
     }
+    
+    init() {
+        self.page = "0"
+    }
 }
