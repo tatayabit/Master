@@ -71,11 +71,17 @@ class SortTableViewController: UITableViewController {
                 filterRequestModel?.sort_order = self.sortArray3[indexPath.row]
                 removeSoryingValues()
                 filterRequestModel?.sort_by.append(self.sortArray4[indexPath.row])
+                if indexPath.row == 2 {
+                    self.filterRequestModel?.sort_order = nil
+                }
             }else{
                 self.filterRequestModel = FilterRequestModel()
                 self.filterRequestModel?.sort_order = self.sortArray3[indexPath.row]
                 removeSoryingValues()
                 filterRequestModel?.sort_by.append(self.sortArray4[indexPath.row])
+                if indexPath.row == 2 {
+                    self.filterRequestModel?.sort_order = nil
+                }
             }
             dismiss(animated: true, completion: nil)
         }
