@@ -55,15 +55,30 @@ class FilterRootViewModel {
                 }
             }
             
+            if let suppliersIds = requestModel?.supplier_ids {
+                for id in suppliersIds {
+                    let supplierObj = Supplier(supplierId: id, name: "")
+                    self.suppliers.append(supplierObj)
+                }
+            }
+            
+            if let catIds = requestModel?.cat_ids {
+                for id in catIds {
+                    let categoryObj = Category(identifier: id)
+                    self.categories.append(categoryObj)
+                }
+            }
         }
     }
     
     func suppliersData() -> (String, String) {
-        return ("Suppliers", self.suppliers.map{ $0.name }.joined(separator: ", "))
+        let suppliersText = self.suppliers.count > 0 ? "\(self.suppliers.count)" : ""
+        return ("Suppliers",suppliersText )
     }
     
     func categoriesData() -> (String, String) {
-        return ("Categories", self.categories.map{ $0.name }.joined(separator: ", "))
+        let categoriesText = self.categories.count > 0 ? "\(self.categories.count)" : ""
+        return ("Categories", categoriesText)
     }
     
     func priceData() -> (String, String) {
@@ -164,9 +179,12 @@ class FilterRootViewModel {
             self.view?.openCategoriesFilter()
         case .price:
             self.view?.openPriceFilter()
-        case .freeDelivery: break
-        case .featured: break
-//            return self.freeDeliveryData()
+        case .freeDelivery:
+            self.freeDelivery = !freeDelivery
+            self.view?.reloadListData()
+        case .featured:
+            self.featured = !featured
+            self.view?.reloadListData()
         case .none: break
         }
     }
@@ -180,8 +198,12 @@ class FilterRootViewModel {
             self.view?.openSuppliersFilter()
         case .price:
             self.view?.openPriceFilter()
-        case .freeDelivery: break
-        case .featured: break
+        case .freeDelivery:
+            self.freeDelivery = !freeDelivery
+            self.view?.reloadListData()
+        case .featured:
+            self.featured = !featured
+            self.view?.reloadListData()
         case .none: break
         }
     }

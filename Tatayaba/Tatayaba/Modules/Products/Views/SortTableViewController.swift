@@ -15,10 +15,12 @@ class SortTableViewController: UITableViewController {
     var viewType:Int = 0
     var selectedOption:String?
     var sortFilterOption:String?
-    var sortArray2 = ["High to low","Low to high", "Featured"]
-    var sortArray = ["High to low".localized(),"Low to high".localized(),"Featured".localized()]
+    var sortArray2 = ["High to low","Low to high", "Popularity"]
+    var sortArray3 = ["desc","asc", "popularity"]
+    var sortArray4 = ["price","price", "popularity"]
+    var sortArray = ["High to low".localized(),"Low to high".localized(),"Popularity".localized()]
     var senderView: FilterProductsReturnViewInterface?
-
+    var filterRequestModel: FilterRequestModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,7 @@ class SortTableViewController: UITableViewController {
     override func viewWillDisappear(_ animated: Bool) {
 
         delegate?.pass(data: self.selectedOption ?? "") //call the func in the previous vc
+        self.senderView?.didApplyFilter(filterRequestModel: filterRequestModel)
     }
    
     func setselectedOptionInit(){
@@ -64,11 +67,43 @@ class SortTableViewController: UITableViewController {
         override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             tableView.deselectRow(at: indexPath, animated: true)
             self.selectedOption = self.sortArray2[indexPath.row]
+            if filterRequestModel != nil{
+                filterRequestModel?.sort_order = self.sortArray3[indexPath.row]
+                removeSoryingValues()
+                filterRequestModel?.sort_by.append(self.sortArray4[indexPath.row])
+                if indexPath.row == 2 {
+                    self.filterRequestModel?.sort_order = nil
+                }
+            }else{
+                self.filterRequestModel = FilterRequestModel()
+                self.filterRequestModel?.sort_order = self.sortArray3[indexPath.row]
+                removeSoryingValues()
+                filterRequestModel?.sort_by.append(self.sortArray4[indexPath.row])
+                if indexPath.row == 2 {
+                    self.filterRequestModel?.sort_order = nil
+                }
+            }
             dismiss(animated: true, completion: nil)
+        }
+        
+        func removeSoryingValues(){
+//            self.filterRequestModel?.sort_by = self.filterRequestModel?.sort_by.filter { $0 != "price" }
+//            self.filterRequestModel?.sort_by = self.filterRequestModel?.sort_by.filter { $0 != "popularity" } ?? []
             
+            self.filterRequestModel?.sort_by.remove("price")
+            self.filterRequestModel?.sort_by.remove("popularity")
         }
     }
     
+
+extension Array where Element: Equatable {
+
+    mutating func remove(_ element: Element) {
+        _ = index(of: element).flatMap {
+            self.remove(at: $0)
+        }
+    }
+}
     
     
     

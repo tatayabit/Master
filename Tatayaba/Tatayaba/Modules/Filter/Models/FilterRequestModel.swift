@@ -8,7 +8,7 @@
 
 struct FilterRequestModel {
     var page:String
-    var sort_by: [String]?
+    var sort_by: [String] = []
     var sort_order: String?
     var cat_ids: [String]?
     var supplier_ids: [String]?
