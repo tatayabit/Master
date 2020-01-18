@@ -138,3 +138,9 @@ alertValaidationMessage = "You have to upgrade , your version is not supported a
 "apply" = "APPLY";
 "min>max" = "The minimum value should be less than the maximum value";
 "reset" = "RESET";
+
+
+"Suppliers Filter" = "Suppliers";
+"Categories Filter" = "Categories";
+"Price Filter" = "Price";
+"Free Delivery Filter" = "Free Delivery";

@@ -138,3 +138,10 @@ alertValaidationMessage = "يجب عليك الترقية ، الإصدار ال
 "apply" = "تفعيل";
 "min>max" = "يجب ان يكون الحد الأدني اقل من الحد الأقصي";
 "reset" = "إعاده تعيين";
+
+
+
+"Suppliers Filter" = "العلامات التجارية";
+"Categories Filter" = "الفئات";
+"Price Filter" = "السعر";
+"Free Delivery Filter" = "توصيل مجاني";

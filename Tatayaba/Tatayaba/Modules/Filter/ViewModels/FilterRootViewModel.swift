@@ -81,24 +81,24 @@ class FilterRootViewModel {
     
     func suppliersData() -> (String, String) {
 //        let suppliersText = self.suppliers.count > 0 ? "\(self.suppliers.count)" : ""
-        return ("Suppliers", self.suppliers.map{ $0.name }.joined(separator: ", "))
+        return ("Suppliers Filter".localized(), self.suppliers.map{ $0.name }.joined(separator: ", "))
     }
     
     func categoriesData() -> (String, String) {
 //        let categoriesText = self.categories.count > 0 ? "\(self.categories.count)" : ""
-        return ("Categories", self.categories.map{ $0.name }.joined(separator: ", "))
+        return ("Categories Filter".localized(), self.categories.map{ $0.name }.joined(separator: ", "))
     }
     
     func priceData() -> (String, String) {
         if self.maximumPrice < 10000.00 && self.minimumPrice >= 0.00 {
-            return ("Price", "\(self.minimumPrice) - \(self.maximumPrice)")
+            return ("Price Filter".localized(), "\(self.minimumPrice) - \(self.maximumPrice)")
         }
-        return ("Price", "")
+        return ("Price Filter".localized(), "")
     }
     
     func freeDeliveryData() -> (String, String) {
-        let freeDeliveryString = self.freeDelivery ? "Free Delivery" : ""
-        return ("Free Delivery", freeDeliveryString)
+        let freeDeliveryString = self.freeDelivery ? "Free Delivery Filter".localized() : ""
+        return ("Free Delivery Filter".localized(), freeDeliveryString)
     }
     
     func featuredData() -> (String, String) {
@@ -286,6 +286,8 @@ extension FilterRootViewModel: FilterRootViewModelInterface {
     
     // from other view Models
     func didUpdateCategories(newCategories: [Category]) {
+        self.categories = [Category]()
+
         for category in newCategories {
             if !self.categories.contains(where: { $0.identifier == category.identifier }) {
                 self.categories.append(category)
@@ -295,6 +297,7 @@ extension FilterRootViewModel: FilterRootViewModelInterface {
     }
     
     func didUpdateSuppliers(newSuppliers: [Supplier]) {
+        self.suppliers = [Supplier]()
         for supplier in newSuppliers {
             if !self.suppliers.contains(where: { $0.supplierId == supplier.supplierId }) {
                 self.suppliers.append(supplier)
