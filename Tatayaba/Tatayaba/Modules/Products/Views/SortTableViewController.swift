@@ -15,9 +15,11 @@ class SortTableViewController: UITableViewController {
     var viewType:Int = 0
     var selectedOption:String?
     var sortFilterOption:String?
-    var sortArray2 = ["High to low","Low to high", "Featured"]
-    var sortArray = ["High to low".localized(),"Low to high".localized(),"Featured".localized()]
-    
+    var sortArray2 = ["High to low","Low to high", "Popularity"]
+    var sortArray3 = ["desc","asc", "popularity"]
+    var sortArray = ["High to low".localized(),"Low to high".localized(),"Popularity".localized()]
+    var senderView: FilterProductsReturnViewInterface?
+    var filterRequestModel: FilterRequestModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,7 @@ class SortTableViewController: UITableViewController {
     override func viewWillDisappear(_ animated: Bool) {
 
         delegate?.pass(data: self.selectedOption ?? "") //call the func in the previous vc
+        self.senderView?.didApplyFilter(filterRequestModel: filterRequestModel)
     }
    
     func setselectedOptionInit(){
@@ -63,6 +66,7 @@ class SortTableViewController: UITableViewController {
         override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             tableView.deselectRow(at: indexPath, animated: true)
             self.selectedOption = self.sortArray2[indexPath.row]
+            filterRequestModel?.sort_order = self.sortArray3[indexPath.row]
             dismiss(animated: true, completion: nil)
             
         }

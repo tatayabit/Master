@@ -186,6 +186,8 @@ extension CatProductsViewController : FilterDelegate,isAbleToReceiveData{
     func sortClick() {
         let vc = SortTableViewController()
         vc.delegate = self
+        vc.senderView = self
+        vc.filterRequestModel = self.viewModel?.filterRequestObj
         vc.sortFilterOption = self.sortFilterOption
         let navController = UINavigationController(rootViewController: vc)
         self.navigationController?.present(navController, animated: true, completion: nil)

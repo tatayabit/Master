@@ -147,9 +147,12 @@ class FilterRootViewModel {
             self.view?.openCategoriesFilter()
         case .price:
             self.view?.openPriceFilter()
-        case .freeDelivery: break
-        case .featured: break
-//            return self.freeDeliveryData()
+        case .freeDelivery:
+            self.freeDelivery = !freeDelivery
+            self.view?.reloadListData()
+        case .featured:
+            self.featured = !featured
+            self.view?.reloadListData()
         case .none: break
         }
     }
@@ -163,8 +166,12 @@ class FilterRootViewModel {
             self.view?.openSuppliersFilter()
         case .price:
             self.view?.openPriceFilter()
-        case .freeDelivery: break
-        case .featured: break
+        case .freeDelivery:
+            self.freeDelivery = !freeDelivery
+            self.view?.reloadListData()
+        case .featured:
+            self.featured = !featured
+            self.view?.reloadListData()
         case .none: break
         }
     }
