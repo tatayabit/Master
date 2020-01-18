@@ -68,17 +68,25 @@ class FilterRootViewModel {
                     self.categories.append(categoryObj)
                 }
             }
+            
+            if let categoriesObj = requestModel?.categories {
+                self.categories = categoriesObj
+            }
+            
+            if let suppliersObj = requestModel?.suppliers {
+                self.suppliers = suppliersObj
+            }
         }
     }
     
     func suppliersData() -> (String, String) {
-        let suppliersText = self.suppliers.count > 0 ? "\(self.suppliers.count)" : ""
-        return ("Suppliers",suppliersText )
+//        let suppliersText = self.suppliers.count > 0 ? "\(self.suppliers.count)" : ""
+        return ("Suppliers", self.suppliers.map{ $0.name }.joined(separator: ", "))
     }
     
     func categoriesData() -> (String, String) {
-        let categoriesText = self.categories.count > 0 ? "\(self.categories.count)" : ""
-        return ("Categories", categoriesText)
+//        let categoriesText = self.categories.count > 0 ? "\(self.categories.count)" : ""
+        return ("Categories", self.categories.map{ $0.name }.joined(separator: ", "))
     }
     
     func priceData() -> (String, String) {
@@ -229,6 +237,8 @@ class FilterRootViewModel {
             requestModel?.cat_ids = self.categories.map{ $0.identifier }
             requestModel?.min = "\(self.minimumPrice)"
             requestModel?.max = "\(self.maximumPrice)"
+            requestModel?.categories = self.categories
+            requestModel?.suppliers = self.suppliers
         }
     }
 }

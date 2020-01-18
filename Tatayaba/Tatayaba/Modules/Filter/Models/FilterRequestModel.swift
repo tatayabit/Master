@@ -15,7 +15,10 @@ struct FilterRequestModel {
     var min: String?
     var max: String?
     var searchText : String?
-    
+
+    var suppliers: [Supplier]?
+    var categories: [Category]?
+
     init(page:String ,sort_by: [String],sort_order: String,cat_ids: [String],supplier_ids: [String],min: String,max: String,searchText:String) {
         self.page = page
         self.sort_by = sort_by
