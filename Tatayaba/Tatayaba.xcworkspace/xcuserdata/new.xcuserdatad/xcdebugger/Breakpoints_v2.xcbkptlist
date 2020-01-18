@@ -1079,7 +1079,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "182"
             endingLineNumber = "182"
-            landmarkName = "onFetchFailed(with:)"
+            landmarkName = "onFetchCompleted(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1095,7 +1095,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "182"
             endingLineNumber = "182"
-            landmarkName = "onFetchFailed(with:)"
+            landmarkName = "onFetchCompleted(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1285,9 +1285,9 @@
             filePath = "Tatayaba/Modules/Products/Views/SupplierProductsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
-            landmarkName = "pass(data:)"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
+            landmarkName = "sortClick()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1560,6 +1560,22 @@
             startingLineNumber = "97"
             endingLineNumber = "97"
             landmarkName = "getFilterProductsJsonString(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "42DAE2CE-4194-4813-95E8-9570ADEF6D1A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/Products/Views/SortTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -66,7 +66,12 @@ class SortTableViewController: UITableViewController {
         override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             tableView.deselectRow(at: indexPath, animated: true)
             self.selectedOption = self.sortArray2[indexPath.row]
-            filterRequestModel?.sort_order = self.sortArray3[indexPath.row]
+            if filterRequestModel != nil{
+                filterRequestModel?.sort_order = self.sortArray3[indexPath.row]
+            }else{
+                self.filterRequestModel = FilterRequestModel()
+                self.filterRequestModel?.sort_order = self.sortArray3[indexPath.row]
+            }
             dismiss(animated: true, completion: nil)
             
         }
