@@ -23,49 +23,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "31AB60BD-8B25-4BD1-82ED-0F776AC9EC5D"
+            uuid = "3EA65152-4389-4A97-8168-78D83275661B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Products/ViewModels/CatProductsViewModel.swift"
+            filePath = "Tatayaba/Modules/Filter/ViewModels/FilterRootViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
-            landmarkName = "getFilteredProducts()"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "init(initializer:requestModel:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "31AB60BD-8B25-4BD1-82ED-0F776AC9EC5D - 4560f05f0640a846"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.ProductsResult&gt;, Moya.MoyaError&gt;) -&gt; () in TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.CatProductsViewModel.getFilteredProducts() -&gt; ()"
-                  moduleName = "TATAYAB - &#x62a;&#x637;&#x64a;&#x651;&#x628;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kareemmohammed/Documents/Apps/TTProject/TATAYAB/Tatayaba/Tatayaba/Modules/Products/ViewModels/CatProductsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "956">
-               </Location>
-               <Location
-                  uuid = "31AB60BD-8B25-4BD1-82ED-0F776AC9EC5D - adc89cb686ee93ca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 () -&gt; () in closure #1 (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.ProductsResult&gt;, Moya.MoyaError&gt;) -&gt; () in TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.CatProductsViewModel.getFilteredProducts() -&gt; ()"
-                  moduleName = "TATAYAB - &#x62a;&#x637;&#x64a;&#x651;&#x628;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kareemmohammed/Documents/Apps/TTProject/TATAYAB/Tatayaba/Tatayaba/Modules/Products/ViewModels/CatProductsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "136"
-                  endingLineNumber = "136"
-                  offsetFromSymbolStart = "150">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

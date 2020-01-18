@@ -17,7 +17,8 @@ class SortTableViewController: UITableViewController {
     var sortFilterOption:String?
     var sortArray2 = ["High to low","Low to high", "Featured"]
     var sortArray = ["High to low".localized(),"Low to high".localized(),"Featured".localized()]
-    
+    var senderView: FilterProductsReturnViewInterface?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

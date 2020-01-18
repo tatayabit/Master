@@ -38,8 +38,25 @@ class FilterRootViewModel {
     init(initializer: InitializerType, requestModel: FilterRequestModel?) {
         self.initializer = initializer
         self.requestModel = requestModel
+        self.fillProperties()
     }
-        
+    
+    func fillProperties() {
+        if self.requestModel != nil {
+            if let min = requestModel?.min {
+                if let minimumPrice = Double(min) {
+                    self.minimumPrice = minimumPrice
+                }
+            }
+            
+            if let max = requestModel?.max {
+                if let maximumPrice = Double(max) {
+                    self.maximumPrice = maximumPrice
+                }
+            }
+            
+        }
+    }
     
     func suppliersData() -> (String, String) {
         return ("Suppliers", self.suppliers.map{ $0.name }.joined(separator: ", "))
