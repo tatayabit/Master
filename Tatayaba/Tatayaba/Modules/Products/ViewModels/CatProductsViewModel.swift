@@ -71,11 +71,12 @@ class CatProductsViewModel {
             requestJson["sort_order"] = sort_order
         }
         
-        if let cat_ids = filterObj.cat_ids{
-            if (cat_ids.count > 0 ){
-                requestJson["cid"] = cat_ids.joined(separator:",").urlEscaped
-            }
-        }
+        
+//        if let cat_ids = filterObj.cat_ids{
+//            if (cat_ids.count > 0 ){
+                requestJson["cid"] = self.category.identifier.urlEscaped
+//            }
+//        }
         
         if let supplier_ids = filterObj.supplier_ids{
             if (supplier_ids.count > 0 ){
