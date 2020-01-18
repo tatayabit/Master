@@ -7,16 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B8241C22-C910-4063-ABF7-3C09D795D608"
+            uuid = "1138F834-D959-40EA-9B9C-321E82696499"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/Products/ViewModels/CatProductsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "getFilterProductsJsonString(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CFA59545-F188-4534-A585-A8C4969E8531"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Filter/Categories/CustomCells/FilterCategoryHeaderView.swift"
+            filePath = "Tatayaba/Modules/Products/Views/SupplierProductsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "configure(category:selected:section:)"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
+            landmarkName = "didApplyFilter(filterRequestModel:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

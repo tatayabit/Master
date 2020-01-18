@@ -82,7 +82,7 @@ class FilterRootViewModel {
     }
     
     func priceData() -> (String, String) {
-        if self.maximumPrice < 10000.00 && self.minimumPrice > 0.00 {
+        if self.maximumPrice < 10000.00 && self.minimumPrice >= 0.00 {
             return ("Price", "\(self.minimumPrice) - \(self.maximumPrice)")
         }
         return ("Price", "")

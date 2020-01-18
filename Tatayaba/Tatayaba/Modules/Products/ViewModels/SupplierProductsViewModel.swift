@@ -49,6 +49,113 @@ class SupplierProductsViewModel {
         return productsList.count
     }
 
+    // MARK:- NewFilter Api
+    private func getFilterProductsJsonString(with filterObj:FilterRequestModel) -> [String: Any] {
+
+        var requestJson = [String: Any]()
+        
+        var currencyId = Constants.Currency.kuwaitCurrencyId
+        if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
+            currencyId = countryCurrency
+        }
+
+        requestJson["page"] = filterObj.page.urlEscaped
+        requestJson["items_per_page"] = 100
+        requestJson["available_country_code"] = CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw"
+        requestJson["currency_id"] = currencyId.urlEscaped
+        requestJson["lang_code"] = LanguageManager.getLanguage()
+        
+        if (filterObj.sort_by.count > 0 ){
+            requestJson["sort_by"] = filterObj.sort_by.joined(separator:",").urlEscaped
+        }
+        
+        if let sort_order = filterObj.sort_order{
+            requestJson["sort_order"] = sort_order
+        }
+        
+        
+        if let cat_ids = filterObj.cat_ids{
+            if (cat_ids.count > 0 ){
+            requestJson["cid"] = cat_ids.joined(separator:",").urlEscaped
+            }
+        }
+        
+//        if let supplier_ids = filterObj.supplier_ids{
+//            if (supplier_ids.count > 0 ){
+                requestJson["supplier_ids"] = self.supplier.supplierId.urlEscaped
+//            }
+//        }
+        
+        if let min = filterObj.min, let max = filterObj.max{
+            requestJson["min"] = min.urlEscaped
+            requestJson["max"] = max.urlEscaped
+        }
+        
+        if let searchString = filterObj.searchText{
+            requestJson["search"] = "y"
+            requestJson["q"] = searchString
+        }
+        
+        return requestJson
+    }
+    
+    func getFilteredProducts() {
+             // 1
+    //        if !shouldCallApi {
+    //            return
+    //        }
+    //
+    //
+    //        guard !isFetchInProgress else {
+    //            return
+    //        }
+             
+             // 2
+    //         isFetchInProgress = true
+             filterApiClient.getFilteredProduct(parameters: self.getFilterProductsJsonString(with: self.filterRequestObj!)) { result in
+
+                 switch result {
+                 // 3
+                 case .failure(let error):
+                     DispatchQueue.main.async {
+    //                     self.isFetchInProgress = false
+                         self.delegate?.onFetchFailed(with: error.localizedDescription)
+                     }
+                 // 4
+                 case .success(let response):
+                     DispatchQueue.main.async {
+                        // 1
+    //                    self.currentPage += 1
+    //                    self.isFetchInProgress = false
+                        // 2
+                        
+                        guard let supplierResult = response else { return }
+                        
+//                        self.supplier = supplierResult
+//                        print(self.supplier)
+                         
+    //                    if supplierResult.products.count < 20 {
+    //                        self.shouldCallApi = false
+    //                    }
+                        
+                        self.total += supplierResult.products!.count
+                        self.productsList.append(contentsOf: (supplierResult.products!))
+                         
+                        // 3
+    //                    if self.currentPage > 1 {
+    //                        let indexPathsToReload = self.calculateIndexPathsToReload(from: supplierResult.products)
+    //                        if let delegate = self.delegate {
+    //                            delegate.onFetchCompleted(with: indexPathsToReload)
+    //                        }
+    //                    } else {
+                            if let delegate = self.delegate {
+                                delegate.onFetchCompleted(with: .none)
+                            }
+    //                    }
+                     }
+                 }
+             }
+         }
 
 //    //MARK:- Api
 //    func getSupplierDetails(completion: @escaping (APIResult<Supplier?, MoyaError>) -> Void) {
@@ -188,7 +295,7 @@ class SupplierProductsViewModel {
         self.filterRequestObj = filterRequestModel
         self.resetAllProdcuts()
         if filterRequestModel != nil {
-//            getFilteredProducts()
+            getFilteredProducts()
         } else {
             self.fetchModerators()
         }

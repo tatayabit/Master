@@ -258,6 +258,8 @@ protocol isAbleToReceiveData {
 
 extension SupplierProductsViewController: FilterProductsReturnViewInterface {
     func didApplyFilter(filterRequestModel: FilterRequestModel?) {
-        
+        guard let viewModel = viewModel else { return }
+        viewModel.didApplyFilter(filterRequestModel: filterRequestModel)
+        self.productsCollectionView.reloadData()
     }
 }
