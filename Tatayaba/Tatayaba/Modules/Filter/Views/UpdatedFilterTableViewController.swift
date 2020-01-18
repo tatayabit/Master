@@ -71,7 +71,7 @@ class UpdatedFilterTableViewController: BaseViewController, UITableViewDelegate,
         resetBTN.layer.cornerRadius = 5
         resetBTN.layer.borderWidth = 1
         resetBTN.layer.borderColor = #colorLiteral(red: 0.1335985065, green: 0.102928184, blue: 0.2107295692, alpha: 1)
-        resetBTN.setTitle("Cancel".localized(), for: .normal)
+        resetBTN.setTitle("reset".localized(), for: .normal)
     }
     // MARK: - Table view data source
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
