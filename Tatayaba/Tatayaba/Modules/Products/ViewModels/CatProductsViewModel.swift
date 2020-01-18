@@ -63,9 +63,8 @@ class CatProductsViewModel {
         requestJson["currency_id"] = currencyId.urlEscaped
         requestJson["lang_code"] = LanguageManager.getLanguage()
         
-        
-        if let sort_by = filterObj.sort_by{
-            requestJson["sort_by"] = sort_by.joined(separator:",").urlEscaped
+        if (filterObj.sort_by.count > 0 ){
+            requestJson["sort_by"] = filterObj.sort_by.joined(separator:",").urlEscaped
         }
         
         if let sort_order = filterObj.sort_order{

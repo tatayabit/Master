@@ -17,6 +17,7 @@ class SortTableViewController: UITableViewController {
     var sortFilterOption:String?
     var sortArray2 = ["High to low","Low to high", "Popularity"]
     var sortArray3 = ["desc","asc", "popularity"]
+    var sortArray4 = ["price","price", "popularity"]
     var sortArray = ["High to low".localized(),"Low to high".localized(),"Popularity".localized()]
     var senderView: FilterProductsReturnViewInterface?
     var filterRequestModel: FilterRequestModel?
@@ -68,15 +69,35 @@ class SortTableViewController: UITableViewController {
             self.selectedOption = self.sortArray2[indexPath.row]
             if filterRequestModel != nil{
                 filterRequestModel?.sort_order = self.sortArray3[indexPath.row]
+                removeSoryingValues()
+                filterRequestModel?.sort_by.append(self.sortArray4[indexPath.row])
             }else{
                 self.filterRequestModel = FilterRequestModel()
                 self.filterRequestModel?.sort_order = self.sortArray3[indexPath.row]
+                removeSoryingValues()
+                filterRequestModel?.sort_by.append(self.sortArray4[indexPath.row])
             }
             dismiss(animated: true, completion: nil)
+        }
+        
+        func removeSoryingValues(){
+//            self.filterRequestModel?.sort_by = self.filterRequestModel?.sort_by.filter { $0 != "price" }
+//            self.filterRequestModel?.sort_by = self.filterRequestModel?.sort_by.filter { $0 != "popularity" } ?? []
             
+            self.filterRequestModel?.sort_by.remove("price")
+            self.filterRequestModel?.sort_by.remove("popularity")
         }
     }
     
+
+extension Array where Element: Equatable {
+
+    mutating func remove(_ element: Element) {
+        _ = index(of: element).flatMap {
+            self.remove(at: $0)
+        }
+    }
+}
     
     
     
