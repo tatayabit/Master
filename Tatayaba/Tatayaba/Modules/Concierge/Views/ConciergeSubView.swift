@@ -37,6 +37,17 @@ class ConciergeSubView: UIView, ValidationDelegate {
        // bannerImageView.sd_setImage(with: URL(string: "https://tatayab.com/images/companies/1/inside%20page%20english.jpg"), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
         perufumDescription.placeholder = "Perform Description".localized()
         perufumDescription.isScrollEnabled = false
+        
+        if LanguageManager.isArabicLanguage() {
+            customerNameTextField.isLTRLanguage = false
+            phoneTextField.isLTRLanguage = false
+        } else {
+            customerNameTextField.isLTRLanguage = true
+            phoneTextField.isLTRLanguage = true
+        }
+
+        
+        
         perufumDescription.sizeToFit()
         registerValidator()
         perfumeImage.addTapGestureRecognizer {

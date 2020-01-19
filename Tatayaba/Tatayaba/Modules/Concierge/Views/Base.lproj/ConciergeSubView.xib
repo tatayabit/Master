@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,8 +37,8 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xjh-qr-5XP">
-                    <rect key="frame" x="8" y="329" width="355" height="52.5"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xjh-qr-5XP">
+                    <rect key="frame" x="8" y="329" width="357" height="52.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="q2U-kB-jb6"/>
@@ -47,15 +47,15 @@
                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i40-9d-Ds6">
-                    <rect key="frame" x="8" y="383" width="355" height="0.5"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i40-9d-Ds6">
+                    <rect key="frame" x="8" y="383" width="357" height="0.5"/>
                     <color key="backgroundColor" red="0.13359850645065308" green="0.10292818397283554" blue="0.21072956919670105" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="0.5" id="Gnr-r8-vnW"/>
                     </constraints>
                 </view>
-                <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OCb-v7-g18" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                    <rect key="frame" x="8" y="385.5" width="355" height="45"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OCb-v7-g18" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                    <rect key="frame" x="8" y="385.5" width="357" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="MKg-lk-YvO"/>
                     </constraints>
@@ -88,8 +88,8 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Name"/>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iqm-uc-Uhe" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                    <rect key="frame" x="8" y="434.5" width="355" height="45"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iqm-uc-Uhe" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                    <rect key="frame" x="8" y="434.5" width="357" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="tjv-FV-o6D"/>
                     </constraints>
@@ -194,10 +194,12 @@
                 <constraint firstItem="iqm-uc-Uhe" firstAttribute="top" secondItem="OCb-v7-g18" secondAttribute="bottom" constant="4" id="eG1-j4-6Wr"/>
                 <constraint firstItem="iqm-uc-Uhe" firstAttribute="leading" secondItem="OCb-v7-g18" secondAttribute="leading" id="hSh-1K-ra8"/>
                 <constraint firstItem="66O-IQ-2gc" firstAttribute="leading" secondItem="Lau-fo-u0d" secondAttribute="leading" constant="14" id="igv-dJ-wpG"/>
+                <constraint firstItem="iqm-uc-Uhe" firstAttribute="leading" secondItem="SVF-cJ-Lsi" secondAttribute="leading" id="jV4-Et-8kI"/>
                 <constraint firstItem="OCb-v7-g18" firstAttribute="leading" secondItem="xjh-qr-5XP" secondAttribute="leading" id="mTM-AA-cYz"/>
                 <constraint firstItem="SVF-cJ-Lsi" firstAttribute="leading" secondItem="QOy-jO-bT9" secondAttribute="leading" id="nZF-U0-pON"/>
                 <constraint firstItem="sVe-jI-esR" firstAttribute="leading" secondItem="brQ-wk-eWl" secondAttribute="leading" id="t4m-dX-ZA5"/>
                 <constraint firstAttribute="trailing" secondItem="QOy-jO-bT9" secondAttribute="trailing" constant="8" id="tjv-HI-WxI"/>
+                <constraint firstItem="Lau-fo-u0d" firstAttribute="trailing" secondItem="xjh-qr-5XP" secondAttribute="trailing" constant="10" id="tm6-hD-Fe7"/>
                 <constraint firstItem="xjh-qr-5XP" firstAttribute="top" secondItem="sVe-jI-esR" secondAttribute="bottom" constant="12.5" id="wJY-rY-9KK"/>
                 <constraint firstItem="iqm-uc-Uhe" firstAttribute="trailing" secondItem="OCb-v7-g18" secondAttribute="trailing" id="xLw-93-pjA"/>
             </constraints>
