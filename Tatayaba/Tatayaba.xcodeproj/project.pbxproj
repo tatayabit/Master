@@ -30,6 +30,7 @@
 		10616753235CBE9C00F4A3A0 /* PaymentWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10616752235CBE9C00F4A3A0 /* PaymentWebViewModel.swift */; };
 		10645967235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10645966235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift */; };
 		106751DD235B7A590031F3E7 /* PaymentRedirectResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106751DC235B7A590031F3E7 /* PaymentRedirectResult.swift */; };
+		1078DD3C23D4303B00281C63 /* StringArrayUrlEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1078DD3B23D4303B00281C63 /* StringArrayUrlEncoding.swift */; };
 		1083BFFD235B355600360E78 /* LiveChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1083BFFC235B355600360E78 /* LiveChatViewController.swift */; };
 		108EFB1A23CF968B00E71E40 /* FilterRootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108EFB0A23CF968A00E71E40 /* FilterRootViewModel.swift */; };
 		108EFB2023CF968B00E71E40 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 108EFB1323CF968A00E71E40 /* Filter.storyboard */; };
@@ -378,6 +379,7 @@
 		10616752235CBE9C00F4A3A0 /* PaymentWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebViewModel.swift; sourceTree = "<group>"; };
 		10645966235375BB00702218 /* ProductDeatailsTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDeatailsTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		106751DC235B7A590031F3E7 /* PaymentRedirectResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRedirectResult.swift; sourceTree = "<group>"; };
+		1078DD3B23D4303B00281C63 /* StringArrayUrlEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringArrayUrlEncoding.swift; sourceTree = "<group>"; };
 		1083BFFC235B355600360E78 /* LiveChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChatViewController.swift; sourceTree = "<group>"; };
 		108EFB0A23CF968A00E71E40 /* FilterRootViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterRootViewModel.swift; sourceTree = "<group>"; };
 		108EFB1323CF968A00E71E40 /* Filter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
@@ -971,6 +973,7 @@
 			children = (
 				10D68F1323D03BEF00D65959 /* FilterAPIClient.swift */,
 				10D68F1423D03BEF00D65959 /* FilterEndpoint.swift */,
+				1078DD3B23D4303B00281C63 /* StringArrayUrlEncoding.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -2862,6 +2865,7 @@
 				841CE30A22DCC2B300A47FA0 /* MessagesViewController.swift in Sources */,
 				848E89C122CC99AC000AA24C /* AACarousel.swift in Sources */,
 				11C271B622F20E24004613E3 /* AddressTableViewCell.swift in Sources */,
+				1078DD3C23D4303B00281C63 /* StringArrayUrlEncoding.swift in Sources */,
 				1083BFFD235B355600360E78 /* LiveChatViewController.swift in Sources */,
 				11FB584D231C2DBB005DA4F0 /* ProductsBlockView.swift in Sources */,
 				10BCEF9E23D0A5EE000FB506 /* CategoriesFilterViewModel.swift in Sources */,

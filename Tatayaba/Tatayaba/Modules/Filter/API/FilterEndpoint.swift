@@ -15,6 +15,8 @@
 //
 
 import Moya
+import Alamofire
+
 
 enum FilterEndpoint {
     case getFilteredProduct(parameters: [String: Any])
@@ -74,7 +76,7 @@ extension FilterEndpoint: TargetType {
         switch self {
             
         case .getFilteredProduct(let parameters):
-            return .requestParameters(parameters: parameters, encoding: URLEncoding(destination: .queryString))
+            return .requestParameters(parameters: parameters, encoding: StringArrayUrlEncoding())
         case .getSuppliers:
             return .requestParameters(parameters: [
                     "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
@@ -157,3 +159,21 @@ extension FilterEndpoint: TargetType {
 //        return array.map({"\($0)"}).joined(separator: separator)
 //    }
 //}
+
+struct JSONStringArrayEncoding: ParameterEncoding {
+
+func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
+    var urlRequest = urlRequest.urlRequest
+
+    let data = try! JSONSerialization.data(withJSONObject: parameters!, options: JSONSerialization.WritingOptions.prettyPrinted)
+
+    let json = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+    if let json = json {
+        print(json)
+        let newJson = json.replacingOccurrences(of: "\\/", with: "/")
+        urlRequest?.httpBody = newJson.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue));
+    }
+
+    return urlRequest!
+}
+}
