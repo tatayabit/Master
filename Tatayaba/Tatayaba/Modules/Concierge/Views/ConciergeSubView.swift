@@ -22,7 +22,7 @@ class ConciergeSubView: UIView, ValidationDelegate {
     @IBOutlet weak var bannerImageView: UIImageView!
     @IBOutlet weak var perfumeImage: UIImageView!
     @IBOutlet weak var perufumDescription: UITextView!
-    @IBOutlet weak var perfumeNameTextField: SkyFloatingLabelTextField!
+//    @IBOutlet weak var perfumeNameTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var customerNameTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var phoneTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var countryButton: UIButton!
@@ -39,11 +39,14 @@ class ConciergeSubView: UIView, ValidationDelegate {
         perufumDescription.isScrollEnabled = false
         perufumDescription.sizeToFit()
         registerValidator()
+        perfumeImage.addTapGestureRecognizer {
+            self.uploadAction(UIButton())
+        }
     }
 
     // MARK:- Concierge Model
     func createConcierge() -> Concierge {
-        let perfumeName: String = perfumeNameTextField.text ?? ""
+//        let perfumeName: String = perfumeNameTextField.text ?? ""
         let comment: String = perufumDescription.text ?? ""
         let customerName: String = customerNameTextField.text ?? ""
         let phone: String = phoneTextField.text ?? ""
@@ -52,7 +55,7 @@ class ConciergeSubView: UIView, ValidationDelegate {
 
         let imageData: UIImage = perfumeImage.image ?? UIImage.init()
 
-        let concierge = Concierge(perfumeName: perfumeName, comment: comment, customerName: customerName, phone: phone, countryCode: countryCode, imageData: imageData.toBase64())
+        let concierge = Concierge(perfumeName: "", comment: comment, customerName: customerName, phone: phone, countryCode: countryCode, imageData: imageData.toBase64())
         return concierge
     }
     

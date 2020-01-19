@@ -37,7 +37,7 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
         product_Tableview.register(OptionCollectionViewCell.nib, forCellReuseIdentifier: OptionCollectionViewCell.identifier)
         product_Tableview.register(AlsoBoughtProductsTableViewCell.nib, forCellReuseIdentifier: AlsoBoughtProductsTableViewCell.identifier)
         product_Tableview.register(OptionsHeader.nib, forHeaderFooterViewReuseIdentifier: OptionsHeader.identifier)
-        
+        self.product_Tableview.estimatedRowHeight = 60
     }
     
     // MARK:- Load sections
