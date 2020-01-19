@@ -8,14 +8,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="GOTHAM-MEDIUM.TTF">
-            <string>GothamMedium</string>
-        </array>
         <array key="Gotham-Light.otf">
             <string>Gotham-Light</string>
         </array>
         <array key="GothamHTF-Book.ttf">
             <string>GothamHTF-Book</string>
+        </array>
+        <array key="GothamMedium.ttf">
+            <string>GothamMedium</string>
         </array>
     </customFonts>
     <objects>
@@ -62,8 +62,21 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="one click buy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5M2-iy-DXo">
+                        <rect key="frame" x="163" y="170.5" width="0.0" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="29" id="8bP-lO-9N4"/>
+                            <constraint firstAttribute="width" id="xrO-sh-DFP"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="7"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="one click buy"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJx-Wu-3a2">
-                        <rect key="frame" x="5" y="170" width="116" height="30"/>
+                        <rect key="frame" x="5" y="170" width="156" height="30"/>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.10980392156862745" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="10"/>
                         <state key="normal">
@@ -79,11 +92,11 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ndg-qA-zgg">
-                        <rect key="frame" x="123" y="170" width="40" height="30"/>
+                        <rect key="frame" x="163" y="170" width="0.0" height="30"/>
                         <color key="backgroundColor" red="0.87450980392156863" green="0.63921568627450975" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="54u-6V-g8M"/>
-                            <constraint firstAttribute="width" constant="40" id="hoo-sg-KII"/>
+                            <constraint firstAttribute="width" id="hoo-sg-KII"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="7"/>
                         <userDefinedRuntimeAttributes>
@@ -95,19 +108,6 @@
                             <action selector="oneClickBuyAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="VFF-U5-gv5"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="one click buy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5M2-iy-DXo">
-                        <rect key="frame" x="128.5" y="170.5" width="29" height="29"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="29" id="8bP-lO-9N4"/>
-                            <constraint firstAttribute="width" constant="29" id="xrO-sh-DFP"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="7"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="one click buy"/>
-                        </userDefinedRuntimeAttributes>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14.500 KWD" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="none" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7V-tf-fQL">
                         <rect key="frame" x="7" y="155" width="154" height="13"/>
                         <constraints>

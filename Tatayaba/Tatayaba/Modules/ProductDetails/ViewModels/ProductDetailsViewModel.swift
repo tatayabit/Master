@@ -207,7 +207,7 @@ class ProductDetailsViewModel {
     
     func isAllRequiredOptionsSelected() -> Bool {
         if hasRequiredOptions {
-            for section in 2..<optionsCount + 2 {
+            for section in 1..<optionsCount + 1 {
                 let option = optionHeader(at: section)
                 if option.required == "Y" {
                     if self.selectedOptions.filter({ $0.section == section }).count == 0 {
