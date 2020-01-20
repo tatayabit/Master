@@ -114,6 +114,7 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
                     if ConciergeResult["status"] == "success" {
                         self.showErrorAlerr(title: Constants.Concierge.uploaded, message: "Thanks for using concierge feature,\nWe will call you back withing 48 hours!".localized(), handler: { action in
                             self.conciergeSubView.alpha = 1
+                            self.conciergeSubView.perfumeImage.image = #imageLiteral(resourceName: "camera-logo")
                             })
                     } else{
                         self.showConciergeUploadError()
