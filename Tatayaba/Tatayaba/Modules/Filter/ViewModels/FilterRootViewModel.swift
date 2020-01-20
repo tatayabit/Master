@@ -76,6 +76,9 @@ class FilterRootViewModel {
             if let suppliersObj = requestModel?.suppliers {
                 self.suppliers = suppliersObj
             }
+            
+            self.freeDelivery = requestModel!.freeDelivery
+            self.featured = requestModel!.featured
         }
     }
     
@@ -239,6 +242,8 @@ class FilterRootViewModel {
             requestModel?.max = "\(self.maximumPrice)"
             requestModel?.categories = self.categories
             requestModel?.suppliers = self.suppliers
+            requestModel?.featured = self.featured
+            requestModel?.freeDelivery = freeDelivery
         }
     }
 }

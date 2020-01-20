@@ -15,6 +15,8 @@ struct FilterRequestModel {
     var min: String?
     var max: String?
     var searchText : String?
+    var freeDelivery: Bool = false
+    var featured: Bool = false
 
     var suppliers: [Supplier]?
     var categories: [Category]?
