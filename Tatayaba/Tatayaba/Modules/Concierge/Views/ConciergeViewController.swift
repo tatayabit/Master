@@ -34,7 +34,6 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        NotificationCenter.default.addObserver(self, selector: #selector(updateLoginOrLogout(_:)), name: Notification.Name(rawValue: "updateLoginOrLogout"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateLoginOrLogout), name: NSNotification.Name(rawValue: "updateLoginOrLogout"), object: nil)
 
 

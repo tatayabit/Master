@@ -265,11 +265,11 @@ extension FilterRootViewModel: FilterRootViewModelInterface {
         
         switch self.initializer {
         case .category:
-            return InitializerType.CategoryRowTypes.allCases.count
+            return  2 //InitializerType.CategoryRowTypes.allCases.count
         case .supplier:
-            return InitializerType.SupplierRowTypes.allCases.count
+            return 2 //InitializerType.SupplierRowTypes.allCases.count
         case .search:
-            return InitializerType.SearchRowTypes.allCases.count
+            return 3 //InitializerType.SearchRowTypes.allCases.count
         }
     }
     

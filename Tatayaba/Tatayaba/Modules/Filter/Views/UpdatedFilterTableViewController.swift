@@ -87,8 +87,9 @@ class UpdatedFilterTableViewController: BaseViewController, UITableViewDelegate,
         let cell = tableView.dequeueReusableCell(withIdentifier: FilterTableViewCell.identifier, for: indexPath) as! FilterTableViewCell
         if let viewModel = viewModel {
             let (title, values) = viewModel.getCellData(at: indexPath)
-            let isContaingImage:Bool = (indexPath.row >= (self.viewModel?.rowsCount() ?? 5) - 2 )
-            cell.configure(title: title, values: values, isContaingImage: isContaingImage)
+//            let isContaingImage:Bool = (indexPath.row >= (self.viewModel?.rowsCount() ?? 5) - 2 )
+//            cell.configure(title: title, values: values, isContaingImage: isContaingImage)
+            cell.configure(title: title, values: values, isContaingImage: false)
         }
         
         return cell
