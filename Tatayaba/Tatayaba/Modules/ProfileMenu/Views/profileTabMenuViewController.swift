@@ -72,7 +72,7 @@ class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITab
 
 
     @objc func sign_buttonAction() {
-       self.loadFirstVC()
+       self.loadLoginVC()
     }
 
 }
@@ -197,7 +197,7 @@ extension profileTabMenuViewController{
                  self.PrivacyView()
             }else  if indextitle  == profile.logout {
                 Customer.shared.logout()
-            self.loadFirstVC()
+            self.loadLoginVC()
 
             }
         }
@@ -236,7 +236,7 @@ extension profileTabMenuViewController{
         self.navigationController?.pushViewController(controller, animated: true)
     }
 
-    func loadFirstVC() {
+    func loadLoginVC() {
         let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         self.navigationController?.pushViewController(controller, animated: false)
          self.tabBarController?.tabBar.isHidden = true

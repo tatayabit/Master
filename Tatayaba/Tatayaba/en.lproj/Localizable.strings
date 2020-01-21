@@ -85,6 +85,7 @@
 "Perform Description" = "Perform Description";
 "Phone" = "Phone";
 "Name" = "Name";
+"Full name"="Full name";
 "Tracking" = "Tracking #:";
 "Order Value" = "Order Value:";
 "Track Order" = "Track Order";
@@ -144,3 +145,4 @@ alertValaidationMessage = "You have to upgrade , your version is not supported a
 "Categories Filter" = "Categories";
 "Price Filter" = "Price";
 "Free Delivery Filter" = "Free Delivery";
+"Reset Password"= "Reset Password";

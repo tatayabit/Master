@@ -103,12 +103,16 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
                     }
                 case .failure(let error):
                     print("the error \(error)")
-                    do {
-                        if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
-                            self.showErrorAlerr(title: "AcceessDenied".localized(), message: errorMessage, handler: nil)
+                    if error.errorCode == 300 {
+                        self.loadLoginVC()
+                    } else {
+                        do {
+                            if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
+                                self.showErrorAlerr(title: "AcceessDenied".localized(), message: errorMessage, handler: nil)
+                            }
                         }
-                    }
-                    catch{
+                        catch{
+                        }
                     }
                 }
             }
@@ -174,5 +178,11 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
     @IBAction func saveContinueAction(_ sender: UIButton) {
         validator.validate(self)
     }
-
+    
+    // MARK:- Navigation
+    func loadLoginVC() {
+        let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.navigationController?.pushViewController(controller, animated: false)
+        self.tabBarController?.tabBar.isHidden = true
+    }
 }

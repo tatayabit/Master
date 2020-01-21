@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "هل لديك حساب؟"; ObjectID = "8h3-Vm-NWD"; */
+"8h3-Vm-NWD.text" = "هل لديك حساب؟";
+
+/* Class = "UIButton"; normalTitle = "تسجيل الدخول"; ObjectID = "C3h-KJ-Qux"; */
+"C3h-KJ-Qux.normalTitle" = "تسجيل الدخول";
+
+/* Class = "UILabel"; text = "ENG"; ObjectID = "Euy-0f-VlT"; */
+"Euy-0f-VlT.text" = "ENG";
+
+/* Class = "UIButton"; normalTitle = "إنشاء الحساب الآن"; ObjectID = "Hsg-cn-izm"; */
+"Hsg-cn-izm.normalTitle" = "إنشاء الحساب الآن";
+
+/* Class = "UIButton"; normalTitle = "إنشاء حساب"; ObjectID = "Hxy-id-buo"; */
+"Hxy-id-buo.normalTitle" = "إنشاء حساب";
+
+/* Class = "UIButton"; normalTitle = "تسجيل الدخول"; ObjectID = "IZR-iK-7Br"; */
+"IZR-iK-7Br.normalTitle" = "تسجيل الدخول";
+
+/* Class = "UIButton"; normalTitle = "تخطي"; ObjectID = "UsS-Vs-tNK"; */
+"UsS-Vs-tNK.normalTitle" = "تخطي";
+
+/* Class = "UILabel"; text = "أو"; ObjectID = "XJt-xy-f5M"; */
+"XJt-xy-f5M.text" = "أو";
+
+/* Class = "UILabel"; text = "Menu Item"; ObjectID = "asR-oM-U51"; */
+"asR-oM-U51.text" = "Menu Item";
+
+/* Class = "UILabel"; text = "PROFILE"; ObjectID = "jLJ-f0-ngZ"; */
+"jLJ-f0-ngZ.text" = "PROFILE";
+
+/* Class = "UIButton"; normalTitle = "نسيت كلمة المرور؟"; ObjectID = "rhK-8m-o2M"; */
+"rhK-8m-o2M.normalTitle" = "نسيت كلمة المرور؟";
+
+/* Class = "UILabel"; text = "AR"; ObjectID = "uri-wt-Upa"; */
+"uri-wt-Upa.text" = "AR";

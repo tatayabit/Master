@@ -25,13 +25,21 @@ class LoginViewController: BaseViewController, ValidationDelegate {
         navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = true
         registerValidator()
-      
+        self.setTextFieldsPlaceholder()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated) // No need for semicolon
         self.tabBarController?.tabBar.isHidden = true
         navigationController?.isNavigationBarHidden = true
+    }
+    
+    // MARK:- Localization
+    func setTextFieldsPlaceholder() {
+        emailTextField.isLTRLanguage = !LanguageManager.isArabicLanguage()
+        passwordTextField.isLTRLanguage = !LanguageManager.isArabicLanguage()
+        emailTextField.placeholder = "Email".localized()
+        passwordTextField.placeholder = "Passwrod".localized()
     }
 
     //MARK:- Swift Validator

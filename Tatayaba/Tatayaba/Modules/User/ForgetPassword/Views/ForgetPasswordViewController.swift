@@ -17,17 +17,26 @@ class ForgetPasswordViewController: BaseViewController, ValidationDelegate {
     private let validator = Validator()
 
     @IBOutlet weak private var emailTextField: SkyFloatingLabelTextField!
-
+    @IBOutlet weak var sendButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerValidator()
         tabBarController?.tabBar.isHidden = true
+        setTextFieldsPlaceholder()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NavigationBarWithBackButton()
     }
+    
+    // MARK:- Localization
+     func setTextFieldsPlaceholder() {
+        emailTextField.isLTRLanguage = !LanguageManager.isArabicLanguage()
+        emailTextField.placeholder = "Email".localized()
+        sendButton.setTitle("Reset Password".localized(), for: .normal)
+     }
 
     //MARK:- Swift Validator
     func registerValidator() {

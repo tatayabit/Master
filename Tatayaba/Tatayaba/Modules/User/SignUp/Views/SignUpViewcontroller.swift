@@ -26,12 +26,27 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
         super.viewDidLoad()
         registerValidator()
         setupUI()
+        setTextFieldsPlaceholder()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated) // No need for semicolon
         self.tabBarController?.tabBar.isHidden = true
         NavigationBarWithBackButton()
+    }
+    
+    // MARK:- Localization
+    func setTextFieldsPlaceholder() {
+        emailTextField.isLTRLanguage = !LanguageManager.isArabicLanguage()
+        passwordTextField.isLTRLanguage = !LanguageManager.isArabicLanguage()
+        fullNameTextField.isLTRLanguage = !LanguageManager.isArabicLanguage()
+        phoneNumberTextField.isLTRLanguage = !LanguageManager.isArabicLanguage()
+
+        emailTextField.placeholder = "Email".localized()
+        passwordTextField.placeholder = "Passwrod".localized()
+        fullNameTextField.placeholder = "Full name".localized()
+        phoneNumberTextField.placeholder = "Phone".localized()
+
     }
     
     //MARK:- setupUI
@@ -112,9 +127,10 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
     }
     
     @IBAction func signInAction(_ sender: UIButton) {
-        let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        navigationController?.pushViewController(controller, animated: false)
-        tabBarController?.tabBar.isHidden = true
+        self.navigationController?.popViewController(animated: true)
+//        let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+//        navigationController?.pushViewController(controller, animated: false)
+//        tabBarController?.tabBar.isHidden = true
     }
     
 }

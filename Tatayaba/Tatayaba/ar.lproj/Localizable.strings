@@ -82,6 +82,7 @@
 "Perform Description" = "تفاصيل العطر";
 "Phone" = "رقم الجوال";
 "Name" = "الاسم";
+"Full name"="الاسم كاملا";
 "Tracking" = "تتبع #:";
 "Order Value" = "قيمه الطلب:";
 "Track Order" = "تتبع الطلب";
@@ -145,3 +146,4 @@ alertValaidationMessage = "يجب عليك الترقية ، الإصدار ال
 "Categories Filter" = "الفئات";
 "Price Filter" = "السعر";
 "Free Delivery Filter" = "توصيل مجاني";
+"Reset Password"="إعادة تعيين كلمة المرور";
