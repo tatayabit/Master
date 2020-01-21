@@ -45,6 +45,10 @@ class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITab
     private let orderDetailsSegue = "order_details_segue"
 
     @IBOutlet weak var profileMenu_tableView: UITableView!
+    @IBOutlet weak var welcomeView: UIView!
+    @IBOutlet weak var nameLBL: UILabel!
+    @IBOutlet weak var mailLBL: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         Session1 = [profile.myOrders]
@@ -52,6 +56,7 @@ class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITab
         Session3 = [profile.deliveryAndReturnPolicy, profile.privacyPolicy,profile.logout]
         Session4 = [profile.deliveryAndReturnPolicy, profile.privacyPolicy]
          NavigationBarWithOutBackButton()
+        setWelcomeHeader()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -70,7 +75,18 @@ class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITab
         self.profileMenu_tableView.reloadData()
     }
 
-
+    func setWelcomeHeader() {
+        if Customer.shared.loggedin {
+            self.welcomeView.isHidden = false
+            let name  = (Customer.shared.user?.firstname ?? "") + " " + (Customer.shared.user?.lastname ?? "")
+            let email  = (Customer.shared.user?.email ?? "")
+            self.nameLBL.text = "Hi, \(name)"
+            self.mailLBL.text = email
+        } else {
+             self.welcomeView.isHidden = true
+        }
+    }
+    
     @objc func sign_buttonAction() {
        self.loadLoginVC()
     }
