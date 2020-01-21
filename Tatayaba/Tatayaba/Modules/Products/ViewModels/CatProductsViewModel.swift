@@ -18,8 +18,8 @@ class CatProductsViewModel {
     let apiClient = ProductsAPIClient()
     let filterApiClient = FilterAPIClient()
 
-    private var productsList = [Product]()
-    private var currentPage = 0
+    var productsList = [Product]()
+    var currentPage = 0
     private var total = 0
     private var isFetchInProgress = false
     private var shouldCallApi: Bool = true

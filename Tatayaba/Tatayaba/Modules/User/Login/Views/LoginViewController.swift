@@ -44,8 +44,8 @@ class LoginViewController: BaseViewController, ValidationDelegate {
 
     //MARK:- Swift Validator
     func registerValidator() {
-        validator.registerField(emailTextField, rules: [RequiredRule(message: "Email is required!"), EmailRule(message: "Invalid email")])
-        validator.registerField(passwordTextField, rules: [RequiredRule(message: "Password is required!"), PasswordRule(regex: "^.{6,20}$", message: "Invalid password")])
+        validator.registerField(emailTextField, rules: [RequiredRule(message: "field_is_required".localized()), EmailRule(message: "valid_email".localized())])
+        validator.registerField(passwordTextField, rules: [RequiredRule(message: "field_is_required".localized()), PasswordRule(regex: "^.{6,20}$", message: "valid_password".localized())])
 //        old password regex "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,20}$"
         emailTextField.becomeFirstResponder()
     }
@@ -70,7 +70,7 @@ class LoginViewController: BaseViewController, ValidationDelegate {
                 print("the error \(error)")
                 do {
                     if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
-                        self.showErrorAlerr(title: "LoginFailed".localized(), message: errorMessage, handler: nil)
+                        self.showErrorAlerr(title: "Login_Failed".localized(), message: "Login_Failed_message".localized(), handler: nil)
                     }
                 }
                 catch{
@@ -83,7 +83,7 @@ class LoginViewController: BaseViewController, ValidationDelegate {
     func validationFailed(_ errors: [(Validatable, ValidationError)]) {
         print("Validation FAILED!")
         if errors.count > 0 {
-            self.showErrorAlerr(title: Constants.Common.error, message: errors[0].1.errorMessage, handler: nil)
+            self.showErrorAlerr(title: "Attention".localized(), message: errors[0].1.errorMessage, handler: nil)
         }
 
         for error in errors {

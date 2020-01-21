@@ -148,3 +148,11 @@ alertValaidationMessage = "يجب عليك الترقية ، الإصدار ال
 "Price Filter" = "السعر";
 "Free Delivery Filter" = "توصيل مجاني";
 "Reset Password"="إعادة تعيين كلمة المرور";
+
+//Alerts
+"Attention" = "تنبيه";
+"Login_Failed" = "خطأ في تسجيل الدخول";
+"Login_Failed_message" = "البريد الإلكتروني أو كلمة المرور غير صحيحة";
+"field_is_required" = "الرجاء تعبئة الحقول المطلوبة";
+"valid_email" = "الرجاء إدخال بريد إلكتروني صحيح";
+"valid_password" = "الرجاء إدخال كلمة مرور صحيحة";

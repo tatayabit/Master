@@ -147,3 +147,12 @@ alertValaidationMessage = "You have to upgrade , your version is not supported a
 "Price Filter" = "Price";
 "Free Delivery Filter" = "Free Delivery";
 "Reset Password"= "Reset Password";
+
+
+//Alerts
+"Attention" = "Attention";
+"Login_Failed" = "Login Failed";
+"Login_Failed_message" = "The email or password is incorrect";
+"field_is_required" = "Please fill in the required fields";
+"valid_email" = "Please enter valid email";
+"valid_password" = "Please enter valid password";
