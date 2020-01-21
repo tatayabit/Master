@@ -621,8 +621,8 @@
             filePath = "Tatayaba/Modules/DashBoard/Views/ProductsBlockView/ProductsBlockCollectionViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "ProductDetails"
             landmarkType = "14">
          </BreakpointContent>
@@ -1184,6 +1184,22 @@
             startingLineNumber = "199"
             endingLineNumber = "199"
             landmarkName = "loadLoginVC()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "98A58768-2EDB-4581-988D-A6B63268AF31"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/DashBoard/Views/ProductsBlockView/ProductsBlockView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "collectionView(_:layout:sizeForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
