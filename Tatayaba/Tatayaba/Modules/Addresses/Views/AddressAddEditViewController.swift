@@ -103,17 +103,6 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
                     }
                 case .failure(let error):
                     print("the error \(error)")
-                    if error.errorCode == 300 {
-                        self.loadLoginVC()
-                    } else {
-                        do {
-                            if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
-                                self.showErrorAlerr(title: "AcceessDenied".localized(), message: errorMessage, handler: nil)
-                            }
-                        }
-                        catch{
-                        }
-                    }
                 }
             }
         } else {
@@ -142,13 +131,26 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
                     }
                 case .failure(let error):
                     print("the error \(error)")
-                    do {
-                        if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
-                            self.showErrorAlerr(title: "AcceessDenied".localized(), message: errorMessage, handler: nil)
+                    print(error.errorCode)
+                    if error.response?.statusCode == 300 {
+                        do {
+                            if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
+                                self.showErrorAlerr(title: "AcceessDenied".localized(), message: errorMessage){(UIAlertAction) in
+                                     self.loadLoginVC()
+                                }
+                                }
+                            }
+                        catch{
                         }
-                    }
-                    catch{
-                        
+                       
+                    } else {
+                        do {
+                            if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
+                                self.showErrorAlerr(title: "AcceessDenied".localized(), message: errorMessage, handler: nil)
+                                }
+                            }
+                        catch{
+                        }
                     }
                 }
             }
