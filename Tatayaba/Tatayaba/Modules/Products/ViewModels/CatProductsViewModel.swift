@@ -99,10 +99,13 @@ class CatProductsViewModel {
     
     func getFilteredProducts() {
         // 1
-       guard !isFetchInProgress else {
-           return
-       }
+        guard !isFetchInProgress else {
+            return
+        }
 
+        guard shouldCallApi else {
+            return
+        }
        // 2
        isFetchInProgress = true
         
