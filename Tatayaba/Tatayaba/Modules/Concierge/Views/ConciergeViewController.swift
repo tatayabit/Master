@@ -32,6 +32,12 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
         self.NavigationBarWithOutBackButton()
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateLoginOrLogout), name: NSNotification.Name(rawValue: "updateLoginOrLogout"), object: nil)
+
+
+    }
     func setData(){
         let customer = Customer.shared
         if customer.loggedin {
@@ -45,8 +51,18 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
                     conciergeSubView.phoneTextField.isUserInteractionEnabled = false
                 }
             }
+        }else{
+            conciergeSubView.customerNameTextField.text = ""
+            conciergeSubView.phoneTextField.text = ""
+            conciergeSubView.customerNameTextField.isUserInteractionEnabled = true
+            conciergeSubView.phoneTextField.isUserInteractionEnabled = true
         }
     }
+    
+    @objc func updateLoginOrLogout(_ notification: Notification) {
+        setData()
+    }
+    
     
     fileprivate func addconciergeSubView() {
         scrollView.stackView.addArrangedSubview(conciergeSubView)
