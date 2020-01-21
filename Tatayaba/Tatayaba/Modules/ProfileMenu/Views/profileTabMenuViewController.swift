@@ -24,6 +24,7 @@ class Profile {
     var notifications = "Notifications".localized()
     var welcome = "Welcome".localized()
     var login = "LOG IN".localized()
+    var Hi = "Hi".localized()
 }
 
 
@@ -80,7 +81,7 @@ class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITab
             self.welcomeView.isHidden = false
             let name  = (Customer.shared.user?.firstname ?? "") + " " + (Customer.shared.user?.lastname ?? "")
             let email  = (Customer.shared.user?.email ?? "")
-            self.nameLBL.text = "Hi, \(name)"
+            self.nameLBL.text = "\(profile.Hi)\(name)"
             self.mailLBL.text = email
         } else {
              self.welcomeView.isHidden = true

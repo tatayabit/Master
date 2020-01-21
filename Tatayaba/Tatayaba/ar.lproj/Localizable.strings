@@ -45,6 +45,7 @@
 "Live Chat" = "دردشه";
 "Notifications" = "التنبيهات";
 "Delivery and Return Policy"="سياسة الاستبدال والاسترجاع";
+"Hi" = "أهلا, ";
 
 // Concierge
 "Something went wrong while submitting your concierge!"="حدث خطأ أثناء تقديم الكونسيرج!";

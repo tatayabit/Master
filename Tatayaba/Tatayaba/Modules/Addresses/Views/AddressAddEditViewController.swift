@@ -135,9 +135,22 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
                     if error.response?.statusCode == 300 {
                         do {
                             if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
-                                self.showErrorAlerr(title: "AcceessDenied".localized(), message: errorMessage){(UIAlertAction) in
-                                     self.loadLoginVC()
-                                }
+                                ///////////////////
+                                let refreshAlert = UIAlertController(title: "AcceessDenied".localized(), message: errorMessage, preferredStyle: UIAlertController.Style.alert)
+
+                                refreshAlert.addAction(UIAlertAction(title: "LOG IN".localized(), style: .default, handler: { (action: UIAlertAction!) in
+                                    self.loadLoginVC()
+                                }))
+
+                                refreshAlert.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: { (action: UIAlertAction!) in
+                                    print("Handle Cancel Logic here")
+                                }))
+
+                                self.present(refreshAlert, animated: true, completion: nil)
+                                //////////////////
+//                                self.showErrorAlerr(title: "AcceessDenied".localized(), message: errorMessage){(UIAlertAction) in
+//                                     self.loadLoginVC()
+//                                }
                                 }
                             }
                         catch{

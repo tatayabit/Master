@@ -45,6 +45,7 @@
 "Live Chat" = "Live Chat";
 "Notifications" = "Notifications";
 "Delivery and Return Policy"="Delivery and Return Policy";
+"Hi" = "Hi, ";
 
 // Concierge
 "Something went wrong while submitting your concierge!"="Something went wrong while submitting your concierge!";
