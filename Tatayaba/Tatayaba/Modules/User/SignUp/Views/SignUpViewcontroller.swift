@@ -31,8 +31,8 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated) // No need for semicolon
-        self.tabBarController?.tabBar.isHidden = true
         NavigationBarWithBackButton()
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     // MARK:- Localization
