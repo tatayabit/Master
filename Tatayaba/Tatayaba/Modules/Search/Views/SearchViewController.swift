@@ -109,15 +109,15 @@ class SearchViewController: BaseViewController, UICollectionViewDelegate, UIColl
 
     // MARK:- ProductsBlockCollectionViewCellDelegate
     func didSelectAddToCartCell(indexPath: IndexPath) {
-        guard let viewModel = viewModel else { return }
-        if !viewModel.productInStock(at: indexPath) {
+//        guard let viewModel = viewModel else { return }
+        if !searchViewModel.productInStock(at: indexPath) {
             showErrorAlerr(title: "Error", message: "This item is out of stock!", handler: nil)
             return
         }
-        if viewModel.productHasOptions(at: indexPath) {
+        if searchViewModel.productHasOptions(at: indexPath) {
             performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
         } else {
-            viewModel.addToCart(at: indexPath)
+            searchViewModel.addToCart(at: indexPath)
         }
     }
     
