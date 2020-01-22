@@ -156,3 +156,15 @@ alertValaidationMessage = "يجب عليك الترقية ، الإصدار ال
 "field_is_required" = "الرجاء تعبئة الحقول المطلوبة";
 "valid_email" = "الرجاء إدخال بريد إلكتروني صحيح";
 "valid_password" = "الرجاء إدخال كلمة مرور صحيحة";
+
+// Orders List
+"Order_Id" = "رقم الطلب";
+"Order_Amount" = "قيمة الطلب";
+"Order_Status" = "حالة الطلب";
+"Cancelled" = "طلب ملغي";
+"Completed" = "طلب مكتمل";
+"Processed" = "جاري الطلب";
+"View_Order" = "معاينة الطلب";
+"Pending" = "قيد الانتظار";
+"Order #:" = " الطلب #:";
+"Ordered on:" = "تم الطلب في :";

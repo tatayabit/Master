@@ -43,7 +43,7 @@ class OrdersViewController: BaseViewController, UITableViewDelegate, UITableView
     }
     
     func setupUI() {
-        self.NavigationBarWithOutBackButton()
+        self.NavigationBarWithBackButton()
     }
 }
 

@@ -156,3 +156,15 @@ alertValaidationMessage = "You have to upgrade , your version is not supported a
 "field_is_required" = "Please fill in the required fields";
 "valid_email" = "Please enter valid email";
 "valid_password" = "Please enter valid password";
+
+// Orders List
+"Order_Id" = "Order Id";
+"Order_Amount" = "Order Amount";
+"Order_Status" = "Order Status";
+"Cancelled" = "Cancelled";
+"Completed" = "Completed";
+"Processed" = "Processed";
+"View_Order" = "View Order";
+"Pending" = "Pending";
+"Order #:" = "Order #:" ;
+"Ordered on:" = "Ordered on:";

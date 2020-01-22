@@ -3,23 +3,23 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="GOTHAM-MEDIUM.TTF">
-            <string>GothamMedium</string>
-        </array>
         <array key="GothamHTF-Book.ttf">
             <string>GothamHTF-Book</string>
+        </array>
+        <array key="GothamMedium.ttf">
+            <string>GothamMedium</string>
         </array>
     </customFonts>
     <scenes>
         <!--TATAYAB-->
         <scene sceneID="9Zb-au-MtJ">
             <objects>
-                <viewController storyboardIdentifier="OrderViewController" id="tTw-fW-xBz" customClass="OrdersViewController" customModule="Tatayab___Testing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrderViewController" id="tTw-fW-xBz" customClass="OrdersViewController" customModule="TATAYAB___تطيّب" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xNd-GG-qV3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="OrderTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderTableViewCell" rowHeight="126" id="ixd-R9-wtr" customClass="OrderTableViewCell" customModule="Tatayab___Testing" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="OrderTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderTableViewCell" rowHeight="126" id="ixd-R9-wtr" customClass="OrderTableViewCell" customModule="TATAYAB___تطيّب" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="126"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ixd-R9-wtr" id="04b-gE-5vw">
@@ -58,6 +58,9 @@
                                                             <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="10"/>
                                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Order_Id"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#OTB50001" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5W1-vT-QCN">
                                                             <rect key="frame" x="8" y="42" width="74" height="25"/>
@@ -72,6 +75,9 @@
                                                             <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="10"/>
                                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Order_Amount"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Completed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHU-Ir-bWJ">
                                                             <rect key="frame" x="199" y="42" width="78" height="25"/>
@@ -86,6 +92,9 @@
                                                             <fontDescription key="fontDescription" name="GothamHTF-Book" family="Gotham HTF" pointSize="10"/>
                                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Order_Status"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HjZ-sD-sQl">
                                                             <rect key="frame" x="5" y="70" width="70" height="25"/>
@@ -105,6 +114,7 @@
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                     <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="View_Order"/>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <action selector="viewOrderAction:" destination="ixd-R9-wtr" eventType="touchUpInside" id="EcN-AN-QgI"/>
@@ -203,7 +213,7 @@
         <!--Order Details View Controller-->
         <scene sceneID="qaU-yn-zja">
             <objects>
-                <viewController storyboardIdentifier="OrderDetailsViewController" id="Vbz-LN-onO" customClass="OrderDetailsViewController" customModule="Tatayab___Testing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrderDetailsViewController" id="Vbz-LN-onO" customClass="OrderDetailsViewController" customModule="TATAYAB___تطيّب" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T5Z-OT-g6V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -212,7 +222,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderMainInfoCell" rowHeight="150" id="kJe-nm-jfY" customClass="OrderMainInfoCell" customModule="Tatayab___Testing" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderMainInfoCell" rowHeight="150" id="kJe-nm-jfY" customClass="OrderMainInfoCell" customModule="TATAYAB___تطيّب" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kJe-nm-jfY" id="fQn-rR-kCK">
@@ -230,22 +240,22 @@
                                                     <rect key="frame" x="20" y="0.0" width="335" height="142"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dW3-xt-Du8">
-                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="32"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MO4-9O-ByM">
-                                                            <rect key="frame" x="0.0" y="37" width="335" height="31.5"/>
+                                                            <rect key="frame" x="0.0" y="49" width="335" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0Mg-t4-1Qa">
-                                                            <rect key="frame" x="0.0" y="73.5" width="335" height="32"/>
+                                                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0Mg-t4-1Qa">
+                                                            <rect key="frame" x="0.0" y="95.5" width="335" height="0.0"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracking #:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cK-lc-Gza">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="165" height="32"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="165" height="0.0"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -254,7 +264,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRy-We-raZ">
-                                                                    <rect key="frame" x="170" y="0.0" width="165" height="32"/>
+                                                                    <rect key="frame" x="170" y="0.0" width="165" height="0.0"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -262,10 +272,10 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="BDJ-RR-qU2">
-                                                            <rect key="frame" x="0.0" y="110.5" width="335" height="31.5"/>
+                                                            <rect key="frame" x="0.0" y="98" width="335" height="44"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Value:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BxZ-oY-DQv">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="165" height="31.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="165" height="44"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -274,7 +284,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NrK-CU-kCO">
-                                                                    <rect key="frame" x="170" y="0.0" width="165" height="31.5"/>
+                                                                    <rect key="frame" x="170" y="0.0" width="165" height="44"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -304,7 +314,7 @@
                                             <outlet property="trackingTitle" destination="1cK-lc-Gza" id="zgT-OY-Mni"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderTrackCell" rowHeight="70" id="loQ-jl-6OG" customClass="OrderTrackCell" customModule="Tatayab___Testing" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderTrackCell" rowHeight="70" id="loQ-jl-6OG" customClass="OrderTrackCell" customModule="TATAYAB___تطيّب" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="178" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="loQ-jl-6OG" id="SEc-kV-cCk">
@@ -382,7 +392,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderDetailsCell" rowHeight="100" id="obH-hL-1eI" customClass="OrderDetailsCell" customModule="Tatayab___Testing" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderDetailsCell" rowHeight="100" id="obH-hL-1eI" customClass="OrderDetailsCell" customModule="TATAYAB___تطيّب" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="248" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="obH-hL-1eI" id="f8r-27-iLe">
@@ -478,7 +488,7 @@
                                             <outlet property="shippingValue" destination="xH6-i3-GJ2" id="qaW-L6-fLO"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderAddressCell" id="SRm-Ki-kUi" customClass="OrderAddressCell" customModule="Tatayab___Testing" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderAddressCell" id="SRm-Ki-kUi" customClass="OrderAddressCell" customModule="TATAYAB___تطيّب" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="348" width="375" height="99"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SRm-Ki-kUi" id="HJm-6b-uAD">
@@ -543,7 +553,7 @@
                                             <outlet property="shippingAddress" destination="QFH-K4-lk6" id="CNr-6g-tMf"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderProductsCell" rowHeight="170" id="0Ug-Jz-2UQ" customClass="OrderProductsCell" customModule="Tatayab___Testing" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderProductsCell" rowHeight="170" id="0Ug-Jz-2UQ" customClass="OrderProductsCell" customModule="TATAYAB___تطيّب" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="447" width="375" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Ug-Jz-2UQ" id="ZWg-Lk-XhV">
