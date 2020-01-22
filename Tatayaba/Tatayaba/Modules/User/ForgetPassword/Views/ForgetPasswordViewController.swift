@@ -22,13 +22,20 @@ class ForgetPasswordViewController: BaseViewController, ValidationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerValidator()
-        tabBarController?.tabBar.isHidden = true
         setTextFieldsPlaceholder()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        NavigationBarWithBackButton()
+//        self.tabBarController?.tabBar.isHidden = true
+//    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         NavigationBarWithBackButton()
+        self.tabBarController?.tabBar.isHidden = true
+        emailTextField.becomeFirstResponder()
     }
     
     // MARK:- Localization
@@ -41,7 +48,6 @@ class ForgetPasswordViewController: BaseViewController, ValidationDelegate {
     //MARK:- Swift Validator
     func registerValidator() {
         validator.registerField(emailTextField, rules: [RequiredRule(message: "Email is required!"), EmailRule(message: "Invalid email")])
-        emailTextField.becomeFirstResponder()
     }
 
     //MARK:- Validation Delegate

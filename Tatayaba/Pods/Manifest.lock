@@ -82,7 +82,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.3.1):
     - GoogleUtilities/Logger
-  - IQKeyboardManagerSwift (6.4.0)
+  - IQKeyboardManagerSwift (6.5.5)
   - MBProgressHUD (1.1.0)
   - MOLH (1.0)
   - Moya (13.0.1):
@@ -135,7 +135,6 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
-    - IQKeyboardManagerSwift
     - MBProgressHUD
     - MOLH
     - nanopb
@@ -148,6 +147,7 @@ SPEC REPOS:
     - FirebaseAnalyticsInterop
     - FirebaseDynamicLinks
     - FirebaseMessaging
+    - IQKeyboardManagerSwift
     - Moya
     - Protobuf
     - Result
@@ -179,7 +179,7 @@ SPEC CHECKSUMS:
   GoogleDataTransport: f6fe28f43e3a300736854260961ad485b473edc5
   GoogleDataTransportCCTSupport: 862418a8cdda520c4dd4af83a756d04efe4a6990
   GoogleUtilities: f895fde57977df4e0233edda0dbeac490e3703b6
-  IQKeyboardManagerSwift: ed9b04ee0e3067ffba543283462d619f944b05e5
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MOLH: 2492e7f8fe3400580832312dc0fb9e05d7e92726
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
