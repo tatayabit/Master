@@ -29,10 +29,11 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
         setTextFieldsPlaceholder()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated) // No need for semicolon
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         NavigationBarWithBackButton()
         self.tabBarController?.tabBar.isHidden = true
+        fullNameTextField.becomeFirstResponder()
     }
     
     // MARK:- Localization
@@ -61,7 +62,6 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
     func registerValidator() {
         validator.registerField(emailTextField, rules: [RequiredRule(message: "Email is required!"), EmailRule(message: "Invalid email")])
         validator.registerField(passwordTextField, rules: [RequiredRule(message: "Password is required!"), PasswordRule(regex: "^.{6,20}$", message: "Invalid password")])
-        fullNameTextField.becomeFirstResponder()
     }
     
     //MARK:- Validation Delegate
