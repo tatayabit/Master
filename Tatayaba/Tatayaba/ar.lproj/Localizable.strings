@@ -81,7 +81,7 @@
 "seeMore" = "المزيد";
 "Perfume Name" = "اسم العطر";
 "Comment" = "تعليق";
-"Perform Description" = "تفاصيل العطر";
+"Perform Description" = "التفاصيل";
 "Phone" = "رقم الجوال";
 "Name" = "الاسم";
 "Full name"="الاسم كاملا";
@@ -157,7 +157,7 @@ alertValaidationMessage = "يجب عليك الترقية ، الإصدار ال
 "field_is_required" = "الرجاء تعبئة الحقول المطلوبة";
 "valid_email" = "الرجاء إدخال بريد إلكتروني صحيح";
 "valid_password" = "الرجاء إدخال كلمة مرور صحيحة";
-"email_already_exists" = "البريد الإلكتروني أو كلمة المرور غير صحيحة";
+"email_already_exists" = "هذا البريد الإلكتروني مسجل لدينا. الرجاء تسجيل الدخول للمتابعة أو ادخل بريد إلكتروني مختلف";
 
 // Orders List
 "Order_Id" = "رقم الطلب";
