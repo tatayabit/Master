@@ -33,6 +33,7 @@
 "LoginFailed"= "خطا في الدخول";
 "AcceessDenied"= "الدخول ممنوع";
 
+
 // Error
 "Error"="خطأ";
 "Success" = "حسنا";
@@ -156,6 +157,7 @@ alertValaidationMessage = "يجب عليك الترقية ، الإصدار ال
 "field_is_required" = "الرجاء تعبئة الحقول المطلوبة";
 "valid_email" = "الرجاء إدخال بريد إلكتروني صحيح";
 "valid_password" = "الرجاء إدخال كلمة مرور صحيحة";
+"email_already_exists" = "البريد الإلكتروني أو كلمة المرور غير صحيحة";
 
 // Orders List
 "Order_Id" = "رقم الطلب";

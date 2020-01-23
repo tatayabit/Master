@@ -142,7 +142,7 @@ alertValaidationMessage = "You have to upgrade , your version is not supported a
 "reset" = "RESET";
 
 
-"Suppliers Filter" = "Suppliers";
+"Suppliers Filter" = "Brands";
 "Categories Filter" = "Categories";
 "Price Filter" = "Price";
 "Free Delivery Filter" = "Free Delivery";
@@ -156,6 +156,7 @@ alertValaidationMessage = "You have to upgrade , your version is not supported a
 "field_is_required" = "Please fill in the required fields";
 "valid_email" = "Please enter valid email";
 "valid_password" = "Please enter valid password";
+"email_already_exists" = "This email already exists. Please Sign in to continue or try a different email.";
 
 // Orders List
 "Order_Id" = "Order Id";

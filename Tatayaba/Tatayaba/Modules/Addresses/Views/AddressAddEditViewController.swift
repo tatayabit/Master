@@ -136,13 +136,13 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
                         do {
                             if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
                                 ///////////////////
-                                let refreshAlert = UIAlertController(title: "AcceessDenied".localized(), message: errorMessage, preferredStyle: UIAlertController.Style.alert)
+                                let refreshAlert = UIAlertController(title: "AcceessDenied".localized(), message: "email_already_exists".localized(), preferredStyle: UIAlertController.Style.alert)
 
                                 refreshAlert.addAction(UIAlertAction(title: "LOG IN".localized(), style: .default, handler: { (action: UIAlertAction!) in
                                     self.loadLoginVC()
                                 }))
 
-                                refreshAlert.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: { (action: UIAlertAction!) in
+                                refreshAlert.addAction(UIAlertAction(title: "Cancel".localized(), style: .destructive, handler: { (action: UIAlertAction!) in
                                     print("Handle Cancel Logic here")
                                 }))
 

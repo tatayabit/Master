@@ -51,7 +51,7 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         nameLabel.text = product.supplierName == "None" ? "" : product.supplierName
         descriptionLabel.text = product.name
         priceLabel.text = product.price.formattedPrice
-        outOfStockLabel.isHidden = product.isInStock
+        outOfStockLabel.isHidden = true//product.isInStock
         if(product.is_free_delivery == "Y"){
             freeDeliveryLabel.isHidden = false
             freeDeliveryHeightConstraint.constant = 14
@@ -60,6 +60,9 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
             freeDeliveryHeightConstraint.constant = 0
         }
         freeDeliveryLabel.sizeToFit()
+        DispatchQueue.main.async {
+            self.freeDeliveryLabel.font = UIFont.mediumGotham(size: 11.0)
+        }
         self.discountPercentageLabel.text = (" " + product.discountPercentage + "% " + "OFF".localized() + " ")
         
         if let percentage = Float(product.priceBeforeDiscount) {
@@ -91,7 +94,7 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         nameLabel.text = product.supplierName == "None" ? "" : product.supplierName
         descriptionLabel.text = product.name
         priceLabel.text = product.price.formattedPrice
-        outOfStockLabel.isHidden = product.isInStock
+        outOfStockLabel.isHidden = true//product.isInStock
         if(product.is_free_delivery == "Y"){
             freeDeliveryLabel.isHidden = false
             freeDeliveryHeightConstraint.constant = 14
@@ -100,6 +103,9 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
             freeDeliveryHeightConstraint.constant = 0
         }
         freeDeliveryLabel.sizeToFit()
+        DispatchQueue.main.async {
+            self.freeDeliveryLabel.font = UIFont.mediumGotham(size: 11.0)
+        }
         self.discountPercentageLabel.text = (" " + product.discountPercentage + "% " + "OFF".localized()+" ")
         
         
