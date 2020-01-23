@@ -169,3 +169,5 @@ alertValaidationMessage = "You have to upgrade , your version is not supported a
 "Pending" = "Pending";
 "Order #:" = "Order #:" ;
 "Ordered on:" = "Ordered on:";
+"Your Country is not supported" = "Your Country is not supported";
+"Please go to Countries list and select available country" = "Please go to Countries list and select available country";
