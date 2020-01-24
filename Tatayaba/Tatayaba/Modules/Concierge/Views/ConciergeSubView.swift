@@ -40,7 +40,7 @@ class ConciergeSubView: UIView, ValidationDelegate {
         perufumDescription.placeholder = "Perform Description".localized()
         
         perufumDescription.isScrollEnabled = false
-        
+        self.welcomeLabel.font = UIFont.mediumGotham(size: 16)
 //        self.welcomeLabel.attributedText =
         
 //        self.freeShipping.font = UIFont.mediumGotham(size: 11.0)
