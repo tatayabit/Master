@@ -33,6 +33,7 @@
 "LoginFailed"= "خطا في الدخول";
 "AcceessDenied"= "الدخول ممنوع";
 
+
 // Error
 "Error"="خطأ";
 "Success" = "حسنا";
@@ -82,7 +83,7 @@
 "seeMore" = "المزيد";
 "Perfume Name" = "اسم العطر";
 "Comment" = "تعليق";
-"Perform Description" = "تفاصيل العطر";
+"Perform Description" = "التفاصيل";
 "Phone" = "رقم الجوال";
 "Name" = "الاسم";
 "Full name"="الاسم كاملا";
@@ -158,6 +159,7 @@ alertValaidationMessage = "يجب عليك الترقية ، الإصدار ال
 "field_is_required" = "الرجاء تعبئة الحقول المطلوبة";
 "valid_email" = "الرجاء إدخال بريد إلكتروني صحيح";
 "valid_password" = "الرجاء إدخال كلمة مرور صحيحة";
+"email_already_exists" = "هذا البريد الإلكتروني مسجل لدينا. الرجاء تسجيل الدخول للمتابعة أو ادخل بريد إلكتروني مختلف";
 
 // Orders List
 "Order_Id" = "رقم الطلب";
@@ -170,3 +172,5 @@ alertValaidationMessage = "يجب عليك الترقية ، الإصدار ال
 "Pending" = "قيد الانتظار";
 "Order #:" = " الطلب #:";
 "Ordered on:" = "تم الطلب في :";
+"Your Country is not supported" = "للأسف لا يوجد وسيلة شحن متاحة حالياً إلى منطقتكم.";
+"Please go to Countries list and select available country" = "يرجى الاتصال بنا وإن شاء الله سوف نعمل على معالجة ذلك في أقرب وقت. آو اختر دولة أخري";

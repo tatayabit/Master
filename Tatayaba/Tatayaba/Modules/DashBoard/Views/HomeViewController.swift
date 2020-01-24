@@ -475,10 +475,30 @@ extension HomeViewController: LocationManagerDelegate, CountryViewDelegate {
     func didDetectCurrentUserLocation(location: CLLocation) {
         AppDelegate.shared.shouldCheckLocation = false
         print("current user location: \(location)")
-        CountrySettings.shared.getGeoReversedCountry(lat: location.coordinate.latitude, lng: location.coordinate.longitude, completionBlock:{
-            self.loadBanners()
+        CountrySettings.shared.getGeoReversedCountry(lat: location.coordinate.latitude, lng: location.coordinate.longitude, completionBlock:{ availability in
+            if availability{ self.loadBanners()}else{self.userLocationNotAvailable()}
+           
         })
     }
+    
+    
+    func userLocationNotAvailable() {
+           // initialise a pop up for using later
+           AppDelegate.shared.shouldCheckLocation = false
+    
+        let alertController = UIAlertController(title: "Your Country is not supported".localized(), message: "Please go to Countries list and select available country".localized(), preferredStyle: .alert)
+           let cancelAction = UIAlertAction(title: "Choose Country".localized(), style: .default) { _ in
+               // open countriesList VC
+               if self.viewModel.isCurrentCountrySelected() {
+                   self.loadBanners()
+               } else {
+                   self.loadCountries()
+               }
+           }
+    
+           alertController.addAction(cancelAction)
+           self.present(alertController, animated: true, completion: nil)
+       }
     
     func userLocationDenied() {
         // initialise a pop up for using later
