@@ -83,8 +83,14 @@ class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITab
             let email  = (Customer.shared.user?.email ?? "")
             self.nameLBL.text = "\(profile.Hi)\(name)"
             self.mailLBL.text = email
+            self.nameLBL.isHidden = false
+            self.mailLBL.isHidden = false
         } else {
              self.welcomeView.isHidden = true
+            self.nameLBL.isHidden = true
+            self.mailLBL.isHidden = true
+            self.nameLBL.text = ""
+            self.mailLBL.text = ""
         }
     }
     

@@ -20,6 +20,7 @@ class Cart {
     var totalPriceValueRounded : Float = 0.0
     var isOneClickBuy: Bool = false
     var couponCode: String = ""
+    var couponType: String = ""
     
     
     //MARK:- LoadDataFromCaching
@@ -185,6 +186,7 @@ class Cart {
         self.isOneClickBuy = false
         self.paymentMethod = nil
         self.couponCode = ""
+        self.couponType = ""
         updateTabBarCount()
 //        saveCartToCaching()
     }
