@@ -14,7 +14,7 @@ struct CurrencyAPIClient: APIClient {
 
     var provider = MoyaProvider<MultiTarget>(plugins: [NetworkLoggerPlugin(verbose: true)])
 
-    static let environment: APIEnvironment = .dev3
+    static let environment: APIEnvironment = .production
 
     func getCurrencies(completion: @escaping (APIResult<[Currency]?, MoyaError>) -> Void) {
         fetch(with: CurrencyEndpoint.getCurrencies(), completion: completion)

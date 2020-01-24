@@ -220,7 +220,8 @@ extension profileTabMenuViewController{
                  self.PrivacyView()
             }else  if indextitle  == profile.logout {
                 Customer.shared.logout()
-            self.loadLoginVC()
+                self.setWelcomeHeader()
+                self.loadLoginVC()
 
             }
         }

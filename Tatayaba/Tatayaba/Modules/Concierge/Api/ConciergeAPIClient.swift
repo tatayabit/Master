@@ -15,7 +15,7 @@ struct ConciergeAPIClient: APIClient {
 
     var provider = MoyaProvider<MultiTarget>(plugins: [NetworkLoggerPlugin(verbose: true)])
 
-    static let environment: APIEnvironment = .dev3
+    static let environment: APIEnvironment = .production
     func uploadConcierge(concierge: Concierge, completion: @escaping (APIResult<[String: String]?, MoyaError>) -> Void) {
         fetch(with: ConciergeEndpoint.uploadConcierge(concierge: concierge), completion: completion)
     }
