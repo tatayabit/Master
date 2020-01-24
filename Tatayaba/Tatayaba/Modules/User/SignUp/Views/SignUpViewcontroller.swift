@@ -60,8 +60,10 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
     
     //MARK:- Swift Validator
     func registerValidator() {
-        validator.registerField(emailTextField, rules: [RequiredRule(message: "Email is required!"), EmailRule(message: "Invalid email")])
-        validator.registerField(passwordTextField, rules: [RequiredRule(message: "Password is required!"), PasswordRule(regex: "^.{6,20}$", message: "Invalid password")])
+        validator.registerField(emailTextField, rules: [RequiredRule(message: "field_is_required".localized()), EmailRule(message: "valid_email".localized())])
+        validator.registerField(passwordTextField, rules: [RequiredRule(message: "field_is_required".localized()), PasswordRule(regex: "^.{6,20}$", message: "valid_password".localized())])
+        fullNameTextField.becomeFirstResponder()
+
     }
     
     //MARK:- Validation Delegate
@@ -87,7 +89,7 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
                 print("the error \(error)")
                 do {
                     if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
-                        self.showErrorAlerr(title: "AcceessDenied".localized(), message: errorMessage, handler: nil)
+                        self.showErrorAlerr(title: "Login_Failed".localized(), message: "Login_Failed_message".localized(), handler: nil)
                     }
                 }
                 catch{
@@ -103,7 +105,7 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
         }
         
         if errors.count > 0 {
-            showErrorAlerr(title: Constants.Common.error, message: "\(String(describing: errors[0].1.errorMessage))", handler: nil)
+            showErrorAlerr(title: "Attention".localized(), message: "\(String(describing: errors[0].1.errorMessage))", handler: nil)
         }
     }
     

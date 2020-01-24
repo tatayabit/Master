@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,8 +28,8 @@
                         <constraint firstAttribute="height" id="STg-ik-hU0"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66O-IQ-2gc">
-                    <rect key="frame" x="14" y="6" width="347" height="105"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66O-IQ-2gc">
+                    <rect key="frame" x="14" y="20" width="347" height="105"/>
                     <string key="text">Welcome to TATAYAB CONCIERGE. Your fastest destination to find your beloved perfume across the world. Finding a fragrance has never been that easy before.
 
 </string>
@@ -37,8 +37,22 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pzH-qZ-19S" userLabel="SeparatorView">
+                    <rect key="frame" x="9" y="124.5" width="357" height="0.5"/>
+                    <color key="backgroundColor" red="0.13359850649999999" green="0.10292818400000001" blue="0.21072956919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="92h-5h-lPp"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUa-gl-Lwb" userLabel="SeparatorView">
+                    <rect key="frame" x="9" y="271.5" width="357" height="0.5"/>
+                    <color key="backgroundColor" red="0.13359850649999999" green="0.10292818400000001" blue="0.21072956919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="9Bt-JT-nDS"/>
+                    </constraints>
+                </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xjh-qr-5XP">
-                    <rect key="frame" x="8" y="329" width="357" height="52.5"/>
+                    <rect key="frame" x="8" y="278" width="357" height="76.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="q2U-kB-jb6"/>
@@ -47,15 +61,15 @@
                     <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i40-9d-Ds6">
-                    <rect key="frame" x="8" y="383" width="357" height="0.5"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i40-9d-Ds6" userLabel="SeparatorView">
+                    <rect key="frame" x="8" y="356" width="357" height="0.5"/>
                     <color key="backgroundColor" red="0.13359850645065308" green="0.10292818397283554" blue="0.21072956919670105" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="0.5" id="Gnr-r8-vnW"/>
                     </constraints>
                 </view>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OCb-v7-g18" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                    <rect key="frame" x="8" y="385.5" width="357" height="45"/>
+                    <rect key="frame" x="8" y="358.5" width="357" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="MKg-lk-YvO"/>
                     </constraints>
@@ -89,7 +103,7 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iqm-uc-Uhe" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                    <rect key="frame" x="8" y="434.5" width="357" height="45"/>
+                    <rect key="frame" x="8" y="407.5" width="357" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="tjv-FV-o6D"/>
                     </constraints>
@@ -150,57 +164,48 @@
                         <action selector="countryAction:" destination="wlV-2n-IBo" eventType="touchUpInside" id="VIO-3q-rIo"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brQ-wk-eWl">
-                    <rect key="frame" x="8" y="119" width="359" height="40"/>
-                    <color key="backgroundColor" red="0.13354238869999999" green="0.1071816161" blue="0.2066496015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera-logo" translatesAutoresizingMaskIntoConstraints="NO" id="CAr-SV-l9C">
+                    <rect key="frame" x="8" y="128" width="130" height="130"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="kwt-cv-BKC"/>
+                        <constraint firstAttribute="height" constant="130" id="W37-H5-fbY"/>
+                        <constraint firstAttribute="width" constant="130" id="Zpn-rB-ZcB"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
-                    <state key="normal" title="Upload perfum image">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="uploadAction:" destination="wlV-2n-IBo" eventType="touchUpInside" id="27H-A8-8pe"/>
-                    </connections>
-                </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera-logo" translatesAutoresizingMaskIntoConstraints="NO" id="sVe-jI-esR">
-                    <rect key="frame" x="8" y="167.5" width="359" height="149"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="pzH-qZ-19S" firstAttribute="leading" secondItem="wlV-2n-IBo" secondAttribute="leading" constant="9" id="1g0-c1-sg9"/>
                 <constraint firstItem="i40-9d-Ds6" firstAttribute="leading" secondItem="xjh-qr-5XP" secondAttribute="leading" id="2FA-4b-O5C"/>
-                <constraint firstItem="brQ-wk-eWl" firstAttribute="leading" secondItem="wlV-2n-IBo" secondAttribute="leading" constant="8" id="3Se-Ea-Kmo"/>
                 <constraint firstItem="QOy-jO-bT9" firstAttribute="top" secondItem="SVF-cJ-Lsi" secondAttribute="bottom" constant="8" id="3yA-DL-OUj"/>
                 <constraint firstItem="i40-9d-Ds6" firstAttribute="trailing" secondItem="xjh-qr-5XP" secondAttribute="trailing" id="5AG-Zs-MkL"/>
                 <constraint firstAttribute="trailing" secondItem="66O-IQ-2gc" secondAttribute="trailing" constant="14" id="5RR-TO-hB2"/>
+                <constraint firstItem="xjh-qr-5XP" firstAttribute="top" secondItem="CAr-SV-l9C" secondAttribute="bottom" constant="20" id="765-AE-UFU"/>
                 <constraint firstItem="QOy-jO-bT9" firstAttribute="leading" secondItem="Lau-fo-u0d" secondAttribute="leading" constant="8" id="8r5-MK-0sJ"/>
-                <constraint firstItem="66O-IQ-2gc" firstAttribute="top" secondItem="QPz-oN-vuA" secondAttribute="bottom" constant="6" id="A5V-Zv-X8d"/>
+                <constraint firstItem="66O-IQ-2gc" firstAttribute="top" secondItem="QPz-oN-vuA" secondAttribute="bottom" constant="20" id="A5V-Zv-X8d"/>
                 <constraint firstItem="Lau-fo-u0d" firstAttribute="trailing" secondItem="QPz-oN-vuA" secondAttribute="trailing" id="AvP-5s-LUN"/>
+                <constraint firstItem="QUa-gl-Lwb" firstAttribute="leading" secondItem="wlV-2n-IBo" secondAttribute="leading" constant="9" id="CEf-y3-PDf"/>
                 <constraint firstItem="QPz-oN-vuA" firstAttribute="top" secondItem="Lau-fo-u0d" secondAttribute="top" id="CNs-Ei-8j8"/>
                 <constraint firstItem="OCb-v7-g18" firstAttribute="top" secondItem="i40-9d-Ds6" secondAttribute="bottom" constant="2" id="I1s-zY-619"/>
-                <constraint firstItem="sVe-jI-esR" firstAttribute="trailing" secondItem="brQ-wk-eWl" secondAttribute="trailing" id="K79-I2-0Jg"/>
+                <constraint firstItem="CAr-SV-l9C" firstAttribute="top" secondItem="66O-IQ-2gc" secondAttribute="bottom" constant="3" id="IdZ-TE-vcS"/>
                 <constraint firstItem="QPz-oN-vuA" firstAttribute="leading" secondItem="Lau-fo-u0d" secondAttribute="leading" id="Owk-zJ-jeL"/>
                 <constraint firstItem="i40-9d-Ds6" firstAttribute="top" secondItem="xjh-qr-5XP" secondAttribute="bottom" constant="1.5" id="Oyp-iB-0AR"/>
-                <constraint firstItem="SVF-cJ-Lsi" firstAttribute="top" secondItem="iqm-uc-Uhe" secondAttribute="bottom" constant="8" id="PO4-hP-xlM"/>
+                <constraint firstItem="SVF-cJ-Lsi" firstAttribute="top" secondItem="iqm-uc-Uhe" secondAttribute="bottom" constant="35" id="PO4-hP-xlM"/>
                 <constraint firstItem="OCb-v7-g18" firstAttribute="trailing" secondItem="xjh-qr-5XP" secondAttribute="trailing" id="R1W-P1-DYl"/>
                 <constraint firstItem="SVF-cJ-Lsi" firstAttribute="trailing" secondItem="QOy-jO-bT9" secondAttribute="trailing" id="RVB-bL-EWO"/>
-                <constraint firstItem="sVe-jI-esR" firstAttribute="top" secondItem="brQ-wk-eWl" secondAttribute="bottom" constant="8.5" id="WNp-rp-TE7"/>
-                <constraint firstItem="brQ-wk-eWl" firstAttribute="top" secondItem="66O-IQ-2gc" secondAttribute="bottom" constant="8" id="Xxs-Uo-nKM"/>
                 <constraint firstItem="Lau-fo-u0d" firstAttribute="bottom" secondItem="QOy-jO-bT9" secondAttribute="bottom" constant="24.5" id="ZUT-nA-eXB"/>
-                <constraint firstItem="xjh-qr-5XP" firstAttribute="top" secondItem="brQ-wk-eWl" secondAttribute="bottom" constant="170" id="dbm-5O-8oV"/>
-                <constraint firstItem="Lau-fo-u0d" firstAttribute="trailing" secondItem="brQ-wk-eWl" secondAttribute="trailing" constant="8" id="e1f-ix-IlD"/>
+                <constraint firstItem="xjh-qr-5XP" firstAttribute="top" secondItem="QUa-gl-Lwb" secondAttribute="bottom" constant="6" id="e10-hn-jv1"/>
                 <constraint firstItem="iqm-uc-Uhe" firstAttribute="top" secondItem="OCb-v7-g18" secondAttribute="bottom" constant="4" id="eG1-j4-6Wr"/>
+                <constraint firstItem="CAr-SV-l9C" firstAttribute="leading" secondItem="Lau-fo-u0d" secondAttribute="leading" constant="8" id="gMd-9Q-T9d"/>
                 <constraint firstItem="iqm-uc-Uhe" firstAttribute="leading" secondItem="OCb-v7-g18" secondAttribute="leading" id="hSh-1K-ra8"/>
                 <constraint firstItem="66O-IQ-2gc" firstAttribute="leading" secondItem="Lau-fo-u0d" secondAttribute="leading" constant="14" id="igv-dJ-wpG"/>
                 <constraint firstItem="iqm-uc-Uhe" firstAttribute="leading" secondItem="SVF-cJ-Lsi" secondAttribute="leading" id="jV4-Et-8kI"/>
+                <constraint firstAttribute="trailing" secondItem="pzH-qZ-19S" secondAttribute="trailing" constant="9" id="krq-aX-4TI"/>
                 <constraint firstItem="OCb-v7-g18" firstAttribute="leading" secondItem="xjh-qr-5XP" secondAttribute="leading" id="mTM-AA-cYz"/>
+                <constraint firstItem="CAr-SV-l9C" firstAttribute="top" secondItem="pzH-qZ-19S" secondAttribute="bottom" constant="3" id="nNK-w2-lC6"/>
                 <constraint firstItem="SVF-cJ-Lsi" firstAttribute="leading" secondItem="QOy-jO-bT9" secondAttribute="leading" id="nZF-U0-pON"/>
-                <constraint firstItem="sVe-jI-esR" firstAttribute="leading" secondItem="brQ-wk-eWl" secondAttribute="leading" id="t4m-dX-ZA5"/>
+                <constraint firstAttribute="trailing" secondItem="QUa-gl-Lwb" secondAttribute="trailing" constant="9" id="tRB-q6-X7e"/>
                 <constraint firstAttribute="trailing" secondItem="QOy-jO-bT9" secondAttribute="trailing" constant="8" id="tjv-HI-WxI"/>
                 <constraint firstItem="Lau-fo-u0d" firstAttribute="trailing" secondItem="xjh-qr-5XP" secondAttribute="trailing" constant="10" id="tm6-hD-Fe7"/>
-                <constraint firstItem="xjh-qr-5XP" firstAttribute="top" secondItem="sVe-jI-esR" secondAttribute="bottom" constant="12.5" id="wJY-rY-9KK"/>
                 <constraint firstItem="iqm-uc-Uhe" firstAttribute="trailing" secondItem="OCb-v7-g18" secondAttribute="trailing" id="xLw-93-pjA"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -209,9 +214,10 @@
                 <outlet property="bannerImageView" destination="QPz-oN-vuA" id="AMP-fj-Pcz"/>
                 <outlet property="countryButton" destination="SVF-cJ-Lsi" id="LA7-eG-ue7"/>
                 <outlet property="customerNameTextField" destination="OCb-v7-g18" id="LuA-bL-nqO"/>
-                <outlet property="perfumeImage" destination="sVe-jI-esR" id="yPA-sO-GJG"/>
+                <outlet property="perfumeImage" destination="CAr-SV-l9C" id="FQf-Wu-1xd"/>
                 <outlet property="perufumDescription" destination="xjh-qr-5XP" id="x7u-Tu-5bw"/>
                 <outlet property="phoneTextField" destination="iqm-uc-Uhe" id="Czy-Dc-OJ2"/>
+                <outlet property="welcomeLabel" destination="66O-IQ-2gc" id="7bE-Th-OM5"/>
             </connections>
             <point key="canvasLocation" x="157.59999999999999" y="179.91004497751126"/>
         </view>

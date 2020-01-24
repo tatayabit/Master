@@ -201,6 +201,8 @@ extension CatProductsViewController : FilterDelegate,isAbleToReceiveData{
             // sort by
         sortFilterOption = data
         let sortBy: FilterSettings.SortingOptions = data.lowercased() == "low to high" ? .ascending : .descending
+        viewModel.currentPage = 0
+        viewModel.productsList.removeAll()
         viewModel.sortByOptionsChanged(sortBy: sortBy)
         self.productsCollectionView.reloadData()
      }
@@ -209,6 +211,8 @@ extension CatProductsViewController : FilterDelegate,isAbleToReceiveData{
 extension CatProductsViewController: FilterProductsReturnViewInterface {
     func didApplyFilter(filterRequestModel: FilterRequestModel?) {
         guard let viewModel = viewModel else { return }
+        viewModel.currentPage = 0
+        viewModel.productsList.removeAll()
         viewModel.didApplyFilter(filterRequestModel: filterRequestModel)
         self.productsCollectionView.reloadData()
     }

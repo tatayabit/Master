@@ -9,7 +9,7 @@
 
 
 // Tab Bar Titles
-"Change Language"="Change Language";
+"Change Language"="English";
 "Subtotal"="Subtotal";
 "Shipping"="Shipping";
 "Tax"="Tax";
@@ -45,10 +45,12 @@
 "Live Chat" = "Live Chat";
 "Notifications" = "Notifications";
 "Delivery and Return Policy"="Delivery and Return Policy";
+"Hi" = "Hi, ";
 
 // Concierge
 "Something went wrong while submitting your concierge!"="Something went wrong while submitting your concierge!";
-
+"Welcome to TATAYAB CONCIERGE." = "Welcome to TATAYAB CONCIERGE.";
+"Your fastest destination to find your beloved perfume across the world. Finding a fragrance has never been that easy before." = "Your fastest destination to find your beloved perfume across the world. Finding a fragrance has never been that easy before.";
 
 // Cart
 "Your Cart is Empty!"="Your Cart is Empty!";
@@ -82,7 +84,7 @@
 "seeMore" = "See More";
 "Perfume Name" = "Perfume Name";
 "Comment" = "Comment";
-"Perform Description" = "Perform Description";
+"Perform Description" = "Perfume Description";
 "Phone" = "Phone";
 "Name" = "Name";
 "Full name"="Full name";
@@ -146,3 +148,24 @@ alertValaidationMessage = "You have to upgrade , your version is not supported a
 "Price Filter" = "Price";
 "Free Delivery Filter" = "Free Delivery";
 "Reset Password"= "Reset Password";
+
+
+//Alerts
+"Attention" = "Attention";
+"Login_Failed" = "Login Failed";
+"Login_Failed_message" = "The email or password is incorrect";
+"field_is_required" = "Please fill in the required fields";
+"valid_email" = "Please enter valid email";
+"valid_password" = "Please enter valid password";
+
+// Orders List
+"Order_Id" = "Order Id";
+"Order_Amount" = "Order Amount";
+"Order_Status" = "Order Status";
+"Cancelled" = "Cancelled";
+"Completed" = "Completed";
+"Processed" = "Processed";
+"View_Order" = "View Order";
+"Pending" = "Pending";
+"Order #:" = "Order #:" ;
+"Ordered on:" = "Ordered on:";

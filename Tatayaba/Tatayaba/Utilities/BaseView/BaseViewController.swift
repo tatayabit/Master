@@ -37,10 +37,12 @@ class BaseViewController: UIViewController {
     func showErrorAlerr(title: String?, message: String?, handler: ((UIAlertAction) -> Void)?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let htmlData = NSString(string: message ?? "").data(using: String.Encoding.unicode.rawValue)
-        let options = [NSAttributedString.DocumentReadingOptionKey.documentType:
-            NSAttributedString.DocumentType.html]
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        let options = [ NSAttributedString.Key.paragraphStyle: paragraphStyle,NSAttributedString.DocumentReadingOptionKey.documentType:
+            NSAttributedString.DocumentType.html] as [AnyHashable : Any]
         let attributedString = try? NSMutableAttributedString(data: htmlData ?? Data(),
-                                                              options: options,
+                                                              options: options as! [NSAttributedString.DocumentReadingOptionKey : Any],
                                                               documentAttributes: nil)
         alert.setValue(attributedString, forKey: "attributedMessage")
         alert.view.traverseRadius(4)

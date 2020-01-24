@@ -47,7 +47,7 @@ extension APIClient {
             case .success(let response):
                 do {
                     print("response: \(response)")
-                    if response.statusCode >= 400 {
+                    if response.statusCode >= 300 {
                         let errorMessage = try response.map(ErrorMessage.self)
                         print("errorMessage: \(errorMessage)")
                         

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6jb-no-BSF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6jb-no-BSF">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -422,7 +422,7 @@
                                 </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Password" translatesAutoresizingMaskIntoConstraints="NO" id="Zip-jV-8n6">
-                                <rect key="frame" x="14" y="280" width="24" height="24"/>
+                                <rect key="frame" x="14" y="279.5" width="24" height="24"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="2Fi-Os-xHV"/>
@@ -542,6 +542,7 @@
                         <constraints>
                             <constraint firstItem="wBz-kP-Qjb" firstAttribute="top" secondItem="uAj-qN-buH" secondAttribute="bottom" constant="16" id="0dd-dt-0SW"/>
                             <constraint firstItem="HBV-9i-3Gg" firstAttribute="centerX" secondItem="bgS-J9-Dff" secondAttribute="centerX" id="6Vd-cO-XW6"/>
+                            <constraint firstItem="Zip-jV-8n6" firstAttribute="bottom" secondItem="wBz-kP-Qjb" secondAttribute="bottom" id="AH4-YZ-SiS"/>
                             <constraint firstItem="XJt-xy-f5M" firstAttribute="leading" secondItem="4ym-90-fwy" secondAttribute="trailing" constant="20" id="Av3-13-xRN"/>
                             <constraint firstItem="uNw-9o-JPf" firstAttribute="trailing" secondItem="uAj-qN-buH" secondAttribute="trailing" constant="15" id="Hui-9G-Gew"/>
                             <constraint firstItem="XJt-xy-f5M" firstAttribute="centerX" secondItem="bgS-J9-Dff" secondAttribute="centerX" id="KPM-DC-sbB"/>
@@ -550,7 +551,6 @@
                             <constraint firstItem="4ym-90-fwy" firstAttribute="leading" secondItem="bgS-J9-Dff" secondAttribute="leading" constant="38" id="Q2K-f4-l17"/>
                             <constraint firstItem="DBb-m7-ZYh" firstAttribute="top" secondItem="UsS-Vs-tNK" secondAttribute="bottom" constant="167" id="QWK-Yq-Laz"/>
                             <constraint firstItem="Hxy-id-buo" firstAttribute="top" secondItem="XJt-xy-f5M" secondAttribute="bottom" constant="15" id="UJF-X7-Kl1"/>
-                            <constraint firstItem="Zip-jV-8n6" firstAttribute="top" secondItem="DBb-m7-ZYh" secondAttribute="bottom" constant="30" id="WWe-sa-cBs"/>
                             <constraint firstItem="DBb-m7-ZYh" firstAttribute="leading" secondItem="uNw-9o-JPf" secondAttribute="leading" constant="16" id="Zau-Hv-qTp"/>
                             <constraint firstItem="uAj-qN-buH" firstAttribute="leading" secondItem="DBb-m7-ZYh" secondAttribute="trailing" constant="22" id="cXF-Kp-LZR"/>
                             <constraint firstItem="IZR-iK-7Br" firstAttribute="top" secondItem="wBz-kP-Qjb" secondAttribute="bottom" constant="66" id="e6k-XQ-QOL"/>

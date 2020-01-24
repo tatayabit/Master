@@ -9,7 +9,7 @@
 
 
 // Tab Bar Titles
-"Change Language"="تغيير اللغة";
+"Change Language"="اللغه العربية";
 "Subtotal"="المجموع";
 "Shipping"="الشحن";
 "Tax"="الضرائب";
@@ -45,9 +45,12 @@
 "Live Chat" = "دردشه";
 "Notifications" = "التنبيهات";
 "Delivery and Return Policy"="سياسة الاستبدال والاسترجاع";
+"Hi" = "أهلا, ";
 
 // Concierge
 "Something went wrong while submitting your concierge!"="حدث خطأ أثناء تقديم الكونسيرج!";
+"Welcome to TATAYAB CONCIERGE." = "مرحباً بكم في تطيب كونسيرج.";
+"Your fastest destination to find your beloved perfume across the world. Finding a fragrance has never been that easy before." = "أول كونسيرج الكتروني في العالم متخصص في العطور..\nالان يمكنكم الحصول على أي عطر في العالم خلال خطوات بسيطه!";
 
 // Cart
 "Your Cart is Empty!"="السلة فارغة!";
@@ -147,3 +150,23 @@ alertValaidationMessage = "يجب عليك الترقية ، الإصدار ال
 "Price Filter" = "السعر";
 "Free Delivery Filter" = "توصيل مجاني";
 "Reset Password"="إعادة تعيين كلمة المرور";
+
+//Alerts
+"Attention" = "تنبيه";
+"Login_Failed" = "خطأ في تسجيل الدخول";
+"Login_Failed_message" = "البريد الإلكتروني أو كلمة المرور غير صحيحة";
+"field_is_required" = "الرجاء تعبئة الحقول المطلوبة";
+"valid_email" = "الرجاء إدخال بريد إلكتروني صحيح";
+"valid_password" = "الرجاء إدخال كلمة مرور صحيحة";
+
+// Orders List
+"Order_Id" = "رقم الطلب";
+"Order_Amount" = "قيمة الطلب";
+"Order_Status" = "حالة الطلب";
+"Cancelled" = "طلب ملغي";
+"Completed" = "طلب مكتمل";
+"Processed" = "جاري الطلب";
+"View_Order" = "معاينة الطلب";
+"Pending" = "قيد الانتظار";
+"Order #:" = " الطلب #:";
+"Ordered on:" = "تم الطلب في :";
