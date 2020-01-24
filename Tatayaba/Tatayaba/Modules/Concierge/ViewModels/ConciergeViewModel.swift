@@ -28,5 +28,7 @@ struct ConciergeViewModel {
 extension Constants {
     struct Concierge {
         static let uploaded = "Uploaded".localized()
+        static let welcomeText = "Your fastest destination to find your beloved perfume across the world. Finding a fragrance has never been that easy before.".localized()
+        static let welcomeHeader = "Welcome to TATAYAB CONCIERGE.".localized()
     }
 }

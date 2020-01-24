@@ -26,6 +26,8 @@ class ConciergeSubView: UIView, ValidationDelegate {
     @IBOutlet weak var customerNameTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var phoneTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var countryButton: UIButton!
+    @IBOutlet weak var welcomeLabel: UILabel!
+
 //    @IBOutlet weak var bannerImageViewHeightConstraint: NSLayoutConstraint!
     
     var country: Country?
@@ -36,7 +38,29 @@ class ConciergeSubView: UIView, ValidationDelegate {
         super.awakeFromNib()
        // bannerImageView.sd_setImage(with: URL(string: "https://tatayab.com/images/companies/1/inside%20page%20english.jpg"), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
         perufumDescription.placeholder = "Perform Description".localized()
+        
         perufumDescription.isScrollEnabled = false
+        
+//        self.welcomeLabel.attributedText =
+        
+//        self.freeShipping.font = UIFont.mediumGotham(size: 11.0)
+//                   self.discountPercentageLabel.font = UIFont.mediumGotham(size: 11.0)
+//                   let originalPriceStrikeAttributes: [NSAttributedString.Key: Any] =
+//                          [NSAttributedString.Key.strikethroughStyle:
+//                              NSUnderlineStyle.thick.rawValue,
+//                           .foregroundColor: UIColor.brandDarkGray,
+//                           NSAttributedString.Key.font: UIFont.htfbookGotham(size: 12.0)]
+//              //        GothamHTF-Book
+//
+//                      let originalPriceAttr = productVM.hasDiscount ? originalPriceStrikeAttributes : nil
+//                      let priceAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.black]
+//
+//                      let attributedString = NSMutableAttributedString(string: productVM.originalPrice, attributes: priceAttributes)
+//                      attributedString.append(NSAttributedString(string: "    "))
+//
+//
+//                      attributedString.append(NSMutableAttributedString(string: productVM.priceBeforeDiscount, attributes: originalPriceAttr))
+        
         
         if LanguageManager.isArabicLanguage() {
             customerNameTextField.isLTRLanguage = false
