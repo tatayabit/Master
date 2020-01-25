@@ -131,6 +131,10 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
                         self.showErrorAlerr(title: Constants.Concierge.uploaded, message: "Thanks for using concierge feature,\nWe will call you back withing 48 hours!".localized(), handler: { action in
                             self.conciergeSubView.alpha = 1
                             self.conciergeSubView.perfumeImage.image = #imageLiteral(resourceName: "camera-logo")
+                            self.conciergeSubView.perufumDescription.text = ""
+                            self.setData()
+                            self.navigateToHome()
+                            
                             })
                     } else{
                         self.showConciergeUploadError()
