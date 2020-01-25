@@ -18,7 +18,7 @@ class SortTableViewController: UITableViewController {
     var sortArray2 = ["High to low","Low to high", "Popularity"]
     var sortArray3 = ["desc","asc", "popularity"]
     var sortArray4 = ["price","price", "popularity"]
-    var sortArray = ["High to low".localized(),"Low to high".localized(),"Popularity".localized()]
+    var sortArray = ["High to low".localized(),"Low to high".localized(),"popularity".localized()]
     var senderView: FilterProductsReturnViewInterface?
     var filterRequestModel: FilterRequestModel?
     

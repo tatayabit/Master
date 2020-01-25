@@ -21,6 +21,7 @@ class OrderProductsCell: UITableViewCell {
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var paidPrice: UILabel!
     @IBOutlet weak var productStatus: UILabel!
+    @IBOutlet weak var amountLBL: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,6 +37,7 @@ class OrderProductsCell: UITableViewCell {
     func configCell(product: Product) {
         productImage.sd_setImage(with: URL(string: product.mainPair.detailedPair.imageUrl), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
         productName.text = product.name
+        amountLBL.text = String(product.amount)
         companyName.text = product.supplierName
         productPrice.text = product.price.formattedPrice
         paidPrice.text = product.price.formattedPrice

@@ -131,7 +131,7 @@ alertValaidationMessage = "يجب عليك الترقية ، الإصدار ال
 "Featured" = "مميز";
 "price" = "السعر";
 "Rating" = "التقييم";
-"popularity" = "الأكثر شهرة";
+"popularity" = "الاكثر رواجا";
 "High to low" = "السعر(من الأعلي إلي الأقل)";
 "Low to high" = "السعر(من الأقل إلي الأعلي)";
 "OFF" = "خصم";
@@ -174,3 +174,5 @@ alertValaidationMessage = "يجب عليك الترقية ، الإصدار ال
 "Ordered on:" = "تم الطلب في :";
 "Your Country is not supported" = "للأسف لا يوجد وسيلة شحن متاحة حالياً إلى منطقتكم.";
 "Please go to Countries list and select available country" = "يرجى الاتصال بنا وإن شاء الله سوف نعمل على معالجة ذلك في أقرب وقت. آو اختر دولة أخري";
+
+"amount" = "الكمية";
