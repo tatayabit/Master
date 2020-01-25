@@ -65,7 +65,7 @@ class LoginViewController: BaseViewController, ValidationDelegate {
             switch result {
             case .success(let loginResult):
                 print(loginResult!)
-                self.navigateToHome()
+                self.moveToNextView()
             case .failure(let error):
                 print("the error \(error)")
                 do {
@@ -90,6 +90,20 @@ class LoginViewController: BaseViewController, ValidationDelegate {
             print("errors:::: \(String(describing: error.1.errorMessage))")
         }
 
+    }
+    
+    func moveToNextView() {
+        if let previousVC = self.previousViewController{
+            let className = NSStringFromClass(previousVC.classForCoder)
+           if previousVC is profileTabMenuViewController {
+                self.navigateToHome()
+           }else{
+                print("44444444444444444444")
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "Refresh"), object: nil)
+                let _ = self.navigationController?.popViewController(animated: true)
+                self.tabBarController?.tabBar.isHidden = true
+            }
+        }
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

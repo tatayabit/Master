@@ -32,6 +32,8 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
     private var country: Country?
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(refresh(_:)), name: Notification.Name(rawValue: "Refresh"), object: nil)
+
         registerValidator()
         setupUI()
     }
@@ -40,6 +42,10 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
         super.viewWillAppear(animated)
         countryTextField.text = CountrySettings.shared.currentCountry?.name
 
+    }
+    
+    @objc func refresh(_ notification: Notification){
+        self.setupUI2()
     }
 
     //MARK:- setupUI
@@ -63,6 +69,17 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
         }
     }
 
+     func setupUI2() {
+            NavigationBarWithBackButton()
+            if Customer.shared.loggedin {
+                if let currentUser = Customer.shared.user {
+                    user = currentUser
+                    guestCompletDataView.isHidden = true
+                }
+            } else if Customer.shared.user?.identifier == "" || Customer.shared.user?.identifier == nil {
+                guestCompletDataView.isHidden = false
+            }
+        }
     //MARK:- Swift Validator
     func registerValidator() {
         validator.registerField(fullNameTextField, rules: [RequiredRule(message: "Full Name is required!")])
