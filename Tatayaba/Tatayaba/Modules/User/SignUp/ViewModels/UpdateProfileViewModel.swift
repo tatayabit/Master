@@ -21,7 +21,7 @@ struct UpdateProfileViewModel {
             case .success(let updateProfileResult):
                 print(updateProfileResult!)
                 guard let updateProfileResponse = updateProfileResult else { return }
-
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "updateWelcomeHeader"), object: nil)
                 self.apiClient.getProfile(userId: updateProfileResponse.userId, completion: { profileResult in
                     switch profileResult {
                     case .success(let profileResponse):

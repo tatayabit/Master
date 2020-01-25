@@ -56,6 +56,7 @@ class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITab
         Session2 = [profile.changeLanguage, profile.currencies, profile.changeCountry, profile.liveChat] //, profile.notifications
         Session3 = [profile.deliveryAndReturnPolicy, profile.privacyPolicy,profile.logout]
         Session4 = [profile.deliveryAndReturnPolicy, profile.privacyPolicy]
+        NotificationCenter.default.addObserver(self, selector: #selector(updateWelcomeHeader(_:)), name: Notification.Name(rawValue: "updateWelcomeHeader"), object: nil)
          NavigationBarWithOutBackButton()
         setWelcomeHeader()
     }
@@ -227,6 +228,10 @@ extension profileTabMenuViewController{
         }
 
 
+    }
+    
+    @objc func updateWelcomeHeader(_ notification: Notification) {
+        self.setWelcomeHeader()
     }
 
     // MARK:- Change Language

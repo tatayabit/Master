@@ -28,6 +28,7 @@ struct SignUpViewModel {
                         guard let userResponse = profileResponse else { return }
                         print(userResponse)
                         Customer.shared.setUser(userResponse)
+                        NotificationCenter.default.post(name: Notification.Name(rawValue: "updateWelcomeHeader"), object: nil)
                     case .failure(let profileError):
                         print("the profile error \(profileError)")
                     }

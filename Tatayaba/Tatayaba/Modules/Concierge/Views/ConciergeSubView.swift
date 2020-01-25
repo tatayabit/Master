@@ -135,21 +135,27 @@ class ConciergeSubView: UIView, ValidationDelegate {
             delegate.didSelectCounty()
         }
     }
+    func checkMandatory() -> Bool {
+        var perufumDescriptionState = false
+        var imageState = false
+        if (self.perufumDescription.text != "Perform Description".localized() && self.perufumDescription.text.count > 0){
+            perufumDescriptionState = true
+        }
+        if (!(perfumeImage.image?.isEqualToImage(image: #imageLiteral(resourceName: "camera-logo")))! ){
+            imageState = true
+        }
+        return (perufumDescriptionState || imageState)
+    }
 
     @IBAction func submitAction(_ sender: Any) {
 
-        if ((perfumeImage.image?.isEqualToImage(image: #imageLiteral(resourceName: "camera-logo")))! ){
-            if let delegate = delegate {
-                delegate.didFailConciergeValidation(errorTitle: Constants.Common.error, errorMessage: "Perfum image is reqired")
-                       }
-        }else{
+        if checkMandatory(){
             validator.validate(self)
+        }else{
+            if let delegate = delegate {
+            delegate.didFailConciergeValidation(errorTitle: Constants.Common.error, errorMessage: "Perfum image is reqired")
+            }
         }
-        
-//        if let delegate = delegate {
-//            delegate.didSelectSubmitConcierge(concierge: createConcierge())
-//        }
-
     }
     
 }
