@@ -94,6 +94,15 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
             self.getImage(fromSourceType: .photoLibrary)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        
+        if let popoverPresentationController = alert.popoverPresentationController {
+//            popoverPresentationController.sourceView = self.view
+//            popoverPresentationController.sourceRect = CGRect(origin: sender.location(in: self.view), size: CGSize(width: 1.0, height: 1.0))
+            popoverPresentationController.sourceView = self.view
+            popoverPresentationController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverPresentationController.permittedArrowDirections = []
+        }
+        
         self.present(alert, animated: true, completion: nil)
     }
     func getImage(fromSourceType sourceType: UIImagePickerController.SourceType) {
