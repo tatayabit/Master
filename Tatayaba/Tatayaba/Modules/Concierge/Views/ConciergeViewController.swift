@@ -86,14 +86,14 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
     
     func showAlert() {
         
-        let alert = UIAlertController(title: "TATAYAB", message: "", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action: UIAlertAction) in
+        let alert = UIAlertController(title: "TATAYAB".localized(), message: "", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera".localized(), style: .default, handler: {(action: UIAlertAction) in
             self.getImage(fromSourceType: .camera)
         }))
-        alert.addAction(UIAlertAction(title: "Photo Album", style: .default, handler: {(action: UIAlertAction) in
+        alert.addAction(UIAlertAction(title: "Photo Album".localized(), style: .default, handler: {(action: UIAlertAction) in
             self.getImage(fromSourceType: .photoLibrary)
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: nil))
         
         if let popoverPresentationController = alert.popoverPresentationController {
 //            popoverPresentationController.sourceView = self.view
