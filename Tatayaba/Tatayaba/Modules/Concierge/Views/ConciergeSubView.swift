@@ -96,7 +96,7 @@ class ConciergeSubView: UIView, ValidationDelegate {
     
     //MARK:- Swift Validator
     func registerValidator() {
-        validator.registerField(phoneTextField, rules: [RequiredRule(message: "Phone number is required!")])
+        validator.registerField(phoneTextField, rules: [RequiredRule(message: "Phone number is required!".localized())])
 //        validator.registerField(customerNameTextField, rules: [RequiredRule(message: "Name is required!")])
 //        validator.registerField(perfumeNameTextField, rules: [RequiredRule(message: "Perfume name is required!")])
     }
@@ -153,7 +153,7 @@ class ConciergeSubView: UIView, ValidationDelegate {
             validator.validate(self)
         }else{
             if let delegate = delegate {
-            delegate.didFailConciergeValidation(errorTitle: Constants.Common.error, errorMessage: "Perfum image is reqired")
+                delegate.didFailConciergeValidation(errorTitle: Constants.Common.error, errorMessage: "Perfum image is reqired".localized())
             }
         }
     }

@@ -161,6 +161,11 @@ alertValaidationMessage = "يجب عليك الترقية ، الإصدار ال
 "valid_password" = "الرجاء إدخال كلمة مرور صحيحة";
 "email_already_exists" = "هذا البريد الإلكتروني مسجل لدينا. الرجاء تسجيل الدخول للمتابعة أو ادخل بريد إلكتروني مختلف";
 
+"This item is out of stock!" = "هذا المنتج غير متاح حاليا";
+"please choose the required options." = "الرجاء إدخال الحقول المطلوبة";
+"Perfum image is reqired" = "مطلوب إدخال صورة العطر أو تفاصيل العطر";
+"Phone number is required!" = "مطلوب إدخال رقم الجوال";
+
 // Orders List
 "Order_Id" = "رقم الطلب";
 "Order_Amount" = "قيمة الطلب";

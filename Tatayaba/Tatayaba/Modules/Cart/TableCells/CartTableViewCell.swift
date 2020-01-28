@@ -14,10 +14,11 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var supplierNameLBL: UILabel!
     @IBOutlet weak var quantityCoutLabel: UILabel!
     @IBOutlet weak var addMoreButton: UIButton!
     @IBOutlet weak var removeOneButton: UIButton!
+    @IBOutlet weak var priceLabel: UILabel!
     
     var cartItemX: CartItem = CartItem()
     
@@ -32,6 +33,7 @@ class CartTableViewCell: UITableViewCell {
     
     func configure(product: Product, cartItem: CartItem) {
         self.nameLabel.text = product.name
+        self.supplierNameLBL.text = product.supplierName
         self.cartItemX = cartItem
         productImageView.sd_setImage(with: URL(string: product.mainPair.detailedPair.imageUrl), placeholderImage: nil, options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
         

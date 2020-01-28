@@ -158,6 +158,10 @@ alertValaidationMessage = "You have to upgrade , your version is not supported a
 "valid_email" = "Please enter valid email";
 "valid_password" = "Please enter valid password";
 "email_already_exists" = "This email already exists. Please Sign in to continue or try a different email.";
+"This item is out of stock!" = "This item is out of stock!";
+"please choose the required options." = "please choose the required options.";
+"Perfum image is reqired" = "Perfume image or perfume description is required";
+"Phone number is required!" = "Phone number is required!";
 
 // Orders List
 "Order_Id" = "Order Id";

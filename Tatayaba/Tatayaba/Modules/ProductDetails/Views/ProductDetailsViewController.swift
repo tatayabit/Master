@@ -123,7 +123,7 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
     @IBAction func oneClickBuyBtnClicked(_ sender: Any) {
         guard let viewModel = viewModel else { return }
         if !viewModel.inStock {
-            showErrorAlerr(title: "Error", message: "This item is out of stock!", handler: nil)
+            showErrorAlerr(title: "Error", message: "This item is out of stock!".localized(), handler: nil)
             return
         }
         
@@ -132,7 +132,7 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
             if viewModel.isAllRequiredOptionsSelected() {
                 viewModel.addToCart()
             } else {
-                showErrorAlerr(title: "Error", message: "please choose the required options.", handler: nil)
+                showErrorAlerr(title: "Error", message: "please choose the required options.".localized(), handler: nil)
             }
         } else {
             viewModel.addToCart()
@@ -152,7 +152,7 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
     func addToCartAction() {
         guard let viewModel = viewModel else { return }
         if !viewModel.inStock {
-            showErrorAlerr(title: "Error", message: "This item is out of stock!", handler: nil)
+            showErrorAlerr(title: "Error", message: "This item is out of stock!".localized(), handler: nil)
             return
         }
         
@@ -160,7 +160,7 @@ class ProductDetailsViewController: BaseViewController, UITableViewDelegate, UIT
             if viewModel.isAllRequiredOptionsSelected() {
                 viewModel.addToCart()
             } else {
-                showErrorAlerr(title: "Error", message: "please choose the required options.", handler: nil)
+                showErrorAlerr(title: "Error", message: "please choose the required options.".localized(), handler: nil)
             }
         } else {
             viewModel.addToCart()
@@ -447,7 +447,7 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
        func didAddToCart(product: Product) {
            // addProdcut to cart
         if !product.isInStock {
-            showErrorAlerr(title: "Error", message: "This item is out of stock!", handler: nil)
+            showErrorAlerr(title: "Error", message: "This item is out of stock!".localized(), handler: nil)
             return
         }
         guard let viewModel = viewModel else { return }
