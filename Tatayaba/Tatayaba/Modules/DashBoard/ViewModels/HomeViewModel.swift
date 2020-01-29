@@ -231,6 +231,7 @@ class HomeViewModel {
     func productDetailsViewModel(at indexPath: IndexPath) -> ProductDetailsViewModel {
         let selectedBlock = getSelectedProductBlock()
         let productViewModel = ProductDetailsViewModel(product: selectedBlock.products[indexPath.row].fullDetails)
+        self.block_Id = ""
         return productViewModel
     }
 
