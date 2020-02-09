@@ -26,6 +26,9 @@ struct CartAPIClient: APIClient {
     func deleteAllCart(userId: String, completion: @escaping (APIResult<UpdateServerCartResponse?, MoyaError>) -> Void) {
         fetch(with: CartEndpoint.deleteAllCart(userId: userId), completion: completion)
         }
+    func deleteItemFromCart(userId: String,cartId: String, completion: @escaping (APIResult<UpdateServerCartResponse?, MoyaError>) -> Void) {
+    fetch(with: CartEndpoint.deleteAllCart(userId: userId), completion: completion)
+    }
     func getServerCart(userId: String, completion: @escaping (APIResult<CartContentResponse?, MoyaError>) -> Void) {
            fetch(with: CartEndpoint.getServerCart(userId: userId), completion: completion)
            }

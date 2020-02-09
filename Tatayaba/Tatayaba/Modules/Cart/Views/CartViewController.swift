@@ -96,7 +96,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     func setupUI() {
         cartTableview.register(PriceTableViewCell.nib, forCellReuseIdentifier: PriceTableViewCell.identifier)
         removeDiscountButton.isHidden = true
-        couponTextFieldView.isHidden = false
+        couponTextFieldView.isHidden = true
     }
     
     func calculateTotal() {
@@ -167,8 +167,9 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         
         totalPriceLabel.text = "\(totalPriceValueRounded)".formattedPrice
         viewModel.loadPricingListContent(couponValue: couponTitleValue, taxValue: taxValue, shippingValue: shippingValue)
-        let totalItemsText = "(" + String(cart.productsCount) + " " + cartClass.items + ")"
-        totalTitleLabel.attributedText = attributedTotalTitle(text: totalItemsText)
+//        let totalItemsText = "(" + String(cart.productsCount) + " " + cartClass.items + ")"
+//        totalTitleLabel.attributedText = attributedTotalTitle(text: totalItemsText)
+        totalTitleLabel.text = "Cart Total".localized()
     }
     
     private func calculateTotalWithFreeShippingCoupon() {
@@ -290,21 +291,27 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     // MARK:- UITableView - Header
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        switch section {
-        case sectionType.pricing.rawValue:
-            //            let pricingCount = viewModel.pricingList.count
-            //            let height = pricingCount > 0 ? 8 : 0
-            //            return CGFloat(height)
-            return 0
-        default: return 0
-        }
+        return 60
     }
-    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var cell : UITableViewCell!
+        cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier")
+        if cell == nil {
+            cell = UITableViewCell(style: .default, reuseIdentifier: "cellIdentifier")
+        }
+        let totalItemsText = "(" + String(cart.productsCount) + " " + cartClass.items + ")"
+//        totalTitleLabel.attributedText = attributedTotalTitle(text: totalItemsText)
+        cell.textLabel?.text = "Total".localized() + " " + totalItemsText
+        cell.imageView?.image = #imageLiteral(resourceName: "cart_unselected")
+        return cell
+        
+    }
+
     func numberOfSections(in tableView: UITableView) -> Int {
         if cart.productsCount > 0 {
             self.cartTableview.restore()
             checkoutContainerView.isHidden = false
-            couponContainerView.isHidden = false
+            couponContainerView.isHidden = true
         } else {
             self.cartTableview.setEmptyMessage(cartClass.cartEmpty)
             checkoutContainerView.isHidden = true
@@ -312,13 +319,13 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             return 0
         }
         
-        if viewModel.pricingList.count > 0 {
-            if promotionData != nil {
-               return 3
-            } else {
-                return 2
-            }
-        }
+//        if viewModel.pricingList.count > 0 {
+//            if promotionData != nil {
+//               return 3
+//            } else {
+//                return 2
+//            }
+//        }
         return 1
     }
     
@@ -327,7 +334,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         
         switch indexPath.section {
         case sectionType.item.rawValue:
-            return 100
+            return 120
         case sectionType.pricing.rawValue:
             return 50
         default: return 0
@@ -425,7 +432,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         promotionData = nil
         calculateTotal()
         self.setButton(button: removeDiscountButton, hidden: true)
-        self.setView(view: couponTextFieldView, hidden: false)
+        self.setView(view: couponTextFieldView, hidden: true)
         self.removeDiscountButton.isHidden = true
         self.couponTextField.text = ""
     }
@@ -477,7 +484,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         promotionData = nil
         calculateTotal()
         self.setButton(button: removeDiscountButton, hidden: true)
-        self.setView(view: couponTextFieldView, hidden: false)
+        self.setView(view: couponTextFieldView, hidden: true)
         self.showErrorAlerr(title: Constants.Common.success, message: "CouponRemovedSuccessfully".localized(), handler: nil)
     }
     

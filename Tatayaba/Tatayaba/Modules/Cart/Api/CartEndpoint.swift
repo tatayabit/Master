@@ -14,6 +14,7 @@ enum CartEndpoint {
     case getPricesWithUpdatedCurrency(parameters: [String: Any])
     case updateServerCart(products: [String: Any], userId: String, paymentId: String)
     case deleteAllCart(userId: String)
+    case deleteItemFromCart(userId: String,cartId: String)
     case getServerCart(userId: String)
 }
 
@@ -42,7 +43,7 @@ extension CartEndpoint: TargetType {
             return "4.0/TtmCartConfigData/"
         case .getPricesWithUpdatedCurrency:
             return "4.0/TtmCurrencies/"
-        case .updateServerCart, .deleteAllCart, .getServerCart:
+        case .updateServerCart, .deleteAllCart, .getServerCart, .deleteItemFromCart:
             return "4.0/TtmCartContent"
         }
     }
@@ -53,7 +54,7 @@ extension CartEndpoint: TargetType {
             return .get
         case .getPricesWithUpdatedCurrency, .applyCoupon, .updateServerCart:
             return .post
-        case .deleteAllCart:
+        case .deleteAllCart, .deleteItemFromCart:
             return .delete
         }
     }
@@ -90,6 +91,9 @@ extension CartEndpoint: TargetType {
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         case .deleteAllCart(let userId),.getServerCart(let userId):
             let params = ["user_id": userId] as [String : Any]
+            return .requestParameters(parameters: params, encoding: JSONEncoding.default)
+        case .deleteItemFromCart(let userId, let cartId):
+            let params = ["user_id": userId,"cart_id":cartId] as [String : Any]
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         }
     }

@@ -308,6 +308,7 @@
 		84BC08A622DC972300C6180E /* RecommendedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BC08A522DC972300C6180E /* RecommendedCollectionViewCell.xib */; };
 		9F7E463258DFBE1064395C51 /* Pods_TatayabaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */; };
 		D519D8A8239CFB080026DD97 /* CheckOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D519D8AA239CFB080026DD97 /* CheckOut.storyboard */; };
+		D521977023E2EDD500F52F1C /* BasePriceFormatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521976F23E2EDD500F52F1C /* BasePriceFormatted.swift */; };
 		D5643AA5239E761E00885FD3 /* FinancialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5643AA3239E761E00885FD3 /* FinancialTableViewCell.swift */; };
 		D5643AA6239E761E00885FD3 /* FinancialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5643AA4239E761E00885FD3 /* FinancialTableViewCell.xib */; };
 		D57B970423C48C8C00B4B1EA /* FilterOptionsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57B970323C48C8C00B4B1EA /* FilterOptionsTableVC.swift */; };
@@ -678,6 +679,7 @@
 		B89BCDB598CCBCBACB5DD4DD /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		D519D8AC239CFB0E0026DD97 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/CheckOut.strings; sourceTree = "<group>"; };
 		D519D8AD239CFB2D0026DD97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CheckOut.storyboard; sourceTree = "<group>"; };
+		D521976F23E2EDD500F52F1C /* BasePriceFormatted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePriceFormatted.swift; sourceTree = "<group>"; };
 		D5643AA3239E761E00885FD3 /* FinancialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialTableViewCell.swift; sourceTree = "<group>"; };
 		D5643AA4239E761E00885FD3 /* FinancialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinancialTableViewCell.xib; sourceTree = "<group>"; };
 		D57B970323C48C8C00B4B1EA /* FilterOptionsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOptionsTableVC.swift; sourceTree = "<group>"; };
@@ -2466,6 +2468,7 @@
 			children = (
 				D5C602ED23A2015200083E3C /* UpdateServerCartResponse.swift */,
 				D5C602EF23A2177400083E3C /* CartContentResponse.swift */,
+				D521976F23E2EDD500F52F1C /* BasePriceFormatted.swift */,
 			);
 			path = UpdateServerCart;
 			sourceTree = "<group>";
@@ -3024,6 +3027,7 @@
 				2767CB8F236471BC0042F533 /* OrderMainInfoCell.swift in Sources */,
 				112654B022D3A2B900904FB5 /* Category.swift in Sources */,
 				11A8B15822D793AC001B2661 /* WishlistViewController.swift in Sources */,
+				D521977023E2EDD500F52F1C /* BasePriceFormatted.swift in Sources */,
 				11624EDB230C6C1800E81ABD /* BlockBgImageIcon.swift in Sources */,
 				11945BC922F0B0C6000F08DC /* ShippingMethod.swift in Sources */,
 				10D68F2023D03CEE00D65959 /* SupplierFilterViewModel.swift in Sources */,

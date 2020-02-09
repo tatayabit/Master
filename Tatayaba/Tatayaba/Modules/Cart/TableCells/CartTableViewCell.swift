@@ -48,6 +48,7 @@ class CartTableViewCell: UITableViewCell {
         if let price = Float(product.price) {
             let total: Float =  price * Float(cartItem.count)
             self.priceLabel.text = String(total).formattedPrice
+            self.priceLabel.sizeToFit()
         }
     }
     
