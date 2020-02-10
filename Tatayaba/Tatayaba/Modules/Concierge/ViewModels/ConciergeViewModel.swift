@@ -10,7 +10,7 @@ import Moya
 
 struct ConciergeViewModel {
     private let apiClient = ConciergeAPIClient()
-
+    
     //MARK:- Api
     func uploadConcierge(concierge: Concierge, completion: @escaping (APIResult<[String: String]?, MoyaError>) -> Void) {
         apiClient.uploadConcierge(concierge: concierge) { result in
@@ -28,5 +28,7 @@ struct ConciergeViewModel {
 extension Constants {
     struct Concierge {
         static let uploaded = "Uploaded".localized()
+        static let welcomeText = "Your fastest destination to find your beloved perfume across the world. Finding a fragrance has never been that easy before.".localized()
+        static let welcomeHeader = "Welcome to TATAYAB CONCIERGE.".localized()
     }
 }

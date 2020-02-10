@@ -25,7 +25,7 @@ class LoginViewController: BaseViewController, ValidationDelegate {
         navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = true
         registerValidator()
-      
+        self.setTextFieldsPlaceholder()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,11 +33,19 @@ class LoginViewController: BaseViewController, ValidationDelegate {
         self.tabBarController?.tabBar.isHidden = true
         navigationController?.isNavigationBarHidden = true
     }
+    
+    // MARK:- Localization
+    func setTextFieldsPlaceholder() {
+        emailTextField.isLTRLanguage = !LanguageManager.isArabicLanguage()
+        passwordTextField.isLTRLanguage = !LanguageManager.isArabicLanguage()
+        emailTextField.placeholder = "Email".localized()
+        passwordTextField.placeholder = "Passwrod".localized()
+    }
 
     //MARK:- Swift Validator
     func registerValidator() {
-        validator.registerField(emailTextField, rules: [RequiredRule(message: "Email is required!"), EmailRule(message: "Invalid email")])
-        validator.registerField(passwordTextField, rules: [RequiredRule(message: "Password is required!"), PasswordRule(regex: "^.{6,20}$", message: "Invalid password")])
+        validator.registerField(emailTextField, rules: [RequiredRule(message: "field_is_required".localized()), EmailRule(message: "valid_email".localized())])
+        validator.registerField(passwordTextField, rules: [RequiredRule(message: "field_is_required".localized()), PasswordRule(regex: "^.{6,20}$", message: "valid_password".localized())])
 //        old password regex "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,20}$"
         emailTextField.becomeFirstResponder()
     }
@@ -57,12 +65,12 @@ class LoginViewController: BaseViewController, ValidationDelegate {
             switch result {
             case .success(let loginResult):
                 print(loginResult!)
-                self.navigateToHome()
+                self.moveToNextView()
             case .failure(let error):
                 print("the error \(error)")
                 do {
                     if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
-                        self.showErrorAlerr(title: "LoginFailed".localized(), message: errorMessage, handler: nil)
+                        self.showErrorAlerr(title: "Login_Failed".localized(), message: "Login_Failed_message".localized(), handler: nil)
                     }
                 }
                 catch{
@@ -75,13 +83,27 @@ class LoginViewController: BaseViewController, ValidationDelegate {
     func validationFailed(_ errors: [(Validatable, ValidationError)]) {
         print("Validation FAILED!")
         if errors.count > 0 {
-            self.showErrorAlerr(title: Constants.Common.error, message: errors[0].1.errorMessage, handler: nil)
+            self.showErrorAlerr(title: "Attention".localized(), message: errors[0].1.errorMessage, handler: nil)
         }
 
         for error in errors {
             print("errors:::: \(String(describing: error.1.errorMessage))")
         }
 
+    }
+    
+    func moveToNextView() {
+        if let previousVC = self.previousViewController{
+            let className = NSStringFromClass(previousVC.classForCoder)
+           if previousVC is profileTabMenuViewController {
+                self.navigateToHome()
+           }else{
+                print("44444444444444444444")
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "Refresh"), object: nil)
+                let _ = self.navigationController?.popViewController(animated: true)
+                self.tabBarController?.tabBar.isHidden = true
+            }
+        }
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

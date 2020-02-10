@@ -9,7 +9,7 @@
 
 
 // Tab Bar Titles
-"Change Language"="Change Language";
+"Change Language"="English";
 "Subtotal"="Subtotal";
 "Shipping"="Shipping";
 "Tax"="Tax";
@@ -45,10 +45,12 @@
 "Live Chat" = "Live Chat";
 "Notifications" = "Notifications";
 "Delivery and Return Policy"="Delivery and Return Policy";
+"Hi" = "Hi, ";
 
 // Concierge
 "Something went wrong while submitting your concierge!"="Something went wrong while submitting your concierge!";
-
+"Welcome to TATAYAB CONCIERGE." = "Welcome to TATAYAB CONCIERGE.";
+"Your fastest destination to find your beloved perfume across the world. Finding a fragrance has never been that easy before." = "Your fastest destination to find your beloved perfume across the world. Finding a fragrance has never been that easy before.";
 
 // Cart
 "Your Cart is Empty!"="Your Cart is Empty!";
@@ -82,8 +84,10 @@
 "seeMore" = "See More";
 "Perfume Name" = "Perfume Name";
 "Comment" = "Comment";
+"Perform Description" = "Description";
 "Phone" = "Phone";
 "Name" = "Name";
+"Full name"="Full name";
 "Tracking" = "Tracking #:";
 "Order Value" = "Order Value:";
 "Track Order" = "Track Order";
@@ -117,6 +121,62 @@ alertValaidationMessage = "You have to upgrade , your version is not supported a
 "Mada" = "Mada";
 "Visa" = "Visa, Mastercard";
 "Cash on delivery" = "Cash on delivery";
-//
-"OFF" = "%\nOFF";
+
+// custom Filter view
+"Free Delivery" = "FREE DELIVERY";
+"Filter" = "FILTER";
+"Sort" = "SORT";
+"Featured" = "Featured";
+"price" = "price";
+"Rating" = "Rating";
+"popularity" = "popularity";
+"High to low" = "Price(High to low)";
+"Low to high" = "Price(Low to high)";
+"OFF" = "OFF";
 "OverView" = "Product Details";
+"Brand" = "Brand";
+
+"Min"="Min";
+"Max"="Max";
+"apply" = "APPLY";
+"min>max" = "The minimum value should be less than the maximum value";
+"reset" = "RESET";
+
+
+"Suppliers Filter" = "Brands";
+"Categories Filter" = "Categories";
+"Price Filter" = "Price";
+"Free Delivery Filter" = "Free Delivery";
+"Reset Password"= "Reset Password";
+
+
+//Alerts
+"Attention" = "Attention";
+"Login_Failed" = "Login Failed";
+"Login_Failed_message" = "The email or password is incorrect";
+"field_is_required" = "Please fill in the required fields";
+"valid_email" = "Please enter valid email";
+"valid_password" = "Please enter valid password";
+"email_already_exists" = "This email already exists. Please Sign in to continue or try a different email.";
+"This item is out of stock!" = "This item is out of stock!";
+"please choose the required options." = "please choose the required options.";
+"Perfum image is reqired" = "Perfume image or perfume description is required";
+"Phone number is required!" = "Phone number is required!";
+
+// Orders List
+"Order_Id" = "Order Id";
+"Order_Amount" = "Order Amount";
+"Order_Status" = "Order Status";
+"Cancelled" = "Cancelled";
+"Completed" = "Completed";
+"Processed" = "Processed";
+"View_Order" = "View Order";
+"Pending" = "Pending";
+"Order #:" = "Order #:" ;
+"Ordered on:" = "Ordered on:";
+"Your Country is not supported" = "Your Country is not supported";
+"Please go to Countries list and select available country" = "Please go to Countries list and select available country";
+"amount" = "Amount";
+"Photo Album" = "Photo Album";
+"Camera" = "Camera";
+"TATAYAB" = "TATAYAB";

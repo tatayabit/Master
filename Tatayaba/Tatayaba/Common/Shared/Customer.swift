@@ -34,6 +34,7 @@ class Customer {
         userData = nil
         print("loggedOut: \(String(describing: userData))")
         KeychainWrapper.standard.removeObject(forKey: userDataKey)
+        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "updateLoginOrLogout"),object: nil))
     }
     
     func hasUserId() -> Bool {

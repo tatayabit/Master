@@ -43,4 +43,14 @@ class CountriesManager {
         }
         return nil
     }
+    
+    func checkCountryAvailability(with name: String) -> Bool{
+        let foundCountries = self.countriesList.filter({ $0.name == name })
+               if foundCountries.count > 0 {
+                   return true
+               }else{
+                return false
+        }
+    }
+    
 }

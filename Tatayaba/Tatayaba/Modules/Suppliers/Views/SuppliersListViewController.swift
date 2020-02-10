@@ -16,6 +16,7 @@ class SuppliersListViewController: BaseViewController, UICollectionViewDelegate,
     
     private let supplierProductsSegue = "supplier_products_segue"
     private let searchSegue = "search_segue"
+    private let filterSegue = "filter_segue"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,6 +124,9 @@ class SuppliersListViewController: BaseViewController, UICollectionViewDelegate,
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (self.view.bounds.width - 14) / 3, height: 150)
+    }
+    func filter() {
+       performSegue(withIdentifier: filterSegue, sender: nil)
     }
 
 

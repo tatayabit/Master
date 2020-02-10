@@ -36,14 +36,21 @@ class OrderTableViewCell: UITableViewCell {
         self.timeLabel.text = Date(timeIntervalSince1970: timeInterval).toString(dateFormat: "yyyy-MM-dd HH:mm:ss")
         self.StatusLabel.text = order.status
         if self.StatusLabel.text == "Completed"{
+            self.StatusLabel.text = "Completed".localized()
             self.StatusLabel.textColor = UIColor.init(hexString:"#AEC779")
            // status_Image.image =  Need images in idx not ther
         }else if self.StatusLabel.text == "Processing"{
-             self.StatusLabel.textColor = UIColor.init(hexString:"#43B7F2")
+            self.StatusLabel.text = "Processed".localized()
+            self.StatusLabel.textColor = UIColor.init(hexString:"#43B7F2")
+        }else if self.StatusLabel.text == "Cash on delivery"{
+            self.StatusLabel.text = "Cash on delivery".localized()
+            self.StatusLabel.sizeToFit()
         }else if self.StatusLabel.text == "Pending"{
-             self.StatusLabel.textColor = UIColor.init(hexString:"#D5B950")
+            self.StatusLabel.text = "Pending".localized()
+            self.StatusLabel.textColor = UIColor.init(hexString:"#D5B950")
         }else if self.StatusLabel.text == "Cancelled"{
-             self.StatusLabel.textColor = UIColor.init(hexString:"#EC4C6F")
+            self.StatusLabel.text = "Cancelled".localized()
+            self.StatusLabel.textColor = UIColor.init(hexString:"#EC4C6F")
         }
     }
 

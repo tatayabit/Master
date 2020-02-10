@@ -63,6 +63,7 @@
                         <outlet property="supplierCollection_View" destination="88h-Dv-iTC" id="fFk-da-5b0"/>
                         <segue destination="7ts-ut-Jvw" kind="show" identifier="supplier_products_segue" id="7za-aB-ZZC"/>
                         <segue destination="WZq-hu-Mg9" kind="push" identifier="search_segue" id="42F-ZC-zTp"/>
+                        <segue destination="PwY-D4-A6v" kind="push" identifier="filter_segue" id="38h-Ya-XLN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cp8-68-2jf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -85,7 +86,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T6t-mH-ECi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="579" y="205"/>
+            <point key="canvasLocation" x="469" y="205"/>
+        </scene>
+        <!--Filter-->
+        <scene sceneID="7XI-ik-zox">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Filter" id="PwY-D4-A6v" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Vby-FX-r9v"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vZd-oj-fGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="461" y="-38"/>
         </scene>
     </scenes>
 </document>

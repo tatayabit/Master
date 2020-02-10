@@ -25,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         loadAppConfigurations()
         setupFirebasePushNotifications(application)
-
         
         // Override point for customization after application launch.
         return true
@@ -54,6 +53,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         //        self.saveContext()
     }
+    
+    // MARK: - Universal Links
+        func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+            let handled = DynamicLinks.dynamicLinks().handleUniversalLink(userActivity.webpageURL!) { (dynamiclink, error) in
+              // ...
+            }
+
+            return handled
+        }
+
+        @available(iOS 9.0, *)
+        func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+          return application(app, open: url,
+                             sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                             annotation: "")
+        }
+
+        func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+          if let dynamicLink = DynamicLinks.dynamicLinks().dynamicLink(fromCustomSchemeURL: url) {
+            // Handle the deep link. For example, show the deep-linked content or
+            // apply a promotional offer to the user's account.
+            // ...
+            return true
+          }
+          return false
+        }
+
+
     
     // MARK: - Core Data stack
     

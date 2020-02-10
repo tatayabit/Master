@@ -17,11 +17,13 @@ class CategoriesBlockCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 
     func configure(category: Category) {
         nameLabel.text = category.name
+        nameLabel.adjustsFontSizeToFitWidth = true
         if !category.imageUrl.isEmpty {
             categoryImageView.sd_setImage(with: URL(string: category.imageUrl), placeholderImage: UIImage(named: iconPlaceholder), options: [.refreshCached, .continueInBackground, .allowInvalidSSLCertificates], completed: nil)
         }

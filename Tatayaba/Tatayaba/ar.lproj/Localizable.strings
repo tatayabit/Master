@@ -9,7 +9,7 @@
 
 
 // Tab Bar Titles
-"Change Language"="تغيير اللغة";
+"Change Language"="اللغه العربية";
 "Subtotal"="المجموع";
 "Shipping"="الشحن";
 "Tax"="الضرائب";
@@ -33,6 +33,7 @@
 "LoginFailed"= "خطا في الدخول";
 "AcceessDenied"= "الدخول ممنوع";
 
+
 // Error
 "Error"="خطأ";
 "Success" = "حسنا";
@@ -45,9 +46,12 @@
 "Live Chat" = "دردشه";
 "Notifications" = "التنبيهات";
 "Delivery and Return Policy"="سياسة الاستبدال والاسترجاع";
+"Hi" = "أهلا, ";
 
 // Concierge
 "Something went wrong while submitting your concierge!"="حدث خطأ أثناء تقديم الكونسيرج!";
+"Welcome to TATAYAB CONCIERGE." = "مرحباً بكم في تطيب كونسيرج.";
+"Your fastest destination to find your beloved perfume across the world. Finding a fragrance has never been that easy before." = "أول كونسيرج الكتروني في العالم متخصص في العطور..\nالان يمكنكم الحصول على أي عطر في العالم خلال خطوات بسيطه!";
 
 // Cart
 "Your Cart is Empty!"="السلة فارغة!";
@@ -79,8 +83,10 @@
 "seeMore" = "المزيد";
 "Perfume Name" = "اسم العطر";
 "Comment" = "تعليق";
+"Perform Description" = "التفاصيل";
 "Phone" = "رقم الجوال";
 "Name" = "الاسم";
+"Full name"="الاسم كاملا";
 "Tracking" = "تتبع #:";
 "Order Value" = "قيمه الطلب:";
 "Track Order" = "تتبع الطلب";
@@ -117,5 +123,64 @@ alertValaidationMessage = "يجب عليك الترقية ، الإصدار ال
 "Visa" = "فيزا ,ماستركارد";
 "Cash on delivery" = "الدفع عند الاستلام";
 
-"OFF" = "%\nخصم";
+
+// custom Filter view
+"Free Delivery" = "شحن مجاني";
+"Filter" = "تصنيف حسب";
+"Sort" = "ترتيب حسب";
+"Featured" = "مميز";
+"price" = "السعر";
+"Rating" = "التقييم";
+"popularity" = "الاكثر رواجا";
+"High to low" = "السعر(من الأعلي إلي الأقل)";
+"Low to high" = "السعر(من الأقل إلي الأعلي)";
+"OFF" = "خصم";
 "OverView" = "تفاصيل المنتج";
+"Brand" = "العلامة التجارية";
+
+"Min"="الحد الأدني";
+"Max"="الحد الأقصي";
+"apply" = "تفعيل";
+"min>max" = "يجب ان يكون الحد الأدني اقل من الحد الأقصي";
+"reset" = "إعاده تعيين";
+
+
+
+"Suppliers Filter" = "العلامات التجارية";
+"Categories Filter" = "الفئات";
+"Price Filter" = "السعر";
+"Free Delivery Filter" = "توصيل مجاني";
+"Reset Password"="إعادة تعيين كلمة المرور";
+
+//Alerts
+"Attention" = "تنبيه";
+"Login_Failed" = "خطأ في تسجيل الدخول";
+"Login_Failed_message" = "البريد الإلكتروني أو كلمة المرور غير صحيحة";
+"field_is_required" = "الرجاء تعبئة الحقول المطلوبة";
+"valid_email" = "الرجاء إدخال بريد إلكتروني صحيح";
+"valid_password" = "الرجاء إدخال كلمة مرور صحيحة";
+"email_already_exists" = "هذا البريد الإلكتروني مسجل لدينا. الرجاء تسجيل الدخول للمتابعة أو ادخل بريد إلكتروني مختلف";
+
+"This item is out of stock!" = "هذا المنتج غير متاح حاليا";
+"please choose the required options." = "الرجاء إدخال الحقول المطلوبة";
+"Perfum image is reqired" = "مطلوب إدخال صورة العطر أو تفاصيل العطر";
+"Phone number is required!" = "مطلوب إدخال رقم الجوال";
+
+// Orders List
+"Order_Id" = "رقم الطلب";
+"Order_Amount" = "قيمة الطلب";
+"Order_Status" = "حالة الطلب";
+"Cancelled" = "طلب ملغي";
+"Completed" = "طلب مكتمل";
+"Processed" = "جاري الطلب";
+"View_Order" = "معاينة الطلب";
+"Pending" = "قيد الانتظار";
+"Order #:" = " الطلب #:";
+"Ordered on:" = "تم الطلب في :";
+"Your Country is not supported" = "للأسف لا يوجد وسيلة شحن متاحة حالياً إلى منطقتكم.";
+"Please go to Countries list and select available country" = "يرجى الاتصال بنا وإن شاء الله سوف نعمل على معالجة ذلك في أقرب وقت. آو اختر دولة أخري";
+
+"amount" = "الكمية";
+"Photo Album" = "إلبوم الصور";
+"Camera" = "الكاميرا";
+"TATAYAB" = "تطيّب";

@@ -10,13 +10,17 @@ import UIKit
 
 class SupplierProductsViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ProductsBlockCollectionViewCellDelegate {
 
+    @IBOutlet weak var filterView: SortingReusableCustomView!
     @IBOutlet weak var productsCollectionView: UICollectionView!
     @IBOutlet weak var supplierNameLabel: UILabel!
 
     var viewModel: SupplierProductsViewModel?
+    var selectedFilterOption:String?
+    var sortFilterOption:String?
     private let productDetailsSegue = "product_details_segue"
     private let searchSegue = "search_segue"
-
+    private let filterSegue = "filter_segue"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,7 +32,10 @@ class SupplierProductsViewController: BaseViewController, UICollectionViewDelega
         
         guard let viewModel = viewModel else { return }
         viewModel.setDelegate(self)
+        self.filterView.delegate = self
+        
         loadData()
+        
     }
     
     func loadData() {
@@ -104,6 +111,14 @@ class SupplierProductsViewController: BaseViewController, UICollectionViewDelega
                 }
             }
         }
+        
+        if segue.identifier == filterSegue {
+            let filterVC = segue.destination as! UpdatedFilterTableViewController
+            if let viewModel = viewModel {
+                filterVC.viewModel = viewModel.filterViewModel()
+            }
+            filterVC.senderView = self
+        }
     }
 
     // MARK:- ProductsBlockCollectionViewCellDelegate
@@ -146,7 +161,8 @@ class SupplierProductsViewController: BaseViewController, UICollectionViewDelega
 }
 
 
-extension SupplierProductsViewController: SupplierProductsViewModelDelegate {
+extension SupplierProductsViewController: SupplierProductsViewModelDelegate, isAbleToReceiveData {
+    
     func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
         // 1
         self.hideLoadingIndicator(from: self.view)
@@ -177,5 +193,73 @@ extension SupplierProductsViewController: SupplierProductsViewModelDelegate {
 //        let title = "Warning".localizedString
 //        let action = UIAlertAction(title: "OK".localizedString, style: .default)
 //        displayAlert(with: title , message: reason, actions: [action])
+    }
+    
+    
+//    func onFilteringFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
+//        // TODO: clear the table view before load the data
+//        
+//        // 1
+//               self.hideLoadingIndicator(from: self.view)
+//
+//               guard newIndexPathsToReload != nil else {
+//                   productsCollectionView.reloadData()
+//                   return
+//               }
+//               // 2
+//               if let newIndexPathsToReload = newIndexPathsToReload {
+//                   productsCollectionView.insertItems(at: newIndexPathsToReload)
+//               }
+//               
+//    }
+
+}
+extension SupplierProductsViewController : FilterDelegate{
+    func freeDeliveryClick() {
+        print("freeDeliveryClick")
+//        guard let viewModel = viewModel else { return }
+//        viewModel.freeDeliveryPressed()
+    }
+    
+    func filterClick() {
+        self.performSegue(withIdentifier: filterSegue, sender: nil)
+//        let vc = FilterTableViewController()
+//        vc.delegate = self
+//        vc.viewType = 0
+//        vc.selectedFilterOption = self.selectedFilterOption
+//        let navController = UINavigationController(rootViewController: vc)
+//        self.navigationController?.present(navController, animated: true, completion: nil)
+    }
+    func sortClick() {
+        let vc = SortTableViewController()
+        vc.delegate = self
+        vc.senderView = self
+        vc.filterRequestModel = self.viewModel?.filterRequestObj
+        vc.sortFilterOption = self.sortFilterOption
+        let navController = UINavigationController(rootViewController: vc)
+        self.navigationController?.present(navController, animated: true, completion: nil)
+    }
+    
+    func pass(data: String) { //conforms to protocol
+    // implement your own implementation
+        print(data)
+        guard let viewModel = viewModel else { return }
+            // sort by
+            sortFilterOption = data
+            let sortBy: FilterSettings.SortingOptions = data.lowercased() == "low to high" ? .ascending : .descending
+            viewModel.sortByOptionsChanged(sortBy: sortBy)
+        self.productsCollectionView.reloadData()
+     }
+    
+}
+protocol isAbleToReceiveData {
+    func pass(data: String)  //data: string is an example parameter, type 0 is Filter, 1 is sortBy
+}
+
+extension SupplierProductsViewController: FilterProductsReturnViewInterface {
+    func didApplyFilter(filterRequestModel: FilterRequestModel?) {
+        guard let viewModel = viewModel else { return }
+        viewModel.didApplyFilter(filterRequestModel: filterRequestModel)
+        self.productsCollectionView.reloadData()
     }
 }

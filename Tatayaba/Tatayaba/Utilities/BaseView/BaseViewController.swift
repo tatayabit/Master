@@ -37,10 +37,12 @@ class BaseViewController: UIViewController {
     func showErrorAlerr(title: String?, message: String?, handler: ((UIAlertAction) -> Void)?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let htmlData = NSString(string: message ?? "").data(using: String.Encoding.unicode.rawValue)
-        let options = [NSAttributedString.DocumentReadingOptionKey.documentType:
-            NSAttributedString.DocumentType.html]
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        let options = [ NSAttributedString.Key.paragraphStyle: paragraphStyle,NSAttributedString.DocumentReadingOptionKey.documentType:
+            NSAttributedString.DocumentType.html] as [AnyHashable : Any]
         let attributedString = try? NSMutableAttributedString(data: htmlData ?? Data(),
-                                                              options: options,
+                                                              options: options as! [NSAttributedString.DocumentReadingOptionKey : Any],
                                                               documentAttributes: nil)
         alert.setValue(attributedString, forKey: "attributedMessage")
         alert.view.traverseRadius(4)
@@ -65,6 +67,10 @@ class BaseViewController: UIViewController {
         if loadingArr.contains(containerView) {
             loadingArr.removeAll(where: { $0 == containerView })
         }
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     func addSearchBtn(){
@@ -149,13 +155,43 @@ extension UIViewController {
         let item2 = UIBarButtonItem(customView: btn2)
         
         self.navigationItem.leftBarButtonItem  = item2
-        
-        
-        
     }
+    
+     func NavigationBarWithCancelButton(){
+           
+        self.navigationItem.hidesBackButton = true
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.navigationBar.barTintColor = .brandDarkBlue
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.hidesBottomBarWhenPushed = false
+        self.tabBarController?.tabBar.isHidden = false
+        var logo: UIImage = UIImage()
+        if MOLHLanguage.currentAppleLanguage() == "en" {
+            logo = UIImage(named: "barName_Eng") ?? UIImage()
+        } else {
+            logo = UIImage(named: "barName_ar") ?? UIImage()
+        }
+        let imageView = UIImageView(image:logo)
+        imageView.contentMode = .scaleAspectFit
+        navigationItem.titleView = imageView
+           
+        let btn2 = UIButton(type: .custom)
+//           btn2.setImage(UIImage(named: "BackBar"), for: .normal)
+        btn2.setTitle("Cancel".localized(), for: .normal)
+        btn2.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        btn2.addTarget(self, action: #selector(cancel), for: .touchUpInside)
+        let item2 = UIBarButtonItem(customView: btn2)
+           
+        self.navigationItem.leftBarButtonItem  = item2
+       }
+    
     @objc func action(){
         navigationController?.popViewController(animated: true)
     }
+    
+    @objc func cancel(){
+           dismiss(animated: true, completion: nil)
+       }
     
     
     
@@ -195,5 +231,20 @@ extension UIView {
         for subview: UIView in subviews {
             subview.traverseRadius(radius)
         }
+    }
+}
+
+extension UIViewController{
+    var previousViewController:UIViewController?{
+        if let controllersOnNavStack = self.navigationController?.viewControllers{
+            let n = controllersOnNavStack.count
+            //if self is still on Navigation stack
+            if controllersOnNavStack.last === self, n > 1{
+                return controllersOnNavStack[n - 2]
+            }else if n > 0{
+                return controllersOnNavStack[n - 1]
+            }
+        }
+        return nil
     }
 }

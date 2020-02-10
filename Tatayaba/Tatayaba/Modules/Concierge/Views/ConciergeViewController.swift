@@ -28,14 +28,46 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
             conciergeSubView.countryButton.setTitle(country.name, for: .normal)
             conciergeSubView.country = country
         }
+        setData()
         self.NavigationBarWithOutBackButton()
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateLoginOrLogout), name: NSNotification.Name(rawValue: "updateLoginOrLogout"), object: nil)
+
+
+    }
+    func setData(){
+        let customer = Customer.shared
+        if customer.loggedin {
+            if let user = customer.user{
+                if  (user.firstname.count > 0){
+                    conciergeSubView.customerNameTextField.text = user.firstname + " " + user.lastname
+                    conciergeSubView.customerNameTextField.isUserInteractionEnabled = false
+                }
+                if  (user.phone.count > 0)  {
+                    conciergeSubView.phoneTextField.text = user.phone
+                    conciergeSubView.phoneTextField.isUserInteractionEnabled = false
+                }
+            }
+        }else{
+            conciergeSubView.customerNameTextField.text = ""
+            conciergeSubView.phoneTextField.text = ""
+            conciergeSubView.customerNameTextField.isUserInteractionEnabled = true
+            conciergeSubView.phoneTextField.isUserInteractionEnabled = true
+        }
+    }
+    
+    @objc func updateLoginOrLogout(_ notification: Notification) {
+        setData()
+    }
+    
+    
     fileprivate func addconciergeSubView() {
         scrollView.stackView.addArrangedSubview(conciergeSubView)
         conciergeSubView.translatesAutoresizingMaskIntoConstraints = false
-        conciergeSubView.heightAnchor.constraint(equalToConstant: 750).isActive = true
+        conciergeSubView.heightAnchor.constraint(equalToConstant: 650).isActive = true
         conciergeSubView.delegate = self
     }
     
@@ -54,14 +86,23 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
     
     func showAlert() {
         
-        let alert = UIAlertController(title: "TATAYAB", message: "", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action: UIAlertAction) in
+        let alert = UIAlertController(title: "TATAYAB".localized(), message: "", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera".localized(), style: .default, handler: {(action: UIAlertAction) in
             self.getImage(fromSourceType: .camera)
         }))
-        alert.addAction(UIAlertAction(title: "Photo Album", style: .default, handler: {(action: UIAlertAction) in
+        alert.addAction(UIAlertAction(title: "Photo Album".localized(), style: .default, handler: {(action: UIAlertAction) in
             self.getImage(fromSourceType: .photoLibrary)
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: nil))
+        
+        if let popoverPresentationController = alert.popoverPresentationController {
+//            popoverPresentationController.sourceView = self.view
+//            popoverPresentationController.sourceRect = CGRect(origin: sender.location(in: self.view), size: CGSize(width: 1.0, height: 1.0))
+            popoverPresentationController.sourceView = self.view
+            popoverPresentationController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverPresentationController.permittedArrowDirections = []
+        }
+        
         self.present(alert, animated: true, completion: nil)
     }
     func getImage(fromSourceType sourceType: UIImagePickerController.SourceType) {
@@ -88,6 +129,7 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
     func didSelectSubmitConcierge(concierge: Concierge) {
         
         showLoadingIndicator(to: self.view)
+        self.conciergeSubView.alpha = 0.2
         viewModel.uploadConcierge(concierge: concierge) { result in
             self.hideLoadingIndicator(from: self.view)
             switch result {
@@ -96,12 +138,20 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
                 if let ConciergeResult = ConciergeResult {
                     if ConciergeResult["status"] == "success" {
                         self.showErrorAlerr(title: Constants.Concierge.uploaded, message: "Thanks for using concierge feature,\nWe will call you back withing 48 hours!".localized(), handler: { action in
+                            self.conciergeSubView.alpha = 1
+                            self.conciergeSubView.perfumeImage.image = #imageLiteral(resourceName: "camera-logo")
+                            self.conciergeSubView.perufumDescription.text = ""
+                            self.setData()
+                            self.navigateToHome()
+                            
                             })
                     } else{
                         self.showConciergeUploadError()
+                        self.conciergeSubView.alpha = 1
                     }
                 } else {
                     self.showConciergeUploadError()
+                    self.conciergeSubView.alpha = 1
                 }
                 
             case .failure(let error):
@@ -118,7 +168,7 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
     
     // MARK:- ImagePickerDelegate
     func imagePickerDelegate(didSelect image: UIImage, delegatedForm: ImagePicker) {
-        conciergeSubView.bannerImageView.image = image
+        conciergeSubView.perfumeImage.image = image
         imagePicker.dismiss()
     }
     

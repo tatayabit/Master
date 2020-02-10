@@ -11,11 +11,15 @@ import UIKit
 class CatProductsViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ProductsBlockCollectionViewCellDelegate {
 
     @IBOutlet weak var productsCollectionView: UICollectionView!
+    @IBOutlet weak var filterView: SortingReusableCustomView!
     @IBOutlet weak var categoryNameLabel: UILabel!
 
     var viewModel: CatProductsViewModel?
+    var selectedFilterOption:String?
+    var sortFilterOption:String?
     private let productDetailsSegue = "product_details_segue"
     private let searchSegue = "search_segue"
+    private let filterSegue = "filter_segue"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +35,7 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
         guard let viewModel = viewModel else { return }
         self.showLoadingIndicator(to: self.view)
         viewModel.setDelegate(self)
+        self.filterView.delegate = self
         viewModel.fetchModerators()
     }
 
@@ -64,12 +69,13 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard let viewModel = viewModel else { return }
         if indexPath.row == viewModel.currentCount - 1 {  //numberofitem count
-            viewModel.fetchModerators()
+            viewModel.loadMoreViewAction()//fetchModerators()
             print("reached last cell!")
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: productDetailsSegue, sender: indexPath)
+//        performSegue(withIdentifier: filterSegue, sender: nil)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -86,6 +92,14 @@ class CatProductsViewController: BaseViewController, UICollectionViewDelegate, U
                     productDetailsVC.viewModel = viewModel.productDetailsViewModel(at: indexPath)
                 }
             }
+        }
+        
+        if segue.identifier == filterSegue {
+            let filterVC = segue.destination as! UpdatedFilterTableViewController
+            if let viewModel = viewModel {
+                filterVC.viewModel = viewModel.filterViewModel()
+            }
+            filterVC.senderView = self
         }
     }
 
@@ -157,5 +171,49 @@ extension CatProductsViewController: CatProductsViewModelDelegate {
 //        let title = "Warning".localizedString
 //        let action = UIAlertAction(title: "OK".localizedString, style: .default)
 //        displayAlert(with: title , message: reason, actions: [action])
+    }
+}
+extension CatProductsViewController : FilterDelegate,isAbleToReceiveData{
+    func freeDeliveryClick() {
+        print("freeDeliveryClick")
+//        guard let viewModel = viewModel else { return }
+//        viewModel.freeDeliveryPressed()
+    }
+    
+    func filterClick() {
+        self.performSegue(withIdentifier: filterSegue, sender: nil)
+    }
+    func sortClick() {
+        let vc = SortTableViewController()
+        vc.delegate = self
+        vc.senderView = self
+        vc.filterRequestModel = self.viewModel?.filterRequestObj
+        vc.sortFilterOption = self.sortFilterOption
+        let navController = UINavigationController(rootViewController: vc)
+        self.navigationController?.present(navController, animated: true, completion: nil)
+    }
+    
+    func pass(data: String) { //conforms to protocol
+    // implement your own implementation
+        print(data)
+        guard let viewModel = viewModel else { return }
+        
+            // sort by
+        sortFilterOption = data
+        let sortBy: FilterSettings.SortingOptions = data.lowercased() == "low to high" ? .ascending : .descending
+        viewModel.currentPage = 0
+        viewModel.productsList.removeAll()
+        viewModel.sortByOptionsChanged(sortBy: sortBy)
+        self.productsCollectionView.reloadData()
+     }
+}
+
+extension CatProductsViewController: FilterProductsReturnViewInterface {
+    func didApplyFilter(filterRequestModel: FilterRequestModel?) {
+        guard let viewModel = viewModel else { return }
+        viewModel.currentPage = 0
+        viewModel.productsList.removeAll()
+        viewModel.didApplyFilter(filterRequestModel: filterRequestModel)
+        self.productsCollectionView.reloadData()
     }
 }

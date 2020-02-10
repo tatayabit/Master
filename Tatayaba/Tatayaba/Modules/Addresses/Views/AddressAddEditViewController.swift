@@ -32,6 +32,8 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
     private var country: Country?
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(refresh(_:)), name: Notification.Name(rawValue: "Refresh"), object: nil)
+
         registerValidator()
         setupUI()
     }
@@ -40,6 +42,10 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
         super.viewWillAppear(animated)
         countryTextField.text = CountrySettings.shared.currentCountry?.name
 
+    }
+    
+    @objc func refresh(_ notification: Notification){
+        self.setupUI2()
     }
 
     //MARK:- setupUI
@@ -63,6 +69,17 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
         }
     }
 
+     func setupUI2() {
+            NavigationBarWithBackButton()
+            if Customer.shared.loggedin {
+                if let currentUser = Customer.shared.user {
+                    user = currentUser
+                    guestCompletDataView.isHidden = true
+                }
+            } else if Customer.shared.user?.identifier == "" || Customer.shared.user?.identifier == nil {
+                guestCompletDataView.isHidden = false
+            }
+        }
     //MARK:- Swift Validator
     func registerValidator() {
         validator.registerField(fullNameTextField, rules: [RequiredRule(message: "Full Name is required!")])
@@ -103,13 +120,6 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
                     }
                 case .failure(let error):
                     print("the error \(error)")
-                    do {
-                        if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
-                            self.showErrorAlerr(title: "AcceessDenied".localized(), message: errorMessage, handler: nil)
-                        }
-                    }
-                    catch{
-                    }
                 }
             }
         } else {
@@ -138,13 +148,39 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
                     }
                 case .failure(let error):
                     print("the error \(error)")
-                    do {
-                        if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
-                            self.showErrorAlerr(title: "AcceessDenied".localized(), message: errorMessage, handler: nil)
+                    print(error.errorCode)
+                    if error.response?.statusCode == 300 {
+                        do {
+                            if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
+                                ///////////////////
+                                let refreshAlert = UIAlertController(title: "AcceessDenied".localized(), message: "email_already_exists".localized(), preferredStyle: UIAlertController.Style.alert)
+
+                                refreshAlert.addAction(UIAlertAction(title: "LOG IN".localized(), style: .default, handler: { (action: UIAlertAction!) in
+                                    self.loadLoginVC()
+                                }))
+
+                                refreshAlert.addAction(UIAlertAction(title: "Cancel".localized(), style: .destructive, handler: { (action: UIAlertAction!) in
+                                    print("Handle Cancel Logic here")
+                                }))
+
+                                self.present(refreshAlert, animated: true, completion: nil)
+                                //////////////////
+//                                self.showErrorAlerr(title: "AcceessDenied".localized(), message: errorMessage){(UIAlertAction) in
+//                                     self.loadLoginVC()
+//                                }
+                                }
+                            }
+                        catch{
                         }
-                    }
-                    catch{
-                        
+                       
+                    } else {
+                        do {
+                            if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
+                                self.showErrorAlerr(title: "AcceessDenied".localized(), message: errorMessage, handler: nil)
+                                }
+                            }
+                        catch{
+                        }
                     }
                 }
             }
@@ -174,5 +210,11 @@ class AddressAddEditViewController: BaseViewController, ValidationDelegate, Coun
     @IBAction func saveContinueAction(_ sender: UIButton) {
         validator.validate(self)
     }
-
+    
+    // MARK:- Navigation
+    func loadLoginVC() {
+        let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.navigationController?.pushViewController(controller, animated: false)
+        self.tabBarController?.tabBar.isHidden = true
+    }
 }

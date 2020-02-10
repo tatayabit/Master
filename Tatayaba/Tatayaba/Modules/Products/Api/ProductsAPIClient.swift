@@ -45,4 +45,8 @@ struct ProductsAPIClient: APIClient {
     func search(with keyword: String, page: Int, completion: @escaping (APIResult<ProductsResult?, MoyaError>) -> Void) {
         fetch(with: ProductsEndpoint.search(keyword: keyword, page: String(page)), completion: completion)
     }
+    
+    func getFilteredProductOfCategory(categoryId: Int, page: Int,sort_by:String,sort_order:String, completion: @escaping (APIResult<ProductsResult?, MoyaError>) -> Void) {
+        fetch(with: ProductsEndpoint.getFilteredProductOfCategory(categoryId: String(categoryId), page: String(page), sort_by: sort_by, sort_order: sort_order), completion: completion)
+    }
 }

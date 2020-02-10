@@ -24,6 +24,7 @@ class Profile {
     var notifications = "Notifications".localized()
     var welcome = "Welcome".localized()
     var login = "LOG IN".localized()
+    var Hi = "Hi".localized()
 }
 
 
@@ -45,13 +46,19 @@ class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITab
     private let orderDetailsSegue = "order_details_segue"
 
     @IBOutlet weak var profileMenu_tableView: UITableView!
+    @IBOutlet weak var welcomeView: UIView!
+    @IBOutlet weak var nameLBL: UILabel!
+    @IBOutlet weak var mailLBL: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         Session1 = [profile.myOrders]
         Session2 = [profile.changeLanguage, profile.currencies, profile.changeCountry, profile.liveChat] //, profile.notifications
         Session3 = [profile.deliveryAndReturnPolicy, profile.privacyPolicy,profile.logout]
         Session4 = [profile.deliveryAndReturnPolicy, profile.privacyPolicy]
+        NotificationCenter.default.addObserver(self, selector: #selector(updateWelcomeHeader(_:)), name: Notification.Name(rawValue: "updateWelcomeHeader"), object: nil)
          NavigationBarWithOutBackButton()
+        setWelcomeHeader()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -70,9 +77,26 @@ class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITab
         self.profileMenu_tableView.reloadData()
     }
 
-
+    func setWelcomeHeader() {
+        if Customer.shared.loggedin {
+            self.welcomeView.isHidden = false
+            let name  = (Customer.shared.user?.firstname ?? "") + " " + (Customer.shared.user?.lastname ?? "")
+            let email  = (Customer.shared.user?.email ?? "")
+            self.nameLBL.text = "\(profile.Hi)\(name)"
+            self.mailLBL.text = email
+            self.nameLBL.isHidden = false
+            self.mailLBL.isHidden = false
+        } else {
+             self.welcomeView.isHidden = true
+            self.nameLBL.isHidden = true
+            self.mailLBL.isHidden = true
+            self.nameLBL.text = ""
+            self.mailLBL.text = ""
+        }
+    }
+    
     @objc func sign_buttonAction() {
-       self.loadFirstVC()
+       self.loadLoginVC()
     }
 
 }
@@ -197,12 +221,17 @@ extension profileTabMenuViewController{
                  self.PrivacyView()
             }else  if indextitle  == profile.logout {
                 Customer.shared.logout()
-            self.loadFirstVC()
+                self.setWelcomeHeader()
+                self.loadLoginVC()
 
             }
         }
 
 
+    }
+    
+    @objc func updateWelcomeHeader(_ notification: Notification) {
+        self.setWelcomeHeader()
     }
 
     // MARK:- Change Language
@@ -236,7 +265,7 @@ extension profileTabMenuViewController{
         self.navigationController?.pushViewController(controller, animated: true)
     }
 
-    func loadFirstVC() {
+    func loadLoginVC() {
         let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         self.navigationController?.pushViewController(controller, animated: false)
          self.tabBarController?.tabBar.isHidden = true

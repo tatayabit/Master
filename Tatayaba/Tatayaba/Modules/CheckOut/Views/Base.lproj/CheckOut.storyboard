@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JJ9-U2-IUw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JJ9-U2-IUw">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="GOTHAM-MEDIUM.TTF">
-            <string>GothamMedium</string>
-        </array>
         <array key="Myriad Pro Regular.ttf">
             <string>MyriadPro-Regular</string>
         </array>
@@ -34,7 +31,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gae-zR-qWU">
-                                <rect key="frame" x="0.0" y="65" width="375" height="478"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="543"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="JJ9-U2-IUw" id="o3d-Ff-dBY"/>
@@ -55,18 +52,6 @@
                                     <action selector="placeOrderAction:" destination="JJ9-U2-IUw" eventType="touchUpInside" id="1Xd-Nq-zl1"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SECURE CHECKOUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibO-EQ-sMv">
-                                <rect key="frame" x="20" y="20" width="335" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="EJW-YA-BbD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="13"/>
-                                <color key="textColor" red="0.13333333333333333" green="0.10980392156862745" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="SECURE CHECKOUT"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xWU-uk-Mh1">
                                 <rect key="frame" x="8" y="536" width="359" height="70"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -81,14 +66,11 @@
                         <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xWU-uk-Mh1" firstAttribute="top" secondItem="Gae-zR-qWU" secondAttribute="bottom" constant="-7" id="0LN-7q-XeY"/>
+                            <constraint firstItem="Gae-zR-qWU" firstAttribute="top" secondItem="I6r-yz-TSn" secondAttribute="top" id="EeB-9A-cjM"/>
                             <constraint firstItem="RgV-Yr-ArJ" firstAttribute="leading" secondItem="I6r-yz-TSn" secondAttribute="leading" constant="8" id="Emb-oo-eN3"/>
                             <constraint firstItem="RgV-Yr-ArJ" firstAttribute="trailing" secondItem="xWU-uk-Mh1" secondAttribute="trailing" id="FJW-Tz-X4X"/>
-                            <constraint firstItem="ibO-EQ-sMv" firstAttribute="top" secondItem="I6r-yz-TSn" secondAttribute="top" constant="20" id="FRb-zn-3hr"/>
                             <constraint firstItem="RgV-Yr-ArJ" firstAttribute="leading" secondItem="xWU-uk-Mh1" secondAttribute="leading" id="G2z-Rc-AZs"/>
-                            <constraint firstItem="Gae-zR-qWU" firstAttribute="top" secondItem="ibO-EQ-sMv" secondAttribute="bottom" constant="20" id="GeZ-2z-e3I"/>
-                            <constraint firstItem="I6r-yz-TSn" firstAttribute="trailing" secondItem="ibO-EQ-sMv" secondAttribute="trailing" constant="20" id="ONW-gM-Uee"/>
                             <constraint firstItem="Gae-zR-qWU" firstAttribute="leading" secondItem="I6r-yz-TSn" secondAttribute="leading" id="QDg-Yd-Jns"/>
-                            <constraint firstItem="ibO-EQ-sMv" firstAttribute="leading" secondItem="I6r-yz-TSn" secondAttribute="leading" constant="20" id="Smb-0h-Dae"/>
                             <constraint firstItem="I6r-yz-TSn" firstAttribute="bottom" secondItem="RgV-Yr-ArJ" secondAttribute="bottom" constant="6" id="eDh-6E-8bc"/>
                             <constraint firstItem="I6r-yz-TSn" firstAttribute="trailing" secondItem="RgV-Yr-ArJ" secondAttribute="trailing" constant="8" id="odN-GC-QN4"/>
                             <constraint firstItem="xWU-uk-Mh1" firstAttribute="bottom" secondItem="RgV-Yr-ArJ" secondAttribute="top" constant="-15" id="u9r-xD-ONL"/>

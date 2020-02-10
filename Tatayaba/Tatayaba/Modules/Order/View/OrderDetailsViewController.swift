@@ -49,10 +49,10 @@ extension OrderDetailsViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "OrderMainInfoCell") as! OrderMainInfoCell
-            cell.orderTitleID.text = "Order #: \(order.identifier)"
+            cell.orderTitleID.text = "\("Order #:".localized()) \(order.identifier)"
             if let timeStampDouble = Double(order.timestamp) {
                 let date = getDateFromTimeStamp(timeStamp: timeStampDouble)
-                cell.orderDate.text = "Ordered on: \(date)"
+                cell.orderDate.text = "\("Ordered on:".localized()) \(date)"
             }
             cell.trackingID.text = order.paymentInfo?.trackId
             cell.orderValue.text = "\(order.totalPrice)".formattedPrice

@@ -26,12 +26,28 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
         super.viewDidLoad()
         registerValidator()
         setupUI()
+        setTextFieldsPlaceholder()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated) // No need for semicolon
-        self.tabBarController?.tabBar.isHidden = true
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         NavigationBarWithBackButton()
+        self.tabBarController?.tabBar.isHidden = true
+        fullNameTextField.becomeFirstResponder()
+    }
+    
+    // MARK:- Localization
+    func setTextFieldsPlaceholder() {
+        emailTextField.isLTRLanguage = !LanguageManager.isArabicLanguage()
+        passwordTextField.isLTRLanguage = !LanguageManager.isArabicLanguage()
+        fullNameTextField.isLTRLanguage = !LanguageManager.isArabicLanguage()
+        phoneNumberTextField.isLTRLanguage = !LanguageManager.isArabicLanguage()
+
+        emailTextField.placeholder = "Email".localized()
+        passwordTextField.placeholder = "Passwrod".localized()
+        fullNameTextField.placeholder = "Full name".localized()
+        phoneNumberTextField.placeholder = "Phone".localized()
+
     }
     
     //MARK:- setupUI
@@ -44,9 +60,10 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
     
     //MARK:- Swift Validator
     func registerValidator() {
-        validator.registerField(emailTextField, rules: [RequiredRule(message: "Email is required!"), EmailRule(message: "Invalid email")])
-        validator.registerField(passwordTextField, rules: [RequiredRule(message: "Password is required!"), PasswordRule(regex: "^.{6,20}$", message: "Invalid password")])
+        validator.registerField(emailTextField, rules: [RequiredRule(message: "field_is_required".localized()), EmailRule(message: "valid_email".localized())])
+        validator.registerField(passwordTextField, rules: [RequiredRule(message: "field_is_required".localized()), PasswordRule(regex: "^.{6,20}$", message: "valid_password".localized())])
         fullNameTextField.becomeFirstResponder()
+
     }
     
     //MARK:- Validation Delegate
@@ -72,7 +89,7 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
                 print("the error \(error)")
                 do {
                     if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
-                        self.showErrorAlerr(title: "AcceessDenied".localized(), message: errorMessage, handler: nil)
+                        self.showErrorAlerr(title: "Login_Failed".localized(), message: "Login_Failed_message".localized(), handler: nil)
                     }
                 }
                 catch{
@@ -88,7 +105,7 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
         }
         
         if errors.count > 0 {
-            showErrorAlerr(title: Constants.Common.error, message: "\(String(describing: errors[0].1.errorMessage))", handler: nil)
+            showErrorAlerr(title: "Attention".localized(), message: "\(String(describing: errors[0].1.errorMessage))", handler: nil)
         }
     }
     
@@ -112,9 +129,10 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
     }
     
     @IBAction func signInAction(_ sender: UIButton) {
-        let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        navigationController?.pushViewController(controller, animated: false)
-        tabBarController?.tabBar.isHidden = true
+        self.navigationController?.popViewController(animated: true)
+//        let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+//        navigationController?.pushViewController(controller, animated: false)
+//        tabBarController?.tabBar.isHidden = true
     }
     
 }
