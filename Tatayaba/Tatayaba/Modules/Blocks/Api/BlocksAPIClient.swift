@@ -15,7 +15,7 @@ struct BlocksAPIClient: APIClient {
 
     var provider = MoyaProvider<MultiTarget>(plugins: [NetworkLoggerPlugin(verbose: true)])
 
-    static let environment: APIEnvironment = .production
+    static let environment: APIEnvironment = .dev3
     func getBlock(blockId: String, completion: @escaping (APIResult<Block?, MoyaError>) -> Void) {
         fetch(with: BlocksEndpoint.getBlock(blockId: blockId), completion: completion)
     }

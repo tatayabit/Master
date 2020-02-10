@@ -51,6 +51,7 @@
 "Something went wrong while submitting your concierge!"="Something went wrong while submitting your concierge!";
 "Welcome to TATAYAB CONCIERGE." = "Welcome to TATAYAB CONCIERGE.";
 "Your fastest destination to find your beloved perfume across the world. Finding a fragrance has never been that easy before." = "Your fastest destination to find your beloved perfume across the world. Finding a fragrance has never been that easy before.";
+"Thanks for using concierge feature,\nWe will call you back withing 48 hours!" = "Thanks for using concierge feature,\nWe will call you back withing 48 hours!";
 
 // Cart
 "Your Cart is Empty!"="Your Cart is Empty!";
@@ -157,6 +158,7 @@ alertValaidationMessage = "You have to upgrade , your version is not supported a
 "field_is_required" = "Please fill in the required fields";
 "valid_email" = "Please enter valid email";
 "valid_password" = "Please enter valid password";
+"SignUp_Failed" = "Sign up Failed";
 "email_already_exists" = "This email already exists. Please Sign in to continue or try a different email.";
 "This item is out of stock!" = "This item is out of stock!";
 "please choose the required options." = "please choose the required options.";
@@ -180,3 +182,6 @@ alertValaidationMessage = "You have to upgrade , your version is not supported a
 "Photo Album" = "Photo Album";
 "Camera" = "Camera";
 "TATAYAB" = "TATAYAB";
+
+
+"Uploaded" = "Uploaded";

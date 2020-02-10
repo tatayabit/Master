@@ -487,18 +487,18 @@ extension HomeViewController: LocationManagerDelegate, CountryViewDelegate {
            AppDelegate.shared.shouldCheckLocation = false
     
         let alertController = UIAlertController(title: "Your Country is not supported".localized(), message: "Please go to Countries list and select available country".localized(), preferredStyle: .alert)
-           let cancelAction = UIAlertAction(title: "Choose Country".localized(), style: .default) { _ in
-               // open countriesList VC
-               if self.viewModel.isCurrentCountrySelected() {
-                   self.loadBanners()
-               } else {
-                   self.loadCountries()
-               }
-           }
+        let cancelAction = UIAlertAction(title: "Choose Country".localized(), style: .default) { _ in
+            // open countriesList VC
+            if self.viewModel.isCurrentCountrySelected() {
+                self.loadBanners()
+            } else {
+                self.loadCountries()
+            }
+        }
     
-           alertController.addAction(cancelAction)
-           self.present(alertController, animated: true, completion: nil)
-       }
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
     
     func userLocationDenied() {
         // initialise a pop up for using later

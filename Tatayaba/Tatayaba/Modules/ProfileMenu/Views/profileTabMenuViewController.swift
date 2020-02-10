@@ -69,7 +69,7 @@ class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITab
             self.navigationItem.title = "\(profile.welcome) \(Customer.shared.user?.firstname ?? "")"
         }
         if CurrencySettings.shared.currentCurrency != nil {
-            Session2[1] = CurrencySettings.shared.currentCurrency?.descriptionField ?? profile.currencies
+            Session2[1] = CurrencySettings.shared.currentCurrency?.currencyCode ?? profile.currencies
         }
         if CountrySettings.shared.currentCountry != nil {
             Session2[2] = CountrySettings.shared.currentCountry?.name ?? profile.changeCountry
