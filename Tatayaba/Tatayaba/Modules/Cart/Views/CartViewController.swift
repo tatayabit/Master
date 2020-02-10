@@ -481,10 +481,20 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         self.showErrorAlerr(title: Constants.Common.success, message: "CouponRemovedSuccessfully".localized(), handler: nil)
     }
     
+    func getProductsIDArray() -> [String]{
+        var idArray = [String]()
+        for product in viewModel.cart.productsList() {
+            idArray.append(product.identifier)
+        }
+        return idArray
+    }
+    
     func loadTaxAndShipping() {
         showLoadingIndicator(to: self.view)
         let countryCode = CountrySettings.shared.currentCountry?.code ?? "KW"
-        viewModel.getTaxAndShipping(countryCode: countryCode) { result in
+        let productsIdString = getProductsIDArray().joined(separator:",").urlEscaped
+        print(productsIdString)
+        viewModel.getTaxAndShipping(countryCode: countryCode, productsID: productsIdString) { result in
             switch result {
             case .success(let taxAndShippingResponse):
                 if let taxAndShippingResponse = taxAndShippingResponse {
