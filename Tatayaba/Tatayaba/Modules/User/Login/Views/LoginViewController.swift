@@ -16,6 +16,7 @@ class LoginViewController: BaseViewController, ValidationDelegate {
     private let viewModel = LoginViewModel()
     private let validator = Validator()
     private let homeSegue = "show_home_segue"
+    private let signUpSegue = "sign_up_segue"
 
     @IBOutlet weak private var emailTextField: SkyFloatingLabelTextField!
     @IBOutlet weak private var passwordTextField: SkyFloatingLabelTextField!
@@ -94,10 +95,9 @@ class LoginViewController: BaseViewController, ValidationDelegate {
     
     func moveToNextView() {
         if let previousVC = self.previousViewController{
-            let className = NSStringFromClass(previousVC.classForCoder)
-           if previousVC is profileTabMenuViewController {
+            if previousVC is profileTabMenuViewController {
                 self.navigateToHome()
-           }else{
+            } else  {
                 print("44444444444444444444")
                 NotificationCenter.default.post(name: Notification.Name(rawValue: "Refresh"), object: nil)
                 let _ = self.navigationController?.popViewController(animated: true)
@@ -118,6 +118,14 @@ class LoginViewController: BaseViewController, ValidationDelegate {
         }
         return true
     }
+    
+    // MARK:- Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == signUpSegue {
+            self.emailTextField.text = ""
+            self.passwordTextField.text = ""
+        }
+    }
 
     //MARK:- IBActions
     @IBAction func loginAction(_ sender: UIButton) {
@@ -134,7 +142,7 @@ class LoginViewController: BaseViewController, ValidationDelegate {
         let controller = UIStoryboard(name: "User", bundle: Bundle.main).instantiateViewController(withIdentifier: "ForgetPasswordViewController") as! ForgetPasswordViewController
         controller.tabBarController?.tabBar.isHidden = true
         self.navigationController?.pushViewController(controller, animated: true)
-        }
+    }
 
     
     @IBAction func skipAction(_ sender: UIButton) {

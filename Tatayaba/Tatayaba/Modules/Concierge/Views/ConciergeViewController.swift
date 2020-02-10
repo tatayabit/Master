@@ -146,8 +146,13 @@ class ConciergeViewController: BaseViewController, ConciergeSubViewDelegate, Ima
                             
                             })
                     } else{
-                        self.showConciergeUploadError()
+                        if let errorMessage = ConciergeResult["error"] {
+                            self.showErrorAlerr(title: Constants.Common.error, message: errorMessage, handler: nil)
+                        } else {
+                            self.showConciergeUploadError()
+                        }
                         self.conciergeSubView.alpha = 1
+                        
                     }
                 } else {
                     self.showConciergeUploadError()

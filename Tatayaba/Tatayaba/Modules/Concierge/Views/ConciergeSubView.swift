@@ -112,13 +112,18 @@ class ConciergeSubView: UIView, ValidationDelegate {
     
     func validationFailed(_ errors: [(Validatable, ValidationError)]) {
         print("Validation FAILED!")
+        var errorMessage = ""
         for error in errors {
             print("errors:::: \(String(describing: error.1.errorMessage))")
+            if errorMessage.count > 0 {
+                errorMessage.append("\n")
+            }
+            errorMessage.append(error.1.errorMessage)
         }
         
         if errors.count > 0 {
             if let delegate = delegate {
-                delegate.didFailConciergeValidation(errorTitle: Constants.Common.error, errorMessage: "\(String(describing: errors[0].1.errorMessage))")
+                delegate.didFailConciergeValidation(errorTitle: Constants.Common.error, errorMessage: "\(String(describing: errorMessage))")
             }
         }
     }

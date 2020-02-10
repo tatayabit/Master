@@ -52,6 +52,7 @@
 "Something went wrong while submitting your concierge!"="حدث خطأ أثناء تقديم الكونسيرج!";
 "Welcome to TATAYAB CONCIERGE." = "مرحباً بكم في تطيب كونسيرج.";
 "Your fastest destination to find your beloved perfume across the world. Finding a fragrance has never been that easy before." = "أول كونسيرج الكتروني في العالم متخصص في العطور..\nالان يمكنكم الحصول على أي عطر في العالم خلال خطوات بسيطه!";
+"Thanks for using concierge feature,\nWe will call you back withing 48 hours!" = "شكرا لاستخدامك خدمة كونسيرج,\nسنقوم  بالإتصال بك خلال ٤٨ ساعة!";
 
 // Cart
 "Your Cart is Empty!"="السلة فارغة!";
@@ -159,6 +160,7 @@ alertValaidationMessage = "يجب عليك الترقية ، الإصدار ال
 "field_is_required" = "الرجاء تعبئة الحقول المطلوبة";
 "valid_email" = "الرجاء إدخال بريد إلكتروني صحيح";
 "valid_password" = "الرجاء إدخال كلمة مرور صحيحة";
+"SignUp_Failed" = "خطأ في إنشاء الحساب";
 "email_already_exists" = "هذا البريد الإلكتروني مسجل لدينا. الرجاء تسجيل الدخول للمتابعة أو ادخل بريد إلكتروني مختلف";
 
 "This item is out of stock!" = "هذا المنتج غير متاح حاليا";
@@ -184,3 +186,5 @@ alertValaidationMessage = "يجب عليك الترقية ، الإصدار ال
 "Photo Album" = "إلبوم الصور";
 "Camera" = "الكاميرا";
 "TATAYAB" = "تطيّب";
+
+"Uploaded" = "تم إرسال الطلب بنجاح";

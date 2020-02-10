@@ -88,11 +88,17 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
             case .failure(let error):
                 print("the error \(error)")
                 do {
-                    if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
-                        self.showErrorAlerr(title: "Login_Failed".localized(), message: "Login_Failed_message".localized(), handler: nil)
+                    if let errorMessage = try error.response?.mapString(atKeyPath: "message"), let errorCode = error.response?.statusCode {
+                        
+                        print("errorCode: \(errorCode)")
+                        if errorCode == 300 {
+                            self.showErrorAlerr(title: "Attention".localized(), message: "email_already_exists".localized(), handler: nil)
+                        } else {
+                            self.showErrorAlerr(title: "Attention".localized(), message: errorMessage.stripOutHtml(), handler: nil)
+                        }
                     }
-                }
-                catch{
+                } catch let err {
+                    print("err: \(err)")
                 }
             }
         }
