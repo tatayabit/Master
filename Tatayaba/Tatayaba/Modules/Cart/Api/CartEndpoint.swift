@@ -71,13 +71,15 @@ extension CartEndpoint: TargetType {
     var task: Task {
         switch self {
         case .applyCoupon(let parameters):
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
             
-        return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         case .getTaxAndShipping:
             return .requestParameters(parameters: [ "country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw"
                 ], encoding: URLEncoding.queryString)
+            
         case .getPricesWithUpdatedCurrency(let parameters):
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+            
         case .updateServerCart(let products, let userId,let paymentId):
             let params = [
             "user_id": userId,
@@ -89,9 +91,15 @@ extension CartEndpoint: TargetType {
 
             print("decoded: \(decoded)")
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
-        case .deleteAllCart(let userId),.getServerCart(let userId):
+            
+        case .deleteAllCart(let userId):
             let params = ["user_id": userId] as [String : Any]
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
+        
+        case .getServerCart(let userId):
+            let params = ["user_id": userId] as [String : Any]
+            return .requestParameters(parameters: params, encoding: URLEncoding.queryString)
+            
         case .deleteItemFromCart(let userId, let cartId):
             let params = ["user_id": userId,"cart_id":cartId] as [String : Any]
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)

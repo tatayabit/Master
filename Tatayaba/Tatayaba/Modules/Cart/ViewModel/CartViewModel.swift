@@ -244,8 +244,7 @@ class CartViewModel {
         }
     }
     
-    func deleteServerCart( completion: @escaping (APIResult<UpdateServerCartResponse?, MoyaError>) -> Void) {
-
+    func deleteServerCart(){
         let userId = getUserId()
         cartApiClient.deleteAllCart( userId: userId) { result in
             switch result {
@@ -255,7 +254,6 @@ class CartViewModel {
             case .failure(let error):
                 print("the error \(error)")
             }
-            completion(result)
         }
     }
     

@@ -179,6 +179,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     fileprivate func loadCartData() {
         Cart.shared.loadDataFromCaching()
+        Cart.shared.loadDataFromServer()
     }
     
     

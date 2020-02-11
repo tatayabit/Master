@@ -40,6 +40,20 @@ class Cart {
         }
     }
     
+    func loadDataFromServer() {
+        CartViewModel.shared.getServerCart(completion: { result in
+            switch result {
+            case .success(let response):
+                guard let getCartResult = response else { return }
+                print(getCartResult.products?.count)
+            case .failure(let error):
+                print("the error \(error)")
+            }
+            
+        })
+    }
+    
+    
     func callUpdateServerCart(){
         CartViewModel.shared.updateServerCart() { result in
                 switch result {
