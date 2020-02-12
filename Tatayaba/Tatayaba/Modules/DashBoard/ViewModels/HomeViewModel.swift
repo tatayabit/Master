@@ -17,7 +17,7 @@ class HomeViewModel {
 
     //let productIdList = ["268","270","305", "267", "297", "248", "265"]
 //    let productIdList = ["314","320","315", "316", "317", "318", "319"]
-    let productIdList = ["268","293","270","297", "248", "265", "272", "260"]
+    let productIdList = ["268","293","270","297", "248", "265", "272", "260","351","352"]
     var block_Id = ""
     var categoriesList = [Category]()
     var suppliersList = [Supplier]()
@@ -166,7 +166,7 @@ class HomeViewModel {
                             }
                             self.productsBlocks.append(sortedBlock)
                             print(block)
-                            if (self.productsBlocks.count > 7) {
+                            if (self.productsBlocks.count > 9) {
                                 self.productsBlocks = self.arrangeProductsBlocks()
                                 if let newProductsArrived = self.onProductsBlockLoad {
                                     newProductsArrived()
@@ -233,8 +233,15 @@ class HomeViewModel {
         let productViewModel = ProductDetailsViewModel(product: selectedBlock.products[indexPath.row].fullDetails)
         return productViewModel
     }
+    
+    func productDetailsViewModel(with id: String, title: String) -> ProductDetailsViewModel {
+            var category = Category(identifier: id)
+            category.name = title
+            return ProductDetailsViewModel(product:Product(identifier: id))
+    }
 
     //MARK:- ProductsListViewModel
+    
     func catProductsListViewModel(indexPath: IndexPath) -> CatProductsViewModel {
         let category = categoriesList[indexPath.row]
         return CatProductsViewModel(category: category)
@@ -245,12 +252,19 @@ class HomeViewModel {
         category.name = title
         return CatProductsViewModel(category: category)
     }
-
+    
+    
     //MARK:- SupplierProductsViewModel
     func supplierProductsViewModel(indexPath: IndexPath) -> SupplierProductsViewModel {
         let supplier = suppliersList[indexPath.row]
         return SupplierProductsViewModel(supplier: supplier)
     }
+    
+    func supplierProductsListViewModel(with id: String, title: String) -> SupplierProductsViewModel {
+        let supplier = Supplier(supplierId: id, name: title)
+        return SupplierProductsViewModel(supplier: supplier)
+    }
+    
     
     func getSelectedProductBlock() -> Block {
         for block in productsBlocks {
@@ -270,26 +284,32 @@ class HomeViewModel {
         var block5 = Block()
         var block6 = Block()
         var block7 = Block()
+        var block8 = Block()
+        var block9 = Block()
         
-        var tempProductsBlocks = [block0,block1,block2,block3,block4,block5,block6,block7]
+        var tempProductsBlocks = [block0,block1,block2,block3,block4,block5,block6,block7,block8,block9]
         for block in self.productsBlocks {
             switch block.blockId {
             case "268":
                 tempProductsBlocks[0] = block
-            case "293":
+            case "352":
                 tempProductsBlocks[1] = block
-            case "270":
-                tempProductsBlocks[2] = block
-            case "297":
-                tempProductsBlocks[3] = block
             case "248":
+                tempProductsBlocks[2] = block
+            case "351":
+                tempProductsBlocks[3] = block
+            case "297":
                 tempProductsBlocks[4] = block
-            case "265":
+            case "270":
                 tempProductsBlocks[5] = block
-            case "272":
+            case "293":
                 tempProductsBlocks[6] = block
             case "260":
                 tempProductsBlocks[7] = block
+            case "265":
+                tempProductsBlocks[8] = block
+            case "272":
+                tempProductsBlocks[9] = block
             default:
                 print("Error in arrangment of ProductsBlocks")
             }

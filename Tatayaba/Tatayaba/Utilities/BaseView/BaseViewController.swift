@@ -20,7 +20,7 @@ extension Constants {
 
 class BaseViewController: UIViewController {
     var loadingArr = [UIView]()
-
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -86,7 +86,6 @@ class BaseViewController: UIViewController {
 }
 
 extension UIViewController {
-    
     func pushToNextViewController (storyboardName : String?,segueName: String?)
     {
         let viewController: UIViewController? = UIStoryboard(name:storyboardName!, bundle: nil).instantiateViewController(withIdentifier: segueName!)
@@ -118,6 +117,11 @@ extension UIViewController {
         }
         let imageView = UIImageView(image:logo)
         imageView.contentMode = .scaleAspectFit
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.scrollToTop(tapGestureRecognizer:)))
+        imageView.isUserInteractionEnabled = true
+        
+        imageView.addGestureRecognizer(tapGestureRecognizer)
+        
         navigationItem.titleView = imageView
         
 //        let searchBtn = UIButton(type: .custom)
