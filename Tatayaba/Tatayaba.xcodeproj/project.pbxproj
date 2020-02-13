@@ -314,6 +314,7 @@
 		D57B970623C4CF6500B4B1EA /* SortTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57B970523C4CF6500B4B1EA /* SortTableViewController.swift */; };
 		D57B970823C4DC2000B4B1EA /* FilterOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57B970723C4DC2000B4B1EA /* FilterOptionsTableViewCell.swift */; };
 		D59AF4D523A8C8D60093EF40 /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59AF4D423A8C8D60093EF40 /* DescriptionTableViewCell.swift */; };
+		D5ACD28E23F586C500F8F37B /* WCLShineButton in Resources */ = {isa = PBXBuildFile; fileRef = D5ACD28D23F586C500F8F37B /* WCLShineButton */; };
 		D5B71207238E1420006BD0DD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B71206238E1420006BD0DD /* SearchViewController.swift */; };
 		D5B71209238E14E0006BD0DD /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B71208238E14E0006BD0DD /* Search.storyboard */; };
 		D5B7120E23903795006BD0DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5B7121023903795006BD0DD /* InfoPlist.strings */; };
@@ -340,19 +341,6 @@
 			remoteInfo = Tatayaba;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		10C62BF123AA901E00562CC0 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -684,6 +672,9 @@
 		D57B970523C4CF6500B4B1EA /* SortTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SortTableViewController.swift; path = ../../Products/Views/SortTableViewController.swift; sourceTree = "<group>"; };
 		D57B970723C4DC2000B4B1EA /* FilterOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		D59AF4D423A8C8D60093EF40 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		D5ACD28D23F586C500F8F37B /* WCLShineButton */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WCLShineButton; sourceTree = "<group>"; };
+		D5ACD28F23F587A600F8F37B /* WCLShineButton.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = WCLShineButton.bundle; path = Tatayaba/Utilities/WCLShineButton/WCLShineButton.bundle; sourceTree = "<group>"; };
+		D5ACD29123F587DB00F8F37B /* WCLShineButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WCLShineButton.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/WCLShineButton-fkeynudslytkrlajykpzcdivdlvm/Build/Products/Debug-iphoneos/WCLShineButton.framework"; sourceTree = "<group>"; };
 		D5B71206238E1420006BD0DD /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D5B71208238E14E0006BD0DD /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		D5B7120F23903795006BD0DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -2251,6 +2242,7 @@
 		847CDE7822CA12EC00E67C8C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D5ACD28D23F586C500F8F37B /* WCLShineButton */,
 				10B4CBC9237336CE0065918D /* Protocols */,
 				109D29E1234A64C60052D01B /* ReverseGeoCoder */,
 				848E89C622CCE520000AA24C /* BaseView */,
@@ -2422,6 +2414,8 @@
 		9CDE61A50DEA5CDA03008907 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D5ACD29123F587DB00F8F37B /* WCLShineButton.framework */,
+				D5ACD28F23F587A600F8F37B /* WCLShineButton.bundle */,
 				A8251C3E16050691EBDFB247 /* Pods_Tatayaba.framework */,
 				02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */,
 				2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */,
@@ -2483,7 +2477,6 @@
 				847CDE3B22C9EE2300E67C8C /* Resources */,
 				D08D80323791471B0F8F2ED8 /* [CP] Embed Pods Frameworks */,
 				10181CB9235F695300220439 /* ShellScript */,
-				10C62BF123AA901E00562CC0 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -2651,6 +2644,7 @@
 				11FB584A231C2147005DA4F0 /* CategoriesBlockCollectionViewCell.xib in Resources */,
 				4CD8B8A6232129D300D25CC3 /* Suppliers.storyboard in Resources */,
 				D5DC603123C1E22E00B13E15 /* SortingReusableCustomView.xib in Resources */,
+				D5ACD28E23F586C500F8F37B /* WCLShineButton in Resources */,
 				11257427233155DF0015C3AD /* Home.storyboard in Resources */,
 				847CDE8822CA19EE00E67C8C /* ProximaNova-Black.ttf in Resources */,
 			);
