@@ -13,7 +13,7 @@ struct FilterAPIClient: APIClient {
 
     var provider = MoyaProvider<MultiTarget>(plugins: [NetworkLoggerPlugin(verbose: true)])
 
-    static let environment: APIEnvironment = .dev2
+    static let environment: APIEnvironment = .production
 
     func getFilteredProduct(parameters: [String: Any], completion: @escaping (APIResult<ProductsResult?, MoyaError>) -> Void) {
         fetch(with: FilterEndpoint.getFilteredProduct(parameters: parameters), completion: completion)

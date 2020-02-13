@@ -14,7 +14,7 @@ struct VersionValidationAPIClient: APIClient {
 
     var provider = MoyaProvider<MultiTarget>(plugins: [NetworkLoggerPlugin(verbose: true)])
 
-    static let environment: APIEnvironment = .dev2
+    static let environment: APIEnvironment = .production
 
     func getVersionValidation(version: String, completion: @escaping (APIResult<[String: String]?, MoyaError>) -> Void) {
         fetch(with: VersionValidationEndpoint.getVersionValidation(version: version), completion: completion)

@@ -15,7 +15,7 @@ struct PaymentAPIClient: APIClient {
 
     var provider = MoyaProvider<MultiTarget>(plugins: [NetworkLoggerPlugin(verbose: true)])
 
-    static let environment: APIEnvironment = .dev2
+    static let environment: APIEnvironment = .production
 
     func getPayments(completion: @escaping (APIResult<PaymentResult?, MoyaError>) -> Void) {
         fetch(with: PaymentEndpoint.getPayments, completion: completion)

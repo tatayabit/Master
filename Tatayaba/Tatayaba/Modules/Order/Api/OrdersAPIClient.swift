@@ -14,7 +14,7 @@ struct OrdersAPIClient: APIClient {
 
     var provider = MoyaProvider<MultiTarget>(plugins: [NetworkLoggerPlugin(verbose: true)])
 
-    static let environment: APIEnvironment = .dev2
+    static let environment: APIEnvironment = .production
 
     func CreateOrder(products: [String: Any], userId: String, userData: [String: Any]?, paymentId: String, oneClickBuy: Bool,code: String, couponType: String, notes:String, completion: @escaping (APIResult<PlaceOrderResult?, MoyaError>) -> Void) {
         fetch(with: OrdersEndpoint.create(products: products, userId: userId, userData: userData, paymentId: paymentId, oneClickBuy: oneClickBuy, code: code, couponType: couponType, notes: notes), completion: completion)

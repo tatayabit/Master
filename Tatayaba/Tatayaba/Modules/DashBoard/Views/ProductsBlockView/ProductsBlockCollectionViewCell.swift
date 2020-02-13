@@ -51,7 +51,7 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         nameLabel.text = product.supplierName == "None" ? "" : product.supplierName
         descriptionLabel.text = product.name
         priceLabel.text = product.price.formattedPrice
-        outOfStockLabel.isHidden = true//product.isInStock
+        outOfStockLabel.isHidden = product.isInStock
         if(product.is_free_delivery == "Y"){
             freeDeliveryLabel.isHidden = false
             freeDeliveryHeightConstraint.constant = 14
@@ -94,7 +94,7 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         nameLabel.text = product.supplierName == "None" ? "" : product.supplierName
         descriptionLabel.text = product.name
         priceLabel.text = product.price.formattedPrice
-        outOfStockLabel.isHidden = true//product.isInStock
+        outOfStockLabel.isHidden = product.isInStock
         if(product.is_free_delivery == "Y"){
             freeDeliveryLabel.isHidden = false
             freeDeliveryHeightConstraint.constant = 14

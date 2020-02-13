@@ -166,7 +166,7 @@ class HomeViewModel {
                             }
                             self.productsBlocks.append(sortedBlock)
                             print(block)
-                            if (self.productsBlocks.count > 9) {
+                            if (self.productsBlocks.count > 7) {
                                 self.productsBlocks = self.arrangeProductsBlocks()
                                 if let newProductsArrived = self.onProductsBlockLoad {
                                     newProductsArrived()
