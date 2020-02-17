@@ -27,7 +27,7 @@ public class MinLengthRule: Rule {
      - parameter message: String of error message.
      - returns: An initialized `MinLengthRule` object, or nil if an object could not be created for some reason that would not result in an exception.
      */
-    public init(length: Int, message : String = "Must be at least %ld characters long"){
+    public init(length: Int, message : String = "Phone number Must be at least %ld characters long"){
         self.DEFAULT_LENGTH = length
         self.message = String(format: message, self.DEFAULT_LENGTH)
     }

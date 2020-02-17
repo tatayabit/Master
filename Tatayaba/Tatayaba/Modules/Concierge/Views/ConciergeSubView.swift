@@ -96,7 +96,7 @@ class ConciergeSubView: UIView, ValidationDelegate {
     
     //MARK:- Swift Validator
     func registerValidator() {
-        validator.registerField(phoneTextField, rules: [RequiredRule(message: "Phone number is required!".localized())])
+        validator.registerField(phoneTextField, rules: [RequiredRule(message: "Phone number is required!".localized()),MinLengthRule(length: 6), PhoneNumberRule(message: "Phone number is required!")])
 //        validator.registerField(customerNameTextField, rules: [RequiredRule(message: "Name is required!")])
 //        validator.registerField(perfumeNameTextField, rules: [RequiredRule(message: "Perfume name is required!")])
     }
