@@ -32,6 +32,9 @@
 "Username or password are invalid"="Username or password are invalid";
 "LoginFailed"= "Login Failed";
 "AcceessDenied"= "Acceess Denied";
+"Phone number Must be at least 6 characters long" = "Phone number Must be at least 6 characters long";
+"Please enter a valid name" = "Please enter a valid name.";
+"Choose Country" = "Choose Country";
 
 // Error
 "Error"="Error";

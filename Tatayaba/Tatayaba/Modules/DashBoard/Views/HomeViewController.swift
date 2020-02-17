@@ -601,6 +601,11 @@ extension HomeViewController: LocationManagerDelegate, CountryViewDelegate {
     func loadCountries() {
         let controller = UIStoryboard(name: "Country", bundle: Bundle.main).instantiateViewController(withIdentifier: "CountryViewController") as! CountryViewController
         controller.delegate = self
+        if #available(iOS 13.0, *) {
+            controller.isModalInPresentation = true
+        } else {
+            // Fallback on earlier versions
+        }
         self.present(controller, animated: true, completion: nil)
 //        navigationController?.pushViewController(controller, animated: false)
     }
