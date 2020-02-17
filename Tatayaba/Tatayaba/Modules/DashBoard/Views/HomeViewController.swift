@@ -601,7 +601,8 @@ extension HomeViewController: LocationManagerDelegate, CountryViewDelegate {
     func loadCountries() {
         let controller = UIStoryboard(name: "Country", bundle: Bundle.main).instantiateViewController(withIdentifier: "CountryViewController") as! CountryViewController
         controller.delegate = self
-        navigationController?.pushViewController(controller, animated: false)
+        self.present(controller, animated: true, completion: nil)
+//        navigationController?.pushViewController(controller, animated: false)
     }
 
     func countrySelected(selectedCountry: Country) {
