@@ -7,13 +7,24 @@
 //
 
 import UIKit
+import FaveButton
+
+func color(_ rgbColor: Int) -> UIColor{
+    return UIColor(
+        red:   CGFloat((rgbColor & 0xFF0000) >> 16) / 255.0,
+        green: CGFloat((rgbColor & 0x00FF00) >> 8 ) / 255.0,
+        blue:  CGFloat((rgbColor & 0x0000FF) >> 0 ) / 255.0,
+        alpha: CGFloat(1.0)
+    )
+}
 
 protocol ProductsBlockCollectionViewCellDelegate: class {
     func didSelectAddToCartCell(indexPath: IndexPath)
     func didSelectOneClickBuy(indexPath: IndexPath)
 }
 
-class ProductsBlockCollectionViewCell: UICollectionViewCell {
+class ProductsBlockCollectionViewCell: UICollectionViewCell, FaveButtonDelegate{
+    
 
     @IBOutlet weak var bannerImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -22,7 +33,7 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var outOfStockLabel: UILabel!
     @IBOutlet weak var freeDeliveryLabel: UILabel!
     @IBOutlet weak var discountPercentageLabel: UILabel!
-    @IBOutlet weak var addToCartButton: UIButton!
+    @IBOutlet weak var addToCartButton: FaveButton!
     
     @IBOutlet weak var discountHeightConstraint: NSLayoutConstraint!
     
@@ -32,13 +43,21 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
     
     var cellBlockName : String = ""
     
+    let colors = [
+        DotColors(first: color(0x7DC2F4), second: color(0xE2264D)),
+        DotColors(first: color(0xF8CC61), second: color(0x9BDFBA)),
+        DotColors(first: color(0xAF90F4), second: color(0x90D1F9)),
+        DotColors(first: color(0xE9A966), second: color(0xF8C852)),
+        DotColors(first: color(0xF68FA7), second: color(0xF6A2B8))
+    ]
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         outOfStockLabel.text = "Out of stock"
         freeDeliveryLabel.text = "free Delivery".localized()
-        
         self.discountPercentageLabel.isHidden = true
+        addToCartButton.setImage(#imageLiteral(resourceName: "Add_to_Cart"), for: .normal)
     }
 
     override func didMoveToSuperview() {
@@ -83,7 +102,9 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         if product.hasOptions {
             addToCartButton.setTitle("OPTIONS...".localized(), for: .normal)
         } else {
-            addToCartButton.setTitle("ADD TO CART".localized(), for: .normal)
+            addToCartButton.setImage(#imageLiteral(resourceName: "Add_to_Cart"), for: .normal)
+            addToCartButton.imageView?.image = #imageLiteral(resourceName: "Add_to_Cart")
+//            addToCartButton.setTitle("ADD TO CART".localized(), for: .normal)
         }
         
         self.layoutIfNeeded()
@@ -128,7 +149,8 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         if product.hasOptions {
             addToCartButton.setTitle("OPTIONS...".localized(), for: .normal)
         } else {
-            addToCartButton.setTitle("ADD TO CART".localized(), for: .normal)
+            addToCartButton.setImage(#imageLiteral(resourceName: "Add_to_Cart"), for: .normal)
+//            addToCartButton.setTitle("ADD TO CART".localized(), for: .normal)
         }
         self.cellBlockName = cellBlockName
         
@@ -141,11 +163,30 @@ class ProductsBlockCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    @IBAction func addToCart2(_ sender: Any) {
+        addToCartButton.sendActions(for: .touchUpInside)
+//        if let delegate = delegate {
+//            delegate.didSelectAddToCartCell(indexPath: self.indexPath)
+//        }
+    }
     @IBAction func oneClickBuyAction(_ sender: UIButton) {
         if let delegate = delegate {
             delegate.didSelectOneClickBuy(indexPath: self.indexPath)
         }
     }
+    
+    func faveButtonDotColors(_ faveButton: FaveButton) -> [DotColors]?{
+           if( faveButton === addToCartButton){
+               return colors
+           }
+           return nil
+       }
+    
+    func faveButton(_ faveButton: FaveButton, didSelected selected: Bool) {
+        print("Action ")
+        addToCartButton.setImage(#imageLiteral(resourceName: "Add_to_Cart"), for: .normal)
+    }
+    
 }
 
 extension Constants {
