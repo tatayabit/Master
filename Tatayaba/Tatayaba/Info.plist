@@ -47,7 +47,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>This app wants to take pictures to use our concierge.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This app wants to use your location to select your country automatically.</string>
+	<string>This app wants to use your location to select your country and display our products in your country.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app wants to use your photos to use our concierge.</string>
 	<key>UIAppFonts</key>
