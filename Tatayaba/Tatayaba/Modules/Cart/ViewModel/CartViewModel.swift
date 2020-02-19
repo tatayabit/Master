@@ -244,6 +244,24 @@ class CartViewModel {
         }
     }
     
+    func updateServerCartWithProduct( product : CartItem ,completion: @escaping (APIResult<UpdateServerCartResponse?, MoyaError>) -> Void) {
+
+        let userId = getUserId()
+        let paymentId = cart.paymentMethod?.paymentId ?? "0"
+
+        cartApiClient.updateServerCart(products: getProductModel(product: product), userId: userId, paymentId: paymentId) { result in
+            switch result {
+            case .success(let response):
+                guard let updateCartResult = response else { return }
+                print(updateCartResult.cart_ids.count)
+
+            case .failure(let error):
+                print("the error \(error)")
+            }
+            completion(result)
+        }
+    }
+    
     func deleteServerCart(){
         let userId = getUserId()
         cartApiClient.deleteAllCart( userId: userId) { result in
@@ -279,7 +297,6 @@ class CartViewModel {
             switch result {
             case .success(let response):
                 guard let getCartResult = response else { return }
-
             case .failure(let error):
                 print("the error \(error)")
             }
@@ -297,7 +314,7 @@ class CartViewModel {
     }
 
     func getProductsModel() -> [String: Any] {
-        let cartItems = cart.cartItemsList()
+        let cartItems = cart.getCartCompareItemsList()
         var productsParms = [String: Any]()
 
         for i in 0...cartItems.count - 1 {
@@ -322,6 +339,25 @@ class CartViewModel {
             
         }
         return productsParms
+    }
+    
+    func getProductModel(product:CartItem) -> [String: Any] {
+        var productParms = [String: Any]()
+        let cartItemX = product
+        var optionsParms = [[String: String]]()
+        if let options = cartItemX.options {
+            if options.count > 0 {
+                optionsParms = getProductOptions(cartOptions: options)
+            }
+        }
+        var productPP = [String: Any]()
+        productPP["product_id"] = cartItemX.productId
+        productPP["amount"] = "\(cartItemX.count)"
+        if optionsParms.count > 0 {
+            productPP["product_options"] = optionsParms
+        }
+        productParms["\(cartItemX.productId)"] = productPP
+        return productParms
     }
     
     func getProductOptions(cartOptions: [CartItemOptions]) -> [[String: String]] {

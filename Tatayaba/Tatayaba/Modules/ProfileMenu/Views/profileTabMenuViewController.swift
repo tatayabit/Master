@@ -221,6 +221,7 @@ extension profileTabMenuViewController{
                  self.PrivacyView()
             }else  if indextitle  == profile.logout {
                 Customer.shared.logout()
+                Cart.shared.resetLocal()
                 self.setWelcomeHeader()
                 self.loadLoginVC()
 

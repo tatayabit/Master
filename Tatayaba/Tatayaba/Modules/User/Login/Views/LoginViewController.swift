@@ -65,6 +65,7 @@ class LoginViewController: BaseViewController, ValidationDelegate {
             switch result {
             case .success(let loginResult):
                 print(loginResult!)
+                Cart.shared.syncCart()
                 self.moveToNextView()
             case .failure(let error):
                 print("the error \(error)")

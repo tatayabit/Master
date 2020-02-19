@@ -16,7 +16,6 @@ class CartItem: Codable {
     var productName: String
     var options: [CartItemOptions]?
     var count: Int = 0
-
     private let maxCount = 99
     private let minCount = 0
 
@@ -26,6 +25,7 @@ class CartItem: Codable {
         self.increaseCount(by: quantity)
         self.options = options
     }
+    
 
     func increaseCount(by value: Int) {
         if count < maxCount {

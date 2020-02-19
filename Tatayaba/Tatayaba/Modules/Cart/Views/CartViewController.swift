@@ -65,6 +65,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         viewModel.delegate = self
         cartTableview.separatorColor = .clear
         NotificationCenter.default.addObserver(self, selector: #selector(resetAllData), name: NSNotification.Name(resetVCNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
 
     }
     
@@ -78,6 +79,11 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         viewModel.setOneClickBuy(isOneClickBuy: (buyingWayType > 0))
         calculateTotal()
         loadTaxAndShipping()
+    }
+     @objc func refresh() {
+
+        self.cartTableview.reloadData() // a refresh the tableView.
+
     }
     
     func setupTabBar() {

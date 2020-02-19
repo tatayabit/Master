@@ -178,8 +178,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     fileprivate func loadCartData() {
-        Cart.shared.loadDataFromCaching()
-        Cart.shared.loadDataFromServer()
+        if Customer.shared.loggedin {
+            Cart.shared.loadDataFromServer()
+        }else{
+            Cart.shared.loadDataFromCaching()
+        }
+        
     }
     
     

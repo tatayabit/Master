@@ -114,7 +114,8 @@ extension CartEndpoint: TargetType {
         case .staging: authKey = Keys.Authorizations.staging
         case .dev3: authKey = Keys.Authorizations.dev3
         }
-        return ["Content-type": "application/json",
+        return [
+            "Content-type": "application/json",
                 "authorization": authKey//"Basic ZGUyQHRhdGF5YWIuY29tOkU5NzBBU3NxMGU5R21TSjJFWDBCTEd2c2tPMlVGODQx=="
         ]
     }
