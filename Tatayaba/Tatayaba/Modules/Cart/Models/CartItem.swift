@@ -19,10 +19,11 @@ class CartItem: Codable {
     private let maxCount = 99
     private let minCount = 0
 
-    init(productId: String = "" , productName: String = "", quantity: Int = 1, options: [CartItemOptions]? = nil) {
+    init(productId: String = "" , productName: String = "",count: Int = 1, quantity: Int = 1, options: [CartItemOptions]? = nil) {
         self.productId = productId
         self.productName = productName
         self.increaseCount(by: quantity)
+        self.count = count
         self.options = options
     }
     

@@ -82,6 +82,19 @@ class Cart {
         })
     }
     
+    func updateProductamountAtServerCart( product : CartItem, productInCart:String){
+        
+        CartViewModel.shared.updateProductamountAtServerCart(product: product, productInCart: productInCart, completion: { result in
+            switch result {
+            case .success(let response):
+                guard let placeOrderResult = response else { return }
+                print(placeOrderResult)
+            case .failure(let error):
+                print("the error \(error)")
+            }
+        })
+    }
+    
     func callUpdateServerCart(){
         CartViewModel.shared.updateServerCart() { result in
                 switch result {
@@ -106,6 +119,7 @@ class Cart {
             }
         }
     }
+    
     func deleteProductFromoServerCart(product:Product){
         CartViewModel.shared.deleteItemInServerCart(cartId: product.productInCart) { result in
             switch result {
@@ -159,7 +173,7 @@ class Cart {
     func setItemsArr(products:[Product]) -> [CartItem]{
         var tempCartItems = [CartItem]()
         for product in products {
-            let cartItem = CartItem(productId: String(product.identifier), productName: product.name, options: getCartItemOptions(options: product.productOptions))
+            let cartItem = CartItem(productId: String(product.identifier), productName: product.name,count:product.amount, options: getCartItemOptions(options: product.productOptions))
             tempCartItems.append(cartItem)
         }
         return tempCartItems
@@ -186,12 +200,18 @@ class Cart {
 
     func increaseCount(cartItem: CartItem, quantity: Int) {
         cartItem.increaseCount(by: quantity)
+        if Customer.shared.loggedin {
+            updateProductamountAtServerCart(product: cartItem, productInCart: getProductInCart(item: cartItem))
+        }
         updateTabBarCount()
         saveCartToCaching()
     }
 
     func decreaseCount(cartItem: CartItem) {
         cartItem.decreaseCount(by: 1)
+        if Customer.shared.loggedin {
+            updateProductamountAtServerCart(product: cartItem, productInCart: getProductInCart(item: cartItem))
+        }
         updateTabBarCount()
         saveCartToCaching()
     }
@@ -210,6 +230,13 @@ class Cart {
         }
     }
     
+    func getProductInCart(item:CartItem)->String{
+        var productInCart :String
+        let indexOfItem = cartItemsArr.firstIndex(where: {$0 === item})!
+        let product = self.productsArr[indexOfItem]
+        productInCart = product.productInCart
+        return productInCart
+    }
     //MARK:- Calculate Price
     func calculateSubTotal() -> Float {
         var total: Float = 0

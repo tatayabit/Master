@@ -392,7 +392,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             let maxQuantity = Int(cartProduct.0.maxQuantity) ?? 0
             let stockQuantity = cartProduct.0.amount
             let currentQuantity = cell.quantityCoutLabel.text ?? "0"
-            var max = (stockQuantity > maxQuantity) ? maxQuantity : stockQuantity
+            var max = (stockQuantity < maxQuantity) ? maxQuantity : stockQuantity
 
             if cartProduct.0.isOutOfStockActionB {
                 max = maxQuantity

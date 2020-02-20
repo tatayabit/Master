@@ -261,6 +261,21 @@ class CartViewModel {
             completion(result)
         }
     }
+    func updateProductamountAtServerCart( product : CartItem, productInCart:String,completion: @escaping (APIResult<UpdateServerCartResponse?, MoyaError>) -> Void) {
+        let productId = product.productId
+        let amount = String(product.count)
+        let userId = getUserId()
+        cartApiClient.updateProductamountAtServerCart(productInCart: productInCart, product_id: productId, amount: amount, userId: userId) { result in
+            switch result {
+            case .success(let response):
+                guard let updateCartResult = response else { return }
+                print(updateCartResult.cart_ids.count)
+            case .failure(let error):
+                print("the error \(error)")
+            }
+            completion(result)
+        }
+    }
     
     func deleteServerCart(){
         let userId = getUserId()
@@ -291,7 +306,6 @@ class CartViewModel {
     }
     
     func getServerCart( completion: @escaping (APIResult<CartContentResponse?, MoyaError>) -> Void) {
-
         let userId = getUserId()
         cartApiClient.getServerCart( userId: userId) { result in
             switch result {
