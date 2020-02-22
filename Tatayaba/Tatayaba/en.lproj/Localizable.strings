@@ -69,6 +69,7 @@
 "Your Notes" = "Your Notes ...";
 "ForgetFailed" = "Forget Password Failed";
 "ForgetSuccess" = "Ok";
+"Terms" = "By placing this order, I agree to the terms and conditions \nCustomer data provided will be used for order processing";
 
 // Product
 "OPTIONS..." = "ADD TO CART...";

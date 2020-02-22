@@ -322,6 +322,8 @@
 		D5C602F023A2177400083E3C /* CartContentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C602EF23A2177400083E3C /* CartContentResponse.swift */; };
 		D5DC602B23C1E13A00B13E15 /* SortingReusableCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DC602A23C1E13A00B13E15 /* SortingReusableCustomView.swift */; };
 		D5DC603123C1E22E00B13E15 /* SortingReusableCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5DC603023C1E22E00B13E15 /* SortingReusableCustomView.xib */; };
+		D5E6E66423FEADA7009CC0F5 /* TermsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E6E66223FEADA7009CC0F5 /* TermsTableViewCell.swift */; };
+		D5E6E66523FEADA7009CC0F5 /* TermsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E6E66323FEADA7009CC0F5 /* TermsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -682,6 +684,8 @@
 		D5C602EF23A2177400083E3C /* CartContentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartContentResponse.swift; sourceTree = "<group>"; };
 		D5DC602A23C1E13A00B13E15 /* SortingReusableCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingReusableCustomView.swift; sourceTree = "<group>"; };
 		D5DC603023C1E22E00B13E15 /* SortingReusableCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortingReusableCustomView.xib; sourceTree = "<group>"; };
+		D5E6E66223FEADA7009CC0F5 /* TermsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsTableViewCell.swift; sourceTree = "<group>"; };
+		D5E6E66323FEADA7009CC0F5 /* TermsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsTableViewCell.xib; sourceTree = "<group>"; };
 		E0F8BF293BFC39D47FD4C2EB /* Pods-Tatayaba.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tatayaba.debug.xcconfig"; path = "Target Support Files/Pods-Tatayaba/Pods-Tatayaba.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1553,6 +1557,8 @@
 				1113A79A2329698200FAAC7F /* CheckoutAddressTableViewCell.xib */,
 				D5643AA3239E761E00885FD3 /* FinancialTableViewCell.swift */,
 				D5643AA4239E761E00885FD3 /* FinancialTableViewCell.xib */,
+				D5E6E66223FEADA7009CC0F5 /* TermsTableViewCell.swift */,
+				D5E6E66323FEADA7009CC0F5 /* TermsTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2581,6 +2587,7 @@
 				847CDE4E22C9EE2300E67C8C /* LaunchScreen.storyboard in Resources */,
 				27AB3014236AD40300CFBF59 /* Cairo-Regular.ttf in Resources */,
 				847CDE8922CA19EE00E67C8C /* ProximaNovaT-Thin.ttf in Resources */,
+				D5E6E66523FEADA7009CC0F5 /* TermsTableViewCell.xib in Resources */,
 				4CEDFF3F231A69DD001385DD /* Myriad Pro Regular.ttf in Resources */,
 				11257433233159B20015C3AD /* Concierge.storyboard in Resources */,
 				848E89CD22CCEAAC000AA24C /* FeatureProductCollectionViewCell.xib in Resources */,
@@ -3002,6 +3009,7 @@
 				116C938E22F0954500921893 /* Payment.swift in Sources */,
 				2767CB96236472290042F533 /* OrderTrackCell.swift in Sources */,
 				D59AF4D523A8C8D60093EF40 /* DescriptionTableViewCell.swift in Sources */,
+				D5E6E66423FEADA7009CC0F5 /* TermsTableViewCell.swift in Sources */,
 				2767CB97236472290042F533 /* OrderProductsCell.swift in Sources */,
 				11FB5849231C2147005DA4F0 /* CategoriesBlockCollectionViewCell.swift in Sources */,
 				8407BAB922E86205001F2C2A /* OrdersViewController.swift in Sources */,
