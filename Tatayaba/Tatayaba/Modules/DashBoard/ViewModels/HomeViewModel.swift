@@ -16,8 +16,8 @@ class HomeViewModel {
 
 
     //let productIdList = ["268","270","305", "267", "297", "248", "265"]
-//    let productIdList = ["314","320","315", "316", "317", "318", "319"]
-    let productIdList = ["268","293","270","297", "248", "265", "272", "260","351","352"]
+    let productIdList = ["314","327","317","328","316", "315", "329","320", "318", "319"]
+//    let productIdList = ["268","327","270","328", "248", "265", "272", "260","351","352"]
     var block_Id = ""
     var categoriesList = [Category]()
     var suppliersList = [Supplier]()
@@ -166,7 +166,7 @@ class HomeViewModel {
                             }
                             self.productsBlocks.append(sortedBlock)
                             print(block)
-                            if (self.productsBlocks.count > 7) {
+                            if (self.productsBlocks.count > 9) {
                                 self.productsBlocks = self.arrangeProductsBlocks()
                                 if let newProductsArrived = self.onProductsBlockLoad {
                                     newProductsArrived()
@@ -290,25 +290,25 @@ class HomeViewModel {
         var tempProductsBlocks = [block0,block1,block2,block3,block4,block5,block6,block7,block8,block9]
         for block in self.productsBlocks {
             switch block.blockId {
-            case "268":
+            case "314":
                 tempProductsBlocks[0] = block
-            case "352":
+            case "327":
                 tempProductsBlocks[1] = block
-            case "248":
+            case "317":
                 tempProductsBlocks[2] = block
-            case "351":
+            case "328":
                 tempProductsBlocks[3] = block
-            case "297":
+            case "316":
                 tempProductsBlocks[4] = block
-            case "270":
+            case "315":
                 tempProductsBlocks[5] = block
-            case "293":
+            case "329":
                 tempProductsBlocks[6] = block
-            case "260":
+            case "320":
                 tempProductsBlocks[7] = block
-            case "265":
+            case "318":
                 tempProductsBlocks[8] = block
-            case "272":
+            case "319":
                 tempProductsBlocks[9] = block
             default:
                 print("Error in arrangment of ProductsBlocks")
