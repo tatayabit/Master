@@ -32,8 +32,9 @@
 "Username or password are invalid"="البريد الالكتروني أو كلمة المرور غير صحيحة";
 "LoginFailed"= "خطا في الدخول";
 "AcceessDenied"= "الدخول ممنوع";
-
-
+"Phone number Must be at least 6 characters long" = "رقم الجوال لا يجب أن يكون آقل من ٦ أرقام";
+"Please enter a valid name" = ".يرجي ادخال الإسم صحيحاً";
+"Choose Country" = "اختر بلداً";
 // Error
 "Error"="خطأ";
 "Success" = "حسنا";
@@ -67,7 +68,8 @@
 "Your Notes" = "ملاحظاتك ...";
 "ForgetFailed" = "خطا في استرجاع الرقم السري";
 "ForgetSuccess" = "حسنا";
-
+"Terms" = "بالإستمرار في وضع طلبي فأنا اوافق علي الشروط والأحكام  \nسيتم استخدام بيانات العميل المدخلة لإتمام إجراءات الطلب ";
+"TermsCondition" = "الشروط والأحكام";
 // Product
 "OPTIONS..." = "أضف إلي السلة...";
 "ADD TO CART" = "أضف إلى السلة";
@@ -179,8 +181,8 @@ alertValaidationMessage = "يجب عليك الترقية ، الإصدار ال
 "Pending" = "قيد الانتظار";
 "Order #:" = " الطلب #:";
 "Ordered on:" = "تم الطلب في :";
-"Your Country is not supported" = "للأسف لا يوجد وسيلة شحن متاحة حالياً إلى منطقتكم.";
-"Please go to Countries list and select available country" = "يرجى الاتصال بنا وإن شاء الله سوف نعمل على معالجة ذلك في أقرب وقت. آو اختر دولة أخري";
+"Your Country is not supported" = "دولتك غير مدعومة.";
+"Please go to Countries list and select available country" = "يرجى الدخول إلى قائمة الدول واختيار بلدك.";
 
 "amount" = "الكمية";
 "Photo Album" = "إلبوم الصور";

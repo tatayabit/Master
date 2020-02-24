@@ -322,6 +322,8 @@
 		D5C602F023A2177400083E3C /* CartContentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C602EF23A2177400083E3C /* CartContentResponse.swift */; };
 		D5DC602B23C1E13A00B13E15 /* SortingReusableCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DC602A23C1E13A00B13E15 /* SortingReusableCustomView.swift */; };
 		D5DC603123C1E22E00B13E15 /* SortingReusableCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5DC603023C1E22E00B13E15 /* SortingReusableCustomView.xib */; };
+		D5E6E66423FEADA7009CC0F5 /* TermsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E6E66223FEADA7009CC0F5 /* TermsTableViewCell.swift */; };
+		D5E6E66523FEADA7009CC0F5 /* TermsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E6E66323FEADA7009CC0F5 /* TermsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -340,19 +342,6 @@
 			remoteInfo = Tatayaba;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		10C62BF123AA901E00562CC0 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TatayabaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -684,6 +673,8 @@
 		D57B970523C4CF6500B4B1EA /* SortTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SortTableViewController.swift; path = ../../Products/Views/SortTableViewController.swift; sourceTree = "<group>"; };
 		D57B970723C4DC2000B4B1EA /* FilterOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		D59AF4D423A8C8D60093EF40 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		D5ACD28F23F587A600F8F37B /* WCLShineButton.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = WCLShineButton.bundle; path = Tatayaba/Utilities/WCLShineButton/WCLShineButton.bundle; sourceTree = "<group>"; };
+		D5ACD29123F587DB00F8F37B /* WCLShineButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WCLShineButton.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/WCLShineButton-fkeynudslytkrlajykpzcdivdlvm/Build/Products/Debug-iphoneos/WCLShineButton.framework"; sourceTree = "<group>"; };
 		D5B71206238E1420006BD0DD /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D5B71208238E14E0006BD0DD /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		D5B7120F23903795006BD0DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -693,6 +684,8 @@
 		D5C602EF23A2177400083E3C /* CartContentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartContentResponse.swift; sourceTree = "<group>"; };
 		D5DC602A23C1E13A00B13E15 /* SortingReusableCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingReusableCustomView.swift; sourceTree = "<group>"; };
 		D5DC603023C1E22E00B13E15 /* SortingReusableCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortingReusableCustomView.xib; sourceTree = "<group>"; };
+		D5E6E66223FEADA7009CC0F5 /* TermsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsTableViewCell.swift; sourceTree = "<group>"; };
+		D5E6E66323FEADA7009CC0F5 /* TermsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsTableViewCell.xib; sourceTree = "<group>"; };
 		E0F8BF293BFC39D47FD4C2EB /* Pods-Tatayaba.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tatayaba.debug.xcconfig"; path = "Target Support Files/Pods-Tatayaba/Pods-Tatayaba.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1564,6 +1557,8 @@
 				1113A79A2329698200FAAC7F /* CheckoutAddressTableViewCell.xib */,
 				D5643AA3239E761E00885FD3 /* FinancialTableViewCell.swift */,
 				D5643AA4239E761E00885FD3 /* FinancialTableViewCell.xib */,
+				D5E6E66223FEADA7009CC0F5 /* TermsTableViewCell.swift */,
+				D5E6E66323FEADA7009CC0F5 /* TermsTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2422,6 +2417,8 @@
 		9CDE61A50DEA5CDA03008907 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D5ACD29123F587DB00F8F37B /* WCLShineButton.framework */,
+				D5ACD28F23F587A600F8F37B /* WCLShineButton.bundle */,
 				A8251C3E16050691EBDFB247 /* Pods_Tatayaba.framework */,
 				02806547E03BD25116F399BC /* Pods_TatayabaTests.framework */,
 				2B0B35C2BAB55741F0F9E250 /* Pods_TatayabaUITests.framework */,
@@ -2483,7 +2480,6 @@
 				847CDE3B22C9EE2300E67C8C /* Resources */,
 				D08D80323791471B0F8F2ED8 /* [CP] Embed Pods Frameworks */,
 				10181CB9235F695300220439 /* ShellScript */,
-				10C62BF123AA901E00562CC0 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -2591,6 +2587,7 @@
 				847CDE4E22C9EE2300E67C8C /* LaunchScreen.storyboard in Resources */,
 				27AB3014236AD40300CFBF59 /* Cairo-Regular.ttf in Resources */,
 				847CDE8922CA19EE00E67C8C /* ProximaNovaT-Thin.ttf in Resources */,
+				D5E6E66523FEADA7009CC0F5 /* TermsTableViewCell.xib in Resources */,
 				4CEDFF3F231A69DD001385DD /* Myriad Pro Regular.ttf in Resources */,
 				11257433233159B20015C3AD /* Concierge.storyboard in Resources */,
 				848E89CD22CCEAAC000AA24C /* FeatureProductCollectionViewCell.xib in Resources */,
@@ -2752,6 +2749,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Tatayaba/Pods-Tatayaba-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FaveButton/FaveButton.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
@@ -2768,6 +2766,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FaveButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
@@ -3010,6 +3009,7 @@
 				116C938E22F0954500921893 /* Payment.swift in Sources */,
 				2767CB96236472290042F533 /* OrderTrackCell.swift in Sources */,
 				D59AF4D523A8C8D60093EF40 /* DescriptionTableViewCell.swift in Sources */,
+				D5E6E66423FEADA7009CC0F5 /* TermsTableViewCell.swift in Sources */,
 				2767CB97236472290042F533 /* OrderProductsCell.swift in Sources */,
 				11FB5849231C2147005DA4F0 /* CategoriesBlockCollectionViewCell.swift in Sources */,
 				8407BAB922E86205001F2C2A /* OrdersViewController.swift in Sources */,
@@ -3291,7 +3291,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Tatayaba/TATAYAB - تطيّب.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
@@ -3314,7 +3314,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Tatayaba/TATAYAB - تطيّب.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
