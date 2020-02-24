@@ -30,7 +30,7 @@ class OrderTableViewCell: UITableViewCell {
     func configure(order: OrderModel, indexPath: IndexPath) {
         self.indexPath = indexPath
         self.orderIdLabel.text = "# \(order.identifier)"
-        self.totalPriceLabel.text = order.totalPrice.formattedPrice
+        self.totalPriceLabel.text = order.totalPrice.formattedKWDPrice
         let orderStampDouble = Double(order.timestamp)
         let timeInterval = TimeInterval(orderStampDouble ?? 0.0)
         self.timeLabel.text = Date(timeIntervalSince1970: timeInterval).toString(dateFormat: "yyyy-MM-dd HH:mm:ss")

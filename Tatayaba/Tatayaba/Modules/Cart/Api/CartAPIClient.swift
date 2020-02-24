@@ -14,7 +14,7 @@ struct CartAPIClient: APIClient {
     
     var provider = MoyaProvider<MultiTarget>(plugins: [NetworkLoggerPlugin(verbose: true)])
     
-    static let environment: APIEnvironment = .production
+    static let environment: APIEnvironment = .dev3
     
     func applyCoupon(parameters: [String: Any], completion: @escaping (APIResult<CouponResponse?, MoyaError>) -> Void) {
            fetch(with: CartEndpoint.applyCoupon(parameters: parameters), completion: completion)
@@ -37,8 +37,8 @@ struct CartAPIClient: APIClient {
     func getServerCart(userId: String, completion: @escaping (APIResult<CartContentResponse?, MoyaError>) -> Void) {
            fetch(with: CartEndpoint.getServerCart(userId: userId), completion: completion)
            }
-    func getTaxAndShipping(countryCode: String, completion: @escaping (APIResult<TaxAndShippingResponse?, MoyaError>) -> Void) {
-        fetch(with: CartEndpoint.getTaxAndShipping(countryCode: countryCode), completion: completion)
+    func getTaxAndShipping(countryCode: String,productsID:String, completion: @escaping (APIResult<TaxAndShippingResponse?, MoyaError>) -> Void) {
+        fetch(with: CartEndpoint.getTaxAndShipping(countryCode: countryCode, productsID: productsID), completion: completion)
     }
     
     func getPricesWithUpdatedCurrency(parameters: [String: Any], completion: @escaping (APIResult<ConvertedCurrency?, MoyaError>) -> Void) {

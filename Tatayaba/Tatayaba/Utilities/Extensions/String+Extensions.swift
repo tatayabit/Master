@@ -23,6 +23,16 @@ extension String {
         return String(format: "%.\(decimals)f \(CurrencySettings.shared.currentCurrency?.currencyCode ?? "KD")", priceFloat ?? "0.000 \(CurrencySettings.shared.currentCurrency?.currencyCode ?? "KD")")
     }
     
+    var formattedKWDPrice: String {
+           let priceFloat = Float(self)
+           var decimals = 2
+           if let currency = CurrencySettings.shared.currentCurrency {
+               decimals = Int(currency.decimals) ?? 2
+           }
+
+           return String(format: "%.\(decimals)f \("KWD")", priceFloat ?? "0.000 \("KWD")")
+       }
+    
     func stripOutHtml() -> String {
         do {
             guard let data = self.data(using: .unicode) else {

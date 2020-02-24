@@ -45,6 +45,9 @@ struct DeeplinkHandler {
                 case DlType.product.rawValue:
                     print("type: \(DlType.product.rawValue)")
                     return DeepLinkModel(type: .product, id: id, title: title)
+                case DlType.supplier.rawValue:
+                print("type: \(DlType.product.rawValue)")
+                return DeepLinkModel(type: .supplier, id: id, title: title)
                 default:
                     print("type: unknown")
                 }

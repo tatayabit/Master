@@ -55,7 +55,7 @@ extension OrderDetailsViewController: UITableViewDataSource, UITableViewDelegate
                 cell.orderDate.text = "\("Ordered on:".localized()) \(date)"
             }
             cell.trackingID.text = order.paymentInfo?.trackId
-            cell.orderValue.text = "\(order.totalPrice)".formattedPrice
+            cell.orderValue.text = "\(order.totalPrice)".formattedKWDPrice
             return cell
         }
 //        else if indexPath.row == 1 {

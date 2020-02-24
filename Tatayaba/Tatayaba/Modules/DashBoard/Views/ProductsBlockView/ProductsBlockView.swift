@@ -87,7 +87,7 @@ class ProductsBlockView: UIView, UICollectionViewDelegate, UICollectionViewDataS
             guard let block = block else { return }
             let product = block.products[indexPath.row].fullDetails
             if product.hasOptions {
-                delegate.didSelectProduct(at: indexPath, block_Id: "")
+                delegate.didSelectProduct(at: indexPath, block_Id: block.blockId)
             } else {
                 delegate.didAddToCart(product: product)
             }

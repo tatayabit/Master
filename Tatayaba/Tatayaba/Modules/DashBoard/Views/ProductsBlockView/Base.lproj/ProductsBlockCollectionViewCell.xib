@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -70,13 +70,14 @@
                             <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="one click buy"/>
                         </userDefinedRuntimeAttributes>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJx-Wu-3a2">
-                        <rect key="frame" x="151" y="209" width="40" height="40"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJx-Wu-3a2" customClass="FaveButton" customModule="FaveButton">
+                        <rect key="frame" x="140" y="205" width="40" height="40"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="13Y-db-ZCO"/>
                             <constraint firstAttribute="width" constant="40" id="rlZ-GV-pPh"/>
                         </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="4"/>
                         <state key="normal" image="Add_to_Cart">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
@@ -87,6 +88,13 @@
                         </userDefinedRuntimeAttributes>
                         <connections>
                             <action selector="addToCartAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="lbX-Hp-acW"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaF-RF-NE2">
+                        <rect key="frame" x="140" y="205" width="40" height="40"/>
+                        <state key="normal" image="Add_to_Cart"/>
+                        <connections>
+                            <action selector="addToCart2:" destination="gTV-IL-0wX" eventType="touchUpInside" id="n4d-Lh-YP1"/>
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ndg-qA-zgg">
@@ -167,16 +175,20 @@
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="lJx-Wu-3a2" firstAttribute="bottom" secondItem="Ndg-qA-zgg" secondAttribute="bottom" constant="5" id="0yt-mV-nYP"/>
+                <constraint firstItem="lJx-Wu-3a2" firstAttribute="bottom" secondItem="Ndg-qA-zgg" secondAttribute="bottom" constant="1" id="0yt-mV-nYP"/>
+                <constraint firstItem="lJx-Wu-3a2" firstAttribute="leading" secondItem="XaF-RF-NE2" secondAttribute="leading" id="2jy-OX-Trg"/>
+                <constraint firstItem="lJx-Wu-3a2" firstAttribute="trailing" secondItem="XaF-RF-NE2" secondAttribute="trailing" id="6Bx-cM-dpo"/>
                 <constraint firstItem="lJx-Wu-3a2" firstAttribute="top" secondItem="H7V-tf-fQL" secondAttribute="bottom" constant="2" id="ENE-ld-QZz"/>
-                <constraint firstItem="lJx-Wu-3a2" firstAttribute="leading" secondItem="H7V-tf-fQL" secondAttribute="trailing" constant="8" id="FYb-J2-8ch"/>
+                <constraint firstItem="lJx-Wu-3a2" firstAttribute="leading" secondItem="H7V-tf-fQL" secondAttribute="trailing" constant="-3" id="FYb-J2-8ch"/>
                 <constraint firstItem="P5I-jM-puR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="Ljt-Oo-7wO"/>
                 <constraint firstItem="5M2-iy-DXo" firstAttribute="centerX" secondItem="Ndg-qA-zgg" secondAttribute="centerX" id="Lq7-VC-hd2"/>
                 <constraint firstItem="5M2-iy-DXo" firstAttribute="centerY" secondItem="Ndg-qA-zgg" secondAttribute="centerY" id="M7s-I7-EFc"/>
                 <constraint firstItem="hOq-pl-Bgm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="Mg1-U9-yWw"/>
-                <constraint firstItem="lJx-Wu-3a2" firstAttribute="leading" secondItem="hOq-pl-Bgm" secondAttribute="trailing" constant="8" id="OKf-Xh-7TN"/>
+                <constraint firstItem="lJx-Wu-3a2" firstAttribute="leading" secondItem="hOq-pl-Bgm" secondAttribute="trailing" constant="-3" id="OKf-Xh-7TN"/>
                 <constraint firstItem="Ndg-qA-zgg" firstAttribute="bottom" secondItem="rcq-m0-cLY" secondAttribute="bottom" constant="-2" id="OMH-P7-s7A"/>
+                <constraint firstItem="lJx-Wu-3a2" firstAttribute="top" secondItem="XaF-RF-NE2" secondAttribute="top" id="OXG-PJ-gh4"/>
                 <constraint firstItem="rcq-m0-cLY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="3" id="Op9-JS-iAF"/>
+                <constraint firstItem="lJx-Wu-3a2" firstAttribute="bottom" secondItem="XaF-RF-NE2" secondAttribute="bottom" id="SKd-rn-KHa"/>
                 <constraint firstItem="uau-dH-D7f" firstAttribute="top" secondItem="P5I-jM-puR" secondAttribute="bottom" constant="4" id="SUx-eF-Bex"/>
                 <constraint firstItem="Ndg-qA-zgg" firstAttribute="trailing" secondItem="rcq-m0-cLY" secondAttribute="trailing" constant="-2" id="UFt-wk-jrL"/>
                 <constraint firstItem="5bD-Qe-4T2" firstAttribute="top" secondItem="cgI-pV-f1l" secondAttribute="bottom" id="UUM-bL-YAH"/>
@@ -191,7 +203,7 @@
                 <constraint firstItem="cgI-pV-f1l" firstAttribute="top" secondItem="wdI-c6-iOC" secondAttribute="bottom" constant="1" id="h07-ih-lgY"/>
                 <constraint firstAttribute="bottom" secondItem="rcq-m0-cLY" secondAttribute="bottom" constant="3" id="kKf-np-foP"/>
                 <constraint firstItem="H7V-tf-fQL" firstAttribute="top" secondItem="rcq-m0-cLY" secondAttribute="bottom" constant="-23" id="oXQ-mn-fvD"/>
-                <constraint firstItem="Ndg-qA-zgg" firstAttribute="leading" secondItem="lJx-Wu-3a2" secondAttribute="trailing" constant="-5" id="plK-Ct-Fkb"/>
+                <constraint firstItem="Ndg-qA-zgg" firstAttribute="leading" secondItem="lJx-Wu-3a2" secondAttribute="trailing" constant="6" id="plK-Ct-Fkb"/>
                 <constraint firstItem="H7V-tf-fQL" firstAttribute="top" secondItem="hOq-pl-Bgm" secondAttribute="bottom" constant="3" id="qYt-Xi-Fti"/>
                 <constraint firstItem="rcq-m0-cLY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="rsW-Bf-fGr"/>
                 <constraint firstItem="5bD-Qe-4T2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="toG-Fh-NLP"/>

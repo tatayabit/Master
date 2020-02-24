@@ -10,7 +10,7 @@ import Moya
 
 enum CartEndpoint {
     case applyCoupon(parameters: [String: Any])
-    case getTaxAndShipping(countryCode: String)
+    case getTaxAndShipping(countryCode: String,productsID: String)
     case getPricesWithUpdatedCurrency(parameters: [String: Any])
     case updateServerCart(products: [String: Any], userId: String, paymentId: String)
     case deleteAllCart(userId: String)
@@ -22,7 +22,7 @@ enum CartEndpoint {
 
 extension CartEndpoint: TargetType {
     var environmentBaseURL: String {
-        switch UserAPIClient.environment {
+        switch CartAPIClient.environment {
         case .production: return BaseUrls.production
         case .dev2: return BaseUrls.dev2
         case .staging: return BaseUrls.staging
@@ -78,9 +78,16 @@ extension CartEndpoint: TargetType {
         case .applyCoupon(let parameters):
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
             
-        case .getTaxAndShipping:
-            return .requestParameters(parameters: [ "country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw"
-                ], encoding: URLEncoding.queryString)
+
+        return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        case .getTaxAndShipping(let countryCode, let productsID):
+            //return .requestParameters(parameters: parameters, encoding: StringArrayUrlEncoding())
+            let params = [
+                "country_code": countryCode,
+                "product_ids":productsID
+            ] as [String : Any]
+            print(params)
+            return .requestParameters(parameters: params, encoding: StringArrayUrlEncoding())
             
         case .getPricesWithUpdatedCurrency(let parameters):
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)

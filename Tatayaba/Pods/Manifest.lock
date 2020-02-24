@@ -3,6 +3,7 @@ PODS:
   - Crashlytics (3.14.0):
     - Fabric (~> 1.10.2)
   - Fabric (1.10.2)
+  - FaveButton (3.2.1)
   - Firebase/Analytics (6.10.0):
     - Firebase/Core
   - Firebase/Core (6.10.0):
@@ -108,6 +109,7 @@ PODS:
 DEPENDENCIES:
   - Crashlytics (~> 3.14.0)
   - Fabric (~> 1.10.2)
+  - FaveButton
   - Firebase/Analytics
   - Firebase/DynamicLinks
   - Firebase/Messaging
@@ -144,6 +146,7 @@ SPEC REPOS:
     - SwiftKeychainWrapper
   trunk:
     - Alamofire
+    - FaveButton
     - FirebaseAnalyticsInterop
     - FirebaseDynamicLinks
     - FirebaseMessaging
@@ -166,6 +169,7 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
+  FaveButton: 93cfebf6030336fa7653fad2068c3152ed668b39
   Firebase: 5e6b7b12bf9adb90986688edc06b156c37e109cd
   FirebaseAnalytics: 0e3ecff2c5d86070f7d4325e21f1edabfbd558dc
   FirebaseAnalyticsInterop: d48b6ab67bcf016a05e55b71fc39c61c0cb6b7f3
@@ -192,6 +196,6 @@ SPEC CHECKSUMS:
   SwiftKeychainWrapper: 82c4c02cdc36f9a24f7edfcaab3e336401caa1a1
   SwiftValidator: 58c155c8ae8421ef716a96e52a49984dd54c700c
 
-PODFILE CHECKSUM: 224cf655f40d61b1236a5fd553de92470a0683ea
+PODFILE CHECKSUM: 01050bb6dbe3fc12dd993933a843303fd98539ea
 
 COCOAPODS: 1.8.4

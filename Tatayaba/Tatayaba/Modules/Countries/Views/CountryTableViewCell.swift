@@ -32,7 +32,7 @@ class CountryTableViewCell: UITableViewCell {
     }
     
     func configureCurrency(currency: Currency) {
-        self.country_lbl.text = currency.descriptionField
+        self.country_lbl.text = currency.currencyCode
         if let selectedCurrency = CurrencySettings.shared.currentCurrency {
             if selectedCurrency.descriptionField.lowercased() == currency.descriptionField.lowercased() {
                 self.country_lbl.font = UIFont.boldSystemFont(ofSize: 18)

@@ -71,15 +71,15 @@ extension SuppliersEndpoint: TargetType {
                                                 "page": page.urlEscaped,
                                                 "lang_code": LanguageManager.getLanguage()
             ], encoding: URLEncoding.default)
-        case .getSupplierDetails:
+        case .getSupplierDetails(_,let page):
             var currencyId = Constants.Currency.kuwaitCurrencyId
             if let countryCurrency = CurrencySettings.shared.currentCurrency?.currencyId {
                 currencyId = countryCurrency
             }
             return .requestParameters(parameters: [
                                                 "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
-//                                                "items_per_page": 20,
-//                                                "page": page.urlEscaped,
+                                                "items_per_page": 20,
+                                                "page": page.urlEscaped,
                                                 "currency_id": currencyId.urlEscaped,
                                                 "lang_code": LanguageManager.getLanguage()
             ], encoding: URLEncoding.default)

@@ -16,12 +16,12 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var notesTxtView: UITextView!
     
     private let viewModel = CheckOutViewModel()
-    
+    var termsModel: TermsProtocol?
     let checkoutCompletedSegue = "checkout_completed_segue"
     let paymentWebViewSegue = "payment_web_view_segue"
     
     enum sectionType: Int {
-        case payment = 0, address = 1 , financial
+        case payment = 0, address = 1 , financial = 2, terms
     }
     
     override func viewDidLoad() {
@@ -29,6 +29,7 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
         self.setupUI()
         // self.updateData()
         notesTxtView.delegate = self
+        self.termsModel = self
         notesTxtView.text = "Your Notes".localized()
         notesTxtView.textColor = UIColor.lightGray
         CountrySettings.shared.addDelegate(delegate: self)
@@ -71,6 +72,7 @@ class CheckOutViewController: BaseViewController, UITableViewDelegate, UITableVi
         self.paymentTableView.register(PaymentMethodTableViewCell.nib, forCellReuseIdentifier: PaymentMethodTableViewCell.identifier)
         self.paymentTableView.register(CheckoutAddressTableViewCell.nib, forCellReuseIdentifier: CheckoutAddressTableViewCell.identifier)
         self.paymentTableView.register(FinancialTableViewCell.nib, forCellReuseIdentifier: FinancialTableViewCell.identifier)
+        self.paymentTableView.register(TermsTableViewCell.nib, forCellReuseIdentifier: TermsTableViewCell.identifier)
     }
     
     func validationFailed(_ errors: [(Validatable, ValidationError)]) {
@@ -158,7 +160,7 @@ extension CheckOutViewController {
         //        if viewModel.pricingList.count > 0 {
         //            return 2
         //        }
-        return 3
+        return 4
     }
     
     // MARK:- UITableViewDelegate - Cell
@@ -185,6 +187,8 @@ extension CheckOutViewController {
             return 100
         case sectionType.financial.rawValue:
             return 60
+        case sectionType.terms.rawValue:
+            return 100
         default: return 0
         }
     }
@@ -197,6 +201,8 @@ extension CheckOutViewController {
             return 1
         case sectionType.financial.rawValue:
             return 2
+        case sectionType.terms.rawValue:
+            return 1
         default: return 0
         }
     }
@@ -210,6 +216,8 @@ extension CheckOutViewController {
             return getAddressCell(tableView: tableView, indexPath: indexPath)
         case sectionType.financial.rawValue:
             return getFinancialCell(tableView: tableView, indexPath: indexPath)
+        case sectionType.terms.rawValue:
+            return getTermsCell(tableView: tableView, indexPath: indexPath)
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: PaymentMethodTableViewCell.identifier, for: indexPath) as! PaymentMethodTableViewCell
             return cell
@@ -229,6 +237,14 @@ extension CheckOutViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: FinancialTableViewCell.identifier, for: indexPath) as! FinancialTableViewCell
         cell.configure(number:indexPath.row)
         cell.isUserInteractionEnabled = false
+        return cell
+    }
+    
+    // MARK:- TermsViewCell
+    func getTermsCell(tableView: UITableView, indexPath: IndexPath) -> TermsTableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: TermsTableViewCell.identifier, for: indexPath) as! TermsTableViewCell
+        cell.termsProtocol = self
+        cell.isUserInteractionEnabled = true
         return cell
     }
     
@@ -275,7 +291,13 @@ extension CheckOutViewController {
         }
     }
 }
-extension CheckOutViewController:UITextViewDelegate{
+extension CheckOutViewController:UITextViewDelegate,TermsProtocol{
+    func clickTerms() {
+        UserDefaults.standard.set("Delivery", forKey: "Privacy")
+        let controller = UIStoryboard(name: "ProfileTab", bundle: Bundle.main).instantiateViewController(withIdentifier: "WebViewViewController") as! WebViewViewController
+        self.navigationController?.pushViewController(controller, animated: false)
+        self.tabBarController?.tabBar.isHidden = true
+    }
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
             textView.text = nil
