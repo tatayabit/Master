@@ -23,9 +23,17 @@ struct CartAPIClient: APIClient {
     func updateServerCart(products: [String: Any], userId: String, paymentId: String, completion: @escaping (APIResult<UpdateServerCartResponse?, MoyaError>) -> Void) {
            fetch(with: CartEndpoint.updateServerCart(products: products, userId: userId, paymentId: paymentId), completion: completion)
        }
+    
+    func updateProductamountAtServerCart(productInCart:String,product_id:String,amount:String, userId: String, completion: @escaping (APIResult<UpdateServerCartResponse?, MoyaError>) -> Void) {
+        fetch(with: CartEndpoint.updateProductamountAtServerCart(productInCart:productInCart, product_id:product_id, amount:amount, userId: userId), completion: completion)
+    }
+    
     func deleteAllCart(userId: String, completion: @escaping (APIResult<UpdateServerCartResponse?, MoyaError>) -> Void) {
         fetch(with: CartEndpoint.deleteAllCart(userId: userId), completion: completion)
         }
+    func deleteItemFromCart(userId: String,cartId: String, completion: @escaping (APIResult<UpdateServerCartResponse?, MoyaError>) -> Void) {
+        fetch(with: CartEndpoint.deleteItemFromCart(userId: userId, cartId: cartId), completion: completion)
+    }
     func getServerCart(userId: String, completion: @escaping (APIResult<CartContentResponse?, MoyaError>) -> Void) {
            fetch(with: CartEndpoint.getServerCart(userId: userId), completion: completion)
            }

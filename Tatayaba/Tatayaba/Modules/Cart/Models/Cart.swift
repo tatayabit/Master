@@ -11,7 +11,10 @@ import UIKit
 class Cart {
     static let shared = Cart()
     var cartItemsArr = [CartItem]()
+    var cartLocalItemsArr = [CartItem]()
+    var cartCompareItemsList = [CartItem]()
     private var productsArr = [Product]()
+    private var productsLocalArr = [Product]()
     var paymentMethod: PaymentMethod?
 
     var productsCount: Int { return cartItemsArr.count }
@@ -28,16 +31,68 @@ class Cart {
         let cartSaving = CartSaving()
 
         if let cartList = cartSaving.loadCartItemsFromKeyChain() {
-            self.cartItemsArr = cartList
+            self.cartLocalItemsArr = cartList
         }
         
         if let cartProducts = cartSaving.loadCartProductsFromKeyChain() {
-            self.productsArr = cartProducts
+            self.productsLocalArr = cartProducts
         }
         
         if let payment = cartSaving.loadPaymentMethodFromKeyChain() {
             self.paymentMethod = payment
         }
+        
+        if (!Customer.shared.loggedin) {
+            self.cartItemsArr = self.cartLocalItemsArr
+            self.productsArr = self.productsLocalArr
+        }
+    }
+    
+    func loadDataFromServer() {
+        CartViewModel.shared.getServerCart(completion: { result in
+            switch result {
+            case .success(let response):
+                guard let getCartResult = response else { return }
+                self.productsArr = getCartResult.products ?? [Product]()
+                self.cartItemsArr = self.setItemsArr(products:getCartResult.products ?? [])
+                self.updateTabBarCount()
+                self.saveCartToCaching()
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
+            case .failure(let error):
+                print("the error \(error)")
+            }
+            
+        })
+    }
+    
+    func loadDataFromServerSync(completion:@escaping() -> Void) {
+        CartViewModel.shared.getServerCart(completion: { result in
+            switch result {
+            case .success(let response):
+                guard let getCartResult = response else { return }
+                self.productsArr = getCartResult.products ?? [Product]()
+                self.cartItemsArr = self.setItemsArr(products:getCartResult.products ?? [])
+                self.updateTabBarCount()
+                self.saveCartToCaching()
+                completion()
+            case .failure(let error):
+                print("the error \(error)")
+            }
+            
+        })
+    }
+    
+    func updateProductamountAtServerCart( product : CartItem, productInCart:String){
+        
+        CartViewModel.shared.updateProductamountAtServerCart(product: product, productInCart: productInCart, completion: { result in
+            switch result {
+            case .success(let response):
+                guard let placeOrderResult = response else { return }
+                print(placeOrderResult)
+            case .failure(let error):
+                print("the error \(error)")
+            }
+        })
     }
     
     func callUpdateServerCart(){
@@ -46,11 +101,36 @@ class Cart {
                 case .success(let response):
                     guard let placeOrderResult = response else { return }
                     print(placeOrderResult)
+                    self.loadDataFromServer()
                 case .failure(let error):
                     print("the error \(error)")
                 }
             }
         }
+    
+    func addProductToServerCart(product:CartItem){
+        CartViewModel.shared.updateServerCartWithProduct(product: product) { result in
+            switch result {
+            case .success(let response):
+                guard let placeOrderResult = response else { return }
+                print(placeOrderResult)
+            case .failure(let error):
+                print("the error \(error)")
+            }
+        }
+    }
+    
+    func deleteProductFromoServerCart(product:Product){
+        CartViewModel.shared.deleteItemInServerCart(cartId: product.productInCart) { result in
+            switch result {
+            case .success(let response):
+                guard let placeOrderResult = response else { return }
+                print(placeOrderResult)
+            case .failure(let error):
+                print("the error \(error)")
+            }
+        }
+    }
     
     //MARK:- SaveCartToCaching
     func saveCartToCaching() {
@@ -65,8 +145,9 @@ class Cart {
     
     
     func addProduct(product: Product, quantity: Int = 1, options: [CartItemOptions]? = nil) {
+        var cartItem : CartItem
         if productExistedInCart(product: product) {
-            let cartItem = self.cartItem(for: product, options: options)
+            cartItem = self.cartItem(for: product, options: options)
             let maxQuantity = product.maxQuantity
             let stockQuantity = product.amount
             let max = Int(maxQuantity) ?? 0
@@ -76,34 +157,61 @@ class Cart {
                 increaseCount(cartItem: cartItem, quantity: quantity)
             }
         } else {
-            let productModel = CartItem(productId: String(product.identifier), productName: product.name, quantity: quantity, options: options)
-            cartItemsArr.append(productModel)
+            cartItem = CartItem(productId: String(product.identifier), productName: product.name, quantity: quantity, options: options)
+            cartItemsArr.append(cartItem)
             productsArr.append(product)
         }
         updateTabBarCount()
         saveCartToCaching()
-        callUpdateServerCart()
+        addProductToServerCart(product: cartItem)
+        
     }
 
     func cartItem(for product: Product, options: [CartItemOptions]?) -> CartItem {
         return cartItemsArr.filter({ $0.productId == String(product.identifier) }).first ?? CartItem(productId: String(product.identifier), productName: product.name, options: options)
     }
+    func setItemsArr(products:[Product]) -> [CartItem]{
+        var tempCartItems = [CartItem]()
+        for product in products {
+            let cartItem = CartItem(productId: String(product.identifier), productName: product.name,count:product.amount, options: getCartItemOptions(options: product.productOptions))
+            tempCartItems.append(cartItem)
+        }
+        return tempCartItems
+    }
+    
+    func getCartItemOptions(options:[ProductOption]) -> [CartItemOptions] {
+        var cartOptions = [CartItemOptions]()
+        var CartItemOption: CartItemOptions!
+        for option in options {
+           CartItemOption = CartItemOptions(optionId: option.identifier, variantId: option.variants[0].identifier)
+            cartOptions.append(CartItemOption)
+        }
+        return cartOptions
+    }
 
     func removeProduct(at indexPath: IndexPath) {
+        deleteProductFromoServerCart(product: productsArr[indexPath.row])
         cartItemsArr.remove(at: indexPath.row)
         productsArr.remove(at: indexPath.row)
+        print(indexPath.row)
         updateTabBarCount()
         saveCartToCaching()
     }
 
     func increaseCount(cartItem: CartItem, quantity: Int) {
         cartItem.increaseCount(by: quantity)
+        if Customer.shared.loggedin {
+            updateProductamountAtServerCart(product: cartItem, productInCart: getProductInCart(item: cartItem))
+        }
         updateTabBarCount()
         saveCartToCaching()
     }
 
     func decreaseCount(cartItem: CartItem) {
         cartItem.decreaseCount(by: 1)
+        if Customer.shared.loggedin {
+            updateProductamountAtServerCart(product: cartItem, productInCart: getProductInCart(item: cartItem))
+        }
         updateTabBarCount()
         saveCartToCaching()
     }
@@ -122,6 +230,13 @@ class Cart {
         }
     }
     
+    func getProductInCart(item:CartItem)->String{
+        var productInCart :String
+        let indexOfItem = cartItemsArr.firstIndex(where: {$0 === item})!
+        let product = self.productsArr[indexOfItem]
+        productInCart = product.productInCart
+        return productInCart
+    }
     //MARK:- Calculate Price
     func calculateSubTotal() -> Float {
         var total: Float = 0
@@ -146,7 +261,11 @@ class Cart {
     func cartItemsList() -> [CartItem] {
         return self.cartItemsArr
     }
-
+    
+    func getCartCompareItemsList() -> [CartItem] {
+        return self.cartCompareItemsList
+    }
+    
     func productsList() -> [Product] {
         return self.productsArr
     }
@@ -190,4 +309,43 @@ class Cart {
         updateTabBarCount()
 //        saveCartToCaching()
     }
+    
+    func resetLocal() {
+            self.productsArr.removeAll()
+            self.cartItemsArr.removeAll()
+            self.isOneClickBuy = false
+            self.paymentMethod = nil
+            self.couponCode = ""
+            self.couponType = ""
+            updateTabBarCount()
+            saveCartToCaching()
+        }
+    
+    func syncCart(){
+        self.cartCompareItemsList.removeAll()
+        //getLocal
+        loadDataFromCaching()
+        
+        //getServer
+        loadDataFromServerSync(completion: {
+            //compare
+            if (self.cartLocalItemsArr.count == 0) {return}
+            for cartItem in self.cartLocalItemsArr {
+                let results = self.cartItemsArr.filter { $0.productId == cartItem.productId }
+                if results.count == 0 {
+                    self.cartCompareItemsList.append(cartItem)
+                }
+            }
+            //add to server
+            if(self.cartCompareItemsList.count > 0){
+                self.callUpdateServerCart()
+            }
+        })
+        
+        
+        
+    }
 }
+
+
+

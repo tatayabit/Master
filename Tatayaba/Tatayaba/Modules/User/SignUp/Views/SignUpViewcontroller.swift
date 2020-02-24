@@ -85,6 +85,7 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
             case .success(let signUpResult):
                 if let user = signUpResult {
                     print(user)
+                    Cart.shared.syncCart()
                     self.navigateToHome()
                 }
             case .failure(let error):
