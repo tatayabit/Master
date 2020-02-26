@@ -23,22 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1107DE8D-E406-4A3C-82AE-F5710488AE2C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/ViewModel/CartViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "355"
-            endingLineNumber = "355"
-            landmarkName = "getProductsModel()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "982F987C-0D73-4CEF-9115-B54D0C92C5AD"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -48,23 +32,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
             endingLineNumber = "107"
-            landmarkName = "Product"
-            landmarkType = "21">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8C30D725-2571-4290-A685-F3AE88E9E2FE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/ViewModel/CartViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "295"
-            endingLineNumber = "295"
-            landmarkName = "deleteItemInServerCart(cartId:completion:)"
+            landmarkName = "init(from:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -264,7 +232,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "93FA44A3-3E1A-44C0-9ACA-2462060BDCD6"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tatayaba/Modules/DashBoard/ViewModels/HomeViewModel.swift"
@@ -407,198 +375,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E1793E6D-A161-47C3-9952-691939485236"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/FaveButton/Source/FaveButton.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "applyInit()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2DA82DB8-5776-499F-9E90-FE6E1DA986DB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/FaveButton/Source/FaveIcon.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "createFaveIcon(_:icon:color:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "38DE62D1-DC0D-4CE1-8803-51837DD5BF1B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/FaveButton/Source/FaveIcon.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "init(region:icon:color:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9D3C2C39-11CA-49BA-8848-A7AA77028020"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/FaveButton/Source/FaveIcon.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "animateSelect(_:fillColor:duration:delay:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C4C51B42-5249-4525-902B-CE93E9DD6DD7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/FaveButton/Source/Spark.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "applyInit()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DF70A7DA-4588-4858-B976-16864ABB5AAA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/DashBoard/Views/ProductsBlockView/ProductsBlockCollectionViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
-            landmarkName = "addToCart2(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FD417137-A468-4724-B193-E8DB796FC94C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/DashBoard/Views/ProductsBlockView/ProductsBlockCollectionViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
-            landmarkName = "addToCartAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5FFC6EF2-D798-4E8C-AD34-067C016AEA7A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/Models/Cart.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
-            landmarkName = "deleteProductFromoServerCart(product:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "71C57F28-14C2-40F4-8262-7D38EA432C4E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/Models/Cart.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "deleteProductFromoServerCart(product:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0CA24E0E-BBFC-4593-BA59-8D91B89995B8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/ViewModel/CartViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "298"
-            endingLineNumber = "298"
-            landmarkName = "deleteItemInServerCart(cartId:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "0CA24E0E-BBFC-4593-BA59-8D91B89995B8 - afd236cf011ebf40"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.UpdateServerCartResponse&gt;, Moya.MoyaError&gt;) -&gt; () in TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.CartViewModel.deleteItemInServerCart(cartId: Swift.String, completion: (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.UpdateServerCartResponse&gt;, Moya.MoyaError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "TATAYAB - &#x62a;&#x637;&#x64a;&#x651;&#x628;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Master/Tatayaba/Tatayaba/Modules/Cart/ViewModel/CartViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "298"
-                  endingLineNumber = "298"
-                  offsetFromSymbolStart = "316">
-               </Location>
-               <Location
-                  uuid = "0CA24E0E-BBFC-4593-BA59-8D91B89995B8 - afd236cf011ebf40"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.UpdateServerCartResponse&gt;, Moya.MoyaError&gt;) -&gt; () in TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.CartViewModel.deleteItemInServerCart(cartId: Swift.String, completion: (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.UpdateServerCartResponse&gt;, Moya.MoyaError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "TATAYAB - &#x62a;&#x637;&#x64a;&#x651;&#x628;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Master/Tatayaba/Tatayaba/Modules/Cart/ViewModel/CartViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "298"
-                  endingLineNumber = "298"
-                  offsetFromSymbolStart = "352">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "9214A948-CACB-4048-B613-73A702F018EA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -606,41 +382,9 @@
             filePath = "Tatayaba/Modules/Cart/Models/Cart.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "345"
-            endingLineNumber = "345"
-            landmarkName = "syncCart()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "45A9CD66-569B-4A95-91E5-D9978BA20A26"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/ViewModel/CartViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "331"
-            endingLineNumber = "331"
-            landmarkName = "getProductsModel()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "940D0C38-F699-4435-A2DF-E0A83B354800"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/ViewModel/CartViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "334"
-            endingLineNumber = "334"
-            landmarkName = "getProductsModel()"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "getCartItemOptions(options:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -654,9 +398,9 @@
             filePath = "Tatayaba/Modules/Cart/Models/Cart.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "325"
-            endingLineNumber = "325"
-            landmarkName = "syncCart()"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "getCartItemOptions(options:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -670,9 +414,9 @@
             filePath = "Tatayaba/Modules/Cart/Models/Cart.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "345"
-            endingLineNumber = "345"
-            landmarkName = "syncCart()"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "getCartItemOptions(options:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -686,138 +430,10 @@
             filePath = "Tatayaba/Modules/Cart/Models/Cart.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "332"
-            endingLineNumber = "332"
-            landmarkName = "syncCart()"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "getCartItemOptions(options:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F60D883B-8CA6-4F85-AC9C-E461D7218DA1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/Models/Cart.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "callUpdateServerCart()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FB8A751E-A3E0-4387-8CBB-049DDD28B4E4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/Models/Cart.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "callUpdateServerCart()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "18E06B53-C23D-45DC-BB82-322F692DA9B0"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/Models/Cart.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "callUpdateServerCart()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "18E06B53-C23D-45DC-BB82-322F692DA9B0 - bedd164b08d7b0d9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.Cart.callUpdateServerCart() -&gt; ()"
-                  moduleName = "TATAYAB - &#x62a;&#x637;&#x64a;&#x651;&#x628;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Master/Tatayaba/Tatayaba/Modules/Cart/Models/Cart.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "99"
-                  endingLineNumber = "99"
-                  offsetFromSymbolStart = "52">
-               </Location>
-               <Location
-                  uuid = "18E06B53-C23D-45DC-BB82-322F692DA9B0 - 5f35df4c57cad5ba"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.UpdateServerCartResponse&gt;, Moya.MoyaError&gt;) -&gt; () in TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.Cart.callUpdateServerCart() -&gt; ()"
-                  moduleName = "TATAYAB - &#x62a;&#x637;&#x64a;&#x651;&#x628;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Master/Tatayaba/Tatayaba/Modules/Cart/Models/Cart.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "101"
-                  endingLineNumber = "101"
-                  offsetFromSymbolStart = "292">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B717F042-668E-408C-BB26-1F45623B13FE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/ViewModel/CartViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
-            landmarkName = "updateServerCart(completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B717F042-668E-408C-BB26-1F45623B13FE - ae4728b847804e3e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.CartViewModel.updateServerCart(completion: (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.UpdateServerCartResponse&gt;, Moya.MoyaError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "TATAYAB - &#x62a;&#x637;&#x64a;&#x651;&#x628;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Master/Tatayaba/Tatayaba/Modules/Cart/ViewModel/CartViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "234"
-                  endingLineNumber = "234"
-                  offsetFromSymbolStart = "496">
-               </Location>
-               <Location
-                  uuid = "B717F042-668E-408C-BB26-1F45623B13FE - 6b86fd7b1095dbf3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.UpdateServerCartResponse&gt;, Moya.MoyaError&gt;) -&gt; () in TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.CartViewModel.updateServerCart(completion: (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.UpdateServerCartResponse&gt;, Moya.MoyaError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "TATAYAB - &#x62a;&#x637;&#x64a;&#x651;&#x628;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Master/Tatayaba/Tatayaba/Modules/Cart/ViewModel/CartViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "236"
-                  endingLineNumber = "236"
-                  offsetFromSymbolStart = "316">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -830,73 +446,9 @@
             filePath = "Tatayaba/Modules/Cart/Models/Cart.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "341"
-            endingLineNumber = "341"
-            landmarkName = "syncCart()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6637975E-B38C-46FA-A9B4-37766A77D0D9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/ViewModel/CartViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
-            landmarkName = "updateServerCart(completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6637975E-B38C-46FA-A9B4-37766A77D0D9 - 6b86fd7b1095dbf3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.UpdateServerCartResponse&gt;, Moya.MoyaError&gt;) -&gt; () in TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.CartViewModel.updateServerCart(completion: (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.UpdateServerCartResponse&gt;, Moya.MoyaError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "TATAYAB - &#x62a;&#x637;&#x64a;&#x651;&#x628;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Master/Tatayaba/Tatayaba/Modules/Cart/ViewModel/CartViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "236"
-                  endingLineNumber = "236"
-                  offsetFromSymbolStart = "316">
-               </Location>
-               <Location
-                  uuid = "6637975E-B38C-46FA-A9B4-37766A77D0D9 - 6b86fd7b1095dbf3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.UpdateServerCartResponse&gt;, Moya.MoyaError&gt;) -&gt; () in TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.CartViewModel.updateServerCart(completion: (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.UpdateServerCartResponse&gt;, Moya.MoyaError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "TATAYAB - &#x62a;&#x637;&#x64a;&#x651;&#x628;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Master/Tatayaba/Tatayaba/Modules/Cart/ViewModel/CartViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "236"
-                  endingLineNumber = "236"
-                  offsetFromSymbolStart = "352">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "547ABF90-D9C5-46DB-898F-4582F8C34549"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/ViewModel/CartViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
-            landmarkName = "updateServerCart(completion:)"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "getCartItemOptions(options:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -983,102 +535,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3FB9EB8B-2089-49F8-AFCA-A1544145B45A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/Models/Cart.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
-            landmarkName = "addProduct(product:quantity:options:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "360A9E36-936A-4FD2-B52B-1BF10ADB0884"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/Models/Cart.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
-            landmarkName = "addProduct(product:quantity:options:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "953DA352-44BA-47DB-9157-D6FD9FDE1BD7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/Views/CartViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "402"
-            endingLineNumber = "402"
-            landmarkName = "getItemCell(tableView:indexPath:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3B417C93-827E-484A-9472-7A520DF6E64B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/Views/CartViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "404"
-            endingLineNumber = "404"
-            landmarkName = "getItemCell(tableView:indexPath:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2F1F45E5-B7BB-44D9-8732-97A311A972D3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/Views/CartViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "401"
-            endingLineNumber = "401"
-            landmarkName = "getItemCell(tableView:indexPath:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C7066216-0657-48D5-81B0-853F12538C42"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/Views/CartViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "392"
-            endingLineNumber = "392"
-            landmarkName = "getItemCell(tableView:indexPath:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "DC159DDC-7F5D-4F8C-8E87-0135D07D7ECA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1095,54 +551,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4C3DBFFB-F5ED-4843-98BC-D0785D6A05B1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tatayaba/Modules/Cart/Models/Cart.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "updateProductamountAtServerCart(product:productInCart:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4C3DBFFB-F5ED-4843-98BC-D0785D6A05B1 - 9c84de6141cdf014"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.Cart.updateProductamountAtServerCart(product: TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.CartItem, productInCart: Swift.String) -&gt; ()"
-                  moduleName = "TATAYAB - &#x62a;&#x637;&#x64a;&#x651;&#x628;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Master/Tatayaba/Tatayaba/Modules/Cart/Models/Cart.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "87"
-                  endingLineNumber = "87"
-                  offsetFromSymbolStart = "152">
-               </Location>
-               <Location
-                  uuid = "4C3DBFFB-F5ED-4843-98BC-D0785D6A05B1 - 9b4f5441a7d6b0e1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.UpdateServerCartResponse&gt;, Moya.MoyaError&gt;) -&gt; () in TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.Cart.updateProductamountAtServerCart(product: TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.CartItem, productInCart: Swift.String) -&gt; ()"
-                  moduleName = "TATAYAB - &#x62a;&#x637;&#x64a;&#x651;&#x628;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Master/Tatayaba/Tatayaba/Modules/Cart/Models/Cart.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "89"
-                  endingLineNumber = "89"
-                  offsetFromSymbolStart = "256">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "60260A4A-DF12-497D-B060-41CFC8D14F50"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1150,9 +558,9 @@
             filePath = "Tatayaba/Modules/Cart/Models/Cart.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
-            landmarkName = "increaseCount(cartItem:quantity:)"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "getCartItemOptions(options:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1166,9 +574,9 @@
             filePath = "Tatayaba/Modules/Cart/Models/Cart.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
-            landmarkName = "decreaseCount(cartItem:)"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "getCartItemOptions(options:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1298,6 +706,181 @@
             endingLineNumber = "28"
             landmarkName = "updateProfile(user:completion:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F42672BE-046B-46C2-BB6B-2223CECBE47D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/DashBoard/ViewModels/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "317"
+            endingLineNumber = "317"
+            landmarkName = "ValidateVersionVersion(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ED9DDCF1-6FE0-4395-9573-170068E9A6C6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/CheckOut/Cells/TermsTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "awakeFromNib()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5C881B7E-091C-44FC-86E0-D43B3A34F9C6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/DashBoard/ViewModels/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "getProductBlock()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A525870E-7ACF-499E-89D3-E3CC916CC640"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/Cart/ViewModel/CartViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "getApplyCouponJsonString(couponCode:email:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AB8B8111-3C01-41D6-B2AA-9E91584181DA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/Cart/ViewModel/CartViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "applyCoupon(couponCode:email:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AB8B8111-3C01-41D6-B2AA-9E91584181DA - ca197056d120d7bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.CouponResponse&gt;, Moya.MoyaError&gt;) -&gt; () in TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.CartViewModel.applyCoupon(couponCode: Swift.String, email: Swift.String, completion: (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.CouponResponse&gt;, Moya.MoyaError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TATAYAB - &#x62a;&#x637;&#x64a;&#x651;&#x628;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Master/Tatayaba/Tatayaba/Modules/Cart/ViewModel/CartViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "AB8B8111-3C01-41D6-B2AA-9E91584181DA - ca197056d120d7bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.CouponResponse&gt;, Moya.MoyaError&gt;) -&gt; () in TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.CartViewModel.applyCoupon(couponCode: Swift.String, email: Swift.String, completion: (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.CouponResponse&gt;, Moya.MoyaError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TATAYAB - &#x62a;&#x637;&#x64a;&#x651;&#x628;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Master/Tatayaba/Tatayaba/Modules/Cart/ViewModel/CartViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "172">
+               </Location>
+               <Location
+                  uuid = "AB8B8111-3C01-41D6-B2AA-9E91584181DA - ca197056d120d7bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.CouponResponse&gt;, Moya.MoyaError&gt;) -&gt; () in TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.CartViewModel.applyCoupon(couponCode: Swift.String, email: Swift.String, completion: (TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.APIResult&lt;Swift.Optional&lt;TATAYAB___&#x62a;&#x637;&#x64a;&#x651;&#x628;.CouponResponse&gt;, Moya.MoyaError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TATAYAB - &#x62a;&#x637;&#x64a;&#x651;&#x628;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/new/Desktop/Mostafa/Work/Master/Tatayaba/Tatayaba/Modules/Cart/ViewModel/CartViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "528">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6D329ABA-0F31-480F-93B8-784DE89CD2D0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/Cart/Models/CouponModels/CouponResponse.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "init(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3C206E92-5FD2-4058-B270-C97C8EFC80C9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/Cart/Models/Cart.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "addProduct(product:quantity:options:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6A981BC4-B428-410C-89F6-BF5810A0EA9C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tatayaba/Modules/Cart/Models/Cart.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "281"
+            endingLineNumber = "281"
+            landmarkName = "Cart"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

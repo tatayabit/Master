@@ -154,7 +154,15 @@ class Cart {
             if max <= cartItem.count {
                 // max reached
             } else if stockQuantity > max {
-                increaseCount(cartItem: cartItem, quantity: quantity)
+                // compare option if exist
+                if (self.compareSameProductOptionsforExistedInCart(newProduct: product)) {
+                    increaseCount(cartItem: cartItem, quantity: quantity)
+                } else {
+                    cartItem = CartItem(productId: String(product.identifier), productName: product.name, quantity: quantity, options: options)
+                    cartItemsArr.append(cartItem)
+                    productsArr.append(product)
+                }
+                
             }
         } else {
             cartItem = CartItem(productId: String(product.identifier), productName: product.name, quantity: quantity, options: options)
@@ -274,6 +282,38 @@ class Cart {
     private func productExistedInCart(product: Product) -> Bool {
         let existed = cartItemsArr.contains(where: { $0.productId == String(product.identifier) })
         return existed
+    }
+    
+    private func compareSameProductOptionsforExistedInCart(newProduct: Product) -> Bool {
+//        if let productInCart = productsArr.filter({ $0.identifier == String(newProduct.identifier) }).first{
+//
+//            if (productInCart == newProduct) {
+//                return true
+//            } else {
+//                return false
+//            }
+        
+        
+        
+        //************************************************
+//            if (self.CompareOptions(productInCart: productInCart, newProduct: newProduct)) {
+//                return true
+//            } else {
+//                return false
+//            }
+        }else{
+            return false
+        }
+       }
+    
+    private func CompareOptions(productInCart:Product,newProduct:Product)->Bool{
+        if (productInCart.productOptions.count != newProduct.productOptions.count) {
+            return false
+        } else{
+            for option in newProduct.productOptions {
+                <#code#>
+            }
+        }
     }
     
     // MARK:- Update Currency
