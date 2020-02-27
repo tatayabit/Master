@@ -92,6 +92,7 @@ extension ProductsEndpoint: TargetType {
             }
             print(LanguageManager.getLanguage())
             return .requestParameters(parameters: ["currency_id": currencyId.urlEscaped,
+                                                   "country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
                                                    "lang_code": LanguageManager.getLanguage()
             ], encoding: URLEncoding.default)
             
@@ -117,6 +118,7 @@ extension ProductsEndpoint: TargetType {
                                                     "cid": category,
                                                     "page": page.urlEscaped,
                                                     "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
+                                                    "country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
                                                     "lang_code": LanguageManager.getLanguage(),
                                                     "currency_id": currencyId.urlEscaped
                 ], encoding: URLEncoding.default)
@@ -131,6 +133,7 @@ extension ProductsEndpoint: TargetType {
                                                 "cid": category,
                                                 "page": page.urlEscaped,
                                                 "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
+                                                "country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
                                                 "lang_code": LanguageManager.getLanguage(),
                                                 "currency_id": currencyId.urlEscaped,
                                                 "sort_order": sort_order,
@@ -160,6 +163,7 @@ extension ProductsEndpoint: TargetType {
 //                                                "cid": category,
                                                 "page": page.urlEscaped,
                                                 "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
+                                                "country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
                                                 "lang_code": LanguageManager.getLanguage(),
                                                 "currency_id": currencyId.urlEscaped,
                                                 "search": "Y",

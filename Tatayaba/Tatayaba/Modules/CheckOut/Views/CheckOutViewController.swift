@@ -188,7 +188,7 @@ extension CheckOutViewController {
         case sectionType.financial.rawValue:
             return 60
         case sectionType.terms.rawValue:
-            return 100
+            return 60
         default: return 0
         }
     }

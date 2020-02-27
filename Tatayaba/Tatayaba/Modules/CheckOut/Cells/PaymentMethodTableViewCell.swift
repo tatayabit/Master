@@ -72,7 +72,7 @@ class PaymentMethodTableViewCell: UITableViewCell {
                 self.titleLabel.text = "Mada".localized()
             case "Visa, Mastercard","فيزا ,ماستركارد":
                 self.titleLabel.text = "Visa".localized()
-            case "Cash on delivery","الدفع عند الاستلام","Cash on delivery (GCC)":
+            case "Cash on delivery","الدفع عند الاستلام","Cash on delivery (GCC)","الدفع عند الاستلام (دولي)":
                 self.titleLabel.text = "Cash on delivery".localized()
             default:
                 self.titleLabel.text = ""//"testtttt"

@@ -78,6 +78,7 @@ extension SuppliersEndpoint: TargetType {
             }
             return .requestParameters(parameters: [
                                                 "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
+                                                "country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
                                                 "items_per_page": 20,
                                                 "page": page.urlEscaped,
                                                 "currency_id": currencyId.urlEscaped,
@@ -92,6 +93,7 @@ extension SuppliersEndpoint: TargetType {
             return .requestParameters(parameters: [ "items_per_page": 20,
                                                     "page": page.urlEscaped,
                                                     "available_country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
+                                                    "country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
                                                     "lang_code": LanguageManager.getLanguage(),
                                                     "currency_id": currencyId.urlEscaped,
                                                     "sort_order": sort_order,

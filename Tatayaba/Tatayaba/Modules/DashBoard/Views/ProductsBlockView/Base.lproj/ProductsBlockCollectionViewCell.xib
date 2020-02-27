@@ -70,7 +70,7 @@
                             <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="one click buy"/>
                         </userDefinedRuntimeAttributes>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJx-Wu-3a2" customClass="FaveButton" customModule="FaveButton">
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJx-Wu-3a2" customClass="FaveButton" customModule="FaveButton">
                         <rect key="frame" x="140" y="205" width="40" height="40"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>

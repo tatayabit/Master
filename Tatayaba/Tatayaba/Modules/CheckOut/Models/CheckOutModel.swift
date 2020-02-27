@@ -13,3 +13,9 @@ extension String {
         return (self as NSString).floatValue
     }
 }
+
+
+//let numberFormatter = NumberFormatter()
+//let number = numberFormatter.number(from: (self as NSString) as String)
+//let numberFloatValue = (number?.floatValue)!
+//return numberFloatValue

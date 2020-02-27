@@ -186,6 +186,7 @@ class CartViewModel {
         
         requestJson["products"] = productsParms
         requestJson["to_currency_id"] = currencyId
+        requestJson["country_code"] = CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw"
         requestJson["convert_data"] = true
         
         return requestJson
