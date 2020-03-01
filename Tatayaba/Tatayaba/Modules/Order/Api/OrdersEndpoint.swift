@@ -73,6 +73,7 @@ extension OrdersEndpoint: TargetType {
                 "products": products,
                 "coupon_code": code,
                 "code_type": couponType,
+                "country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
                 "notes":notes
                 ] as [String : Any]
 
@@ -96,7 +97,7 @@ extension OrdersEndpoint: TargetType {
             if let user = customer.user {
                 userId = user.identifier
             }
-            return .requestParameters(parameters: [ "user_id": userId
+            return .requestParameters(parameters: [ "user_id": userId,"country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw"
                 ], encoding: URLEncoding.queryString)
         }
     }

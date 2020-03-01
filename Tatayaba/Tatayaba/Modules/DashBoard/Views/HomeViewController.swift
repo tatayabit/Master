@@ -119,7 +119,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         if let currency = UserDefaults.standard.object(forKey: "currency") as? Data {
             let decoder = JSONDecoder()
             if let currency = try? decoder.decode(Currency.self, from: currency) {
-                CurrencySettings.shared.currentCurrency = currency
+//                CurrencySettings.shared.currentCurrency = currency
             }
         }
         
@@ -491,46 +491,46 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     
 }
 
-extension HomeViewController {
+    extension HomeViewController {
 
-    //MARK:- Segue
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == productDetailsSegue {
-            let productDetailsVC = segue.destination as! ProductDetailsViewController
-            if let indexPath = sender as? IndexPath {
-                productDetailsVC.viewModel = viewModel.productDetailsViewModel(at: indexPath)
+        //MARK:- Segue
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == productDetailsSegue {
+                let productDetailsVC = segue.destination as! ProductDetailsViewController
+                if let indexPath = sender as? IndexPath {
+                    productDetailsVC.viewModel = viewModel.productDetailsViewModel(at: indexPath)
+                }
+                
+                if let deeplink = sender as? DeepLinkModel {
+                    productDetailsVC.viewModel = viewModel.productDetailsViewModel(with: deeplink.id, title: deeplink.title)
+                }
+            }
+
+            if segue.identifier == categoryProductsSegue {
+                let productsListVC = segue.destination as! CatProductsViewController
+                if let indexPath = sender as? IndexPath {
+                    productsListVC.viewModel = viewModel.catProductsListViewModel(indexPath: indexPath)
+                }
+                
+                if let deeplink = sender as? DeepLinkModel {
+                    productsListVC.viewModel = viewModel.catProductsListViewModel(with: deeplink.id, title: deeplink.title)
+                }
+            }
+
+            if segue.identifier == supplierProductsSegue {
+                let productsListVC = segue.destination as! SupplierProductsViewController
+                if let indexPath = sender as? IndexPath {
+                    productsListVC.viewModel = viewModel.supplierProductsViewModel(indexPath: indexPath)
+                }
+                
+                if let deeplink = sender as? DeepLinkModel {
+                    productsListVC.viewModel = viewModel.supplierProductsListViewModel(with: deeplink.id, title: deeplink.title)
+                }
             }
             
-            if let deeplink = sender as? DeepLinkModel {
-                productDetailsVC.viewModel = viewModel.productDetailsViewModel(with: deeplink.id, title: deeplink.title)
-            }
-        }
-
-        if segue.identifier == categoryProductsSegue {
-            let productsListVC = segue.destination as! CatProductsViewController
-            if let indexPath = sender as? IndexPath {
-                productsListVC.viewModel = viewModel.catProductsListViewModel(indexPath: indexPath)
-            }
             
-            if let deeplink = sender as? DeepLinkModel {
-                productsListVC.viewModel = viewModel.catProductsListViewModel(with: deeplink.id, title: deeplink.title)
-            }
         }
-
-        if segue.identifier == supplierProductsSegue {
-            let productsListVC = segue.destination as! SupplierProductsViewController
-            if let indexPath = sender as? IndexPath {
-                productsListVC.viewModel = viewModel.supplierProductsViewModel(indexPath: indexPath)
-            }
-            
-            if let deeplink = sender as? DeepLinkModel {
-                productsListVC.viewModel = viewModel.supplierProductsListViewModel(with: deeplink.id, title: deeplink.title)
-            }
-        }
-        
-        
     }
-}
 
 extension HomeViewController: LocationManagerDelegate, CountryViewDelegate {
     func userLocationEnabled() {

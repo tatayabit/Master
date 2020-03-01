@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ob8-Eo-mzy">
-                        <rect key="frame" x="20" y="0.0" width="324" height="63"/>
+                        <rect key="frame" x="20" y="10" width="324" height="43"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -26,16 +26,16 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Ob8-Eo-mzy" secondAttribute="trailing" constant="20" id="FC6-6e-NDS"/>
-                    <constraint firstItem="Ob8-Eo-mzy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="b1S-Xb-RRd"/>
+                    <constraint firstItem="Ob8-Eo-mzy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="b1S-Xb-RRd"/>
                     <constraint firstItem="Ob8-Eo-mzy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="lu0-RH-Gu1"/>
-                    <constraint firstAttribute="bottom" secondItem="Ob8-Eo-mzy" secondAttribute="bottom" id="saY-3O-v7L"/>
+                    <constraint firstAttribute="bottom" secondItem="Ob8-Eo-mzy" secondAttribute="bottom" constant="10" id="saY-3O-v7L"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="termsLBL" destination="Ob8-Eo-mzy" id="GUn-wG-DdZ"/>
             </connections>
-            <point key="canvasLocation" x="169.56521739130437" y="90.736607142857139"/>
+            <point key="canvasLocation" x="91.304347826086968" y="106.13839285714285"/>
         </tableViewCell>
     </objects>
 </document>

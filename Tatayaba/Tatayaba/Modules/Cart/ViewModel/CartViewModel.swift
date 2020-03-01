@@ -20,7 +20,6 @@ class CartViewModel {
     static let shared = CartViewModel()
     var pricingList = [CartPricingModel]()
     let cart = Cart.shared
-    
     private let cartApiClient = CartAPIClient()
     
     weak var delegate: CartViewModelDelegate?

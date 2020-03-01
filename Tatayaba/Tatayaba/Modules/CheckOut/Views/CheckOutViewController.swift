@@ -188,7 +188,7 @@ extension CheckOutViewController {
         case sectionType.financial.rawValue:
             return 60
         case sectionType.terms.rawValue:
-            return 60
+            return 90
         default: return 0
         }
     }
@@ -293,7 +293,7 @@ extension CheckOutViewController {
 }
 extension CheckOutViewController:UITextViewDelegate,TermsProtocol{
     func clickTerms() {
-        UserDefaults.standard.set("Delivery", forKey: "Privacy")
+        UserDefaults.standard.set("Terms", forKey: "Privacy")
         let controller = UIStoryboard(name: "ProfileTab", bundle: Bundle.main).instantiateViewController(withIdentifier: "WebViewViewController") as! WebViewViewController
         self.navigationController?.pushViewController(controller, animated: false)
         self.tabBarController?.tabBar.isHidden = true

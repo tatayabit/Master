@@ -20,6 +20,7 @@ class Profile {
     var privacyPolicy = "Privacy Policy".localized()
     var logout = "Logout".localized()
     var deliveryAndReturnPolicy = "Delivery and Return Policy".localized()
+    var terms_Conditions = "TermsCondition".localized()
     var liveChat = "Live Chat".localized()
     var notifications = "Notifications".localized()
     var welcome = "Welcome".localized()
@@ -40,7 +41,7 @@ class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITab
 
     var Session3 = [String]()
     var Session4 = [String]()
-    var Session3_img: [String] = ["delivery", "privacy","logout"]
+    var Session3_img: [String] = ["delivery", "privacy","privacy","logout"]
 
 
     private let orderDetailsSegue = "order_details_segue"
@@ -54,7 +55,7 @@ class profileTabMenuViewController: UIViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
         Session1 = [profile.myOrders]
         Session2 = [profile.changeLanguage, profile.currencies, profile.changeCountry, profile.liveChat] //, profile.notifications
-        Session3 = [profile.deliveryAndReturnPolicy, profile.privacyPolicy,profile.logout]
+        Session3 = [profile.deliveryAndReturnPolicy, profile.privacyPolicy,profile.terms_Conditions,profile.logout]
         Session4 = [profile.deliveryAndReturnPolicy, profile.privacyPolicy]
         NotificationCenter.default.addObserver(self, selector: #selector(updateWelcomeHeader(_:)), name: Notification.Name(rawValue: "updateWelcomeHeader"), object: nil)
          NavigationBarWithOutBackButton()
@@ -213,13 +214,16 @@ extension profileTabMenuViewController{
         }else if  indexPath.section == 2 {
             let indextitle = self.Session3[indexPath.row]
             if indextitle  == profile.privacyPolicy {
-            UserDefaults.standard.set("Privacy", forKey: "Privacy")
+                UserDefaults.standard.set("Privacy", forKey: "Privacy")
                 self.PrivacyView()
             } else if indextitle  == profile.deliveryAndReturnPolicy {
-            UserDefaults.standard.set("Delivery", forKey: "Privacy")
-
+                UserDefaults.standard.set("Delivery", forKey: "Privacy")
                  self.PrivacyView()
-            }else  if indextitle  == profile.logout {
+            }else if indextitle  == profile.terms_Conditions {
+                UserDefaults.standard.set("Terms", forKey: "Privacy")
+                self.PrivacyView()
+            }
+            else  if indextitle  == profile.logout {
                 Customer.shared.logout()
                 self.setWelcomeHeader()
                 self.loadLoginVC()
@@ -303,4 +307,5 @@ extension profileTabMenuViewController{
         CurrencySettings.shared.currentCurrency = selectedCurrency
         navigateToHome()
     }
+    
 }

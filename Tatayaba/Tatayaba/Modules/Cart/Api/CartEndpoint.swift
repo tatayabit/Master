@@ -37,7 +37,7 @@ extension CartEndpoint: TargetType {
     var path: String {
         switch self {
         case .applyCoupon:
-            return "4.0/TtmOrders"
+            return "4.0/stores/1/TtmOrders"
         case .getTaxAndShipping:
             return "4.0/TtmCartConfigData/"
         case .getPricesWithUpdatedCurrency:
@@ -70,8 +70,8 @@ extension CartEndpoint: TargetType {
     var task: Task {
         switch self {
         case .applyCoupon(let parameters):
-            
         return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+            
         case .getTaxAndShipping(let countryCode, let productsID):
             //return .requestParameters(parameters: parameters, encoding: StringArrayUrlEncoding())
             let params = [

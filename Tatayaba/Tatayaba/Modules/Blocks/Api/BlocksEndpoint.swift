@@ -63,6 +63,7 @@ extension BlocksEndpoint: TargetType {
                            currencyId = countryCurrency
                        }
             return .requestParameters(parameters: ["lang_code": LanguageManager.getLanguage(),
+                                                   "country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
                                                    "currency_id": currencyId.urlEscaped
                 ], encoding: URLEncoding.default)
         }

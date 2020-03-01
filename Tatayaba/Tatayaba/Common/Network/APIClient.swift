@@ -34,7 +34,7 @@ struct Keys {
 
 protocol APIClient {
     var provider: MoyaProvider<MultiTarget> { get }
-    func fetch<T: Decodable>(with target: TargetType, completion: @escaping (APIResult<T, MoyaError>) -> Void)
+    func    fetch<T: Decodable>(with target: TargetType, completion: @escaping (APIResult<T, MoyaError>) -> Void)
 }
 
 extension APIClient {

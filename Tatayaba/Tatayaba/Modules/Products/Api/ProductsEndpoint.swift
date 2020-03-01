@@ -149,6 +149,7 @@ extension ProductsEndpoint: TargetType {
                 currencyId = countryCurrency
             }
             return .requestParameters(parameters: [ "also_bought_for_product_id": productId,
+                                                    "country_code": CountrySettings.shared.currentCountry?.code.lowercased() ?? "kw",
                                                     "currency_id": currencyId.urlEscaped,
                                                     "lang_code": LanguageManager.getLanguage()
             ], encoding: URLEncoding.default)

@@ -175,6 +175,10 @@
                                 <fontDescription key="fontDescription" name="Gotham-Light" family="Gotham" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdV-yB-rai">
+                                <rect key="frame" x="10" y="56" width="359" height="562"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </webView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2019 TATAYAB. All Rights Reserved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pja-Ae-SN8">
                                 <rect key="frame" x="0.0" y="616" width="369" height="31"/>
                                 <constraints>
@@ -184,7 +188,7 @@
                                 <color key="textColor" red="0.25508952140000002" green="0.23337364199999999" blue="0.32030314209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ena-MJ-TE7">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ena-MJ-TE7">
                                 <rect key="frame" x="0.0" y="56" width="375" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="KY6-z7-ia5"/>
@@ -200,11 +204,15 @@
                             <constraint firstItem="TLr-ga-L14" firstAttribute="leading" secondItem="nXN-af-3Nh" secondAttribute="leading" constant="10" id="2hV-7b-fQO"/>
                             <constraint firstItem="pja-Ae-SN8" firstAttribute="bottom" secondItem="nXN-af-3Nh" secondAttribute="bottom" id="8Ff-zY-yuP"/>
                             <constraint firstItem="ena-MJ-TE7" firstAttribute="leading" secondItem="BWH-sa-BUI" secondAttribute="leading" id="9YY-Yo-F0N"/>
+                            <constraint firstItem="hdV-yB-rai" firstAttribute="trailing" secondItem="TLr-ga-L14" secondAttribute="trailing" id="Hak-Hr-59i"/>
+                            <constraint firstItem="hdV-yB-rai" firstAttribute="top" secondItem="nXN-af-3Nh" secondAttribute="top" id="NGI-I2-hVa"/>
                             <constraint firstItem="nXN-af-3Nh" firstAttribute="trailing" secondItem="TLr-ga-L14" secondAttribute="trailing" constant="6" id="PJO-8p-pbK"/>
                             <constraint firstAttribute="trailing" secondItem="ena-MJ-TE7" secondAttribute="trailing" id="TDX-le-uSh"/>
                             <constraint firstItem="ena-MJ-TE7" firstAttribute="top" secondItem="nXN-af-3Nh" secondAttribute="top" id="aYN-VX-cml"/>
                             <constraint firstItem="TLr-ga-L14" firstAttribute="top" secondItem="ena-MJ-TE7" secondAttribute="bottom" constant="8" id="akS-KS-ibz"/>
                             <constraint firstItem="pja-Ae-SN8" firstAttribute="top" secondItem="TLr-ga-L14" secondAttribute="bottom" constant="-2" id="ghi-iU-LPG"/>
+                            <constraint firstItem="hdV-yB-rai" firstAttribute="leading" secondItem="TLr-ga-L14" secondAttribute="leading" id="h8J-tz-LNH"/>
+                            <constraint firstItem="hdV-yB-rai" firstAttribute="bottom" secondItem="TLr-ga-L14" secondAttribute="bottom" id="rVy-Td-38f"/>
                             <constraint firstItem="ena-MJ-TE7" firstAttribute="leading" secondItem="pja-Ae-SN8" secondAttribute="leading" id="zny-L3-ue0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nXN-af-3Nh"/>
@@ -216,6 +224,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="mAC-W1-vw1"/>
                     <connections>
+                        <outlet property="newWebView" destination="hdV-yB-rai" id="eLh-Jg-8hw"/>
                         <outlet property="textview_txt" destination="TLr-ga-L14" id="UNY-3B-11G"/>
                         <outlet property="title_lbl" destination="ena-MJ-TE7" id="K9w-8b-WrL"/>
                         <outlet property="webView" destination="qYM-It-RpC" id="QnQ-xU-vio"/>
