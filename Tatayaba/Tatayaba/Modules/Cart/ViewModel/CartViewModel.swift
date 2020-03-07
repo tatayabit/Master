@@ -254,7 +254,7 @@ class CartViewModel {
             case .success(let response):
                 guard let updateCartResult = response else { return }
                 print(updateCartResult.cart_ids.count)
-
+                self.cart.loadDataFromServer()
             case .failure(let error):
                 print("the error \(error)")
             }

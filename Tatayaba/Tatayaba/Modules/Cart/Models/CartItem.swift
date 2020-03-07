@@ -10,6 +10,17 @@ struct CartItemOptions: Codable {
     var optionId: String
     var variantId: String
 }
+extension CartItemOptions : Equatable{
+    static func == (lhs: CartItemOptions, rhs: CartItemOptions) -> Bool {
+        if (lhs.variantId == rhs.variantId) {
+            return true
+        } else {
+            return false
+        }
+        
+    }
+}
+
 
 class CartItem: Codable {
     var productId: String

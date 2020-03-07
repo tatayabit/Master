@@ -155,12 +155,17 @@ class Cart {
                 // max reached
             } else if stockQuantity > max {
                 // compare option if exist
-                if (self.compareSameProductOptionsforExistedInCart(newProduct: product)) {
-                    increaseCount(cartItem: cartItem, quantity: quantity)
+                if (cartItem.options?.count ?? 0 > 0) {
+                    if (self.compareSameProductOptionsforExistedInCart(newCartItem: cartItem)) {
+                        increaseCount(cartItem: cartItem, quantity: quantity)
+                    } else {
+                        cartItem = CartItem(productId: String(product.identifier), productName: product.name, quantity: quantity, options: options)
+                        cartItemsArr.append(cartItem)
+                        productsArr.append(product)
+                        addProductToServerCart(product: cartItem)
+                    }
                 } else {
-                    cartItem = CartItem(productId: String(product.identifier), productName: product.name, quantity: quantity, options: options)
-                    cartItemsArr.append(cartItem)
-                    productsArr.append(product)
+                    increaseCount(cartItem: cartItem, quantity: quantity)
                 }
                 
             }
@@ -168,10 +173,10 @@ class Cart {
             cartItem = CartItem(productId: String(product.identifier), productName: product.name, quantity: quantity, options: options)
             cartItemsArr.append(cartItem)
             productsArr.append(product)
+            addProductToServerCart(product: cartItem)
         }
         updateTabBarCount()
         saveCartToCaching()
-        addProductToServerCart(product: cartItem)
         
     }
 
@@ -240,7 +245,7 @@ class Cart {
     
     func getProductInCart(item:CartItem)->String{
         var productInCart :String
-        let indexOfItem = cartItemsArr.firstIndex(where: {$0 === item})!
+        let indexOfItem = cartItemsArr.firstIndex(where: {$0 === item}) ?? 0
         let product = self.productsArr[indexOfItem]
         productInCart = product.productInCart
         return productInCart
@@ -284,37 +289,26 @@ class Cart {
         return existed
     }
     
-    private func compareSameProductOptionsforExistedInCart(newProduct: Product) -> Bool {
-//        if let productInCart = productsArr.filter({ $0.identifier == String(newProduct.identifier) }).first{
-//
-//            if (productInCart == newProduct) {
-//                return true
-//            } else {
-//                return false
-//            }
-        
-        
-        
-        //************************************************
-//            if (self.CompareOptions(productInCart: productInCart, newProduct: newProduct)) {
-//                return true
-//            } else {
-//                return false
-//            }
+    private func compareSameProductOptionsforExistedInCart(newCartItem: CartItem) -> Bool {
+        if let itemInCart = cartItemsArr.filter({ $0.productId == String(newCartItem.productId) }).first{
+            if (itemInCart.options?.count != newCartItem.options?.count) {
+                return false
+            } else{
+                for option in newCartItem.options! {
+                    if (itemInCart.options!.contains(option)) {
+                        continue
+                    } else {
+                        return false
+                    }
+                }
+            }
+            return true
         }else{
             return false
         }
-       }
-    
-    private func CompareOptions(productInCart:Product,newProduct:Product)->Bool{
-        if (productInCart.productOptions.count != newProduct.productOptions.count) {
-            return false
-        } else{
-            for option in newProduct.productOptions {
-                <#code#>
-            }
-        }
     }
+    
+   
     
     // MARK:- Update Currency
     func updatePricesWithNewCurrency(currencyResponse: ConvertedCurrency) {

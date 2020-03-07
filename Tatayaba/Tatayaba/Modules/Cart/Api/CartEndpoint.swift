@@ -108,14 +108,10 @@ extension CartEndpoint: TargetType {
         case .deleteItemFromCart(let userId, let cartId):
             let params = ["user_id": userId,"cart_id":cartId] as [String : Any]
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
-        case .updateProductamountAtServerCart(_, let product_id, let amount, let userId):
+        case .updateProductamountAtServerCart(_, _, let amount, let userId):
             let params = [
                 "amount": amount,
-                "user_id": userId,
-                "product_options": [
-//                    "product_id":product_id,
-//                    "amount": amount
-                ]
+                "user_id": userId
                 ] as [String : Any]
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         }
