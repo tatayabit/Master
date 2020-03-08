@@ -67,6 +67,7 @@ extension APIClient {
 
                 } catch let err {
                     print("error: \(err)")
+                    print("error: \(response)")
                     completion(APIResult.failure(MoyaError.objectMapping(err, response)))
                 }
                 break
