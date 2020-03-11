@@ -42,7 +42,7 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
         passwordTextField.isLTRLanguage = !LanguageManager.isArabicLanguage()
         fullNameTextField.isLTRLanguage = !LanguageManager.isArabicLanguage()
         phoneNumberTextField.isLTRLanguage = !LanguageManager.isArabicLanguage()
-
+        
         emailTextField.placeholder = "Email".localized()
         passwordTextField.placeholder = "Passwrod".localized()
         fullNameTextField.placeholder = "Full name".localized()
@@ -60,8 +60,10 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
     
     //MARK:- Swift Validator
     func registerValidator() {
+        validator.registerField(fullNameTextField, rules: [RequiredRule(message: "field_is_required".localized()), AlphaRule(message: "Please enter a valid name".localized())])
         validator.registerField(emailTextField, rules: [RequiredRule(message: "field_is_required".localized()), EmailRule(message: "valid_email".localized())])
         validator.registerField(passwordTextField, rules: [RequiredRule(message: "field_is_required".localized()), PasswordRule(regex: "^.{6,20}$", message: "valid_password".localized())])
+        validator.registerField(phoneNumberTextField, rules: [RequiredRule(message: "Phone number is required!".localized()),MinLengthRule(length: 6, message: "Phone number Must be at least 6 characters long".localized())])
         fullNameTextField.becomeFirstResponder()
 
     }
@@ -89,11 +91,17 @@ class SignUpViewcontroller: BaseViewController, ValidationDelegate {
             case .failure(let error):
                 print("the error \(error)")
                 do {
-                    if let errorMessage = try error.response?.mapString(atKeyPath: "message") {
-                        self.showErrorAlerr(title: "Login_Failed".localized(), message: "Login_Failed_message".localized(), handler: nil)
+                    if let errorMessage = try error.response?.mapString(atKeyPath: "message"), let errorCode = error.response?.statusCode {
+                        
+                        print("errorCode: \(errorCode)")
+                        if errorCode == 300 {
+                            self.showErrorAlerr(title: "Attention".localized(), message: "email_already_exists".localized(), handler: nil)
+                        } else {
+                            self.showErrorAlerr(title: "Attention".localized(), message: errorMessage.stripOutHtml(), handler: nil)
+                        }
                     }
-                }
-                catch{
+                } catch let err {
+                    print("err: \(err)")
                 }
             }
         }

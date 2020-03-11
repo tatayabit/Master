@@ -94,8 +94,8 @@ class CartViewModel {
         }
     }
     
-    func getTaxAndShipping(countryCode: String, completion: @escaping (APIResult<TaxAndShippingResponse?, MoyaError>) -> Void) {
-        cartApiClient.getTaxAndShipping(countryCode: countryCode) { result in
+    func getTaxAndShipping(countryCode: String,productsID: String, completion: @escaping (APIResult<TaxAndShippingResponse?, MoyaError>) -> Void) {
+        cartApiClient.getTaxAndShipping(countryCode: countryCode,productsID: productsID) { result in
             switch result {
             case .success(let taxAndShippingResult):
                 if let taxAndShipping = taxAndShippingResult {

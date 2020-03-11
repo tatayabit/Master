@@ -32,12 +32,9 @@ struct SignUpViewModel {
                     case .failure(let profileError):
                         print("the profile error \(profileError)")
                     }
-//                    completion(profileResult)
                 })
             case .failure(let error):
                 print("the error \(error)")
-//                completion(error)
-
             }
             completion(result)
         }

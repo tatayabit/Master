@@ -50,6 +50,8 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
     let productsBlocklView297: ProductsBlockView = .fromNib()
     let productsBlocklView248: ProductsBlockView = .fromNib()
     let productsBlocklView265: ProductsBlockView = .fromNib()
+    let productsBlocklView000: ProductsBlockView = .fromNib()
+    let productsBlocklView001: ProductsBlockView = .fromNib()
     
     let locationManager = LocationManager()
     
@@ -67,6 +69,7 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         CurrencySettings.shared.addCurrencyDelegate(delegate: self)
         loadDefaults()
         startLocationProcessing()
+//        setTittleToScrollUp()
     }
 
     // MARK:- BannersLoading
@@ -84,6 +87,24 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
             self.loadBanners()
         }
     }
+    
+    
+    
+    
+     @objc func scrollToTop(tapGestureRecognizer: UITapGestureRecognizer) {
+           var offset = CGPoint(
+            x: -self.scrollView.contentInset.left,
+               y: -self.scrollView.contentInset.top)
+
+           if #available(iOS 11.0, *) {
+               offset = CGPoint(
+                   x: -self.scrollView.adjustedContentInset.left,
+                   y: -self.scrollView.adjustedContentInset.top)
+           }
+
+           scrollView.setContentOffset(offset, animated: true)
+       }
+    
     private func loadDefaults() {
         
         if let savedPerson = UserDefaults.standard.object(forKey: "country") as? Data {
@@ -202,6 +223,14 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         self.hideLoadingIndicator(from: self.productsBlocklView265)
         self.productsBlocklView265.block = self.viewModel.productsBlocks[7]
         self.productsBlocklView265.loadData()
+            
+        self.hideLoadingIndicator(from: self.productsBlocklView000)
+        self.productsBlocklView000.block = self.viewModel.productsBlocks[8]
+        self.productsBlocklView000.loadData()
+            
+        self.hideLoadingIndicator(from: self.productsBlocklView001)
+        self.productsBlocklView001.block = self.viewModel.productsBlocks[9]
+        self.productsBlocklView001.loadData()
 //
 //        // Will be removed later
 //        self.hideLoadingIndicator(from: productsBlocklViewCopyX)
@@ -316,6 +345,20 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         productsBlocklView265.titleLabel.text = ""
         self.showLoadingIndicator(to: productsBlocklView265)
         
+        productsBlocklView000.delegate = self
+        scrollView.stackView.addArrangedSubview(productsBlocklView000)
+        productsBlocklView000.translatesAutoresizingMaskIntoConstraints = false
+        productsBlocklView000.heightAnchor.constraint(equalToConstant: 260).isActive = true
+        productsBlocklView000.titleLabel.text = ""
+        self.showLoadingIndicator(to: productsBlocklView000)
+        
+        productsBlocklView001.delegate = self
+        scrollView.stackView.addArrangedSubview(productsBlocklView001)
+        productsBlocklView001.translatesAutoresizingMaskIntoConstraints = false
+        productsBlocklView001.heightAnchor.constraint(equalToConstant: 260).isActive = true
+        productsBlocklView001.titleLabel.text = ""
+        self.showLoadingIndicator(to: productsBlocklView001)
+        
     }
 
     // MARK:- SetupUI
@@ -345,6 +388,12 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         let result = viewModel.parseSquareBlockDeeplink(at: indexPath)
         if result.type == .category {
             performSegue(withIdentifier: categoryProductsSegue, sender: result)
+        }else if result.type == .supplier{
+            print("supplier")
+            performSegue(withIdentifier: supplierProductsSegue, sender: result)
+        }else if result.type == .product{
+            print("product")
+            performSegue(withIdentifier: productDetailsSegue, sender: result)
         }
     }
     
@@ -353,6 +402,12 @@ class HomeViewController: BaseViewController, BannersBlocksViewProtocol, Categor
         let result = viewModel.parsetopBannersBlockDeeplink(at: indexPath)
         if result.type == .category {
             performSegue(withIdentifier: categoryProductsSegue, sender: result)
+        }else if result.type == .supplier{
+            print("supplier")
+            performSegue(withIdentifier: supplierProductsSegue, sender: result)
+        }else if result.type == .product{
+            print("product")
+            performSegue(withIdentifier: productDetailsSegue, sender: result)
         }
     }
 
@@ -445,6 +500,10 @@ extension HomeViewController {
             if let indexPath = sender as? IndexPath {
                 productDetailsVC.viewModel = viewModel.productDetailsViewModel(at: indexPath)
             }
+            
+            if let deeplink = sender as? DeepLinkModel {
+                productDetailsVC.viewModel = viewModel.productDetailsViewModel(with: deeplink.id, title: deeplink.title)
+            }
         }
 
         if segue.identifier == categoryProductsSegue {
@@ -463,7 +522,13 @@ extension HomeViewController {
             if let indexPath = sender as? IndexPath {
                 productsListVC.viewModel = viewModel.supplierProductsViewModel(indexPath: indexPath)
             }
+            
+            if let deeplink = sender as? DeepLinkModel {
+                productsListVC.viewModel = viewModel.supplierProductsListViewModel(with: deeplink.id, title: deeplink.title)
+            }
         }
+        
+        
     }
 }
 
@@ -487,18 +552,18 @@ extension HomeViewController: LocationManagerDelegate, CountryViewDelegate {
            AppDelegate.shared.shouldCheckLocation = false
     
         let alertController = UIAlertController(title: "Your Country is not supported".localized(), message: "Please go to Countries list and select available country".localized(), preferredStyle: .alert)
-           let cancelAction = UIAlertAction(title: "Choose Country".localized(), style: .default) { _ in
-               // open countriesList VC
-               if self.viewModel.isCurrentCountrySelected() {
-                   self.loadBanners()
-               } else {
-                   self.loadCountries()
-               }
-           }
+        let cancelAction = UIAlertAction(title: "Choose Country".localized(), style: .default) { _ in
+            // open countriesList VC
+            if self.viewModel.isCurrentCountrySelected() {
+                self.loadBanners()
+            } else {
+                self.loadCountries()
+            }
+        }
     
-           alertController.addAction(cancelAction)
-           self.present(alertController, animated: true, completion: nil)
-       }
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
     
     func userLocationDenied() {
         // initialise a pop up for using later
@@ -536,7 +601,13 @@ extension HomeViewController: LocationManagerDelegate, CountryViewDelegate {
     func loadCountries() {
         let controller = UIStoryboard(name: "Country", bundle: Bundle.main).instantiateViewController(withIdentifier: "CountryViewController") as! CountryViewController
         controller.delegate = self
-        navigationController?.pushViewController(controller, animated: false)
+        if #available(iOS 13.0, *) {
+            controller.isModalInPresentation = true
+        } else {
+            // Fallback on earlier versions
+        }
+        self.present(controller, animated: true, completion: nil)
+//        navigationController?.pushViewController(controller, animated: false)
     }
 
     func countrySelected(selectedCountry: Country) {
@@ -544,6 +615,8 @@ extension HomeViewController: LocationManagerDelegate, CountryViewDelegate {
         self.loadBanners()
     }
     
+    
+   
     
 }
 

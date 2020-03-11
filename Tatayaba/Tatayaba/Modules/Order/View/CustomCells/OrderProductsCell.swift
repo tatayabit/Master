@@ -39,8 +39,8 @@ class OrderProductsCell: UITableViewCell {
         productName.text = product.name
         amountLBL.text = String(product.amount)
         companyName.text = product.supplierName
-        productPrice.text = product.price.formattedPrice
-        paidPrice.text = product.price.formattedPrice
+        productPrice.text = product.price.formattedKWDPrice
+        paidPrice.text = product.price.formattedKWDPrice
         var productStatusTitle: String = ""
         if product.productStatus == ProductStatus.activeProduct.rawValue {
             productStatusTitle = "active".localized()

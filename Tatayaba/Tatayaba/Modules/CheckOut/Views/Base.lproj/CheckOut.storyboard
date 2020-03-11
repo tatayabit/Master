@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JJ9-U2-IUw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JJ9-U2-IUw">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +31,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gae-zR-qWU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="543"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="525"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="JJ9-U2-IUw" id="o3d-Ff-dBY"/>
@@ -65,7 +65,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xWU-uk-Mh1" firstAttribute="top" secondItem="Gae-zR-qWU" secondAttribute="bottom" constant="-7" id="0LN-7q-XeY"/>
+                            <constraint firstItem="xWU-uk-Mh1" firstAttribute="top" secondItem="Gae-zR-qWU" secondAttribute="bottom" constant="11" id="0LN-7q-XeY"/>
                             <constraint firstItem="Gae-zR-qWU" firstAttribute="top" secondItem="I6r-yz-TSn" secondAttribute="top" id="EeB-9A-cjM"/>
                             <constraint firstItem="RgV-Yr-ArJ" firstAttribute="leading" secondItem="I6r-yz-TSn" secondAttribute="leading" constant="8" id="Emb-oo-eN3"/>
                             <constraint firstItem="RgV-Yr-ArJ" firstAttribute="trailing" secondItem="xWU-uk-Mh1" secondAttribute="trailing" id="FJW-Tz-X4X"/>

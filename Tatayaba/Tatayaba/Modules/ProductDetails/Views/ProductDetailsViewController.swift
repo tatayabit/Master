@@ -229,6 +229,8 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
             if let viewModel = viewModel {
                 if viewModel.isAlsoBoughtSection(section: indexPath.section) {
                     return 260
+                }else{
+                    return UITableView.automaticDimension
                 }
             }
         }else{
@@ -262,15 +264,29 @@ extension ProductDetailsViewController: OptionsHeaderDelegate, ProductDeatailsTa
             cell.delegate = self
                        return cell
         }else if(indexPath.section == self.headerItems.count - 1){
-            if let viewModel = viewModel {
-                if viewModel.isAlsoBoughtSection(section: indexPath.section) {
-                    let cell = tableView.dequeueReusableCell(withIdentifier: AlsoBoughtProductsTableViewCell.identifier, for: indexPath) as! AlsoBoughtProductsTableViewCell
-                    cell.configure(with: viewModel.alsoBoughtProductsBlock)
-                    cell.delegate = self
-                    cell.selectionStyle = .none
-                    return cell
+            
+            if (self.viewModel?.numberOfAlsoBoughtProducts ?? 0 > 0){
+                if let viewModel = viewModel {
+                    if viewModel.isAlsoBoughtSection(section: indexPath.section) {
+                        let cell = tableView.dequeueReusableCell(withIdentifier: AlsoBoughtProductsTableViewCell.identifier, for: indexPath) as! AlsoBoughtProductsTableViewCell
+                        cell.configure(with: viewModel.alsoBoughtProductsBlock)
+                        cell.delegate = self
+                        cell.selectionStyle = .none
+                        return cell
+                    }
                 }
+            }else{
+                let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionTableViewCell.identifier, for: indexPath) as! DescriptionTableViewCell
+                //            cell.viewController = self
+                            cell.delegate = self
+                            cell.selectionStyle = .none
+                            if let viewModel = viewModel {
+                                cell.configure(productVM: viewModel.detailsCellVM())
+                            }
+                            return cell
             }
+            
+            
         }else if (indexPath.section == self.headerItems.count - 2){
             let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionTableViewCell.identifier, for: indexPath) as! DescriptionTableViewCell
             //            cell.viewController = self

@@ -18,10 +18,8 @@ enum APIEnvironment {
 struct BaseUrls {
     static let production = "http://ttm%40tatayab.com:608Wg8D72001FDUFT70F69nbw53KWmR1@tatayab.com/api/"
     static let staging = "http://localhost:3000/"
-    static let dev2 = "http://localhost:3000/"
-    static let dev3 = //"https://dev3.tatayab.com/api/"
-    //"http://m.roshan%40tatayab.com:9Z19bF0f911Se53c5EE4U4Ik4F2282Fr@dev3.tatayab.com/api/"
-    "http://dalia.abdulmonsif1%40gmail.com:87257uWK71P0J71SKy1I238242SP6iKQ@dev2.tatayab.com/api/"
+    static let dev2 = "http://dalia.abdulmonsif1%40gmail.com:87257uWK71P0J71SKy1I238242SP6iKQ@dev2.tatayab.com/api/"
+    static let dev3 = "http://m.roshan%40tatayab.com:9Z19bF0f911Se53c5EE4U4Ik4F2282Fr@dev3.tatayab.com/api/"
     
 }
 
@@ -30,7 +28,7 @@ struct Keys {
         static let production = "ZGV2X2lvc0B0YXRheWFiLmNvbTo2MzM3TTQxQjMwYWY0U2g3QTYwMDZsU3EyamFiZjNNMg=="
         static let staging = "http://localhost:3000/"
         static let dev2 = "http://localhost:3000/"
-        static let dev3 = "bS5yb3NoYW5AdGF0YXlhYi5jb206OVoxOWJGMGY5MTFTZTUzYzVFRTRVNElrNEYyMjgyRnI="
+        static let dev3 = "http://localhost:3000/"
     }
 }
 
