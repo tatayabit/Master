@@ -236,7 +236,7 @@ class CartViewModel {
             case .success(let response):
                 guard let updateCartResult = response else { return }
                 print(updateCartResult.cart_ids.count)
-
+                self.cart.loadDataFromServer()
             case .failure(let error):
                 print("the error \(error)")
             }
@@ -365,10 +365,13 @@ class CartViewModel {
             }
         }
         var productPP = [String: Any]()
+        
         productPP["product_id"] = cartItemX.productId
         productPP["amount"] = "\(cartItemX.count)"
         if optionsParms.count > 0 {
-            productPP["product_options"] = optionsParms
+            let zz = convertOptionsDictionaryToString(options: optionsParms)
+            print(zz)
+            productPP["product_options"] = zz
         }
         productParms["\(cartItemX.productId)"] = productPP
         return productParms
@@ -379,9 +382,25 @@ class CartViewModel {
         for optionSection in cartOptions {
             optionsParms.append([optionSection.optionId: optionSection.variantId])
         }
+        print(optionsParms)
         return optionsParms
     }
-    
+    func convertOptionsDictionaryToString(options : [[String: String]] ) -> [String: Any] {
+        var x = ""
+        var y = [String: Any]()
+        for option in options {
+//            x += option.map{ "\"\($0)\":\"\($1)\"" }
+//            .joined(separator: ",")
+//            x += ","
+//            print(x)
+            y[option.keys.first ?? "0"] = option.map{$1}.first
+            
+        }
+        x = String(x.dropLast())
+        x = "[\(x)]"
+        print(x)
+        return y
+    }
     // MARK:- Update Shipping Price
     func applyFreeShippingPrice() {
 //        pricingList
