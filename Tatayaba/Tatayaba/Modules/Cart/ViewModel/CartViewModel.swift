@@ -65,6 +65,12 @@ class CartViewModel {
         
         pricingList.append(model)
         
+        if taxValue?.additional_fees?.type == "A" {
+            model = CartPricingModel(title: cartClass.additional_fees, value: taxValue?.additional_fees?.value?.formattedPrice ?? "0")
+        }
+        
+        pricingList.append(model)
+        
         model = CartPricingModel(title: cartClass.coupon, value: couponValue)
         pricingList.append(model)
         
@@ -379,6 +385,7 @@ class CartPricingItems {
     var subtotal = "Subtotal".localized()
     var shipping = "Shipping".localized()
     var tax = "Tax".localized()
+    var additional_fees = "additional_fees".localized()
     var customDuties = "CustomDuties".localized()
     var coupon = "Coupon".localized()
     var items = "items".localized()

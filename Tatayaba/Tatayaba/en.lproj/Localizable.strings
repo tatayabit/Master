@@ -13,6 +13,7 @@
 "Subtotal"="Subtotal";
 "Shipping"="Shipping";
 "Tax"="Tax";
+"additional_fees" = "Additional Fees";
 "CustomDuties"="Custom Duties";
 "Coupon"="Discount";
 "items"="items";

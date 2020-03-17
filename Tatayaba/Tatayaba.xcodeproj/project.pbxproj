@@ -313,6 +313,7 @@
 		D57B970423C48C8C00B4B1EA /* FilterOptionsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57B970323C48C8C00B4B1EA /* FilterOptionsTableVC.swift */; };
 		D57B970623C4CF6500B4B1EA /* SortTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57B970523C4CF6500B4B1EA /* SortTableViewController.swift */; };
 		D57B970823C4DC2000B4B1EA /* FilterOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57B970723C4DC2000B4B1EA /* FilterOptionsTableViewCell.swift */; };
+		D59413DA241FCC52006D6698 /* Additional_fees.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59413D9241FCC52006D6698 /* Additional_fees.swift */; };
 		D59AF4D523A8C8D60093EF40 /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59AF4D423A8C8D60093EF40 /* DescriptionTableViewCell.swift */; };
 		D5B71207238E1420006BD0DD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B71206238E1420006BD0DD /* SearchViewController.swift */; };
 		D5B71209238E14E0006BD0DD /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B71208238E14E0006BD0DD /* Search.storyboard */; };
@@ -672,6 +673,7 @@
 		D57B970323C48C8C00B4B1EA /* FilterOptionsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOptionsTableVC.swift; sourceTree = "<group>"; };
 		D57B970523C4CF6500B4B1EA /* SortTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SortTableViewController.swift; path = ../../Products/Views/SortTableViewController.swift; sourceTree = "<group>"; };
 		D57B970723C4DC2000B4B1EA /* FilterOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOptionsTableViewCell.swift; sourceTree = "<group>"; };
+		D59413D9241FCC52006D6698 /* Additional_fees.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Additional_fees.swift; sourceTree = "<group>"; };
 		D59AF4D423A8C8D60093EF40 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		D5ACD28F23F587A600F8F37B /* WCLShineButton.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = WCLShineButton.bundle; path = Tatayaba/Utilities/WCLShineButton/WCLShineButton.bundle; sourceTree = "<group>"; };
 		D5ACD29123F587DB00F8F37B /* WCLShineButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WCLShineButton.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/WCLShineButton-fkeynudslytkrlajykpzcdivdlvm/Build/Products/Debug-iphoneos/WCLShineButton.framework"; sourceTree = "<group>"; };
@@ -2025,6 +2027,7 @@
 				27A908972357906C0032DA41 /* TaxAndShippingResponse.swift */,
 				27A908982357906C0032DA41 /* Tax.swift */,
 				27A908992357906C0032DA41 /* Shipping.swift */,
+				D59413D9241FCC52006D6698 /* Additional_fees.swift */,
 			);
 			path = TaxAndShippingModels;
 			sourceTree = "<group>";
@@ -2834,6 +2837,7 @@
 				11D612A122CE48F3000D42C3 /* APIResult.swift in Sources */,
 				115795BD232FE42C0002075E /* LanguageManager.swift in Sources */,
 				116C938722F0952700921893 /* PlaceOrderResult.swift in Sources */,
+				D59413DA241FCC52006D6698 /* Additional_fees.swift in Sources */,
 				11081EF422DB89F600B68EA5 /* ProfileViewController.swift in Sources */,
 				4C219869233BBBE800DE40FA /* CountryTableViewCell.swift in Sources */,
 				11945BCB22F0B0C6000F08DC /* ShippingEndpoint.swift in Sources */,
@@ -3291,13 +3295,13 @@
 				CODE_SIGN_ENTITLEMENTS = "Tatayaba/TATAYAB - تطيّب.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 11;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 4.4.4;
+				MARKETING_VERSION = 4.4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tatayab.tatayab;
 				PRODUCT_NAME = "TATAYAB - تطيّب";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3314,12 +3318,12 @@
 				CODE_SIGN_ENTITLEMENTS = "Tatayaba/TATAYAB - تطيّب.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 74YH76FB8C;
 				INFOPLIST_FILE = Tatayaba/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 4.4.4;
+				MARKETING_VERSION = 4.4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tatayab.tatayab;
 				PRODUCT_NAME = "TATAYAB - تطيّب";
 				PROVISIONING_PROFILE_SPECIFIER = "";

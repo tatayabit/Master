@@ -125,6 +125,12 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             }
         }
         
+        if let taxStringValue = taxValue?.additional_fees?.value {
+            if taxValue?.additional_fees?.type == "A" {
+                totalPriceValue += Float(taxStringValue) ?? 0.0
+            }
+        }
+        
         if promotionData != nil {
             let discountItem = promotionData?.bonuses?.first
             let currentTotal = (cart.totalPrice as NSString).floatValue
@@ -314,9 +320,9 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         
         if viewModel.pricingList.count > 0 {
             if promotionData != nil {
-               return 3
+               return 4
             } else {
-                return 2
+                return 3
             }
         }
         return 1

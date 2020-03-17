@@ -14,7 +14,7 @@ struct CartAPIClient: APIClient {
     
     var provider = MoyaProvider<MultiTarget>(plugins: [NetworkLoggerPlugin(verbose: true)])
     
-    static let environment: APIEnvironment = .production
+    static let environment: APIEnvironment = .dev2
     
     func applyCoupon(parameters: [String: Any], completion: @escaping (APIResult<CouponResponse?, MoyaError>) -> Void) {
            fetch(with: CartEndpoint.applyCoupon(parameters: parameters), completion: completion)

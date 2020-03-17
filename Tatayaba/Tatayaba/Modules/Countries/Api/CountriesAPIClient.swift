@@ -14,7 +14,7 @@ struct CountriesAPIClient: APIClient {
 
     var provider = MoyaProvider<MultiTarget>(plugins: [NetworkLoggerPlugin(verbose: true)])
 
-    static let environment: APIEnvironment = .production
+    static let environment: APIEnvironment = .dev2
 
     func getCountries(completion: @escaping (APIResult<[Country]?, MoyaError>) -> Void) {
         fetch(with: CountriesEndpoint.getCountries, completion: completion)

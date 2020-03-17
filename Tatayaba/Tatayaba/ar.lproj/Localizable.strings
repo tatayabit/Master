@@ -13,6 +13,7 @@
 "Subtotal"="المجموع";
 "Shipping"="الشحن";
 "Tax"="الضرائب";
+"additional_fees" = "رسوم إضافية";
 "CustomDuties"="رسوم جمركية";
 "Coupon"="خصم";
 "items"="أصناف";
